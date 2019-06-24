@@ -1,0 +1,136 @@
+// SysInfo Demo Script (V0.02)
+// -----------------------------
+// derzeit von SysInfo
+// unterstÅtzte Kommandos: open,close,tofront,save,quit
+//
+// au·erdem sind hier alle mîglichen Fensternamen aufgefÅhrt.
+//
+// Urversion von Thorsten Bergner
+// Rahmentexte etc. von A. Schley
+//
+// Bisher ist dies nur eine Skizze der Mîglichkeiten.
+// Vieles lÑ·t sich in diesem Script noch professioneller und eleganter machen
+// DemnÑchst kommt sicher noch eine ausgefeiltere Version ;-)
+
+print("Willkommen zu SysInfo 4.80, das auch GEMScript unterstÅtzt.");
+print();
+wait(400);
+print("Dies ist eine 'Tour de SysInfo' durch viele Funktionen von SysInfo!");
+print();
+wait(400);
+print("Es werden alle zur VerfÅgung stehenden Fenster nacheinander ausgewÑhlt.");
+print();
+wait(400);
+print("Bei Fensterraufrufen in der nicht-registrierten Version wird eine");
+print("Fehlermeldung als Alert ausgegeben! Bitte nicht erschrecken, sondern");
+print("nur bestÑtigen!");
+print();
+wait(400);
+print ("Viel Spa·!");
+wait(400);
+closewindow();
+
+sysinfo.close( "All" );       // Alle Fenster schlie·en
+
+sysinfo.open( "ôff" );        // Fenster îffnen 'ôffnen'
+wait (800);
+sysinfo.close( "ôff" );       // Fenster schlie·en 'ôffnen'
+sysinfo.open( "Aut" );        // AUTO Ordner
+wait (800);
+sysinfo.close( "Aut" );
+sysinfo.open( "Acc" );        // Accessories
+wait (800);
+sysinfo.close( "Acc" );
+sysinfo.open( "CPX" );        // CPX Module
+wait (800);
+sysinfo.close( "CPX" );
+sysinfo.open( "App" );        // Applikationen
+wait (800);
+sysinfo.close( "App" );
+sysinfo.open( "Aus" );        // Ausgeben
+wait(800);
+sysinfo.close( "Aus" );
+sysinfo.open( "Sys" );        // System
+wait (800);
+sysinfo.close( "Sys" );
+sysinfo.open( "AVS" );        // AV Server
+wait (800);
+sysinfo.close( "AVS" );
+sysinfo.open( "Ser" );        // Seriell
+wait (800);
+sysinfo.close( "Ser" );
+sysinfo.open( "AES" );        // AES
+wait (800);
+sysinfo.close( "AES" );
+sysinfo.open( "VDI" );        // VDI
+wait (800);
+sysinfo.close( "VDI" );
+sysinfo.open( "DOS" );        // DOS Grenzen
+wait (800);
+sysinfo.close( "DOS" );
+sysinfo.open( "Dat" );        // Dateisystem
+wait (800);
+sysinfo.close( "Dat" );
+sysinfo.open( "Env" );        // Environment
+wait (800);
+sysinfo.close( "Env" );
+sysinfo.open( "Pro" );        // Programmliste
+wait (800);
+sysinfo.close( "Pro" );
+sysinfo.open( "Spe" );        // Speicher
+wait (800);
+sysinfo.close( "Spe" );
+sysinfo.open( "Spl" );        // Speicherliste
+wait (800);
+sysinfo.close( "Spl" );
+sysinfo.open( "NVM" );        // NVM
+wait (800);
+sysinfo.close( "NVM" );
+sysinfo.open( "Vek" );        // Vektor/Adressen
+wait (800);
+sysinfo.close( "Vek" );
+sysinfo.open( "Coo" );        // Cookieliste
+wait (800);
+sysinfo.close( "Coo" );
+sysinfo.open( "Xbr" );        // XBRA Liste
+wait (800);
+sysinfo.close( "Xbr" );
+sysinfo.open( "Lau" );        // Laufwerke
+wait (800);
+sysinfo.close( "Lau" );
+sysinfo.open( "Har" );        // Harddisk
+wait (800);
+sysinfo.close( "Har" );
+sysinfo.open( "Acs" );        // ACSI/SCSI Bus
+wait (800);
+sysinfo.close( "Acs" );
+sysinfo.open( "Sou" );        // Sound
+wait (800);
+sysinfo.close( "Sou" );
+sysinfo.open( "Gra" );        // Grafik
+wait (800);
+sysinfo.close( "Gra" );
+sysinfo.open( "Ein" );        // Einstellungen
+wait (800);
+sysinfo.close( "" );          // Oberstes Fenster schlie·en
+
+// sysinfo.save( "" );        // Einstellungen sichern
+
+sysinfo.quit( "" );           // Sysinfo beenden
+
+print("Willkommen zu SysInfo 4.80, das auch GEMScript unterstÅtzt.");
+print();
+print("Wenn Ihnen die Features gefallen, dann lassen Sie sich doch registrieren!");
+print();
+wait(400);
+print("Weitere Informationen finden Sie im beiliegendem Hypertext");
+print();
+wait(400);
+print("Das Programm ist Keyware (40 DM / 20 EUR Spende)");
+print();
+wait(400);
+print ("Auf Wiedersehen!");
+wait(400);
+closewindow();
+
+exit( 0 );                    // Script beenden

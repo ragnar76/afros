@@ -1,0 +1,459 @@
+SysInfo V5.02 - Das Diagnoseutility
+-----------------------------------
+Das Programm gibt Hard- und Softwareinformationen des Atari aus und
+bietet darÅber hinaus Zusatzfunktionen fÅr Programmierer und Interes-
+sierte an. Es lÑuft auf allen TOS-kompatiblen Systemen und Emulatoren,
+unterstÅtzt alle Grafikauflîsungen grîsser oder gleich 640*200 Punkte
+(SW/Farbe) und ist vollstÑndig in GEM eingebunden. Einige Informationen
+werden Åber einen einstellbaren Programmtakt (1-32000 ms) stÑndig ak-
+tualisiert. Alle Informationen kînnen in eine Datei ausgegeben werden.
+
+Eine stÑndig verfÅgbare Hilfe mit ST-Guide unterstÅtzt bei Problemen.
+
+Das Programm ist Freeware.
+
+
+Die Funktionen...
+---------------------------------------------------------------------------
+
+SYSINFO/öber SysInfo (ALT I)
+----------------------------
+- Anzeige der Version und des Programmautors mit Adresse/EMail
+
+---------------------------------------------------------------------------
+
+Datei/ôffnen (CNTL O)
+---------------------
+- Ausgabe folgender wichtiger Systemdateien:
+
+  DESKTOP.INF  Gesucht wird im Rootverzeichnis des Bootlaufwerks.
+  NEWDESK.INF  Gesucht wird im Rootverzeichnis des Bootlaufwerks.
+  MAGX.INF     Gesucht wird im Rootverzeichnis des Bootlaufwerks.
+  ST-GUIDE.INF Gesucht wird im Rootverzeichnis des Bootlaufwerks
+               und im Verzeichnis $HOME.
+  OLGA.INF     Gesucht wird im Rootverzeichnis des Bootlaufwerks,
+               im Verzeichnis $HOME und im Verzeichnis $OLGAMANAGER.
+  AUTOEXEC.BAT Gesucht wird im Verzeichnis AUTO des Bootlaufwerks.
+  NVDI.INF     Gesucht wird im Rootverzeichnis und im Verzeichnis
+               AUTO des Bootlaufwerks.
+  ASSIGN.SYS   Gesucht wird im Rootverzeichnis des Bootlaufwerks.
+  CONFIG.SYS   Gesucht wird im Verzeichnis AUTO des Bootlaufwerks.
+  MINT.CNF     Gesucht wird im Verzeichnis MULTITOS des Bootlaufwerks.
+
+  GEM.CNF      Gesucht wird im Verzeichnis MULTITOS des Bootlaufwerks.
+  N_AES.CNF    Sollte N.AES installiert sein, wird Åber die Environ-
+               mentvariable 'AESDIR' die N_AES.CNF statt der GEM.CNF
+               gesucht.
+
+- Die Grîsse des Fenster wird unter Fenstergrîsse in Einstellungen
+  festgelegt.
+
+Datei/Info/Konfig (CNTL I)
+--------------------------
+- Anzeige und Konfiguration von Dateiinformationen (Zeit, Datum,
+  LÑnge, Attribute). Sollte es sich bei der Datei um ein Programm
+  handeln, werden die unteren beiden Informationsboxen freigegeben.
+  Hierdrin kînnen die Programmflags und Speicherschutzmechanismen
+  gesetzt bzw. rÅckgesetzt werden
+- Wenn man auf 'ôffnen...' klickt oder die TAB Taste betÑtigt er-
+  scheint die Fileselectbox. Es kann aber auch per Drag&Drop eine
+  Datei ins Fenster gezogen werden
+- Ab MagiC3 oder MiNT kînnen Åber 'Mehr...' noch detailiertere
+  Information Åber die Datei angezeigt werden.
+- Es wird die ARGV öbergabe unterstÅtzt. D.h., die auf das SysInfo
+  Icon gezogenen Datei startet SysInfo und îffnen die Information.
+
+Datei/Auto Ordner (CNTL T)
+--------------------------
+- Ausgabe aller Programme des Auto Ordners in physikalischer Reihen-
+  folge. Das Verzeichnis AUTO wird im Rootverzeichnis des Bootlauf-
+  werks gesucht
+- Mit Auswahl wird angezeigt, nach welchem Extender gesucht wird.
+  Die eingestellte Sortierreihenfolge wird mit abgespeichert
+
+Datei/Accessories (CNTL R)
+--------------------------
+- Ausgabe aller Accessories in physikalischer Reihenfolge. Die ACCs
+  werden standardmÑssig im Rootverzeichnis des Bootlaufwerks gesucht
+- öber 'Pfad...' oder durch drÅcken der TAB Taste kann ein anderer
+  Zugriffspfad fÅr die ACC's vorgegeben werden
+- Mit Auswahl wird angezeigt, nach welchem Extender gesucht wird.
+  Die eingestellte Sortierreihenfolge wird mit abgespeichert
+
+Datei/CPX Module (CNTL M)
+-------------------------
+- Ausgabe aller CPX Module in physikalischer Reihenfolge. Die CPXe
+  werden standardmÑssig im Verzeichnis CPX des Bootlaufwerks gesucht
+- öber 'Pfad...' oder durch drÅcken der TAB Taste kann ein anderer
+  Zugriffspfad fÅr die CPXe vorgegeben werden
+- Mit Auswahl wird angezeigt, nach welchem Extender gesucht wird.
+  Die eingestellte Sortierreihenfolge wird mit abgespeichert
+- Mit einem Doppelklick auf einen Eintrag bekommt man detailierte
+  Informationen zum CPX Modul.
+
+Datei/Applikationen (CNTL P)
+----------------------------
+- Ausgabe aller Applikationen in physikalischer Reihenfolge. Nur
+  verfÅgbar unter MagiC und N.AES. Unter N.AES wird standardmÑssig
+  das Verzeichnis NAES auf dem Bootlaufwerk gesucht. Unter MagiC
+  im Verzeichnis \GEMSYS\MAGIC\START
+- öber 'Pfad...' oder durch drÅcken der TAB Taste kann ein anderer
+  Zugriffspfad fÅr die Applikationen vorgegeben werden
+- Mit Auswahl wird angezeigt, nach welchem Extender gesucht wird.
+  Die eingestellte Sortierreihenfolge wird mit abgespeichert
+
+Datei/Ausgeben (CNTL A)
+-----------------------
+- Ausgabe aller Werte von SysInfo als Datei ins Klemmbrett. öber
+  einen Dialog ist die Ausgabedatei konfigurierbar. Falls das
+  Klemmbrett nicht vorhanden sein sollte, wird eins angelegt.
+
+Datei/Beenden (CNTL Q)
+----------------------
+- Das Programm wird ohne Nachfrage beendet
+- Sollte unter Einstellungen 'Sichern am Programmende' gesetzt sein,
+  werden die Optionen noch gesichert. Ausser die linke Shifttaste ist
+  gedrÅckt
+
+---------------------------------------------------------------------------
+
+Hardware/System (ALT S)
+-----------------------
+- Maschine          (ST,STE,ST BOOK,MSTE,TT,Falcon,
+                     MEDUSA,HADES,MILAN,Emulator)
+- CPU               (68000,68010,68020,68030,68040,68060)
+- FPU               (LineF,SFP004,68881,68882,Intern)
+- Betriebssystem    (TOS/MagiC/MiNT/MTOS/Geneva/MultiGEM,N.AES)
+- Multitasking      (PrÑemptiv/Kooperativ)
+- Mem.Protect.      (Nein/Aktiv)
+- VersionsÅbersicht (TOS/DOS/AES)
+- Videomodus        (PAL/NTSC/VGA/TV) (50/60Hz nur ST+STE+MSTE)
+- NetzwerkÅbersicht
+
+- Mit 'Cache' kann ein vorhandener Cachespeicher ein- oder ausge-
+  schaltet werden
+
+  - 68000: ST Konfig Hypercache Turbo+
+           MSTE Konfig SCU Chip
+  - 68010: Kein Cache. Das Feld wird gesperrt
+  - 68020: Instruction Cache ein/aus
+  - 68030: Data+Instruction Cache ein/aus
+  - 68040: Data+Instruction Cache ein/aus
+  - 68060: Data+Instruction Cache ein/aus
+
+- Mit 'Takt' kann der CPU Takt beim ST mit Hypercache, MegaSTE oder
+  Falcon zwischen 16 und 8 MHz umgeschaltet werden. Nur wenn keine
+  Beschleunigerkarte (PAK o.Ñ.) installiert ist
+- Ist ein 'Blitter' vorhanden, kann er ein- oder ausgeschaltet
+  werden
+- Mit 'Blittertakt' kann beim Falcon zwischen 16 und 8 MHz umge-
+  schaltet werden
+- In der Box 'Status' wird die Konfiguration von MagiC dargestellt
+
+Hardware/Speicher (ALT R)
+-------------------------
+- Anzeige des gesamten und freien Speichers in Byte (ST- und TT-RAM)
+  Nur der grîsste Block wird angezeigt. Genauere Infos Åber die
+  Speicherblîcke, erfragt man mit der Funktion 'Blîcke' oder durch
+  Druck auf die TAB Taste.
+- Anzeige der letzten Speicheranforderung
+- Infos Åber virtuelle Speicherverwaltung. Nur wenn ein PMMU Handler
+  vorhanden ist (VRAM, Outside, etc.)
+- Unter Blîcke bekommt man eine Tabelle der freien Speicherblîcke
+  dargestellt
+
+Hardware/Seriell (ALT E)
+------------------------
+- Informationen Åber die installierten seriellen Schnittstellen.
+  Nur verfÅgbar wenn HSModem installiert ist (RSVF Cookie).
+
+Hardware/Grafik (ALT G)
+-----------------------
+- Name des Grafiktreibers (ab SpeedoGDOS V4.2)
+- Informationen Åber Farben, normalen und virtuellen Bildschirm
+- Anzeige ob und welches VDI aktiv ist, incl. der Versionsnummer
+  (Mîglichkeiten zur Zeit: Intern, CyReL, Milan, NVDI, NOVA, SANG)
+- Anzeige ob und welches GDOS aktiv ist, incl. der Versionsnummer
+  (Mîglichkeiten zur Zeit: AMC, Font, FSM, NVDI, SPEEDO)
+- Anzeige ob die Line-A Routinen aktiv sind oder nicht
+- Anzeige ob WDialog installiert ist oder nicht
+
+Hardware/Sound (ALT O)
+----------------------
+- Informationen Åber die installierte Soundhardware und die Falcon
+  kompatiblen XBIOS Soundroutinen.
+
+Hardware/Zeit/Datum (ALT M)
+---------------------------
+- Informationen Åber GEMDOS/XBIOS Uhrzeit, Datum, Swatch Beats, 
+  Laufzeit des Systems und Zeitzone.
+
+Hardware/NVM (ALT N)
+--------------------
+- Anzeige und Konfiguration des nichtflÅchtigen RAM. Die Anzeigen
+  Videonorm, Videomode, Farben und Spalten sind nicht auf dem TT
+  verfÅgbar. Das NVM existiert nur im TT und Falcon.
+
+Hardware/ACSI/SCSI/IDE Bus (ALT B)
+----------------------------------
+- öbersicht der angeschlossenen GerÑte am ACSI, SCSI und IDE Bus.
+  öber den Button 'Mehr...' bekommt man noch einige Informationen
+  Åber das Verhalten des Buses. Diese Funktion ist nur verfÅgbar,
+  wenn ein SCSIDRV kompatibles Interface installiert ist (CBHD,
+  HDDRIVER 7, etc.).
+
+Hardware/Dateisystem (ALT Y)
+----------------------------
+- In diesem Fenster werden die Dateisysteminformationen der
+  einzelnen Laufwerke dargestellt. Wenn ein Eintrag den Wert
+  '-1' enthÑlt, so ist dieser unbegrenzt. Diese Funktion ist
+  erst ab MagiC3, MiNT oder Big-DOS verfÅgbar.
+
+Hardware/Laufwerk (ALT W)
+-------------------------
+- öbersicht der angeschlossenen Laufwerke
+- Ein selektierter Buchstabe zeigt, das dies zur Zeit das aktuelle
+  Laufwerk fÅr SysInfo ist. Nicht vorhandene Laufwerke werden grau
+  dargestellt. Die Informationen im Fenster werden direkt umgeschal-
+  tet, wenn man mit der Maus einen Laufwerksbutton anklickt oder die
+  dementsprechende Taste (A-Z/1-6) drÅckt oder per Drag&Drop ein
+  Laufwerksicon in das Fenster zieht. Das D&D lÑuft entweder mit
+  MagiC/Gemini/Ease oder MultiTOS.
+
+- Anzeige des Bootlaufwerkes
+
+- Sollte fÅr das Laufwerk ein XHDI-kompatibler Treiber oder ein
+  MetaDOS-GerÑtetreiber installiert sein, so kann man Åber den
+  Button 'Mehr...' weitere Informationen zu diesem Laufwerk er-
+  halten und auch Treiberkommandos ausfÅhren.
+
+Hardware/Harddisk (ALT H)
+-------------------------
+- öbersicht der angeschlossenen Festplatte(n) und deren Belegung
+- Sollte fÅr die Platte(n) ein XHDI kompatibler Treiber installiert
+  seien, so kann man durch Doppelklick eines Eintrag weitere Informa-
+  tionen zu diesem Laufwerk erhalten und auch Treiberkommandos aus-
+  fÅhren
+
+---------------------------------------------------------------------------
+
+Software/AES (ALT A)
+--------------------
+- Hier werden sÑmtlich AES Konfigurationen dargestellt. Ist nur
+  verfÅgbar, wenn die AES Funktion 'appl_getinfo' vorhanden ist.
+
+Software/VDI (ALT V)
+--------------------
+- Hier werden einige VDI Konfigurationen dargestellt.
+  Workstation und Erw.Workst. sind immer verfÅgbar. Bildschirm
+  ist erst ab VDI Enhancer V1.00 verfÅgbar. Treiber ist erst ab
+  SpeedoGDOS V4.2 verfÅgbar.
+- Durch Doppelklick eines Eintrages in Treiber, kînnen zu jedem
+  Treiber Workstation- und Erw.Workstationinfos angezeigt werden.
+
+Software/DOS Grenzen (ALT D)
+----------------------------
+- In diesem Fenster werden die Grenzdaten des Betriebssytems
+  dargestellt. Diese Funktion ist erst ab MagiC3, XHDI V1.20
+  oder Big-DOS verfÅgbar. Unter MiNT oder Big-DOS wird noch
+  zusÑtzlich Åber die Prozessgrenzen informiert.
+
+Software/AV Serverstatus (ALT U)
+--------------------------------
+- Informationen Åber die Eigenschaften des AV Servers. Nur verfÅgbar
+  wenn die Environmentvariable AVSERVER vorhanden ist oder GEMINI
+  installiert ist.
+
+Software/Environment (ALT T)
+----------------------------
+- Ausgabe der Environmentvariablen in alphabetischer Reihenfolge.
+  Die Grîsse des Fenster wird unter Fenstergrîsse in Einstellungen
+  festgelegt.
+
+Software/Programmliste (ALT P)
+------------------------------
+- Anzeige der laufenden Prozesse mit Programm-Id, -name, -grîsse
+  und -typ. Die Progliste ist nur verfÅgbar, wenn SysInfo die AES
+  Funktion 'appl_search' findet. In der Infozeile des Fensters, wird
+  die maximale Anzahl der gleichzeitig laufenden Prozesse angezeigt.
+  Sollte die Infozeile nicht dargestellt werden, ist die Anzahl
+  der Prozesse nicht begrenzt.
+  Wenn zur Programmliste noch zusÑtzlich das Speicherlistenfenster
+  offen ist, wird diesem Fenster eine Update Nachricht geschickt,
+  sobald ein oder mehrere Programm an- oder abgemeldet wurden.
+
+Software/Fonts (ALT F)
+----------------------
+- Sollte ein xFSL kompatibler Fontselektor installiert seien
+  (Calvino, HuGo, etc.), wird dieser aufgerufen. Ansonsten wird
+  der interne Fontselektor benutzt.
+
+Software/Speicherliste (ALT L)
+------------------------------
+- Anzeige der kompletten Speicherlisten im ST- und TT-RAM incl. der
+  nîtigen Adressen und des Programmnamens. Durch Doppelklick eines
+  Eintrags, erhÑlt man dessen Speicherinformation, aufgeteilt in
+  ST- und TT-RAM incl. die Anzahl der belegten Blîcke. Die EintrÑge
+  kînnen nach verschiedenen Kriterien sortiert werden. Nach Adresse,
+  Grîsse und nach Namen. Jeweilts Auf- oder AbwÑrts. Die eingestellte
+  Sortierreihenfolge wird Åber den MenÅpunkt 'Sichern' mit abgespei-
+  chert. Die Speicherliste ist nur unter MagiC (ab V2.00) verfÅgbar.
+
+Software/Vektoren/Adressen (ALT K)
+----------------------------------
+- Anzeige von Systemvektoren, VBlankvektoren und wichtigen
+  Systemadressen
+
+Software/Cookieliste (ALT C)
+----------------------------
+- Ausgabe der Cookie Tabelle mit Kommentar. Cookies, die nicht
+  kommentiert sind, geben '???' aus. Bitte informieren Sie mich
+  dann, damit ich ihn nachtragen kann. Zur Zeit sind 436 Cookies
+  im Programm kommentiert.
+
+Software/XBRA Liste (ALT X)
+---------------------------
+- Ausgabe der XBRA-Vektortabelle incl. der Verkettung und des Vektor-
+  namens. Bei der Verkettung gehîrt der Eintrag, der am weitesten
+  links steht, dem letzten Programm, das sich in die Kette eingehan-
+  gen hat. Durch Doppelklick eines Eintrags, werden die dazugehîrigen
+  Adressen in einem Fenster dargestellt.
+
+---------------------------------------------------------------------------
+
+Fenster/Wechseln (CNTL W)
+-------------------------
+- Hiermit springt man zum nÑchsten geîffneten Fenster. Wenn keins
+  oder nur eins geîffnet ist, wird das Feld gesperrt.
+
+Fenster/Schlieûen (CNTL U)
+--------------------------
+- Schliesst das aktive Fenster. Wenn kein Fenster geîffnet ist, wird
+  das Feld gesperrt.
+
+Fenster/Alle Schlieûen (CNTL D)
+-------------------------------
+- Schliesst alle geîffneten Fenster. Wenn weniger als zwei Fenster
+  geîffnet sind, wird das Feld gesperrt.
+
+---------------------------------------------------------------------------
+
+Optionen/Einstellungen (CNTL E)
+-------------------------------
+- Flag fÅr 3D Darstellung (ALT D) (nur >= 16 Farben)
+- Flag fÅr runde/eckige Buttondarstellung (ALT B)
+- Flag fÅr Fenster an Mausposition oder zentriert (ALT Z)
+- Flag fÅr Eckuhr einschalten (ALT E)
+- Flag fÅr Optionen sichern am Programmende (ALT P)
+- Flag fÅr Hypercache installiert (ALT H)
+  Da nicht feststellbar ist ob ein HC installiert ist, wird das
+  SysInfo hierÅber mitgeteilt.
+
+- Einstellungen der Programmtakte (Bereich 1-32000 MSek)
+
+- Einstellung der Fenstergrîsse. Diese Angabe wirkt nur fÅr die
+  Funktionen 'ôffnen...' und 'Environment...'. Die Werte werden
+  in Zeichen angegeben.
+
+- Einstellung des Scrollfaktors fÅr das Mausrad
+
+- Einstellen des ST-Guide Pfades Åber Dateiselektor
+
+Optionen/Sichern (CNTL S)
+-------------------------
+- Mit diesem MenÅpunkt kînnen die Optionen gesichert werden.
+
+---------------------------------------------------------------------------
+
+Hilfe (HELP)
+------------
+- Aufruf des Hypertextsystems (ST-GUIDE->SYSINFO.HYP)
+
+
+Die Konfigdatei SYSINFO.INF...
+---------------------------------------------------------------------------
+- Es ist mîglich eine Konfigurationsdatei fÅr SysInfo anzulegen (siehe
+  auch Optionen/Sichern). In dieser wird die komplette Arbeitsumgebung
+  abgespeichert. Es wird versucht, die Datei im Verzeichnis $HOME\defaults
+  oder $HOME anzulegen und nachdem Start wieder dort zusuchen. Wenn
+  $HOME\defaults oder $HOME nicht vorhanden ist, wird sie in dem Ver-
+  zeichnis gesucht und geschrieben, von dem SysInfo aus gestartet wurde.
+
+
+Benutzung eines Mausrads
+---------------------------------------------------------------------------
+SysInfo unterstÅtzt (ab V5.00) auch die Benutzung eines Mausrads fÅr die
+Listboxen. Es wird die AES Nachricht 'WM_MOUSEWHEEL' und das Programm
+MWheel unterstÅtzt. Unter MagiC PC mit WHEEL.APP von Holger Weets muss
+in die Datei 'WHEEL.INF' noch folgende Zusatzzeile am Ende eingefÅgt
+werden: SYSINFO.msg=1.
+
+Unter Optionen/Einstellungen lÑsst sich der Scrollfaktor einstellen, der
+auch mit abgespeichert wird.
+
+
+Schlussbemerkungen...
+---------------------------------------------------------------------------
+- Das Programm ist frei von Rechten Dritter, darf aber nur zusammen mit
+  diesem Copyrightvermerk weitergegeben werden.
+
+  *******************************************************************
+  Die Benutzung des Programms ist auf eigene Gefahr. FÅr SchÑden an
+  Hard- oder Software durch das Programm oder dessen Benutzung, Åber-
+  nehme ich keine Haftung.
+  *******************************************************************
+
+- Ein Versand oder Vertrieb Åber den Handel, in welcher Form auch immer,
+  bedarf meiner schriftlichen Genehmigung. Dies gilt ebenso fÅr den
+  Hypertext, fÅr den die Genehmigung von Andreas Schley vorliegen muss.
+
+- Bei Schwierigkeiten oder Problemen mit SysInfo selber oder anderen
+  Programmen und Accessories, bitte ich um genaue Informationen des
+  Fehlers, der Systemkonfiguration und der Versionsnummer von SysInfo.
+
+- Erstellt wurde das Programm mit dem Pure C Paket und die Resourcen mit
+  Interface. FÅr die GEM Funktionen wurde die SysGem2-Library von Andreas
+  Pietsch (DrÅcke ALT X und alles lÑuft...) benutzt. Der Hypertext im
+  ST-Guide Format wurde erstellt von Andreas Schley. Vielen Dank beiden
+  auch fÅr die Anregungen und Tests.
+
+Danksagungen...
+---------------------------------------------------------------------------
+- An diese Stelle kommen nun die Åblichen Danksagungen an diejenigen,
+  die mir mit Rat, Tat und Kritik zur Seite gestanden haben. Ohne sie
+  wÑre SysInfo nicht das was es heute ist. Vielen Dank (in alphabe-
+  tischer Reihenfolge) ...
+
+  Sean Barbieri,
+  Heinrich Doll,
+  Christian Eyrich,
+  Philipp Frank,
+  Thomas Gîttsch
+  Dirk Haun,
+  Oliver Kinne,
+  John McLoud,
+  Martin Mertens,
+  Frank Naumann,
+  Udo Overath,
+  Andreas Pietsch,
+  Reiner Rosin,
+  Andreas Schley,
+  Uwe Seimet,
+  Rainer Seitel,
+  Thomas Tempelmann,
+  Walter Vieser,
+  Peter West,
+  Karl-Heinz Wirner,
+
+  natÅrlich den Usern von SysInfo
+
+  und allen anderen die ich hier vergessen habe!
+
+Kontakt
+---------------------------------------------------------------------------
+- Thorsten Bergner
+  Harlinger Str. 3
+  14199 Berlin
+
+- Mail: thorsten.bergner@snafu.de
+- Homepage: http://home.snafu.de/thorsten.bergner/

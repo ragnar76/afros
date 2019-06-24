@@ -1,0 +1,13 @@
+Achtung!
+
+Beiliegende Scripte fr den Scripter funktionieren nur mit einer registrierten
+Version von SysInfo!
+
+Es liegen derzeit zwei Scripte bei:
+
+SYSINFO.SIC    zeigt eine kleine "Tour de SysInfo"
+SYS_AUSG.SIC   schreibt ausgew„hlte Systemdaten in das Clipboard
+
+Verbesserungsvorschl„ge bitte an:
+
+Andreas Schley @ HB2

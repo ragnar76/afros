@@ -1,0 +1,11 @@
+SysInfo History
+---------------
+
+V5.02 - 19.08.2002
+------------------
+
+Neu:
+
+- Erweiterung um MWHL und ScMs Cookiekommentar
+- Erweiterung in AES um Wort 3 in Maus (8)
+- UnterstÅtzung von MWheel

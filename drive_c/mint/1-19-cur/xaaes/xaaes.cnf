@@ -112,10 +112,10 @@ gradients = 1
 setenv ACCEXT		ACC,ACX
 setenv GEMEXT		PRG,PRX,APP,APX,GTP,GTX,OVL,SYS
 setenv TOSEXT		TOS,TOX,TTP,TTX
-setenv TOSRUN		C:\toswin\tw-call.app
+setenv TOSRUN		C:\mint\sysroot\opt\toswin2\tw-call.app
 setenv SDMASTER		C:\mint\shutdown\shutdown.app
-setenv BROWSER		C:\highwire\highwire.app
-setenv MOVIEPLAYER	C:\ANIPLAY\ANIPLAY.PRG
+setenv BROWSER		C:\tools\net\highwire\highwire.app
+setenv MOVIEPLAYER	C:\tools\gfx\ANIPLAY\ANIPLAY.PRG
 
 # Set to 'xbios' to force xbios video driver
 # Set to 'gem' to force gem video driver
@@ -657,7 +657,7 @@ widget_auto_highlight = yes
 helpserver = HYP,ST-GUIDE,c:\st-guide.acc
 #helpserver = HTM,CAB,e:\www\cab.app
 #helpserver = HYP,HYP_View,F:\gem\hypview\hyp_view.app
-helpserver = HTM,HighWire,C:\highwire\highwire.app
+helpserver = HTM,HighWire,C:\tools\net\highwire\highwire.app
 
 #####################################################################
 # cancel = string,string
@@ -687,8 +687,8 @@ filters = *.*, *.[atpg]*, *.[chs]*, *.l*, *.o*
 #
 #run <path>\<application>
 #run u:\c\system\strngsrv\strngsrv.prg
-run C:\toswin\toswin2.app
-run C:\taskbar\taskbar.prg
+run C:\mint\sysroot\opt\toswin2\toswin2.app
+run C:\tools\system\taskbar\taskbar.prg
 #run C:\MINT\XTRAPPER.PRG
 
 #####################################################################
@@ -722,4 +722,4 @@ setenv AVSERVER   "DESKTOP "
 setenv FONTSELECT "DESKTOP "
 setenv OLGAMANAGER c:\olga.app
 
-shell = c:\teradesk\desktop.prg
+shell = c:\mint\teradesk\desktop.prg

@@ -1,0 +1,44 @@
+// SysInfo Demo Script 2 (AusgewÑhlte Daten "An Ausgabe") (V0.02)
+// --------------------------------------------------------------
+// Urversion von Thorsten Bergner
+// Rahmentexte etc. von A. Schley
+//
+// Bisher ist dies nur eine Skizze der Mîglichkeiten.
+// Vieles lÑ·t sich in diesem Script noch professioneller und eleganter machen
+// DemnÑchst kommt sicher noch eine ausgefeiltere Version ;-)
+
+print("Willkommen zu SysInfo 4.80, das auch GEMScript unterstÅtzt.");
+print();
+wait(400);
+print("Hier ein Script, welches ausgewÑhlte Daten ins Clipboard schreibt");
+print();
+wait(400);
+print("Leider nur in der registrierten Version!");
+print();
+wait(400);
+print ("Viel Spa·!");
+print();
+wait(400);
+closewindow();
+
+sysinfo.close( "All" );       // Alle Fenster schlie·en
+
+sysinfo.open( "Aus" );        // Ausgeben
+wait(200);
+
+kPlay.key( 0,  83, '', 118); // Delete
+kPlay.key( 8,  30,   0,  24); // ALT-'A'
+kPlay.key( 8,  47,   0, 175); // ALT-'V'
+kPlay.key( 8,  46,   0,  25); // ALT-'C'
+kPlay.key( 8,  45,   0, 145); // ALT-'X'
+kPlay.key( 8,  23,   0,  45); // ALT-'I'
+kPlay.key( 8,  24,   0,  53); // ALT-'O'
+kPlay.key( 0,  28,  13,   0); // Return/Enter
+
+sysinfo.quit( "" );           // Sysinfo beenden
+
+print("und TschÅss...");
+wait(400);
+closewindow();
+
+exit( 0 );                    // Script beenden

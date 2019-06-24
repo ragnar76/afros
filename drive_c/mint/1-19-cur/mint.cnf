@@ -148,18 +148,18 @@ KERN_BIOSBUF=NO
 
 # Setting up the root filesystem for UNIX environment
 
-sln c:/bin      u:/bin
-#sln g:/boot     u:/boot
-sln c:/etc      u:/etc
-sln c:/home     u:/home
-#sln g:/lib      u:/lib
-#sln g:/mnt      u:/mnt
-#sln g:/opt      u:/opt
-#sln g:/root     u:/root
-#sln g:/sbin     u:/sbin
-sln c:/tmp      u:/tmp
-#sln g:/usr      u:/usr
-sln c:/var      u:/var
+sln c:/auto/	u:/boot
+sln c:/mint/sysroot/bin      u:/bin
+sln c:/mint/sysroot/etc      u:/etc
+sln c:/mint/sysroot/home     u:/home
+sln c:/mint/sysroot/lib      u:/lib
+sln c:/mint/sysroot/mnt      u:/mnt
+sln c:/mint/sysroot/opt      u:/opt
+sln c:/mint/sysroot/root     u:/root
+sln c:/mint/sysroot/sbin     u:/sbin
+sln c:/mint/sysroot/tmp      u:/tmp
+sln c:/mint/sysroot/usr      u:/usr
+sln c:/mint/sysroot/var      u:/var
 
 # set up networking
 cd u:
@@ -175,14 +175,10 @@ exec u:/bin/bash u:/bin/netsetup.sh
 #
 # start Gluestik
 #
-exec c:\mint\gluestik.prg
-
+exec c:\mint\sysroot\gluestik.prg
 exec c:\auto\clocky.prg
-
 exec c:\auto\zmagxsnd.prg
-
 exec c:\auto\nfjpeg.prg
-
 exec c:\auto\fvdi.prg
 
 #

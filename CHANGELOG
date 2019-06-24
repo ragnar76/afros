@@ -4,7 +4,11 @@ Major changes:
 - replaced emutos
 - replaced TeraDesk
 - replaced MiNT (Version 1.17) with a more current version from GIT (Version 1.19)
+- moved pre-installed binaries to a new folder called tools to clean up messy c:\
 
 Minor Changes
 - changed BootColorDepth
 - added some unix sys-root tools from freemint
+- changed mint.cnf and xaaes.cnf to match moved tools
+- recreated desktop links
+- added some more symbolic links to get a more proper lsb like filesystem
