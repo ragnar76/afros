@@ -1,0 +1,43 @@
+Aniplayer
+
+1. Generalit…
+
+   Prima di usare ANIPLAY copiate N_FRENCH.TXT nella stessa cartella 
+   di ANIPLAY.PRG
+
+   Al momento, VERSIONS.TXT e ANIPLAY.HYP (Aiuto in formato ST-Guide)
+   non sono tradotti.
+
+
+2. Contatti                                                 
+
+   Per informazioni sui formati di compressione non riconosciuti, 
+   suggerimenti od osservazioni sul programma, potete scrivere a 
+   questo indirizzo:
+
+            25, rue de l'Ascenseur 62510 ARQUES FRANCE
+
+   Oppure inviate un messaggio su:
+
+              internet email: aniplay@wanadoo.fr
+                       web: http://perso.wanadoo.fr/didierm/
+                            http://aniplay.atari.org
+
+   Se mi contattate per un problema (bug), dameti le segenti informazioni:
+
+   - La versione di ANIPLAYER.
+   - La macchina (e la scheda accelleratrice, se presente).
+   - Il modo grafico o scheda usata.
+   - Le opzioni selezionate.
+   - Il formato file.
+   - Il tipo di compressione (visibile per ^I o I).
+   - I particolari del problema.
+
+   Ascolto tutti i suggerimenti se volete che sia continuto lo sviluppo 
+   dei mio player...
+
+   Traduzione in Italiano: Lodovico Zanier
+
+   email:  mc9931@mclink.it
+   Homepage:  lgz.atari.org
+

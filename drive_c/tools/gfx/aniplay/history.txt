@@ -1024,11 +1024,11 @@ a list of new codecs supported:
 supported with the SLB Avcodec.
 - New version of the SLB Vorbis, basd on the current librairy (1.0), 
 and also the 'Tremor' integers version (32/64 bits), the 68060 version 
-use the FPU: IMiNT 1.15.3 or MagiC 6 or MetaDOS 2.74 (or more).
+use the FPU: MiNT 1.15.3 or MagiC 6 or MetaDOS 2.74 (or more).
 - Add shared library Vorbis Encoder from libvorbisenc-1.0 
 (www.vorbis.com) for encode OGG sound files. An FPU is required and 
 you must install the shared library VORBIS_ENC.SLB on your system: 
-MiNT 1.15.3 or MagiC 6 or  MetaDOS 2.74 (or more). 
+MiNT 1.15.3 or MagiC 6 or MetaDOS 2.74 (or more). 
 
 V2.22 June 2004:
 ----------------
@@ -1063,5 +1063,23 @@ for MPEG movies allows to get this display:
 - Add cookie test '_MCH' at $50000 for Aranym.
 - Aniplayer is now Freeware.
 
+V2.23 June 2013
+---------------
+- Better reading for MPEG1/2 files, sound decoding now use a thead 
+under MiNT and MagiC.
+- Eiffel 1.10 LCD support with the library LCD.SLB (need MiNT 1.15.3 
+or MagiC 6 or MetaDOS 2.74). This SLB cannot be used in the same time
+by several programs
+- Added multimedia PS/2 Eiffel key support with E_TEMP.PRG and the 
+"Eiff" cookie (PLAY/PAUSE, STOP, PREVIOUS TRACK, NEXT TRACK, VOLUME 
+DOWN et VOLUME UP).
+- Added variable HELPVIEWER.
+- Popup menus with the function menu_attach of AES 4.0.
+- Added Record button inside the Playlist for convert files.
+- More special HTML characters with the ID3. 
+- Effeil vu-meter LCD display using the the shared library LCD.SLB.
+- Radeon resize (fullscreen) using VIDIX (CT60/CTPCI).
+- Rewrited MP3 for Coldfire V4E using MAC instruction (Firebee).
 
-                  MEQUIGNON Didier, Juin 2004 
+
+                  MEQUIGNON Didier, Juin 2013 

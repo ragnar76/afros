@@ -1,0 +1,13 @@
+http://ffmpeg.sourceforge.net
+
+ Here's a shared library of libavcodec ffmpeg-cvs-2003-06-19. It has 
+been compiled with Gcc 3.3 with -m68060 and libm2060 and works only 
+under MiNT 1.15.3 or more and MagiC 6. TOS cannot load .SLB, but an
+SLB loader exist with MetaDOS:
+ftp://ftp.uni-muenster.de/pub/atari/Utilities/slbld028.lzh 
+http://www.muenster.de/~reschke/soft_e.html
+
+ Requirements:
+  - 68020 or higher
+  - FPU or 68060
+  - MiNT 1.15.3 or MagiC 6 or MetaDOS 2.74.

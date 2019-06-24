@@ -1,0 +1,362 @@
+' ------------------------------------------------------------------------------
+' -                        UFP-Info to STG Compiler                            -
+' -                                                                            -
+' -                      (c) 6-7/94 Gregor Duchalski                           -
+' -                                                                            -
+' - Converts the data files from the PC program UFP-INFO into an ST-Guide STG  -
+' - format hypertext. This source code is Freeware, the compiled version       -
+' - may ONLY be distributed complete and intact in its original form!          -
+' ------------------------------------------------------------------------------
+' ERGO-PP-Commands: CMP -> Compiled Version (always)
+'
+$m500000
+RESERVE 500000                                     ! Only in Interpreter -CMP
+CLIP OFF
+'
+cconws2(CHR$(27)+"E")
+cconws("-------------------------------------------")
+cconws("UFP2STG, UFP-Info Converter for ST-Guide")
+cconws("v0.90 (17.07.94), ½1994 by Greedy Gregalski")
+cconws("")
+' --------------------------------------------------
+homedir$=CHR$(ADD(GEMDOS(25),65))+":"+DIR$(0)+"\"  ! Home directory...
+homedir$="D:\ST-GUIDE\UFP2STG\"                    ! Only in Interpreter -CMP
+f_stg&=20                                          ! File handle for line in STG File
+f_inf&=21                                          ! File handle for the INF File
+' --------------------------------------------------
+inf_laden                                          ! Load INF-file
+' --------------------------------------------------
+lf$=CHR$(13)+CHR$(10)                              ! Line feed
+LET rem$="##"+STRING$(78,"-")                      ! Comment
+a_no$="@{0}"                                       ! Attribute OFF
+' --------------------------------------------------
+open_dest                                          ! Open target file
+make_main_screen                                   ! Make main screen
+'
+main
+'
+close_dest                                         ! Close target file
+' --------------------------------------------------
+> PROCEDURE inf_laden
+  LOCAL i&,file$
+  '
+  file$=homedir$+"UFP2STG.INF"
+  '
+  IF EXIST(file$)=FALSE                            ! INF not found...
+    cconws(CHR$(7)+"--> Error, UFP2STG.INF not found!")
+    ~INP(2)
+    EDIT                                           ! ...Close
+  ENDIF
+  ' ------------------------------------------------
+  OPEN "I",#f_inf&,file$
+  '
+  input(FALSE,p_source$)                           ! Path to UFP-files
+  input(TRUE,f_stg$)                               ! Target STG-file
+  input(TRUE,f_main$)                              ! Name of the main index file
+  input(TRUE,p_pic$)                               ! Path to images
+  '
+  FOR i&=1 TO 3
+    LINE INPUT #f_inf&,file$                       ! ...Dummies
+  NEXT i&
+  '
+  input(FALSE,a_fett$)                             ! Bold text
+  input(FALSE,a_hell$)                             ! Used for emphasis
+  input(FALSE,a_attr$)                             ! Used for emphasis
+  '
+  FOR i&=1 TO 5
+    LINE INPUT #f_inf&,file$                       ! ...Dummies
+  NEXT i&
+  ' ------------------------------------------------
+  '
+RETURN
+> PROCEDURE input(main_path!,VAR a$)
+  LOCAL a&
+  '
+  LINE INPUT #f_inf&,a$
+  ' ------------------------------------------------
+  a&=INSTR(a$,";")                                 ! Truncate comment
+  IF a&
+    a$=LEFT$(a$,PRED(a&))
+    a$=TRIM$(a$)
+  ENDIF
+  ' ------------------------------------------------
+  IF main_path!                                    ! In UFP-Path...
+    IF MID$(a$,2,2)<>":\"
+      a$=p_source$+a$                              ! ...Path modify
+    ENDIF
+    '
+  ENDIF
+  '
+RETURN
+' --------------------------------------------------
+> PROCEDURE make_main_screen
+  LOCAL a$,i&
+  '
+  ' ------------------------------------------------
+  OPEN "I",#1,f_main$
+  '
+  INPUT #1,main_anz&
+  '
+  DIM main$(main_anz&)
+  RECALL #1,main$(),1 TO main_anz&,a%              ! MAIN.DAT load
+  '
+  CLOSE #1
+  ' ------------------------------------------------
+  WHILE NOT EOF(#f_inf&)                           ! Screen as INF take over...
+    LINE INPUT #f_inf&,a$
+    w(a$)                                          ! ...take over target
+  WEND
+  CLOSE #f_inf&
+  ' ------------------------------------------------
+  FOR i&=1 TO main_anz&
+    w(main$(i&))
+  NEXT i&
+  '
+  w_endnode
+  ' ------------------------------------------------
+  '
+RETURN
+'
+> PROCEDURE main
+  LOCAL i&
+  '
+  FOR i&=1 TO main_anz&
+    '
+    cconws("")
+    cconws("-"+main$(i&))
+    make_kapitel(main$(i&))                        ! Create a chapter
+    '
+  NEXT i&
+  '
+RETURN
+'
+> PROCEDURE make_kapitel(kapitel$)
+  LOCAL anz&,a&,i&,f_dat&,f_idx&,f_dtx&,l%,a%,line$,f_dat$,f_idx$,f_dtx$
+  '
+  f_dat$=p_source$+UPPER$(LEFT$(kapitel$,8))
+  f_dat$=@replace$(f_dat$," ","_")
+  '
+  f_idx$=f_dat$+".IDX"
+  f_dtx$=f_dat$+".DTX"
+  f_dat$=f_dat$+".DAT"
+  ' ------------------------------------------------
+  f_dat&=1                                         ! Open all 3 files...
+  f_idx&=2
+  f_dtx&=3
+  OPEN "I",#f_dat&,f_dat$
+  OPEN "I",#f_idx&,f_idx$
+  OPEN "I",#f_dtx&,f_dtx$
+  ' ------------------------------------------------
+  SEEK #f_dat&,LOF(#f_dat&)-2                      ! Safety check for LF at end...
+  a&=INP&(#1)
+  IF a&<>3338                                      ! No LF at end...
+    CLOSE #f_dat&
+    '
+    OPEN "A",#f_dat&,f_dat$
+    OUT& #f_dat&,3338                              ! ...attach
+    CLOSE #f_dat&
+    '
+    OPEN "I",#f_dat&,f_dat$
+    '
+  ELSE
+    SEEK #f_dat&,0
+  ENDIF
+  ' ------------------------------------------------
+  INPUT #f_dat&,anz&                               ! Number entries in this chapter
+  '
+  DIM a$(anz&)
+  RECALL #f_dat&,a$(),1 TO anz&,a%
+  '
+  w_node(kapitel$)                                 ! First of all create a Chapter screen...
+  FOR i&=1 TO anz&
+    w_link(a$(i&))
+  NEXT i&
+  w_endnode
+  '
+  ERASE a$()
+  '
+  SEEK #f_dat&,0
+  INPUT #f_dat&,anz&                               ! and now again from start
+  ' ------------------------------------------------
+  cconws2(CHR$(27)+"j")                            ! Save the cursor position
+  '
+  FOR i&=1 TO anz&
+    pos%=LOC(#f_dtx&)
+    LINE INPUT #f_dat&,line$                       ! Screen title
+    l%=@inp4(2)
+    len%=l%-pos%                                   ! Length of the screen in bytes
+    '
+    write_screen(line$,len%)
+    '
+  NEXT i&
+  ' ------------------------------------------------
+  CLOSE #f_dtx&
+  CLOSE #f_idx&
+  CLOSE #f_dat&
+  '
+RETURN
+> PROCEDURE write_screen(line$,len%)
+  LOCAL a&
+  '
+  cconws2(CHR$(27)+"k"+CHR$(27)+"l"+line$)
+  '
+  adr$=SPACE$(len%)
+  BGET #f_dtx&,V:adr$,len%                           ! Load screen
+  '
+  IF line$<>""
+    '
+    w(rem$)
+    w_node(line$)                                    ! Screen title
+    w(a_fett$+line$+a_no$)                           ! Again, only prettier
+    ' ------------------------------------------------
+    DO                                               ! Emphasise...
+      '
+      a&=INSTR(adr$,"$86")
+      EXIT IF a&=0
+      '
+      adr$=LEFT$(adr$,PRED(a&))+a_attr$+MID$(adr$,a&+3)   ! ...Bold&Italics
+      a&=INSTR(adr$,lf$,a&)
+      adr$=LEFT$(adr$,PRED(a&))+a_no$+MID$(adr$,a&)  ! ...Turn OFF again
+      '
+    LOOP
+    ' ------------------------------------------------
+    DO                                               ! Colour information...
+      '
+      a&=INSTR(adr$,"$6")
+      EXIT IF a&=0
+      '
+      adr$=LEFT$(adr$,PRED(a&))+a_hell$+MID$(adr$,a&+2)   ! ...Light
+      a&=INSTR(adr$,lf$,a&)
+      '
+    LOOP
+    ' ------------------------------------------------
+    DO                                               ! Cross reference...
+      '
+      a&=INSTR(adr$,CHR$(30))
+      EXIT IF a&=0
+      '
+      adr$=LEFT$(adr$,PRED(a&))+MID$(adr$,a&+2)      ! ...skip over first 2 characters
+      '
+    LOOP
+    ' ------------------------------------------------
+    DO                                               ! ?...
+      '
+      a&=INSTR(adr$,CHR$(31))
+      EXIT IF a&=0
+      '
+      b&=INSTR(adr$,lf$,a&)
+      adr$=LEFT$(adr$,PRED(a&))+MID$(adr$,b&+2)      ! ...ignore these lines
+      '
+    LOOP
+    ' ------------------------------------------------
+    BPUT #f_stg&,V:adr$,LEN(adr$)                    ! Write screen
+    ' ------------------------------------------------
+    line$=@replace$(LEFT$(line$,8)," ","_")
+    '
+    IF INSTR(line$,",")
+      line$=@replace$(line$,",","_")
+    ENDIF
+    '
+    IF INSTR(line$,".")
+      line$=@replace$(line$,".","_")
+    ENDIF
+    '
+    line$=p_pic$+line$+".IMG"
+    IF EXIST(line$)=TRUE
+      w("@image "+line$+" 1 10 10")                  ! ...Bind image
+    ENDIF
+    ' ------------------------------------------------
+    w_endnode
+    '
+  ENDIF
+  '
+RETURN
+' --------------------------------------------------
+> PROCEDURE open_dest
+  LOCAL lof%,a$
+  '
+  OPEN "O",#f_stg&,f_stg$
+  ' ------------------------------------------------
+  IF EXIST(f_source$)=TRUE                         ! Text vorschalten...
+    '
+    OPEN "I",#1,f_source$
+    lof%=MIN(32700,LOF(#1))
+    a$=INPUT$(lof%,#1)
+    CLOSE #1
+    '
+    PRINT #f_stg&;a$;
+    '
+  ENDIF
+  '
+RETURN
+> PROCEDURE close_dest
+  '
+  CLOSE #f_stg&
+  '
+RETURN
+'
+> PROCEDURE w_node(a$)
+  '
+  PRINT #f_stg&;"@node """+a$+""""
+  '
+RETURN
+> PROCEDURE w_endnode
+  '
+  PRINT #f_stg&;"@endnode"
+  '
+RETURN
+> PROCEDURE w_link(a$)
+  '
+  IF a$<>""
+    PRINT #f_stg&;"@{"""+a$+""" Link """+a$+"""}"
+  ENDIF
+  '
+RETURN
+> PROCEDURE w(a$)
+  '
+  PRINT #f_stg&;a$
+  '
+RETURN
+' ----------------------------------------------------
+> FUNCTION replace$(a$,old$,new$)
+LOCAL a&,l&,len&
+'
+' Replace in 'a$' all occurences of 'old$' with 'new$'
+' ----------------------------------------------------
+l&=LEN(old$)
+len&=LEN(new$)
+'
+a&=INSTR(a$,old$)
+WHILE a&
+  a$=LEFT$(a$,PRED(a&))+new$+MID$(a$,ADD(a&,l&))
+  a&=INSTR(a$,old$,ADD(a&,len&))
+WEND
+'
+RETURN a$
+ENDFUNC
+> FUNCTION inp4(k&)
+$F%
+LOCAL a%
+'
+a%=INP%(#k&)
+'
+a&=ROL&(a%,8)
+b&=ROL&(SWAP(a%),8)
+'
+a%=OR(CARD(b&),SHL(a&,16))
+'
+RETURN a%
+ENDFUNC
+'
+> PROCEDURE cconws(a$)
+'
+a$=a$+CHR$(13)+CHR$(10)+CHR$(0)
+~GEMDOS(9,L:V:a$)
+'
+RETURN
+> PROCEDURE cconws2(a$)
+'
+a$=a$+CHR$(0)
+~GEMDOS(9,L:V:a$)
+'
+RETURN

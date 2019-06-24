@@ -1,0 +1,21 @@
+Die énderungen von MAN2STG bzw. MAN2HYP:
+
+MAN2STG V(24.03.1994) von Holger Weets:
+    Sozusagen meine Arbeitsgrundlage
+
+MAN2HYP von Markus Kohm:
+    Wandelt die Attribute unterstrichen und fett aus Mupfel-Manual-Pages in
+    HYP-Attribute.
+
+MAN2STG V(Jun 13 1994) von Markus Kohm und Holger Weets:
+    - MAN2STG mit MAN2HYP verschmolzen
+    - zusÑtzlich die Mîglichkeit das Attribut "unterstrichen" durch das
+      Attribut "kursiv" zu ersetzen
+
+MAN2STG V(Aug 23 1994) von Markus Kohm und Holger Weets:
+    - Folgte zwei Attribute nur durch ein (Leer-)Zeichen getrennt aufeinander,
+      so wurde das Folgeattribut falsch ausgewertet. Dies funktioniert nun
+      (hoffentlich) richtig.
+    - Standen in MANPATH mehr als ein Verzeichnis, gab es Chaos. Nun wird fÅr
+      jedes Manual-Verzeichnis aus MANPATH ein getrenntes MAN.STG angelegt.
+    - Filehandling komplett geÑndert. Dadurch schneller!

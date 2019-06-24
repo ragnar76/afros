@@ -1,0 +1,214 @@
+    SENF - Der Mini-Environment-Setzer - Version vom 07.05.1995
+    -----------------------------------------------------------
+
+
+    Was'n das?
+    ----------
+
+    Wie oft liest man in Anleitungen SÑtze wie "... und wenn die 
+    Environment-Variable BLABLA existiert..." oder "... wird zunÑchst in 
+    $PATH gesucht..." und fragt sich dann "Was sind denn Environment-
+    Variablen und wie erzeuge ich die?". Diesen Miûstand soll SENF 
+    beseitigen. (Der Name ist Åbrigens von "Set Environment" abgeleitet, 
+    und SETENV oder SENV war mir halt zu eintînig ;) Auûerdem gibt SENF 
+    ja sozusagen seinen Senf zum Environment dazu...)
+
+    SENF gehîrt in den AUTO-Ordner und benîtigt das File SENF.INF im 
+    Wurzelverzeichnis des Bootlaufwerks, aber dazu spÑter mehr.
+
+    Man beachte Åbrigens, daû dieser Text fast 14 mal lÑnger als das 
+    Programm selbst ist :-)
+
+
+    Environment-Variablen?
+    ----------------------
+
+    ZunÑchst einmal eine kurze ErlÑuterung, was Environment-Variablen 
+    eigentlich sind (diejenigen, die das nicht interessiert, weil sie es 
+    schon wissen, kînnen gleich beim nÑchsten Abschnitt weiterlesen).
+
+    "Environment" kommt aus dem Englischen und bedeutet soviel wie "Umwelt" 
+    oder "Umgebung". Was eine Variable ist, sollte eigentlich jedem klar 
+    sein, somit wissen wir also, daû es sich um "Umgebungs-Variablen" 
+    handelt. Damit ist sicherlich noch nichts erreicht, also weiter...
+
+    Die Environment-Variablen enthalten globale Informationen fÅr die 
+    laufenden Programme. Diese Informationen kînnen sehr unterschiedlicher 
+    Natur sein, sie mÅssen nur als ASCII-Text darstellbar sein. Jede dieser 
+    Variablen erhÑlt einen Namen, der Åblicherweise komplett in 
+    Groûbuchstaben gehalten ist. Das komplette "Environment" bezeichnet die 
+    Gesamtheit der existierenden Variablen und wird bei einem Programmstart 
+    weitergegeben, wobei es vorher ggf. verÑndert werden kann. Diese 
+    énderungen betreffen dann aber nur das gestartete Programm und dessen 
+    "Kinder", die anderen Prozesse bekommen davon nichts mit!
+
+    Der Sinn der Environment-Variablen ist es also, Informationen zur 
+    VerfÅgung zu stellen, die fÅr alle Programme von Nutzen sein kînnen. 
+    Welche Informationen mîgen das sein? Einige Beispiele:
+
+    Unter GEM gibt es ja das sogenannte Clipboard, mit dem Programme 
+    untereinander Daten austauschen kînnen. Die Regelung, welches 
+    Verzeichnis als Clipboard-Verzeichnis benutzt werden soll, ist relativ 
+    starr. Daher unterstÅtzen die meisten Programme die Environment-
+    Variable CLIPBRD oder auch SCRAPDIR. In ihr wird dann der zu benutzende 
+    Clipboard-Pfad angegeben. Da es zwei verschiedene Variablen mit der 
+    gleichen Bedeutung sind, sollte man auch beide mit dem gleichen Inhalt 
+    anlegen. Somit kînnen die Programme anhand des Environments 
+    feststellen, welchen Pfad sie zum Datenaustausch verwenden sollen.
+
+    Ebenfalls sehr nÅtzlich ist die Variable PATH. Sie enthÑlt einen oder 
+    mehrere Pfade (durch ; getrennt), in denen ausfÅhrbare Programme 
+    enthalten sind. Die AES benutzen PATH auch, wenn sie (via shel_find) 
+    Resource-Dateien suchen. Somit kann man alle Resource-Dateien in einem 
+    Verzeichnis sammeln und gibt dieses in der Variablen PATH an. Ein 
+    Kommandozeilen-Interpreter benutzt PATH, um auszufÅhrende 
+    Programme/Kommandos zu suchen. In Anlehnung an UN*X wird dafÅr in 
+    der Regel ein BIN-Verzeichnis benutzt, das dann also auch in PATH 
+    angegeben wird.
+
+    Environment-Variablen sind sehr einfach aufgebaut: Zuerst der 
+    Variablenname, dann ein Gleichheitszeichen und danach der Inhalt. Im 
+    Falle von PATH kînnte das so aussehen:
+
+    PATH=C:\RESOURCE;C:\BIN
+
+    Das vorliegende Programm SENF macht nun nichts weiter, als das 
+    Environment der System-Shell (normalerweise der Desktop) festzulegen, 
+    da ATARI im Betriebssystem nur eine Minimallîsung erstellt, die ohne 
+    zusÑtzliche Programme wie eben SENF nicht Ñnderbar ist. Da, wie bereits 
+    erwÑhnt, das Environment bei Programmstarts "vererbt" wird, steht der 
+    per SENF installierte Variablen-Satz allen vom Desktop aus gestarteten 
+    Programmen zur VerfÅgung. Wichtig: Vor TOS 1.4 berÅcksichtigen die AES 
+    nur die ersten 50 Bytes des Environments (es wird allerdings trotzdem 
+    das gesamte weitergegeben), deswegen sollte PATH (diese Variable wird 
+    ja von den AES benutzt) bei diesen TOS-Versionen immer als erstes 
+    definiert werden und nicht lÑnger als 50 Bytes sein (inklusive PATH=).
+
+    Noch ein Hinweis: Da UN*X-Shells Eingaben wie $PATH automatisch durch 
+    den Inhalt der Environment-Variablen PATH ersetzen (wenn sie 
+    existiert), wird hÑufig nur von $XYZ geredet. Damit ist dann eine 
+    Environment-Variable namens XYZ gemeint.
+
+
+    Wie wird SENF bedient/konfiguriert?
+    -----------------------------------
+
+    Da SENF das Enviroment fÅr die System-Shell festlegt, muû es bereits im 
+    AUTO-Ordner gestartet werden; die Position innerhalb des Ordners ist 
+    dabei egal (manche Programme dieser Art mÅssen an der physikalisch 
+    letzten Position stehen). Das zu installierende Environment entnimmt 
+    SENF der Datei SENF.INF, die im Hauptverzeichnis des Bootlaufwerks oder 
+    ebenfalls im AUTO-Ordner plaziert sein muû. Kann diese Datei nicht 
+    gefunden werden, meckert SENF.
+
+    Die Datei selbst enthÑlt Environment-Variablen-Definitionen in der 
+    Åblichen Schreibweise, also z.B.:
+
+    PATH=C:\RESOURCE;C:\BIN
+    CLIPBRD=C:\CLIPBRD
+    SCRAPDIR=C:\CLIPBRD
+    usw.
+
+    Eine mit % beginnende Zeile wird dabei als Kommentar Åberlesen. Ein % 
+    innerhalb einer Definition wird durch das Bootlaufwerk ersetzt, aus
+
+    CLIPBRD=%:\CLIPBRD
+
+    wird demnach
+
+    CLIPBRD=C:\CLIPBRD
+
+    wenn man von Laufwerk C gebootet hat.
+
+    SENF gibt aus, was als Environment gesetzt wird, also praktisch der 
+    Inhalt von SENF.INF ohne Kommentare, bei dem alle Prozentzeichen 
+    innerhalb von Definitionen durch das Bootlaufwerk ersetzt sind.
+
+    Mîchte man diese Ausgabe unterbinden, weil man z.B. sein PGP-Paûwort 
+    (unvernÅnftigerweise) in $PGPPASS ablegt und nicht will, daû es beim 
+    Booten angezeigt wird, kann in SENF.INF die Zeile %- anlegen. Damit 
+    unterbleibt die Ausgabe der nachfolgenden Variablen, bis die Datei 
+    fertig bearbeitet wurde oder man mit %+ wieder Ausgaben erlaubt hat.
+
+    Die Datei SENF.INF darf Zeilenenden in TOS-Manier (CR+LF) oder UN*X-
+    like (nur LF) haben. Alles andere fÅhrt zwangslÑufig zu Problemen. 
+    Auûerdem keine Leerzeilen einbauen! Wenn, dann eine Zeile, die nur ein 
+    Prozentzeichen am Anfang hat, OK?
+
+    Die mitgelieferte Datei SENF.INF soll als Beispiel dienen, das nach 
+    eigenen WÅnschen verÑndert und erweitert werden kann.
+
+
+    Technisches
+    -----------
+
+    SENF verbiegt den Vektor exec_os (0x4fe) mit der XBRA-Kennung "SENF" 
+    (wer hÑtte das gedacht...) SENF ist selbstmurmelnd ein TSR-Programm, da 
+    das gesetzte Environment ja nicht Åberschrieben werden darf.
+
+    Bei einem PATH-Eintrag wird der Fehler des Betriebssystems nicht 
+    hinzugefÅgt (Nullbyte nach Gleichheitszeichen), da ich es fÅr 
+    sinnvoller halte, alle Environment-Variablen korrekt anzulegen. 
+    Auûerdem sollten Programme auch nur mit diesem Fehler zurechtkommen, 
+    ihn aber nicht voraussetzen.
+
+
+    Rechtliches
+    -----------
+
+    SENF ist frei kopier- und benutzbar, allerdings mÅssen die Dateien 
+    SENF.PRG, SENF.TXT und SENF.INF komplett und unverÑndert (das gilt 
+    insbesondere fÅr die Beispieldatei SENF.INF!) kopiert werden, wobei 
+    Archivierung erlaubt ist.
+
+    SENF darf ebenfalls zu eigenen Programmen beigelegt werden (egal ob 
+    Free-, Share- oder Lîhnware), solange es in einem eigenen Ordner liegt 
+    und die obigen Weitergabebedingungen eingehalten werden. Auûerdem muû 
+    aus der Dokumentation des Programms eindeutig hervorgehen, daû es sich 
+    bei SENF um ein eigenstÑndiges Produkt handelt, das nur als Zugabe zu 
+    verstehen ist, frei weitergegeben werden darf und von mir, Thomas 
+    Binder, programmiert wurde. Ich fÑnde es Åbrigens ganz nett, wenn ich 
+    Åber solche Beilagen informiert wÅrde, meine Adresse folgt unten.
+
+    Die Benutzung von SENF erfolgt auf eigene Gefahr. Ich Åbernehme keine 
+    Verantwortung fÅr SchÑden, die durch die sach- oder unsachgemÑûe 
+    Anwendung von SENF entstanden sind. Genauso kann ich nicht fÅr 
+    Tauglichkeit von SENF fÅr einen anderen als dem hier beschriebenen 
+    Zweck garantieren.
+
+
+    Kontakt mit dem Autor
+    ---------------------
+
+    Wer Fehler findet, VerbesserungsvorschlÑge machen oder einfach nur mal 
+    "ein SchwÑtzchen halten" will, kann sich an folgende Adresse(n) wenden:
+
+    Thomas Binder
+    Johann-Valentin-May-Straûe 7
+    64665 Alsbach-HÑhnlein
+    Deutschland
+
+    InterNet: binder@rbg.informatik.th-darmstadt.de
+    IRC: Gryf
+
+    Wer unbedingt den Quellcode haben will, soll's sagen. Allerdings warne 
+    ich gleich vor, denn er ist so schlecht kommentiert, daû man auch 
+    gleich das Disassembler-Listing nehmen kann...
+
+
+    History
+    -------
+
+    énderungen gegenÅber V1.5:
+    - 1.5 war die erste îffentliche Version, die Versionsnummer war 
+      allerdings vîllig aus der Luft gegriffen, deswegen habe ich jetzt 
+      stattdessen das Datum angegeben.
+    - SENF.INF darf jetzt auch im AUTO-Ordner liegen.
+    - Es ist mîglich, mit %- und %+ am Zeilenbeginn die Ausgabe der 
+      Variablen zwischenzeitig aus- und wieder einzuschalten (zufrieden, 
+      Gîtz?) DefaultmÑûig ist die Ausgabe an, mîchte man also Åberhaupt 
+      keine Ausgaben, muû die erste Zeile in SENF.INF %- lauten.
+
+
+    So, das war's, viel Erfolg mit SENF!
+

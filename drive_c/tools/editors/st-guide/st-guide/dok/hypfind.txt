@@ -1,0 +1,35 @@
+
+Syntax: hypfind [-q -c] -p <pattern> [hypertext...]
+q: keine Ausgaben machen
+c: nicht compilieren
+p: hier folgt DURCH EIN LEERZEICHEN GETRENNT der Suchbegriff; enthÑlt
+   er Leerzeichen, so ist er durch Hochkommata einzuschlieûen, also
+   -p 'zwei Worte'
+
+Wird kein Hypertext angegeben, so werden alle aus PATHS durchsucht,
+ansonsten nur die angegebenen; die Hypertexte mÅssen mit Pfad angegeben
+werden
+
+Erzeugt wird eine Datei Namens HYPFIND.STG im GUIDES Ordner, wurde das
+Pattern gefunden (und die Compilierung nicht abgestellt), so wird
+anschlieûend gleich der hcp aufgerufen, um einen Hypertext Namens
+HYPFIND.HYP zu erzeugen. Diese Datei wird direkt beim Aufruf von hypfind
+gelîscht(!)
+
+Erzeugt werden dabei Paare
+@{Datei, Node '<name>' link datei/node Zeile}
+: <Trefferzeile>
+
+Paare.
+
+Pnodes sowie Seiten mit dem Namen 'Index' werden nicht durchsucht.
+
+FEHLT:
+- evtl. sensitiv/insensitiv suchen
+- evtl. nur einen Treffer pro node ausgeben
+- evtl. auch Seitennamen mit Pattern vergleichen
+
+Viel Spaû beim Testen :-)
+
+
+

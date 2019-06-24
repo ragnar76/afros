@@ -1,0 +1,20 @@
+The Independent JPEG Group's JPEG software
+libjpeg release 6b
+http://www.ijg.org/
+
+ Here's a shared library of libjpeg. It has been compiled with Gcc 
+2.95.2 with -m68030 and works only under MiNT 1.15.3 or more and
+MagiC 6. TOS cannot load .SLB, but an SLB loader exist with MetaDOS:
+ftp://ftp.uni-muenster.de/pub/atari/Utilities/slbld028.lzh 
+http://www.muenster.de/~reschke/soft_e.html
+
+ Requirements:
+  - 68020 or higher
+  - MiNT 1.15.3 or MagiC 6 or MetaDOS 2.74
+  
+ example.c from the sources is good for example for use the shared library.
+ The structure FILE is replaced by the DOS handle, so ferror() cannot 
+works inside jdatadst.c, 3 lines are disabled:
+//  fflush(dest->outfile);
+//  if ( ferror(dest->outfile))
+//    ERREXIT(cinfo, JERR_FILE_WRITE);

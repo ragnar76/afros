@@ -1,0 +1,35 @@
+% Beispiel fÅr eine SENF.INF-Datei
+%
+% Bitte beachten: Keine Leerzeilen, nur leere Kommentarzeilen!
+%
+% Erstmal einen Standardsuchpfad festlegen, der das aktuelle
+% Verzeichnis sowie die Ordner RESOURCE, BIN und MULTITOS auf dem
+% Bootlaufwerk enthÑlt (das aktuelle Verzeichnis ist Åbrigens die leere
+% Angabe direkt nach dem Gleichheitszeichen, das ist dokumentiert):
+PATH=;%:\RESOURCE;%:\BIN;%:\MULTITOS
+%
+% Jetzt das Clipboard-Verzeichnis festlegen:
+CLIPBRD=%:\CLIPBRD
+SCRAPDIR=%:\CLIPBRD
+%
+% Pfad fÅr PGP:
+PGPPATH=%:\SECURITY\PGP262
+%
+% Paûwort fÅr PGP (auch wenn ich das selbst nie im Environment ablegen
+% wÅrde). Vorher wird die Ausgabe mit %- abgeschaltet und danach mit %+
+% wieder aktiviert, damit niemand, der beim Booten zuschaut, das Paûwort
+% sehen kann:
+%-
+PGPPASS=Hasta la vista, Baby!
+%+
+%
+% Verzeichnis fÅr temporÑre Dateien in allen mîglichen Schreibweisen:
+TEMP=%:\TMP
+TMP=%:\TMP
+TEMPDIR=%:\TMP
+TMPDIR=%:\TMP
+%
+% NatÅrlich gibt es noch wesentlich mehr Variablen, die man hier setzen
+% kann, z.B. Such- und Librarypfade fÅr den gcc, UNIXMODE, Librarypfade
+% fÅr ghostscript, Verzeichnis fÅr die Systemdateien von qed, etc.
+

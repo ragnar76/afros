@@ -807,3 +807,593 @@ autorun[1]: cmd=(107BDB8) 'C:\tools\system\taskbar\taskbar.prg'
 autorun[0]: cmd=(107BD58) 'C:\mint\sysroot\opt\toswin2\toswin2.app'
    args[0]:    =(107BD88) ''
 Launch shell 'c:\mint\teradesk\desktop.prg' with args 'No args'
+
+~~~~~~~~~~~~ XaAES start up ~~~~~~~~~~~~~~~~
+XaAES v1.6.4 Beta (m68040, Jun 24 2019 11:23) (MultiTasking AES for MiNT)
+Part of freemint (http://sparemint.org).
+stack is long-aligned:4F10610
+PRG: km=4E82000, base=4E82160, text=4E82260 -> 4EF9778(488728), kentry:0.21,dos_version=40
+home_path: 'u:\c\mint\1-19-cur\xaaes\'
+Loading config u:\c\mint\1-19-cur\xaaes\xaaes.cnf
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose_w.adi'
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose.adi'
+both moose_w.adi and moose.adi found (better choose one)
+lang='en' (from AKP) code=0.
+load adi modules
+Loading AES Device Drivers:
+load_adi: enter (0x4F35254, 0x4F35154, moose.adi)
+load_adi: return 0
+load_adi: enter (0x4E81254, 0x4E81154, moose_w.adi)
+load_adi: return 0
+adi_load: done
+Creating XaAES kernel thread
+apid=-1,P_handle=0
+k_init: videomode=0
+nvdi version = 501
+fvdi version = 968
+k_init:vdo=30000 vm=0 video=0
+Default screenmode
+Screenmode is: 1
+k_init: v_opnwk() mode=1
+k_init: v_opnwk() handle=1
+Physical work station opened: 1
+Virtual work station opened: 2
+lookup-support:0, planes:32
+32 bit pixel FFFF00 is moto format
+Video info: width(1024/768), planes :32, colours 256 pixel-format 0
+stdfont: id = 1, size = 10, cw=8, ch=16, dev=0
+smlfont: id = 1, size = 8, cw=6, ch=6, dev=0
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[1024,768], colours=256, bitplanes=32
+Loading system resource file 'xaaes016.rsc'
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaes016.rsc' exists - return = 0
+system resource = 4E64004 (u:\c\mint\1-19-cur\xaaes\xaaes016.rsc)
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaeswdg.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slider.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slide.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslider.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslide.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\info.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\infou.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitleu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\ulwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\uxterior.img' exists - return = -33
+do_bkg_img:u:\c\mint\1-19-cur\xaaes\1024768.32/xa_form.mfd not found
+AESSYS:read_inf:u:\c\mint\1-19-cur\xaaes\xaaes.inf
+alert:6, KBD:7,pferr=0
+Wheel support present
+Using moose adi
+Loading AES modules...
+loading accs ---------------------------
+loading accessories from 'c:\'
+load_accs: launch (c:\bubble.acc)
+load_accs: launch (c:\acalc.acc)
+load_accs: launch (c:\jclktool.acc)
+load_accs: launch (c:\st-guide.acc)
+loading shell and autorun ---------------
+autorun[1]: cmd=(107BDB8) 'C:\tools\system\taskbar\taskbar.prg'
+   args[1]:    =(107BDE8) ''
+autorun[0]: cmd=(107BD58) 'C:\mint\sysroot\opt\toswin2\toswin2.app'
+   args[0]:    =(107BD88) ''
+Launch shell 'c:\mint\teradesk\desktop.prg' with args 'No args'
+cpuinfo:CPU:68040 MMU:none FPU:68040 Clocking:44.5MHz BogoMIPS:29.69 Calibration:14848000 loops
+MEMPROT:OFF, Stack: 444
+version:FreeMiNT version 1.19 (gcc version 4.6.4 (MiNT 20170417) (GCC)) #1 Mon Jun 24 11:24:17 UTC 2019
+buildinfo:CFLAGS:-m68040 -fgnu89-inline -Werror -mshort -g -O2 -fomit-frame-pointer CDEFS:-D__KERNEL__ -DLANG_ENGLISH -DVERBOSE_BOOT -DWITH_MMU_SUPPORT -DWITH_SINGLE_TASK_SUPPORT -DCRYPTO_CODE -DSOFT_UNITABLE -DBUILTIN_SHELL -DARANYM -DM68040 -DWITH_HOSTFS -DBOOTSTÿ
+
+~~~~~~~~~~~~ XaAES start up ~~~~~~~~~~~~~~~~
+XaAES v1.6.4 Beta (m68040, Jun 24 2019 11:23) (MultiTasking AES for MiNT)
+Part of freemint (http://sparemint.org).
+stack is long-aligned:4F10610
+PRG: km=4E82000, base=4E82160, text=4E82260 -> 4EF9778(488728), kentry:0.21,dos_version=40
+home_path: 'u:\c\mint\1-19-cur\xaaes\'
+Loading config u:\c\mint\1-19-cur\xaaes\xaaes.cnf
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose_w.adi'
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose.adi'
+both moose_w.adi and moose.adi found (better choose one)
+lang='en' (from AKP) code=0.
+load adi modules
+Loading AES Device Drivers:
+load_adi: enter (0x4F35254, 0x4F35154, moose.adi)
+load_adi: return 0
+load_adi: enter (0x4E81254, 0x4E81154, moose_w.adi)
+load_adi: return 0
+adi_load: done
+Creating XaAES kernel thread
+apid=-1,P_handle=0
+k_init: videomode=0
+nvdi version = 501
+fvdi version = 968
+k_init:vdo=30000 vm=0 video=0
+Default screenmode
+Screenmode is: 1
+k_init: v_opnwk() mode=1
+k_init: v_opnwk() handle=1
+Physical work station opened: 1
+Virtual work station opened: 2
+lookup-support:0, planes:32
+32 bit pixel FFFF00 is moto format
+Video info: width(1024/768), planes :32, colours 256 pixel-format 0
+stdfont: id = 1, size = 10, cw=8, ch=16, dev=0
+smlfont: id = 1, size = 8, cw=6, ch=6, dev=0
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[1024,768], colours=256, bitplanes=32
+Loading system resource file 'xaaes016.rsc'
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaes016.rsc' exists - return = 0
+system resource = 4E64004 (u:\c\mint\1-19-cur\xaaes\xaaes016.rsc)
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaeswdg.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slider.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slide.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslider.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslide.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\info.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\infou.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitleu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\ulwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\uxterior.img' exists - return = -33
+do_bkg_img:u:\c\mint\1-19-cur\xaaes\1024768.32/xa_form.mfd not found
+AESSYS:read_inf:u:\c\mint\1-19-cur\xaaes\xaaes.inf
+alert:6, KBD:7,pferr=0
+Wheel support present
+Using moose adi
+Loading AES modules...
+loading accs ---------------------------
+loading accessories from 'c:\'
+load_accs: launch (c:\bubble.acc)
+load_accs: launch (c:\acalc.acc)
+load_accs: launch (c:\jclktool.acc)
+load_accs: launch (c:\st-guide.acc)
+loading shell and autorun ---------------
+autorun[1]: cmd=(107BDB8) 'C:\tools\system\taskbar\taskbar.prg'
+   args[1]:    =(107BDE8) ''
+autorun[0]: cmd=(107BD58) 'C:\mint\sysroot\opt\toswin2\toswin2.app'
+   args[0]:    =(107BD88) ''
+Launch shell 'c:\mint\teradesk\desktop.prg' with args 'No args'
+XaSYS(5:AES:3): sigterm received
+(ignored)
+AESSYS(3:AES:3): sigterm received
+(ignored)
+
+~~~~~~~~~~~~ XaAES start up ~~~~~~~~~~~~~~~~
+XaAES v1.6.4 Beta (m68040, Jun 24 2019 11:23) (MultiTasking AES for MiNT)
+Part of freemint (http://sparemint.org).
+stack is long-aligned:4F10610
+PRG: km=4E82000, base=4E82160, text=4E82260 -> 4EF9778(488728), kentry:0.21,dos_version=40
+home_path: 'u:\c\mint\1-19-cur\xaaes\'
+Loading config u:\c\mint\1-19-cur\xaaes\xaaes.cnf
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose_w.adi'
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose.adi'
+both moose_w.adi and moose.adi found (better choose one)
+lang='en' (from AKP) code=0.
+load adi modules
+Loading AES Device Drivers:
+load_adi: enter (0x4F35254, 0x4F35154, moose.adi)
+load_adi: return 0
+load_adi: enter (0x4E81254, 0x4E81154, moose_w.adi)
+load_adi: return 0
+adi_load: done
+Creating XaAES kernel thread
+apid=-1,P_handle=0
+k_init: videomode=0
+nvdi version = 501
+fvdi version = 968
+k_init:vdo=30000 vm=0 video=0
+Default screenmode
+Screenmode is: 1
+k_init: v_opnwk() mode=1
+k_init: v_opnwk() handle=1
+Physical work station opened: 1
+Virtual work station opened: 2
+lookup-support:0, planes:32
+32 bit pixel FFFF00 is moto format
+Video info: width(1024/768), planes :32, colours 256 pixel-format 0
+stdfont: id = 1, size = 10, cw=8, ch=16, dev=0
+smlfont: id = 1, size = 8, cw=6, ch=6, dev=0
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[1024,768], colours=256, bitplanes=32
+Loading system resource file 'xaaes016.rsc'
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaes016.rsc' exists - return = 0
+system resource = 4E64004 (u:\c\mint\1-19-cur\xaaes\xaaes016.rsc)
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaeswdg.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slider.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slide.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslider.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslide.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\info.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\infou.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitleu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\ulwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\uxterior.img' exists - return = -33
+do_bkg_img:u:\c\mint\1-19-cur\xaaes\1024768.32/xa_form.mfd not found
+AESSYS:read_inf:u:\c\mint\1-19-cur\xaaes\xaaes.inf
+alert:6, KBD:7,pferr=0
+Wheel support present
+Using moose adi
+Loading AES modules...
+loading accs ---------------------------
+loading accessories from 'c:\'
+load_accs: launch (c:\bubble.acc)
+load_accs: launch (c:\acalc.acc)
+load_accs: launch (c:\jclktool.acc)
+load_accs: launch (c:\st-guide.acc)
+loading shell and autorun ---------------
+autorun[1]: cmd=(107BDB8) 'C:\tools\system\taskbar\taskbar.prg'
+   args[1]:    =(107BDE8) ''
+autorun[0]: cmd=(107BD58) 'C:\mint\sysroot\opt\toswin2\toswin2.app'
+   args[0]:    =(107BD88) ''
+Launch shell 'c:\mint\teradesk\desktop.prg' with args 'No args'
+cpuinfo:CPU:68040 MMU:none FPU:68040 Clocking:39.3MHz BogoMIPS:26.21 Calibration:13107200 loops
+MEMPROT:OFF, Stack: 444
+version:FreeMiNT version 1.19 (gcc version 4.6.4 (MiNT 20170417) (GCC)) #1 Mon Jun 24 11:24:17 UTC 2019
+buildinfo:CFLAGS:-m68040 -fgnu89-inline -Werror -mshort -g -O2 -fomit-frame-pointer CDEFS:-D__KERNEL__ -DLANG_ENGLISH -DVERBOSE_BOOT -DWITH_MMU_SUPPORT -DWITH_SINGLE_TASK_SUPPORT -DCRYPTO_CODE -DSOFT_UNITABLE -DBUILTIN_SHELL -DARANYM -DM68040 -DWITH_HOSTFS -DBOOTSTÿ
+00:12:29: pid 26 (zview): BUS ERROR: User PC=174DF22, Address: C17485E5 (basepage=14FC000, text=14FC100, data=1621208, bss=16754C8)
+00:13:01: pid 30 (zview): BUS ERROR: User PC=18D1FFC, Address: 5AB71BF4 (basepage=14FC000, text=14FC100, data=1621208, bss=16754C8)
+00:13:02: pid 31 (zview): BUS ERROR: User PC=19E64BA, Address: FD6C6162 (basepage=14FC000, text=14FC100, data=1621208, bss=16754C8)
+00:13:04: pid 32 (zview): ILLEGAL INSTRUCTION: User PC=1AF955C (basepage=14FC000, text=14FC100, data=1621208, bss=16754C8)
+00:13:10: pid 34 (zview): BUS ERROR: User PC=1C364F6, Address: F1B5F844 (basepage=14FC000, text=14FC100, data=1621208, bss=16754C8)
+XaSYS(5:AES:3): sigterm received
+(ignored)
+AESSYS(3:AES:3): sigterm received
+(ignored)
+
+~~~~~~~~~~~~ XaAES start up ~~~~~~~~~~~~~~~~
+XaAES v1.6.4 Beta (m68040, Jun 24 2019 11:23) (MultiTasking AES for MiNT)
+Part of freemint (http://sparemint.org).
+stack is long-aligned:4F10610
+PRG: km=4E82000, base=4E82160, text=4E82260 -> 4EF9778(488728), kentry:0.21,dos_version=40
+home_path: 'u:\c\mint\1-19-cur\xaaes\'
+Loading config u:\c\mint\1-19-cur\xaaes\xaaes.cnf
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose_w.adi'
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose.adi'
+both moose_w.adi and moose.adi found (better choose one)
+lang='en' (from AKP) code=0.
+load adi modules
+Loading AES Device Drivers:
+load_adi: enter (0x4F35254, 0x4F35154, moose.adi)
+load_adi: return 0
+load_adi: enter (0x4E81254, 0x4E81154, moose_w.adi)
+load_adi: return 0
+adi_load: done
+Creating XaAES kernel thread
+apid=-1,P_handle=0
+k_init: videomode=0
+nvdi version = 501
+fvdi version = 968
+k_init:vdo=30000 vm=0 video=0
+Default screenmode
+Screenmode is: 1
+k_init: v_opnwk() mode=1
+k_init: v_opnwk() handle=1
+Physical work station opened: 1
+Virtual work station opened: 2
+lookup-support:0, planes:32
+32 bit pixel FFFF00 is moto format
+Video info: width(1024/768), planes :32, colours 256 pixel-format 0
+stdfont: id = 1, size = 10, cw=8, ch=16, dev=0
+smlfont: id = 1, size = 8, cw=6, ch=6, dev=0
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[1024,768], colours=256, bitplanes=32
+Loading system resource file 'xaaes016.rsc'
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaes016.rsc' exists - return = 0
+system resource = 4E64004 (u:\c\mint\1-19-cur\xaaes\xaaes016.rsc)
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...
+~~~~~~~~~~~~ XaAES start up ~~~~~~~~~~~~~~~~
+XaAES v1.6.4 Beta (m68040, Jun 24 2019 11:23) (MultiTasking AES for MiNT)
+Part of freemint (http://sparemint.org).
+stack is long-aligned:4F10610
+PRG: km=4E82000, base=4E82160, text=4E82260 -> 4EF9778(488728), kentry:0.21,dos_version=40
+home_path: 'u:\c\mint\1-19-cur\xaaes\'
+Loading config u:\c\mint\1-19-cur\xaaes\xaaes.cnf
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose_w.adi'
+sysfile_exists: 'u:\c\mint\1-19-cur\xaaes\moose.adi'
+both moose_w.adi and moose.adi found (better choose one)
+lang='en' (from AKP) code=0.
+load adi modules
+Loading AES Device Drivers:
+load_adi: enter (0x4F35254, 0x4F35154, moose.adi)
+load_adi: return 0
+load_adi: enter (0x4E81254, 0x4E81154, moose_w.adi)
+load_adi: return 0
+adi_load: done
+Creating XaAES kernel thread
+apid=-1,P_handle=0
+k_init: videomode=0
+nvdi version = 501
+fvdi version = 968
+k_init:vdo=30000 vm=0 video=0
+Default screenmode
+Screenmode is: 1
+k_init: v_opnwk() mode=1
+k_init: v_opnwk() handle=1
+Physical work station opened: 1
+Virtual work station opened: 2
+lookup-support:0, planes:32
+32 bit pixel FFFF00 is moto format
+Video info: width(1024/768), planes :32, colours 256 pixel-format 0
+stdfont: id = 1, size = 10, cw=8, ch=16, dev=0
+smlfont: id = 1, size = 8, cw=6, ch=6, dev=0
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[1024,768], colours=256, bitplanes=32
+Loading system resource file 'xaaes016.rsc'
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaes016.rsc' exists - return = 0
+system resource = 4E64004 (u:\c\mint\1-19-cur\xaaes\xaaes016.rsc)
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dbutton.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\dtext.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\xaaeswdg.rsc' exists - return = 0
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slider.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slider.img
+  depacking...OK!, has palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\slide.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\slide.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslider.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslide.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideru.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\vslideu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\info.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\info.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:24
+, tranform 24 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\infou.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\wtitle.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\wtitleu.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\slwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\ulwtitle.img' exists - return = -33
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img' exists - return = 0
+load_img: 'u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img'
+load_img: file u:\c\mint\1-19-cur\xaaes\img\hc\exterior.img
+  depacking...OK!, no palette
+pixel format:screen:planes=32 pixel-format=0 src:8
+, tranform 8 -> 32 bpp...OK!
+xaaes_sysfile: check if 'u:\c\mint\1-19-cur\xaaes\img\hc\uxterior.img' exists - return = -33
+do_bkg_img:u:\c\mint\1-19-cur\xaaes\1024768.32/xa_form.mfd not found
+AESSYS:read_inf:u:\c\mint\1-19-cur\xaaes\xaaes.inf
+alert:6, KBD:7,pferr=0
+Wheel support present
+Using moose adi
+Loading AES modules...
+loading accs ---------------------------
+loading accessories from 'c:\'
+load_accs: launch (c:\bubble.acc)
+load_accs: launch (c:\acalc.acc)
+load_accs: launch (c:\jclktool.acc)
+load_accs: launch (c:\st-guide.acc)
+loading shell and autorun ---------------
+autorun[1]: cmd=(107BDB8) 'C:\tools\system\taskbar\taskbar.prg'
+   args[1]:    =(107BDE8) ''
+autorun[0]: cmd=(107BD58) 'C:\mint\sysroot\opt\toswin2\toswin2.app'
+   args[0]:    =(107BD88) ''
+Launch shell 'c:\mint\teradesk\desktop.prg' with args 'No args'
+cpuinfo:CPU:68040 MMU:none FPU:68040 Clocking:102.2MHz BogoMIPS:68.19 Calibration:34099200 loops
+MEMPROT:OFF, Stack: 444
+version:FreeMiNT version 1.19 (gcc version 4.6.4 (MiNT 20170417) (GCC)) #1 Mon Jun 24 11:24:17 UTC 2019
+buildinfo:CFLAGS:-m68040 -fgnu89-inline -Werror -mshort -g -O2 -fomit-frame-pointer CDEFS:-D__KERNEL__ -DLANG_ENGLISH -DVERBOSE_BOOT -DWITH_MMU_SUPPORT -DWITH_SINGLE_TASK_SUPPORT -DCRYPTO_CODE -DSOFT_UNITABLE -DBUILTIN_SHELL -DARANYM -DM68040 -DWITH_HOSTFS -DBOOTSTÿ
+00:37:27: pid 18 (zview): BUS ERROR: User PC=16B1A7A, Address: 9D73401 (basepage=14FC000, text=14FC100, data=168E0E0, bss=16A7884)
+00:38:10: pid 20 (nfjpeg): BUS ERROR: User PC=14FCA04, Address: 0 (basepage=14FC000, text=14FC100, data=14FCAC8, bss=14FCAEC)
+00:38:18: pid 21 (zview): BUS ERROR: User PC=16B1A7A, Address: 9D73401 (basepage=14FC000, text=14FC100, data=168E0E0, bss=16A7884)
+info_release:kfree(107CC88)->4D2E000:81049156): pid=26:27: error
+XaSYS(5:AES:3): sigterm received
+(ignored)
+AESSYS(3:AES:3): sigterm received
+(ignored)

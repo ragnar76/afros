@@ -1,0 +1,718 @@
+;************************************************
+;*  ANIPLAYER 2.23 - N_FRENCH.TXT - Karel Post  *
+;************************************************
+;
+;>>> Window <<<
+;
+MOVIE PLAYER
+AUDIO PLAYER
+JPEG VIEWER
+USE DSP
+;
+;>>> Alert <<<
+;
+; 'ID:' or ':' for datas
+;
+;[1][Pas assez |de m‚moire !][Annuler]
+[1][Te weinig geheugen !][Annuleren]
+;[1][Fichier non trouv‚ !][Annuler]
+[1][Bestand niet gevonden !][Annuleren]
+;[1][Nom d'accŠs non trouv‚ !][Annuler]
+[1][Folder niet gevonden !][Annuleren]
+;[1][Le lecteur ne r‚pond pas !][Annuler]
+[1][Diskette niet gevonden !][Annuleren]
+;[1][Les donn‚es du disque|pourraient ˆtre alt‚r‚es !][Annuler]
+[1][Data mogelijk defekt! ][Annuleren]
+;[1][Enregistrement non trouv‚][Annuler]
+[1][Bestand niet gevonden ][Annuleren]
+;[1][Identificateur son|non reconnu !|ID: $00000000][Continuer]
+[1][Soundformaat Onbekend !|ID: $00000000 ][Doorgaan]
+;[1][Type de compression inconnu !|ID: $00000000 |Nom:1234567890123456789012345 ][Annuler|Continuer]
+[1][Compressieformaat Onbekend !|ID: $00000000|Naam: 1234567890123456789012345 ][Annuleren|Doorgaan]
+;[1][Buffer non disponible][Annuler]
+[1][Buffer fout ][Annuleren]
+;[1][Plus assez de fenˆtre|disponible][Annuler]
+[1][Geen vensters meer beschikbaar][Annuleren]
+;[1][Impossiblilit‚ d'allouer|le systŠme sonore][Continuer|Annuler]
+[1][Geluidssysteem|in gebruik][Forceren|Annuleren]
+;[1][Taille image cvid incoh‚rente][Passer]
+[1][CVID Beeldformaat|buiten de grenzen][Doorgaan]
+;[1][D‚passement allocation|m‚moire cvid][Passer]
+[1][CVID. Te weinig geheugen][Doorgaan]
+;[1][Erreur fausse][Passer]
+[1][Onbekende fout][Doorgaan]
+;[1][Identificateur cvid|inconnu !][Passer]
+[1][Onbekend CVID-ID !][Doorgaan]
+;[1][Fin de fichier atteinte|alors que la lecture du|fichier n'est pas finie][Annuler]
+[1][Bestandseinde niet bereikt !][Annuleren]
+;[1][Identificateur non reconnu !|ID: $00000000][Annuler]
+[1][Onbekende ID: $00000000][Annuleren]
+;[1][Fr‚quence ‚chantillonnage|son incoh‚rente][Continuer]
+[1][Geluids frequentie|buiten bereik][Doorgaan]
+;[1][Informations icoh‚rentes !|ID: $00000000|Taille: 00000][Annuler]
+[1][Bestand beschadigd !|ID: $00000000|Size: 00000][Annuleren]
+;[1][R‚solution vid‚o insuffisante|pour placer l'animation entiŠre|dans la fenˆtre !|Minimum: 0000 x 0000][Annuler]
+[1][De schermresolutie is |te klein voor het|volledig openen in een window !|Minimaal: 0000 x 0000][Annuleren]
+;[1][Pas assez de m‚moire|pour ‚couter le son !][Continuer]
+[1][Te weinig geheugen|voor geluid !][Doorgaan]
+;[1][Dimensions image|incoh‚rentes !][Annuler]
+[1][Beeld buiten bereik !][Annuleren]
+;[1][Identificateur jpeg|inconnu !|ID: $00000000][Passer]
+[1][Onbekende Jpeg ID !|ID: $00000000][Doorgaan]
+;[1][Fin de bloc jpeg atteinte|alors que la d‚compression|du fichier n'est pas finie][Passer]
+[1][Einde Jpeg blok abnormaal,|decompressie niet voltooid !][Doorgaan]
+;[2][L'animation est trop lente|par rapport au son !| |Faut-il baisser d'un octave |ou couper le son ?][Baisser|Couper|Ignorer]
+[2][Video is te langzaam|in vergelijking met geluid !| |Een oktaaf lager|of geluid uitzetten ?][Lager|Uit|Negeren]
+;[1][Impossibilit‚ de charger|le bloc … d‚compresser|dans la m‚moire DSP][Sans DSP]
+[1][Decompressie van blok|niet mogelijk in het|DSP geheugen][Zonder DSP]
+;[1][Erreur de communication DSP| |CPU ID: $00000000|DSP ID: $00000000][Sans DSP]
+[1][Communicatiefout met DSP| |CPU ID: $00000000|DSP ID: $00000000][Zonder DSP]
+;[1][Pas assez de m‚moire|pour le r‚‚chantillonnage][Sans]
+[1][Te weinig geheugen|voor resampling][Zonder]
+;[1][Ce n'est pas un|fichier QuickTime !][Annuler]
+[1][Dit is geen QuickTime-Bestand !][Annuleren]
+;[1][Le nombre de couleurs du fichier|est inadapt‚ … la compression !|ID: $00000000|Nom: 1234567890123456789012345][Annuler|Continuer]
+[1][Aantal kleuren komt niet overeen  |met het type compressie !|ID: $00000000 |Naam: 1234567890123456789012345][Annuleren|Doorgaan]
+;[2][ |Sauvegarde des pr‚f‚rences ?][Confirmer|úúú|Annuler]
+[2][ |Bewaar configuratie?][Bewaar|úúú|Annuleren]
+;[1][ST-GUIDE non trouv‚ !][Annuler]
+[1][ST-GUIDE niet gevonden !][Annuleren]
+;[2][Le fichier existe d‚ja !][Conserver|Ecraser|Annuler]
+[2][Het bestand bestaat al !][Bewaren|Overschrijven|Annuleren]
+;[1][Plus assez de |place sur le disque,|il manque:000000 Koctets][Annuler]
+[1][Disk vol !|Overflow:000000 Kbytes][Annuleren]
+;[1][Ecriture du son en cours !|Stopper les op‚rations ?][Stopper|Annuler]
+[1][WAARSCHUWING !|bezig met schrijven van geluid !|Stoppen ?][Stop|Annuleren]
+;[2][ |Type de couleurs XIMG ?][Palette|Ordre VDI]
+[2][ | Weergave van XIMG-bestand ?][Gebruik Palet|VDI]
+;[2][Carte graphique d‚tect‚e !|Type NOVA (PC) ?][Oui|Non]
+[2][Grafische kaart gevonden !|Type NOVA (PC) ?][Ja|Nee]
+;[0][STATISTIQUES: Temps: 000.00.00 |Images affich‚es: 000 %|Moyenne charge CPU: 000 %|Mini: 000 %  Maxi: 000 %|Moyenne images/seconde:000,0][Confirmer]
+[0][STATISTIEKEN: Tijd: 000.00.00|Beelden weergegeven: 000 %|Gemiddelde CPU laadtijd: 000 %|Minimale: 000 %  Maximale: 000 %|Gemiddelde frames/seconde:000,0][OK]
+;[1][R‚solution vid‚o insuffisante !| |Minimum: 0000 x 0000][Annuler]
+[1][Schermresolutie is te klein ! | |Minimaal: 0000 x 0000][Annuleren]
+;[3][Taille tampon AES insuffisante|pour afficher les menus|d‚roulants !|Changez de systŠme ou|de r‚solution vid‚o !][Annuler]
+[3][Grootte van AES-buffer|onvoldoende voor het|weergeven van de menu's !|Verander uw systeem|of scherm resolutie !][Annuleren]
+;[1][Taille image jpeg incoh‚rente][Passer]
+[1][Jpeg formaat is|onsamenhangend][Doorgaan]
+;[1][Ce n'est pas un|fichier Video for Windows !][Annuler]
+[1][Dit is geen Video for Windows|bestand !][Annuleren]
+;[1][Ecriture des images en cours !|Stopper les op‚rations ?][Stopper|Annuler]
+[1][WAARSCHUWING !|Bezig beelden te schrijven !|Stoppen ?][Stop|Annuleren]
+;[1][Dimensions image|iv31/32 incoh‚rentes][Passer]
+[1][Beeldformaat|iv31/32 onsamenhangend][Doorgaan]
+;[1][Erreur d‚compression|iv31/32 plan: x][Passer]
+[1][Decompressie fout in|iv31/32 plane: x][Doorgaan]
+;[1][Ce n'est pas un|fichier FLI/FLC/FLH|Autodesk Animator !][Annuler]
+[1][Dit is geen Autodesk Animator|bestand (FLI/FLC/FLH) !][Annuleren]
+;[1][Type de fichier|inconnu !][Annuler]
+[1][Onbekend bestand !][Annuleren]
+;[1][Ce n'est pas un|fichier sonore AVR|Audio Visual Research !][Annuler]
+[1][Dit is geen Audio Visual Research |bestand (AVR) !][Annuleren]
+;[1][Ce n'est pas un|fichier sonore WAV|Microsoft¿ RIFF-WAVE !][Annuler]
+[1][Dit is geen Microsoft¿ RIFF-WAVE|bestand (WAV) !][Annuleren]
+;[1][Ce n'est pas un|fichier sonore AIF|Apple¿ Interchange File Format !][Annuler]
+[1][Dit is geen Apple¿ Interchange|File Format bestand (AIF) !][Annuleren]
+;[1][Le FPU est obligatoire|pour le Real Audio¿ 28K8][Annuler]
+[1][An FPU is required for| Real Audio¿ 28K8][Annuleren]
+;[1][Aniplayer ne peut traiter|qu'un fichier … la fois !][Annuler]
+[1][Aniplayer kan slechts 1 bestand|tegelijkertijd afspelen !][Doorgaan]
+;[1][Ce n'est pas un|fichier MPEG !][Annuler]
+[1][Dit is geen MPEG-Bestand !][Annuleren]
+;[1][Erreur MPEG|Trop de macroblocs|dans l'image][Passer]
+[1][MPEG fout|Teveel macrobloken |in afbeelding][Doorgaan]
+;[1][Erreur MPEG|Type macrobloc][Passer]
+[1][MPEG fout|Foutief macroblok-type][Doorgaan]
+;[1][Erreur MPEG|Codage pattern][Passer] 
+[1][MPEG fout|Fout in Coderingspatroon][Doorgaan]
+;[1][Erreur MPEG|D‚codage bloc][Passer]
+[1][MPEG fout|Fout in decoderingsblok][Doorgaan]
+;[1][Ce n'est pas un|fichier sonore RA|Real Audio¿|14K4 ou 28K8 !][Annuler]
+[1][Dit is geen Real Audio¿|bestand RA 14K4 of 28K8 !][Annuleren]
+;[1][Impossible de|synchroniser le DSP| |CPU ID: $00000000|DSP ID: $00000000][Sans DSP]
+[1][Cannot synchronize DSP| |CPU ID: $00000000|DSP ID: $00000000][Without DSP]
+;[1][Erreur serveur DHST !][Annuler]
+[1][Error with DHST server !][Annuleren]
+;[2][Effacement des noms|s‚lectionn‚s dans la liste ?][Confirmer|Annuler] 
+[2][Delete the names|selected in the list ?][ OK |Annuleren]
+;[2][Effacement de tous les noms|contenus dans la liste ?][Confirmer|Annuler]
+[2][Delete all names|into the list ?][ OK |Annuleren]
+;[2][La liste a ‚t‚ modif‚e|Voulez vous la sauver ?][Sauver|Annuler]
+[2][The list is modified|Do you want save it ?][Save|Annuleren]  
+;[1][Si vous avez seulement un 68000|vous devez utiliser un mode vid‚o|de 16 couleurs maximum][Annuler]
+[1][If you have only a 68000|you must use a video|of 16 colors maximum][Annuleren]
+;[2][ATTENTION ! Le fonctionnement|n'est pas garantie pour|un 68000][Continuer|Annuler]
+[2][WARNING ! The working isn't|certified with a 68000][Doorgaan|Annuleren]
+;[1][Erreur MPEG Audio|D‚codage bloc][Passer]
+[1][MPEG Audio fout|Fout in decoderingsblok][Doorgaan]
+;[1][Ce n'est pas un|fichier MPEG Audio !][Annuler]
+[1][Dit is geen MPEG Audio-Bestand !][Annuleren]
+;[1][Pas assez de m‚moire|pour ‚couter le son|MPEG Audio VBR !][Annuler]
+[1][Te weinig geheugen|voor geluid|MPEG Audio VBR !][Annuleren]
+;[1][Mauvais checksum|transfert DMA -> DSP][Sans DSP]
+[1][Bad checksum|DMA -> DSP transfer][Without DSP]
+;[1][Ce n'est pas un|fichier sonore DVSM|Falcon Winrec !][Annuler]
+[1][Dit is geen DVSM Falcon|Winrec bestand (DVS) !][Annuleren]
+;[1][R‚solution vid‚o insuffisante !| |Maximum possible: 0000 x 0000|Minimum demand‚: 0000 x 0000][Annuler]
+[1][The screen resolution is|too little !| |Maximum possible: 0000 x 0000|Minimum required: 0000 x 0000][Annuleren]
+;[2][S‚lection de la piste sonore][1|2|3]
+[2][Selection of the sound track][1|2|3]
+;[0][STATISTIQUES: Temps: 000.00.00 |Moyenne charge CPU: 000 %|Moyenne charge DSP: 000 %|Mini CPU: 000 % DSP: 000 %|Maxi CPU: 000 % DSP: 000 %][Confirmer]
+[0][STATISTIEKEN: Tijd: 000.00.00|Gemiddelde CPU laadtijd: 000 % |Gemiddelde DSP laadtijd: 000 %|Minimale CPU: 000 % DSP: 000%|Maximale CPU: 000 % DSP: 000 %][OK]
+;[1][LAME_ENC.SLB|Format invalide !][Annuler]
+[1][LAME_ENC.SLB|Invalid format !][Annuleren]
+;[1][LAME_ENC.SLB|ParamŠtres invalides !][Annuler]
+[1][LAME_ENC.SLB|Invalid parameters !][Annuleren]
+;[1][LAME_ENC.SLB|Utilisation impossible !][Annuler]
+[1][LAME_ENC.SLB|No more handle !][Annuleren]
+;[1][LAME_ENC.SLB|Utilisation invalide !][Annuler]
+[1][LAME_ENC.SLB|Invalid handle !][Annuleren]
+;[1][LAME_ENC.SLB|Buffer trop petit !][Annuler]
+[1][LAME_ENC.SLB|Buffer too small !][Annuleren]
+;[1][Le FPU est obligatoire|pour LAME_ENC.SLB !][Annuler]
+[1][An FPU is required for|LAME_ENC.SLB !][Annuleren]
+;[1][OPENDIVX.SLB|Mauvais format !][Annuler]
+[1][OPENDIVX.SLB|Bad format !][Annuleren]
+;[1][OPENDIVX.SLB|Pas assez de m‚moire !][Annuler]
+[1][OPENDIVX.SLB|Te weinig geheugen !][Annuleren]
+;[1][La source sonore est ‚loign‚e|des fr‚quences MPEG Audio !| |(8000,11025,12000,16000,22050,|24000,32000,44100,48000 Hz)][Annuler|Continuer]
+[1][The sample source is different|than the MPEG Audio frequency !| |(8000,11025,12000,16000,22050,|24000,32000,44100,48000 Hz)][Annuleren|Doorgaan]
+;[1][VORBIS.SLB|Ce n'est pas un|fichier Ogg Vorbis !][Annuler]
+[1][VORBIS.SLB|Dit is geen Ogg|Vorbis Audio-Bestand !][Annuleren]
+;[1][Le FPU est obligatoire|pour VORBIS.SLB/VORB_ENC.SLB !][Annuler]
+[1][An FPU is required for|VORBIS.SLB/VORB_ENC.SLB !][Annuleren]
+;[1][Librairie VORBIS.SLB|non trouv‚e !][Annuler]
+[1][Library VORBIS.SLB|not found !]][Annuleren]
+;[1][Buffer MPEG trop petit !|(Essayez sans D2D)][Annuler]
+[1][Buffer MPEG too small !|(Try without D2D)][Annuleren]
+;[1][AVCODEC.SLB|Mauvais format !][Annuler]
+[1][AVCODEC.SLB|Bad format !][Annuleren]
+;[1][AVCODEC.SLB|Pas assez de m‚moire !][Annuler]
+[1][AVCODEC.SLB|Te weinig geheugen !][Annuleren]
+;[1][Librairie AVCODEC.SLB|non trouv‚e !][Annuler]
+[1][Library AVCODEC.SLB|not found !]][Annuleren]
+;[1][Le FPU est obligatoire|pour AVCODEC.SLB !][Annuler]
+[1][An FPU is required for|AVCODEC.SLB !][Annuleren]
+;[1][Ce n'est pas un|fichier Real Media !][Annuler]
+[1][Dit is geen Real-Bestand !][Annuleren]
+;[1][Librairie DVD.SLB|non trouv‚e !][Annuler]
+[1][Library DVD.SLB|not found !]][Annuleren]
+;[1][Impossible d'ouvrir|le lecteur DVD !][Annuler]
+[1][Couldn't open|DVD device !][Annuleren]
+;[1][Num‚ro de titre|DVD invalide !][Annuler]
+[1][Invalid DVD|title number !][Annuleren]
+;[1][Num‚ro de chapitre|DVD invalide !][Annuler]
+[1][Invalid DVD|chapter number !][[Annuleren]
+;[1][Num‚ro d'angle|DVD invalide !][Annuler]
+[1][Invalid DVD|angle number !][[Annuleren]
+;[1][Impossible d'ouvrir|le fichier IFO pour|le titre DVD !][Annuler]
+[1][Cannot open|the IFO file|for DVD title !][Annuleren]
+;[1][Impossible d'ouvrir|le titre VOB !][Annuler]
+[1][Cannot open|title VOB !][Annuleren]
+;[1][Impossible d'ouvrir les|informations du gestionnaire|vid‚o sur le disque !][Annuler]
+[1][Can't open the video|manager informations|on the disc !][Annuleren]
+;[3][ |Clef invalide !][Quitter]
+[3][ | Verkeerde Toets !][Einde]
+;
+;>>> Bubble GEM <<<
+;
+;Chargement type fichier courant
+Laad het huidige bestandstype
+;Bouton play/pause|(ou pause si boutons magneto.)
+Speel/pauze |(of pauze bij tape recorder display)
+;Bouton lecture
+Speel
+;Retour rapide
+Terugspoelen
+;Avance rapide|Scan si double-clic
+Vooruitspoelen |SCAN bij Dubbel-klikken
+;Demi-tour
+Halve-draai
+;R‚glage position fichier|Clavier :   : +/- 1 S|  et <SHIFT>: +/- 10 S|  et <CTRL> : +/- 60 S|SHIFT-clic: Bloc
+Positie-regeling  | Toetsenbord :   : +/- 1 S|  and <SHIFT>: +/- 10 S|  and <CTRL> : +/- 60 S|SHIFT-click: Block
+;R‚glage de volume sonore|Clavier : / +/-
+Volume-regeling | Toetsenbord : / +/-
+;Vu-mˆtre avec/sans|niveau crˆte si clic
+Vu-meter with/without|peak level if click
+;R‚glage bloc fichier|D‚but: 000.00.|Fin: 000.00.
+Bloc position adjustement|Start: 000.00.|End: 000.00.
+;Ajoute un fichier|… la liste
+Add a file|into the list
+;Ajoute le contenu d'un|repertoire … la liste
+Add the contents of a|directory into the list
+;Charge une liste
+Load a list
+;Sauve une liste
+Save a list
+;Efface fichier(s)|… la liste
+Delete file(s)|in the list
+;Bouton de lecture|de la liste
+Play button|of the list
+;Bouton stop|de la liste
+Stop button|of the list
+;Bouton pr‚c‚dant|de la liste
+Previous button|of the list
+;Bouton suivant|de la liste
+Next button|of the list
+;Liste de fichiers:|S‚lectionne si clic|Lecture si double-clic|Modifie si clic droit
+List of files:|Select if click|Play if double-click|Modify if right click
+;Bouton de s‚lection|d'effacement du fichier|de la liste en fin|de lecture
+Button for select|deleting file in the list|at the end of playing
+;Bouton avec/sans|lecture al‚atoire|de la liste
+Button with/without|random play|of the list
+;Bouton avec/sans|lecture d‚but de fichiers|de la liste
+Button with/without|play beginning of the|files from the list
+;Bouton de tri|par titre
+Select sort|by title
+;Bouton de tri|par auteur
+Select sort|by author
+;Bouton de tri|par album
+Select sort|by album
+;Bouton de tri|par dur‚e
+Select sort|by time
+;Bouton record|de la liste|Conversion vers|un autre format
+Record button|(playlist)|Conversion vers|another format
+;Permet de fixer l'affichage|de l'image de 0 … 99 secondes
+De optie 'Slide Show vertraging'|zorgt ervoor dat de beelden|0 tot 99 seconden blijven staan
+;Changement de r‚solution sur FALCON,|et zoom 2X si le CPU est >= 68040|et la taille de l'image est <= 384 * 304|sur VGA et 640 * 480 sur TV
+Weergave wordt automatisch aangepast|bij de FALCON en bij 2X vergroting|als de CPU hoger of gelijk is aan een 68040|en de beeldgrootte is kleiner of gelijk|aan VGA 384*304 (TV 640*480)
+;Force la taille normale
+Eigenlijke beeldgrootte
+;Force le zoom 2X
+Vergroting factor 2
+;Palette fixe de|216 couleurs
+Vast palet van|216 kleuren
+;Couleurs approch‚es|avec la palette courante
+Approximates colors|with current palette
+;Utilise le s‚lecteur de|fichiers de MagiC|(si MagiC est install‚)
+Gebruikt de Magic|bestandsselectie-dialoog|(alleen als Magic geinstalleerd is)
+;Utilise toujours le|s‚lecteur du TOS
+Gebruikt de standaard|bestandsselectie-dialoog
+;Idem … TOS, mais en plus|supprime les popup-menus|dans le menu d‚roulant|(s‚lection *.*)
+Als bij TOS, maar het|popup-menu in het hoofdmenu|wordt verwijderd (Selectie *.*)
+;D'aprŠs le fichier
+Speed of original file
+;Force le nombre d'image|par secondes de 1 … 99|(fichiers FLI par exemple)
+Force the number of|frames by seconds at 1 to 99|(FLI files for example)
+;Essai de d‚compresser et|d'afficher toutes les images|(I/P/B-frames)
+Try to decode and|to display all frames|(I/P/B-frames)
+;D‚compresse et affiche uniquement|les I-frames pour le MPEG,|ou saute les B-frames|pour le DivX (plus rapide)
+Decode and display I-frames|only for MPEG files,|or jump B-frames for DivX (faster)
+;D‚compresse et affiche uniquement|1/4 des I-frames pour le MPEG,|ou une image sur deux|pour le DivX (plus rapide)
+Decode and display only|1/4 of I-frames for MPEG files,|or one frame by 2|for DivX (faster still)
+;Le direct to disk est|toujours actif si le|fichier le permet
+Direct naar disk wordt|altijd gebruikt als|het mogelijk is
+;Pr‚chargement du son pour|les fichiers AVI/MOV/RA/MP/AC3/OGG
+Het vooraf laden van de|geluidsfragmenten wordt|gedaan voor AVI/MOV/RA/MP/AC3/OGG files
+;Force le direct to disk|pour les fichiers|Real Audio 28.8K, AC3,|MPEG Audio et Ogg Vorbis
+Forceert 'direct naar disk'|voor Real Audio 28.8K, AC3,|MPEG Audio met Ogg Vorbis files.
+;Utilise directement le|hard si c'est possible
+Gebruikt waar mogelijk|direct de hardware van|de computer
+;Force l'utilisation du XBIOS|si les fonctions existent
+Gebruikt altijd de functies|van het XBIOS als deze|aanwezig zijn
+;Utilise les deux voies|audio analogiques
+Gebruik twee|analoge kanalen
+;Utilise les huit voies|num‚riques, normalement pour|le port DSP du FALCON
+Gebruikt 8 digitale kanalen|Bij DSP-poort of bij de Falcon
+;D‚tection automatique|au d‚marrage du programme
+Test when Aniplayer|is started
+;Horloge externe ignor‚e
+External clock ignored
+;Indique la pr‚sence de|l'horloge externe sans|faire le test
+Shows than external clock|is connected without|made a test
+;Transferts DSP normaux|(par le port host)
+DSP transfers are|normals (by host port)
+;Transferts DSP par le DMA|et sortie audio directe|(plus rapide)
+DSP transfers DSP by the DMA|and direct audio output|(faster)
+;D‚compression des deux|voies avec un MP? st‚r‚o
+Two channels are used|for decompress MP? stereo
+;Plus rapide avec|un MP? st‚r‚o
+More fast with|an MP? stereo
+;Change la taille du buffer D2D|pour les fichiers sonores|(1 … 5 secondes)
+Change the size of D2D|buffer for audio files|(1 to 5 seconds)
+;S‚lection de la fr‚quence|d'‚chantillonnage (en Hz)
+Sampling frequency in Hz
+;Sp‚cifie le mode st‚r‚o|(joint-stereo par d‚faut)
+Specify the stereo mode|(default joint-stereo)
+;Choix du bitrate en Kbits/s|(128 Kbits/s par d‚faut)|ou sp‚cifie le bitrate minimum pour|les fichiers VBR (32 Kbits/s par d‚faut)
+Set the bitrate in Kbits/s|(default 128 Kbits/s) or|specify minimum allowed bitrate for|the VBR files (default 32 Kbits/s)
+;Pr‚s‚lections de la qualit‚.|Les s‚lections aprŠs les 4 premiers choix|agissent sur les autres paramŠtres.
+Set the presets quality.|Selections after the 4 first choices|act on the others parameters.
+;Valide le mode variable bitrate (VBR).|Le bitrate minimun par d‚faut est 32 Kbits/s.
+Validation of variable bitrate mode (VBR).|The minimum bitrate by default is 32 Kbits/s.
+;EnlŠve le mode variable bitrate (VBR).|Le birate par d‚faut est 128 Kbits/s.
+Remove the variable bitrate mode (VBR).|The bitrate by default is 128 Kbits/s. 
+;Sp‚cifie le bitrate maximum|pour les fichiers VBR|(320 Kbits/s par d‚faut)
+Specify maximum allowed|bitrate for VBR files|(default 320 Kbits/s)
+;Sp‚cifie le bitrate moyen d‚sir‚|(… la place de qualit‚)
+Specify the average bitrate|desired (instead of quality)
+;Qualit‚ des fichiers VBR si|le bitrate moyen est desactiv‚.|Plus la valeur est ‚lev‚e, plus|la qualit‚ est faible, mais la taille|du fichier diminue (4 par d‚faut).
+Specify quality setting for the VBR|files if the average bitrate is desactived.|0 is used for high quality|but bigger files.|9 for smaller files (default 4).
+;
+;>>> Dialog <<<
+;
+;----------------- length ----------------
+SPELER VOOR AVI, QuickTime ¿, FLI, en MPEG
+SPELER geluid AVR, WAV, AIF, DVS, RA en MP
+en beeld JPEG
+     Nederlandse versie van Karel Post
+Register
+;------ length ------
+     Geluid Saven
+;--- length --- 
+ File formaat :
+;--- length --- 
+All
+Selectie:
+;--------
+Bewaar
+Annuleren
+;-------------- length ---------------
+FILM INFORMATIE:
+0000 x 0000 in 00000 kleuren
+Aantal frames:000000
+Aantal frames/seconde:000
+Key-frame interval:000 
+Tijd: 000.00.00
+Nummer huidig beeld:000000 (000.00.)
+Compressie ID: $00000000
+Naam: 1234567890123456789012345
+GELUIDS INFORMATIE:
+Kwaliteit: 00 bits xxxxxxxxxxxx
+Frekwentie: 00000 Hz ¯ 00000 Hz
+Tijd: 000.00.00
+Compressie ID: $00000000 000 Kbits/s
+GEHEUGEN INFORMATIE:
+Grootte file buffers  : 0000000 bytes
+Grootte beeld buffer  : 0000000 bytes
+Grootte scherm buffer : 0000000 bytes
+Grootte geluid buffers: 0000000 bytes
+ú Title:
+ú Author:
+ú Album:
+ú Year:
+ú Tijd:
+;-------------------------------------
+;-length--
+frames/s
+mono
+stereo
+;------ length ------
+   Beelden Bewaren
+;--- length ---
+Huidig beeld
+Selectie:
+Kwaliteit JPEG:
+;-------- length -------
+ Weergave Instellingen
+;--------------- length ----------------
+Zonder GEM:
+;- length --
+Automatisch
+Normaal
+Zoom 2X
+;--------------- length ----------------
+Dithering in 256 kleuren:
+;---- length -----
+Palet Aniplayer
+Momentane Palet
+;--------------- length ----------------
+File selector:
+;- length --
+TOS
+Geen Popup
+;--------------- length ----------------
+Speed movie without sound:
+;- length --
+Forced
+;--------------- length ----------------
+Display frames MPEG/DivX movies:
+;- length --
+I-frames
+1/4 I-frames
+;-------- length -------
+  Geluids Instellingen
+;--------------- length ----------------    
+Direct to disk:
+;-- length ---
+Vooraf laden
+Forceren
+;--------------- length ---------------- 
+Geluidssysteem:
+;-- length ---
+XBIOS
+Analoog
+Digitaal:
+;--------------- length ---------------- 
+CD clock:
+;-- length ---
+Negeren
+;------- length ------ 
+Mode DSP MP?:
+;---- length -----
+DMA transfers
+;------- length ------
+Mode without DSP MP?:
+;---- length -----
+Force in mono
+;------ length ------
+     Bewaar film
+;----- length ----
+Kwaliteit:
+;------ length ------
+      Save: xxx
+;------------- length --------------
+Frequency (Hz):
+Mode:
+Bitrate (minimum for VBR, Kbits/s):
+Presets quality:
+;--------- length --------
+Variable bitrate (VBR):
+;-length-
+With
+Without
+;------------- length --------------
+Maximum bitrate for VBR (Kbits/s):
+Average bitrate for VBR (Kbits/s):
+Quality for VBR (0:high 9:small):
+;------ length ------
+     ID3  header
+    VORBIS header
+;--------------- length ----------------
+The saving is terminated, do you want
+put an header ?
+;--------
+Add 
+;-------- length -------
+ Modification Playlist
+;---- length ---- 
+   Goto track
+;----- length ----- 
+    Search text
+;------ length ------
+     DVD reading
+;--- length ---- 
+Metados drive:
+;------------- length -------------- 
+Reading disc structure
+Please wait...
+;length
+Sound:
+;------------------- length --------------------
+Aniplayer - Playlist
+;---- length ----
+One frame by 2
+Jump B-frames
+;--------------- length ----------------
+Slide Show beeldvertraging: __"
+Duration of buffer for audio files: _"
+;--- length ----
+Tot nummer:_____
+Op  nummer:_____
+;_ length _
+Tot: ___'__
+Op : ___'__
+op : __ f/s
+;----- length -----
+Key-frame int.: __
+;------- length ---------
+Goto track nø: ___
+;--length--
+Title: __
+;-- length ---
+Chapter: __
+;-length--
+Angle: _
+;------------------- length --------------------
+Registratie
+Naam         : ________________________________
+Adres        : ________________________________
+Woonplaats   : ________________________________
+Sleutel      : ________________
+;-----------------------------------------------
+;
+;>>> Help box <<<
+;
+;------------- length ----------------
+ HELP ANIPLAYER
+;-------------- max length : 50 ------------------
+ 
+ HET IS EEN BEELD EN GELUIDSPELER MET DIREKT VAN
+DISK WEERGAVE. GEMAAKT VOOR DE FALCON (TRUE COLOR 
+MET DSP). GELUID WORDT WEERGEGEVEN OP FREKWENTIES 
+NABIJ DIE VAN DE MACHINE. DE EXACTE WEERGAVE KAN 
+WORDEN VERKREGEN DOOR RESAMPLING AAN TE ZETTEN.
+ 
+ DE BETERE WEERGAVE (SNEL) WORDT BEREIKT IN TRUE 
+COLOR OP DE FALCON, DE 256 COLORS OF DE TRUE COLOR 
+KAART (15 EN 24 BITS) LOPEN GELIJKWAARDIG. ANDERE
+VIDEO KEUZE 2, 4, OF 16 KLEUREN, LEVERT EEN MONO-
+KLEUREN DITHERING OP.
+ 
+ DE MAX CPU TIJD BEZETTING IS WEERGEGEVEN IN % OP
+INFORMATIE LIJN IN VENSTER, EEN WAARDE DIE HOGER 
+DAN DE 100 % GEEFT AAN DAT HET AANTAL FRAMES/S 
+NIET KAN WORDEN GEHAALD.
+ 
+ SHORTCUTS KEYBOARD: <UNDO>: STOP    : +/-  1 S
+< >: PAUSE   <C>: C/B&W    EN <SHIFT>: +/- 10 S
+<O>: OPTIONS <S>: SCAN     EN  <CTRL>: +/- 60 S
+ 
+ 
+ 
+;-------------------------------------------------
+;--------
+Opties
+OK
+;
+;>>> help opties <<<
+;
+;-------------- max length : 50 ------------------
+ OPTIE MENU ( ALS PROGRAMMA ALS ACC IS GESTART):
+ - DSP VOOR DECOMPRESSIE : AKTIVEER DSP BIJ ENKELE
+   COMPRESSIES. BIJ GEBRUIK EEN MELDING IN VENSTER
+   (FALCON).
+ - DIREKT BEELD : SNELLER MAAR DE BEELDEN LIJKEN
+   MINDER MOOI (GOLVEN OP SCHERM) EN REDRAWS ZIJN 
+   ONMOGELIJK. NIET ALTIJD BESCHIKBAAR.
+ - RESAMPLING : FREKWENTIE CONVERSIE (KLOKSYMBOOL
+   IN MENU VAN SNELLE RESAMPLING).
+ - GELUID UIT : NEEM DE TELEFOON AAN. 
+ - ALLEEN GELUID : LUISTER NAAR CORRECTE GELUID
+   WEERGAVE BIJ TE LANGZAAM BEELD  (SOUND REPEAT).
+ - CONTROLEER TRAAGHEID : EEN FOUTMELDING BIJ 
+   TE TRAAG BEELD. MOGELIJKHEID EEN OKTAAF LAGER
+   AF TE SPELEN, SCHAKEL GELUID UIT OF NEGEER DIT.
+ - PASSEER BEELDEN : HAAL GELUIDSHERHALING WEG ALS
+   WEERGAVE TE TRAAG IS, ZODAT DE ANIMATIE EVEN 
+   WACHT TOTDAT HET VOLGENDE BEELD KLAAR IS.
+ - TAPE RECORDER LOOK : KNOPPEN OF SCHUIFKNOP.
+ - KLEIN VENSTER : HET IS MOGELIJK OM BEELD ZONDER
+   KADER AF TE SPELEN (KNOPPEN HELEMAAL WEG).
+ - ZONDER GEM : SPEELT SNELLER (ALLEEN KEYBOARD 
+   WORDT GECONTROLEERD OP INVOER).
+ - LOOP MODE : FILMPJE EINDELOOS WEERGEVEN.
+;-------------------------------------------------
+;
+;>>> menu <<<
+;
+;----- length ------
+  Modification...
+  Alignment
+  Little font
+  Font...
+;-------------------
+  Goto track...
+  Find...        ^F
+  Find next      ^G
+;-------------------  
+  Play only line
+  Play all
+  Start here
+;-------------------  
+  Add a file...
+  Add a directory...
+  Load a list...
+  Save current list
+  Save a list as...
+;-------------------  
+  Select all
+  Unselect all  
+;-------------------
+;main menu
+ Bestanden
+ Opties
+ Diverse
+;------ length ------
+  Over...
+;------ length -------
+  Open film...     ^O
+  Open geluid...   ^L
+  Open beeld...    ^P
+  Diashow...
+  Bewaar film...   ^E
+  Bewaar beeld...  ^M
+  Bewaar geluid... ^N
+  Kopieer beeld    ^C
+;---------------------
+  Informatie...    ^I
+  Enkele stap       .
+;---------------------
+  Bewaar config.   ^S
+  Load config.
+;---------------------
+  Einde            ^Q
+;---------------------
+;----- length ------
+  Play block
+  Set begin of block
+  Set end of block
+  Copy in Playlist
+  Zonder venster F8
+  Zonder GEM     F9
+  Hide
+;------- length --------
+  DSP Gebruiken     F10
+  Direkt naar scherm F1
+  Kwaliteit          ^B
+  Kwaliteit MP?      ^B
+;----------------------- 
+  Resampling         F2
+  Geluid uit         F3
+  Alleen geluid      F4
+;-----------------------
+  Contr. traagheid   F5
+  Beelden overslaan  F6
+;-----------------------
+  Videorecorder look F7
+  Klein venster      F8
+  Zonder GEM         F9
+  Zonder D2D (D2M)   ^D
+  Loop mode          ^A
+;-----------------------
+;------- length --------
+  Help...          HELP
+  Documentatie... HELP
+;-----------------------
+  Stop op einde
+  Pauze bij start
+  Zonder foutmelding
+;-----------------------
+  Playlist
+  Weergave...
+  Geluids...
+;-----------------------
+;
+;>>> file select <<<
+;
+;------ max length : 30 ------
+OPEN EEN AVI/MOV/FL?/MP* FILM
+OPEN AVI Video voor Windows¿
+OPEN MOV Apple QuickTime¿
+OPEN FL? Autodesk Animator¿
+OPEN RM  Real¿ Media
+OPEN Moving Picture Exp. Gr.
+OPEN VOB Video Object File
+OPEN GELUID
+OPEN Audio Visual Research
+OPEN Microsoft¿ RIFF-WAVE
+OPEN Apple¿ Int. File Format
+OPEN DVSM Falcon Winrec
+OPEN RA* Real Audio¿
+OPEN MPEG Audio Layer 1,2
+OPEN AC3 Dolby Digital
+OPEN OGG Ogg Vorbis
+OPEN Joint Photo. Exp. Group
+BEWAAR GELUID VAN FILM
+BEWAAR HUIDIG BEELD
+BEWAAR BEELDEN
+BEWAAR FILM
+DIAWEERGAVE UIT MAP
+ADD A FILE INTO THE LIST
+ADD A DIRECTORY TO THE LIST
+LOAD A LIST
+BEWAAR LIST
+LOAD CONFIG
+BEWAAR CONFIG
+CONVERT FILES DIRECTORY
+;

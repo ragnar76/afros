@@ -1,0 +1,151 @@
+;--------------------------------------------------------------------
+;-                               UFP2STG.TOS                        -
+;-                                                                  -
+;-                Changes data from the UFP-Info (PC-Version)       -
+;-                    into an ST-Guide format hypertext             -
+---------------------------------------------------------------------
+Documentation
+
+This English documentation has been loosely translated by Joe Connor 
+from the original text written by Gregor Duchalski.
+
+UFP2STG.TOS may be freely distributed so long as it remains intact and 
+complete. Neither Gregor Duchalski nor I accept any liability or 
+responsibility for any direct or indirect damage that may arise, 
+either financial, material or any other kind from either the use or 
+misuse of this document. All trademarks used are recognised and 
+acknowledged.
+
+The status of the compiled source text remains with the original 
+author!
+
+Contact addresses for bug reports, suggestions etc:
+
+Gregor Duchalski
+Im Wiescherfeld 21
+D-44627 Herne
+Germany
+
+Email: Gregor_Duchalski@do.maus.ruhr.de
+
+Joe Connor
+65 Mill Road
+Colchester
+CO4 5LJ
+
+Email: jconnor@cix.compulink.co.uk
+
+
+Contents:
+
+Intended purpose
+Status UFP-INFO
+Application UFP2STG.TOS
+Version history UFP2STG.TOS
+
+---------------------------------------------------------------------
+UFP2STG.TOS
+
+What does UFP2STG do?  It changes data files from the PC database UFP 
+Star Trek into a file which can be compiled using the ST-Guide 
+HCP.TTP.
+There's already an Atari version of the UFP info for 1st-Guide but it 
+still seemed to me that converting the data direct to ST-Guide format 
+was useful.
+
+Additional advantage: producing the hypertext directly from the PC 
+version means users can more quickly get the latest files without 
+waiting for a special Atari version. This does however depend on the 
+format of the UFP data remaining similar so that UFP2STG.TOS doesn't 
+becomes obselete!
+
+---------------------------------------------------------------------
+Status UFP-INFO
+
+UFP-Info is Shareware, and registration costs DM 17.- + DM 3.- 
+Delivery (within Germany).
+
+Adress:
+ MR-Soft, Marco Radke, B.-Schlaaff-Str. 3, 17192 Waren, Germany
+ Konto    : Kt.-Nr.: 675899200, BLZ 200 100 20, Postbank Hamburg.
+ FIDO off.: 2:2410/208.25                GeoHolicsNet : 54:493/1042
+ InterNet : radke@krypta.in-berlin.de    TrekNet      : 37:1/400.1
+ MausNet  : Marco Radke @ TREKNET 37:1/400.1
+
+Files included in the archive:
+
+UFP2STG.TOS The program
+UFP2STG.TXT German version of this text
+UFP2STG.ENG This text
+UFP2STG.LST The GFA BASIC source code
+UPF2STG.INF The INF file
+UFP.IMG     The UFP Logo in IMG format
+
+---------------------------------------------------------------------
+Using UFP2STG.TOS
+
+First of all you need to obtain the PC-version of UFP Info and unpack 
+these. You should then have the following files:
+
+FILE_ID.DIZ
+INSTALL.BAT
+UFP.DAT
+
+The UFP.DAT file is a disguised ARJ archive format file and can be 
+unpacked using a suitable utility (e.g. Two-in-One together with 
+UNARJ.TTP). After unpacking you should have the following files:
+
+MAIN.DAT
+
+CHRONIK.DAT, CHRONIK.DTX, CHRONIK.IDX
+DIREKTIV...
+PERSONEN...
+PLANETEN...
+RAUMSCHI...
+SCHAUSPI...
+SPEZIAL_...
+
+Now you need to edit UFP2STG.INF to suit your set-up:
+Enter the paths and filename and change or add any commands you'd like 
+the hypertext to contain.
+Finally the beginning starts after the 'Main' screen, which must be 
+available in all cases.
+
+A preceding ';' character line is a comment and are ignored.
+IMPORTANT: All lines up to the start of the Main screens are 
+compulsory and must be available!
+
+Here's the construction of this file:
+
+ F:\UFP_INFO.PC\ ; Path to the UFP files
+ M:\UFP_INFO.STG ; Target ST-Guide file
+ MAIN.DAT        ; Name of the main index file
+ PERSONEN\       ; Path to images (can be empty)
+                 ; Reserved 1
+                 ; Reserved 2
+                 ; Reserved 3
+ @{B}            ; ST-Guide command for Bold text
+ @{G}            ; ST-Guide-command for Light text
+ @{IB}           ; ST-Guide-command for Bold Italics text
+                 ; Reserved 4
+                 ; Reserved 5
+                 ; Reserved 6
+                 ; Reserved 7
+ ;  From here the main screen containing a '@node' is required!
+ @width 80
+ @node "UFP-Info"
+ ...
+
+After calling UFP2STG.TOS an ST-Guide format hypertext source file 
+should be produced which after any necessary editing can be compiled 
+using the ST-Guide hypertext compiler HCP.TTP into a HYP format 
+file...
+
+---------------------------------------------------------------------
+Version history UFP2STG.TOS
+
+Version  Date           Changes
+
+0.90     17.07.94       First release version
+
+;--------------------------------------------------------------------

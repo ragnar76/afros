@@ -1,0 +1,40 @@
+
+                    README zum ST-Guide (10.12.95)
+
+Wichtig:
+--------
+Die Programme STool und RefLink haben sich gegenÅber der Rel 14 nicht 
+geÑndert, sie werden von mir nicht mehr gepflegt. Als Alternative
+empfehle ich:
+- Katmaker von Christoph Spengler @ W2 fÅr STool
+- RefCheck von Frank RÅger @ OS2 fÅr RefLink; RefCheck beinhaltet die
+  Sourcen und daher auch die FunktionalitÑt von RefLink
+
+News:
+-----
+Siehe ST-Guide.CHG
+
+ST-Guide besteht aus zwei Archiven:
+ST-GUI15.LZH:   enthÑlt ST-Guide, HCP, STool, RefLink
+STG-UT10.LZH:   enthÑlt 1stConv, PC-Conv, MAN2STG, CALL-ACC, jeweils 
+                mit Sourcecodes in C sowie HELP_RC und HELPDISK
+Die Sources der Konverter habe ich beigelegt, damit sie von den Leuten
+entwanzt/erweitert werden kînnen, die diese Programme auch einsetzen.
+
+Es wÑre nett, wenn ihr mir mitteilen wÅrdet, welche énderungen ihr
+vorgenommen habt, und wo man die neue Version bekommen kann, damit
+ich diese Information bei Anfragen weiterleiten kann.
+
+Installation
+------------
+- Archiv im Wurzelverzeichnis des Bootlaufwerkes auspacken
+- mittels ASCII-Editor evtl. die Datei ST-GUIDE.INF auf eigene
+  BedÅrfnisse anpassen
+- Das beiliegende Programm STool einmal starten
+- ANLEITUNG LESEN!
+  (ST-GUIDE starten/aktivieren und ST-GUIDE.HYP laden)
+
+Bei Problemen bitte erst die Dokumentation lesen, danach das FAQ und 
+erst dann in der MAUS-Gruppe Hypertext oder diekt bei mir anfragen.
+Danke.
+

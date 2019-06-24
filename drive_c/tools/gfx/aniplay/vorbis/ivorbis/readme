@@ -1,0 +1,12 @@
+Ogg Vorbis 'Tremor' integer playback codec library, version 1.0.0.
+http://www.xiph.org/
+
+ Here's a shared library of libvorbis-1.0rc2. It has been compiled with 
+Gcc 2.95.2 with -m68020-60 and works only under MiNT 1.15.3 or more and
+MagiC 6. TOS cannot load .SLB, but an SLB loader exist with MetaDOS:
+ftp://ftp.uni-muenster.de/pub/atari/Utilities/slbld028.lzh 
+http://www.muenster.de/~reschke/soft_e.html
+
+ Requirements:
+  - 68020 or higher
+  - MiNT 1.15.3 or MagiC 6 or MetaDOS 2.74.

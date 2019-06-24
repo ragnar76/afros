@@ -1,0 +1,59 @@
+;---------------------------------------------------------------------
+;-                               APPEND.TTP                          -
+;-                                                                   -
+;-                         Joins files together                      -
+----------------------------------------------------------------------
+
+Documentation
+
+This English documentation has been loosely translated by Joe Connor 
+from the original text written by Gregor Duchalski.
+
+APPEND.TTP may be freely distributed so long as it remains intact 
+and complete. Neither Gregor Duchalski nor I accept any liability or 
+responsibility for any direct or indirect damage that may arise, 
+either financial, material or any other kind from either the use or 
+misuse of this document. All trademarks used are recognised and 
+acknowledged.
+
+Contact addresses for bug reports, suggestions etc:
+
+Gregor Duchalski
+Im Wiescherfeld 21
+D-44627 Herne
+Germany
+
+Email: Gregor_Duchalski@do.maus.ruhr.de
+
+Joe Connor
+65 Mill Road
+Colchester
+CO4 5LJ
+
+Email: jconnor@cix.compulink.co.uk
+
+--------------------------------------------------------------------
+APPEND.TTP
+
+ Calling APPEND.TTP
+ Version history APPEND.TTP
+
+ --> TXT2STG.TTP
+
+--------------------------------------------------------------------
+Calling APPEND.TTP
+
+ APPEND source-file target-file
+
+ Appends the file 'source-file' to the file 'target-file'. If the 
+ 'target-file' does not exist then the 'source-file' will simply be 
+ duplicated and renamed.
+
+--------------------------------------------------------------------
+Version history APPEND.TTP
+
+Version  Date      Changes
+
+1.03     18.07.94  -safety checks installed.
+
+;--------------------------------------------------------------------------

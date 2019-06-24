@@ -61,6 +61,8 @@ Directory AVCODEC:
     AVCODEC.SLB: Shared Library of libavcodec 0.4.6 library (FPU 68881/2).
   Directory 68060:
     AVCODEC.SLB: Shared Library of libavcodec 0.4.6 library (FPU 68060).
+Directory EIFFEL.LCD:
+  LCD.SLB Shared library of Eiffel LCD display.
 Directory PROG:
   STARTANI.C: Demo for start ANIPLAYER with control.
   Directory SYNCHRO.CPX:
@@ -104,6 +106,14 @@ Directory PROG:
        LIBHEAD.S: Header of AVCODEC.SLB.
        COMMON.H,
        AVCODEC.H: Headers for the libavcodec library from ffmpeg.
+     Directory EIFFEL.LCD:
+       LCD.PRJ: Pure C project of LCD shared library.
+       HEADER.S: Pure C haeder of LCD shared library.
+       LCD.C: Source code of LCD shared library.
+       LCD.H: Header of LCD shared library.
+       SLB.H: Header of LCD shared library.
+       DEMO.PRJ: Pure C project of LCD demo.
+       DEMO.C: Source code of LCD demo.
 Directory BUBBLE:
   BUBBLE.APP: BubbleGEM is a program by Thomas Much for bubble help 
               with right mouse button.

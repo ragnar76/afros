@@ -1,0 +1,349 @@
+;--------------------------------------------------------------------
+;                             TXT2STG.TTP                           - 
+;                                                                   - 
+;    Generates an ST-Guide format source file from an ASCII file    - 
+;                                                                   -
+---------------------------------------------------------------------
+Documentation
+
+This English documentation has been loosely translated by Joe Connor 
+from the original text written by Gregor Duchalski.
+
+TXT2STG.TTP may be freely distributed so long as it remains intact and 
+complete. Neither Gregor Duchalski nor I accept any liability or 
+responsibility for any direct or indirect damage that may arise, 
+either financial, material or any other kind from either the use or 
+misuse of this document. All trademarks used are recognised and 
+acknowledged.
+
+Contact addresses for bug reports, suggestions etc:
+
+Gregor Duchalski
+Im Wiescherfeld 21
+D-44627 Herne
+Germany
+
+Email: Gregor_Duchalski@do.maus.ruhr.de
+
+Joe Connor
+65 Mill Road
+Colchester
+CO4 5LJ
+
+Email: jconnor@cix.compulink.co.uk
+
+---------------------------------------------------------------------
+TXT2STG.TTP
+
+ Contents
+ 
+ Welcome
+ The package
+ Construction of a hypertext source file
+ Calling TXT2STG.TTP
+ Hints & references
+ Version history TXT2STG.TTP
+
+ --> APPEND.TTP
+ --> STGALIAS.TTP
+
+---------------------------------------------------------------------
+Welcome
+
+Welcome to the magical world of the hypertext creation! The aim of the 
+files which comprise TXT2STG is to enable relatively easy create of 
+ST-Guide format hypertexts without the need to get involved with any 
+of the cryptic ST-Guide commands.
+
+Taking any 'Source-text' in ASCII format an STG format source file 
+will be generated ready for compiling using HCP.TTP (The ST-Guide 
+Hypertext ComPiler).
+The only requirement is that the ST-Guide auto-referencer is active.
+
+Another advantage of the TXT2STG system: The source text remains 
+readable and can also be included in ASCII format. There are (to my 
+surprise) people who don't like ST-Guide!
+
+---------------------------------------------------------------------
+The package
+
+TXT2STG.TTP     The program. Produces an ST-Guide format STG source 
+                file from an ASCII file.
+
+TXT2STG.ENG     This text, which also serves as an example
+                source-file!
+TXT2STG.TXT     Same file as above in German.
+
+APPEND.TTP      Tool for concatenating several ST-Guide format source 
+                files into a single file.
+
+APPEND.ENG      The documentation to APPEND.TTP
+APPEND.TXT      The German documentation to APPEND.TTP      
+
+MAKE_HYP.MUP    An example batch file for Mupfel when using the GEMINI 
+                alternative desktop. using this batch file it's 
+                possible to automatically generate a compiled 
+                hypertext, called TXT2STG.HYP, using the TXT2STG.TXT, 
+                APPEND.TXT and STGALIAS.TXTs. The script is fully 
+                editable enabling each user to customise the script to 
+                generate their own TXT2STG or other hypertexts by 
+                customising the MUP batch file to their own 
+                requirements.
+
+---------------------------------------------------------------------
+Construction of a hypertext source file
+
+-> First of all: This text is simultaneously an example of a 
+   source-file. Try dropping it onto TXT2STG.TTP and see what 
+   happens!...
+
+-> Each screen (a page within the hypertext) MUST be denoted using at 
+   least three '-' characters. The line itself is ignored and the 
+   following line is interpreted as the title for the screen and is 
+   automatically changed to Bold text.
+   This can be configured using a command line option (-> call 
+   TXT2STG).
+   After the screen title an empty line should follow.
+   To denote a 'chapter' use a line containing 50 or more '-' 
+   characters.
+
+-> ; Preceding a line with the ';' character means the line is ignored 
+   by TXT2STG. These are handy for adding REMs or remarks to 
+   hypertexts.
+
+   If the character following a ';' is a '-' then the rest of the line 
+   is treated as a command line. Using this technique certain options 
+   can be turned on or off directly in the STG file.
+   Example:
+
+   ;-n
+   _Text 1_
+   ;-n
+   _Text 2_
+
+   'Text 1' will not be displayed as underlined text because the ';-n' 
+   line turns attribute conversion off.
+   'Text 2' will be displayed as underlined text because the second 
+   ';-n' line re-activates attribute conversion again.
+
+-> Attributes: It's possible to set the text-attributes, Bold, Light, 
+   Italics and Underlined using the following markers:
+
+   * --> Bold
+   _ --> Underlined
+   / --> Italics
+
+   Example:
+   *Bold text* in the source file is converted to:
+   @{B}Bold text@{0} in the STG source-file
+
+   This style of marking text is common amongst 'Comms' enthusiasts 
+   for adding empahasis to text. At the moment it's not possible to 
+   mark text as Bold & Underlined.
+
+-> Ignore: In order to exclude text sections from the attention of the 
+   auto referencer the format is normally @{"" ignore}. TXT2STG can
+   automatically convert text to the required format using 'Ý'.
+   Example:
+   
+   This is a ÝbadÝ example
+   
+   is automatically expanded to:
+   
+   This is a @{"bad" ignore} example
+
+   Advantage: The source text is more readable.
+
+-> $DATE
+   This text variable enables the current day and date to be 
+   automatically added to your ST-Guide format STG file.
+   
+   Example: @$VER: 2.00 ($DATE) in the source file is converted to:
+   --->     @$VER: 2.00 (17.07.94) in the STG source-file.
+   For speed reasons this command can only be used once.
+
+-> That almost it already! Normally ST-Guide commands begin with a '@' 
+   character.
+
+-> Finally: Remember to separate each page using at least three '---' 
+   characters at the beginning of a line. If you need to visually 
+   split the file up using a preceding ';' character which marks the 
+   line as a comment.
+
+---------------------------------------------------------------------
+Calling TXT2STG.TTP
+
+TXT2STG source-file [target-file] ...
+   ...  [-a{BIU}] [-t{Program name}] [-w{Min width}] [-x{Lines}] ...
+   ...  [-r] [-l{Text lines}] [-c{Chapters}] [-n]
+
+ If the target-text is left out, the name of the source text before 
+ the file extender (after the '.') is used and the file extender 'STG' 
+ appended.
+
+ Example:  TXT2STG TEST.TXT
+ -->       Produces the file TEST.STG
+
+ The following options can be indicated:
+ Option -a
+ Option -t
+ Option -w
+ Option -x
+ Option -r
+ Option -l
+ Option -c
+ Option -n
+
+ Reference: If this text is processed with no options selected the 
+ following are automatically set for demonstration purposes!
+ '-aUI -t -cOberbegriff:~'
+
+--------------------------------------------------
+Option -a
+Use    -a{BIU}
+
+ This parameter adds a duplicate page title in the text style of your 
+ choice as the first line on each screen, normally the title appears 
+ in the header bar of the ST-Guide window.
+ Using '-a' with no text attributes switches duplicate headers off.
+
+ Examples: TXT2STG TEST.TXT -aI
+       --> Duplicates the title using Italics text
+
+           TXT2STG TEST.TXT -aBI
+       --> Duplicates the title using Bold Italic text
+
+           TXT2STG TEST.TXT -a
+       --> Switches duplicate titles OFF
+
+--------------------------------------------------
+Option -t
+Use    -t{any text here}
+
+ Adds a custom text to the right hand edge of duplicate title lines. 
+ This is useful to add the name of the hypertext.
+ This option only makes sense when option '-a' is switched ON.
+
+ Example:
+
+ Introduction TXT2STG                                         TXT2STG
+ --------------------------------------------------------------------
+
+ If '-t' is called without a custom text the name of the target text 
+ is used.
+ The width of the title line is set according to the longest line of 
+ the page and is determined for each page seperately.
+
+--------------------------------------------------
+Option -w
+Use    -w{minimum width}
+
+ Sets the minimum width of a duplicated page title (see option -t).
+ Unless specified the minimum width defaults to 50 characters.
+
+--------------------------------------------------
+Option -x
+Use    -x{lines}
+
+ Normally duplicated titles are inserted as the first line on each 
+ page. Using this parameter a number of extra lines can be inserted 
+ before the duplicate line.
+ 
+--------------------------------------------------
+Option -r
+
+ This option is used to surpress the ST-Guide auto-referencer which 
+ would otherwise create references inside the duplicate page titles.
+ 
+ This option does however adversely affect the time needed to convert 
+ an ASCII text to STG format so only activate it if necessary.
+
+--------------------------------------------------
+Option -l
+Use    -l{maximum number of lines in ASCII file}
+
+ For speed reasons TXT2STG.TTP does not dynamically handle the number 
+ of lines in an ASCII file. Unless specified '-l' defaults to 3000 
+ lines which is enough for most texts. If you need more lines use this 
+ parameter to set a new value.
+
+--------------------------------------------------
+Option -c
+Use    -c{text}
+
+ Automatically adds a reference to the 'parent' chapter at the bottom 
+ of each page. This can optionally be defined by entering a custom 
+ text string (e.g. "Parent chapter:"). If space characters are needed 
+ in this string place holders '~' can be used:
+ Example: "Chapters:~~~~"
+
+ TXT2STG recognises a parent chapter after a string of 52 '-' 
+ characters, for example:
+
+ --------------------------------------------------------------------
+ Parent chapter
+
+  ->Sub chapter 1
+  ->Sub chapter 2
+ ----------------------
+ Sub chapter 1
+ ----------------------
+ Sub chapter 2
+ 
+A page which contains no references must therefore be defined as a 
+'Parent chapter' Before the reference a space character may be 
+inserted if necessary.
+
+--------------------------------------------------
+Option -n
+Use    -n
+
+ Disables the conversion of text-attributes,
+ see 'Construction of a hypertext source file'.
+
+---------------------------------------------------------------------
+Hints & references
+
+ -TXT2STG indicates the number of lines of the loaded text and which 
+ lines it has processed. The number of lines inserted is largely 
+ dependent upon the number of references generated within the text.
+ 
+---------------------------------------------------------------------
+Version history TXT2STG.TTP
+
+Version  Date      Changes
+
+0.94    18.07.94   -Text attributes can be created.
+                   -Handling of ';' Remark lines changed.
+        20.07.94   -Title duplication can be switched OFF and 
+                    configured.
+        21.07.94   -Customisable titles and other options added.
+
+0.95    23.07.94   -Option: '-c' introduced.
+                   -Attribute recognition changed, a check is no 
+                    longer made before and after the recognition for 
+                    space characters.
+                   -Maximum line width for special titles is now set 
+                    at 72 characters. When calculating the maximum 
+                    line length TXT2STG attempts to ignore '@' 
+                    commands.
+        25.07.94   -Output of the current line to a new Help screen 
+                    happens more quickly.
+        31.07.94   -ARGV transfer supported.
+
+0.96    04.09.94   -Attribute recognition: A preceding space is 
+                    required.
+        18.09.94   -The auto referencing of duplicated page titles is 
+                    now explicitly inhibited using the option -r.
+        06.10.94   -The inhibiting of duplicated page titles now 
+                    really does work!
+        23.10.94   -Attribute conversion for light text (using 'Ý') 
+                    discontinued.
+                   -Attribute conversion can be switched off using the
+                    -n option in a command line.
+                   -Enclosing text with 'Ý' characters expands the 
+                    text into the @{"" ignore} format needed so that 
+                    the auto referencer ignores it.
+                   -Command line options can now be directly embedded 
+                    in the text by preceding the line with ';-'.
+;--------------------------------------------------------------------

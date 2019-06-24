@@ -1,0 +1,27 @@
+Il est possible de choisir le motif de la fenˆtre de lecture et de la
+Playlist, il faut juste copier un fichier au format IMG (GEM image) 
+dans le r‚pertoire d'Aniplayer (au mˆme niveau). Il y a quelques 
+fichers dans ce dossier.
+Le nombre de couleurs doit ˆtre ‚gal … l'‚cran, aussi le nom du 
+fichier contient le nombre de couleurs except‚ en (near) true color.
+Il est possible de choisir un motif diff‚rent pour chaque fenˆtre, 
+mais le nom par d‚faut est PANELxxx.IMG (avec xxx pour le nombre de 
+couleurs). Le mom pour la fenˆtre de lecture est PPLAYxx.IMG et pour 
+la Playlist PLISTxxx.IMG.
+Par exemple si il y a ces fichiers dans le r‚pertoire d'Aniplayer:
+ PANEL16.IMG
+ PPLAY256.IMG
+ PLIST256.IMG
+ PANEL.IMG
+ PPLAY.IMG
+- PANEL16.IMG est utilis‚ en 16 colors pour les 2 fenˆtres.
+- PPLAY256.IMG est utilis‚ pour la fenˆtre de lecture et PLIST256.IMG 
+pour la Playlist en 256 couleurs. S.V.P. s‚lectionnez la 'Palette 
+courante' dans la boŒte 'Configuration affichage' si votre image 
+utilise aussi les 16 couleurs du GEM.
+- PPLAY.IMG est utilis‚ pour la fenˆtre de lecture et PANEL.IMG pour 
+la Playlist en 32K, 65K, ou 16M couleurs.
+Il n'est pas facile de trouver un programme pour cr‚er et voir un 
+fichier IMG en true color, il y a des modules RIM/WIN avec le systŠme 
+M&E, utilis‚ par des programmes comme Picollo ou Digital Lab. Une 
+autre solution est de sauver un fichier JPEG en IMG avec Aniplayer... 

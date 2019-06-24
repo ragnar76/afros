@@ -1,0 +1,145 @@
+
+
+   L i n k   2   U
+
+  *****************
+
+
+
+	link2u is Public Domain.
+
+	Free distribution as a colmplete archive (see chapter Files) is highly 
+	encouraged.
+
+
+
+
+ Version
+________________
+
+
+	Version:	0.153
+	Date:		20.07.2001
+
+
+
+
+ Files
+________________
+
+
+link2u/
+
+	link2u.prg	the program for putting into the 'start'-folder on MagiC
+	link2u.cnf	the configuration file
+	link2u_d.txt	german version of this text
+	link2u_e.txt	this text
+
+
+
+
+ Description
+________________
+
+
+	The purpose of this program is to automatically create links of 
+	directories and files and to delete links of drives on drive U, on every 
+	system startup of MagiC. Especially I recommend to remove the link to 
+	drive A on drive U on original Atari hardware because each time the 
+	root directory of drive U is accessed, MagiC accesses every drive which 
+	is accessible through it. The consequence is a rather annoying delay 
+	because of the slow disk drive.
+
+	This program is only meant for use on MagiC, because on MiNT resp. 
+	MultiTOS a comparable functionality is provided through the mint.cnf 
+	file.
+
+
+
+
+ Installation
+________________
+
+
+	1.	Copy link2u.prg to the 'start'-folder of MagiC.
+
+	2.	Copy link2u.cnf to the HOME directory or into the directory 
+		from where link2u.prg is started.
+		Firstable, the program looks in the HOME directory for the 
+		configuration file, if HOME exists, and then in that directory 
+		from which link2u.prg has been started.
+
+	3.	Customize link2u.cnf to fit your needs (see next chapter).
+
+
+
+
+ link2u.cnf
+________________
+
+
+	Each command begins in the first column of a line and is terminated by 
+	the end of the line. The arguments have to be separated from each other 
+	by exactly one space character (ASCII code 32).
+
+	The following commands are possible:
+
+		#<comment>
+
+			Any comment <comment> until end of line.
+
+		sln <source> <target>
+
+			Creates the symbolic link <target> of the original file 
+			<source>. <source> and <target> must be the whole paths 
+			of the files.
+			Generally, this makes only sense if the target drive is 
+			U, because links on real harddisk drives are not lost 
+			on system shutdown, as it is the case on drive U, and 
+			therefore don't have to be re-created on each system 
+			startup.
+
+		delu x
+
+			Removes link to drive X from drive U.
+
+
+	Example file:
+
+		# Create link to directory D:\PROGRAMM\gnu\usr
+		# from u:\usr
+		#
+		sln D:\PROGRAMM\gnu\usr u:\usr
+
+		# Remove link to drive A from drive U.
+		#
+		delu a
+
+
+
+
+ Legal
+________________ 
+
+
+	No Warranty
+
+	You use this program on your own risk. The author of this program is 
+	not liable for any damage (including loss of data) that are caused 
+	directly or indirectly by this program.
+
+
+
+
+ Author
+________________
+
+
+	Address:	Daniel Augsburger
+			Jasminweg 39
+			8050 ZÅrich
+			SWITZERLAND
+
+	Email:		skydiver@jumpgates.com
+
+	Homepage:	http://www.jumpgates.com/skydiver/

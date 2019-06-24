@@ -1,0 +1,20 @@
+VDI-Enhancer V1.00
+==================
+
+   VDI-Enhancer extends the ATARI VDI with new VDI functions for managing   
+   off-screen bitmaps and with the function vq_scrninfo().
+
+   In addition it replaces on Falcons in High-color mode (or True- color as 
+   it is called by ATARI :-) the non-working function v_get_pixel().
+
+Installation:
+=============
+   To install Enhancer, you have to copy it into your AUTO folder. If you   
+   use SPDOGDOS, Enhancer must be physically after SPDOGDOS.
+
+Note:
+=====
+   Enhancer shouldn't be used with NVDI because the provided functions 
+   already exists in NVDI 2.5 and older NVDI versions do not support 
+   monochrome bitmaps when working with color modes.
+

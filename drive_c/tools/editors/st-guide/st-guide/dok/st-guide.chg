@@ -1,0 +1,317 @@
+
+Update-History des Hypertext Systemes
+
+2.12.96:
+---------
+ST-Guide : Iconify noch mal umgestrickt, sollte jetzt unter MagiC und
+           MTOS optimale Ergebnisse liefern
+ST-Guide : Probleme mit mehreren Bildern in einer Zeile i.Z. mit Fonts
+           kleiner 12 Pixel Hîhe behoben
+ST-Guide : neue Variable NOREFBOX schaltet die bei der REF-Suche er-
+           scheinende Suchbox ab
+ST-Guide : Probleme mit dem Slider auf sehr langen Seiten behoben
+ST-Guide : Katalog-Icon ergÑnzt
+ST-Guide : wenn Remarker nicht in der INF-Datei angemeldet ist und von
+           Hand nachgestartet wird, verschwand dessen Icon bei einem
+           Fontwechsel im ST-Guide
+ST-Guide : TOS-Programme werden jetzt unter MagiC ohne AV Server im
+           Fenster (VT 52) gestartet
+ST-Guide : "Stack lîschen" ist wieder disabled, wenn der Stack leer ist
+ST-Guide : nach 'copy' bekommen alle laufenden Programme eine SC_CHANGED
+           Nachricht (im Mtasking)
+ST-Guide : bei externen Referenzen wird jetzt alles ab dem ersten '/' oder
+           '\\' als Titel angesehen, die Angabe von Pfaden zu den Dateien
+           ist also nicht mehr mîglich (macht ohnehin nur Probleme), dafÅr
+           aber die Verwendung der Pfadtrenner in Nodenamen
+           (siehe auch Option -k des hcp)
+ST-Guide : 'Marke setzen' und 'gehe zu Marke' sind zugunsten von 10 frei
+           definierbaren Marken per Funktionstaste entfernt worden; Setzen
+           erfolgt per Shift-Fx, Abrufen per Fx
+ST-Guide : neue Variable MARKFILE enthÑlt Zugriffspfad zu der Datei, in der
+           die gesetzten Marken beim Schlieûen des ST-Guide automatisch
+           gespeichert und aus der sie beim ôffnen des ST-Guide automatisch
+           wieder geladen werden; hiermit ist insbesondere das Anlegen
+           einer Liste der "wichtigsten" Hypertextseiten mîglich
+ST-Guide : neues Icon neben dem History-Icon îffnet ein Popup mit allen
+           gesetzten Marken, Klick ruft sie ab, Shift-Klick setzt sie
+ST-Guide : Sicherheitsabfragen fÅr den Fall eingebaut, daû der Hypertext
+           defekt ist oder z.B. gelîscht wurde, wÑhrend ST-Guide ihn
+           anzeigt
+ST-Guide : kleinen Bug behoben, der bei Speicherknappheit auftrat
+ST-Guide : kann Bilder jetzt zentriert darstellen
+ST-Guide : Fenster kann nicht mehr kleiner als Iconleiste plus drei
+           Textzeilen gemacht werden, um Darstellungsfehler zu vermeiden
+ST-Guide : Positionierungsfehler bei Grafik-Objekten im Zusammenhang mit
+           Fonts, die schmaler oder breiter als der Systemfont sind,
+           behoben
+ST-Guide : Probleme mit Case sensitiven Filesystemen im Zusammenhang mit
+           anzuzeigenden Nicht-Hypertexten behoben
+ST-Guide : in den Dialogen sind jetzt die 3D-Flags gesetzt und ab 16 Farben
+           werden die Dialoge hellgrau unterlegt
+ST-Guide : Die Tasten PageUp und PageDown werden ausgewertet
+ST-Guide : neue Variable BACKWIND macht das Fenster im Hintergrund
+           bedienbar, getopped wird es dann mit Rechtsklick
+ST-Guide : Die Alertboxen 'XY konnte nicht geîffnet werden' haben jetzt
+           eine kontextsensitive Hilfe
+ST-Guide : Bug im Zusammenang mit @tree und Seiten die direkt mit einem
+           Attribut beginnen behoben
+ST-Guide : Scrolling ist jetzt auch im hintenliegenden Fenster flimmerfrei,
+           wenn der Arbeitsbereich ganz sichtbar ist, das Fenster also nicht
+           verdeckt wird
+ST-Guide : hoffentlich Workaround fÅr Probleme beim Dauerscrollen
+           (plîtzliche Blockmarkierung) gefunden
+ST-Guide : Probleme des FileFinders mit langen Dateinamen behoben
+ST-Guide : neue Variable FORMFEED sorgt beim Ausdrucken dafÅr, daû am Ende
+           ein FormFeed ausgegeben wird
+ST-Guide : zeigt jetzt Bilder mit bis zu 16 Farben an, ich denke das ist
+           ein guter Kompromiss, denn fÅr einen Hypertext sinnvolle
+           Grafiken lassen sich damit erstellen und solche Bilder halten
+           sich von der Grîûe her in Grenzen, so das die Hypertexte da-
+           durch nicht allzusehr aufgeblÑht werden
+ST-Guide : in Farbtiefen mit weniger als 16 oder mehr als 256 Farben
+           werden bunte Bilder in S/W angezeigt; ST-Guide dithert die
+           Bilder dazu mit einem speziell fÅr Snapshots von Dialogen o.Ñ.
+           optimierten Verfahren (Defaultmaske) oder der im .stg zum be-
+           treffenden Bild vorgegebenen Maske
+ST-Guide : neue Variable XFONT, mit der ein 2. Font fÅr die Fenster-
+           darstellung angegeben werden kann; umgeschaltet wird per CTRL-Z
+ST-Guide : Fehler beim Scrollen wÑhrend des Blockmarkierens in Farbe
+           behoben
+ST-Guide : der Suchen-Dialog ist jetzt unter MagiC auch ohne Let 'em Fly
+           Tastaturbedienbar
+ST-Guide : BCKCOLOR zugunsten von BCK3D entfernt
+HCP      : Zeilen lÑnger als 127 Zeichen (netto) werden jetzt immer um-
+           brochen
+HCP      : Fehler beim Recompilieren von XREF behoben
+HCP      : Warnung bei Benutzung undefinierter Variablen eingebaut
+HCP      : um die Zeichenfolge '@:' in den Text zu bekommen, ist '@@:'
+           zu schreiben
+HCP      : heftigen internen Fehler behoben, der beim öbersetzen von
+           Hypertexten zuweilen zu AbstÅrzen oder defekten xref's fÅhrte
+HCP      : Probleme mit SEHR langen Zeilen (>256 Zeichen) jetzt
+           hoffentlich behoben
+HCP      : "verzÑhlt" sich nicht mehr beim Laden der Bilder, zum Schluû
+           sollte in der Ausgabe jetzt immer 'none' stehen
+HCP      : Probleme mit unpaarigen indexon/indexoff behoben
+HCP      : '-j' funktionierte offenbar nicht als Parameter fÅr @options,
+           behoben
+HCP      : neue Option -k<value> zum Setzen von Flags
+HCP      : Erweiterung fÅr Bilder: zentrierte Darstellung durch Angabe
+           von 0 als X-Koordinate
+HCP      : beide 'û' werden vom Autoreferenzer nicht als Worttrenner
+           benutzt, vorher funktionierte es mit dem einen 'û' und mit dem
+           anderen nicht
+HCP      : einige Newlines entfernt, damit mehr auf den Bildschirm paût
+           (fÅr Consolefenster, die nicht zurÅckscrollen kînnen)
+HCP      : Fehler bei @if im Zusammenhang mit Zahl-Konstanten behoben
+HCP      : '+q' hebt '-q' jetzt auf, damit z.B. Voreinstellungen in
+           HCP_OPT lokal rÅckgÑngig gemacht werden kînnen
+HCP      : per +i1 kann jetzt ein "verteilter" Index erstellt werden, d.h.
+           eine eigene Seite fÅr jeden Buchstaben
+HCP      : Probleme mit @uses auf REF-Files und Benutzung dortiger @symbols
+           behoben
+HCP      : keine ÅberflÅssigen Blanks mehr auf den Indexseiten
+HCP      : bei @image & @limage kann jetzt optional eine Dithermaske
+           angegeben werden, die der ST-Guide dann statt der Defaultmaske
+           zum Konvertieren bunter Bilder in S/W verwendet.
+HCP      : kleinen Bug im Zusammenhang mit @uses und pnodes behoben
+HCP      : Probleme bei @uses mit langen Dateinamen entfernt
+HCP      : Headerkennung fÅr Mac definiert (3), fÅr Hyperion
+HCP      : schreibt neuen OS-Header in REF-Files fÅr Hyperion
+HCP      : lÑût jetzt ein Leerzeichen am Zeilenende drin, fÅr Hyperion
+HCP      : neue Kommandos @x, @{... x} und @os fÅr Hyperion
+
+31.07.95:
+---------
+ST-Guide : Fehler im Zusammenhang mit mehreren Bildern auf einer Seite
+           behoben
+ST-Guide : Fehler im Zusammenhang mit Bildern & pnodes auf der selben
+           Seite behoben
+ST-Guide : aktive UnterstÅtzung des Font-Protokolles implementiert
+ST-Guide : 'Drucken' heiût jetzt im Block-Popup auch wieder so...
+ST-Guide : AutoLocator sollte jetzt immer sichtbar werden, wenn ein
+           Zeichen eingegeben wird
+ST-Guide : wegen ungeklÑrter Probleme i.Z. mit Let 'em Fly wurden die
+           MagiC Shortcuts erstmal wieder ausgebaut; wer also mit
+           Let 'em Fly arbeitet, kommt jetzt wieder in den vollen Genuû
+           dieses Tools
+ST-Guide : die REF-Suche kann jetzt durch Shift-Shift oder CTRL-ALT
+           abgebrochen werden
+ST-Guide : bei Auswahl von 'Remarker' im Menue bzw. ALT-R îffnet sich
+           der Remarker jetzt direkt
+ST-Guide : Bug bei Shift-Home gefixt
+ST-Guide : Shift-Klick auf 'Copy' im BlockPopup bewirkt, daû der Block
+           ans Clipboard angehÑngt wird; gleiches gilt fÅr den ent-
+           sprechenden Menuepunkt unter Extra, und natÅrlich bekommt
+           man den gleichen Effekt auch mit Shift-Ctrl-C
+ST-Guide : Probleme mit TastendrÅcken bei iconifiziertem Fenster behoben
+ST-Guide : Erkennung "AVSERVER" sicherer
+ST-Guide : Probleme beim Fuller behoben
+ST-Guide : Fehler i.Z. mit dem "kann nicht geîffnet werden" Alert
+           hoffentlich behoben
+ST-Guide : Der Abstand zwischen der ersten Textzeile und der Trennlinie
+           kann jetzt konfiguriert werden (Variable TXTOFFSET), default-
+           mÑûig betrÑgt er 6 Pixel
+ST-Guide : Probleme mit 'zurÅck' zu Seiten mit Bildern behoben
+ST-Guide : Probleme mit Referenzen hinter kursiven Passagen behoben
+ST-Guide : Icon im iconifizierten Fenster wird jetzt zentriert
+ST-Guide : auf Icons umgestellt, dadurch mehr Funktionen direkt auf
+           Knopfdruck
+ST-Guide : FunktionalitÑt & Icon fÅr Querverweislisten implementiert
+ST-Guide : Seitenweise blÑttern geht jetzt auch mit CTRL-LF/RT
+ST-Guide : jetzt toleranter gegen unpassende WINSIZE Angaben
+ST-Guide : Problem beim Fullen behoben, wenn der Inahlt hor. gescrollt
+           war
+ST-Guide : neues Icon neben "zurÅck" zeigt ein Popup mit den letzten
+           12 Seiten, zu denen auf diese Weise direkt zurÅckgekehrt
+           werden kann
+ST-Guide : beginnt der bei "system" angegebene Programmname mit einem
+           '$', so wird eine Variable dieses Namens in der ST-GUIDE.INF
+           gesucht, und das dort angegebene Programm ausgefÅhrt
+ST-Guide : Iconify jetzt nach der (umstÑndlicheren) MTOS Methode
+           implementiert, die den unangenehmen Nebeneffekt hat, daû die
+           iconifizierten Fenster immer nach hinten gelegt werden.
+           ...angeblich funktionierte die bisherige Methode unter MTOS
+           nicht...
+ST-Guide : der Rechtsklick muû jetzt innerhalb des ST-Guide Fensters
+           ausgefÅhrt werden, damit bei aktiviertem RIGHTBACK 'zurÅck'
+           ausgelîst wird
+ST-Guide : neue Variable PRINTER bewirkt, daû bei 'Drucken' die Seite
+           bzw. der Block ins Clipboard geschrieben und das in der Var.
+           angegebene Programm aufgerufen wird, hier kann also ein
+           externes Druckprogramm eingebunden werden
+ST-Guide : 'û' sollte jetzt korrekt ausgedruckt werden
+HCP      : neues Kommando @xref fÅr Querverweislisten implementiert
+HCP      : Probleme mit *sehr* langen REF-Module (>64K) behoben
+HCP      : -w kann jetzt von einer Ziffer gefolgt werden (0/1/2) und
+           ist auch im @options Kommando mîglich
+HCP      : meckert jetzt bei zu langen und unteilbaren Zeilen - extra
+           fÅr Leute, die BinÑrfiles Åbersetzen wollen...
+HCP      : -m funktioniert wieder
+HCP      : neue Kommandos @indexon/@indexoff zum Ein/Ausschalten der
+           automatischen öbernahme der Seitennamen in den Index
+HCP      : Default-ZeilenlÑnge ist jetzt 75,  weil sich das
+           "eingebÅrgert" hat
+HCP      : die automatisch erzeugte Index-Seite wird jetzt nicht mehr
+           autoreferenziert
+HCP      : beim Kommando -l kann jetzt eine Filtermaske angegeben werden
+HCP      : Dokumentation Åberarbeitet
+HCP      : ein paar Sicherheitsabfragen eingebaut, um den Versuch, einen
+           Hypertext erneut zu Åbersetzen, zu vereiteln...
+STool    : Wird nur eine Index-Seite erzeugt, so erzeugt der hcp nicht
+           mehr auch noch einen, auûerdem hat der Hypertext auch wieder
+           ein Subject und der hcp meckert nicht mehr
+STool    : die Kombination +SHRINK, +INDEX fÅhrt jetzt nicht mehr
+           dazu, daû keine STG-Datei erzeugt wird
+STool    : neue Variable UPDATEREF schaltet das automatische
+           Aktualisieren der ALL.REF ein/aus
+STool    : Lesen der CFG-Datei ist jetzt weniger pingelig
+STool    : erzeugt jetzt @$VER: Kommando mit aktuellem Datum
+RefLink  : Probleme mit *sehr* langen REF-Modulen (>64K) behoben
+RefLink  : Namen der temporÑren Datei geÑndert - damit's auch unter DOS
+           legal wird...
+
+
+28.04.95:
+---------
+ST-Guide : Probleme bei 'system' ohne Kommandozeile behoben
+ST-Guide : Probleme bei 'system' unter SingleTOS behoben
+ST-Guide : Probleme mit WinX Scrollboxes (hoffentlich) behoben
+ST-Guide : Dialoge sind unter MagiC jetzt auch ohne Let 'em Fly
+           tastaturbedienbar
+ST-Guide : Dialoge/Popups werden jetzt unter MagiC auch ohne Let 'em Fly
+           ohne Redraw-Nachricht vom Bildschirm entfernt
+ST-Guide : der "Dialog" fÅr die REF-Suche hat jetzt das Åbliche Design
+           (Hallo Rene ;-)
+ST-Guide : Iconify eingebaut
+ST-Guide : wartet jetzt nach dem ôffnen von pnodes, bis die Maustaste
+           wieder losgelassen wird
+ST-Guide : Der Remarker-Eintrag wird beim Beenden desselben jetzt nicht
+           mehr disabled, wenn die entsprechende Variable gesetzt ist
+ST-Guide : Problem mit SEHR langen Hypertexten behoben (Hallo Manfred ;-)
+
+19.04.95:
+---------
+ST-Guide : jetzt wird das Fenster ggfls wieder geîffnet, wenn HypFind
+           fertig ist und der erzeugte Text angezeigt werden soll...
+ST-Guide : beim Starten von Programmen aus Hypertexten heraus sollte
+           der ST-Guide anschlieûend nicht mehr versuchen, die Datei
+           HypFind.hyp zu laden
+ST-Guide : der Aufruf des Fontselektors wird jetzt nicht mehr mit
+           wind_update geklammert (Hallo Dirk ;-)
+ST-Guide : keine AbstÅrze mehr bei Auswahl eines neuen Fonts bei leerem
+           ST-Guide Fenster
+ST-Guide : jetzt sollte sich auch die Hintergrundfarbe des Fensters
+           einstellen lassen (Variable BCKCOLOR)
+ST-Guide : Font-Protokoll wird unterstÅtzt, daher kann jetzt auch der
+           FONT_SEL von criss zur Auswahl des Fonts im ST-Guide verwendet
+           werden
+ST-Guide : Autolocator eingebaut; Eingabe: klar, Backspace: letztes Zeichen
+           lîschen, Shift-Backspace: alle Zeichen lîschen,
+           Insert: nÑchste Fundstelle;
+ST-Guide : hoffentlich letzten Darstellungsfehler im Zusammenhang mit
+           leeren Nodes behoben
+ST-Guide : der Umbruch bei ASCII-Files erfolgt jetzt beim letztmîglichen
+           Leerzeichen, so daû in den meisten FÑllen keine Zeichen mehr
+           verlorengehen
+ST-Guide : bei ASCII-Files ohne abschlieûendes Newline sollte die letzte
+           Zeile jetzt nicht mehr unterschlagen werden
+ST-Guide : Nachlaufverhinderung "gesÑubert"
+ST-Guide : neue Variable RIGHTBACK bewirkt, daû Rechtsklicks wie 'zurÅck'
+           behandelt werden, wenn das ST-Guide Fenster vorne liegt
+ST-Guide : Zorro's Wille geschehe... Nicht monochrome Bilder werden nicht
+           mehr angezeigt, wenn die Anzahl der Planes des Bildes nicht mit
+           der aktuellen Auflîsung Åbereinstimmt; stattdessen wird ein
+           Rahmen an den betreffenden Stellen gezeichnet
+ST-Guide : Die Endungen externer Dateien werden jetzt in Groûbuchstaben
+           umgewandelt, bevor sie in der INF Datei gesucht werden
+ST-Guide : die externen Viewer werden jetzt unter MagiC wirklich nachge-
+           startet, falls kein AV Server gefunden wird
+ST-Guide : fÅr die Berechnung der max. Fensterbreite wird jetzt die tat-
+           sÑchliche Breite des Bildes benutzt, nicht mehr die (oft
+           falsche) Angabe des Hypertextautors
+ST-Guide : Popup-Nodes haben jetzt automatisch einen oberen und unteren
+           Rand von halber Zeichenhîhe
+ST-Guide : Popupmenue umsortiert, Trennlinien eingefÅgt und eingedeutscht
+ST-Guide : neues Shortcut ALT-D lÑdt den als DEFHYP angegebenen Hypertext
+ST-Guide : öberschneidungen von Bildern und Text bei Verwendung kleinerer
+           Fonts gehîren jetzt der Vergangenheit an
+ST-Guide : Zusammenarbeit mit dem neuen Tool Remarker eingebaut
+           - neue Variable REMARKER=[!]<path>
+             -> beim ôffnen wird Remarker direkt mitgestartet (ohne '!')
+             -> bei ALT-R wird Remarker nachgestartet
+           - kleine Box links oben im Fenster zeigt den Zustand:
+             * unsichtbar: Remarker lÑuft nicht
+             * sichtbar: Remarker lÑuft, aber zur aktuellen Seite ex. keine
+               Notiz
+             * sichtbar und schwarz: zur aktuellen seite ex. eine Notiz
+           - ALT-R bzw. der betreffende Menuepunkt ruft Remarker (startet
+             ihn ggfls. nach, falls REMARKER definiert ist)
+ST-Guide : neue Variable REFONLY bewirkt, daû nur Mausklicks auf
+           Referenzen ausgefÅhrt werden, Klicks auf "normale" Worte
+           werden also ignoriert
+ST-Guide : auch unter MagiC wird der Server nur noch erkannt, wenn die
+           Environment-Variable AVSERVER gesetzt ist
+HCP      : neues Kommando @limage (line image) als Erweiterung von @image
+           lÑût den ST-Guide das EinfÅgen von Leerzeilen vollautomatisch
+           passend zum verwendeten Font durchfÅhren
+HCP      : Blanks direkt hinter Variablennamen bleiben jetzt erhalten
+HCP      : @symbol in der ersten Zeile einer pnode ist jetzt erlaubt
+HCP      : beim Updaten der ALL.REF sollten jetzt keine Meldungen wegen
+           realloc Fehlern mehr vom hcp kommen
+HCP      : wartet jetzt bei allen Fehlermeldungen auf einen Tastendruck
+HCP      : "HypTree-Data" wird bei -l nicht mehr ausgegeben
+HCP      : undefinierte Variablen werden von @if als 0 behandelt
+HCP      : fehlende @endnode werden im Pass 2 jetzt wieder korrekt
+           behandelt
+HCP      : @include <name>.h wird jetzt 1:1 gelesen, wenn das Kommando
+           innerhalb einer Node steht
+RefLink  : Probleme beim Lîschen von EintrÑgen mit Extender sollten jetzt
+           behoben sein
+RefLink  : Bug bei -m gefixt
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+Tools for ST-Guide, Release 4, 23rd October 1994
+TXT2STG   -Generates an ST-Guide STG format text from an ASCII file.
+           Text attributes, title generation and heirarchical chapter 
+           referencing can be automatically added.
+STGALIAS  -Generates alias names for pages.
+APPEND    -Appends one file to another.
+UFP2STG   -Changes the PC UFP format Star Trek data to ST-Guide format.
+TELE2STG  -Converts the Tele Office handbook into STG format. [German]

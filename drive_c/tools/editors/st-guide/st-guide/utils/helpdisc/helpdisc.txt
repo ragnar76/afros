@@ -1,0 +1,65 @@
+HELPDISC - Pure Pascal Help File Discompiler
+============================================
+
+Idee, Programm, Copyright usw.: Joergen von Bargen (Maus HH)
+Kleinere Verbesserungen: Christoph Zwerschke (Maus KA)
+
+Mit HELPDISC kann man Hilfedateien im Pure-Pascal-Format in eine
+Quelldatei zurÅckverwandeln. Das Pure-Pascal-Format wird Åbrigens
+auch vom Pure-Profiler, aber nicht von Pure-C v1.x benutzt.
+
+Mit HELPDISC kann man also:
+
+ - Hilfedateien ausdrucken
+ - Hilfedateien korrigieren oder ergÑnzen
+ - Hilfedateien in andere Formate (1st-Guide, ST-Guide) umwandeln
+
+Beispiel:
+
+Aus der Hilfedatei PP.HLP kann mit
+
+HELPDISC PP.HLP PP.TXT
+
+die Quelldatei PP.TXT zurÅck erzeugen. Diese Datei kann man nun
+ausdrucken oder mit einem Editor korrigieren oder ergÑnzen.
+
+Warnung am Rande: Die Quelldatei kînnen sehr lang werden, zum Beispiel
+paût die Quelldatei zu UNIT.HLP nicht auf eine normale ds/dd-Diskette.
+Es ist daher ratsam (auch aus GeschwindigkeitsgrÅnden), immer eine groûe
+RAM-Disk oder Harddisk zum Bearbeiten von Hilfedateien zu benutzen.
+
+Aus der Quelldatei PP.TXT kann man mit dem Pure Pascal Help File Compiler
+HELPCOMP und der Kommandodatei
+
+-V
+PP.HLP
+PP.TXT
+
+wiederum eine Hilfedatei PP.HLP erzeugen.
+
+Die Warnungen 'link to unknown screen page-1' kann man ignorieren, 
+das sind Verweise auf andere Helpfiles.
+
+ST-Guide-Benutzer kînnen aus der Quelldatei PP.TXT fÅr Pure-Pascal mit
+
+PC_CONV -a +n PP.TXT
+
+eine Quelldatei PP.STG fÅr ST-Guide erzeugen. Aus dieser Quelldatei
+kann dann schlieûlich mit
+
+HCP -a -n -s -oPP.HYP PP.STG
+
+eine Hypertext-Datei PP.HYP fÅr ST-Guide erzeugt werden.
+
+Copyright-Hinweis von J≥rgen:
+
+Dieses Programm darf von jedermann kopiert und/oder gelîscht werden.
+Ich Åbernehmen keine Haftung fÅr irgendwelche Folgen, die aus der 
+Anwendung dieses Programm in irgendeiner Weise entstehen.
+
+Ich fÑnde es nett, wenn der Hinweis auf mich in diesem Programm verbleibt.
+
+Gruû an alle und jeden
+
+JJvB in der DBOX-Hamburg 040/8324543
+

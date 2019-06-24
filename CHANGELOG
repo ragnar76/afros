@@ -5,6 +5,7 @@ Major changes:
 - replaced TeraDesk
 - replaced MiNT (Version 1.17) with a more current version from GIT (Version 1.19)
 - moved pre-installed binaries to a new folder called tools to clean up messy c:\
+- qed, kronos, zview and aniplayer updated
 
 Minor Changes
 - changed BootColorDepth

@@ -1,0 +1,13 @@
+This is the final zView release (1.0.1) from me, MiKRO. It's mainly a bugfix
+release, I promised to do it a long time ago. Now it's pretty stable,
+there's even a FireBee build so everybody can enjoy this piece of software.
+List of remaining (discovered) bugs can be found at the project website
+(http://z-tools.sf.net), everyone is invited to catch up...
+
+You don't need to install anything, however if you want to make new plugins
+usable for other applications, copy "codecs" directory into c:\gemsys\ldg
+(or any other location you use for LDG modules).
+
+Miro Kropacek
+Bratislava/Slovakia
+07.03.2013

@@ -1,0 +1,26 @@
+_____________________________________________________________
+|                                                           |
+| *** WELKOM BIJ DE ANIPLAYER VAN DIDIER MEQUIGNON! ***     |
+|     --------------------------------------------          |
+|                                                           |
+|* Door de N_FRENCH.TXT uit de DUTCH-folder in de home-     |
+|  directory van Aniplayer te plaatsen verkrijgt men de     |
+|  nederlandstalige menus en teksten in Aniplayer.          |
+|                                                           |
+|* Dit is de Nederlandse versie van de besturing voor       |
+|  Aniplayer.                                               |
+|                                                           |
+|  Veel plezier met deze leuke speler van Didier.           |
+|                                                           |
+|  Karel de Bruijn                                          |
+|                                                           |
+|  De omzetting van de documentatie voor Aniplayer is  ge-  |
+|  realiseerd door eerdergenoemde.                          |
+|  email: kbruijn@dds.nl                                    |
+|                                                           |
+|                                                           |
+|  Het grootste gedeelte van de vertalingen in N_FRENCH.TXT |
+|  zijn gedaan door  Karel Post                             |
+|                    Cybermax Publishing, The Netherlands   | 
+|                    cybermax@worldaccess.nl                |
+|___________________________________________________________|

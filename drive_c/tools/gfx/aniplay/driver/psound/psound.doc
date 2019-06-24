@@ -1,0 +1,331 @@
+******************************************************************************
+*                                                                            *
+*           P-SOUND   V x.yy              ½ S‚bald Lo‹c 1997-1998                 *
+*                                                                            *
+******************************************************************************
+
+Coordonn‚es de l'auteur :     S‚bald Lo‹c
+                          1 bis rue du stade
+                            30820 Caveirac
+                         tel : 04 66 63 40 16
+
+Pr‚sentation :
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+    La version complŠte comprend une carte … bracher sur le port // et un
+  programme PSOUND.PRG … installer dans le dossier AUTO.
+  
+  La carte est un convertisseur N/A dans sa version la plus simple. La qualit‚
+  de la restitution est ‚quivalente … celle d'une SoundBlaster 8 Bits.
+  
+  
+Mat‚riel requis :
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+    Un HadŠs 40/60 ( Pour les autres, il n'y a aucune utilit‚ d'une telle 
+  carte ... ) et une paire d'enceintes amplifi‚es ou une chaine HIFI.
+  Le volume en sortie de la carte ‚tant faible, il faut une amplification.
+
+Utilisation :
+ÿÿÿÿÿÿÿÿÿÿÿÿÿ
+    Pour l'utilisateur, il n'y a rien d'autre … faire que brancher la carte
+  et copier les fichiers PSOUND.PRG et PSOUND.INF dans le dossier AUTO 
+  ( L'ordre dans le dossier AUTO est sans importance, toutefois, si vous voulez
+  jouer un ‚chantillon au boot, il vaut mieux les mettre dans les premiers. )
+
+    Les programmes qui reconnaitront la pr‚sence du driver enverront les
+  donn‚es vers la sortie standard. ( Beaucoup plus rapide que par le YAMAHA et
+  de meilleure qualit‚.)
+  
+  La version complŠte ( Driver + carte ) est disponible pour 100FF .
+  Le driver seul est disponible pour 50FF. ( Frais de port inclus )
+
+  Lisez le fichier PSOUND.INF pour choisir les sorties et options d‚sir‚s.
+  
+Programmation :
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+    Le driver rajoute plusieurs fonctions dans le XBIOS. Pour reconnaitre sa
+  pr‚sence, il suffit de v‚rifier que le Cookie "PSND" se trouve dans le 
+  Cookie Jar.
+  
+  La nouvelle fonction du XBIOS pouvant ˆtre modifi‚e dans le futur, il est
+  imp‚ratif de prendre sa valeur dans les 2 octets aprŠs "PSND" dans le
+  Cookie Jar. De cette maniŠre, quel que soit le num‚ro de la fonction, vous
+  serez s–r de ne pas avoir … modifier vos programmes.
+
+  En assembleur :
+'
+' a0=adresse du Cookie "PSND"
+'
+'    move.w	4(a0),Xbios_vector    -> Xbios_vector contient maintenant
+'                                        Le num‚ro de fonction du P-Sound
+'                                        dans le XBIOS.
+
+  Les 2 octets suivant sont:
+  bit 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
+      |_____________________| |_____________________|
+      
+       Nø Version majeur         Nø Version mineur
+  
+  Ex :        $02                       $3e
+              
+   le mot est $023e ( 574 en d‚cimal ), la version est 2.62 
+       ($3e hexa = 62 d‚cimal )
+  
+  Le vecteur XBIOS englobe les sous-fonctions suivantes :
+  
+ #1 Replay once          Joue un ‚chantillon 8 bits NON sign‚
+ #2 Replay loop          Joue un ‚chantillon en boucle 8 bits NON sign‚
+ #3 Replay frame         Joue une s‚rie d'‚chantillons 8 bits NON sign‚
+ #4 Stop replay          Arrˆte la reproduction sonore
+ #5 Convert_sm_8         Conversion d'un ‚chantillon St‚r‚o en Mono 8 bits NON sign‚
+ #6 Change_preset        Permet de modifier … volont‚ la fr‚quence Nø16
+ #7 Convert_sm_16        Conversion d'un ‚chantillon St‚r‚o en Mono 16 bits sign‚
+ #8 Sign\Unsign          Signer ou D‚ssigner un ‚chantillon 8 bits
+ #9 Resample_8_bits      R‚‚chantillonner un sample 8 bits NON sign‚
+#10 Intel/motorola       Passer du format intel au format motorola ( 16 bits )
+#11 Replay once          Joue un ‚chantillon 16 bits sign‚
+#12 Replay loop          Joue un ‚chantillon en boucle 16 bits sign‚
+#13 Replay frame         Joue une s‚rie d'‚chantillons 16 bits sign‚
+#14 Maximize_8_bits      Augmenter le volume au maximum sans distorsions sur 8 bits
+#15 Maximize_16_bits     Augmenter le volume au maximum sans distorsions sur 16 bits
+#16 Resample_16_bits     R‚‚chantillonner un sample 16 bits sign‚
+#Nb Filtre               Fonction de filtrage  ( non impl‚ment‚e … ce jour )
+  
+
+  Les paramŠtres sont pass‚s par la pile comme tout autre fonction du XBIOS.
+  L'appel peut se faire en mode utilisateur ou superviseur
+                                               ÿÿÿÿÿÿÿÿÿÿÿ
+  Les fonction qui prennent comme paramŠtre l'adresse d'un buffer permettent
+  d'avoir l'‚chantillon original d'un cot‚ et l'‚chantillon modifi‚ d'un autre.
+  ( Seule la fonction resample lorsque la taille d'arriv‚e est sup‚rieure … la 
+  taille de d‚part n‚cessite une adresse de buffer distincte de l'adresse de 
+  l'‚chantillon.)
+  
+   D0 contient en retour un pointeur sur le nombre d'‚chantillons restant …
+  jouer. Le registre a0 contient au retour de la fonction un pointeur sur 
+  l'‚chantillon en cours de restitution. Ces paramŠtres de retour sont valables
+  pour toutes les fonctions de replay.
+  
+   Un petit example :
+   |
+   |
+   trap #14
+   lea  nb(sp),sp
+
+      pour attendre la fin                  pour r‚cup‚rer l'echantillon courant
+
+   move.l d0,a1                              move.l (a0),a1
+wait_end                                     move.b (a1),dn   ; ‚chantillon
+   tst.l (a1)                             oscilloscope...
+   bne   wait_end
+
+
+Liste des fonctions :
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Replay once
+
+    move.l      #sample_start,-(sp)          ; Adresse d‚but du sample
+    move.l      #sample_end,-(sp)            ; Adresse fin du sample
+    move.w      #Frequence,-(sp)             ; Frequence du replay
+    move.w      #1,-(sp)                     ; Fonction #1
+    move.w      Xbios_vector,-(sp)           ; Vecteur du Xbios
+    trap        #14                          ; GO !
+    lea         14(sp),sp                    ; Corrige la pile
+    tst.l       d0                           ; -1 si erreur
+    bmi         error
+    move.l      d0,a1                        
+    |
+    |
+    tst.l       (a1)
+    beq         fin                          ; Plus d'‚chantillons … jouer...
+ 
+Replay loop
+
+    move.l      #sample_start,-(sp)          ; Adresse d‚but du sample
+    move.l      #sample_end,-(sp)            ; Adresse fin du sample
+    move.w      #Frequence,-(sp)             ; Frequence du replay
+    move.w      #2,-(sp)                     ; Fonction #2
+    move.w      Xbios_vector,-(sp)           ; Vecteur du Xbios
+    trap        #14                          ; GO !
+    lea         14(sp),sp                    ; Corrige la pile
+    tst.l       d0                           ; -1 si erreur
+    bmi         error
+    move.l      d0,a1                        ; Adresse contenant le nombre
+                                             ; d'‚chantillons restants … 
+                                             ; Jouer
+
+ Ceci peut servir pour une routine soundtrack ou toute application qui aurait
+ besoin d'un buffer tournant.
+
+Replay_frame
+
+    move.l      #frame_adress,-(sp)          ; Adresse du Frame
+    move.w      #Frequence,-(sp)             ; Une seule fr‚quence pour tous
+    move.w      #3,-(sp)                     ; Fonction #3
+    move.w      Xbios_vector,-(sp)           ; Vecteur du Xbios
+    trap        #14                          ; Appel du Xbios
+    lea         10(sp),sp                    ; Corrige la pile
+  
+  composition d'un frame :
+  
+ Adresse du frame   0 : Start 1 , End 1 , Nb ;  pointeur dans le frame
+                   12 : Start 2 , End 2 , Nb ;  par le driver.
+                   etc
+                      : ReStart , XXXXX , En
+ 
+ Start x = adresse d‚but d'un sample
+ End   x = adresse fin d'un sample
+ Nb      = Nombre de fois ou le sample est rejou‚ avant la position suivante
+ 
+ En      = -1 Derniere position du frame
+ Restart = Position du rebouclage dans le frame ( multiple de 12 )
+ XXXX    = Non utilis‚
+
+ Ceci peut servir pour une routine soundtrack ou toute application qui aurait
+ besoin d'un double buffer tournant.
+ 
+ 
+Stop replay
+ 
+    move.w      #4,-(sp)                     ; Fontion #4
+    move.w      Xbios_vector,-(sp)
+    trap        #14
+    addq.l      #4,sp
+  
+  Stoppe la reproduction sonore.
+
+Convert_sm	8 bits non sign‚ = #5        16 bits sign‚ = #7
+
+    move.l      #sample_start,-(sp)
+    move.l      #sample_end,-(sp)
+    move.l      #Buffer,-(sp)
+    move.w      #5 ou #7,-(sp)
+    move.w      Xbios_vector,-(sp)
+    trap        #14
+    lea         16(sp),sp
+
+ L'adresse du Buffer peut ˆtre ‚gale … celle du Sample_start, sinon
+ Le sample original n'est pas modifi‚. Le r‚sultat sera stock‚ … l'adresse
+ du Buffer.
+
+Change preset
+
+    move.w      #Val,-(sp)
+    move.w	#6,-(sp)		; fonction 6
+    move.w      Xbios_vector,-(sp)
+    trap        #14
+    addq.l      #6,sp
+
+  Permet d'assigner une valeur personnelle … la fr‚quence Nø16 des fr‚quences
+ disponibles
+
+ Val est une donn‚e sur 2 octets :
+   octet 0 = Valeur du pr‚diviseur du Timer A
+   octet 1 = Valeur du divisviseur du Timer A
+
+ La fr‚quence de base du MFP est 2457600 Hz
+ le pr‚divieurs peut avoir les valeurs : 1 pour une pr‚division par  4
+                                         2                          10
+                                         3                          16
+                                         4                          50
+                                         5                          64
+                                         6                         100
+                                         7                         200
+ Ex : Pour une fr‚quence de 40960 Hz
+ 
+ Val = $010f  ( Pr‚diviseur de 4, diviseur de 15 )  40960 = (2457600/4)/15
+
+Sign/Unsign
+
+    move.l      #sample_start,-(sp)
+    move.l      #sample_end,-(sp)
+    move.l      #Buffer,-(sp)
+    move.w      #8,-(sp)
+    move.w      Xbios_vector,-(sp)
+    trap        #14
+    lea         16(sp),sp
+ 
+ Permet de signer/dessigner un sample 8 Bits MONO. Cette fonction est
+ r‚versible.
+
+Resample        8 bits non sign‚ = #9       16 bits sign‚ = #16
+
+    move.l      #sample_start,-(sp)
+    move.l      #sample_end,-(sp)
+    move.l      #Buffer,-(sp)
+    move.w      #freq_start,-(sp)
+    move.w      #freq_dest,-(sp)
+    move.w      #9 ou #16 ,-(sp)
+    move.w      Xbios_vector,-(sp)
+    trap        #14
+    lea         20(sp),sp
+ 
+ Permet de changer la frequence de base d'un sample. Si la frequence de d‚part
+ est sup‚rieure … la fr‚quence d'arriv‚e, l'adresse du Buffer peut etre
+ ‚gale … celle du sample.
+ Si la frequence d'arriv‚e est sup‚rieure … la fr‚quence de d‚part, l'adresse
+ du buffer NE DOIT PAS etre ‚gale … celle du sample. Dans ce cas, il y a
+ interpolation lin‚aire des valeurs.
+
+Little endian to motorola
+
+    move.l	#sample_start,-(sp)
+    move.l	#sample_end,-(sp)
+    move.l	#buffer,-(sp)
+    move.w	#10,-(sp)
+    move.w	Xbios_vector,-(sp)
+    trap	#14
+    lea	16(sp),sp
+   
+   Comme pour signer/dessigner, cette fonction est r‚versible. Elle permet de
+ permuter les octets de poid fort avec les octets de poid faible.
+ Si vous le voulez, l'adresse du buffer peut ˆtre ‚gale … celle du sample.
+ 
+   Les fonction Replay 16 bits n'utilisent que des ‚chantillons sign‚s.
+ La conversion vers le format 8 bits se fait en temps r‚el si la sortie utili‚e
+ est une sortie 8 bits ( Yamaha, port imprimante ou ST Replay 8 bits )
+
+maximize Sample       8 bits non sign‚ = #14      16 bits sign‚ = #15
+
+    move.l	#sample_start,-(sp)
+    move.l	#sample_end,-(sp)
+    move.l	#buffer,-(sp)
+    move.w	#14 ou #15 ,-(sp)
+    move.w	Xbios_vector,-(sp)
+    trap	#14
+    lea	16(sp),sp
+
+Filtres
+
+    Je verrais cela plus tard...
+    
+  Les  fr‚quences disponibles sont :
+ 
+           0                     8192
+           1                     9600
+           2                    11170
+           3                    12288
+           4                    12538
+           5                    12800
+           6                    16384
+           7                    24576
+           8                    25600
+           9                    30720
+          10                    38400         Maxi pour le TT
+          11                    40960
+          12                    49152
+          13                    51200
+          14                    61440         Sans problŠme sur HADES 60
+          15                  Free preset     ( L'hades 60 plafonne vers 100 Ko/s
+                                                et sous interruptions SVP ! )
+
+Remerciements :
+
+    Baranger Emmanuel         EB-MODEL, EB-SOUND
+    Fran‡ois Le Coat          EUREKA,POV
+    Guillaume Tello           M-PLAYER
+    Didier M‚quignon          ANI PLAYER, SONDIGIT
+    Eric Reboux               START-IT,FIND-IT,VIEW-IT Etc...
+    Marc Gabard               MODALYSER, XCOMMAND, Etc ... ( Soutient moral, physique,
+                              financier, politique et d'autres encore ... )
+

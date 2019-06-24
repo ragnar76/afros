@@ -7,7 +7,7 @@ if(address("aniplay"))
 	                   "-b3","-b2","-b1");
 	if(choice != "3")
         {
-		title="Directory of MPG source file";
+		title_source="Directory of MPG source file";
 		select="*.MPG";
 		if(choice == "1")
 			type_target="mov";
@@ -22,21 +22,22 @@ if(address("aniplay"))
 		                   "-b2","-b1");
 		if(choice == "1")
         	{		                   
-			title="Directory of MP3 source file";
+			title_source="Directory of MP3 source file";
 			select="*.MP3";
 			type_target="wav";
 		}
 		else
         	{		                   
-			title="Directory of WAV source file";
+			title_source="Directory of WAV source file";
 			select="*.WAV";
 			type_target="mp3";
 		}		
 	}
-	if(fsel(file, title, select))
+	if(fsel(file_source, title_source, select) && fsel(file_target, "Target directory", "*.*"))
 	{
-		path=path(file);
-		ret=filelist(array,path);
+		path_source=path(file_source);
+		path_target=path(file_target);
+		ret=filelist(array,path_source);
 		if(ret)
 		{
 			for(j=0 ; j<ret ; j++)
@@ -44,7 +45,7 @@ if(address("aniplay"))
 				if(!stricmp(suffix(array[j,0]),suffix(select)))
 				{
 					fname="";
-					strcat(fname,path,array[j,0]);
+					strcat(fname,path_source,array[j,0]);
 					space=0;
 					for(i=0;i<strlen(fname);i++)
 					{
@@ -55,8 +56,8 @@ if(address("aniplay"))
 						quote="\047";
 					else
 						quote="";
-					target = substr(fname,0,strlen(fname)-3) + type_target;
-					cmdline = "+o " + quote + target + quote + " " + quote + fname + quote;  
+					target = substr(array[j,0],0,strlen(array[j,0])-3) + type_target;
+					cmdline = "+o " + quote + path_target + target + quote + " " + quote + fname + quote;  
 					Open(cmdline);
 					printf("\033EConvert <%s>\n",array[j,0]);
 					wait(200);

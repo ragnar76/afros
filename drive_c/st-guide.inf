@@ -1,7 +1,7 @@
-PATHS=c:\hyp
-HYPFOLD=c:\hyp\
+PATHS=c:\gemsys\hyp
+HYPFOLD=c:\gemsys\hyp\
 EXTVIEW=1STGUIDE.ACC
-HYPTOP=c:\hyp\teradesk.hyp
+HYPTOP=c:\gemsys\hyp\teradesk.hyp
 #REF=c:\hyp\all.ref
 #REFCHECK-OPT=adgh
 #FONT=3,10

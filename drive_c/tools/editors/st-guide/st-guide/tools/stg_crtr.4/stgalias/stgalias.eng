@@ -1,0 +1,124 @@
+;--------------------------------------------------------------------
+;-                                STGALIAS.TTP                      -
+;-                                                                  -
+;-                            A Tool for ST-Guide                   -
+---------------------------------------------------------------------
+
+Documentation
+
+This English documentation has been loosely translated by Joe Connor 
+from the original text written by Gregor Duchalski.
+
+STGALIAS.TTP may be freely distributed so long as it remains intact 
+and complete. Neither Gregor Duchalski nor I accept any liability or 
+responsibility for any direct or indirect damage that may arise, 
+either financial, material or any other kind from either the use or 
+misuse of this document. All trademarks used are recognised and 
+acknowledged.
+
+Contact addresses for bug reports, suggestions etc:
+
+Gregor Duchalski
+Im Wiescherfeld 21
+D-44627 Herne
+Germany
+
+Email: Gregor_Duchalski@do.maus.ruhr.de
+
+Joe Connor
+65 Mill Road
+Colchester
+CO4 5LJ
+
+Email: jconnor@cix.compulink.co.uk
+
+---------------------------------------------------------------------
+STGALIAS.TTP
+
+ Intended purpose
+ Calling STGALIAS.TTP
+ Version history STGALIAS.TTP
+
+ --> APPEND.TTP
+ --> TXT2STG.TTP
+
+---------------------------------------------------------------------
+Intended purpose
+
+This small utility adds alias names to ST-GUIDE format screens and is 
+useful for cross-referencing screens the auto-reference would not 
+normally reference.
+
+Example: A Screen carries the name "Copy" and ideally it should also 
+be called if "copy" or "Copies" is encountered. This is achieved by 
+adding the aliases after the screen node as follows:
+
+@note "Copy"
+@alias "Copies"
+@alias "copy"
+
+STGALIAS would now call the "Copy" screen each time either the aliases 
+"Copies" or "copy" are encountered even though these screens don't 
+exist...
+
+@{"Copies" Link "Copies"}
+@{"copy" Link "copy"}
+
+to direct the link to the genuine "Copy" screen:
+
+ @{"Copies" Link "Copy"}
+ @{"copy" Link "Copy}
+
+---------------------------------------------------------------------
+Calling STGALIAS.TTP
+
+ STGALIAS source-file [ [target-file] [Alias-string] [-d] ]
+
+ Source-file:
+  The original STG file
+
+ Target-file:
+  The STG file which will be created. If this argument is missing the 
+  name of the source-file is used.
+
+ Alias-string:
+  The alias string, which will be assigned to the preset '@alias'.
+
+ Option -d:
+  Works like the -d parameter in TXT2STG.TTP where the string $DATE in 
+  the text is replaced by the current date.
+  
+ -> example STGALIAS.TTP
+
+---------------------------------------------------------------------
+Example STGALIAS.TTP
+
+Call with "STGALIAS before.stg after.stg", here's the result:
+
+ BEFORE.STG                            AFTER.STG
+ ----------                            ---------
+ @node "Main"                          @node "Main"
+ @{"Intro" Link "Intro"}               @{"Intro" Link "Intro"}
+ @{"General" Link "General}            @{"General" Link "Intro"}
+ @endnode                              @endnode
+ ##                                    ##
+ @node "Intro"                         @node "Intro"
+ @alias General"                       @alias "General"
+ About this program...                 About this program...
+ @endnode                              @endnode
+
+---------------------------------------------------------------------
+Version history STGALIAS.TTP
+
+Version  Date      Change
+
+
+0.91ž    27.07.94  -No more 'mouse droppings' using the file selector
+                    (using the compiler patch support)
+
+0.92     02.07.94  -aliases containing space characters, were 
+                    incorrectly replaced
+
+0.93     18.07.94  -First public release.
+
+;--------------------------------------------------------------------

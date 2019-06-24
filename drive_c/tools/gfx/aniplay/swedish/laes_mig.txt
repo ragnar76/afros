@@ -1,0 +1,16 @@
+
+
+  Innan anv„ndning av AniPlayer, s† kopiera N_FRENCH.TXT fr†n katalogen
+  \SWEDISH\ till katalogen d„r ANIPLAY.PRG finns.
+  
+  Kopiera „ven \SWEDISH\ANIPLAY.HYP till katalogen d„r alla HYP-filer
+  finns f”r systemet (Milj”variabeln HYPFOLD=s”kv„g angiven i ST-GUIDE.INF).
+  
+  Filen VERSIONS.TXT „r inte ”versatt f”r tillf„llet.
+  
+  Senaste versionen av AniPlayer finns alltid p†:
+  http://hem1.passagen.se/atari/movie/
+  
+  Mille Babic
+  E-mail: mille@ebox.tninet.se
+  WWW: http://hem1.passagen.se/atari/

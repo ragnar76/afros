@@ -1,0 +1,147 @@
+
+
+   L i n k   2   U
+
+  *****************
+
+
+
+	link2u ist Public Domain.
+
+	Kostenlose Weitergabe als komplettes (siehe Kapitel Dateien) Archiv ist 
+	erwnscht.
+
+
+
+
+ Version
+________________
+
+
+	Version:	0.153
+	Datum:		20.07.2001
+
+
+
+
+ Dateien
+________________
+
+
+link2u/
+
+	link2u.prg	das Programm fr den 'start'-Ordner von MagiC
+	link2u.cnf	die Konfigurationsdatei
+	link2u_d.txt	dieser Text
+	link2u_e.txt	englische šbersetzung dieses Textes
+
+
+
+
+ Beschreibung
+________________
+
+
+	Dieses Programm dient dazu, beim Systemstart von MagiC automatisch 
+	Links von Verzeichnissen und Dateien anzulegen, sowie auf Laufwerk U 
+	Links zu Laufwerken zu entfehrnen. Insbesondere empfehle ich den Link 
+	zu Laufwerk A von U zu entfehrnen, da MagiC (zumindest auf Original 
+	Hardware von Atari) bei jedem Zugriff auf das Wurzelverzeichnis von U 
+	alle darber erreichbaren Laufwerke anspricht und dieses Verhalten 
+	durch die Langsamkeit des Diskettenlaufwerks jedesmal zu einem nervigen 
+	Unterbruch fhrt.
+
+	Dieses Programm ist nur fr den Einsatz unter MagiC vorgesehen, da 
+	unter MiNT bzw. MultiTOS dieselben Funktionen mit mit Hilfe der Datei 
+	mint.cnf erreicht werden k”nnen.
+
+
+
+
+ Installation
+________________
+
+
+	1.	link2u.prg in den 'start'-Ordner von MagiC kopieren.
+
+	2.	link2u.cnf in das HOME-Verzeichnis oder das Verzeichnis, woraus 
+		link2u.prg gestartet wurde, kopieren.
+		Die Konfigurationsdatei wird zuerst im HOME-Verzeichnis 
+		gesucht, falls dieses existiert, und danach in demjenigen 
+		Verzeichnis, woraus link2u.prg gestartet wurde.
+
+	3.	link2u.cnf den eigenen Bedrfnissen anpassen (siehe n„chstes 
+		Kapitel).
+
+
+
+
+ link2u.cnf
+________________
+
+
+	Jedes Kommando beginnt in der ersten Spalte einer Zeile und geht bis 
+	zum Ende der Zeile. Die einzelnen Argumente mssen mit genau einem 
+	Leerzeichen (ASCII-Code 32) getrennt werden.
+
+	Folgende Kommandos sind erlaubt:
+
+		#<comment>
+
+			Beliebiger Kommentar <comment> bis zum Zeilenende.
+
+		sln <source> <target>
+
+			Erzeugt von der Originaldatei <source> den symbolischen 
+			Link <target>. <source> und <target> bezeichnen jeweils 
+			den vollst„ndigen Zugriffspfad.
+			Ist eigentlich nur sinnvoll, wenn das Ziellaufwerk U 
+			ist, da Links auf ein Festplattenlaufwerk, anders als 
+			bei U, beim Shutdown des Systems nicht verloren gehen 
+			und somit nicht bei jedem Systemstart neu gesetzt 
+			werden mssen.
+
+		delu x
+
+			Entfehrnt von Laufwerk U den Link zu Laufwerk X.
+
+
+	Beispieldatei:
+
+		# Erzeuge von Verzeichnis D:\PROGRAMM\gnu\usr
+		# einen Link nach u:\usr
+		#
+		sln D:\PROGRAMM\gnu\usr u:\usr
+
+		# L”schen Link zu Laufwerk A von Laufwerk U.
+		#
+		delu a
+
+
+
+
+ Rechtliches
+________________ 
+
+
+	Haftungs-Ausschluss
+
+	Die Benutzung dieses Programms geschieht auf eigenes Risiko. Der Autor 
+	lehnt jegliche Haftung ab fr jegliche Sch„den inkl. Datenverlust, die 
+	direkt oder indirekt durch dieses Programm verursacht wurden.
+
+
+
+
+ Autor
+________________
+
+
+	Adresse:	Daniel Augsburger
+			Jasminweg 39
+			8050 Zrich
+			SWITZERLAND
+
+	Email:		skydiver@jumpgates.com
+
+	Homepage:	http://www.jumpgates.com/skydiver/

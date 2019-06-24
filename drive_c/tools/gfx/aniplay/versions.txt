@@ -1,0 +1,1770 @@
+                          *-----------*
+                          | ANIPLAYER |
+                          *-----------*
+
+Septembre-Octobre 1995:
+-----------------------
+CrÇation du programme, le but est de faire un player sous GEM optimisÇ 
+en True Color sur FALCON le plus rapide possible. Il est indispensable 
+d'utiliser le DSP pour gagner du temps et programmer en assembleur.
+
+V1.0 Novembre 1995:
+-------------------
+- Version en fenàtre avec boutons magnÇtophone et le son DMA (sans 
+menu options).
+- Le programme fonctionne en True Color FALCON, 256 couleurs avec 
+plans et monochrome.
+- La frÇquence d'Çchantillonnage la plus proche est choisie pour la 
+restitution des sons.
+- Seul les format AVI cvid (Radius Cinepak) et cram (Microsoft Video 
+1) sont gÇrÇs (le cvid avec DSP).
+
+V1.1 DÇcembre 1995:
+-------------------
+- Ajout d'un menu dÇroulant et les options suivantes:
+ * Avec/sans blitter.
+ * Avec/sans dÇcompression DSP.
+ * Avec/sans affichage direct.
+ * Avec/sans rÇÇchantillonnage par interpollation linÇaire.
+- Ajout du format cram avec le DSP en True Color, et routines DSP 
+formats cram (Microsoft Video 1) et cvid (Radius Cinepak) en 256 
+couleurs. 
+
+V1.2 Janvier 1996:
+------------------
+- Ajout option son uniquement.
+- Optimisation des routines DSP.
+- Optimisation des transferts DSP:
+ * Les routines XBIOS ne sont plus utilisÇs pour les transferts.
+ * Transfert par mots de 16 bits en True Color et 256 couleurs Ö 
+ l'Çmission et Ö la rÇception, le hard Çtant limitÇ Ö 8 bits (port 
+ host).
+- Ajout des formats AVI rle4, rle8, et rgb8 (Microsoft).
+- Utilisation possible en accessoire.
+- Fin de programme en cas de changement de rÇsolution vidÇo (AP_TERM).
+- Gestion mise en icìne et protocole VA_START.
+
+V1.3 Octobre 1996:
+-------------------
+- Le player gÇre maintement les QuickTime (MOV) cvid (Radius Cinepak) 
+avec/sans DSP.
+- Le player fonctionne maintenant dans les rÇsolutions suivantes:
+ * Monochrome ou 2 couleurs.
+ * 4 et 16 couleurs -> image transformÇe en monochrome par le VDI.
+ * 256 couleurs avec plans (FALCON et TT basse).
+ * True Color FALCON (65536 couleurs).
+- Ajout rÇÇchantillonnage rapide en ajoutant ou retirant un 
+Çchantillon si la frÇquence est Ö 7/8 ou 9/8 de la frÇquence la plus 
+proche disponible sur la machine, sinon c'est la mÇthode par 
+interpollation linÇaire qui est utilisÇe.
+- Ajout option contrìle lenteur animation.
+- Ajout curseur pour se dÇplacer dans le fichier (les boutons 
+magnÇtophone sont en option).
+- PossibilitÇe de sauver les options.
+- Gestion des indexs pour se dÇplacer dans le fichier rapidement.
+
+V1.4 Novembre 1996:
+-------------------
+- Optimisation du programme:
+ * Lecture fichier.
+ * Conversion 256 couleurs par octet -> 8 plans optimisÇe.
+ * Diminution des appels systäme.
+- Diminution de l'occupation mÇmoire.
+- Transferts DSP plus sñrs avec contrìle tous les 16 mots (handshake) 
+pour Çviter des problämes avec les cartes accÇlÇratrices.
+- Affichage temps CPU (680xx).
+- Affichage en informations de la taille des buffers utilisÇs.
+- Ajout des formats MOV rle8 (Apple Animation), smc8 (Apple Graphics), 
+et raw8 (Apple Uncompressed).
+- Ajout des options sauter images, fenàtre rÇduite, et sans interface 
+GEM.
+- Suppression de l'option blitter (elle ne sert Ö rien).
+- Transferts DSP en tÉche de fond pour gagner du temps (interruption 
+du 680xx) si l'affichage direct est sÇlectionnÇ en True Color. Dans ce 
+mode, durant la dÇcompression les transfert souris sont stoppÇs pour 
+Çviter des perturbations du clavier (interruptions longues), cela se  
+traduit par un ralentissement des dÇplacements souris.
+- Version stable en freeware remis au 2äme Forum des Applications ATARI 
+Ö Falconnexion pour àtre diffusÇe. Mise sur internet au ftp.cnam.fr, 
+sur les BBS, et sur la disquette ST MAG 113. Merci Ö Falconnexion, Ö
+Evolution (Bertrand Marne), et Ö Godefroy de Maupeou.
+
+V1.5 DÇcembre 1996:
+-------------------
+- Correction bug format AVI rle8 (Microsoft).
+- Correction bug conversion affichage True Color pour formats MOV 
+rle16 (Apple Animation) et AVI cram16 (Microsoft Video 1).
+- Correction bug rÇÇchantillonnage rapide 16 bits stÇrÇo.
+- Correction probläme avec NVDI/MagiC en True Color FALCON se 
+traduisant par des plantages, dÇgradation des boutons, et destruction 
+du programme DSP (message d'erreur "DÇpassement mÇmoire CVID"):
+Ce probläme est occasionnÇ par la fonction v_get_pixel incompatible 
+avec le TOS en True Color:
+                     +--------------------+--------------------+
+                     |     NVDI/MagiC     |      TOS 4.02      |
++--------------------+--------------------+--------------------+
+|<=256 couleurs      |intout[0]=pixel     |intout[0]=pixel     |
+|                    |intout[1]=index     |intout[0]=index     |
++--------------------+--------------------+--------------------+
+|True Color FALCON   |intout[0]=couleur   |intout[0]=0         |
+|                    |intout[1]=-1        |intout[1]=couleur   |
++--------------------+--------------------+--------------------+
+|True Color 16M      |intout[0]/intout[1] |intout[0]/intout[1] |
+|                    |=couleur sur 32 bits|=couleur sur 32 bits|
++--------------------+--------------------+--------------------+
+La fonction est utilisÇe en 256 couleurs pour crÇer un tableau d'index 
+couleurs vdi -> palette, son utilisation est supprimÇe en True Color 
+(il n'y a pas de palette).
+- Correction test DSP se traduisant par "Pas assez de mÇmoire" sur des 
+machines n'ayant pas de DSP ou de son DMA (cookie _SND).
+- Ajout option quitter Ö la fin.
+- Gestion carte True Color 24 bits si work_extnd[4]>=24 avec le 
+format suivant d'un point 00000000RRRRRRRRVVVVVVVVBBBBBBBB avec/sans 
+affichage direct sans DSP (non testÇ).
+
+V1.6 1er Janvier 1997:
+----------------------
+- Ajout des formats MOV rle4 (Apple Animation) et rpza (Apple Video).
+- DÇbuggage formats MOV rle16/24 (Apple Animation). 
+- Correction probläme allocation mÇmoire sur rÇÇchantillonnage rapide 
+si la frÇquence fichier est infÇrieure Ö la frÇquence machine.
+- Correction probläme allocation mÇmoire son dans le format AVI.
+- Gestion des cartes graphiques si l'adresse de l'Çcran (logique) est 
+supÇrieure Ö la fin de la ST-RAM (non testÇ):
+  * Mode 32768 couleurs au format suivant d'un point 0RRRRRVVVVVBBBBB. 
+  * Mode 256 couleurs sans plans (avec/sans DSP).
+  * Si l'affichage direct n'est pas sÇlectionnÇ, c'est le VDI qui gÇre 
+l'affichage.
+- Conversion en True Color FALCON et 32768 couleurs directement dans  
+la dÇcompression pour les formats MOV rle4/8/16/24 (Apple Animation) 
+raw8 (Apple Uncompressed), et le format AVI rgb8 (Microsoft).
+    
+V1.7 3 Janvier 1997:
+--------------------
+- Ajout de raccourcis clavier dans les options.
+- Programme en francais ou anglais (ou autre ... si le fichier 
+N_FRENCH.TXT se trouve dans le màme rÇpertoire que ANIPLAY.PRG).
+- Correction bug rÇÇchantillonnage par interpollation linÇaire si la 
+frÇquence fichier est infÇrieure Ö la frÇquence machine.
+
+V1.8 18 Janvier 1997:
+---------------------
+- Suppression des petits claquements occasionnÇs par les raccords du 
+rÇÇchantillonnage par interpollation linÇaire Ö certaines frÇquences.
+- Correction rÇÇchantillonnage par interpollation linÇaire si la 
+frÇquence fichier est supÇrieure Ö la frÇquence machine qui ne devait 
+plus fonctionner depuis probablement la version 1.5 (plantage ou 
+toute la mÇmoire ÇcoutÇe). Le rÇechantillonnage rapide ne posait pas 
+de probläme.
+- Correction Çcrasement du fichier N_FRENCH.TXT Ö la place 
+d'ANIPLAY.INF si sauvegarde configuration demandÇe (si N_FRENCH.TXT 
+utilisÇ). Merci Ö Simon Yardley (England) pour la diffusion. 
+- Ajout sauvegarde image courante au format IMG ou TGA.
+- Ajout sauvegarde son au format AVR (ATARI), WAV (PC), ou AIF (MAC) Ö 
+la frÇquence d'origine si le rÇÇchantillonnage n'est pas sÇlectionnÇ, 
+ou Ö la frÇquence machine s'il est sÇlectionnÇ.
+- Correction bug conversion image avec les cartes graphiques dans 
+certains cas.
+- Correction palette couleurs avec carte graphique 256 couleurs sans 
+plans.
+- Correction problämes avec certains fichiers AVI rgb8 (Microsoft).
+- Optimisation dÇcompression cvid (Radius Cinepak) sans DSP en True 
+Color FALCON ou carte graphique 32768 couleurs.
+    
+V1.9 24 Janvier 1997:
+---------------------
+- Correction sauvegarde fenàtre apräs pause pour redraw avec 
+l'affichage direct (bug de la version 1.8).
+- Correction sÇlecteur fichier en appuyant sur le bouton 'Load' (AVR,  
+WAV ou AIF au lieu de MOV).
+- Optimisation dÇcompression cvid (Radius Cinepak) en noir et blanc.
+- DÇbuggage du fonctionnement avec carte graphique en ayant pas de 
+carte graphique (je n'ai qu'un FALCON !):
+ * Correction transfert image Çcran sans affichage direct.
+ * Correction affichage direct en 256 couleurs.
+ * Correction changement de palette en 256 couleurs avec l'affichage 
+ direct.
+- Gestion carte graphique NOVA en 32768 couleurs au format suivant 
+d'un point VVVBBBBB0RRRRRVV (format intel), choix demandÇ au lancement 
+du programme.
+               
+V1.10 1er FÇvrier 1997:
+-----------------------
+- Correction probläme lecture des indexs avec certains fichiers AVI 
+(petits fichiers).
+- Correction signe Çchantillons 8 bits MOV twos.
+- Ajout dÇcompression DSP MOV rpza (Apple Video).
+- Correction gestion erreurs DSP.
+- Optimisation dÇcompression MOV rpza (Apple Video) sans DSP en True 
+Color FALCON ou carte graphique 32768 couleurs.
+    
+V1.11 8 FÇvrier 1997:
+---------------------
+- Gestion du son compressÇ deltapack ima4 MOV.
+- Gestion formats AVI rpza (idem MOV), msvc8 (idem cram8), et msvc16 
+(idem cram16).
+- Optimisation dÇcompression AVI cram8 (Microsoft Video 1) sans DSP en 
+True Color FALCON ou carte graphique 32768 couleurs.
+    
+V1.12 22 FÇvrier 1997:
+----------------------   
+- Gestion du son compressÇ deltapack dvi_adpcm (dvi), deltapack 
+ms_adpcm (apcm), et mulaw (ulaw) AVI (non testÇ).  
+- Correction gestion des indexs des fichiers AVI, probläme depuis la 
+version 1.10 avec certaines animations (merci Ö Yu-Ou Wang de Paris). 
+- AmÇlioration synchronisation si le son et les images ne sont pas 
+entrelacÇs dans les fichiers AVI.
+- Ajout formats MOV raw4/16/24/32 (Apple Uncompressed), yuv2 
+(Component Video), et yuv9 (yvu9, Intel Raw) (non testÇ).
+- Ajout formats AVI rgb4/16/24 (Microsoft), et yuv9 (yvu9, Intel Raw) 
+(non testÇ).
+
+V1.13 1er Mars 1997:
+--------------------
+- Ajout option pour couper le son.
+- Mode pas Ö pas (image par image en pause).
+- Le dÇplacemant dans le fichier (avec les fläches du clavier, les 
+boutons ou le curseur) en pause ne relance plus la lecture (il ne 
+fonctionnait pas avec le clavier). 
+- Correction du dÇplacement avec SHIFT + fläche qui ne fonctionnait 
+plus depuis la version 1.7 (raccourcis dans les menus). 
+- Correction sur FALCON de la gestion directe du clavier pour le 
+dÇplacement dans un fichier avec l'option sans interface GEM 
+(rÇpÇtition Ö l'infini avec un fichier MOV), sur les autres machines 
+la lecture du clavier est faite par le DOS (avec interface GEM, c'est 
+le GEM qui gÇre les ÇvÇnements). 
+- Vitesse des fichiers MOV toujours alignÇe sur le son (si prÇsent) et 
+non pas uniquement pendant la reproduction sonore.
+- Sur FALCON, amÇlioration gestion directe du clavier avec l'option 
+sans interface GEM, celle-ci posait des problämes sous environnement 
+multitÉche (prise en compte alÇatoire).
+- Il est dorÇnavant possible d'Çcouter le son des animations dont le 
+type de compression d'image n'est pas reconnu.
+- Conversion en True Color FALCON et 32768 couleurs directement dans  
+la dÇcompression pour les formats AVI rle4/8 (Microsoft), et cram16 
+(Microsoft Video 1), et le format MOV smc8 (Apple Graphics).
+    
+V1.14 22 Mars 1997:
+-------------------
+- Ajout menu slide show.
+- Correction dÇcompression DSP rpza (Apple Video), dÇcompression 
+partielle des images de grande taille.
+- Correction dÇcompression AVI cram16 (Microsoft Video 1) qui n'avait 
+jamais ÇtÇ testÇ (merci Ö Pascal Ricard de Pierrevert).
+- Correction retard dÇmarrage du son si le son et les images ne sont 
+pas entrelacÇs dans les fichiers AVI (merci Ö Pascal Ricard de 
+Pierrevert).
+- Ajout arràt animation (touche UNDO) pour un retour au menu. Avant, 
+il fallait faire CTRL+L ou CTRL+O puis 'Annuler'.
+- Sur FALCON rÇinitialisation du son comme un STE lors de l'arràt 
+du son (matrice sonore et frÇquences STE).
+- Sur FALCON avec moniteur TV ou VGA si l'option sans interface GEM 
+est cochÇe l'affichage s'effectue dans une rÇsolution vidÇo de 320 * 
+240 True Color dans la mesure du possible (si l'image n'est pas  
+supÇrieure Ö 320 * 240). La machine rebascule automatiquement dans le 
+mode vidÇo courant en cas d'erreur ou d'arràt.
+- Plus de gestion de fenàtre avec l'option sans interface GEM.
+- Correction sauvegarde image avec affichage direct sÇlectionnÇ (image 
+noire dans certains cas si elle est rÇcupÇrÇe Ö l'Çcran).
+- Ajout affichage des options activÇes pour l'option sans interface 
+GEM (touche O).
+- Ajout boåte statistiques disponible däs que l'animation est 
+terminÇe (touches I ou CTRL+I).
+- Ajout option sans interface GEM si le programme est en accessoire.
+
+V1.15 Mai 1997:
+---------------
+- Correction affichage dimensions minimales de l'Çcran en cas 
+de rÇsolution vidÇo insuffisante avec l'option sans interface GEM 
+(dimensions de l'Çcran affichÇes, erreur depuis la version 1.14).
+- Adresse de l'Çcran physique testÇe Ö la place de l'Çcran logique 
+pour les cartes graphiques.
+- Correction dÇcompression son stÇrÇo ima4 MOV (non testÇ, merci Ö 
+Bruno Levionnois).
+- Correction slide show qui Çtait interrompu apräs la sauvegarde du 
+son ou d'une image.
+- Diminution des tests des diffÇrents formats pour ne pas ralentir le  
+programme.
+- Au lancement du programme, test de la taille du tampon AES car 
+MagiC 4 se plante si les menus sont trop grands (cas du menu options 
+depuis la version 1.13, en 320 * 240 16 couleurs par exemple). 
+Diminution de la taille du menu option.
+- Ajout possibilitÇe de copier l'image courante (CTRL+C) dans le 
+presse-papier GEM (fichier SCRAP.IMG).
+- Ajout gestion options dans ligne de commande. Si elle contient au 
+moins l'une des options suivantes alors le programme dÇmarre comme un 
+programme TOS, le GEM n'est utilisÇ (VDI et AES):
+  +d: avec dsp (-d: sans dsp)
+  +m: avec images (-m: son seulement)
+  +i: bouclage (-i: sans)
+  +p: avec son (-p: coupure son)
+  +s: sauter images (-s: toutes les images)
+  +r: rÇÇchantillonnage du son (-r: sans)
+  +e: affiche les erreurs (-e: sans, +e par dÇfaut)
+- Ajout appel documentation sous ST-GUIDE.
+- Le nom de la compression image apparaåt Çgalement en plus de 
+l'identificateur (par exemple: cvid, Radius Cinepak). Cela est visible 
+lors de l'ouverture de la fenàtre ou avec informations (^I).
+- AmÇlioration reconnaissance des fichiers MOV.
+- Le DSP peut maintenant àtre utilisÇ dans des rÇsolutions vidÇo 
+infÇrieures Ö 256 couleurs (bien qu'il n'apporte pas grand chose, car 
+beaucoup de temps est perdu avec le tramage en monochrome).
+- Correction probläme de lecture directe du clavier sur FALCON avec 
+l'option sans interface GEM avec les fichiers AVI (retour au sÇlecteur 
+sans fin apräs ^O).
+- Correction largeur et hauteur fichiers AVI si mauvais alignement par 
+rapport Ö la compression utilisÇe.
+- Correction initialisation tableau couleurs yuv2 (Component Video) et 
+yuv9 (yvu9, Intel Raw).
+- Optimisation dÇcompression cvid (Radius Cinepak) sans DSP en True 
+Color FALCON ou carte graphique 32768 couleurs en utilisant un tableau 
+de couleurs prÇcalculÇ de 512 Koctets (presque aussi rapide qu'avec le 
+DSP) mais lÇgäre perte qualitÇ couleurs. Une option supplÇmentaire 
+'QualitÇ' a ÇtÇ ajoutÇe pour conserver l'ancienne mÇthode.
+- Initialisation palette couleurs lors de l'ouverture fenàtre (cela 
+fait plus propre en 256 couleurs).
+- Ajout dans la boåte statistiques du temps d'occupation CPU moyen, 
+minumum, et maximum.
+- Correction lecture du son des fichiers MOV gÇnÇrÇs par M_PLAYER 
+(tout le son est en un seul bloc, mais plusieurs indexs sont 
+dÇclarÇs, merci Ö Joâl Houplon de Chaville).
+- Ajout du format AVI/MOV jpeg avec DSP.
+
+V1.16 Juin 1997:
+----------------
+- DÇcompression DSP plus rapide par diminution des transferts DSP vers 
+le 680xx en True Color FALCON (impossible en 256 couleurs, car le DSP 
+effectue le tramage en 256 couleurs et il faut envoyer tous les 
+points), environ 20% plus rapide en compression cvid (Radius Cinepak).
+- Optimisation lecture entàtes fichier MOV.
+- AmÇlioration option sauter images.
+- Ajout sauvegarde paramÇtrable d'images.
+- Ajout options dans ligne de commande:
+  +xnnnnn, +ynnnnn: pour fixer la position de l'animation Ö l'Çcran.
+  +annnnnnnnnn: adresse contrìle programme.
+  +znnnnnnnnnn: adresse informations.
+- Affichage de la fenàtre en arriäre plan possible si l'affichage 
+direct n'est pas sÇlectionnÇ, dans l'autre cas la fenàtre est toujours 
+forcÇe en premier plan.
+- Affichage du numÇro de l'image courante dans la ligne d'informations 
+de la fenàtre en mode pas Ö pas ou pendant la sauvegarde d'images.
+- Popup-menu option utilisable avec raccourcis clavier, fläches 
+verticales, ou souris (touche O).
+- Correction dÇcompression DSP cvid (Radius Cinepak), dÇbordement 
+possible de la mÇmoire DSP sur des images de grande taille 
+occasionnant l'erreur 'ID cvid inconnu'. 
+- Correction probläme changement de palette lors du changement de 
+compression au cours du màme fichier MOV.
+- Correction de deux boåtes d'alerte oó le bouton 'Annuler' ne 
+fonctionnait plus depuis la 1.15.
+- Correction lecture son stÇrÇo ima4 MOV (plantage auparavant).
+- Correction lecture son deltapack dvi_adpcm (dvi) AVI (plantage 
+auparavant, testÇ en mono). 
+- Correction lecture son deltapack ms_adpcm (apcm), et mulaw (ulaw) 
+AVI (non testÇ, plantage auparavant).
+- Correction probläme initialisation palette dans des rÇsolutions 
+vidÇo infÇrieures Ö 256 couleurs.
+- Correction information durÇe son MOV dans le cas oó l'animation 
+QuickTime comporte des images, du son et du texte (le texte n'Çtant 
+pas reconnu, la durÇe du son correspondait au texte).
+- Correction probläme sauvegarde image si l'affichage direct est 
+sÇlectionnÇ et la fenàtre en icìne.
+- Ajout dÇcompression DSP cvid (Radius Cinepak) en noir et blanc.
+- Optimisation dÇcompression cvid (Radius Cinepak) en noir et blanc.  
+    
+V1.17 Juillet 1997:
+-------------------
+- Correction lecture du son des fichiers AVI gÇnÇrÇs par M_PLAYER 
+(tout le son est en un seul bloc, mais plusieurs indexs sont 
+dÇclarÇs).
+- Correction option sauter images pour un fichier AVI ne comportant 
+qu'un seul bloc son.
+- Si le fichier ne comporte qu'un seul bloc son, le direct to disk est 
+supprimÇ au niveau du son (gain de mÇmoire et bouclage DMA son 
+supprimÇ). 
+- La lecture du fichier pour le son n'est plus faite si l'option 
+couper son est sÇlectionnÇe. 
+- Initialisation des tableaux CONTRL, INTIN, PTSIN, INTOUT, et PTSOUT  
+avec ceux du player pour les fonctions LINEA ($A00x) pour le curseur 
+souris (HIDEM et SHOWM) pour MagiC 4 (sans NVDI), cela occasionnait un 
+plantage dans la version prÇcÇdante (avec NVDI ou le TOS pas de 
+problämes). La LineA est utilisÇe Ö la place des fonctions VDI car 
+plus rapide (de toute faáon en mode TOS le VDI ne peut pas àtre 
+utilisÇ).
+- Suppression routine lecture fichier AVI sans indexs (ca n'existe 
+pas). 
+- Ajout options dans ligne de commande:
+  +wnnnnn: pour forcer la largeur de l'Çcran.
+  +hnnnnn: pour forcer la hauteur de l'ecran.
+  +bnnnnn: pour forcer le nombre de plans de l'Çcran.
+- Correction erreur option sauter images.
+- Si le fichier ANIPLAY.INF n'est pas trouvÇ dans le rÇpertoire 
+courant au dÇmarrage du programme, le chemin est demandÇ au GEM 
+(SHEL_FIND), sauf si le programme dÇmarre en mode TOS. Il en est de 
+màme pour le fichier N_FRENCH.TXT s'il existe.
+
+V1.18 Aout 1997:
+----------------
+- Correction fin de chaåne ligne de commande (probläme avec la version 
+prÇcÇdante).
+- Option sauter images inhibÇe si le fichier ne le permet pas.
+- Correction dÇcompression yuv9 (yvu9, Intel Raw) qui n'avait jamais ÇtÇ 
+testÇ (merci Ö Christophe Villeneuve de Bourges).
+- Correction cadence image si option couper le son sÇlectionnÇe (trop 
+rapide avant).
+- Correction cadence son sur les fichiers AVI dont le son et les 
+images ne sont pas entrelacÇs (probläme possible de rÇpÇtition du son  
+sans que ce soit justifiÇ avant).
+- Correction changement de palette fichiers AVI (merci Ö Denis Huguet 
+de Mehun sur Yävre).
+- Correction decompression rpza (Apple Video), problämes sur certains 
+fichiers (merci Ö Guillaume Tello de Montreuil Bellay).
+- Correction affichage compressions AVI rgb4 et rle4 (Microsoft), et 
+MOV raw4 (Apple Uncompressed) et rle4 (Apple Animation).
+- Augmentation du contraste pour la dÇcompression AVI/MOV jpeg en 
+couleurs avec le DSP.
+- Diminution des tests sur le son dans l'entàte d'un fichier AVI (sur  
+certains fichiers la frÇquence d'Çchantillonnage Çtait incohÇrente).
+- Sur les fichiers AVI oó le son est entrelacÇ avec les images, le 
+changement de bloc son DMA ne se fait plus Ö chaque image, mais au 
+bout d'un certain nombre (qui correspond aux blocs initiaux). Cela 
+permet d'amÇliorer l'option sauter images. De cette faáon la lecture 
+est similaire aux fichiers MOV.
+- Correction allocation mÇmoire son deltapack ms_adpcm (apcm), et 
+mulaw (ulaw) AVI.  
+- Correction retard du son sur l'image sur les fichiers MOV (visible 
+sur certains fichiers, merci Ö Guillaume Tello de Montreuil Bellay).
+- Conversion des Çchantillons 16 bits en 8 bits sur les machines 
+n'ayant pas de son 16 bits (cas du TT par exemple).
+- Sur les machines n'ayant pas de son DMA, c'est le circuit YAMAHA qui 
+est utilisÇ (toujours en direct to disk, cas de l'HADES par exemple).
+- Si le microprocesseur est supÇrieur au 68030 et qu'un CODEC 16 bits 
+existe (cookie-jar '_SND'), les fonctions XBIOS pour le son DMA sont 
+utilisÇs si le son DMA existe (cas de la STARTRACK sur l'HADES ?).
+- Tramage supprimÇ en 256 couleurs pour les animations en 32768 et 16 
+millions de couleurs si les options qualitÇ et dÇcompression DSP ne 
+sont pas sÇlectionnÇs (plus rapide qu'avec le DSP mais grosse 
+dÇgradation de la qualitÇ).
+- Ajout fonction scan pour afficher les images le plus vite possible 
+sans le son (avec la touche S ou un double-clic sur le bouton avance 
+rapide). 
+- Ajout des formats MOV raw1/2 (Apple Uncompressed) et rle1/2 (Apple 
+Animation).
+- Ajout du format AVI/MOV jpeg sans DSP.
+- Ajout dÇcompression yuv2 (Component Video) et yuv9 (yvu9, Intel Raw) 
+en noir et blanc.
+- Gestion des fichiers MOV en niveaux de gris raw1/2/4/8 (Apple 
+Uncompressed), rle1/2/4/8 (Apple Animation), smc8 (Apple Graphics).
+
+V1.19 Septembre 1997:
+---------------------
+- Correction probläme de plantage avec SpeedoGDOS depuis la version 
+1.15 (pas de probläme sous VDI du TOS ou NVDI, sauvegarde de registre 
+non faite sur l'appel de la fonction VDI vq_color, merci Ö Bruno BÇgni 
+de Lausanne).
+- Ajout des formats MOV msvc8/16 (Microsoft Video 1, idem AVI cram).
+- Ajout des formats AVI/MOV iv31 et iv32 (Intel Indeo R3.1 et 3.2, 
+merci Ö Denis Huguet de Mehun sur Yävre).
+
+V1.20 Octobre 1997:
+-------------------
+- Optimisation formats AVI/MOV iv31 et iv32 (Intel Indeo R3.1 et 3.2), 
+l'option 'QualitÇ' permet en enlevant la qualitÇ des couleurs 
+d'accÇlÇrer la dÇcompression. 
+- AmÇlioration option sauter images pour les fichiers AVI, dans le cas 
+ou chaque image est intÇgrale (key-frame Ö chaque image).
+- AmÇlioration inhibition option sauter images si le fichier ne le 
+permet pas. 
+- Diminution memoire programme (zone BSS).
+- Lecture directe du clavier sur TT (tampon clavier) avec l'option 
+sans interface GEM.
+- Correction lecture son deltapack ms_adpcm (apcm) AVI.
+- Correction cadence image sur certains fichiers MOV sans son.
+- Correction plantage possible sauvegarde image (X)IMG True Color 
+d'une animation en 256 couleurs dans une resolution vidÇo supÇrieure 
+(buffer trop petit).
+- Correction chemin erronÇ ligne de commande pour le slide show d'un 
+rÇpertoire.
+- Prise en compte immediate d'un changement de palette Çventuel lors 
+d'un dÇplacemant dans un fichier AVI (avec les fläches du clavier, les 
+boutons ou le curseur).
+- Correction tramage monochrome sur animations en 32768 couleurs 
+(niveaux de gris mauvais).
+- Tramage en 16 couleurs dans cette resolution vidÇo.
+- Ajout gestion message AV_SENDKEY (AV protocol).
+- Ajout du format AVI/MOV cvid (Radius Cinepak) en 256 couleurs (non 
+testÇ, merci Ö Ö Guillaume Tello de Montreuil Bellay et Jean-Jacques 
+Ardoino).
+- Ajout gestion fichiers FLI/FLC/FLH, merci Ö Guillaume Tello de 
+Montreuil Bellay pour ses sources.
+
+V1.21 Novembre 1997:
+--------------------
+- Ajout FLH PC (merci Ö RÇmi Vanel).
+- Correction messages d'erreur dÇcompression jpeg et correction 
+probläme alignement largeur et hauteur sur 8 pixels (merci Ö Thierry 
+Benet).
+- Correction probleme popup menu avec MagiCMac (merci Ö Joachim 
+Fornallaz de ZÅrich). 
+- Correction affichage image si dÇplacement en pause sur un fichier 
+AVI.
+- Correction lecture son deltapack ms_adpcm (apcm) AVI (enfin testÇ).
+- Correction du son DMA sous MagiCMac grace au cookie-jar 'MgMc' pour 
+l'utilisation des fonctions XBIOS FALCON (programme MacSound).
+- Correction affichage direct avec certaines cartes graphiques (par 
+exemple sur le PowerMAC avec MagiCMac) dans le cas ou la largeur d'une 
+ligne en mÇmoire ne correspond pas avec la largeur de l'Çcran, en 
+utilisant le cookie-jar 'EdDI' et la fonction Çtendu du VDI 
+vq_scrninfo. Cette fonction permet Çgalement la dÇtermination 
+automatique d'une carte graphique 32K format motorola/intel soit 
+MATRIX/NOVA (merci Ö Joachim Fornallaz pour ses nombreux tests).
+- Utilisation systÇmatique de la fonction vro_cpyfm du VDI dans les 
+modes graphiques >= 256 couleurs non compatibles ATARI et sans 
+l'affichage direct.
+- Le cookie-jar '_VDO' Ö -1 est testÇ pour reconnaitre un mode 
+graphique non compatible ATARI (gestion des cartes graphiqes).
+- Ajout message GEM 'AP', apräs envoi de ce message au player, il 
+renvoi la structure suivante dans msg[3] et msg[4], exemple avec CPX.
+- Ajout ligne de commande possible avec le message VA_START:
+  +c: avec contrìle lenteur (-c: sans)
+  +d: avec dsp (-d: sans dsp)
+  +g: avec interface GEM (-g: sans interface GEM)
+  +i: bouclage (-i: sans)
+  +l: fenàtre rÇduite (-l: fenàtre normale)
+  +m: avec images (-m: son seulement)
+  +p: avec son (-p: coupure son)
+  +q: avec qualitÇ (-q: sans)
+  +r: rÇÇchantillonnage du son (-r: sans)
+  +s: sauter images (-s: toutes les images)
+  +t: boutons magnÇtophone (-t: curseur)
+  +v: avec affichage direct (-v: sans)
+  +xnnnnn, +ynnnnn: position (5 chiffres max, centrÇe par dÇfaut)
+- Ajout gestion option sauter images sans le son.
+- Gestion de la carte PSOUND sur port // pour l'HADES (cookie-jar 
+'PSND').
+- Gestion des noms longs.
+
+V1.22 Janvier 1998:
+-------------------
+- Ajout gestion carte NOVA 65536 couleurs, dÇtermination 32768/65536 
+couleurs Ö partir de vq_scrninfo ou du cookie-jar 'NOVA' en cas 
+d'Çchec.
+- Ajout option avec/sans D2D, pour charger totalement le fichier en 
+mÇmoire (si possible) avant de lancer l'animation (merci Ö Magnus 
+Kollberg).
+- Lors d'un bouclage de fichier MOV, la lecture des entàtes n'est plus 
+faite.
+- Correction du son DMA sous MagiCMac grace au cookie-jar 'MgMc' pour 
+l'utilisation des fonctions XBIOS FALCON (programme MacSound).
+- Correction affichage image si dÇplacement en pause sur certains 
+fichiers AVI et avec l'affichage direct, et dÇplacement dans un 
+fichier son MOV (probläme depuis la version prÇcÇdante).
+- Correction erreur 'Fin de fichier atteinte' possible en fin de fichier 
+MOV sans images (fichier son).
+- Correction du son DMA pour MagiCMac en remplacant l'interruption de 
+changement de bloc DMA du direct to disk par la lecture du compteur 
+DMA (fonction XBIOS buffptr).
+- Correction reconnaissance carte NOVA avec les vieux drivers VDI, 
+cookie-jar 'NOVA' utilisÇ Ö la place du cookie 'EdDI' et la fonction  
+Çtendue du VDI vq_scrninfo (merci Ö Karel Post).
+- Correction plantage possible avec certains fichiers FLI APEX 
+(chuck FLI_BRUN).
+- Correction calcul cadence image avec le son 16 bits sur machine 
+n'ayant pas de son 16 bits (TT, merci Ö Guillaume Tello de Montreuil 
+Bellay).
+- Correction dÇcompression MOV raw (Apple Uncompressed), image 
+inversÇe (merci Ö Joachim Fornallaz de ZÅrich).
+- Correction dÇcompression cram8 (Microsoft Video 1) en True Color 
+(carte 16M).
+- Correction dÇcompression cvid (Radius Cinepak) en True Color (carte 
+16M, merci Ö Joachim Fornallaz de ZÅrich).
+- Correction probläme lecture des indexs avec certains fichiers AVI 
+oó le son est Ö la fin (petits fichiers).
+- Ajout fonctions pour le message 'AP' envoyÇ au player:
+ * msg[3] Ö 0, le player renvoi toujours le message 'AP' d'infos.
+ * msg[3] Ö 1 permet de se positionner Ö msg[4-5] secondes.
+ * msg[3] Ö 2 permet de se positionner Ö msg[4-5] images.
+ Pour msg[3]<>0 il n'y a pas de message de retour 'AP'.
+- Ajout option -k pour couper la gestion du clavier dans la ligne de 
+commande GEM avec VA_START, cela permet de gÇrer le player avec des 
+AV_SENDKEY Ö la place.
+- Utilisation du TRAP #5 Ö la place de Supexec pour accÇlÇrer le 
+programme (sauf sous MagiCMac et en TTP). 
+- Ajout zoom 2X et amÇlioration gestion dimensionnement fenàtre.
+- Utilisation du sÇlecteur de MagiC (fonction FSLX_DO du GEM) pour les 
+noms longs.
+- Sur FALCON, gestion horloge externe de 22,5792 MHz sur le port DSP 
+pour obtenir les frÇquences 11025, 22050 et 44100 Hz afin d'Çviter le 
+rÇÇchantillonnage sur 99% des fichiers (merci Ö Nicolas Boulesteix de 
+Gaillon sur Montcient).
+
+V2.0 FÇvrier 1998:
+------------------
+- Diminution sur FALCON et le DSP de 90% des fichiers AVI/MOV cvid 
+(Radius Cinepak) de la possibilitÇe d'avoir le message 'ImpossibilitÇ 
+de charger le bloc Ö dÇcompresser dans la mÇmoire DSP'.
+- Ajout lecture fichiers son au format AVR (ATARI), WAV (PC), ou AIF 
+(MAC).
+- Ajout affichage images JPEG.
+- Ajout rÇglage de volume.
+- Ajout QuickTime VR en fenàtre GEM (merci Ö Guillaume Tello de 
+Montreuil Bellay). 
+- Gestion fonction masquer sous MagiC.
+- AmÇlioration reconnaissance fichiers QuickTime (chuck skip, merci Ö 
+Guillaume Tello de Montreuil Bellay).
+- Gestion carte True Color NOVA (HADES). 
+- Correction probläme absence de son avec certains fichiers MOV oó le 
+son est Ö la fin (petits fichiers, merci Ö Raymond Collins).
+- Corrections dÇcompression jpeg.
+- Corrections tests dimensions jpeg dans fichiers AVI/MOV (merci Ö 
+ClÇment Benrabah).
+- Correction dÇcompression iv32 (Intel Indeo), certaines images ne 
+contenant que leur entàte perturbaient le player (merci Ö ClÇment 
+Benrabah).
+- Flag de sauvegarde d'image remis Ö 0 en cas d'arràt de la sauvegarde 
+en cours (message d'alerte rÇapparaissant avant).
+- Remplacement de l'instruction MOVEP pour les routines sonores YAMAHA 
+et carte PSOUND sur le port // car cette instruction n'existe plus 
+sur le 060 (elle est ÇmulÇe sur l'HADES, merci Ö Loãc SÇbald de Caveirac).
+- Correction sauvegarde images FLI (le numero de dÇpart Çtait l'image 
+courante).
+- Correction sauvegarde image avec l'affichage direct (l'image du 
+sÇlecteur de fichier d'origine apparaissait Ö la place de l'image, 
+merci Ö Christian Marillat).
+- Correction plantage possible avec option sauter images s'il n'y a 
+pas de son, probläme depuis la version 1.21.
+
+V2.1 Avril 1998:
+----------------
+- Option fenàtre rÇduite inhibÇe pour les fichiers sonores (merci Ö 
+Noah Silva).
+- Correction plantage possible du QuickTime VR/1 quand le curseur de 
+la souris se trouve sur le contour de la fenàtre sur certains systämes 
+(le TT !, merci Ö Guillaume Tello de Montreuil Bellay).
+- Correction blocage des fichiers sonores QuickTime (probläme depuis 
+la version prÇcÇdante).
+- Correction rÇaffichage curseur souris apräs passage en pause dans le 
+cas ou le transfert DSP se fait par interruptions (affichage direct et 
+True Color FALCON).
+- Correction palette couleurs sur certains fichiers QuickTime (merci Ö 
+Guillaume Tello de Montreuil Bellay).   
+- Largeur image limitÇe maintenant Ö 768 pixels pour le DSP (640 
+auparavant, au delÖ 'Pas assez de mÇmoire DSP').
+- AmÇlioration surveillance compteur DMA sous XBIOS (buffptr).
+- Gestion sÇlecteur de fichier Selectric pour les extensions 
+prÇdÇfinies (cookie-jar 'FSEL').
+- Gestion bulles d'aides boutons fenàtre avec BubbleGEM.
+- La zone d'informations du message 'AP' est maintenant en global sur 
+les systämes avec protection mÇmoire.
+- Activation routines XBIOS et dÇsactivation LINEA si le cookie-jar 
+'_DOL' est dÇtectÇ (DOLMEN !). Si la LINEA est inutilisable le mode 
+TOS n'est pas possible et pour le GEM le VDI est utilisÇ.
+- La touche ESC ou le bouton de fermeture de la fenàtre permettent de 
+quitter le programme seulement si l'option quitter Ö la fin est 
+sÇlectionnÇe, dans le cas contraire l'animation est stoppÇe et la 
+fenàtre est fermÇe.
+- Le DAC est reconnectÇ Ö la matrice Ö chaque fois que le son est 
+relancÇ (avec la fonction XBIOS soundcmd(ADDRIN,3)), car certains 
+programmes le dÇconnecte parfois. 
+- AmÇlioration statistiques (temps mauvais parfois).
+- Ascenseurs en fenàtre si l'animation ou l'image dÇpassent les 
+dimensions du bureau.
+- Ajout sauvegarde partielle du son.
+- Optimisation tramage en 256 couleurs (rÇsolution vidÇo <= 256 
+couleurs) des animations en 16M ou 32768 couleurs grace Ö un tableau 
+prÇcalculÇ de 1 Moctets (filtre de Bayer 8 x 8). L'allocation du 
+buffer est faite uniquement en 256 couleurs (option grisee pour les 
+rÇsolutions vidÇos infÇrieures ou le manque de mÇmoire).
+- Ajout QuickTime VR2 en fenàtre GEM.
+- Diminution de la taille de certains buffers suivant la rÇsolution 
+Çcran.
+
+V2.1 MILAN Mai 1998:
+--------------------
+- Ajout protocole ID4-OLGA pour utiliser Aniplayer comme plug-in pour 
+CAB.
+
+V2.2 Juin 1998:
+---------------
+- Correction lecture entàte fichiers AVR.
+- AmÇlioration reconnaissance QuickTime VR2 'qtvr' en plus des 'pano' 
+(panoramiques).
+- Correction anomalies de formats QuickTime VR2 (merci Ö RÇmi Vanel).
+- Correction changement de lieux QuickTime VR2 (merci Ö Joachim 
+Fornallaz de ZÅrich).
+- Correction dÇcompression smc8 (Apple Graphics), plantage possible 
+dans certains cas.
+- Correction calcul cadence image avec le son 16 bits mono sur machine 
+n'ayant pas de son 16 bits (TT, merci Ö Guillaume Tello de Montreuil 
+Bellay).
+- Correction affichage en noir et blanc en TC des animations en 16 
+millions de couleurs (merci Ö Joachim Fornallaz de ZÅrich).
+- Correction plantage possible son compressÇ si tous les blocs son 
+sont Ö la fin ou au dÇbut.
+- Correction erreur possible 'Fin de fichier atteinte' si la section 
+'udta' se trouve en fin de fichier sur les fichiers QuickTime, bug 
+depuis la version 2.0 (merci Ö FrÇdÇric Boudet de Tonneville).
+- Sous systäme multitÉche l'affichage d'une image JPEG est maintenant 
+toujours affichÇe (ce n'Çtait pas le cas avant si l'Çcran Çtait 
+blocquÇ par wind_update). 
+- Optimisation dÇcompression cram8 sans DSP et cram16 (Microsoft Video 
+1, merci Ö Seb/The Removers pour ses sources).
+- Ajout d'un bouton pour faire demi-tour dans du QuickTime VR2. 
+- Gestion carte True Color NOVA 24 bits (HADES au format BVR). 
+- Gestion Çtendue du protocole ID4-OLGA pour CAB avec les attributs 
+CONTROLLER (bande de 16 pixels), LOOP, et AUTOPLAY (bits 0 Ö 2 de 
+Client-Flag dans le message OLGA_EMBED).
+- Ajout son compressÇ mac3/mac6 pour les fichiers QuickTime.
+
+V2.3 Septembre 1998:
+--------------------
+- Le DSP est maintenant seulement bloquÇ et chargÇ uniquement quand 
+l'option dÇcompression DSP est cochÇe, cela permet d'utiliser le 
+player sur FALCON avec un autre programme qui utilise dÇja le DSP.
+- Correction gestion carte True Color NOVA 24 bits sans affichage 
+direct (HADES au format BVR).
+- Correction affichage des animations en 16 millions de couleurs sur 
+carte True Color NOVA (merci Ö Gilbert Duquesne de Lille).
+- Correction zoom 2X en True Color pour les animations en 256 couleurs 
+(merci Ö Gilbert Duquesne de Lille).
+- Utilisation de l'adresse de l'Çcran logique pour corriger les 
+dÇcalages avec les rÇsolutions virtuelles. Inhibition de 
+l'interruption VBL lors du changement de rÇsoltion sur FALCON en 320 
+* 240 True Color pour les rÇsolutions virtuelles (merci Ö Pascal Ricard).
+- Correction probläme sauvegarde image avec le sÇlecteur de fichier 
+lors du changement de rÇsolution en 320 x 240 sur FALCON et l'affichage 
+direct (depuis la version 2.0).
+- Lors du changement de rÇsolution sur FALCON en 320 * 240 True Color 
+le bord de l'Çcran passe au noir (plus pratique sur un moniteur RVB).
+- Le format AVI iv31/iv32 est maintenant toujours considÇrÇ comme du 
+16 millions de couleurs (certains fichiers sont dÇclarÇs en 65K couleurs). 
+- Sur un fichier AVI, si la lecture de la table des index n'est pas 
+complete, le programme ne sort plus l'erreur 'Fin de fichier 
+atteinte' (merci Ö Jo Vandeweghe de Dottignies). 
+- Correction cadence image sur les fichiers sans son (ou son coupÇ) 
+avec l'option sauter images cochÇe.
+- Correction affichage direct avec certaines cartes graphiques en 256 
+couleurs (par exemple la Super NOVA + sur TT) dans le cas ou la 
+largeur d'une ligne en mÇmoire ne correspond pas avec la largeur de 
+l'Çcran avec le cookie-jar 'NOVA' en plus du VDI (merci Ö Jo 
+Vandeweghe de Dottignies).
+- Correction ligne menu 'Informations' pouvant causer un probläme sous 
+MultiTOS (flag INDIRECT dans l'arbre objet).
+- Ajout moyenne nombre d'images/seconde dans le boåte des statistiques.
+- Ajout rÇglage de volume sonore pour le YAMAHA et la carte PSOUND (4 
+niveaux) pour l'HADES.
+- Pour l'horloge externe sur le port DSP, les broches du port DSP GPIO 
+sont maintenant commandÇs (compatible Soundpool & Newclock Softjee). 
+- Gestion de la table de frequences de la StarTrack (merci Ö Stephan 
+Willhem).
+- En slide-show l'option bouclage peut maintenant utilisÇe pour 
+reprendre la lecture du repertoire ou d'un type de fichier.
+- Il est maintenant possible d'arràter le slide-show avec les touches 
+d'arràt (UNDO, ESC, etc...) pendant la boåte affichant le fichier.
+- Optimisation dÇcompression cvid (Radius Cinepak) sans DSP en True 
+Color FALCON ou carte graphique 32768 couleurs (merci aux Removers 
+pour leur code).
+- Ajout de la lecture des fichiers MPEG1/2 avec/sans DSP (sans son pour 
+le moment).
+- Passage en Shareware.
+
+V2.4 Novembre 1998:
+-------------------
+- Correction du test espace libre sur le disque pour la sauvegarde 
+partielle du son (merci Ö Philippe Castella de Genas).
+- Correction sauvegarde partielle du son qui ne fonctionnait pas avec 
+les fichiers AVI.
+- Correction avec certains fichiers FLH APEX (chuck FLI_BRUN) qui 
+Çtaient reconnus comme FLH (merci Ö Nicolas Boulesteix de Gaillon Sur 
+Montcient).
+- Correction tramage FLH en 256 couleurs (probläme depuis la version 
+2.1).
+- Augmentation des buffers d'une ligne pour Çviter les dÇbordements de
+certains FLH.
+- Le nombre d'Çchantillons d'un fichier AVR est maintenant dÇterminÇ Ö 
+partir de la taille du fichier.
+- Suppression erreur 'Fin de fichier atteinte' sur les fichiers MPEG 
+ne possedant pas de code de fin (merci Ö Nicolas Boulesteix de Gaillon 
+Sur Montcient et Karel de Bruijn de St. Jansteen).
+- Correction affichage erronÇ sur animations MPEG de grande taille 
+(merci Ö Franáois le Coat). 
+- Correction plantage de CAB avec le plug-in ID4-OLGA intermittant
+avec du QuickTime VR (merci Ö Alexander Clauss).
+- Correction plantage des formulaires avec champ de texte (dont le
+formulaire d'enregistrement) sous TOS et avec l'utilisation de 
+N_FRENCH.TXT (merci Ö Oliver Heun de Mainz).
+- Correction 65K couleurs sur MILAN (merci Ö Alexander Kartalija de 
+Bad Durrheinidem).
+- Correction affichage menu sous TOS MILAN, flag INDIRECT enlevÇ dans 
+RSC interne (merci Ö Alexander Kartalija de Bad Durrheinidem).
+- Correction positionnement image sur lecture fichier MOV dans le cas 
+ou tout le son est groupÇ. Sur une compression cvid (Radius Cinepak) 
+cela se traduisait par le message 'Taille image cvid incohÇrente'  
+(merci Ö Robert BlÑtter de Hamburg). Le probläme n'etait pas prÇsent
+si le son Çtait coupÇ.
+- Suppression alignement horizontal de 16 pixels sur l'ascenseur de 
+la fenàtre (visible si l'animation ou l'image dÇpassent les dimensions 
+du bureau, merci Ö Guibert Duquesne de Lille).
+- Correction mauvais numÇro image possible lors d'un dÇplacement dans 
+un fichier MPEG avec direct to disk.
+- Gestion du son compressÇ deltapack dvi_adpcm (dvi), deltapack 
+ms_adpcm (apcm), et mulaw (ulaw) WAV.
+- Ajout affichage mode vidÇo dÇtectÇ dans la boåte d'information du 
+programme.
+- Si un fichier WAV du màme nom est trouvÇ qu'un fichier MPEG, le son 
+du fichier WAV est jouÇ en màme temps. 
+- Ajout lecture Real Audio RA 14,4K.
+
+V2.5 Avril 1999:
+----------------
+- Correction calcul nombre Çchantillons WAV (probläme depuis la 
+version prÇcÇdante).
+- Correction information longueur fichier sauvegarde AVR (compatible
+avec plus de logiciels).
+- Correction mauvaises couleurs en True Color NOVA 24 bits en cas de
+dÇplacement de la fenàtre (mauvais alignement sur 3 octets, merci Ö 
+Gilbert Duquesne de Lille).
+- Correction True Color NOVA 32 bits, format BVRX (merci Ö Edward S. 
+Baiz de Granger).
+- Correction lecture fichiers AVI avec mauvaise rÇpartition du son 
+avec les images, dans ce cas le son est maintenant chargÇ avant. 
+Si la mÇmoire est insuffisante pour les sons 16 bits sur FALCON, le 
+programme essai Ö nouveau avec une restitution 8 bits avant de 
+proposer une lecture sans son (merci Ö Nicolas Richeton de Poitiers).
+- Option sans D2D dÇsactivÇe et reprise de son apräs arràt (une 
+pause par exemple) quand le son est chargÇ avant pour les fichiers AVI 
+et QuickTime.  
+- Correction sauvegarde partielle du son dans le cas oó il est chargÇ 
+avant (la sauvegarde Çtait totale). 
+- Correction problämes d'affichages aux l'angles 0,0 du QuickTime VR1.
+- Meilleure reconnaissance QuickTime VR2 (merci Ö Jo Vandeweghe de 
+Dottignies). 
+- Correction blocage intermittant du systäme avec le plug-in ID4-OLGA.
+- Correction sauvegarde image (X)IMG 256 couleurs avec les couleurs du
+client pour le plug-in ID4-OLGA en 256 couleurs.
+- L'interprÇtation du cookie '_SND' n'etait pas bonne (documentation),
+correction pour fonctionnement avec le XBIOS de la MilanBlaster (merci 
+Ö Karel de Bruijn de St. Jansteen)
+- Correction lecture de certains FLI douteux (merci Ö Alain LarrodÇ de 
+Villacoublay). 
+- Correction plantages possibles avec le bouclage des fichiers MPEG.
+- Correction gestion fenàtre, changement des options avec les fichiers 
+MPEG (merci Ö Alexander Kartalija de Bad Durrheinidem).
+- Correction calcul key-frame sur certains fichiers MPEG (probläme
+avec l'option sauter images).
+- Correction tempo GEM rÇpÇtition clic souris (probläme visible avec 
+le programme en accessoire et sous TOS, merci Ö Guillaume Tello de 
+Montreuil Bellay).
+- Correction calcul moyenne images/seconde statistiques lorsque l'amim
+est interrompue durant le dÇfilement.
+- Correction bouclage slide-show avec un type de fichier sous TOS.
+- Sur les fichiers sonores, le fichier est maintenant lut normalement
+lorsque l'option couper le son est cochÇe.
+- La fonction Mxalloc est maintenant toujours utilisÇe si elle existe
+(avant c'Çtait uniquement le cas pour le son DMA et le Videl du FALCON
+et les allocations en mÇmoire globale pour les messages entre 
+applications).
+- Ajout option sans erreur pour supprimer l'affichage des boåtes
+d'alertes invitant Ö passer et l'erreur 'Fin de fichier atteinte'.
+- Ajout option pause au dÇmarrage.
+- Ajout Drag & Drop.
+- Utilisation de la variable d'environnement HOME pour la sauvegarde
+de ANIPLAY.INF. La sauvegarde se fait Çgalement dans le rÇpertoire  
+du programme, pour la lecture c'est le fichier le plus rÇcent qui est
+pris en compte.  
+- Ajout sauvegarde position centrale fenàtre dans ANIPLAY.INF.
+- Affichage information nom dans la ligne d'informations pour les 
+fichiers audio AVR/WAV/RA.
+- Utilisation de l'AVSERVER pour ouvrir une fenàtre sur le bureau avec 
+un SHIFT + clic chargement (message AV_XWIND).
+- Sauvegarde position fenàtre.
+- Gestion message 'MP' M_PLAYER avec uniquement les options suivantes:
+  +d: avec interface GEM (-d: sans interface GEM)
+  +i: bouclage (-i: sans)
+  +p: avec son (-p: coupure son)
+  +s: sauter images (-s: toutes les images)
+  +xnnnnn, +ynnnnn: position (5 chiffres max, centrÇe par dÇfaut)
+- Avec les options +x et +y dans un message 'MP' ou VA_START avec 
+ligne de commande l'Çcran n'est plus effacÇ. 
+- Avec le DSP, les interruptions VBL ne sont plus bloquÇs pendant le 
+transfert qu'avec l'option sans interface GEM.
+- Gestion carte True Color 24 bits format motorola RRRRRRRRVVVVVVVVBBBBBBBB. 
+- Ajout lecture Real Audio RA 28,8K avec le coprocesseur arithmÇtique 
+68882.
+- Si un fichier .RAM est passÇ au player (via VA_START par exemple) 
+avec une adresse pnm://xxx.yyy/zzz.ra (un fichier Real Audio), 
+l'adresse corrigee en http://xxx.yyy/zzz/.ra est envoyÇe au browser
+WEB (via la variable d'environnement BROWSER). Le browser doit alors  
+en principe charger le fichier Real Audio et rÇutiliser le player pour 
+le jouer (avec .RA et .RAM dÇclarÇs pour Aniplayer dans le browser).
+
+V2.6 Mai 1999:
+--------------
+- Correction bouclage slide-show avec un type de fichier sous MagiC ou 
+MiNT.
+- Correction sauvegarde partielle du son avec les gros fichiers (merci 
+Ö Philippe Castella de Genas). 
+- Correction calcul taille buffer son (merci Ö Pascal Ricard de 
+Pierrevert).
+- Correction plantage Real Audio 28K8 avec le prÇchargement du son sur 
+FALCON ou TT (erreur bus avec un accäs utilisateur en $4xx non dÇtectÇ 
+sur CT2, merci Pascal Ricard de Pierrevert). 
+- Correction affichage erronÇ sur animations MPEG2 (P et B frames, 
+merci Ö Franáois le Coat). 
+- Correction plantage intermittant zoom 2X.
+- Correction coupure son irrÇversible quand le son est chargÇ avant. 
+- Ajout gestion touches de fonction pour les raccourcis clavier des 
+options.
+- Au niveau du son, c'est la frÇquence d'Çchantillonnage machine 
+supÇrieure la plus proche de la frÇquence du fichier qui est prise en
+compte et non plus la frÇquence la plus proche. 
+- Calcul cadence image a partir du son rÇÇchantillonnÇ plus prÇcis.
+- Ajout boåte de paramÇtrage affichage.
+- Ajout dÇlais slide show paramÇtrable de 0 Ö 99 secondes.
+- Le zoom 2X s'active automatiquement avec l'option sans interface GEM 
+si toutes les conditions suivantes sont prÇsentes:
+  * Le changement de rÇsolution vidÇo est impossible.
+  * Le CPU est >= 68040 ou que MagiCMac/PC est dÇtectÇ.
+  * La taille de la vidÇo est infÇrieure ou Çgale a 320 x 240.
+  * La taille de l'Çcran le permet. 
+- Ajout forcage mode normal ou zoom 2X en plus du mode automatique 
+dans la boåte de paramÇtrage de l'affichage.
+- Ajout sur FALCON du mode VGA 160 x 240 True Color avec l'option sans 
+interface GEM cochÇe, il est possible de l'inhiber pour forcer le 320
+x 240 True Color en cochant le mode normal dans la boåte de paramÇtrage
+de l'affichage.
+- Ajout paramÇtrage affichage des images tramÇes en 256 couleurs soit 
+avec la palette du programme, soit la palette courante (216 couleurs 
+approchÇes pour le tramage).
+- Ajout possibilitÇe de basculer avec/sans interface GEM pendant la 
+lecture du fichier.
+- Pour l'horloge externe sur le port DSP, les broches du port DSP GPIO 
+sont maintenant initialisÇs a chaque dÇmarrage du son et non plus au 
+dÇmarrage du programme.
+- Ajout boåte paramÇtrage son.
+- PrÇchargement du son possible via paramÇtrage son pour les fichiers 
+AVI, MOV, RA, l'option sans D2D chargeant tout le fichier est inhibÇe 
+dans ce cas. S'il n'y a pas assez de mÇmoire le D2D est rÇactivÇ mais
+avant le player essai Ö nouveau avec une restitution en 8 bits pour
+des sons 16 bits (taille /2 pour les fichiers AVI/MOV en 16 bits mono).
+- Ajout foráage direct to disk pour les fichiers Real Audio RA 28K8.
+- Augmentation du nombre d'images affichÇes avec l'option sauter images
+(si le pas des images clef est supÇrieur Ö 6).
+
+V2.7 Juillet 1999:
+------------------
+- Correction affichage sans GEM sur FALCON en mode VGA 160 x 240 True 
+Color, lignes noires sur certaines compressions.
+- Correction dÇcompression iv32 (Intel Indeo) en True Color 24/32 bits
+(merci Ö Bernd Maedicke et Joachim Fornallaz).
+- Sur TV, le changement de rÇsolution sur FALCON vÇrifie maintenant la
+frÇquence de l'horloge vidÇo afin de basculer sur l'horloge externe
+32 MHz pour les cartes acceleratrices si elle existe (merci Ö Denis 
+Huguet de Mehun sur Yävre).  
+- Correction option pause au dÇmarrage et dÇplacement en dÇbut de 
+fichier AVI (merci Ö Jan Daldrup de Kaarst).
+- Correction problämes d'allocation mÇmoire avec le prÇchargement du 
+son dans le cas oó la mÇmoire restante est faible. 
+- Correction remise Ö zero compteurs images pour les statistiques
+(probläme depuis la version 2.05).
+- Correction dÇcalage possible entre le son et les images sur un 
+fichier QuickTime apräs le bouclage ou un dÇplacement. 
+- Correction sauvegarde partielle son AVI avec le prÇchargement du son 
+cochÇ dans la boåte de configuration sonore. 
+- Correction affichage erronÇ (blocs non affichÇs) sur certaines 
+animations MPEG (merci Ö Franáois le Coat). 
+- Correction sauvegarde images MPEG avec l'option sauter images 
+sÇlectionnÇe (toutes les images n'Çtaient pas sauvegardÇes). 
+- Correction couleurs images JPEG noir et blanc (merci Ö Pascal Ricard 
+de Pierrevert).
+- Ajout chemins prÇdÇfinis (10 maxi) pour les sÇlecteurs de fichiers 
+compatible Selectric et celui de MagiC, sauvegarde dans le .INF.
+- Ajout foráage fonctions sonores XBIOS dans la boåte de configuration 
+sonore.
+- Ajout dans la boåte de paramÇtrage affichage la possibilitÇ de 
+forcer l'utilisation du sÇlecteur de fichiers standard sous MagiC
+et aussi la possibilitÇ de supprimer les popup du menu.
+- Ajout option pause au dÇmarrage sans interface GEM.
+- Ajout sauvegarde film rle AVI/MOV (merci Ö Guillaume Tello de 
+Montreuil Bellay).
+
+V2.8 Novembre 1999:
+-------------------
+- Correction dÇlais slide-show image JPEG avec la valeur 0 (merci Ö 
+Gilbert Duquesne de Lille).
+- Correction lecture MPEG avec D2D dans le cas de fichiers oó son et
+images sont entrelacÇs.
+- Correction probläme lecture clavier avec les options sauter image et 
+sans interface GEM cochÇes.
+- Correction sortie audio numÇrique, ajout sÇlection voies (merci Ö 
+Stefan Hiller de Hamburg et Benjamin Genevay de Grandson).
+- Correction dÇplacement en pause avec le prÇchargement du son.
+- Correction decompression QuickTime des images vides sautÇs, visible 
+sur plantage d'un rle16 (merci Ö Nicolas Richeton de Poitiers).
+- Correction affichage sans GEM si la hauteur de la vidÇo est impaire.
+- Correction test cookie '_FPU' sur Hades (merci Ö Benjamin Genevay de
+Grandson).
+- Correction son stÇreo QuickTime mac3/mac6 (merci Ö Robert Goldsmith).
+- Correction ligne de commande (mode TTP), ne fonctionnait plus depuis
+la version 2.06 (merci Ö Noah Silva).
+- Correction test horloge externe (merci Ö Joel Houplon de Chaville).
+- Correction test extension fichiers mpeg et jpeg (merci Ö Denis 
+Huguet de Mehun sur Yävre). 
+- Suppression de la table 'horloge externe' sur la MilanBlaster pour 
+ne laisser que le 44100 Hz en plus des frÇquences FALCON.
+- Gestion des noms longs avec espaces pour la ligne de commande et 
+VA_START.
+- Si la machine ne possÇde pas de son DMA ou sur MagiCMac, les allocations
+mÇmoire pour le son se font maintenant en TT-RAM.
+- Affichage de l'Çvolution en % de la dÇcompression sur la barre du 
+menu lors du prÇchargement d'un fichier sonore.
+- Ajout foráage ou ignorer l'horloge CD (externe sur FALCON) dans la boåte
+de configuration sonore.
+- Ajout message d'erreur lorsqu'il n'y a plus de place sur le disque
+pour la sauvegarde film.
+- Ajout sur FALCON de diffÇrents modes vidÇo True Color avec l'option 
+sans interface GEM cochÇe:
+  * VGA 384 x 304 32 MHz (horloge interne ou externe).
+  * VGA 640 x 480 Centurbo II 50 MHz. 
+  * TV 640 x 480.
+ La sÇlection avec l'ancien mode 320 x 240 est automatique suivant la 
+taille de l'image.
+- Passage du buffer D2D son fichiers audio de 0,5 Ö 1 seconde.
+- Ajout rÇÇchantillonnage 16 bits rapide par interpollation linÇaire
+pour le rapport frÇquence machine / frÇquence fichier Çgal Ö 9/8.
+- Ajout MPEG 1/2 Audio Layer 1,2,3 avec/sans DSP, le DSP de la StarTrack 
+est gÇrÇ pour TT et HADES. 
+
+V2.9 FÇvrier 2000:
+------------------
+- Correction lecture rÇpertoire avec les noms longs pour le 
+slide-show, le rÇpertoire Çtait ouvert en mode TOS (8+3).
+- Correction forcage zoom normal avec l'option fenàtre rÇduite 
+sÇlectionnÇe alors que le zoom 2X est actif pour le mode 'sans GEM'
+(merci Ö Gilbert Duquesne de Lille).
+- Correction plug-in avec OLGA si une fenàtre normale Çtait dÇja ouverte
+dans Aniplayer (merci Ö Joachim Fornallaz de ZÅrich).
+- Correction blocage lecture D2D possible en fin de fichier pour les 
+fichiers MPEG 1/2 Audio Layer 1,2,3 (merci Ö Nicolas Richeton de 
+Poitiers).
+- Correction probläme alÇatoire de lecture D2D des fichiers vidÇo MPEG 
+dans le cas de fichiers oó son et images sont entrelacÇs (erreur ou 
+plantage).
+- Suppression gestion son YAMAHA sur MILAN ou machine sans YAMAHA.
+- Correction son compressÇ deltapack stÇrÇo dvi_adpcm (dvi) utilisÇ 
+pour les fichiers AVI et WAV (merci Ö Nicolas Richeton de Poitiers).
+- Correction dÇcalage et absence de key-frame en dÇbut de fichier pour 
+la sauvegarde AVI/MOV (merci Ö Raymond Lohengrin de High Springs).
+- Correction arràt son juste avant la fin pour les fichiers audio
+(merci Ö Jan Daldrup de Kaarst).
+- AmÇlioration lecture entàte ID3 sur certains fichiers MPEG Audio.
+- AmÇlioration de l'affichage position de certains fichiers MPEG 
+Audio VBR dont le bitrate varie de faáon importante (merci Ö Pascal 
+Ricard de Pierrevert).
+- AmÇlioration reconnaissance fichiers QuickTime (chuck wide, merci Ö 
+GÅnter Schumann de Berlin).
+- Test de l'entàte du fichier afin d'en dÇterminer son extension.
+- Supression changement de rÇsolution ou effacement Çcran avec la 
+ligne de commande en mode TTP pour les fichiers sonores (auparavant
+il fallait ajouter +x ou +y).
+- Affichage de l'image màme en cas d'erreur de dÇcodage pour les 
+fichiers MPEG (merci Ö Franáois le Coat). 
+- Gestion plus frÇquente des ÇvÇnements GEM pour les fichier MPEG Audio.
+- Gestion fonction hidden de MagiC (masquer application) durant tout le 
+slide-show.
+- Ajout option +o dans la ligne de commande en mode TTP, ou GEM avec 
+les messages VA_START ou 'MP', pour la sauvegarde de tout le son 
+(AVR/WAV/AIF) ou tout le film (AVI/MOV). 
+- Ajout gestion Çchantillons 16 bits stÇrÇo MOV in32.
+- Ajout gestion Çchantillons compressÇs 16 bits stÇrÇo alaw
+pour les fichiers MOV, AVI, et WAV.
+- Ajout lecture entàte QuickTime 4 compressÇs en ZIP, chuck cmov 
+(merái Ö Denis Huguet de Mehun sur Yävre). 
+- Ajout protocole DHST (Document History Protocol, Start Me Up).
+- Ajout foráage vitesse (images/seconde) pour les fichiers sans son.
+- MPEG 1/2 Audio Layer 3 avec DSP plus rapide sur FALCON avec des 
+transferts DMA -> DSP et DSP -> DAC. Avec la sortie numÇrique 
+sÇlectionnÇe dans la boåte de configuration sonore, le prÇchargement 
+du son, ou la sauvegarde du son, les transferts se font toujours par 
+le port host.
+- Ajout choix mode MP3 DSP normal (par le port host) ou par transferts 
+DMA (plus rapide) dans la boåte de configuration sonore.
+- Ajout choix mode MP3 sans DSP normal ou foráage en mono (plus 
+rapide) dans la boåte de configuration sonore. 
+ 
+V2.10 Avril 2000:
+-----------------
+- Correction confusion slide-show sous TOS des fichiers MPG (MP*) 
+et MP1/2/3 (MP?).
+- Correction bouclage avec le prÇchargement du son (probläme depuis
+la version prÇcÇdante).
+- Correction inversion des voies Çventuelle pour les transferts
+DMA -> DSP du MP3 sur FALCON.
+- Ajout vu-màtre pour les fichiers sonores, activable avec le bouton
+d'agrandissement de la fenàtre.
+- Modification du test horloge externe compatible ou non FDI, ajout
+table frÇquences DAT 48 KHz.
+- Lors d'un arràt son matrice sonore rÇinitialisÇe Ö la frÇquence
+STE 50 KHz (FALCON ou compatible).
+- Passage du mode normal sans GEM sous CT2 de 320 x 240 Ö 640 x 480.
+- Ajout tri par nom pour le slide-show d'un rÇpertoire.
+- Ajout popup bouton droit.
+- Affichage dans la ligne d'information de l'auteur et de l'album
+(TAG ID3) en plus du titre pour les fichiers MPEG Audio (MP1/2/3).
+Ces informations sont Çgalement disponibles via le clic droit avec
+BubbleGEM. Ajout Çgalement dans la boåte d'informations.
+- Ajout fenàtre Playlist avec fonctions Çdition, ajout fichier et 
+rÇpertoire, chargement et sauvegarde, effacement partiel ou 
+sÇlectionnable, dÇplacement, drag & drop multiple, lecture totale 
+ou partielle.
+- Ajout boåte de dialogues en fenàtre, aide via BubbleGEM et 
+aide ciblÇe via ST-GUIDE si la page est trouvÇe dans le .HYP.
+- Ajout gestion mode MP1/2 normal ou foráage en mono (plus 
+rapide) dans la boåte de configuration sonore.
+- Ajout statistiques pour les fichiers sonores et % dans la ligne
+d'informations de la fenàtre.
+- Corrections fonctionnement en accessoire.
+
+V2.11 Juin 2000:
+----------------
+- Correction vu-mätre avec le son YAMAHA ou la carte PSOUND. 
+- Correction statistiques avec le mode DSP MP3 par transferts DMA.
+- Correction disfonctionnement lecture MP3 par transferts DMA
+avec certains programmes AUTO (erreur MPEG dÇcodage bloc)
+- Correction inversion auteur et album pour le TAG ID3 V1 des fichiers
+MPEG Audio (merci Ö Nicolas Richeton de Poitiers).
+- Correction arràt son pour les fichiers audio compressÇs WAV et RA
+(rÇpÇtition Ö la fin).
+- Correction probläme son Ö 44,1 KHz sur Milan liÇ Ö la suppression
+du positionnement des bits gpio (compatible FDI) depuis la version
+prÇcÇdante (merci Ö Eric Reboux).
+- Correction option quitter Ö la fin sous environnement multitÉche
+qui Çtait enlevÇe au demarrage (probläme depuis la version 
+prÇcÇdante, merci Ö Bruno BÇgni).
+- Correction lecture du .INF quand le rÇpertoire du programme n'a pas 
+ÇtÇ choisi dans le bureau pour dÇmarrer l'application (merci Ö Benjamin
+Genevay de Grandson).
+- Correction rafraichissement lecture buffer DMA avec les fonctions 
+sonores XBIOS, surtout visible pour le vu-mätre.
+- Correction affichage parfois erronÇ du vu-mätre.
+- Correction passage avec DSP -> sans DSP pour les vidÇos AVI/MOV 
+jpeg en cours de lecture, mauvaises couleurs depuis la version 2.7.
+- Correction calcul cadence image Ö partir du son sur certains fichiers
+QuickTime.
+- Correction dÇcompression iv32 pour les images de grande largeur 
+(merci Ö Gilbert Duquesne de Lille).
+- Correction plantage sur 68000 (multiplication nombre de 32 bits), 
+probläme visible avec la boåte d'information par exemple (merci Ö 
+JÅrgen Holtkamp de Herne).
+- Le bouton demi-tour pour les fichier QuickTime VR2 ne fonctionnait
+que si l'option boutons magnÇtophone n'Çtait pas sÇlectionnÇe. 
+- Suppression attente dÇmarrage son pour les fichiers sonores en D2D.
+- Attente fin lecture DMA ajoutÇe pour Rational Sounds, test du cookie 
+'RaSn' (merci Ö Carsten Baron).
+- DurÇe des buffers D2D rÇglable de 1 Ö 5 secondes pour les fichiers 
+sonores. Alignement sur 8 Çchantillons pour amÇliorer le 
+rÇechantillonnage rapide.
+- Ajout information pause/play dans le message de retour 'AP'.
+- Ajout rÇÇchantillonnage rapide 68000 en ajoutant ou retirant un 
+Çchantillon si la frÇquence est Ö 7/8 ou 9/8 de la frÇquence la plus 
+proche disponible sur la machine.
+- Le rÇÇchantillonnage 16 bits rapide par interpollation linÇaire
+est maintenant non utilisÇ sur un FALCON sans CT2 (trop lent Ö 44,1 KHz
+stÇrÇo), il reste utilisÇ avec un 68040 ou 68060. Il est Çgalement 
+supprimÇ si le son DMA est en 8 bits.
+- Au niveau de la Playlist, ajout d'un bouton de sÇlection d'effacement 
+du fichier de la liste en fin de lecture.
+- Ajout lecture alÇatoire de la Playlist.
+- Ajout affichage durÇe des fichiers sonores dans la ligne d'info et la 
+Playlist. 
+- Les infos sont maintenant toujours extraites du fichier sonore
+quelquesoit la situation si elles existent. 
+- MP2 plus rapide avec le DSP.
+- Ajout choix mode MP2 DSP normal (par le port host) ou par transferts 
+DMA (plus rapide) dans la boåte de configuration sonore (màme 
+sÇlection que le MP3).
+
+V2.12 Juillet 2000:
+-------------------
+- Correction problämes d'allocation mÇmoire, tout est maintenant contrìlÇ.
+- Correction bouton de fermeture fenàtre sur boåte de dialogue en fenàtre 
+ouverte.
+- Correction probläme de blocage avec les dialogues en fenàtre sous 
+Geneva (merci Ö Barry Shortridge de Mouth Card).
+- Correction Çtat sÇlection ligne Playlist si clic prolongÇ (servant 
+normalement au dÇplacement, merci Ö Nicolas Richeton de Poitiers).
+- Correction reproduction sonore MP2/3 avec la sortie audio directe DSP
+via les transferts DMA avec un DSP a 32 MHz.
+- Correction reproduction sonore MP2/3 avec la sortie audio directe DSP
+via les transferts DMA pour les fichiers dont la durÇe est infÇrieure 
+Ö la taille du buffer (merci Ö Joel Houplon de Chaville).
+- Correction option +o dans la ligne de commande en mode TTP, ou GEM avec 
+les messages VA_START ou 'MP', ajout d'espaces possible avant le nom
+et correction pour renommer le fichier cible s'il existait dÇja.
+- Correction foráage son XBIOS lors de la lecture du .INF (merci Ö
+Odd Skancke de Sarpsborg).
+- Correction initialisation rÇglage volume sonore avec le mode 'sans GEM'.
+- Correction lecture entàte MPEG du nombre d'images par seconde.
+- Arràt Playlist si plug-in avec OLGA utilisÇ.
+- Plus de tolÇrance avec les entàtes de fichiers MPEG Audio (merci Ö
+Paul Nurminen de El Segundo).
+- Ajout pour les MPEG Audio VBR du test du tag 'Xing' pour trouver
+le bitrate moyen afin que les informations sur le fichiers soit
+cohÇrentes (merci Ö Claude Labelle de Gatineau).
+- En cas d'erreur sur un fichier pendant la lecture de la Playlist, 
+elle est maintenant stoppÇe.
+- Ajout possibiliÇe de message de retour pour VA_START (comme 'MP')
+en fin de lecture de fichier.
+- Suppression effacement pointeur souris avec la ligne de commande en 
+mode TTP en cas d'usage de +x ou +y.
+- Suppression utilisation du TRAP #5 Ö la place de Supexec et LINEA 
+pour le curseur souris qui servaient Çventuellement Ö accÇlÇrer le 
+programme.
+- Sauvegarde du timer B MFP utilisÇ sur FALCON pour le MPEG Audio et 
+la dÇtection de l'horloge externe (posait des problämes avec SYNCFIX,
+merci Ö John Banbury).
+- Gestion Çtendue du driver sonore (MilanBlaster par exemple) avec 
+test du bit 5 du cookie '_SND' (merci Ö Odd Skancke de Sarpsborg).
+- Gestion du driver sonore GSXB (Hades) pour le changement de buffer
+DMA (interruption).
+- AmÇlioration Playlist (Drag & Drop et affichage nombre et index).
+- Ajout possibilitÇe de n'afficher que les I-frames pour la vidÇo MPEG
+dans la boåte de configuration affichage.
+- Ajout gestion son pour les fichiers vidÇo MPEG, dans ce cas le DSP
+sert pour le son (sauf si 'couper le son' est cochÇ).
+- Ajout sauvegarde son MP2 pour les fichiers vidÇo MPEG sonorisÇs.
+
+V2.13 Octobre 2000:
+-------------------
+- Correction test taille buffer D2D pour les fichiers MPEG Audio VBR
+pendant la lecture, si le buffer est insuffisant il y a un message
+d'erreur (merci Ö Claude Labelle de Gatineau).
+- Correction dÇcompression DSP MP1 mono (ne fonctionnait plus depuis
+la version 2.11). 
+- Correction son MP2 stÇrÇo avec Transferts DMA -> DSP dans le cas 
+ou 'forcer en mono' Çtait cochÇ dans la boåte de configuration sonore 
+(merci Ö Xavier Joubert de Nantes).
+- Correction Drag & Drop sous MagiC MAC (machine rapide ?, merci Ö
+Sylvain Perchaud de Merau).
+- Correction alignement horizontal fichiers AVI rgb8 (Microsoft,
+merci Ö Benjamin Genevay).
+- Correction recherche chemin de N_FRENCH.TXT qui est maintenant le 
+chemin du rÇpertoire programme et non plus le rÇpertoire courant.
+- Correction localisation rÇpertoire programme. Il Çtait possible
+que la Playlist par dÇfaut PLAYLIST.LST ne soit pas chargÇe dans 
+certains cas.
+- Correction affichage parfois erronÇ du vu-mätre.
+- Correction lecture table des index (offsets images et son) sur 
+certains fichiers AVI (merci Ö Nicolas Richeton de Poitiers). 
+- Carte StarTrack prioritaire sur la MilanBlaster sur le Milan.
+- Test de MagiC 6 pour validation d'une ligne d'info longue dans
+la fenàtre principale (MagiC 4 posait problämes avec certaines infos
+longues au niveau des fichiers MPEG Audio, merci Ö Nicolas Richeton  
+de Poitiers). 
+- L'insertion de fichiers dans la Playlist avec le Drag & Drop ne se
+fait plus dans l'ordre inverse.
+- Ajout Drag & Drop du contenu d'un rÇpertoire dans la Playlist.
+- Reconnaissance des fichiers AIF gÇnÇrÇs par Cubase Audio dont 
+l'entàte est diffÇrent des AIF normaux (merci Ö Benjamin Genevay).
+- Diminution consommation mÇmoire fichiers MPEG Audio en D2D.
+- Correction bouclage MPEG, qui occasionnait le message 'Pas assez
+de mÇmoire pour le rÇÇchantillonnage'.
+- Ajout sur FALCON d'un test checksum sur les transferts DMA -> DSP
+avec le MP2/3 quand 'sans erreur' n'est pas cochÇ sur CT2 ou si le 
+CPU est supÇrieur au 68030 (AB040 par exemple).
+- PossibilitÇe de charger une Playlist avec l'extension LST avec 
+VA_START ou par drag & drop dans la fenàtre principle ou la Playlist.
+- Ajout option +jnnnnnnnnnn Ö la ligne de commande en mode TTP pour
+envoyer une adresse d'extension (Ö la commande + a) afin de contrìler
+le programme d'une faáon similaire au message GEM 'AP'. 
+- JPEG progressif reconnu mais non encore traitÇ.
+- Ajout option +n pour VA_START pour ajouter un nom Ö la Playlist. Les
+autres options sont ignorÇs si la fenàtre principale joue un fichier, 
+dans le cas contraire la lecture dÇmarre avec les nouvelles options 
+et en màme temps le fichier est ajoutÇ Ö la Playlist. Cette option 
+force Ö ignorer les autres dans la ligne de commande pour Çviter que 
+le programme ne dÇmarre en TTP (sans VDI et GEM).
+- Ajout options compatibles GEMJing -dnnnnn -q -rnnnnn avec VA_START 
+et la ligne de commande (avec VDI et GEM) pour jouer les fichiers audios
+sans fenàtre GEM.
+  -dnnnnn: DÇlai. Fixe un dÇlai de nnnnn secondes (5 chiffres max) entre
+           chaque rÇpÇtition. -d0 correspond Ö un delai nul. Si l'option
+           -d n'est pas indiquÇ, cela correspond Ö -d0.
+  -q:      Quitter. Joue un fichier et termine le programme.
+           La barre du menu disparait.
+  -rnnnnn: RÇpÇtition. L'Çchantillon est jouÇ nnnnn fois (5 chiffres max).
+           -r1 signifie que le fichier sera jouÇ une seule fois, -r0 
+           correspond Ö l'infini. Si l'option -r n'est pas indiquÇe, cela
+           correspond Ö -r1. 
+Il faut au moins -dnnnnn ou -rnnnnn pour que le player ignore sa 
+ligne de commande et utilise celle GEMJing car il y a conflit avec les
+options d'Aniplayer. Le message GEMJING_RETURN est Çgalement envoyÇ.
+- Pour les fichiers sonores, l'option 'fenàtre rÇduite' sert 
+maintenant Ö supprimer la fenàtre de lecture.
+- Ajout rÇpÇtition automatique des boutons FF et REW de la fenàtre de 
+lecture, ces boutons sont Çgalement prÇsents lorsque l'option 'boutons
+magnÇtophone' n'est pas cochÇ.
+- Certaines boåtes de dialogue en fenàtre ne bloquent plus la lecture.
+- Passage du popup avec le clic droit en fenàtre.
+- Ajout popup avec le clic droit pour la Playlist.
+- Ajout alignement Ö gauche sur 4 colonnes de la Playlist via le popup.
+- Ajout sÇlection petite fonte pour l'affichage de la Playlist via le 
+popup.
+- Ajout gestion GEMScript, la liste des commandes supportÇs est la 
+suivante:
+  * AppGetLongName()        Retourne le nom du programme.
+  * CheckCommand(command)   Teste la commande.
+  * Close()                 Ferme le fichier.
+  * ControlKey(key)         Similaire au message AV_SENDKEY.
+  * ControlPlay(mode[,val]) Similaire au message 'AP'.
+  * Copy()                  Copie l'image dans le presse papier.
+  * Ff(sec)                 Avance de X secondes.
+  * GetAlbum()              Retourne info album (tag ID3).
+  * GetAllCommands()        Liste des commandes.
+  * GetAuthor()             Retourne info auteur (tag ID3).
+  * GetFilePlayed()         Retourne le fichier en cours de lecture.
+  * GetListTrack()          Retourne la 'piste' en cours et le total
+                            pour la Playlist.
+  * GetTitle()              Retourne info titre (tag ID3).
+  * GetYear()               Retourne info annÇe (tag ID3).
+  * ListPlay()              Lance la Playlist en lecture.
+  * ListStop()              Stoppe la lecture de la Playlist.
+  * Open(options+path+name) Ouvre le fichier avec les options de 
+                            VA_START eventuellement.
+  * Pause()                 Passe en pause.
+  * Play()                  Passe en lecture.
+  * Quit()                  Quitte Aniplayer.
+  * Rew(sec)                Revient en arriäre de X secondes.
+  * Save(path+name)         Sauve en AVI/MOV/AVR/WAV/AIF tout comme 
+                            l'option +o de VA_START.
+
+V2.14 Janvier 2001:
+-------------------
+- Correction MP2 Ö 32000 Hz (merci Ö Clement Benrabah de Merignac).
+- Correction foráage son XBIOS lors de la lecture du .INF.
+- Correction gestion son des fichiers vidÇo MPEG, certains blocs ne
+pouvaient pas àtre relus.
+- Correction lecture entàte ID3 fichier MPEG Audio, si celui-ci 
+dÇpassait 16 Ko (fichier non reconnu, merci Ö Claude Labelle de 
+Gatineau).
+- Correction option +o dans la ligne de commande en mode TTP avec 
+l'option sans GEM qui ne fonctionnait plus depuis la version prÇcÇdante.
+- Correction plantage possible avec la ligne de commande en mode TTP
+en Çtant un utilisateur enregistrÇ.
+- Correction commentaires fichier lors d'un ajout fichier dans la 
+Playlist avec le sÇlecteur en fenàtre de MagiC (merci Ö Joachim
+Fornallaz de ZÅrich).
+- Correction problämes de redraw (appels illegaux AES) avec WINX qui 
+envoi des messages alors que la fenàtre est fermÇe (merci Ö Martin 
+Christoph de Berlin-Tempelhof).
+- Correction rafraichissement curseur horizontal fenàtre principale.
+- Correction bouclage possible pour les fichiers sonores, avec l'option 
+'fenàtre rÇduite' (pour supprimer la fenàtre de lecture), mode GEMJing.
+- CTRL-U stoppe Çgalement la Playlist et le slide-show.
+- Foráage en D2D pour les fichiers AVI si le prÇchargement automatique 
+du son est impossible faute de mÇmoire (merci Ö David Olivares de La 
+Ciotat).
+- Passage de la Playlist Ö 256 entrÇes et affichage sur 3 digits.
+- Gestion des fichiers QuickTime en plusieurs langues (diffÇrentes 
+pistes sonores, merci Ö Ekkehard Flessa de Konradsreuth).
+- Correction lecture compteur DMA avec la MilanBlaster (probläme Ö
+priori avec la fonction XBIOS buffptr, merci Ö Ekkehard Flessa de 
+Konradsreuth et Eric Reboux de Toulon).
+- Correction probläme avec le message AV_SENDKEY (merci Ö Claude Labelle
+de Gatineau).
+- Correction dÇtection ligne de commande GEMJing (merci Ö Martin 
+Christoph de Berlin-Tempelhof).
+- Gestion des noms longs avec espaces encadrÇs de '' avec l'option +o
+pour ligne de commande, VA_START, ou la commande GEMScript Open().
+- Gestion cookie 'Xgem' pour ajouter une icìne dans la barre de titre
+de chaque fenàtre avec le windframe (.SLB MagiC) de Eric Reboux.
+- Ajout sÇlecteur de fontes de MagiC (ou compatible) Ö la place de 
+l'option petite fonte de la Playlist dans le cas ou celui ci est 
+disponible.
+- Ajout nouvelle boåte de modification Playlist, diffÇrente selon 
+l'alignement Ö gauche sÇlectionnÇ via le popup.
+- Ajout statistiques DSP pour le MPEG Audio avec les transferts 
+DMA -> DSP.
+- Optimisation partie DSP MP3.
+- L'option 'QualitÇ' est maintenant utilisÇe pour le MP3 avec/sans DSP.
+- Ajout Çcran virtuel avec le changement de rÇsolution 'sans GEM' sous 
+FALCON si l'on dÇpasse la taille maxi de l'Çcran gÇrÇ en True Color:
+  * VGA 384 x 304 32 MHz (horloge interne ou externe).
+  * VGA 640 x 480 Centurbo II 50 MHz. 
+  * TV 640 x 480.
+- Ajout format audio DVSM Falcon Winrec non compressÇ, delta packed et 
+voice packed.
+
+V2.15 Avril 2001:
+-----------------
+- Correction boåte de modification Playlist avec l'alignement Ö 
+gauche, si les 2 premiäres lignes etaient trop longues le formulaire
+etait endommagÇ (risque de plantage).
+- Correction sauvegarde son fichier vidÇo MPEG en MP2 qui ne 
+fonctionnait plus depuis la derniäre version (ajout format DVSM).
+- Correction probläme de lecture d'un fichier MPEG au delÖ des 524 Mo,
+passage de la taille maximale Ö 4 Go.
+- Correction dÇbordement possible buffer Çcran Videl avec 'sans GEM'
+sur FALCON.
+- Correction bouclage lecture fichier audio avec l'option 'fenàtre 
+rÇduite' cochÇe.
+- Correction dÇcalage Playlist oó un blocage du programme Çtait 
+possible.
+- Correction prise en compte changement des options avec les fichiers
+vidÇo MPEG (initialisation sortie Çcran avec le DSP utilisÇ pour le 
+son ou l'image).
+- Correction incohÇrences de traitement du fichier MPEG si un fichier
+WAV du màme nom est trouvÇ alors qu'il n'existe pas (probläme visible 
+avec Extendos 3.3B). 
+- La ligne de la Playlist comportant un fichier non trouvÇ est 
+maintenant grisÇe lors de la lecture de la Playlist.
+- Suppression restitution palette pour les fichiers sonores ou les 
+fichiers sans images.
+- L'option 'qualitÇ MP3' est maintenant sÇparÇe de l'opton 'qualitÇ'
+et donc sauvÇe sÇparÇment.
+- Avec 'sans GEM' sur FALCON, le bouton droit de la souris a le màme 
+effet que la touche ESC.
+- Les noms de fichiers interne au programme sont maintenant en 
+minuscules (aniplay.inf par exemple).
+- Ajout raccourcis clavier '(' et ')' pour les boutons prÇcÇdent et 
+suivant de la Playlist.
+- Ajout gestion bloc sur le curseur de dÇfilement du temps avec 
+SHIFT-clic ou double-clic, et Çgalement via le popup droit de la 
+fenàtre principale:
+ * Lecture du bloc.
+ * Marquer dÇbut bloc.
+ * Marquer fin bloc.
+ La durÇe du bloc est automatiquement placÇe si une boåte de 
+ sauvegarde est appelÇe. 
+- Ajout fonction 'INTRO' dans la Playlist pour lire les 10 premiäres
+secondes des fichiers.
+- Le popup-menu de la Playlist accessible avec le bouton droit dispose
+maintenant de deux choix de sauvegarde, sous le nom courant ou un 
+nouveau nom via le sÇlecteur de fichier.
+- Ajout informations supplÇmentaires en cas d'erreur de communication 
+DSP. L'erreur impossible de synchroniser le DSP (transferts DMA -> DSP)
+pouvait parfois apparaåtre Ö la place de de l'erreur de communication 
+DSP (non rÇponse).
+- Sur FALCON et 'sans GEM', les vidÇos MPEG 352 x 240 sont maintenant
+affichÇes dans un Çcran 320 x 240.
+- Sur FALCON et 'sans GEM', correction affichage Çcran virtuel sur 
+certaines largeurs.
+- Affichage vidÇos MPEG du type I-P-B frames plus rapide avec 'I-Frames
+seules' dans la boåte de configuration affichage le DSP peut afficher
+directement l'image dans la mÇmoire vidÇo (s'il n'est pas utilisÇ 
+pour le son).
+- Ajout possibilitÇe d'afficher 1/4 des I-frames pour les fichiers
+vidÇo MPEG dans la boite de configuration affichage.
+- Optimisation dÇcompression vidÇo MPEG sans DSP.
+- Optimisation partie DSP MP3, avec l'option 'sans qualitÇ' enlevÇe
+tous les fichiers 44,1 KHz devraient passer en stÇrÇo avec un DSP Ö
+32 MHz (CT60 ou FALCON d'origine). Partie 68K plus rapide, cela est
+surtout visible sur un FALCON normal.
+- Optimisation partie DSP MP2.
+
+V2.16 Juin 2001:
+----------------
+- Correction appel direct hard avec le driver sonore GSXB, causait
+une violation de la mÇmoire sous MiNT (merci Ö Frank Naumann).
+- Correction affichage charge CPU avec le bouclage et les MP3 VBR,
+pouvait Çgalement occasionner des problämes de timming lors du 
+bouclage.
+- Correction bouclage prÇchargement du son MPEG perpÇtuel, en cas
+d'impossibilitÇe de prÇchargement avec les fichiers MP3 VBR, le
+foráage est maintenant automatiquement fait en D2D.
+- Correction problämes transferts DMA -> DSP possibles de la piste 
+audio stÇrÇo des fichiers vidÇo MPEG.
+- Correction problämes liÇs Ö la lecture de la piste audio des 
+fichiers vidÇo MPEG (plantage apräs la lecture du 1er bloc DMA).
+- Correction redÇmarrage son alors que la pause est activÇe apräs
+une sauvegarde du son, uniquement visible si la pause Çtait activÇe
+avant la sauvegarde.
+- Correction du test si le fichier est dÇja prÇsent pour la 
+sauvegarde, cela fonctionne maintenant aussi avec les noms longs.
+- Suppression du tri par dÇfaut pour le sÇlecteur de fichiers en
+dialogue (plantage de MagiC 6 avec la fonction fslx_do), le probläme
+n'Çtait pas visible si le sÇlecteur en fenàtre Çtait appelÇ avant.
+- Ajout gestion clavier sur FALCON sans GEM et pendant la sauvegarde.
+- Ajout sauvegarde MP3 via la librairie partagÇe de Lame Encoder,
+le FPU est obligatoire ansi que MiNT 1.15.3 ou MagiC 6 ou MetaDOS 
+2.74 (ou plus). Ce SLB utilise la libmp3lame (www.mp3dev.org) et ne 
+peut pas àtre utilisÇ en màme temps par plusieurs programmes.
+- Ajout gestion compression AVI divx via la librairie partagÇe de 
+OpenDivX, il faut MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74 (ou plus) 
+pour le charger. Ce SLB utilise la libdivxdecore (www.projectmayo.com)
+et ne peut pas àtre utilisÇ en màme temps par plusieurs programmes.
+- Ajout gestion compression MPEG Audio Layer 1,2,3 pour la piste audio
+des fichiers AVI.
+
+V2.17 Aout 2001:
+----------------
+- Correction coordonnÇes minimales des popup-menus.
+- LAME_ENC.SLB ne toläre que les frÇquences MPEG Audio (8000,11025,
+12000,16000,22050,24000,32000,44100,48000 Hz), un test a donc ÇtÇ 
+ajoutÇ pour Çviter le message d'erreur 'buffer trop petit'. La source
+audio est tolÇrÇe Ö +/- 5% de la frÇquence MPEG Audio la plus proche 
+sinon il y a un nouveau message d'erreur.
+- Correction choix frÇquence dans la boåte de sauvegarde MP3.
+- Correction calcul buffer Çcran pour le mode sans interface GEM sur
+FALCON sans l'affichage direct, risque de plantage avec des vidÇos 
+supÇrieures Ö 320 x 240.
+- Correction blocage possible son D2D en fin de lecture avec les 
+fonctions sonores XBIOS (probläme visible sous MagiCMac avec 
+MacSound).
+- Correction dÇcoupage de la fenàtre d'affichage vidÇo en arriäre plan
+dans certaines rÇsolutions (32K, 65K couleurs...) et certaines 
+machines (Hades, MagiCMac...). 
+- Correction test ST-RAM sous MagiCMac alors que la TT-RAM est 
+utilisÇe pour le son. Le message d'erreur "Pas assez de mÇmoire pour
+Çcouter le son" pouvait survenir.
+- Correction saturation intermittante (clics) au niveau du dÇcodage 
+MPEG Audio layer 1,2,3 sans DSP.
+- Correction plantage du VDI possible lors de l'Çcoute du son si la 
+compression image n'est pas reconnue (zone d'affichage de la fenàtre
+nulle).
+- Correction affichage monochrome des images JPEG dans la rÇsolution
+Çcran 16M couleurs.
+- La taille de l'entàte ID3 des fichiers MPEG Audio n'est plus limitÇe
+Ö 16 Ko.
+- Le rÇpertoire du programme n'est plus envoyÇ au systäme si le SLB
+n'est pas prÇsent dans le màme rÇpertoire, car l'utilisation de la
+variable systäme SLBPATH ne fonctionnait pas sous MiNT.
+- Affichage du curseur pendant la rÇpÇtition des boutons de retour
+et d'avance rapide.
+- Le zoom 2X sans GEM sans changement de rÇsolution n'est plus limitÇ 
+Ö la taille maxi de 320 x 240.
+- Gestion d'un retard de l'image sur le son (jusqu'Ö 50 images), si
+le lecteur analyse un dÇcalage en D2D. Cela doit permettre de corriger
+le retard du son sur certains fichiers AVI et QuickTime oó l'image et 
+le son ne sont pas entralacÇs. Ce retard ne fonctionne qu'avec 
+l'option 'sauter images' activÇe.
+- Ajout gestion librairie JPEG via la librairie partagÇe (SLB) de
+libjpeg 6 du Independent JPEG Group (www.ijg.org) afin de disposer de
+la sauvegarde d'image en JPEG et a lecture des JPEG progressifs. Il 
+faut MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74 (ou plus) pour le charger.
+- Affichage d'une image de fond Çventuelle dans la fenàtre de lecture 
+et la Playlist.
+
+V2.18 DÇcembre 2001:
+--------------------
+- Correction du test de l'espace libre du disque si > 2 Go.
+- Correction lecture son fichiers vidÇos MPEG avec l'option 'Sans 
+D2D' cochÇe, il n'y avait plus de son depuis la version 2.16.
+- Correction dÇmarrage en retard du son en retard d'un bloc alÇatoire 
+pour les fichiers sonores avec 'Pause au dÇmarrage' cochÇ (merci Ö 
+Christian Villard de Ornacieux).
+- Correction dÇplacement du curseur avec le prÇchargement du son de 
+gros fichiers (si la mÇmoire le permet bien sur).
+- Correction tramage en 256 couleurs sur la compression RLE et les 
+fichiers FLH, plus l'image est simple plus les dÇfauts Çtaient 
+visibles (probläme depuis la version 2.1, merci Ö Franáois le Coat). 
+- Suite Ö la correction du blocage possible son D2D en fin de lecture 
+avec les fonctions sonores XBIOS dans la version prÇcÇdante, correction
+lecture avec un seul bloc son, donc avec le prÇchargement du son 
+(probläme visible sous MagiCMac).
+- Suppression de l'affichage de fond pour la fenàtre de lecture avec
+le plug-in avec OLGA.
+- Suppression du 'Contrìle lenteur' pour les fichiers audio.
+- Ajout chargement et sauvegarde configuration via sÇlecteur de 
+fichiers (*.INF).
+- DÇtection de la prÇsence de fVDI et d'une transformation de 
+l'organisation des bits de la mÇmoire Çcran faite dans la fonction VDI 
+vro_cpyfm (format Motorola -> Intel), dans ce cas l'option 'Affichage 
+direct' est inhibÇe et les informations concernant l'organisation des bits
+de la fonction VDI vq_scrninfo sont ignorÇs. Avant l'affichage en fenàtre
+avec vro_cpyfm ne fonctionnait donc pas avec fVDI. L'adresse de l'Çcran
+est obtenue avec vq_scrninfo et non les fonctions XBIOS Logbase/Physbase.
+- AmÇlioration synchronisation et lecture piste son des fichiers vidÇo 
+MPEG.
+- Ajout commande GEMScript SaveImages(path,type,start_frame,end_frame).
+- Lecture des fichiers MPEG encapsulÇs dans le format QuickTime.
+- Ajout gestion librairie Vorbis via la librairie partagÇe (SLB) 
+basÇs sur la librairie libvorbis-1.0rc2 (www.vorbis.com) pour lire 
+les fichiers avec l'extension OGG. Il faut MiNT 1.15.3 ou MagiC 6 ou 
+MetaDOS 2.74 (ou plus) pour le charger.
+
+V2.19 FÇvrier 2002:
+-------------------
+- Correction test mÇmoire libre pour le buffer son compressÇ, risque de 
+plantage auparavant si la mÇmoire disponible n'Çtait pas suffisante.
+- Correction probläme d'extraction de la piste audio MP2 des fichiers 
+vidÇo MPEG sur certains fichiers (merci Ö ClÇment Benrabah).
+- Correction de la taille du buffer son MP2 pour le DSP avec les 
+fichiers vidÇo MPEG, cela pouvait provoquer des erreurs DSP suite Ö 
+l'amÇlioration de la synchronisation son et images dans la version 
+prÇcÇdante.
+- Correction affichage 'DSP utilisÇ' alors qu'il n'existe pas sur la 
+machine lorsque l'on choisi l'option 'Boutons magnÇto.' (merci Ö Peter 
+Slegg).
+- Correction lecture son (problämes de cadence) d'un fichier MPEG si un 
+fichier WAV du màme nom est trouvÇ dans le màme rÇpertoire et alors 
+que le fichier MPEG  possÇde dÇja une piste sonore. 
+- Correction alignement horizontal avec la possibilitÇe d'afficher 1/4
+des I-frames pour les fichiers vidÇo MPEG avec l'Çcran en 32/65K 
+couleurs.
+- La lecture d'une piste MP3 d'un fichier AVI provoquait une erreur de 
+dÇcodage MPEG audio apräs la lecture d'un fichier MPEG avec 'sans D2D' 
+cochÇ. 
+- Affichage de l'Çvolution en % de la dÇcompression sur la barre du 
+menu lors du prÇchargement du son d'un fichier AVI ou QuickTime.
+- Gestion d'un retard de l'image sur le son (jusqu'Ö 50 images), si
+le lecteur analyse un dÇcalage en D2D sur les fichier QuickTime 
+n'ayant pas de section 'stss' (toutes les images sont des key-frames, 
+par exemple avec la compression JPEG) Cela doit permettre de corriger
+le retard du son sur certains fichiers QuickTime. Ce retard ne fonctionne 
+qu'avec l'option 'sauter images' activÇe. 
+- Nouvelle version du SLB OpenDivX, basÇ sur une librairie plus rÇcente 
+(ProjectMayo libdivxdecore 0.5.0), cette librairie n'est pas 
+compatible avec l'ancienne version. Cette version d'Aniplayer exige 
+cette version. Tous les fichiers AVI divx4 devraient àtre affichÇs 
+correctement. Il faut MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74 (ou plus) 
+pour charger ce SLB.
+- Ajout prÇchargement du son sans dÇcompression pour quelques fichiers 
+AVI mal encodÇs, cela permet de lire les fichiers compressÇs en divx 
+avec une piste audio MP3 situÇ en fin de fichier. Le seul inconvÇniant 
+est la consommation mÇmoire par exemple pour un fichier AVI divx de 
+700 Mo, le MP3 peut reprÇsenter 60 Mo qu'il faut charger avant en 
+mÇmoire ! Seul un Hades, une CT60, ou MagiCMac peuvent donc en 
+profiter, autrement la lecture du fichier est faite sans le son. 
+
+V2.20 Mai 2002:
+---------------
+- Correction test identificateur divx dans les fichiers QuickTime.
+- Correction test ligne de commande GEMJing.
+- Correction perturbation des boåtes de dialogue en fenàtre pendant la 
+sauvegarde avec l'affichage direct sÇlÇctionnÇ. L'affichage direct est 
+maintenant inhibÇ pendant la sauvegarde du film ou des images.
+- Correction clipping boåte de dialogue bloquante (boåte non effacÇ 
+lors de la fermeture).
+- Suppression retard de l'image sur le son avec le prÇchargement pour 
+les fichiers AVI et QuickTime.
+- Suppression de l'instruction DSP rep utilisÇe avec 'sans qualitÇ MP3'.
+- Pour l'affichage sans GEM et sans affichage direct, s'il n'y a pas 
+de changement de rÇsolution, passage en plein Çcran via la fonction 
+VDI vr_transfer_bits (compatible NVDI 5). Cette possibilitÇ fonctionne 
+seulement si l'affichage sans GEM dans la boåte de configution 
+affichage est sur automatique.
+- Ajout tests Aranym et format pixel (compatible NVDI 5) au dÇmarrage.
+- Ajout gestion librairie partagÇe de libavcodec, il faut MiNT 1.15.3 ou 
+MagiC 6 ou MetaDOS 2.74 (ou plus) pour le charger. Ce SLB utilise la 
+libavcodec (fmpeg.sourceforge.net). Cette librairie est prioritaire sur 
+l'utilisation du SLB OpenDivX, elle apporte Ö Aniplayer:
+ * Lecture AVI/MOV compressÇ en mp43/div3/divx/div4 (divx3/4).
+ * Lecture AVI/MOV compressÇ en mjpg/u263/i263.
+ * Sauvegarde AVI/MOV en divx3/4.
+ * Lecture fichier audio AC3 et AVI (FPU obligatoire).
+ * Sauvegarde son AC3.
+ * Sauvegarde son MP2, si le SLB de libmp3lame n'est pas prÇsent ou 
+ sÇlection via un sous popup-menu.
+- L'identificateur 3iv2 est considÇrÇ de la màme faáon que divx, car 
+sous Mac QuickTime 3ivx remplace divx par 3iv2.
+- Ajout sauvegarde yuv9 AVI/MOV.
+- Ajout sauvegarde son AC3 pour les fichiers vidÇo AVI ayant dÇjÖ du 
+son AC3.
+- Ajout gestion compression MPEG Audio Layer 3 pour la piste audio
+des fichiers QuickTime.
+- Ajout sauvegarde son MPEG Audio pour les fichiers vidÇo QuickTime 
+ayant dÇjÖ du son MPEG Audio.
+
+V2.21 Octobre 2002:
+-------------------
+- Suite au changement des termes de la licence MP3 (15000 $ par an Ö 
+donner a Thomson), la gestion du MP3 n'est plus supportÇe (MP3 non 
+reconnu et LAME_ENC.SLB enlevÇ de l'archive).
+- Suppression test Aranym.
+- AmÇlioration retard du son Mpeg Audio dans les fichiers AVI. 
+- Correction tramage en 256 couleurs avec AVCODEC.SLB, dÇcalage Ö 
+chaque ligne (merci Ö Pascal Ricard).
+- Correction sauvegarde film avec une carte graphique 32768 couleurs 
+au format Intel, les couleurs Çtaient mauvaises (merci Ö Grzegorz 
+Paulik).
+- Correction sauvegarde film en 256 couleurs dans les formats AVI/MOV 
+en yuv9/divx3/4.
+- Correction sauvegarde image en 256 couleurs dans les formats TGA et 
+JPG avec la palette courante (boåte de configuration affichage), la 
+palette Çtait mauvaise (merci Ö Grzegorz Paulik).
+- Correction copier image, il fallait impÇrativement que le type de
+sauvegarde soit sÇlectionnÇ sur (X)IMG pour que copier image 
+fonctionne.
+- Correction sauvegarde AVI rle8, la palette n'Çtait plus bonne depuis 
+la version 2.20.
+- Correction format rgb16 (TC15) en 256 couleurs.
+- Correction affichage couleurs AVI mjpg.
+- Ajout tri par titre, auteur, album ou durÇe dans la fenàtre de 
+Playlist lorsque l'affichage avec par colonnes (alignement Ö gauche) 
+est sÇlectionnÇ (popup droit).
+- Ajout format rgb16 $03000000 (TC16 Intel) utilisÇ dans Funmedia et 
+Adobe Premiere.
+- Nouvelle version du SLB Avcodec, basÇ sur une librairie plus rÇcente 
+(0.4.6). Il faut MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74 (ou plus) pour 
+charger ce SLB. Les codecs supplÇmentaires suivants sont gÇrÇs:
+ * Lecture AVI/MOV compressÇ en svq1 (Sorenson Video).
+ * Lecture AVI/MOV compressÇ en div1/mpg4 et div2/mp42 (MS DivX V1/2).
+ * Lecture AVI/MOV compressÇ en dx50 (DivX 5).
+- Ajout du format Real Media (RM), seul les codecs RV10 (Real Video 1) 
+et AC3 pour le son son gÇrÇs via le SLB Avcodec.
+- Nouvelle version du SLB Vorbis, basÇ sur une librairie plus rÇcente 
+(1.0), et aussi la version avec entiers 32/64 bits (Tremor) alors que 
+l'autre utilise le FPU (68060). Il faut MiNT 1.15.3 ou MagiC 6 ou 
+MetaDOS 2.74 (ou plus) pour charger ce SLB.
+- Ajout gestion librairie Vorbis Encoder via la librairie partagÇe 
+(SLB) basÇs sur la librairie libvorbisenc-1.0 (www.vorbis.com) pour 
+encoder les fichiers avec l'extension OGG. Le FPU est obligatoire 
+ainsi que MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74 (ou plus) pour le 
+charger. 
+
+V2.22 Juin 2004:
+----------------
+- Correction mesure horloge vidÇo avec un moniteur RVB sur FALCON pour 
+l'affichage sans GEM avec changement de rÇsolution.
+- Correction du compteur secondes pour la lecture d'un fichier sonore 
+AC3.
+- Correction formats AVI rgb16/24 (Microsoft, merci Ö Peter Slegg).
+- Ajout de quelques tests pour la CT60, le DSP est seulement utilisÇ 
+pour le Mpeg Audio quand les caches sont actifs.
+- Ajout gestion tags ID3 avec caractäres spÇciaux HTML.
+- Ajout sur FALCON de diffÇrents modes vidÇo True Color avec l'option 
+sans interface GEM cochÇe:
+  * VGA 640 x 480 CT60 50 MHz. 
+  * SVGA 640 x 400 CT60 40 MHz. 
+- Nouvelle version du SLB Avcodec, basÇ sur une librairie plus rÇcente.
+Il faut MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74 (ou plus) pour charger 
+ce SLB. Les codecs supplÇmentaires suivants sont gÇrÇs: 
+  * Lecture AVI/MOV compressÇ en svq3 (Sorenson Video 3).
+  * Lecture AVI/MOV compressÇ en h263.  
+  * Lecture son MPEG audio avec les vidÇos avec le 68060 si l'option DSP 
+    est dÇcochÇe.
+- Lecture des fichiers QuickTime MP4.
+- Ajout informations sur les fichiers OGG Vorbis dans la Playlist. 
+- Ajout fonctions recherche et atteindre dans la Playlist (popup menu 
+avec le clic droit).
+- Sur du DivX dans la boåte de configuration affichage, le choix 
+d'affichage des films MPEG permet d'avoir soit un affichage:
+  * Normal.
+  * Une image sur 2 (rÇduction 1/4 MPEG). 
+  * Sauter les B-frames (I-frames MPEG).
+- SLBs 68060 recompilÇs avec Gcc 3.3, code FPU plus rapide.
+- Ajout test cookie '_MCH' Ö $50000 pour Aranym.
+- Passage en Freeware.
+
+V2.23 Juin 2013:
+----------------
+- AmÇlioration lecture des fichiers MPEG1/2, la dÇcompression du son 
+est traitÇ par un thread sous MiNT et MagiC.
+- Ajout gestion LCD de Eiffel 1.10 via la librairie partagÇe LCD.SLB 
+(config minimale MiNT 1.15.3 ou MagiC 6 ou MetaDOS 2.74). Ce SLB ne 
+peut pas àtre utilisÇ en màme temps par plusieurs programmes.
+- Ajout gestion des touches multimÇdia de l'interface PS/2 Eiffel via 
+E_TEMP.PRG et le cookie "Eiff" (PLAY/PAUSE, STOP, PREVIOUS TRACK, NEXT 
+TRACK, VOLUME DOWN et VOLUME UP).
+- Gestion variable d'environnement HELPVIEWER.
+- Appels sous-menu via la fonction menu_attach de l'AES 4.0.
+- Ajout bouton Record dans la Playlist pour la conversion de fichiers.
+- Plus de caractäres spÇciaux HTML avec les ID3. A la sauvegarde, il 
+existe aussi une conversion des caractäres avec accents en HTML.
+- Mode plein Çcran sur Radeon utilisant VIDIX (CT60/CTPCI).
+- RÇÇcriture MP3 pour le Coldfire V4E utilisant l'instruction MAC 
+(Firebee).
+
+
+                  MEQUIGNON Didier, Juin 2013

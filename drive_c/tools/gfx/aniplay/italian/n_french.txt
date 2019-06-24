@@ -1,0 +1,723 @@
+;******************************************************
+;*        You're authorized to modify this text       *
+;*           for another or best translation          *
+;* WARNING ! Respect max line length except Alert     *
+;*           and number of lines (except ';')         *
+;*  ANIPLAYER 2.23 - N_FRENCH.TXT - MEQUIGNON Didier  *
+;*     Traduzione in Italiano di Lodovico Zanier      * 
+;******************************************************
+;
+;>>> Window <<<
+;
+MOVIE PLAYER
+AUDIO PLAYER
+VIEWER JPEG
+DSP ATTIVATO
+;
+;>>> Alert <<<
+;
+; 'ID:' or ':' for data
+;
+;[1][Pas assez |de m‚moire !][Annuler]
+[1][Memoria insufficente !][Annulla]
+;[1][Fichier non trouv‚ !][Annuler]
+[1][File non trovato !][Annulla]
+;[1][Nom d'accŠs non trouv‚ !][Annuler]
+[1][Cartella non trovata !][Annulla]
+;[1][Le lecteur ne r‚pond pas !][Annuler]
+[1][L'unit… disco non risponde !][Annulla]
+;[1][Les donn‚es du disque|pourraient ˆtre alt‚r‚es !][Annuler]
+[1][I dati sul disco|potrebbero essere danneggiati !][Annulla]
+;[1][Enregistrement non trouv‚ !][Annuler]
+[1][Registrazione non trovata !][Annulla]
+;[1][Identificateur son|non reconnu !|ID: $00000000][Continuer]
+[1][ID Suono sconosciuta !|ID: $00000000][Continua]
+;[1][Type de compression inconnu !|ID: $00000000 |Nom: 1234567890123456789012345][Annuler|Continuer]
+[1][Tipo di compressione sconosciuta !|ID: $00000000 |Nome: 1234567890123456789012345][Annulla|Continua]
+;[1][Buffer non disponible][Annuler]
+[1][Buffer non disponibile][Annulla]
+;[1][Plus assez de fenˆtre|disponible][Annuler]
+[1][Nessuna finestra disponibile][Annulla]
+;[1][Impossiblilit‚ d'allouer|le systŠme sonore][Continuer|Annuler]
+[1][Sistema Audio|gi… utilizzato][Forzare|Annulla]
+;[E][Taille image cvid incoh‚rente][Passer]
+[E][Dim. dell'immagine cvid|non coerente][Passa]
+;[E][D‚passement allocation|m‚moire cvid][Passer]
+[E][Memoria cvid terminata][Passa]
+;[E][Erreur fausse][Passer]
+[E][Errore Sconosciuto][Passa]
+;[E][Identificateur cvid|inconnu !][Passer]
+[E][ID cvid sconosciuta !][Passa]
+;[E][Fin de fichier atteinte|alors que la lecture du|fichier n'est pas finie][Annuler]
+[E][Fine del file anomala !][Annulla]
+;[1][Identificateur non reconnu !|ID: $00000000][Annuler]
+[1][ID sconosciuta: $00000000][Annulla]
+;[1][Fr‚quence ‚chantillonnage|son incoh‚rente][Continuer]
+[1][Frequenza audio|fuori scala][Continua]
+;[1][Informations icoh‚rentes !|ID: $00000000|Taille: 00000][Annuler]
+[1][Informazioni incoerenti !|ID: $00000000|Dim.: 00000][Annulla]
+;[1][R‚solution vid‚o insuffisante|pour placer l'animation entiŠre|dans la fenˆtre !|Minimum: 0000 x 0000][Annuler]
+[1][La risoluzione video Š|troppo bassa per aprire|interamente l'animazione|nella finestra !|Minimo: 0000 x 0000][Annulla]
+;[1][Pas assez de m‚moire|pour ‚couter le son !][Continuer]
+[1][Memoria insufficente|per l'audio !][Continua]
+;[1][Dimensions image|incoh‚rentes !][Annuler]
+[1][Dimensioni immagine|fuori scala !][Cancel]
+;[E][Identificateur jpeg|inconnu !|ID: $00000000][Passer]
+[E][ID jpeg sconosciuta !|ID: $00000000][Passa]
+;[E][Fin de bloc jpeg atteinte|alors que la d‚compression|du fichier n'est pas finie][Passer]
+[E][Fine blocco jpeg anomala,|decompressione non completata !][Passa]
+;[2][L'animation est trop lente|par rapport au son !| |Faut-il baisser d'un octave |ou couper le son ?][Baisser|Couper|Ignorer]
+[2][L'animazione Š troppo lenta|in rapporto all'audio !| |Get down one octave|or switch off sound ?][Get down|Switch off|Ignore]
+;[1][Impossibilit‚ de charger|le bloc … d‚compresser|dans la m‚moire DSP][Sans DSP]
+[1][Impossibile caricare|il blocco da decomprimere|nella memoria DSP][Senza DSP]
+;[1][Erreur de communication DSP| |CPU ID: $00000000|DSP ID: $00000000][Sans DSP]
+[1][Errore di comunicazione DSP| |CPU ID: $00000000|DSP ID: $00000000][Senza DSP]
+;[1][Pas assez de m‚moire|pour le r‚‚chantillonnage][Sans]
+[1][Memoria insufficente|per il resampling][Senza]
+;[1][Ce n'est pas un|fichier QuickTime !][Annuler]
+[1][Questo non Š un file|QuickTime !][Annulla]
+;[1][Le nombre de couleurs du fichier|est inadapt‚ … la compression !|ID: $00000000|Nom: 1234567890123456789012345][Annuler|Continuer]
+[1][il Numero di colori del file|inadatto al tipo di compressione !|ID: $00000000|Nome: 1234567890123456789012345][Annulla|Continua]
+;[2][ |Sauvegarde des pr‚f‚rences ?][Confirmer|úúú|Annuler]
+[2][ |Salva config ?][Salva|úúú|Annulla]
+;[1][ST-GUIDE non trouv‚ !][Annuler]
+[1][ST-GUIDE non trovato !][Annulla]
+;[2][Le fichier existe d‚ja !][Conserver|Ecraser|Annuler]
+[2][File gi… esistente !][Conserva|Sostituisci|Annulla]
+;[1][Plus assez de |place sur le disque,|il manque:000000 Koctets][Annuler]
+[1][Disco pieno !|Necessari:000000 Kbytes][Annulla]
+;[1][Ecriture du son en cours !|Stopper les op‚rations ?][Stopper|Annuler]
+[1][Scrittura audio in corso !|Arresto il processo ?][Arresta|Annulla]
+;[2][ |Type de couleurs XIMG ?][Palette|Ordre VDI]
+[2][ |Tipo dei colori del|file XIMG ?][Paletta|Ordine VDI]
+;[2][Carte graphique d‚tect‚e !|Type NOVA (PC) ?][Oui|Non]
+[2][Scheda video individuata !|Tipo NOVA (PC) ?][Si|No]
+;[0][STATISTIQUES: Temps: 000.00.00 |Images affich‚es: 000 %|Moyenne charge CPU: 000 %|Mini: 000 %  Maxi: 000 %|Moyenne images/seconde:000,0][Confirmer]
+[0][STATISTICHE: Tempo: 000.00.00|Immagini mostrate: 000 %|Carico medio per CPU: 000 % |Mini: 000 %  Maxi: 000 %|Media frames/secondo:000,0][OK]
+;[1][R‚solution vid‚o insuffisante !| |Minimum: 0000 x 0000][Annuler]
+[1][La risoluzione video Š|insufficente !| |Minimo : 0000 x 0000][Annulla]
+;[3][Taille tampon AES insuffisante|pour afficher les menus|d‚roulants !|Changez de systŠme ou|de r‚solution vid‚o !][Annuler]
+[3][Dimensioni buffer AES|insufficenti per|la visione dei menu|scorrevoli !|Modificate il sistema|o la risoluzione video !][Annulla]
+;[E][Taille image jpeg incoh‚rente][Passer]
+[E][Dimensione immagine jpeg|incoerente][Passa]
+;[1][Ce n'est pas un|fichier Video for Windows !][Annuler]
+[1][Non Š un file video|per Windows !][Annulla]
+;[1][Ecriture des images en cours !|Stopper les op‚rations ?][Stopper|Annuler]
+[1][Memorizzazione immagini in corso !|Fermo il processo ?][Fermare|Annulla]
+;[E][Dimensions image|iv31/32 incoh‚rentes][Passer]
+[E][Dimensioni immagine|iv31/32 incoerenti][Passa]
+;[E][Erreur d‚compression|iv31/32 plan: x][Passer]
+[E][Errore Decompressione|iv31/32 piano: x][Passa]
+;[1][Ce n'est pas un|fichier FLI/FLC/FLH|Autodesk Animator !][Annuler]
+[1][Non Š un file Autodesk Animator|(FLI/FLC/FLH) !][Annulla]
+;[1][Type de fichier|inconnu !][Annuler]
+[1][File sconosciuto !][Annulla]
+;[1][Ce n'est pas un|fichier sonore AVR|Audio Visual Research !][Annuler]
+[1][Questo non Š un file|Audio Visual Research !][Annulla]
+;[1][Ce n'est pas un|fichier sonore WAV|Microsoft¿ RIFF-WAVE !][Annuler]
+[1][Questo non Š un file|Microsoft¿ RIFF-WAVE (WAV) !][Annulla]
+;[1][Ce n'est pas un|fichier sonore AIF|Apple¿ Interchange File Format !][Annuler]
+[1][Questo non Š un file|Apple¿ Interchange File (AIF) !][Annulla]
+;[1][Le FPU est obligatoire|pour le Real Audio¿ 28K8][Annuler]
+[1][Una FPU Š necessaria per|il Real Audio¿ 28K8][Annulla]
+;[1][Aniplayer ne peut traiter|qu'un fichier … la fois !][Annuler]
+[1][Aniplayer Š limitato ad un|file per volta !][Annulla]
+;[1][Ce n'est pas un|fichier MPEG !][Annuler]
+[1][Questo non Š un|file MPEG !][Annulla]
+;[E][Erreur MPEG|Trop de macroblocs|dans l'image][Passer]
+[E][Errore MPEG|Troppi macroblocchi|nell'immagine][Passa]
+;[E][Erreur MPEG|Type macrobloc][Passer]
+[E][Errore MPEG|Tipo Macroblocco][Passa]
+;[E][Erreur MPEG|Codage pattern][Passer] 
+[E][Errore MPEG|Percorso Codifica][Passa]
+;[E][Erreur MPEG|D‚codage bloc][Passer]
+[E][Errore MPEG|Decodifica blocco][Passa]
+;[1][Ce n'est pas un|fichier sonore RA|Real Audio¿|14K4 ou 28K8 !][Annuler]
+[1][Questo non Š un file|Real Audio¿|RA 14K4 o 28K8 !][Annulla]
+;[1][Impossible de|synchroniser le DSP| |CPU ID: $00000000|DSP ID: $00000000][Sans DSP]
+[1][E' impossibile|sincronizzare il DSP| |CPU ID: $00000000|DSP ID: $00000000][Without DSP]
+;[1][Erreur serveur DHST !][Annuler]
+[1][Errore del server DHST !][Annulla]
+;[2][Effacement des noms|s‚lectionn‚s dans la liste ?][Confirmer|Annuler] 
+[2][Cancello i nomi|selezionati nell'elenco ?][ OK |Annulla]
+;[2][Effacement de tous les noms|contenus dans la liste ?][Confirmer|Annuler]
+[2][Cancello tutti i nomi|contenuti nell'elenco ?][ OK |Annulla]
+;[2][La liste a ‚t‚ modif‚e|Voulez vous la sauver ?][Sauver|Annuler]
+[2][L'elenco Š stato modificato|Volete salvarla ?][Salva|Annulla]  
+;[1][Si vous avez seulement un 68000|vous devez utiliser un mode vid‚o|de 16 couleurs maximum][Annuler]
+[1][se avete solo un 68000|dovete usare un modo video|con massimo 16 colori][Annulla]
+;[2][ATTENTION ! Le fonctionnement|n'est pas garantie pour|un 68000][Continuer|Annuler]
+[2][ATTENZIONE ! Il funzionamento|non Š garantito con|un 68000][Continua|Annulla]
+;[E][Erreur MPEG Audio|D‚codage bloc][Passer]
+[E][errore Audio MPEG|Decodifica bloccata][Passa]
+;[1][Ce n'est pas un|fichier MPEG Audio !][Annuler]
+[1][Non Š un file MPEG !][Annulla]
+;[1][Pas assez de m‚moire|pour ‚couter le son|MPEG Audio VBR !][Annuler]
+[1][Memoria insufficente|per ascoltare l'audio|MPEG Audio VBR !][Annulla]
+;[1][Mauvais checksum|transfert DMA -> DSP][Sans DSP]
+[1][Checksum sbagliata |trasferimento DMA -> DSP][Senza DSP]
+;[1][Ce n'est pas un|fichier sonore DVSM|Falcon Winrec !][Annuler]
+[1][Questo non Š un|file audio DVSM|Falcon Winrec (DVS) !][Annulla]
+;[1][R‚solution vid‚o insuffisante !| |Maximum possible: 0000 x 0000|Minimum demand‚: 0000 x 0000][Annuler]
+[1][La risoluzione video Š|troppo bassa !| |Massima possibile: 0000 x 0000|Minima richiesta: 0000 x 0000][Annulla]
+;[2][S‚lection de la piste sonore][1|2|3]
+[2][Selezione traccia audio][1|2|3]
+;[0][STATISTIQUES: Temps: 000.00.00 |Moyenne charge CPU: 000 %|Moyenne charge DSP: 000 %|Mini CPU: 000 % DSP: 000 %|Maxi CPU: 000 % DSP: 000 %][Confirmer]
+[0][STATISTICHE: Tempo: 000.00.00|Carico medio per CPU: 000 % |Carico medio per DSP: 000 %|Mini CPU: 000 % DSP: 000 %|Max CPU: 000 % DSP: 000 %][OK]
+;[1][LAME_ENC.SLB|Format invalide !][Annuler]
+[1][LAME_ENC.SLB|Formato non valido !][Annulla]
+;[1][LAME_ENC.SLB|ParamŠtres invalides !][Annuler]
+[1][LAME_ENC.SLB|Parametri non validi !][Annulla]
+;[1][LAME_ENC.SLB|Utilisation impossible !][Annuler]
+[1][LAME_ENC.SLB|Utilizzo impossibile !][Annulla]
+;[1][LAME_ENC.SLB|Utilisation invalide !][Annuler]
+[1][LAME_ENC.SLB|Utilizzo non valido !][Annulla]
+;[1][LAME_ENC.SLB|Buffer trop petit !][Annuler]
+[1][LAME_ENC.SLB|Buffer troppo piccolo !][Annulla]
+;[1][Le FPU est obligatoire|pour LAME_ENC.SLB !][Annuler]
+[1][Una FPU Š necessaria per|LAME_ENC.SLB !][Annulla]
+;[1][OPENDIVX.SLB|Mauvais format !][Annuler]
+[1][OPENDIVX.SLB|Formato errato !][Annulla]
+;[1][OPENDIVX.SLB|Pas assez de m‚moire !][Annuler]
+[1][OPENDIVX.SLB|Memoria insufficente !][Annulla]
+;[1][La source sonore est ‚loign‚e|des fr‚quences MPEG Audio !| |(8000,11025,12000,16000,22050,|24000,32000,44100,48000 Hz)][Annuler|Continuer]
+[1][The sample source is different|than the MPEG Audio frequency !| |(8000,11025,12000,16000,22050,|24000,32000,44100,48000 Hz)][Annulla|Continua]
+;[1][VORBIS.SLB|Ce n'est pas un|fichier Ogg Vorbis !][Annuler]
+[1][VORBIS.SLB|Non Š un file|Ogg Vorbis !][Annulla]
+;[1][Le FPU est obligatoire|pour VORBIS.SLB/VORB_ENC.SLB !][Annuler]
+[1][Una FPU Š necessaria per|VORBIS.SLB/VORB_ENC.SLB !][Annulla]
+;[1][Librairie VORBIS.SLB|non trouv‚e !][Annuler]
+[1][Library VORBIS.SLB|not found !]][Annulla]
+;[1][Buffer MPEG trop petit !|(Essayez sans D2D)][Annuler]
+[1][Buffer MPEG too small !|(Try without D2D)][Annulla]
+;[1][AVCODEC.SLB|Mauvais format !][Annuler]
+[1][AVCODEC.SLB|Formato errato !][Annulla]
+;[1][AVCODEC.SLB|Pas assez de m‚moire !][Annuler]
+[1][AVCODEC.SLB|Memoria insufficente !][Annulla]
+;[1][Librairie AVCODEC.SLB|non trouv‚e !][Annuler]
+[1][Library AVCODEC.SLB|not found !]][Annulla]
+;[1][Le FPU est obligatoire|pour AVCODEC.SLB !][Annuler]
+[1][Una FPU Š necessaria per|AVCODEC.SLB !][Annulla]
+;[1][Ce n'est pas un|fichier Real Media !][Annuler]
+[1][Questo non Š un file|Real Media !][Annulla]
+;[1][Librairie DVD.SLB|non trouv‚e !][Annuler]
+[1][Library DVD.SLB|not found !]][Annulla]
+;[1][Impossible d'ouvrir|le lecteur DVD !][Annuler]
+[1][Couldn't open|DVD device !][Annulla]
+;[1][Num‚ro de titre|DVD invalide !][Annuler]
+[1][Invalid DVD|title number !][Annulla]
+;[1][Num‚ro de chapitre|DVD invalide !][Annuler]
+[1][Invalid DVD|chapter number !][[Annulla]
+;[1][Num‚ro d'angle|DVD invalide !][Annuler]
+[1][Invalid DVD|angle number !][[Annulla]
+;[1][Impossible d'ouvrir|le fichier IFO pour|le titre DVD !][Annuler]
+[1][Cannot open|the IFO file|for DVD title !][Annulla]
+;[1][Impossible d'ouvrir|le titre VOB !][Annuler]
+[1][Cannot open|title VOB !][Annulla]
+;[1][Impossible d'ouvrir les|informations du gestionnaire|vid‚o sur le disque !][Annuler]
+[1][Can't open the video|manager informations|on the disc !][Annulla]
+;[3][ |Clef invalide !][Quitter]
+[3][ |Chiave non valida !][Esci]
+;
+;>>> Bubble GEM <<<
+;
+;Chargement type fichier courant
+Carica file del formato corrente
+;Bouton lecture/pause|(ou pause si boutons magneto.)
+Pulsante Play/pausa|(o pausa se il registratore|Š in funzione)
+;Bouton lecture
+Pulsante Play
+;Retour rapide
+Pulsante Indietro veloce
+;Avance rapide|Scan si double-clic
+Avanti veloce|Scansione con doppio click
+;Demi-tour
+Turn around
+;R‚glage position fichier|Clavier :   : +/- 1 S|  et <SHIFT>: +/- 10 S|  et <CTRL> : +/- 60 S|SHIFT-clic: Bloc
+Regola posizione File|Tastiera :   : +/- 1 S|  e <SHIFT>: +/- 10 S|  e <CTRL> : +/- 60 S|SHIFT-click: Blocco
+;R‚glage de volume sonore|Clavier : / +/-
+Regola livello audio|Tastiera : / +/-
+;Vu-mˆtre avec/sans|niveau crˆte si clic
+VU meter con/senza|livello di picco se click
+;R‚glage bloc fichier|D‚but: 000.00.|Fin: 000.00.
+Regola posizione blocco|Inizio: 000.00.|Fine: 000.00.
+;Ajoute un fichier|… la liste
+Aggiungi un file|alla playlist
+;Ajoute le contenu d'un|repertoire … la liste
+Aggiungi il contenuto di|una cartella alla playlist
+;Charge une liste
+Carica la playlist
+;Sauve une liste
+Salva la playlist
+;Efface fichier(s)|… la liste
+Cancella il file|dalla playlist
+;Bouton de lecture|de la liste
+Pulsante Play|(playlist)
+;Bouton stop|de la liste
+Pulsante Stop|(playlist)
+;Bouton pr‚c‚dant|de la liste
+Esegui file precedente|della playlist
+;Bouton suivant|de la liste
+esegui file seguente|della playlist
+;Liste de fichiers:|S‚lectionne si clic|Lecture si double-clic|Modifie si clic droit
+Playlist:|Clicca per scegliere|Doppio-click per eseguire|Click-destro per modificare
+;Bouton de s‚lection|d'effacement du fichier|de la liste en fin|de lecture
+Le voci selezionate saranno|cancellate dalla playlist|al termine dell'esecuzione
+;Bouton avec/sans|lecture al‚atoire|de la liste
+Imposta esecuzione|normale/casuale della|playlist
+;Bouton avec/sans|lecture d‚but de fichiers|de la liste
+Attiva/disattiva esecuzione|automatica della playlist
+;Bouton de tri|par titre
+Select sort|by title
+;Bouton de tri|par auteur
+Select sort|by author
+;Bouton de tri|par album
+Select sort|by album
+;Bouton de tri|par dur‚e
+Select sort|by time
+;Permet de fixer l'affichage|de l'image de 0 … 99 secondes
+Imposta tempo permanenza|immagine nello slideshow|tra 0 e 99 secondi
+;Changement de r‚solution sur FALCON,|et zoom 2X si le CPU est >= 68040|et la taille de l'image est <= 384 * 304|sur VGA et 640 * 480 sur TV
+Cambio risoluzione sul FALCON, e|zoom 2X se la CPU Š >= 68040|e l'immagine Š <= 384 * 304|in VGA e 640 * 480 su TV
+;Force la taille normale
+Usa sempre le dimensioni normali
+;Force le zoom 2X
+Usa sempre lo zoom 2X
+;Palette fixe de|216 couleurs
+Usa una paletta fissa|di 216 colori
+;Couleurs approch‚es|avec la palette courante
+Colori approssimati|con la currente paletta
+;Utilise le s‚lecteur de|fichiers de MagiC|(si MagiC est install‚)
+Usa il file selector di|Magic (se MagiC Š installato)
+;Utilise toujours le|s‚lecteur du TOS
+Usa sempre il selettore|file TOS
+;Idem … TOS, mais en plus|supprime les popup-menus|dans le menu d‚roulant|(s‚lection *.*)
+Come nel TOS, ma toglie|anche i menu-popup|nel menu a scorrimento|(selezione *.* )
+;D'aprŠs le fichier
+Usa il file di default
+;Bouton record|de la liste|Conversion vers|un autre format
+Record button|(playlist)|Conversion vers|another format
+;Force le nombre d'image|par secondes de 1 … 99|(fichiers FLI par exemple)
+Fissa il numero di|frame/secondo da 1-99|(per es. per i file FLI)
+;Essai de d‚compresser et|d'afficher toutes les images|(I/P/B-frames)
+Prova a decomprimere e|mostrare tutti i frame|(Frame-I/P/B)
+;D‚compresse et affiche uniquement|les I-frames pour le MPEG,|ou saute les B-frames|pour le DivX (plus rapide)
+Decode and display I-frames|only for MPEG files,|or jump B-frames for DivX (i— veloce)
+;D‚compresse et affiche uniquement|1/4 des I-frames pour le MPEG,|ou une image sur deux|pour le DivX (plus rapide)
+Decode and display only|1/4 of I-frames for MPEG files,|or one frame by 2|for DivX (i— veloce)
+;Le direct to disk est|toujours actif si le|fichier le permet
+Direct-to-disk sempre|attivo se permesso|dal tipo di file
+;Pr‚chargement du son pour|les fichiers AVI/MOV/RA/MP/AC3/OGG
+Usa il precaricamento|audio dei file AVI/MOV/RA/MP/AC3/OGG
+;Force le direct to disk|pour les fichiers|Real Audio 28.8K, AC3,|MPEG Audio et Ogg Vorbis
+Forza il direct-to-disk|dei file Real Audio 28.8K, AC3,|MPEG Audio e Ogg Vorbis
+;Utilise directement le|hard si c'est possible
+Quando possibile usa|direttamente l'hardware
+;Force l'utilisation du XBIOS|si les fonctions existent
+Forza l'uso dell'XBIOS|se esistono le funzioni
+;Utilise les deux voies|audio analogiques
+Usa i due canali audio|analogici
+;Utilise les huit voies|num‚riques, normalement pour|le port DSP du FALCON
+Usa otto canali digitali,|normalmente per la porta FALCON DSP
+;D‚tection automatique|au d‚marrage du programme
+Individuazione automatica|dell'orologio esterno
+;Horloge externe ignor‚e
+Ignora orologio esterno
+;Indique la pr‚sence de|l'horloge externe sans|faire le test
+Usa sempre l'orologio|esterno (senza test)
+;Transferts DSP normaux|(par le port host)
+Trasferimento DSP normale|(via porta host)
+;Transferts DSP par le DMA|et sortie audio directe|(plus rapide)
+Trasferimenti DSP via DMA|ed uscita audio diretta|(pi— veloce)
+;D‚compression des deux|voies avec un MP? st‚r‚o
+Decompressione stereo normale|(per i file stereo MP?)
+;Plus rapide avec|un MP? st‚r‚o
+Pi— veloce con un|MP? stereo
+;Change la taille du buffer D2D|pour les fichiers sonores|(1 … 5 secondes)
+Cambia le dim. del buffer|D2D per i file audio|(da 1 a 5 secondi)
+;S‚lection de la fr‚quence|d'‚chantillonnage (en Hz)
+Seleziona la Frequenza|di campionamento (in Hz)
+;Sp‚cifie le mode st‚r‚o|(joint-stereo par d‚faut)
+Specifica il modo stereo|(default joint-stereo)
+;Choix du bitrate en Kbits/s|(128 Kbits/s par d‚faut)|ou sp‚cifie le bitrate minimum pour|les fichiers VBR (32 Kbits/s par d‚faut)
+Imposta il bitrate in Kbit/s|(di default 128 Kbit/s) o|specifica il minimo bitrate|consentito per i file VBR (default 32 Kbit/s)
+;Pr‚s‚lections de la qualit‚.|Les s‚lections aprŠs les 4 premiers choix|agissent sur les autres paramŠtres.
+Imposta i preset qualit….|Le selezioni dopo le prime|4 selezioni agiscono|sugli altri parametri.
+;Valide le mode variable bitrate (VBR).|Le bitrate minimun par d‚faut est 32 Kbits/s.
+Abilita il modo bitrate variabile (VBR).|Il bitrate minimo per default Š 32 Kbit/s.
+;EnlŠve le mode variable bitrate (VBR).|Le birate par d‚faut est 128 Kbits/s.
+Disattiva il modo bitrate variabile (VBR).|Il bitrate per default Š 128 Kbit/s. 
+;Sp‚cifie le bitrate maximum|pour les fichiers VBR|(320 Kbits/s par d‚faut)
+Specifica il bitrate massimo|per i file VBR|(per default 320 Kbit/s)
+;Sp‚cifie le bitrate moyen d‚sir‚|(… la place de qualit‚)
+Specifica il bitrate medio|desiderato (invece della qualit…)
+;Qualit‚ des fichiers VBR si|le bitrate moyen est desactiv‚.|Plus la valeur est ‚lev‚e, plus|la qualit‚ est faible, mais la taille|du fichier diminue (4 par d‚faut).
+Qualit… dei file VBR se|il bitrate medio Š disattivato.|Pi— elevato Š il valore, pi— la|qualit… Š bassa, ma le dimensioni|del file diminuiscono (4 per default).
+;
+;>>> Dialog <<<
+;
+;----------------- length ----------------
+Player video: AVI, QuickTime ¿, FLI, MPEG
+Player audio: AVR, WAV, AIF, DVS, RA, MP
+e viewer immagini JPEG
+Traduzione in Italiano di Lodovico Zanier 
+Registra
+;------ length ------
+     Save sound
+;--- length --- 
+ Formato file:
+;--- length --- 
+Tutto
+Seleziona :
+;--------
+Salva
+Annulla
+;-------------- length ---------------
+INFORMAZIONI VIDEO:
+0000 x 0000 in 00000 colori
+Numero di frame:000000
+Numero di frame/secondo:000
+Intervallo Key-frame:000
+Tempo: 000.00.00
+Immagine corrente:000000 (000.00.)
+ID compressione: $00000000
+Nome: 1234567890123456789012345
+INFORMAZIONI AUDIO:
+Qualit…: 00 bit xxxxxxxxxxxx
+Frequenza: 00000 Hz ¯ 00000 Hz
+Tempo: 000.00.00
+ID Compressione: $00000000 000 Kbit/s
+INFORMAZIONI MEMORIA:
+Dim. buffer file      : 0000000 byte
+Dim. buffer immagine  : 0000000 byte
+Dim. buffer schermo   : 0000000 byte
+Dim. buffer audio     : 0000000 byte
+ú Titolo:
+ú Autore:
+ú Album:
+ú Anno:
+ú Tempo:
+;-------------------------------------
+;-length--
+frame/sec
+mono
+stereo
+;------ length ------
+   Salva immagine(i)
+;--- length ---
+Img. corrente
+Selezione:
+Qualit… JPEG:
+;-------- length -------
+ Configurazione visione
+;--------------- length ----------------
+Dim. del display senza GEM:
+;- length --
+Automatico
+Normale
+Zoom 2X
+;--------------- length ----------------
+Retinatura in 256 colori:
+;---- length -----
+Paletta player
+Paletta corrente
+;--------------- length ----------------
+File selector:
+;- length --
+TOS
+No popup
+;--------------- length ----------------
+Frame rate video (senza audio):
+;- length --
+Fissa
+;--------------- length ----------------
+Mostra frame video MPEG/DivX:
+;- length --
+I-frame
+1/4 I-frame
+;-------- length -------
+  Configurazione Audio
+;--------------- length ----------------    
+Direct to disk:
+;-- length ---
+Precarica
+Forza uso
+;--------------- length ---------------- 
+Sistema audio:
+;-- length ---
+XBIOS
+Analogico
+Digitale:
+;--------------- length ---------------- 
+Orologio esterno:
+;-- length ---
+Ignora
+;------- length ------
+Modo MP? senza DSP:
+;---- length -----
+trasferimento DMA
+;------- length ------
+Modo MP? senza DSP:
+;---- length -----
+Mono
+;------ length ------
+     Salva video
+;----- length ----
+Qualit…:
+;------ length ------
+     Salva : xxx
+;------------- length --------------
+Frequenza (Hz):
+Modo:
+Bitrate (minimo per VBR, Kbit/s):
+Qualit… Preset:
+;--------- length --------
+Bitrate variabile (VBR):
+;-length-
+Con
+Senza
+;------------- length --------------
+Bitrate massimo per VBR (Kbit/s):
+Bitrate medio per VBR (Kbit/s):
+Qualit… per VBR (0:alta 9:bassa):
+;------ length ------
+     ID3  header
+    VORBIS header
+;--------------- length ----------------
+Salvataggio concluso, vuoi inserire
+un header ?
+;--------
+Inserire 
+;-------- length -------
+ Modifica voce playlist
+;---- length ---- 
+   Goto track
+;----- length ----- 
+    Search text
+;------ length ------
+     DVD reading
+;--- length ---- 
+Metados drive:
+;------------- length -------------- 
+Reading disc structure
+Please wait...
+;length
+Sound:
+;------------------- length --------------------
+Aniplayer - Playlist
+;---- length ----
+One frame by 2
+Jump B-frames
+;--------------- length ----------------
+Ritardo immagine Slideshow: __"
+Dim. buffer file audio: _"
+;--- length ----
+Dal nr.: _____
+Al nr.: _____
+;_ length _
+Da : ___'__
+ a : ___'__
+con: __ f/s
+;----- length -----
+Int. Key-frame: __
+;------- length ---------
+Goto track nø: ___
+;--length--
+Title: __
+;-- length ---
+Chapter: __
+;-length--
+Angle: _
+;------------------- length --------------------
+Registrato a
+Nome         : ________________________________
+Indirizzo    : ________________________________
+Citt…/Paese  : ________________________________
+Chiave       : ________________
+;-----------------------------------------------
+;
+;>>> Help box <<<
+;
+;------------- length ----------------
+ AIUTO ANIPLAYER
+;-------------- max length : 50 ------------------
+ 
+ Aniplayer Š un viewer immagini, un player audio,
+ed un player video con capacit… D2D, creato per
+il Falcon.  I file audio sono eseguiti usando
+la frequenza pi— prossima, o l'esatta frequenza 
+ottenibile con il ricampionamento.
+ 
+ La pi— veloce animazione Š in modo True Color
+del Falcon; 256 colori, schede True Color (15
+e 24 bit) funzionano comunque bene. In altri modi
+video (2, 4, o 16 colori), l'immagine Š retinata 
+in monocromatico.
+ 
+ L'uso massimo della CPU Š indicato in % nella
+linea informazioni della finestra.  Un valore
+superiore al 100% di norma indica che la velocit…
+in frame/sec non pu• essere raggiunta.
+ 
+ Comandi tastiera: <UNDO>: Stop      : +/-  1 s
+< >: Pausa   <C>: c/b&w    e  <shift>: +/- 10 s
+<O>: Opzioni <S>: Scan     e  <ctrl> : +/- 60 s
+ 
+ 
+ 
+;-------------------------------------------------
+;--------
+Opzioni
+OK
+;
+;>>> help options <<<
+;
+;-------------- max length : 50 ------------------
+ Menu opzioni ( con programma come accessorio):
+ 
+- Usa DSP : attiva il DSP in alcuni schemi di
+  compressione.  La Infoline mostra se Š usato.
+- Visione Diretta : pi— veloce ma il display Š
+  pi— sporco (linee sullo schermo) ed i redraw
+  non sono possibili.  Non sempre disponibile.
+- Resample : La frequenza campione Š convertita
+ (simbolo clock nel menu: ricampionamento veloce)
+- Togli audio : per rispondere al telefono ;-)
+- Solo Audio : consente il corretto ascolto
+  dell'audio se la visione Š troppo lenta.
+- Controllo vel. : un box allarme compare se il
+  video Š troppo lento, con le opzioni: abbassa
+  audio 1 ottava, togli audio, o ignora problema.
+- Salta immagini : sopprime la ripetizione audio
+  se la visione Š troppo lenta, saltando alcune
+  immagini intermedie.
+- Aspetto registratore: scegli pulsanti o slider
+- Finestra minima : aumenta dim. per visione
+  video (i pulsanti mover/closer ecc sono tolti).
+- Senza GEM : disabilita il GEM per una visione
+  pi— veloce (sono accettati solo input tastiera)
+- Modo Loop : ripetizione dall'inizio.
+;-------------------------------------------------
+;
+;>>> menu <<<
+;
+;----- length ------
+  Modifica voce...
+  Allinemento
+  Fonte piccolo
+  Fonte...
+;-------------------
+  Goto track...
+  Find...        ^F
+  Find next      ^G
+;-------------------  
+  Esegui voce
+  Esegio elenco
+  Esegui da qui
+;-------------------  
+  Aggiungi file...
+  Aggiungi cartella
+  Carica playlist...
+  Salva playlist
+  Salva PL come...
+;-------------------  
+  Seleziona tutto
+  Deseleziona tutto  
+;-------------------
+;main menu
+ File
+ Opzioni
+ Miscellanea
+;------ length ------
+  Circa Aniplayer...
+;------ length -------
+  Apri video...    ^O
+  Apri suono...    ^L
+  Apri immagine... ^P
+  Slide show...
+  Salva video...   ^E
+  Salva immagine.. ^M
+  Salva suono...   ^N
+  Copia immagine   ^C
+;---------------------
+  Informazioni...  ^I
+  Passo singolo     .
+;---------------------
+  Salva config     ^S
+  Carica config
+;---------------------
+  Esci             ^Q
+;---------------------
+;----- length ------
+  Esegui blocco
+  Setta iniz.blocco
+  Setta fine blocco
+  Copia in Playlist
+  Senza finestra F8
+  Senza GEM      F9
+  Nascondi
+;------- length --------
+  Usa DSP           F10
+  Schermo diretto    F1
+  Alta qualit…       ^B
+  Alta qualit… MP?   ^B
+;----------------------- 
+  Ricampiona         F2
+  senza audio        F3
+  Solo audio         F4
+;-----------------------
+  Controlla velocit… F5
+  Salta immagini     F6
+;-----------------------
+  Tape recorder      F7
+  Finestra ridotta   F8
+  Senza GEM          F9
+  Senza D2D (D2M)    ^D
+  Modo loop          ^A
+;-----------------------
+;------- length --------
+  Aiuto...         HELP
+  Documenti...    HELP
+;-----------------------
+  Esci al termine
+  Pausa allo start  
+  Senza messaggi errore
+;-----------------------
+  Playlist
+  Mostra...
+  Audio...
+;-----------------------
+;
+;>>> file select <<<
+;
+;------ max length : 30 ------
+Apri video AVI/MOV/FL?/MP*
+Apri video per Windows¿ (AVI)
+Apri Apple QuickTime¿ (MOV)
+Apri Autodesk Animator¿ (FL?)
+Apri Real¿ Media (RM)
+Apri animazione MPEG
+Apri Video Object File (VOB) 
+Apri suono
+Apri Audio Visual Research
+Apri Microsoft¿ RIFF-WAVE
+Apri Apple¿ Int. File Format
+Apri DVSM Falcon Winrec
+Apri RA* Real Audio¿
+Apri MPEG Audio Layer 1,2
+Apri AC3 Dolby Digital
+Apri OGG Ogg Vorbis
+Apri immagine JPEG
+Salva suono come...
+Salva immagine come...
+Salva immagini
+Salva video come...
+Scegli cartella slide show
+Aggiungi file alla playlist
+Aggiungi Cartella a playlist
+Carica playlist
+Salva playlist
+Carica config
+Salva config
+Convert files directory
+;

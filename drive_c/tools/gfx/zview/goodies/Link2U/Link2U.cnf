@@ -1,0 +1,8 @@
+# create link for gcc
+#
+#sln D:\PROGRAMM\gnu\usr u:\usr
+sln H:\usr u:\usr
+
+# delet link to drive a
+#
+delu a
