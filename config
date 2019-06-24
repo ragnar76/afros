@@ -3,7 +3,7 @@ FastRAM = 64
 Floppy = 
 TOS = 
 EmuTOS = system/emutos-aranym.img
-Bootstrap = system/mint.prg
+Bootstrap = system/mintara.prg
 BootstrapArgs = DEBUG_LEVEL=1 BOOT_DELAY=0 MEM_PROT=NO
 BootDrive = C
 AutoGrabMouse = Yes

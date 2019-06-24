@@ -1,0 +1,197 @@
+# MiNT configuration file.
+#
+# The mint.cnf file is loaded, when the entire system is practically
+# up, all device drivers and filesystem drivers have been loaded etc.
+# If you want to control earlier settings, see mint.ini file.
+#
+
+# Edit this with a normal ASCII text editor. Lines starting with '#'
+# are comments. Other lines are commands for MiNT to execute at boot
+# up, or variables that control how MiNT behaves.
+
+# For best results, the convention u:/drive/pathname should be used for
+# all specified pathnames.
+
+#
+# Here are things you can change if you want to. There are reasonable
+# defaults for all of these.
+#
+
+#
+# FS_CACHE_SIZE= specifies the size of disk cache in kilobytes for the
+# internal caching module. Default is 128.
+#
+FS_CACHE_SIZE=200
+
+#
+# FS_VFAT= enables VFAT extension for selected drives
+#
+# It's not recommended to enable VFAT on your bootdrive (normally C:).
+# If you ever boot TOS you can run in trouble (depending on your
+# TOS version).
+#
+#FS_VFAT=A,D,E
+
+#
+# FS_VFAT_LCASE=YES tells the kernel to return lowercase filenames
+# from VFAT directory searches. The default is NO.
+#
+#FS_VFAT_LCASE=YES
+
+#
+# FS_WB_ENABLE= enables write back cache for selected drives. The
+# write back cache is disabled by default (except ext2 and minix).
+#
+#FS_WB_ENABLE=D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,V,W,X,Y,Z
+
+#
+# FS_WRITE_PROTECT= software write protection on filesystem level of the
+# specified drives
+#
+#FS_WRITE_PROTECT=R,S
+
+#
+# FDC_HIDE_B tells the MiNT to remove floppy drive B: from the system.
+# It is useful on single floppy systems to get rid of "Insert
+# disk B: into drive A:" messages from the AES.
+#
+#FDC_HIDE_B=YES
+
+#
+# KERN_SECURITY_LEVEL= enables the appropriate security level:
+# 0 - recommended for single user setups, like MultiTOS (default).
+# 1 - recommended for multiuser setups, like KGMD.
+# 2 - full protection, unsupported by software, thus discouraged.
+#
+KERN_SECURITY_LEVEL=1
+
+#
+# set maximum additional TPA size for new processes (in kilobytes)
+# default is 1024kb
+#
+#TPA_INITIALMEM=1024
+
+#
+# PROC_MAXMEM= gives the maximum amount of memory that any process
+# may use (in kilobytes). The default is to make this unlimited, but
+# if you have a lot of memory and/or programs that grab more memory
+# than they should, try setting this.
+#
+# E.g. to limit processes to 4096K of memory, remove the '#' at the
+# beginning of the next line.
+#
+# WARNING: the process will not be allowed to allocate memory beyond
+# the limit, and it won't "see" more memory as available from the
+# system.
+# Please understand that programs like "free" (or any other that
+# interrogates the system how much memory is available) is a process
+# as well, thus it will undergo this limit too!
+#
+# Decent shells (desktops) allow you to limit the maximum amount of
+# memory independently for each program.
+#
+#PROC_MAXMEM=4096
+
+#
+# KERN_DEBUG_LEVEL controls output of global debugging information.
+# The higher the level, the more stuff MiNT will spew about about
+# what it's doing.
+#
+# The average user doesn't want to hear about this stuff, so the
+# default is 1, i.e. display ALERT messages only.
+#
+# KERN_DEBUG_DEVNO is the BIOS device number to which the info should
+# be sent.
+#
+# Devno can be: 0=printer, 1=aux/modem, 2=screen(console), 3=midi,
+# 4=keybrd, 5=raw.
+#
+# The default is the console.
+#
+#KERN_DEBUG_LEVEL=1
+#KERN_DEBUG_DEVNO=3
+
+#
+# KERN_BIOSBUF controls how BIOS I/O is performed.
+#
+KERN_BIOSBUF=NO
+
+#
+# Here are some commands that you can give to MiNT:
+#
+# alias d: path -- make a fake "drive" that actually points to the
+#                  given path
+# cd path       -- changes MiNT's default directory
+# echo message  -- print something on the screen
+# exec program  -- runs a program; you must give the complete path
+#                  and file extensions (e.g. c:/bin/echo.prg)
+# include file  -- include another portion of the MINT.CNF file.
+# sln path link -- make a symbolic link named "link" pointing to "path"
+#                  "link" must be on drive U: for this to work
+
+# Examples follow
+#
+# Notice you have to adjust commands below for your filesystem
+# structure.
+#
+# You could use "alias" to provide a quick way of getting at
+# nested directories, e.g. if you do
+# alias r: u:/c/some/long/path
+# then clicking on drive r: puts you into the folder c:/some/long/path
+
+# The "sln" command may be used to create "links" on drive U:. If
+# u:/foo is a link to c:/bar, then u:/foo/foo.txt is another way
+# of saying c:/bar/foo.txt. Judicious use of links can make
+# re-arranging hard disks and directories painless (if you always
+# use the names on drive u:, it doesn't matter where you put
+# the actual directories).
+
+# Setting up the root filesystem for UNIX environment
+
+sln c:/bin      u:/bin
+#sln g:/boot     u:/boot
+sln c:/etc      u:/etc
+sln c:/home     u:/home
+#sln g:/lib      u:/lib
+#sln g:/mnt      u:/mnt
+#sln g:/opt      u:/opt
+#sln g:/root     u:/root
+#sln g:/sbin     u:/sbin
+sln c:/tmp      u:/tmp
+#sln g:/usr      u:/usr
+sln c:/var      u:/var
+
+# set up networking
+cd u:
+setenv PATH u:/bin
+setenv HOME u:/home
+exec u:/bin/bash u:/bin/netsetup.sh
+
+#
+# start Draconis to MiNT-Net gateway
+#
+#exec u:/boot/mint/mgw.prg
+
+#
+# start Gluestik
+#
+exec c:\mint\gluestik.prg
+
+exec c:\auto\clocky.prg
+
+exec c:\auto\zmagxsnd.prg
+
+exec c:\auto\nfjpeg.prg
+
+exec c:\auto\fvdi.prg
+
+#
+# start XaAES
+#
+INIT=u:/c/mint/1-19-cur/xaaes/xaloader.prg
+
+#
+# The "echo" command is really straightforward.
+#
+echo Setup complete, now booting the system...
+echo

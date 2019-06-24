@@ -1,0 +1,163 @@
+# Mettre ce fichier dans le rÇpertoire d'XaAES (C:\mint\1-*-*\xaaes)
+#
+# ProcÇdure pour rÇ-attribuer les raccourcis Ctrl+Alt:
+# <original>#<nouveau>#
+# Attribue <nouveau> Ö <original>; <original> reste
+# valide.
+#
+# <original>#
+# <original> n'est plus valide
+# 
+# Les raccourcis sont ÇvaluÇs chaque fois que la fenàtre
+# "∂ propos de" est ouverte (par le menu ou avec Ctrl+Alt+Help).
+# Il n'est donc pas nÇcessaire de redÇmarrer l'ordinateur.
+#
+# Exemple d'application: si vous prÇfÇrez la touche "Esc"
+# plutìt que "W" pour basculer de la fenàtre d'une application
+# Ö l'autre, ajoutez ce qui suit parmi la liste des raccourcis
+# ci-dessous:
+#
+# SHIFT+W#ESC# ==> Ceci fera en sorte que les 2 touches seront
+#                  valides pour cette action.
+#
+# SHIFT+W# ==> Avec ceci, vous invalidez la touche "W", qui peut
+#              donc àtre utilisÇe pour une autre action.
+#
+<b>Raccourcis clavier avec Ctrl-Alt</b>:
+
+#<CtrlAlt>
+0             Aficher/Cacher menu
+#$1 [keyboard-switch]
+.             Mettre le contenu de la fenàtre
+              en plein Çcran
+:             CrÇer un fond d'Çcran Ö partir de
+              l'Çcran actuel
+A             Quitter toutes les applications
+              (liste d'exceptions dans xaaes.cnf)
+B             Ouvrir la fenàtre systäme/
+              le journal systäme
+D             Ouvrir le programme de capture d'Çcran
+              (XAAESNAP.PRG nÇcessaire)
+E             Ouvrir le sous-menu des fenàtres
+H             Arràter le systäme (ou exÇcuter $SDMASTER
+              si prÇsent)
+I             (DÇs-)iconifier la fenàtre actuelle
+J             RedÇmarrer XaAES
+K             Lancer un programme
+L             Ouvrir le gestionnaire des tÉches
+SHIFT+L       Charger configuration
+M             RÇafficher pointeur souris
+N             Charger dÇgradÇ
+SHIFT+N       Charger le fond d'Çcran
+P             Restaurer la palette dans les modes
+              infÇrieurs ou Çgals Ö 8 bits
+SHIFT+P       Charger palette
+Q             Quitter XaAES (ou exÇcuter $SDMASTER
+              si prÇsent)
+R             Tenter de rÇcupÇrer un systäme bloquÇ
+U             Fermer fenàtre active
+V             DÇmasquer toutes les applications
+W             Basculer d'une fenàtre Ö l'autre
+              globalement
+SHIFT+W       Amener la fenàtre supÇrieure de
+              l'application prÇcÇdente Ö l'avant
+X             Masquer toutes les applications sauf
+              celle au 1er plan
+Y             Masquer l'application du 1er plan
+ESPACE        Ouvrir le menu principal
+SHIFT+ESPACE  Ouvrir le menu de la fenàtre du 1er plan,
+              sinon le menu principal
+HELP          Ouvrir la fenàtre "A propos de"
+HOME          Redessiner l'Çcran
+TAB           Basculer d'une application Ö l'autre
+SHIFT+TAB     Basculer vers l'application prÇcÇdente
+
+INSERT         Maximiser fenàtre active
+FLECHE HAUT    Agrandir fenàtre active
+FLECHE BAS     RÇduire fenàtre active
+FLECHE DROITE  êlargir fenàtre active
+FLECHE GAUCHE  RÇduire largeur fenàtre active
+
+SHIFT+
+ FLECHE HAUT   Monter fenàtre active
+ FLECHE BAS    Descendre fenàtre active
+ FLECHE DROITE DÇplacer fenàtre active vers la droite
+ FLECHE GAUCHE DÇplacer fenàtre active vers la gauche
+#</CtrlAlt>
+<u>                                                      </u>
+
+Raccourcis/navigation dans <b>le sÇlecteur de fichiers</b>:
+
+CTRL+B        Affichage en temps rÇel
+CTRL+T        Affichage en arborescense
+CTRL+N        Tri par nom
+CTRL+D        Tri par date
+CTRL+S        Tri par taille
+CTRL+E        Tri par type
+CTRL+X        Pas de tri
+CTRL+ESPACE   Inverser l'ordre
+
+CTRL+O        Ouvrir le menu du sÇlecteur (navigation
+              avec les fläches et Return)
+CTRL+C        Copie le chemin et le nom de la
+              sÇlection dans le presse-papiers
+CTRL+F        Nouveau dossier (entrer nom dans
+              champ de saisie)
+CTRL+R        Renommer fichier/dossier sÇlectionnÇ
+              (entrer nouveau nom dans champ de saisie)
+CTRL+V        Voir fichier sÇlectionnÇ
+DELETE        Effacer fichier sÇlectionnÇ/dossier vide
+
+ALT+ " + "    Augmenter taille de texte dans la liste
+ALT+ " - "    RÇduire taille de texte dans la liste
+<u>                                                      </u>
+
+Raccourcis dans <b>gestionnaire de tÉches</b>:
+
+DELETE     Quitter programme sÇlectionnÇ
+           (idem icìne corbeille)
+SHIFT+
+ DELETE    Forcer Ö quitter programme sÇlectionnÇ
+           (idem icìne crÉne)
+TAB        Amener le programme ou la fenàtre
+           sÇlectionnÇ(e) Ö l'avant 
+<u>                                                      </u>
+
+Raccourcis pour <b>toutes les fenàtres</b>:
+
+SHIFT+
+ CURSEUR-HAUT/BAS           Page haut/bas
+ CURSEUR-GAUCHE/DROITE      Page gauche/droite
+
+<u>Liste sÇlectionnÇe:</u>
+
+  FLECHE DROITE             Ouvrir l'arborescence
+  FLECHE GAUCHE             Fermer l'arborescence
+  FLECHE HAUT/BAS           DÇplacer le curseur
+  PAGE HAUT/BAS             Monter/descendre d'une page
+  CLEAR/HOME                Aller au dÇbut de la liste
+  SHIFT+CLEAR/HOME          Aller Ö la fin de la liste
+
+<u>Liste non sÇlectionnÇe:</u>
+
+  FLECHE DROITE             DÇfilement Ö droite
+  FLECHE GAUCHE             DÇfilement Ö gauche
+  FLECHE HAUT/BAS           DÇfilement en haut/bas
+
+Si une entrÇe est sÇlectionnÇe dans la liste,
+FLECHE DROITE place le curseur dans le champ Çditable,
+ce qui permet d'Çditer la sÇlection.
+<u>                                                      </u>
+
+<b>Barre de menu</b>:
+
+Suivant la configuration, la barre de menu peut àtre
+cachÇe/affichÇe en cliquant en haut de l'Çcran.
+Cliquer dans le coin supÇrieur gauche cache/affiche le
+menu de faáon permanente (Ctrl-Alt-0), sinon, de faáon
+temporaire (Ctrl-Alt-Espace).
+<u>                                                      </u>
+
+Documentation supplÇmentaire :
+
+http://wiki.sparemint.org/index.php/XaAES
