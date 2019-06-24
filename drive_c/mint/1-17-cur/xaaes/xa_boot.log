@@ -1,0 +1,336 @@
+bootlog 'u:\c\mint\1-17-cur\xaaes\xa_boot.log'
+
+~~~~~~~~~~~~ XaAES start up!! ~~~~~~~~~~~~~~~~
+sysfile_exits: 'u:/c/mint/1-17-cur/moose.xdd'
+sysfile_exits: 'u:/c/mint/1-17-cur/moose_w.adi'
+sysfile_exits: 'u:/c/mint/1-17-cur/moose.adi'
+module path: '\c\mint\1-17-cur\xaaes\'
+sysfile_exits: 'u:\c\mint\1-17-cur\xaaes\moose_w.adi'
+  XaAES v0.998 Alpha
+MultiTasking AES for MiNT
+
+(c) 1995-1999 Craig Graham, Johan Klockars, Martin Koehling, Thomas Binder
+              and other assorted dodgy characters from around the world...
+(c) 1999-2003 Henk Robbers @ Amsterdam
+    2003-2004 Frank Naumann <fnaumann@freemint.de> and
+              Odd Skancke <ozk@atari.org>
+
+Using Harald Siegmunds NKCC
+
+Date: Nov 12 2008, time: 23:11:10
+Supports mouse wheels
+Compile time switches enabled:
+ - CTRL+ALT key-combo's
+ - Client vector validation
+ - Realtime (live) window scrolling, moving and sizing
+
+bootmessage ok!
+setup_handler_table ok!
+set bit 3 in conterm ok!
+nkc_init ok!
+load adi modules
+Loading AES Device Drivers:
+Creating XaAES kernel thread
+nvdi version = 501
+Default screenmode
+Screenmode is: 1
+Physical work station opened: 1
+v_exit_cur ok!
+Virtual work station opened: 2
+32 bit pixel E8E800 unknown format!
+Video info: width(800/608), planes :32, colours 256
+stdfont: id = 1, size = 10, cw=8, ch=16
+smlfont: id = 1, size = 8, cw=6, ch=6
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[800,608], colours=256, bitplanes=32
+Loading system resource file 'xaaes.rsc'
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\xaaes.rsc' exists - return = 0
+system resource = 4E78004 (xaaes.rsc)
+Attempt to open object render module...
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+Attempt to open new object theme...
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\dbox.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\popbkg.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\dbutton.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\dbutton.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\dbutton.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\dtext.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\dtext.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\dtext.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+Attempt to open window widget renderer...
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\xaaeswdg.rsc' exists - return = 0
+ === Init widget tree 4E52AE8, for   XaAES v0.998 Alpha
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\slider.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\slider.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\slider.img
+  depacking...OK!, has palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\slide.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\slide.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\slide.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\info.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\info.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\info.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\wtitle.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\wtitle.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\wtitle.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\slwtitle.img' exists - return = -33
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\exterior.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\exterior.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\exterior.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+Setting up default window widget theme...
+creating root window
+ === Create new widget tree 4F752E8 - obtree=4E7806C, for   XaAES v0.998 Alpha
+ === Init widget tree 4F752E8, for   XaAES v0.998 Alpha
+setting default desktop
+ === Create new widget tree 4F75208 - obtree=4E78D74, for   XaAES v0.998 Alpha
+ === Init widget tree 4F75208, for   XaAES v0.998 Alpha
+really opening now...
+opening root window
+..root window opened
+initialized iconify grid
+Menu redrawn
+mn_set for menu_settings setup
+show mouse, return sucess
+k_init returned OK
+Opened alert pipe 'u:\pipe\alert' to 6
+Opened keyboard device 'u:\dev\console' to 7
+Wheel support present
+Using moose adi
+Handles: KBD 7, ALERT 6
+init_helpthread
+ === Create new widget tree 4E58268 - obtree=4E0E004, for   XaSYS
+ === Init widget tree 4E58268, for   XaSYS
+init_helpthread done
+C.Hlp started 4E5A1D4, 0
+Loading AES modules...
+ Entering main loop ------------------------------------
+loading accs ---------------------------
+ACCPATH= not existing, creating ACCPATH=c:\
+loading accessories from 'c:\'
+load_accs: enter (c:\)
+load_accs: launch (c:\bubble.acc)
+load_accs: launch (c:\acalc.acc)
+load_accs: launch (c:\jclktool.acc)
+load_accs: launch (c:\st-guide.acc)
+loading shell and autorun ---------------
+autorun[1]: cmd=(10703B8) 'C:\taskbar\taskbar.prg'
+   args[1]:    =(10703E8) ''
+autorun[0]: cmd=(1070358) 'C:\toswin\toswin2.app'
+   args[0]:    =(1070388) ''
+Launch shell 'c:\teradesk\desktop.prg' with args 'No args'
+ === Create new widget tree 4E54178 - obtree=1130318, for   Tera Desktop
+ === Create new widget tree 4E70038 - obtree=113891A, for   Tera Desktop
+ === Create new widget tree 4DD0398 - obtree=12CCB40, for   TosWin2
+ === Create new widget tree 4E2CA98 - obtree=12814C4, for   Taskbar
+ === Create new widget tree 4E2C9A8 - obtree=1287F68, for   Taskbar
+ === Create new widget tree 4DD02B8 - obtree=1130A08, for   Tera Desktop
+ === Create new widget tree 4E3E1F8 - obtree=11339F0, for   Tera Desktop
+free_wtlist for   TosWin2
+free_wtlist for   ST-Guide
+free_wtlist for   Clocky¿ tools
+free_wtlist for   ACalc
+free_wtlist for   BUBBLE  
+AESSYS: sigterm received, dispatch_shutdown(0)
+AESSYS: sigterm received, dispatch_shutdown(0)
+AESSYS: sigterm received, dispatch_shutdown(0)
+free_wtlist for   Taskbar
+bootlog 'u:\c\mint\1-17-cur\xaaes\xa_boot.log'
+
+~~~~~~~~~~~~ XaAES start up!! ~~~~~~~~~~~~~~~~
+sysfile_exits: 'u:/c/mint/1-17-cur/moose.xdd'
+sysfile_exits: 'u:/c/mint/1-17-cur/moose_w.adi'
+sysfile_exits: 'u:/c/mint/1-17-cur/moose.adi'
+module path: '\c\mint\1-17-cur\xaaes\'
+sysfile_exits: 'u:\c\mint\1-17-cur\xaaes\moose_w.adi'
+  XaAES v0.998 Alpha
+MultiTasking AES for MiNT
+
+(c) 1995-1999 Craig Graham, Johan Klockars, Martin Koehling, Thomas Binder
+              and other assorted dodgy characters from around the world...
+(c) 1999-2003 Henk Robbers @ Amsterdam
+    2003-2004 Frank Naumann <fnaumann@freemint.de> and
+              Odd Skancke <ozk@atari.org>
+
+Using Harald Siegmunds NKCC
+
+Date: Nov 12 2008, time: 23:11:10
+Supports mouse wheels
+Compile time switches enabled:
+ - CTRL+ALT key-combo's
+ - Client vector validation
+ - Realtime (live) window scrolling, moving and sizing
+
+bootmessage ok!
+setup_handler_table ok!
+set bit 3 in conterm ok!
+nkc_init ok!
+load adi modules
+Loading AES Device Drivers:
+Creating XaAES kernel thread
+nvdi version = 501
+Default screenmode
+Screenmode is: 1
+Physical work station opened: 1
+v_exit_cur ok!
+Virtual work station opened: 2
+32 bit pixel E8E800 unknown format!
+Video info: width(1024/768), planes :32, colours 256
+stdfont: id = 1, size = 10, cw=8, ch=16
+smlfont: id = 1, size = 8, cw=6, ch=6
+Display Device: Phys_handle=1, Virt_handle=2
+ size=[1024,768], colours=256, bitplanes=32
+Loading system resource file 'xaaes.rsc'
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\xaaes.rsc' exists - return = 0
+system resource = 4E78004 (xaaes.rsc)
+Attempt to open object render module...
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\xa_xtobj.rsc' exists - return = 0
+Attempt to open new object theme...
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\dbox.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\dbox.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\dbox.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\popbkg.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\popbkg.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\popbkg.img
+  depacking...OK!, has palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\dbutton.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\dbutton.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\dbutton.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\dtext.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\dtext.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\dtext.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+Attempt to open window widget renderer...
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\xaaeswdg.rsc' exists - return = 0
+ === Init widget tree 4E52AE8, for   XaAES v0.998 Alpha
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\slider.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\slider.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\slider.img
+  depacking...OK!, has palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\slide.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\slide.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\slide.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\info.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\info.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\info.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\wtitle.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\wtitle.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\wtitle.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\slwtitle.img' exists - return = -33
+xaaes_sysfile: check if '\c\mint\1-17-cur\xaaes\img\hc\exterior.img' exists - return = 0
+load_img: '\c\mint\1-17-cur\xaaes\img\hc\exterior.img'
+load_img: file \c\mint\1-17-cur\xaaes\img\hc\exterior.img
+  depacking...OK!, no palette
+ unknown pixel format - cannot transform
+
+Setting up default window widget theme...
+creating root window
+ === Create new widget tree 4F752E8 - obtree=4E7806C, for   XaAES v0.998 Alpha
+ === Init widget tree 4F752E8, for   XaAES v0.998 Alpha
+setting default desktop
+ === Create new widget tree 4F75208 - obtree=4E78D74, for   XaAES v0.998 Alpha
+ === Init widget tree 4F75208, for   XaAES v0.998 Alpha
+really opening now...
+opening root window
+..root window opened
+initialized iconify grid
+Menu redrawn
+mn_set for menu_settings setup
+show mouse, return sucess
+k_init returned OK
+Opened alert pipe 'u:\pipe\alert' to 6
+Opened keyboard device 'u:\dev\console' to 7
+Wheel support present
+Using moose adi
+Handles: KBD 7, ALERT 6
+init_helpthread
+ === Create new widget tree 4E58268 - obtree=4E0E004, for   XaSYS
+ === Init widget tree 4E58268, for   XaSYS
+init_helpthread done
+C.Hlp started 4E5A1D4, 0
+Loading AES modules...
+ Entering main loop ------------------------------------
+loading accs ---------------------------
+ACCPATH= not existing, creating ACCPATH=c:\
+loading accessories from 'c:\'
+load_accs: enter (c:\)
+load_accs: launch (c:\bubble.acc)
+load_accs: launch (c:\acalc.acc)
+load_accs: launch (c:\jclktool.acc)
+load_accs: launch (c:\st-guide.acc)
+loading shell and autorun ---------------
+autorun[1]: cmd=(10703B8) 'C:\taskbar\taskbar.prg'
+   args[1]:    =(10703E8) ''
+autorun[0]: cmd=(1070358) 'C:\toswin\toswin2.app'
+   args[0]:    =(1070388) ''
+Launch shell 'c:\teradesk\desktop.prg' with args 'No args'
+ === Create new widget tree 4E54178 - obtree=1130318, for   Tera Desktop
+ === Create new widget tree 4E70038 - obtree=12B4036, for   Tera Desktop
+ === Create new widget tree 4DD0398 - obtree=12CEB40, for   TosWin2
+ === Create new widget tree 4E2CA98 - obtree=12814C4, for   Taskbar
+ === Create new widget tree 4E2C9A8 - obtree=1287F68, for   Taskbar
+ === Create new widget tree 4E0D1D8 - obtree=11332D0, for   Tera Desktop
+ === Create new widget tree 4E0D0F8 - obtree=11389D2, for   Tera Desktop
+ === Create new widget tree 4DC6418 - obtree=12FA1CA, for   Tera Desktop
+ === Create new widget tree 4E68038 - obtree=1138F9E, for   Tera Desktop
+ === Create new widget tree 4DBE418 - obtree=12FA61A, for   Tera Desktop
+ === Create new widget tree 4DC9F38 - obtree=11339F0, for   Tera Desktop
+free_wtlist for   TosWin2
+free_wtlist for   ST-Guide
+free_wtlist for   Clocky¿ tools
+free_wtlist for   ACalc
+free_wtlist for   BUBBLE  
+AESSYS: sigterm received, dispatch_shutdown(0)
+AESSYS: sigterm received, dispatch_shutdown(0)
+AESSYS: sigterm received, dispatch_shutdown(0)
+free_wtlist for   Taskbar

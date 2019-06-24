@@ -2,7 +2,7 @@
 FastRAM = 64
 Floppy = 
 TOS = 
-EmuTOS = system/etos512k.img
+EmuTOS = system/emutos-aranym.img
 Bootstrap = system/mint.prg
 BootstrapArgs = DEBUG_LEVEL=1 BOOT_DELAY=0 MEM_PROT=NO
 BootDrive = C
@@ -32,7 +32,7 @@ JITInline = No
 
 [VIDEO]
 FullScreen = No
-BootColorDepth = -1
+BootColorDepth = 4
 VidelRefresh = 2
 VidelMonitor = -1
 
