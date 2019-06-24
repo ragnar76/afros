@@ -1,0 +1,37 @@
+           STZIP version 2.6
+           -----------------
+
+STZip is an archiver that can process .ZIP files, like PKZip does on
+IBM PC's. It can extract files from and add files to an archive, it
+is fast and it uses gem. It can also compress subdirectories and store
+comments into the archive, even for any file inside the archive.
+
+You can use STZip from a shell or a program with a command line (type
+stzip -? to get some help), or within its built-in gem shell (start
+stzip.prg from desktop). You can also install it as a gem application
+on the desktop, for file with extension '.ZIP'. STZip will open the
+zipfile when you double click on it.
+
+See the file WHATSNEW for a list of recent changes.
+
+You may copy this program and put it for download on bulletin boards.
+Commercial use and distribution (this includes putting STZip or self-
+extracting files made by STZip on anything that is sold for more than
+the cost of the disk and/or handling charges) is not authorized without
+agreement of the author. You use this program at your own risk, there
+is no warranty.
+
+Please avoid to "repackage" STZip, I prefer that the users gets all
+the original files in the distribution.
+
+This is postcardware : if you use it, please register by sending a
+postcard to :
+
+Vincent Pomey
+2 all‚e Val‚ry Larbaud
+92260 Fontenay aux roses - France
+
+
+
+Fido  : Vincent Pomey (2:324/101.10)
+Email : vincent@stell.frmug.fr.net    (please do not send large mails)

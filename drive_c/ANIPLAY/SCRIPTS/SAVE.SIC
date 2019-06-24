@@ -1,0 +1,7 @@
+if(address("aniplay"))
+{
+	if(fsel(file, "Save in AVR/WAV/AIF/MP?/AC3/OGG/AVI/MOV", "*.*"))
+	{
+		Save(file);
+	}
+}

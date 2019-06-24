@@ -1,0 +1,6 @@
+To enable the keyboard translation you should copy the appropriate 
+*.tbl file to the FreeMiNT <sysdir>,  rename it there to keyboard.tbl
+and reboot.
+
+The *.tbl files in source forms are distributed along with the mktbl
+program in the directory freemint/tools/mktbl/.

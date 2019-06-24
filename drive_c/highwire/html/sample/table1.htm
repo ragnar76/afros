@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Tables Test 1</title>
+</head>
+<body>
+
+<font size="8">Highwire Table Test</font><br>
+
+<b>Various tests of TABLE compatibility</b> 
+
+<A HREF="sample.htm">(Start Page)</A>
+
+<hr>
+<h2>TABLE 1 &ndash; filling 100% of page width (with one double colspan
+cell)</h2>
+
+<table border="1" width="100%">
+<tr>
+<td bgcolor="yellow">01</td>
+<td bgcolor="red">02</td>
+<td colspan="2" bgcolor="blue">03</td>
+</tr>
+
+<tr>
+<td bgcolor="green">04</td>
+<td colspan="2" bgcolor="lightgrey">05</td>
+<td bgcolor="orange">06</td>
+</tr>
+
+<tr>
+<td bgcolor="cyan">07</td>
+<td bgcolor="magenta">08</td>
+<td bgcolor="brown">09</td>
+<td bgcolor="darkblue">10</td>
+</tr>
+</table>
+
+<h2>TABLE 2 &ndash; same as TABLE 1 but dynamically sized</h2>
+
+<table border="1">
+<tr>
+<td bgcolor="yellow">01</td>
+<td bgcolor="red">02</td>
+<td colspan="2" bgcolor="blue">03</td>
+</tr>
+
+<tr>
+<td bgcolor="green">04</td>
+<td colspan="2" bgcolor="lightgrey">05</td>
+<td bgcolor="orange">06</td>
+</tr>
+
+<tr>
+<td bgcolor="cyan">07</td>
+<td bgcolor="magenta">08</td>
+<td bgcolor="brown">09</td>
+<td bgcolor="darkblue">10</td>
+</tr>
+</table>
+
+<h2>TABLE 3 &ndash; double rowspan in middle cell</h2>
+
+<table border="1" cellpadding="10" align="right">
+<tr>
+<td bgcolor="lightgreen">01</td>
+<td rowspan="2" bgcolor="lightgrey">02</td>
+<td bgcolor="blue">03</td>
+</tr>
+
+<tr>
+<td bgcolor="green">04</td>
+<td bgcolor="cyan">05</td>
+</tr>
+</table>
+
+<h2>TABLE 4 &ndash; mix of double rowspan and colspan</h2>
+
+<table cellspacing="5" border="5" align="center">
+<tr>
+<td colspan="2" bgcolor="yellow">001</td>
+<td rowspan="2" bgcolor="orange">002</td>
+</tr>
+
+<tr>
+<td rowspan="2" bgcolor="darkred">003</td>
+<td bgcolor="magenta">004</td>
+</tr>
+
+<tr>
+<td colspan="2" bgcolor="red">005</td>
+</tr>
+</table>
+
+<h2>TABLE 5 &ndash; table in table (TABLE 3 with TABLE 4 inside cell
+02)</h2>
+
+<table border="1" cellpadding="10">
+<tr>
+<td bgcolor="lightgreen">01</td>
+<td rowspan="2" bgcolor="lightgrey">02 
+
+<table cellspacing="5" border="5">
+<tr>
+<td colspan="2" bgcolor="yellow">001</td>
+<td rowspan="2" bgcolor="orange">002</td>
+</tr>
+
+<tr>
+<td rowspan="2" bgcolor="darkred">003</td>
+<td bgcolor="magenta">004</td>
+</tr>
+
+<tr>
+<td colspan="2" bgcolor="red">005</td>
+</tr>
+</table>
+</td>
+<td bgcolor="blue">03</td>
+</tr>
+
+<tr>
+<td bgcolor="green">04</td>
+<td bgcolor="cyan">05</td>
+</tr>
+</table>
+
+<h2>TABLE 6 &ndash; alignment x-wise and y-wise, for table cell
+contents</h2>
+
+<table width="400" height="300">
+<tr valign="bottom">
+<td align="right">01 right/bot</td>
+<td align="center">02 center/bot</td>
+<td align="left">03 left/bot</td>
+</tr>
+
+<tr valign="middle">
+<td align="right">04 right/mid</td>
+<td align="center">05 center/mid</td>
+<td align="left">06 left/mid</td>
+</tr>
+
+<tr valign="top">
+<td align="right">07 right/top</td>
+<td align="center">08 center/top</td>
+<td align="left">09 left/top</td>
+</tr>
+</table>
+
+<h2>TABLE 7 &ndash; absolute sizing of individual cells</h2>
+
+<table cellpadding="0" border="1">
+<tr valign="top" align="left">
+<td height="60" width="200">Height 60 Width 200</td>
+<td width="100">Height 60 Width 100</td>
+</tr>
+
+<tr valign="top" align="left">
+<td height="120">Height 120 Width 200</td>
+<td>Height 120 Width 100</td>
+</tr>
+</table>
+
+<p><A HREF="table.htm">(Simple Table Page)</A><P>
+
+</body>
+</html>

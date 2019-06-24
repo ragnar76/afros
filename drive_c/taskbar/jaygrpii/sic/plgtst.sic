@@ -1,0 +1,19 @@
+// plgtst.sic (c) 14.08.2000 by JAY Software
+//
+// This script demonstrates the JAY Groups II runnig the PlugIn mode
+
+if ( address( "JAYGrpII" ) ) {
+	Mode( "plugin" );
+
+	// Get a script path
+	cwd(Path);
+
+	// Create a new group and fill it with a package scripts
+	New( Path + "plgtst.grp", "PlugIn Test Group" );
+	Add( Path + "jgrpdemo.sic", "GEM Script Demo Script" );
+	Add( Path + "sortgrp.sic", "Sort Group Script" );
+	Add( Path + "hot2grp\\hot2grp.sic", "Hotlist.html -> Hotlist.grp" );
+	Save();
+	Quit();
+}
+

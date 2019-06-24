@@ -1,0 +1,330 @@
+                                 History of aMail
+                                 ----------------
+* = Information
+! = Bugfix / Change
++ = New function
+- = Removed function
+
+######## version 1.27beta #########
+01.02.2001
+ * linked with MiNTlibs 0.56
+ ! STinG asock.ovl has 32-bit ints (thanks to Dlanor for his gcc support)
+
+29.01.2001
+ ! Draconis and Iconnect ovls DO work now (with mgw at least ;) 
+
+20.01.2001
+ ! user can define 50 own mailboxes
+
+25.01.2000
+ ! move message bugfix
+
+19.01.2000
+ + URL highlighting
+ 
+17.01.2000
+ ! NNTP protocol
+
+######## version 1.26beta #########
+09.01.2000
+ ! bugfix in the progress bar
+ + few new options in a config file - just save your config and you'll see
+
+08.01.2000
+ ! new way for retrieving new articles from a NNTP server
+
+01.01.2000
+ * history.txt is Y2K compatible! :)
+
+######## version 1.25beta #########
+29.12.1999
+ ! we can read mails with whitespaces in headers (ie. "boundary = ")
+
+23.12.1999
+ + NNTP protocol - off-line only and read only (see docs)
+
+18.12.1999
+ + you can select one or more messages in one time
+
+10.12.1999
+ ! new popups for mboxes
+
+05.12.1999
+ + OVL has own window with a process indicator
+
+01.12.1999
+ + new menu 'Tools' (see docs)
+
+######## version 1.24beta #########
+28.11.1999
+ ! a bug in an addressbook
+
+23.11.1999
+ ! you can edit a mail instead of the ~/inbox file in the "mailto:" case; serious bug!
+
+22.11.1999
+ + pipes (ALT + [0-9])
+
+18.11.1999
+ ! made memory protection happy (asock.ovl)
+
+17.11.1999
+ . 10th anniversary of the velvet revolution in the Czech republic (freedom forever! ;)
+
+16.11.1999
+ ! you can select the right addresses to a Cc/Bcc field
+ ! va_start_prog() works with memory protection too (silly me)
+
+######## version 1.23beta #########
+13.11.1999
+ ! fixed bug in an addressbook
+ + you can create folders in an addressbook
+
+######## version 1.22beta #########
+10.11.1999
+ + new keyword "MaxAbookRec" in a config file (default value is 50)
+ ! popup for an addressbook is created dynamically
+
+08.11.1999
+ + Message-ID and In-Reply-To in a message header
+ . our TT030 is back so we can write !
+
+06.09.1999
+ + aSMS - an utility for sending SMS (GSM cellular phones)
+
+29.08.1999
+ + asock.ovl for Draconis and iConnect
+
+28.08.1999
+ ! small workaround for nested MIME (this is not a final solution)
+
+22.08.1999
+ + aMSAP - an utility for users with the "SMTP after POP3" mail provider
+
+19.08.1999
+ ! better checks for disk space and file I/O errors
+
+14.08.1999
+ + switches on a command line (-sgeq, see docs)
+
+10.08.1999
+ * linked with MiNTlibs 0.52.3
+ 
+02.08.1999
+ ! redraws of iconified window
+
+01.08.1999
+ ! bug in the addressbook (apply group)
+ ! Drag&Drop works again
+ ! no more visible passwords in a logfile
+
+31.07.1999
+ ! redraws
+ ! bugs in translated RSC files
+ ! STiK/STinG asock.ovl
+ ! decode header lines
+
+######## version 1.21beta #########
+29.07.1999
+ + added few warning alerts
+
+28.07.1999
+ ! fixed some redraw problems
+ ! fixed fuller functionality
+
+27.07.1999
+ + selectable background colours (the bar colour is definable in a config file
+   only -- FrameColour keyword )
+ ! parsing of Date: field
+ ! better support for CRLF EOL
+ ! you can now write new messages (and save them) while recieving messages
+
+25.07.1999
+ + line formating (end of line AFTER space isn't end of line ;) - default off
+ ! changes in RSC file (better MagiC compatibility)
+
+24.07.1999
+ ! word-wrapping rewritten
+
+23.07.1999
+ + name of MIME attachment is taken from Content-Disposition: field too
+ ! base64 text is displayed too
+
+22.07.1999
+ ! VA_START messages are sent properly to an editor
+ + unsaved mesages are deleted after aMail ends
+ ! atari.tbl updated
+
+######## version 1.2beta ##########
+10.07.1999
+ ! lightbar uses inverted colours
+ + "View source" item in the message popup menu
+ + "Force charset" item in the message popup menu
+
+07.07.1999
+ + real-time scrolling (there is an old method possible using CTRL key)
+
+06.07.1999
+ ! new icons
+ + percent display while opening mailbox
+
+05.07.1999
+ ! new scrolling algorithm - using bitblt
+
+04.07.1999
+ * linked with MiNTlibs 0.52
+ 
+01.07.1999
+ + definable path for an address book and default export path (in a config
+   file only)
+ ! 4 digit year in a Date: field (I think we break RFC but some people
+   were nervous -- Y2K ;)
+
+28.06.1999
+ ! ASOCK.OVL doesn't crash anymore (without socket)
+ ! checking for an AES version (and exit if AES < 3.30)
+
+27.06.1999
+ ! rewriten management for a message body buffer
+
+21.06.1999
+ ! you can edit messages without an AV server again
+ + Content-Disposition: field in MIME header
+
+######## version 1.1beta ##########
+19.06.1999
+ ! better check for a header-buffer size overflow
+
+13.06.1999
+ ! bugfix in a message header initialization
+ 
+06.06.1999
+ + added white space between Subject and message size
+   in the message list
+ + improvements in the address book
+ + "move" function in the address book
+
+29.05.1999
+ ! you can't move a message to the RemoteBOX
+
+26.05.1999
+ ! quoted-printable chars are encoded to UPPER case
+
+21.05.1999
+ ! bugfix in reply function
+
+20.05.1999
+ ! it is possible to reply to Cc: only (again)
+
+18.05.1999
+ + you can define use of any "URLServer" (ie. StringServer)
+
+17.05.1999
+ + asock auto-untop
+
+06.05.1999
+ * linked with MiNTlibs 0.51
+
+27.04.1999
+ + aMail message composer (AMCO)
+
+15.04.1999 - 02.05.1999
+ ! major internal changes (message creating and sending)
+   - read docs, please
+
+13.04.1999
+ + filename quoting
+ ! improved Quoted-printable encoding in message headers
+
+11.04.1999
+ ! cleanup and improvements in a code for the AV protocol
+ + "Export..." and "Save..." added to object popup menu
+ ! fixed bug in printing
+ + compile infos in the about dialog
+
+10.04.1999
+ ! better function of FULLER button
+
+07.04.1999
+ ! STOP button does its job with exchange too
+ + amail does auto-detect of argument as or mailto: or .cfg file or
+   mailbox file after VA_START
+ + Drag&Drop (works like VA_START) - just drag&drop file to aMail window
+ + you can save recieved mail to a file _without_ importing to your
+   mailboxes - only press any SHIFT key while clicking on the GET button
+
+05.04.1999
+ ! default selection in reply-to dialog is based on DefaulTo keyword in cfg file
+ ! amail checks paths (if exist) from config on its startup
+
+28.03.1999
+ + new special mailbox for managing mails on your POP3 server
+
+######## version 1.06beta (not released) ########
+24.03.1999
+ ! faster base64 (MIME) coding
+
+23.03.1999
+ * linked with alpha-version of MiNTlibs 0.50.1
+ 
+20.03.1999
+ ! fixed bug with bad encoding of underscore ('_') char
+
+12.03.1999
+ + quit confirmation (in case with message(s) in an editor)
+
+10.03.1999
+ + you can save all attachments at one time
+
+07.03.1999
+ ! major changes in conversion tables!
+
+05.03.1999
+ ! ASOCK.OVL can be started in AES 4.x
+
+01.03.1999
+ ! support for mono mode in MagiC
+
+######## version 1.05beta ########
+28.02.1999
+ ! it's possible to retrieve messages with more than 65535 lines
+
+27.02.1999
+ ! decoding of message header is more RFC 2047 conforming
+
+23.02.1999
+ + object menu in message body
+ ! minor change in conversion tables
+
+22.02.1999
+ ! messages aren't imported after their receive (in case with no _new_ msgs), fixed
+
+19.02.1999
+ + you can select 8bit or quoted-printable message body encoding
+
+17.02.1999
+ ! you can change path (in setup->paths dialog) to current mbox safely
+
+16.02.1999
+ ! fixed printing
+ ! support for Pine mailbox
+
+######## version 1.04beta ########
+03.02.1999
+ ! better executing of external editor (works without AVSERVER now)
+
+01.02.1999
+ + new keywords in custom box definitions:
+   DefaultFrom = email@adresa
+   CustomBoxType = x, mailbox is defined as OUTBOX if x!=0
+
+31.01.1999
+ ! improved STOP function
+
+30.01.1999
+ ! fixed fileselector call 
+ + savin MIME attachments from object menu
+ ! better exec for URLSERVER in MagiC
+
+######## version 1.03beta ########
+ ... not translated yet

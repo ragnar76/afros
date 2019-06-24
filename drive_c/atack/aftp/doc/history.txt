@@ -1,0 +1,514 @@
+                              History of aFTP 
+                              --------------- 
+. = Information 
+! = Bugfix/Change
++ = New function 
+- = Function removed 
+
+
+
+######## version 1.55beta ########
+29.10.1999
+  !  works without an OLGA manager
+28.10.1999
+  !  sending files with size of multiple of 512 bytes (STiK version only)
+04.09.1999
+  +  a directory reloading every time you upload a file can be disabled
+  (then you have to select 'Reload' manually to update a dir listing)
+  !  directory listing
+  !  passive mode in a MiNTnet version
+
+######## version 1.54beta ########
+04.08.1999
+  +  sorting by type (a file extension)
+25.07.1999
+  !  fixed gdos check
+22.07.1999
+  !  fixed the "appline" bug
+04.07.1999
+  +  TMP dir and directory for download can be defined independently
+  !  command line is now read using shel_read() function (too)
+21.06.1999
+  +  user defined default use of PASV mode (useful for IP-Masquerading)
+
+######## version 1.53beta ########
+16.05.1999
+  !  fixed small bug in login loop
+15.05.1999
+  !  fixed aFTP download crash (without AV-server)
+
+######## version 1.52beta ########
+04.05.1999
+  !  it's possible to connect to FTP servers using F-keys (again ;)
+02.05.1999
+  !  fixed bug in event loop in a STiK version (thanks to Ronald Andersson)
+  !  logging to a file works under MagiC now
+
+######## version 1.51beta ########
+10.04.1999
+  !  cleanup and improvements in a code for the AV protocol
+16.02.1999
+  !  changed functions for logging
+  !  optimization in rename function
+10.02.1999
+  +  support for OS/2 FTP servers
+30.01.1999
+  +  support for MacOS FTP server
+29.01.1999
+  +  sending of ALLOcate command is optional
+20.01.1999
+  +  support for strange FTP servers (t-online, sympatico...)
+18.01.1999
+  +  built-in autodetect for append/overwrite existing files
+
+######## version 1.5beta ########
+16.01.1999
+  +  ASCII text config file
+  !  small changes in a RSC file
+15.01.1999
+  !  better starting of OLGA manager
+  !  little improvements in the STinG version
+  +  added support for "passive" mode
+08.01.1999
+  !  some improvements in "File exist" dialog
+12.12.1998
+  +  Windows_NT FTP servers support :(
+02.12.1998
+  !  long owner names doesn't hang aFTP
+  +  improved DHST (with login user, pass, path)
+
+######## version 1.4beta4 #######
+28.11.1998
+  .  recompiled with MiNTlibs pl49 and GEMlibs pl38
+01.11.1988
+  !  fixed case change in filenames
+25.10.1998
+  !  fixed downloading files by VA_START (from CAB, i.e.)
+10.08.1998
+  +  autolocator (try TAB key for filename completion)
+  +  the ENTER key simulates double-click on a selected file
+08.08.1998
+  +  unused keypresses are send to the AV server
+  +  quoting (ie. you can use spaces or apostrophes in filenames)
+21.07.1998
+  !  stripping long filenames fixed
+  !  better support for mono again (now in iconified window too ;)
+  !  fixed bug in status bar window (font sizes)
+
+######## version 1.4beta3 #######
+15.07.1998
+  !  fixed "afterdownload-crash" bug
+  +  new commandline (VA_START) format, see DOCs
+  +  better support for mono
+14.07.1998
+  .  recompiled with new GEMlibs pl37 ;)
+25.06.1998
+  .  recompiled with new MiNTlibs (pl48) and new GEMlibs (pl36)
+31.05.1998
+  +  Hotlist can be updated via OLGA proto
+
+######## version 1.4beta2 #######
+01.05.1998
+  !  Small changes in setup dialogs
+  +  evnt_timer depends on cps (small CPS = small CPU usage)
+15.04.1998
+  +  You can fast connect to first twenty servers from hotlist using keys
+  F1 - F20
+13.04.1998
+  !  Fixed bug in recursive download
+
+######## version 1.4beta1 #######
+02.04.1998
+  !  Hotlist can handle 50 items now ;) (bug in dialog)
+
+######## version 1.4beta ########
+26.02.1998
+  .  Linked with gemlibs pl34
+29.12.1997
+  +  support for UFSL
+29.09.1997
+  !  Fixed small bug with a dir as VA_START/Command line parametr
+13.09.1997
+  +  Hotlist can handle 50 items now
+09.09.1997
+  +  Optimisation of recursive sending
+05.09.1997
+  .  Linked with new mintlibs pl47
+28.08.1997
+  +  Two new menuitems in popup 'sort' - 'reverse' and 'dirs on top'
+  !  Fixed bug in the 'Confirm' dialog
+27.08.1997
+  +  You can send any SITE command
+26.08.1997
+  !  Solved connecting to hosts without a DNS entry
+21.08.1997
+  !  Fixed bug in a GDOS check
+14.08.1997
+  .  The Czech Republic, Prague - Strahov, 20:00 -> U2 - POPMART !!! Cool !
+  !  Fixed bug with drag_box
+11.08.1997
+  +  Recursive downloading whole remote directories
+  +  DHST protocol
+  !  Fixed bug in 'path' dialog
+10.08.1997
+  +  User definable port for each server in hotlist
+  +  Hotlist is in editable ASCII file from now
+  +  You can STOP current action with CTRL+C (sometimes :)
+07.08.1997
+  +  Keep remote file flags after download
+  +  Keep remote file time/date after download
+03.08.1997
+  +  Autorefresh by reading remote directory
+01.08.1997
+  +  Recursive sending whole local directories
+
+######## version 1.3beta1 #######
+26.07.1997
+  -  Removed confusing 'beta expired' dialog
+  !  Fixed fatal bug with download (STiK version only)
+19.07.1997
+  !  aFTP now sets binary mode _before_ file transfer (bug only with VA_START)
+
+######## version 1.3beta ########
+18.07.1997
+  .  Compiled with GCC 2.7.2.2
+  !  Fixed small bug in iconification of dialog window
+  !  Solved bug in VA_START (broken D&D)
+14.07.1997
+  +  New menuitem 'Server -> Add to Hotlist'
+09.07.1997
+  !  aFTP doesn't use file streams for sockets now -> solved bugs in data
+  connections
+03.07.1997
+  +  New config option - auto-reget file on error
+  !  Better handling of transfer errors
+30.06.1997
+  !  Removed alert with garbage data after window close
+23.06.1997
+  .  AES name of application is always "AFTP    " (for appl_find())
+22.06.1997
+  +  Dirty method used for transfer ABORT in STiK version
+21.06.1997
+  +  You can set maximum files in directory via AFTP_LIST env. variable
+  (default is 1000 or 1/3 of free memory)
+  -  Alert box with AV_SERVER error removed
+  +  You can select converting of filenames to lowercase while sending file
+  from case-insensitive filesystem
+18.06.1997
+  !  Faster sorting
+15.06.1997
+  +  Variable size of sub- and popup-menus
+  +  Login name in Hotlist by non-anonymous accounts
+08.06.1997
+  !  Fixed bug in VA_START (due to previous change in MM)
+01.06.1997
+  .  Changed memory management -> lower memory usage
+  .  Minix partition crash :-(((
+
+######## version 1.2beta ########
+25.05.1997
+  !  Fixed bugs in slider
+  !  Fixed list window position
+  +  CPS and time is also in iconified window
+24.05.1997
+  +  Speed in CPS and remaining time is on status bar now
+16.05.1997
+  !  Fixed menu redraws in AES 4.x
+13.05.1997
+  !  Fixed bug in status bar
+  !  Fixed starting with parameter (VA_START or CL)
+11.05.1997
+  !  Small bugfixes
+09.05.1997
+  +  New icons for links
+08.05.1997
+  +  Autochecking of links (look at global config - default is ON)
+  +  New and faster method for determinig of link type (via SIZE command)
+  !  Solved bug with sharing of cache
+07.05.1997
+  +  Non-blocking control connection (problems solved? :)
+  +  Non-blocking LIST
+
+######## version 1.1beta3 ########
+06.05.1997
+  -  Non-blocking control connection REMOVED due to some problems (solved
+  in next version, maybe :)
+  !  Fixed transfer abort
+02.05.1997
+  !  Minor bugfixes
+
+######## version 1.1beta2 ########
+10.04.1997
+  +  HELP invokes ST-Guide with AFTP.HYP
+06.04.1997
+  +  Non-blocking control connection
+31.03.1997
+  +  HYPertext documentation
+29.03.1997
+  +  Longfilename conversion
+27.03.1997
+  !  Improved download of files in STiK version
+26.03.1997
+  +  Simple crypting of passwords in hotlist => You must write passwords in
+  hotlist again !!
+25.03.1997
+  !  Better handling of 'Connection timeout'
+23.03.1997
+  +  Sending files via File Selector from menu 'Commands->Send file(s)'
+22.03.1997
+  !  aFTP now don't send password, if ftp server needn't one
+  +  Fontselect via xFSL
+  +  Fixed AV protocol
+21.03.1997
+  .  Splited ftp.c into ftp.c and cmds.c
+  !  Fixed sending of non-existing files ;)
+20.03.1997
+  +  Holding of CTRL key while Drag&Drop initiating move (source file is
+  deleted after transfer)
+19.03.1997
+  +  Click on any icon = deselect all files
+  +  Drag&Drop protocol for receiving files
+18.03.1997
+  +  Drag&Drop protocol for sending files
+17.03.1997
+  .  Longer edit fields for name and password => new config file ;(
+
+######## version 1.1beta1 ########
+16.03.1997
+  !  Fixed bug with cache and '..'
+  +  Icons
+15.03.1997
+  .  Dummy directories ('..') cann't be selected
+  !  Dialog 'File exist' is more usefull now ;)
+  !  Fixed iconification (again :)
+14.03.1997
+  !  Fixed hotkeys in menu
+12.03.1997
+  !  Fixed redraw of status bar
+  +  Discovered MiNT functions for NON-BLOCKING read/write ;)
+
+######## version 1.1beta ########
+10.03.1997
+  !  Handling of data sockets was changed in STiK version
+08.03.1997
+  !  Fixed bug with too much files in dir (>maxlist)
+  !  Fixed iconification of list window
+  !  Finally fixed edit fields in dialogs (cursor, redraw, ...)
+07.03.1997
+  +  Some shortcuts for some menu commands
+  !  Deleted files are deselected from now ;)
+05.03.1997
+  +  Password in non-anonymous login isn't writed to logfile.
+04.03.1997
+  !  STiK version tuning
+03.03.1997
+
+######## version 1.0beta9 ########
+01.03.1997
+  !  Fixed VA_START
+  +  New menuitem - 'Commands->Get files'
+  +  New dialog - 'Confirmations'
+  !  STiK version tuning
+28.02.1997
+  +  Using of BubbleGEM to show links (right mouse button)
+24.02.1997
+  !  Better implementation of SYST command
+23.02.1997
+  !  Fixed window names and info lines
+22.02.1997
+  +  aFTP now works with STiK. Exists two versions of program; type is writen
+  in 'about aFTP' dialog - not yet in distribution
+
+######## version 1.0beta8 ########
+18.02.1997
+  !  Fixed mouse and keyboard events
+  !  Fixed problems with funet.fi FTP server
+  !  Fixed change to startup dir after connect
+  !  Fixed reading/writing of conf. and hotlist files (when HOME dir doesn't
+  exist)
+
+######## version 1.0beta7 ########
+17.02.1997
+  !  Fixed GDOS check
+  +  New menuitem - 'List->Free cache'
+  +  Backspace or UNDO equals to double-click on '..' (CD UP)
+16.02.1997
+  !  Fixed window scrolling and other small bugs
+  !  Dynamical alocation of memory -> now aFTP works with less memory req.
+14.02.1997
+  +  FTP Caching ! See doc.
+13.02.1997
+  !  Solved bug in login dialog handling
+
+######## version 1.0beta6 ########
+12.02.1997
+  !  Some bugfixes
+11.02.1997
+  +  Added option 'Save as..' to dialog 'File exist'
+09.02.1997
+  +  Added type of operating system on host in information dialog
+  +  Before sending file to FTP server now aFTP allocate space on server
+  (using ALLOCATE command)
+  !  Solved bug with D&D file from FTP server on local file.
+08.02.1997
+  !  Transfer abort solved (in both directions)
+05.02.1997
+  +  New menuitem in Commands - Delete
+  +  New menuitem in Commands - Rename to
+03.02.1997
+  !  Solved bug in display access rights of file
+  !  Solved bug with sorting by date
+01.02.1997
+  !  Changed dialog 'File exist'
+  !  New look of radiobutons
+30.01.1997
+  !  Solved some bugs (menu, info line in window)
+  +  New menuitem - Commands -> Go to DIR
+28.01.1997
+  +  Some improvements ;)
+  +  New menuitem - Commands -> Make DIR
+
+######## version 1.0beta5 ########
+25.01.1997
+  !  Deleting of '*' by adding new item to Hotlist
+21.01.1997
+  !  Sorting by date changed (faster)
+20.01.1997
+  +  Directories is always on top of listing
+  .  Indexing of file structures totaly rewriten => faster sorting (by size
+  and by name)
+
+######## version 1.0beta4 ########
+14.01.1997
+  !  Now we accepting links to nonexist files/dirs
+  !  Bug with sort by date solved
+13.01.1997
+  !  Some bugfixes
+10.12.1996
+  .  Distribution is in more directories (more RSC and DOC files)
+  +  RSC file translated to czech language (again :)
+02.12.1996
+  +  Enabled displaying other informations about file in main list window
+  !  Better handling of warning dialogs (resume, fontselector, av-server, ...)
+
+######## version 1.0beta3 ########
+27.11.1996
+  !  Filename is now displayed while sending file(s)
+27.11.1996
+  !  Solved bug with crash aFTP on exit and on call FontSelector (on older
+  AESes)
+  !  Next bug solved - more attempts to login (defined in setup) works fine
+  (after VA_START or command line also)
+  !  Solved bug in drawing main list window in old AESes (without iconify)
+  - old AESes returns positive numbers from non suported mode in wind_get
+  function! :(
+25.11.1996
+
+######## version 1.0beta2 ########
+24.11.1996
+  !  DELETE OLD CONFIG FILES (aftp.cfg and ahotlist.ftp in $HOME) !!
+  !  Program now works with 16bit integers fine, uff! So 68000 go up! ;)
+  +  Implemented piece of D&D proto, so VA_START works immediately.
+20.11.1996
+  !  :-((( aFTP doesn't work on 68000 ! We compiled aFTP _WITHOUT_ -mshort !
+18.11.1996
+  +  Now aFTP read old configs, too.
+  +  Wow, now you can send more files together!
+17.11.1996
+  +  You can select logfile in new dialog
+15.11.1996
+  +  All commands and all replies are logged to file
+14.11.1996
+  +  When you enter pass to dialog, char '*' is displayed
+  !  Solved VA_START problem with D&D file to list window (thanks to Mario!)
+09.11.1996
+  !  Sort by time, when files is from the same day
+07.11.1996
+  +  Works REGET of file.
+  !  Solved bug with redraw info line after doubleclick.
+
+######## version 1.0beta ########
+06.11.1996
+  .  1st public release - 1.0beta
+  +  Translate DOCs to English
+  .  Menu items Setup and List swapped
+  !  Now works sending files properly
+05.11.1996
+  +  Some works on above - see DOCs
+04.11.1996
+  +  aFTP now support VA_START with URL (ie. from new CAB 1.5)
+24.10.1996
+  +  Autologin to servers from Hotlist (when mail list window is closed)
+16.10.1996
+  +  Now program clean all in TEMP dir before exit (if you want it)
+15.10.1996
+  +  Added new menu item - Edit and functions for them, of course (more
+  in DOCs)
+14.10.1996
+  .  Some works on DOCs and RSC
+13.10.1996
+  +  In config dialog you can set name and pass for anonymous login and
+  other various parameters for logging to server.
+12.10.1996
+  +  Now you can iconify main list window
+  +  Added config dialog
+  +  Now you can call FontSeletor from menu
+11.10.1996
+  +  Color text - set in FontSelector
+  !  Thermometer now redraws correctly.
+09.10.1996
+  .  Nothing special :)
+06.10.1996
+  +  Window scroll with cursors
+05.10.1996
+  +  Hotlist - to 25 items
+03.10.1996
+  !  Some works on sending file.
+  +  Shows other info about files on server
+01.10.1996
+  +  Added sub and popup menus
+30.09.1996
+  +  Added dialog with info about current connection (server and username)
+29.09.1996
+  +  Shows size of files on FTP server
+  +  Added sort by size and date
+28.09.1996
+  +  Now is saved info about main window also (position and size)
+27.09.1996
+  !  Some works on links ... neverendless :(
+  +  Added config file (only info about selected font)
+26.09.1996
+  +  Some works on sending file to server ... one moment ;)
+25.09.1996
+  +  Ehm, so, .. works transfer abort (close dialog with thermometer),
+  but about this is nothing in RFC, so ...
+  +  Gaming with RSC file ;)
+  +  Added editable field in LOGIN dialog for startup directory on server.
+24.09.1996
+  !  Again rewrited links. I still don't know how :-(
+22.09.1996
+  +  Iconification
+18.09.1996
+  !  Strings will overflow no more ;)
+16.09.1996
+  .  So nothing new, but it works better ;)
+  !  Removed few bugs and code tuning.
+13.09.1996
+  +  Now program works with links.
+11.09.1996
+  +  Added alerts
+10.09.1996
+  +  Changes on AV protocol and using env. variables
+09.09.1996
+  +  Thermometer
+08.09.1996
+  .  It works! First usefull version!
+01.09.1996
+  +  Works on GEM started (menu, windows, protocols, ...)
+31.08.1996
+  +  FTP client connects to server, login in, read directory, transfer binary
+  file (from and to server)
+  +  We starting write FTP client, looks on sources of classic ftp sometimes ;)
+30.08.1996
+  .  studying RFC959 (ftp client) and first attempts with mintnet and socket
+  programming.

@@ -1,0 +1,183 @@
+        +---------------------------------------------+
+        |                  ANIPLAYER                  |
+        |      Movie Player AVI/MOV/FLI/RM/MPEG       |
+        | Sound Player AVR/WAV/AIF/RA/MP1/MP2/AC3/OGG |
+        |                 JPEG viewer                 |
+        +---------------------------------------------+
+
+Files:
+------
+SETUP.APP: Program install by Joachim Fornallaz.
+SETUP.RSC: Resource install.
+SETUP.GSC: Configuration install.
+ANIPLAY.PRG: Program.
+VERSIONS.TXT: Versions in french.
+HISTORY.TXT: Short history in english.
+TESTS.TXT: Tests players AVI/MOV in english.
+ICONS.RSC: Icons for desktop.
+Directory FRENCH:
+  ANIPLAY.HYP: Documentation for ST-Guide in french.
+Directory ENGLISH:
+  ANIPLAY.HYP: Documentation for ST-Guide in english.
+  N_FRENCH.TXT: English file for ANIPLAY.PRG.
+Directory GERMAN (thanks Joachim Fornallaz):
+  ANIPLAY.HYP: Documentation for ST-Guide in german.
+  N_FRENCH.TXT: German file for ANIPLAY.PRG.
+Directory SWEDISH (thanks Mille Babic):
+  ANIPLAY.HYP: Documentation for ST-Guide in swedish.
+  N_FRENCH.TXT: Swedish file for ANIPLAY.PRG.
+Directory DUTCH (thanks Karel de Bruijn and Karel Post):
+  ANIPLAY.HYP: Documentation for ST-Guide in dutch by Karel de Bruijn.
+  N_FRENCH.TXT: Dutch file for ANIPLAY.PRG by Karel Post.  
+Directory POLISH (thanks Rafal Kawecki):
+  N_FRENCH.TXT: Polish file for ANIPLAY.PRG 
+Directory ITALIAN (thanks Lodovico Zanier):
+  N_FRENCH.TXT: Italian file for ANIPLAY.PRG  
+Directory PANEL: Some IMG files for personify main window and Playlist.
+ You can copy this files inside the same directory than ANIPLAY.PRG 
+ like N_FRENCH.TXT.
+ PANEL16.IMG: File for screen in 16 colors.
+ PANEL256.IMG: File for screen in 256 colors.
+ PANEL.IMG: File for screen in 32K, 65K, or 16M colors.
+Directory JPEG:
+  LEGAL: LEGAL file from The Independent JPEG Group's JPEG software.
+  OPENDIVX.SLB: Shared Library of libjpeg library.
+Directory VORBIS:
+  Directory IVORBIS:
+    COPYING: COPYING file from Xiphophorus.
+    VORBIS.SLB: Shared Library of libvorbis-1.0 Tremor' integer library (no FPU).
+  Directory 68060:
+    COPYING: COPYING file from Xiphophorus.
+    VORBIS.SLB: Shared Library of libvorbis-1.0 library (FPU 68060).
+Directory VORB_ENC:
+  Directory 68060:
+    COPYING: COPYING file from Xiphophorus.
+    VORBIS.SLB: Shared Library of libvorbisenc-1.0 library (FPU 68060).
+Directory AVCODEC:
+  COPYING: GNU LESSER GENERAL PUBLIC LICENSE.
+  Directory 68020:
+    AVCODEC.SLB: Shared Library of libavcodec 0.4.6 library (no FPU).
+  Directory 68881:
+    AVCODEC.SLB: Shared Library of libavcodec 0.4.6 library (FPU 68881/2).
+  Directory 68060:
+    AVCODEC.SLB: Shared Library of libavcodec 0.4.6 library (FPU 68060).
+Directory PROG:
+  STARTANI.C: Demo for start ANIPLAYER with control.
+  Directory SYNCHRO.CPX:
+    SYNCHRO.C: Demo for GEM messages to ANIPLAYER.
+    SYNCHRO.HD: Header for CPX.
+    CPXSTART.O: Header for CPX.
+    SYNCHRO.PRJ: Project file.
+    SYNCHRO.CPX: CPX for XCONTROL, synchro with another program.
+  Directory MANIPLAY.MID:
+    MANIPLAY.C: Demo for GEM messages to ANIPLAYER.
+    MANIPLAY.MID: Module MID screen-saver for HORLOGEP.
+    MANIPLAY.INF: Configuration file. 
+   Directory SLB (some files for use SLB):
+     SLB_CALL.S: SLB calls inside ANIPLAYER.
+     Directory OPENDIVX:
+       LIBHEAD.S: Header of OPENDIVX.SLB.
+       DECORE.H: Header for the libdivxdecore 0.5.0 library from ProjectMayo.
+     Directory JPEG:
+       LIBHEAD.S: Header of JPEG.SLB.
+       JPEGLIB.H: Header for the libjpeg library from The Independent 
+                  JPEG Group's JPEG software.
+       JCONFIG.H: Widely used configuration options for JPEGLIB.H.
+       JMORECFG.H: Seldom changed options for JPEGLIB.H.
+       EXAMPLE.C: Example for call the shared library.
+     Directory VORBIS:
+       LIBHEAD.S: Header of VORBIS.SLB.
+       VORBISFI.H,
+       OGG.H,
+       CODEC.H: Headers for the libvorbis-1.0 library.
+     Directory IVORBIS:
+       LIBHEAD.S: Header of VORBIS.SLB.
+       OVORBISF.H,
+       OGG.H,
+       IVORBISC.H: Headers for the Ogg Vorbis 'Tremor' library version 1.0.0.
+     Directory VORB_ENC:
+       LIBHEAD.S: Header of VORB_ENC.SLB.
+       VORBISEN.H,
+       OGG.H,
+       CODEC.H: Headers for the libvorbisenc-1.0 library.
+     Directory AVCODEC:
+       LIBHEAD.S: Header of AVCODEC.SLB.
+       COMMON.H,
+       AVCODEC.H: Headers for the libavcodec library from ffmpeg.
+Directory BUBBLE:
+  BUBBLE.APP: BubbleGEM is a program by Thomas Much for bubble help 
+              with right mouse button.
+  BUBBLE.CPX: Config.
+Directory DRIVER:
+  Directory MAGXSND for MagiCMac, HADES and Aranym:
+    README: Informations about the driver.
+    Directory AUTO:
+      ZMAGXSND.PRG: Driver XBIOS (FALCON functions).
+    Directory CPX:
+      MAGXSND.CPX: Configuration.
+    Directory DOC:
+      ZMAGXSND.TXT: Documentation about functions.
+  Directory PSOUND for HADES:
+    PSOUND.DOC: Documentation PSOUND card/driver of Loic Sebald.
+    PSOUNDC.PRG: Create cookie 'PSND' for test/play Aniplayer with 
+                 PSOUND card.  
+    PSOUNDC.S: Source asm.
+Directory SCRIPTS: GEMScript commands examples.
+  CHECKCOM.SIC: Test if the command is supported.
+  CLOSE.SIC: File and main window closed.
+  CONTROLK.SIC: Send KEY code.
+  CONTROLP.SIC: File selected for get informations and send new position. 
+  CONVERT.SIC: File conversion: MPG in MOV, MPG in AVI, or MP? in WAV.
+  CONVERTD.SIC: Files conversions from a directory.
+  COPY.SIC: Copy current picture in the clipboard.
+  DIASHOW.SIC: Slide-show for JPEG pictures.
+  FF.SIC: Send Fast Forward command in seconds.
+  GETALBUM.SIC: Get Album information of the current file (tag ID3).
+  GETALLCO.SIC: Get all commands supported.
+  GETAUTHO.SIC: Get Author information of the current file (tag ID3).
+  GETFILEP.SIC: Get path+name of the current file.
+  GETLISTT.SIC: Get current and total tracks played of the Playlist.
+  GETLONGN.SIC: Get Aniplayer name.
+  GETTITLE.SIC: Get Title information of the current file (tag ID3).
+  GETYEAR.SIC: Get Year information of the current file (tag ID3).
+  LISTPLAY.SIC: Playlist started and displayed.
+  LISTSTOP.SIC: Playlist stopped.
+  OPEN.SIC: Open file.
+  PAUSE.SIC: Send Pause command.
+  PLAY.SIC: Send Play command.
+  QUIT.SIC: Send Quit command.
+  REW.SIC: Reverse command in seconds.
+  SAVE.SIC: Save current file in AVI/MOV/AVR/WAV/AIF/MP?/OGG.
+  SAVEIMA.SIC: Save image(s) in IMG/TGA/JPG.
+  
+  
+Lastest version of Aniplayer is on:
+
+http://aniplay.atari.org
+http://perso.wanadoo.fr/didierm/ (french/english)
+
+ftp://chapelie.rma.ac.be/atari/ (thanks to Martin Byttebier)
+
+You can see my others realisations on my WEB page:
+SONDIGIT, HORLOGEP, PICDESK, MAGXSND, etc...
+
+
+You can found ST-Guide by Holger Weets on:
+
+http://www.atari-stuff.de/weets/
+
+You can found OLGA by Thomas Much on:
+
+http://www.snailshell.de/OLGA/index.html
+
+You can found a demo of Scripter (GEMScript from ASH) on:
+
+http://www.application-systems.de/scripter/download.html
+
+
+ENGLISH/GERMAN/SWEDISH/DUTCH/ITALIAN/POLISH VERSIONS:
+----------------------------------------------------- 
+
+Before use ANIPLAY copy N_FRENCH.TXT and ANIPLAY.HYP (documentation 
+for ST-Guide) in same directory of ANIPLAY.PRG.
+You can put only ANIPLAY.HYP in your directory for HYP. 

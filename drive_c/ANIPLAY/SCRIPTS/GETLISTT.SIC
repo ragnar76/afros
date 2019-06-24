@@ -1,0 +1,6 @@
+if(address("aniplay"))
+{
+	info_track=GetListTrack();
+	printf("Track: %d  Total: %d",info_track[0],info_track[1]);
+	wait(200);
+}

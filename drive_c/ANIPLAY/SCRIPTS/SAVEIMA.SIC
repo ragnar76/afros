@@ -1,0 +1,20 @@
+if(address("aniplay"))
+{
+	choice=dialog.note("Save images, file type:",
+	                   "[1] (X)IMG",
+	                   "[2] TGA",
+	                   "[3] JPG",
+	                   "-b3","-b2","-b1");
+	if(fsel(file, "Source file (movie)", "*.*"))
+	{
+		if(fsel(file2, "Path for save image(s)", "*.*"))
+		{
+			Open(file);
+			wait(100);
+			info=ControlPlay(0);
+			total_frames=int(info[4]);
+			path=path(file2);
+			SaveImages(path, choice-1, 1, total_frames);
+		}
+	}
+}

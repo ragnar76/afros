@@ -1,0 +1,60 @@
+if(address("aniplay"))
+{
+	if(fsel(file, "Open Playlist for Aniplayer", "*.LST"))
+	{
+		Open(file);
+		ListPlay();
+		run=1;
+		do
+		{
+			printf("\033EPress <ENTER> for stop the Playlist\n");
+			printf("or press <N> for next track\n");
+			printf("or press <+> or <-> for seek +/- 10 seconds\n");
+			printf("\nFile: ");
+			printf(GetFilePlayed());
+			printf("\nTittle: ");
+			printf(GetTitle());
+			printf("\nAuthor: ");
+			printf(GetAuthor());
+			printf("\nAlbum: ");
+			printf(GetAlbum());
+			printf("\nYear: ");
+			printf(GetYear());
+			info=ControlPlay(0);
+			count_seconds=int(info[12]);
+			play=int(info[14]);						
+			info_track=GetListTrack();
+			printf("\nMN:SEC TRK TOT");
+			printf("\n%02d:%02d  %02d  %02d",count_seconds/60,count_seconds%60,info_track[0],info_track[1]);
+			wait(100);
+			if(havekey())
+			{
+				key=inkey();
+				switch(int(key[0]))
+				{
+					case ' ':
+						if(play)
+							Pause();
+						else
+							Play();
+ 						break;
+					case '+':
+						Ff(10);
+						break;
+					case '-':
+						Rew(10);
+						break;
+					case 'n':
+					case 'N':
+						Close();
+						break;
+					case 13:
+	 					run=0;
+	 					break;
+				}
+			}
+		}
+		while(run);
+		ListStop();
+	}
+}

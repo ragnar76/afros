@@ -1,0 +1,24 @@
+if(address("aniplay"))
+{
+	if(fsel(file, "Directory slide-show JPEG", "*.JPG"))
+	{
+		path=path(file);
+		ret=filelist(array,path);
+		if(ret)
+		{
+			for(i=0 ; i<ret ; i++)
+			{
+				suf=suffix(array[i,0]);
+				if(!stricmp(suf,".JPG"))
+				{
+					fname="";
+					strcat(fname,path,array[i,0]);
+					Open(fname);
+					wait(2000);
+					Close();
+				}
+			}
+		}
+	}
+	Quit();
+}

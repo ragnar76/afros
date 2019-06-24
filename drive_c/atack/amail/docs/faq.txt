@@ -1,0 +1,14 @@
+								Frequently Asked Questions (FAQ)
+									
+									
+1) Q: Does aMail work on MagiC ?
+   A: Primary aMail development & testing environment is MiNT/N.AES.
+aMail has also been tested by several people running MagiC/STinG/qed and
+they reported it worked fine. However, we do not provide support for
+aMail on MagiC and we do not guarantee future versions of aMail will
+work on it.
+
+2) Q: I can't send mails (after having edited it, nothing happens in aMail).
+What shall I do?
+	A: You probably didn't read aMail documentation. Please start over and
+read the section about software requirements.

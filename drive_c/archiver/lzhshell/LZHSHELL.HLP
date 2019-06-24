@@ -1,0 +1,524 @@
+
+_LHarc-Shell 3.10 ½1994 by Christian Grunenberg
+
+  I can and do not guarantee the trouble-free performance of either the 
+  Shell or LHarc and therefore accept no responsibility of any kind for 
+  damage of any kind caused by either programme.
+  The use of these Utilities is at your own risk!
+
+_~Passing parameters at the start of the Programme:
+
+  If the Shell is passed an archive name, e.g.. when the Shell is installed 
+  as an application for LZH archives on the Desktop, the contents directory 
+  of the archive will be displayed in the Shell.
+
+  By holding down one of the Shift-keys this archive will immediately be 
+  unpacked according to the installed option and path.
+
+_~Use of the Menu list:
+
+  ---
+
+_~Meaning and use of the components of the directory-window:
+
+~ Folder-/File-entry:
+    -> single-click: (de-)select entry
+       => Block (de-)selection by dragging the mouse
+    -> Double-click on:
+         File-entry: show information
+         Archive-entry: read archive
+         Folder-entry: open folder
+
+~ symbols in front of filenames:
+     => Folder
+     => LHarc-Archive
+
+    ã => encrypted file
+    * => File with comment
+     => File with 'Read only' status
+
+    Clock symbol: File-date same as current date
+    Greyed-out text: File with 'Hidden'- or 'System'-Attribute
+
+~ Archive title line:
+    -> Single-click: re-read directory
+    -> Double-click: show archive-Information
+
+~ Drive title line:
+    -> Single-click: re-read directory and free disk space
+    -> Double-click: show drive-information
+
+~ '' = Closer-Button:
+    -> Single-click: change to next directory level up
+    -> Double-click: change to root-directory
+       => if you are already in the root-directory, the file-selector will 
+          be called, and a new path can be selected.
+
+~  '' = Select-Button:
+    -> if all files are already selected, a click on this button deselects 
+       all files
+    -> if no files are selected or only some, a click on this button 
+       selects all files
+
+~  '' = Deselect-Button:
+    -> all files are  deselected
+
+_~Options/Functions of the Shell:
+
+  After most of the options and commands, the corresponding LHarc-switches 
+  and commands are shown (in brackets) insofar as the TTP version provides 
+  the same facilities, making clear the connection between the two 
+  versions. Use the shell's search function to find the corresponding point 
+  in the help text.
+
+__Main Dialogue:
+
+~    'Add-Mode': (refer to  LHarc-manual: 'Commands')
+      -> selects the compression-method
+
+~    'Encryption':                                  (LHarc-Option '-Y')
+      -> Encrypts/decrypts files during compression/extraction using <key> 
+         as a password
+
+~    'Overwrite':                                   (LHarc-Option '-c')
+      -> existing files with with the same name are overwritten during 
+         compression/extraction.
+
+~    'Recursive subdirectories':                    (LHarc-Option '-r')
+      -> Compression: sub-directories are also searched and compressed
+      -> Extraction: the original folder structure will be restored.
+
+__Options Menu:
+
+__Options-LHarc:
+
+~    'Set archive date to newest file included':    (LHarc-Option '-t')
+      -> sets the date of the archive to the date of the newest file
+         in the archive
+
+~    'No message at query (e.g. deletes)':          (LHarc-Option '-m')
+      -> no warning messages (e.g.. when deleting or overwriting files)
+
+~    'Move files (delete original files)':          (LHarc-Option '-d')
+      -> Original files are deleted by this command (during extraction as 
+         well)
+
+~    'Display free disk space also on TOS 1.0/1.2':
+      -> shows free disk space on the drive - also on TOS 1.4.
+
+~    'Working directory':                           (LHarc-Option '-w')
+      -> sets work directory for temporary archive
+
+~    'Header':                                      (LHarc-Option '-k')
+      -> sets the format of the file-header in the archive
+
+~    'Unix-compatible':                             (LHarc-Option '-s')
+      -> produces a Unix-compatible archive-header
+
+__Options-Shell:
+
+~    'Sort by':
+      -> selects Sort-criteria
+
+~    'Sort backwards':
+      -> Sorts backwards
+
+~    'Memory':                                      (LHarc-Option '-L')
+      -> configures memory usage/buffer size per file:
+
+         'Minimal': 24 KB/no additional memory required
+         'Medium':  between 24 KB and 128 KB/the total memory requirement 
+                    is made available up to 50% of free memory
+         'Maximum': between 24 KB and 512 KB/maximum 1.5 MB 
+
+         in addition up to 150 KB is needed for the compression algorithm.
+
+~    'Indicator':                                   (LHarc-Option '-n')
+      -> selects process-indicator dialogue box
+
+~    'Display':
+      -> selects the file-view mode (Shell, external viewer or View-
+         Protocol)
+
+~    'Viewer':
+      -> sets an (external) file-viewer
+
+~    'Concurrently':
+      -> under multi-tasking starts the file-viewer in parallel with the 
+         shell
+
+~    'Use VA_START':
+      -> If the viewer is already in memory (e.g.. with Parallel-Start 
+         under Multi-Tasking or as an accessory under TOS), only the 
+         VA_START message is sent in order to display the file.
+
+~    'Wildcards case-sensitive':                    (LHarc-Option '-S')
+      -> large/small characters in filenames and wildcards are 
+         distinguished
+
+~    'Turbo-Mode':
+      -> Switches to an especially fast mode; however it is not possible to 
+         abort the operation and more memory is needed
+
+~    'Go in the curr. dir. on startup':
+      -> displays the current directory when the programme is started.
+
+~    'Fileselector on startup':
+      -> Calls the fileselector when the programme is started.
+
+~    'Close and quit':
+      -> Quits the  Shell when the last window is closed.
+
+~    'Auto-save settings':
+      -> Settings are automatically saved when the progamme ends
+
+__Options-Dialogue:
+
+~    'Dialogues':
+      -> changes from 'Flying dialogue boxes' to windows
+
+~    'Color':
+      -> sets colour of dialogue box background
+
+~    'Pattern':
+      -> sets pattern of dialogue box background
+
+~    'Dialogues to mouse':
+      -> dialogue boxes appear at the mouse position
+
+~    'Save pos. of main-dialog':
+      -> The position of the main dialogue box is saved so it will open in 
+         the same position the next time the programme is started
+
+~    'Draw grow/shrink boxes':
+      -> when opening windows or dialogues
+
+~    'Titles with frame':
+      -> dialogue box titles drawn in boxes
+
+~    'Small titles':
+      -> dialogue box titles in small letters
+
+__Options-Extract:
+
+~    'Destination':                                 (LHarc-Option '-g')
+      -> sets target directory when extracting:
+         'Curr. dir.': current directory
+         'Automatic':  automatically chooses 'Curr. dir' or 'Folder'
+         'Folder':     creates folder with name of archive.
+
+~    'Don't set time and date':                     (LHarc-Option '-i')
+      -> time and date of unpacked files are not set to the original value 
+         but to the current settings
+
+~    'Do'nt set attributes':                        (LHarc-Option '-i')
+      -> Attributes of unpacked files are __not set to the original value 
+         but are cleared
+
+~    'No crc-check':                                (LHarc-Option '-C')
+      -> Omits the checksum test when extracting, allowing corrupt files to 
+         be expanded.
+
+__Options-Compress:
+
+~    'Clear archive-bit':                           (LHarc-Option '-b')
+      -> Clears the archive-bit of the original files when compressing
+
+~    'Only changed files':                          (LHarc-Option '-y')
+      -> only compress files with the archive-bit set (i.e. if the file has 
+         been changed)
+
+~    'Any file-attribute':                          (LHarc-Option '-a')
+      -> compresses files with any file-attribute, including hidden and 
+         system-files, but the option 'Only changed files' wil be still be 
+         observed.
+
+~    'File newer than date':                        (LHarc-Option '-N')
+      -> compresses only files later than 'date'
+
+~    'Store uncompressed':                          (LHarc-Option '-U')
+      -> the given filetypes will be archived without compression (useful
+         for files already packed )
+
+~    'Algorithm':               (LHarc-Options '-u','-4','-o','-l','-5')
+      -> selects the compression-algorithm
+
+~    'Force compression':           (LHarc-Options '-o2','-l2','-52')
+      -> forces compression even when the compressed file will be bigger 
+         than the original
+
+__Options-Font:
+
+~    'Font':
+      -> selects the type face in directory/display windows
+
+~    'Size':
+      -> size of typeface in points
+
+~    'Tabulator':
+      -> sets tab width - for no tab expansion use '0'
+
+__Edit-Find:
+
+~    'Position':
+      -> Search from current position ('Cursor') or from beginning 
+         (Global')
+
+~    'Backwards':
+      -> search backwards
+
+~    'Ignore case':
+      -> ignore upper and lower case
+
+~    'Whole word':
+      -> seach for complete words (only selectable in text-mode) 
+
+
+_~Operation:
+
+_Enhanced GEM-dialogue:
+
+~  General:
+      -> Dialogues in the background can be operated with the mouse, by 
+         holding the right mouse key as well.
+      -> flying dialogue boxes jump to the mouse position with a mouse click 
+         outside the dialogue boxes
+
+~  Hotkeys:
+      -> In dialogue boxes with Edit-fields the Alternate-key must be 
+         held down at the same time as the Hotkey.
+      -> in Popups and Dialogues without Edit-Fields, pressing the 
+         Alternate-key is optional
+      -> a double click can be simulated by a left mouse click while 
+         holding down either shift key
+
+~  extended input facilities in EDIT-fields:
+      -> The cursor position can be set with the mouse
+      -> Jump to first/last input-field (Home/Shift-Home,Shift-Up/Down)
+      -> move one word forwards/back (Ctrl-Left/Right)
+      -> jump to beginning/end of  (Shift-Left/Right)
+      -> Previous input field (Shift-Tab/Shift-Enter/Shift-Return/Up)
+      -> Next input field (Tab/Enter/Down)
+      -> Delete input (Escape)
+      -> Delete input after cursor (Shift-Delete)
+      -> Input box for special characters (Shift-Insert)
+      -> History-Function to show previously entered text
+          -> Ctrl-Up/Down
+          => with Shift-key: search for text in history
+      -> Clipboard support:
+          -> Ctrl-X: cut text and in store in clipboard
+          -> Ctrl-C: copy text to clipboard
+          -> Ctrl-V: paste text
+          => with Shift-key: append text to Clipboard/EDIT-field
+
+~  Popup-Menus:
+      -> Cursor Left/Up: previous entry
+      -> Cursor Right/Down: next entry
+      -> Home/Shift-Home: first/last entry
+      -> Escape/Undo: Abort
+      -> Space/Return: select the current entry
+
+_Main-Dialogue:
+
+~  'List'/'Path':
+  The entry slots in the popups 'List' and 'Path', in the main dialogue box 
+  can be filled with the current wildcard or path respectively by clicking 
+  with the shift key pressed or by double clicking. The entries can be 
+  saved permanently by saving the configuration.
+
+  To call the popups with a hotkey, a shift-key must be pressed as well as 
+  the alternate key, otherwise only the edit cursor will be set. A single-
+  click in the edit range will only position the input cursor; call the 
+  popups with a double click or a single click outside the edit range.
+
+~  'Extract'/'Compress':
+  By selecting the buttons 'Extract' or 'Compress' with a double-click or 
+  with Shift-Alternate-Hotkey the popups 'Destination' or 'Compress' will 
+  be called provided the dialogue boxes 'Extract-Options' or 'Compress-
+  Options' are not open.
+
+_Use of the Display function:
+
+  Cursor-Up/Down               -> Line up/down
+  Cursor-Left/Right            -> Column left/right
+  Shift-Cursor-Up/Down         -> Page up/down
+  Shift-Cursor-Left/Right      -> Page left/right
+  Home/Shift-Home              -> Beginning/End of texts
+
+  Mouse-click                  -> Block deselect
+  Drag with mouse key pressed  -> Block select
+
+_~Speed:
+
+  By careful choice of the parameter settings the speed of the Shell can be 
+  increased during extraction or testing of archives. Set the 'Indicator' 
+  at 'None', 'Memory' on 'Maximum' and 'Dialogues' at 'Flying'. 
+  Alternatively set the option 'Turbo-Mode', though then it is not possible 
+  to abort the pack function.
+
+_~View-Protocol:
+
+  LZH-Shell supports a range of modern communications protocols such as, 
+  XAcc-2, AV, View or Drag & Drop. By means of these protocols 
+  communication or data exchange between different applications is 
+  possible, e.g. under TOS, accessories can pass key strokes to the main 
+  application provided they do not themselves use those key strokes.
+
+  The View-Protocol is an recognised standard which simplifies the calling 
+  of external fileviewers for the programmer and extends the possibilities 
+  for the user. What are the advantages of this protocol?
+
+  If a file-viewer which supports this standard is loaded in memory - 
+  whether as an accessory under TOS or as an application under multi-
+  tasking - it is registered with the LZH-Shell for use when a fileviewer 
+  is needed. By this means the Shell, for example, is able 
+  to call the Fileviewer to show any files provided this option 
+  has been chosen rather than the internal show-function or an external 
+  viewer.
+
+  Unfortunately it is still the case that very few programmes support this 
+  standard  (e.g.. ShowImage, GEM-View or 'Zeig's mir'). Therefore the 
+  Shell also supports older versions of the above programmes, which do not 
+  support the protocol, and also 1stView and 1stGuide, in order to 
+  address the widest variety of fileviewers 
+
+  For the Shell to find the fileviewer when it is not present in 
+  memory, either the Environment-Variable 'View' must be set to the path 
+  where the viewer is found (beware of large/small characters!) or the 
+  Fileviewer must be specified by the option 'Viewer'. The last 
+  solution is certainly simpler for the user but only works when 
+  LHarc-Shell is active. The Shell then loads the File viewer. Ideally 
+  the viewer should be always loaded (e.g.. as an accessory), which 
+  can only be done by use of the View-Protocols. In this case no 
+  Environment-Variable need be set.
+
+  Under Multi-Tasking the viewer can also be registered as an external 
+  application, recognised by the VA_START message, and started in parallel 
+  (Option 'Concurrently') The viewer will be started if it is not 
+  already loaded and further calls will be sent to the viewer by the 
+  VA_START message. This communication method may not be as efficient 
+  as the View-Protocol, but is simpler for the user.
+
+_~AV-Protocol:
+
+  The LZH-Shell understands the message VA_START' (as well as some 
+  others of no interest to the user), by which Archives can be passed 
+  to the shell. Therefore if the shell is installed on the Desktop or 
+  in another interface (e.g.. Gemini or Chat-win), VA_START will be 
+  used when the Shell is already in memory under MultiTasking.
+
+_~Drag & Drop:
+
+  Under MultiTOS the new Drag&Drop-Protocol is supported, so that Archives 
+  can be dragged from the Desktop or similar programmes (e.g.. Gemini) to 
+  the main window of the Shell, and their contents list will be 
+  loaded and displayed.
+
+  Under other multi-tasking-environments such as MagiX! or Geneva 
+  Drag&Drop is only supported when a Desktop is in use which supports 
+  the AV-Protocol (e.g.. Gemini)
+
+_~Unix-Wildcards:
+
+  '*'       Any character sequence
+  '?'       A single character
+  '@'       Special character/punctuation
+            (e.g..: '@*' represents the character '*' and not a 
+            character sequence
+  '[a-f|h]' a range of characters (a letter from 'a' to 'f' or 'h')
+            The 'or' character '|' can be omitted. Several entries can 
+            be strung together in a sequence, so for example:
+            [a-eo-sxyz]' (meaning the letters 'a' to 'e','o' to 's' and 
+            'x','y' and 'z'). Special characters within the range are also 
+            possible but only have meaning for the characters '-', '|' and 
+            '^'//
+  '[^akn]'  exclude characters (neither 'a','k' nor 'n')
+
+  It is possible to enter additional wildcards separated by a comma, e.g..
+  '*.C,*.S' stands for all C- and Assembler-source texts. This is 
+  useful for example for a wildcard entry after a path.
+
+__Examples
+
+  '*','*.*'     ->  All files
+  '*.?*'        ->  Files, which have an extension, so for example,
+                    'LABER.DOC', but not 'TEXT'
+  '*.C'         ->  all C-source texts
+  '*.[CS]'      ->  all C- and Assembler-source texts
+  '[^A]*'       ->  Files, whose Name does not begin with 'A'
+  '*[A-C]'      ->  Files, whose Name ends with either 'A','B' or 'C'
+  '*.TXT,*.DOC' ->  all file with the extensions 'TXT' or 'DOC'
+  '*[ABC]*'     ->  Files, whose Name contains an 'A','B' or 'C'
+
+_~Self-extracting Archives (SFX):
+
+  From version 3.10 onwards it is possible, using the command 'Make 
+  SFX' and the external utility 'MAKE_SFX' to make self-extracting 
+  SFX-Archives. There are some minor restrictions, to make the SFX-
+  Loader is as small as possible:
+
+  1. Only the following algorithms are supported:
+     -lhd-  -> Folder
+     -lh0-  -> unpacked LHarc-files
+     -lz4-  -> unpacked Larc-files
+     -lh5-  -> LHA-packed files (lh5-Algorithm)
+
+     For older algorithms (lz5,lh1) you must revert to other SFX-Utilities 
+     such as 'SFX_LARC' and 'SFXLHARC' by Markus Fritze.
+
+  2. Encrypted files are not supported
+
+  Be warned that when the archive is altered by LHarc or the Shell, the 
+  SFX-unpacker of an archive is lost; after such operations the SFX-
+  archive must be remade either with the command 'Make SFX' or with the 
+  utility 'MAKE_SFX'.
+
+  Because of the structure of the SFX-Loader, some older versions of LHarc
+  and those on other computers may have problems reading SFX-Archives. 
+  Among other things you may be warned that there is redundant or corrupted 
+  data at the end of the archive.
+
+Command line parameters
+
+ Syntax: LHarc [<command>] [{{-|/}{<switchs>[-|+|0-3|<options>]}}...] 
+ <archive>[{<Drive>:[\]}|{<Base-Directory>\}] {[&|&-|~] <Paths/Files> ...}
+ --------------------------------------------------------------------------
+
+  <Command>
+   a: Add files to archive           u: Update newer files to archive
+ f,r: Freshen/Re-construct archive   m: Move files to archive (means 'a-d')
+   d: Delete files from archive    e,x: Extract files from archive
+   p: DisPlay files on screen      l,v: List/Verbose list of archive
+   t: Test integrity of archive      c: Compress files in AFX-format
+--------------------------------------------------------------------------
+<Switchs> (WARNING: The meaning of the d-switch has been completely 
+changed)
+   r: Recursive expansion of dirs    w: Specify work-directory
+   x: Extend filenames               m: No Message at query
+   p: Distinguish pathnames          f: Include folders in archive
+   c: Skip time-comparison           i: Ignore attributes
+   a: Any attribute                  v: Display with external tool
+   n: Set process-indicator          h: Hold screen after finishing
+   t: Time-stamp of archive          y: Only files with 'changed' attribute
+   b: Clear 'Changed'-attribute      l: Use Larc compatible method
+   q: Suppress all messages (quiet)  o: Use LHarc 1.13 compatible method
+   u: Store - don't compress files   k: Header-level (0-2)
+   e: Include file-comments          z: Include archive-comment
+   d: Delete files after command     C: No crc-check during extraction
+   g: Extract archive in folder      j: Exclude empty files
+   5: Force LHarc 2.0x archive (lh5) 4: Store in Larc compatible method
+   s: Convert backslashs to slashs   P: Process-Indicator-Character
+   L: Limit memory-allocations       S: Case-Sensitive filenames
+   M: Maximum file-size              N: Only files newer than date ddmmyy
+   U: Store files uncompressed       R: Rename Unix-Files
+   I: Compress files to directory    B: Retain backup copy of archive
+   A: Add if file is not in archive  D: Delete if file is not specified
+   W: No wildcard-matching           X: Make relativ pathnames
+   Y: Encryption                     K: Acoustic signal after finishing
+   ?: Display helpscreen
+path;\ Make relativ pathnames        ~,! Exclude files
+  &,@ Get file-list from file     &-,@- Get file-list from standard input
+
+Translation from german 21/02/95 by:
+Alan Kennedy 107, Fernside Road, London SW12 8LH UK
+Tel 0181 673 3930; Internet kennedy@targ.demon.co.uk

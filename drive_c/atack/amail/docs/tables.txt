@@ -1,0 +1,29 @@
+                 Modular conversion tables for use with aMail
+                 --------------------------------------------
+                     
+   Here are files used as source tables for charset encoding. Every
+file with .tbl suffix is loaded and that file must follow following
+rules:
+
+1) plain text file (no control bytes)
+2) first line is a name of charset
+3) next lines are composed from 4-byte key, space and hexa-number
+   The conversion is one-way if a char '%' is the first one on the line.
+
+example:
+iso-8859-2
+a' E1
+o' F3
+
+next file:
+KAMENICKA
+o' A2
+a' A0
+
+or example of conversion table with one-way coded bytes:
+us-ascii
+%o' 6F
+%a' 61
+''  27
+
+Warning: Outgoing messages must be in any ISO-8859-XX charset!

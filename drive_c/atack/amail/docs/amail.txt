@@ -1,0 +1,413 @@
+                                  Manual for
+                                              .__.__   
+                        _____    _____ _____  |__|  |  
+                        \__  \  /     \\__  \ |  |  |  
+                         / __ \|  Y Y  \/ __ \|  |  |__
+                        (____  /__|_|  (____  /__|____/
+                             \/      \/     \/         
+   
+                            v1.27 from 04.02.2001
+
+                            
+aMail is a freeware GEM mail client for receiving, writing and sending mails
+via InterNET. Its main features are:
+
+o fully mouse controlled GEM program, smaller memory requirements 
+  than other "texts" programs ported from U*nix
+o works with MiNTNET - it doesn't need other TCP/IP sockets
+o works with STinG/STiK
+o works with Draconis
+o works with IConnect
+o has fully U*ix compatible mailboxes - you can fetch your mails from other 
+  system from work or school
+o uses SMTP, POP3 and NNTP protocols
+o supports UUENCODE and BASE64
+o supports MIME standard (you may save MIME attachments by drag&drop directly
+  into the desktop thanks to VA protocol; sent attachments have a set type
+  according to the file mime.types)
+o ASCII configuration file, so you can edit it freely in a text editor
+o you may define up to 44 mailboxes for sort your mail according to 
+  given rules
+o aMail hasn't own text editor - so you may use your favourite text editor,
+  but it must support OLGA protocol (QED, Everest).
+o supports AV, FONT, XFSL and UFSL
+o understands VA_START
+o parse URLs in messages (using URLserver - an utility from ATACK)
+o support Czech language and other iso-8859-XX charsets
+o has own address book
+o and more features that you can evaluate yourself ;)
+
+What do you need to run aMail?
+------------------------------
+o MiNT (is highly recomended, but the program works in SingleTOS or MagiC, too)
+o AES at least version 3.40 (but without a MultiAES you can read messages
+  only)
+o OLGA Manager (needed for creating messages)
+o Text editor which supports OLGA protocol (QED, Everest)
+o 500 KB of free RAM
+o MiNTnet or STinG/STiK or Draconis or IConnect (for sending and receiving mail)
+
+We recommend:
+-------------
+o MiNT 1.15.x (http://www.cs.uni-magdeburg.de/~fnaumann/mint/)
+o N.AES 2.x (http://www.woller.com/)
+o QED 4.5x (http://www.tu-harburg.de/~smcf1605/qed/main.html)
+
+Some basic tips & hints: 
+------------------------
+1. If the program is placed on a minixfs/ext2fs partition and it doesn't run,
+   check the settings of executable flag (rwx--x--x)
+2. If you want to use a mailbox from Unix, just suck it (e.g. with aFTP client)
+   and rename it to the $HOME/amail/inbox or open it from a menu
+3. If you want to use a mailbox from Newsie, use the included script for converting.
+4. Your text editor MUST support the OLGA protocol, because aMail sends the mail
+   after getting the message "Save File" from the OLGA Manager. TempDir must 
+   be written with the following format: drive:\dir\ and NOT /dir/ !
+   
+As a small bonus there is the script n2amail.sh for converting Newsie
+mailboxes into the Unix format included to the package. Just run this script from 
+your shell and it will ask for necessary paths. There is a script for sorting
+address book in the package - just execute it and read instructions.
+
+Start with a parameter or VA_START
+----------------------------------
+You may start aMail with a parameter from a command line or you may drop 
+it by VA_START. The parameter must be of the URL form for mail sending
+(e.g. "mailto: atack@szt.cdrail.cz"). You may add your subject separated
+with a question mark
+(e.g. "mailto: atack@szt.cdrail.cz?subject=Testmail"). You may start aMail
+with .cfg file or mailbox file on the command line (or send a VA_START message).
+With aMail version 1.22 and above you may add following command switches to the
+command line:
+-s : send messages in outbox
+-g : get messages from POP3 server
+-e : do exchange (send+get)
+-q : quit after previous action(s)
+
+   You can Drag&drop file to an aMail window. The file is used as a config file
+(if the file is the config file) or is opened as a mailbox (if the file is 
+the mailbox) or is taken as an attachment.
+
+URL parsing
+-----------
+When you click into the message text, the clicked word will be analysed and in
+case the word is in URL format (e.g. http://www.pwp.cz/atack) it will
+be sent by VA_START to the corresponding application (in this case for example
+CAB) with the assistance of URLSRV or StringServer.
+URLSRV is freeware. It isn't included to the package, but you can get it 
+from our WWW page.
+Note: URLs are not highlighted yet!
+
+Internal mailboxes
+-------------------
+   1) InBOX - every incoming message is saved here
+   2) OutBOX - storage place for messages you wrote
+   3) Sent-Mail - successfuly sent messages are moved to this box
+   4) FileBOX - CTRL+O opened mailbox is here
+   5) TempBOX - for internal use only ;)
+   6) RemoteBOX - if you open this box online, you can look at a list
+      of messages on a remote (your POP3) server. You can easily mark
+      messages for deletion or retrieving or leave messages as are.
+      Requested changes will be done when you:
+      a) select another box
+      b) select compress box
+      c) select 'Get messages' (from menu or by clicking on a Get button)
+      d) select 'Do' from an object menu
+      
+User defined mailboxes
+----------------------
+aMail can maintain up to 50 mailboxes. It has 6 internal mailboxes
+(inbox, sent-mail, outbox, ...), so you can define up to 44 more. If you save
+aMail's config, aMail will create a remarked 3-line example in the config file.
+
+-- start ------------- part of amail.cfg file -----------
+CustomBoxName = Atari CZ
+CustomBoxPath = g:\home\root\amail\atari
+DefaultTo = Atari@alpha.inf.upol.cz
+RuleSet = To: Atari@alpha.inf.upol.cz
+RuleSet = Reply-To: Atari@alpha.inf.upol.cz
+CustomBoxName = Work-outbox
+CustomBoxPath = g:\home\root\amail\work_out
+CustomBoxType = 1
+DefaultFrom = somebody@work.com
+-- end --------------- part of amail.cfg file -----------
+
+Here is a closer explanation of the keywords:
+CustomBoxName - name of the mailbox. It will be displayed in the popup menu
+              - compulsory keyword
+CustomBoxPath - path and filename of a mailbox
+              - compulsory keyword
+CustomBoxType - you can set this mailbox as OUTBOX (CustomBoxType = 1)
+DefaultTo     - in case you have opened this mailbox and created a new message
+                this will put the string as the address of the recipient automatically
+                (e.g. To: address)
+DefaultFrom   - in case you have opened this mailbox and created a new message
+                this will put the string as the address of the sender automatically
+                (e.g. From: address)
+RuleSet       - after the '=' mark you can write a rule for sorting the
+                mail. The string is searched in the message header 
+                and according to the rule the message will be sorted to the defined
+                mailbox
+   Functionality Notes:
+   "To: honza" - the message will be passed into this mailbox if anywhere
+      within their header on the line starting with "To:" and anywhere else 
+      the string "honza" will be found (e.g. "To: Friend honza")
+   "atari.com" - all messages which have the "atari.com" string 
+      within their header will be passed into this mailbox
+   It is also possible to create a so called blacklist (mail from
+   anywhere will be deleted automatically), one example follows:
+CustomBoxName = Black Hole
+CustomBoxPath = /dev/null
+RuleSet = From: scott spam
+
+Object menu
+-----------
+
+This menu may be called by pressing the right mouse button over the message 
+header (in the upper part of the window). Then you will work only 
+with the message under the mouse pointer (which will be selected). You may
+delete the message, move, or copy it to another mailbox (copy = move with 
+pressed the SHIFT key), create a new message, reply the message, 
+remove all flags or change the message (a new message is created, 
+which you can edit and the old one will be marked as deleted) and so on.
+
+STOP button
+-----------
+
+By this button you can stop the asock.ovl, which is fetching/sending 
+mail by the time. Therefore you should use this button only when it is really 
+needed! Usually when nothing happens for a long time (connection is lost) 
+or e.g. when you realise that you are sending a message to a wrong 
+person too late ;).
+
+AV Protocol
+-----------
+
+aMail supports and uses many GEM protocols for comfort improvement. 
+Except the minor ones like the FONT protocoll, UFSL, xFSL, Selectric, ... 
+the main one is obviously the AV protocoll. The main purpose is the 
+calling of external viewers for MIME attachments. In this case the 
+icon in the upper right corner of the window becomes clickable and you 
+can do one of the following things:
+
+   1) click on the icon (single click)
+      - a fileselector appears and you can choose the destination path 
+        to save the attachment
+   2) doubleclick the icon
+      - the attachment is exported into the TMP directory and sent to the
+        AV server. For example if you receive amail.lzh as a file 
+        attachment and you have set the LZH-Shell for opening *.lzh files
+        the LZH-Shell will be started with a file amail.lzh as an argument
+   3) drag the icon and drop it on any disk icon, directory... on your 
+      desktop and the attachment file will be saved directly to where you 
+      have dropped it.
+
+   If the file is encoded (and usually it really is) to one of the two 
+   possible codes then it will be automatically decoded while writing. The 
+   text is usually "quoted-printable" ('=3A' etc.) and binary files 
+   are usually in base64 code (thick column of funny characters).
+
+Keyboard
+--------
+
+Now we can describe the keys what can be used in aMail. Except the 
+hotkeys which you can easily find in the menu the keys are:
+
+Arrows Up/Down     - scrolls the message contents to next/previous line
+Shift + Up/Down    - scrolls the message contents to next/previous page
+Clr/Home           - jump to the start of the message
+Shift + Clr/Home   - jump to the end of the message
+Arrows Left/Right  - jump to next/previous message
+SPACE              - jump to next page/message 
+Shift + Left/Right - jump to next/previous page of the messages
+Delete             - mark selected message for deletion
+Insert             - mark selected message on POP3 server for download
+
+Address book
+------------
+
+The basic function and maintenance of the address-book is hopefully 
+clear to everybody, but what does the Group selection stand for? In general it 
+makes the work with the Cc: or Bcc: copies more simple. So if you are 
+sending messages to a constant (similar) group of recipients you 
+need not write to all of them twice. You may write them all (their e-mail 
+addresses) into a text file and then choose this file as a Group item 
+in the addressbook. There must be only ONE address per line. The first 
+address will be used as the primary address (to the To: field in the 
+message header).
+
+   You can create folders since aMail v1.23. The folder is defined (created)
+by "Folder" keyword in an addressbook file. For example:
+
+Username = ATARI maniac
+Email = aman@atari.org
+Folder = ATARI
+
+Sounds
+------
+
+If the audio device driver (audiodev.xdd) is installed, aMail can play 
+samples as a note about some events that may occur.
+
+All samples must be raw sound data, mono, 8bit signed, 12500Hz.
+If you don't want sounds, just 
+a) uninstall the audio device ;) or
+b) delete or rename all samples (sound/new.raw, sound/error.raw) or the
+   sound/ directory.
+
+Reply-to
+--------
+
+aMail knows how to handle the following variants of a message header.
+Let's describe them:
+
+   o The header contains only From:
+     - without any other question this will be replied to the address
+       from the From: field
+
+   o The header contains only From: and To:, which doesn't correspond 
+     to your e-mail address
+     - the [From: | To: | All] dialog appears, where the [All] choice
+       replies to the addresses from the From: and To: fields.
+
+   o The header contains only From: and Reply-to:
+     - the [From: | Reply-to | All] dialog appears, where the [All]
+       choice replies to the addresses from the From: and Reply-to:
+       fields.
+
+   o The header contains only From: and Cc:
+     - the [From: | Cc | All] dialog appears, where the [All]
+       choice replies to the addresses from the From: and Cc: fields.
+
+   o The header contains only From:, Reply-to and Cc:
+     - the [From: | Reply-to | All] dialog appears, where the [All]
+       choice replies to the addresses from the From:, Reply-to: and
+       Cc: fields.
+
+   If in the last three cases the address within the To: field doesn't
+   correspond to your e-mail address (as in the 2nd case) then if you
+   choose [All] then this address will be appended as well.
+
+   In any other case the normal dialog for the header filling appears 
+   (To:, Subject:, Cc:, attachment) and you may change anything you like.
+    
+Quote string
+------------
+
+You may define an own string, max. 10 chars (why longer, then it will 
+be long over the half of a line ;) and more, you can use special formatting 
+chars. Currently aMail distinguishes only %i as the name initials, e.g. if 
+you reply a mail "From: Jan Evangelista Purkyne" and your quote 
+string is "%i > ", all lines will begin with a "JEP > " string. Yep! ;)
+
+MIME attachments
+----------------
+
+The type of an attachment will be automatically set during message sending
+according to its file extension and the file mime.types, which will be searched
+within the following directories (in this order):
+1) /usr/local/share/mime.types
+2) ~/.mime.types
+3) ./mime.types
+
+The file format is plain text, standard and simple ;)
+--- mime.types ----
+application/postscript  ps eps ai
+image/gif               gif
+image/jpeg              jpg jpeg jpe
+text/html               htm html
+text/plain              txt c h cc
+--- mime.types ----
+
+If the type is text/* the quoted-printable code will be used
+as required for text files (containing ASCII character codes higher than 127
+or if the lines are longer than 72 characters) or the base64 code if it
+isn't a text file.
+
+Sounds
+------
+   Sounds in aMail works only via /dev/audio. There will be support
+for Gemjing or something like that in near future.
+
+Pipes
+-----
+   The documentation about pipes is not available, sorry. But it's easy to use,
+see our example.
+
+an example:
+
+ PToolName = Stats
+   PToolCMD = grep "From:" | cut -d " " -f 2- | sort | uniq -c | sort -nr
+   PToolSRC = 0
+   PToolMode = 1
+
+Tools
+-----
+   Configuration and usage is very close to the pipes configuration.
+   You have to define PToolName and PToolCMD keywords only (see example).
+
+   You can use folowing macros on a command line:
+   %c - actual config file
+   %M - actual mailbox
+   %m - actual message (the message will be exported)
+
+an example:
+
+ PToolName = Config in QED
+  PToolCMD = D:\EDITORY\QED\QED.APP %c
+
+   This tool opens actual config file in a QED window.
+
+NNTP protocol - discussion groups
+--------------------------------
+   The goal of NNTP support in aMail is a nntp mailbox file is the same
+as the e-mail mailbox file. You have to add nntp mailbox to your config
+file with kewyword 'CustomBoxType = 2', ie.:
+
+CustomBoxName = comp.sys.atari.st
+ CustomBoxPath = g:\root\amail\comp.atari
+ CustomBoxType = 2
+ NNTPMsgs = 300
+
+   An enhanced 'Get' popup menu is available in aMail by pressing right mouse
+button on the Get icon.
+
+Limitations
+-----------
+
+The number of messages in the mailbox is limited, but the number is given
+in the config file (a text file) where you can edit them simply.
+There are two numbers, one for the amount of memory to be reserved for 
+message headers (default is 200kB which is sufficient enough ;) and the 
+other one is the maximum number of messages in the mailbox (default is 
+1000, maximum is 32768). Both numbers correspond and it would be 
+possible to compute one according to the other one, but this way the 
+programm is more configurable and the nations with short names may set 
+different values, which we can't know, as they want ;)
+If any of these limits are exceeded while the mailbox opening it 
+will be interrupted and the mailbox is further locked as "read only" because 
+the messages which wouldn't have fit in would be lost after mailbox closing. 
+Therefore, the flags wouldn't be saved (read, new), the messages marked 
+for deletion (even for move to other mailbox) wouldn't be deleted and 
+also the mailbox couldn't be compressed.
+Next limitation: messages forwarding works without forwarding of MIME attachments. 
+(I hope we'll fix it soon)
+
+Thanks
+------
+
+We would like to thank all betatesters who shared their expensive time in 
+developing and helping with their suggestions and their advice. We want also 
+thank to Christian Felsch for his QED - a great text editor. All sources of
+aMail have been written with QED. And of course thanks to U2, Pink Floyd and 
+to Stones for the best music for programming ;)
+
+If aMail doesn't work just write down what it does or not, when and 
+where and the versions of your system components (OS version, MiNTnet 
+version, AES, free RAM at a start of aMail, environment variables 
+setting, a bank account number ;-)) ...)
+
+                                     Yours ATACK (InterNET division :)
+   
+                                           e-mail: atack@szt.cdrail.cz
+                                           http://www.pwp.cz/atack/

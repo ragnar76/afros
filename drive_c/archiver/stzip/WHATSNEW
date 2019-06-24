@@ -1,0 +1,546 @@
+		What's new in STZIP ?
+
+
+Version 2.6         27 Apr 94
+-----------------------------
+
+Argl, some new bugs managed to introduce themselves in v2.5...
+
+- First file in a zip didn't extract in Gem, fixed.
+- Create directory in Gem had some new and different problems, fixed.
+- Tempo directory name was cleared at the config box apparition, fixed
+  (reported by Christophe Boyanique)
+- Fixed the 'no file(s)' problem occuring randomly in CL when extracting
+  files from a zip with subdirs (reported by Gerhard Hoelscher)
+- It was impossible to extract only a file in CL if some files with same name
+  are in subdirs of the zip. Fixed. (reported by Gerhard Hoelscher)
+  Note however that using 'stzip -xr test readme' extracts all the readme
+  files from the zip.
+- Empty subdirectories were stored when using 'stzip -ar test readme'. Fixed.
+  (reported by Gregor Duchalski)
+- Maximum numbers of parameters in CL increased to 100.
+
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+
+Version 2.5          2 Apr 94
+-----------------------------
+
+- When extracting a file that already exists on disk, it is possible to
+  rename it (in addition of skip/overwrite)
+- It is possible to rename a compressed file in Gem (just edit the name).
+- Compression using the Deflate algorithm is about 10% faster.
+- File Selection Box scrolls when selecting multiple files
+- Search backward available in file viewer
+- It is now possible to compress/extract empty subdirs
+- You may change the directory use for tempo files : use -b dir in command
+  line or go in the config dialog box in Gem. See stzip.doc for detailed
+  explanations.
+- Added special buttons for picture display (2.4 was looking at the file
+  extension to choose between internal/picture viewer).
+- 3D buttons under MultiTOS.
+
+- Fixed recursive compression in command line (Franck Arnaud)
+- Finally fixed rename bug (was a compiler bug, really !)
+- Fixed TRAP bugs (Harun Scheutzow)
+- Fixed bug in 68881 MMFPU (Jan Kriesten)
+- Fixed problem in moving main window while viewing a file (Eric Da Cunha)
+- Fixed scroll in an overwritten (de)compression window (P&T Bensoussan)
+
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+
+Version 2.4         22 Dec 93
+-----------------------------
+
+- The file display feature now speaks to picture viewers (such as
+  ShowView or GemView) to display the file as picture.
+   - Install a picture viewer supporting the View protocol as an accessory
+   - Set the View environment variable to the full name of that viewer
+     (e.g. setenv View C:\GEMVIEW.ACC). This should be optionnal, if
+     you don't set that variable, STZip will try to find the viewer by
+     itself.
+   - When clicking on the "Display" button in STZip, if the file is a
+     picture that the viewer is able to display, STZip will ask you
+     wether you want to display it as a picture.
+   - When displaying a compressed file, it will be extracted in memory.
+     The viewer should support the ViewData extension of the View protocol
+     to be able to display that picture. ShowImage support that extension.
+  If STZip don't ask you if you want to display the file as picture, this
+  is because
+	     - The viewer is not able to display that file
+	     - You try to display a compressed file and the Viewer does not
+	       support ViewData.
+
+
+- If MiNT is present, STZip now runs as a MiNT domain process when used
+  in *command line* (with the help of Evan Langlois) (Gem interface
+  does not yet support that). This allows to compress files that don't
+  fit in the limited DOS 8.3 filename format. As in previous version,
+  STZip is able to extract long file names, both in command line and in
+  Gem.
+
+  Note that STZip may have some problems creating directories during
+  extraction on alternate file systems (RAMFS or MINIXFS). This is a bug
+  in the MiNT kernel which has been reported.
+
+  If MiNT is present, filenames are case sensitives. Using common Atari
+  zipfiles where filenames are all upper cases requires that you put in the
+  command line the name of the file to extract in upper case.
+  Use the -k option to set case insensitive mode.
+  Note however that for security reasons, a file named 'ab' will overwrite
+  'AB' in a zipfile.
+
+- You can set frequently used options in command lines in an environnement
+  variable named STZIP_OPT. STZip will simply add that variable at the
+  beginning of the command line.
+  e.g.    setenv STZIP_OPT -k
+  so that STZip will always be in case insensitive mode.
+
+- When creating a self extracting file, you may choose if the self
+  extracting file will overwrite files during extraction without
+  asking. Answer Yes to the question in Gem, or use the -o switch
+  in command line if you want that.
+
+- In the zip contents box, a point just before the file name means that
+  there is a comment attached to that file.
+
+- In Gem, it is possible to create a subdir in the zipfile. The program
+  will ask you wether you want to create a subdir in the disk or in the
+  zip when you click on "Create Subdir". Note that a subdir in a zipfile
+  only exists if you put files in it. If you do not compress anything
+  in it, the created subdir will not appear in the zipfile.
+
+- Added a -q option in command line, it suppress all output.
+
+- Fixed name truncation when compressing files with a very long path
+  (reported by Georges-Emile April). Generally, using very long paths
+  should work better.
+- Fixed crash when inflating files in command line using MultiTOS
+  (reported by Stefan Haake).
+- Fixed problem when self extracting files contains subdirectories with
+  short names (reported by Steven Ourada).
+- Fixed various and/or random problems when STZip was started as an
+  application (reported by steve j and Sebastian Ludorf)
+- Finally fixed problem with MetaDOS
+- Fixed division by zero bombing when displaying a short text file (reported
+  by Scott Dowdle, Dirk Steins and Morgan Stewart)
+- Fixed problem when self extracting files contains individual comments
+  (reported by Roger Derry)
+- Fixed List contents to printer when using Gem (reported by Willem
+  Mulder and Roger Derry)
+- Fixed bug in File Display / Save when the user set the block start after
+  the block end
+- Directories weren't deleted on modern TOS when using delete in Gem.
+  Fixed. (reported by Eric Da Cunha)
+- Default font size in file display is now 9 instead of 10. (Steve Taylor)
+- Fixed bug when clicking on the full box of the file display window.
+  (Peter Seitz)
+- Fixed problem with CRC when extracting on a PC empty files compressed on ST
+  (reported by Markus Fischer).
+- Bypass incompatibily (sign of offset in Fseek(o,2)) of some MiNT file
+  systems (Evan Langlois).
+- Finally fixed rename bug.
+- In rare occasions, an error message was wrongly produced when
+  deleting compressed files (Move option) (Dirk Steins).
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 2.3         22 Jul 93
+-----------------------------
+
+- Added a listing option in Gem for users who can't ever use the command line
+- Added keyboard shortcuts for the main dialog (since auto programs such as
+  LetThemFly don't work on that special window/dialog)
+
+- The resource file has been damaged in v2.2, that caused a lot of troubles
+  in Gem (file display, comment editing...). Fixed
+- STZip was sometimes reporting corrupted files when using the 'Check' function
+  while they were correct (reported by Robert Federle)
+- No more limits of 200 files in the file selectors.
+- Self extracting files now prompts before overwriting files.
+- When moving files, the subdirectories weren't deleted. Fixed. (reported
+  by Richard Karsmakers and Ghlenn Willard)
+- Fixed problems when using Update on zips with subdirs (Gregor Duchalski)
+- Fixed problems about extensions with createdir/file rename (Ivan Venturi)
+- Sorting a zipfile with size wasn't working (reported by Renker)
+- When deleting a subdirectory on the disk, the exact number of files
+  is displayed on the prompt Yes/No.
+- Fixed bug with MetaDOS (unchecked) (reported by Julian Reschke)
+- Fixed bug about the -p option (reported by Markus Dobler)
+- Minor fixes in error handling, File Display (key assignement, speed...)
+
+- I suppose there's no more problem with dialog boxes on TT, I gave up
+  trying to save the screen, it is now redrawn after a dialog.
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 2.2         12 Feb 93
+-----------------------------
+
+A few new features ...
+
+- Added block operation in File Display. You may now select a block
+  and save it, print it or copy it to the clipboard. It is also
+  possible to print the entire file. Press the HELP key (or double click
+  in the window) during display to select on a function or to find the
+  keyboard shortcuts.
+- On modern desktop, droping a file (which is not a zipfile) on the STZip
+  icon will open a zipfile with a similar name (e.g. FLAP.ZIP if you dropped
+  FLAP.PRG). STZip will use the path of the file as the current directory.
+- New option "Go in Current Dir" in configuration : rather than using the
+  file directory saved in the configuration file (for choosing the zipfile
+  and the files to compress), STZip choose the current directory.
+- Default compression algorithm is now Deflating.
+- Font ID and size used for file display are now saved in the configuration
+  file.
+
+and a few fixes...
+
+- When selecting zip or disk files (_not_ subdirs), the total selected size
+  was displayed. It now scans recursively subdirectories to find their sizes.
+- Rename in Gem was buggy, Ghlenn Willard.
+- Fixed small compatibility problems with PKZip 2.04 (crypt and inflate)
+- Fixed bugs in medium resolution display (reported by dmviolat)
+- Displaying a crypted file wasn't working, reported by Theo Runia and
+  Carsten Brockman
+- Fixed problem in Gem when two subdirs in the zipfile begins with the
+  same characters, reported by Carsten Brockmann
+- Fixed problems in file display with some font size, reported by Christian
+  Limpach
+- Fixed memory bug when deflating lots of very small files (Ghlenn Willard)
+
+and a few minor fixes.
+I had reports about problems with dialog boxes on TT, I've changed a few
+things but I cannot check so I don't know if it's ok or not. If there are
+still some problems, try removing the TT flags in the program header. That
+may fix the problem.
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 2.1         27 Dec 92
+-----------------------------
+
+- The main dialog is now in a window, this should be better for
+  MultiTOS users.
+- Updated the main documentation (the old one was very outdated)
+- Speed up inflating on self extracting files, it was slower than inflating
+  the sfx file from STZip !
+- Extended the limits of a zipfile, it is now possible to have up to
+  65536 files in a zip, assuming you have the memory to handle them.
+- Added a switch to suppress queries when deleting files, and a Rename
+  button when looking at a file (after a double clic).
+- Added a -g flag in Command Line and a button in the Config box in Gem
+  to extract a file in its corresponding directory. If selected, all files
+  from FFF.ZIP will be extracted in the directory FFF.
+- Wildcards for the zipfile in command line are allowed (but be sure that
+  your shell doesn't expand them because it won't work). You can do
+     stzip -xg *.zip    this will extract all the zip files in their directory
+  or stzip -z *.zip <comment.txt  this will change the zip comments for all
+  the zipfiles. (note that -z may now be used alone, without any action
+  switch).
+- Support of the slighlty different crypting algorithm of Unix's Info-Zip.
+
+All other changes are bug fixes :
+
+- Fixed a bug in deflation (giving CRC errors)
+- Fixed a memory problem when checking zip files, reported by willy.
+- Fixed 'Display free disk space on TOS<1.4' which wasn't working,
+  reported by Vincent Partington.
+- Do not bomb when clicking on Select: 0 with an empty zip file, reported by
+  Pierre-Alain Boucard.
+- Fixed small problems in the display window after a font size change.
+- A CRC error was wrongly produced when displaying a large deflated file,
+  this is fixed, reported by Ghlenn Willard.
+- Fixed problems with 'Allocating twice outbuffers', Ghlenn Willard.
+- When a file is compressed and then deleted (because the 'Move' option is
+  enabled), the file selection box wasn't updated, again Ghlenn Willard.
+- Fixed the "Sort by extension" option in Gem, it was sorting wrongly the
+  filenames. Nobody was using this ?
+- Specifiying a file with a path during extraction/delete in CL was buggy,
+  as well as giving a directory name for compression.
+- Fixed problem with freshen/update when dealing with subdirectories.
+- Since I had a lot of questions asking "What is ZIPJR for?", I've removed
+  it from the distribution. Tell me if you used it.
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 2.0          15 Aug 92
+------------------------------
+
+Summary of changes, from most important to small bug fix, since version 1.1 :
+
+
+- New compression algorithm
+  -------------------------
+  
+  Named 'Deflating', it compress better than imploding and is
+  compatible with the upcomming PKZIP 2.0. At this time, PKZIP 2.0 is not
+  released, but an alpha version with deflating, v1.93, is available.
+
+  Using a command line, you may select this algorithm with the -ed option.
+  The default algorithm, for this version, is still Imploding.
+  Using the Gem interface, you may select this algorithm in the Config
+  dialog box.
+
+  This algorithm has three variants : one that compress faster but not so good,
+  one medium, and one which compress best but slowly. There are buttons to
+  select the one you want in Gem. Using a command line, -edf gives you the
+  fast one, -edb the best one, and -ed the medium.
+
+  Note that at the time of the release, not all versions of ZIP on all
+  computers are able to extract deflated files.
+
+
+- Self extracting file support
+  ----------------------------
+
+  You may use ZIP2TOS.PRG to convert a zip file to a .TOS program which
+  will contains the compressed files and will extract them when launched.
+
+  Without parameters, you will be prompted for the file to convert. You may
+  also calls it with the zipfile names in parameters, from the desktop (drag
+  a file) or a shell (zip2tos *.zip)
+
+  A self extracting file should contains _only_ deflated or stored files. It
+  will be unable to explode or unshrink files. This is _not_ checked when
+  ZIP2TOS does the conversion.
+
+  A self extracting file may be used as a normal zip file. Using STZip >1.3,
+  you will be able to change the comments, list, extract, add or delete
+  compressed files in the self extracting file.
+
+
+- Crypting and uncrypting files
+  -----------------------------
+
+  A compressed file inside a zip may be crypted. STZip use the same
+  algorithm as PKZIP, 
+
+  You may specify a password using the -w switch when using the command
+  line interface, or by clicking in the "Crypt box" in the Gem interface.
+  The files to be compressed will be encrypted using that password.
+
+  That password will be also used when extracting files. If you forgot
+  to specify it and STZip encounter a crypted file, it will prompt you.
+
+  (i.e. : if you compress files using password BURP and extract them
+  without leaving STZip, STZip won't prompt you for the password since it
+  still has BURP in mind).
+
+  STZip is also able to tell you if the password supplied for extracting a
+  file is wrong. Note that the password is not stored in the file (would be
+  stupid!).
+
+
+- Updating and freshening a zipfile
+  ---------------------------------
+
+  'Adding' would compress all the selected files, wether they are already
+  in the zip or not.
+  
+  Three new modes are available :
+
+ -Freshening : only specified files that are already in the zip and are
+        newer than those in the zip will be added.
+ -Updating : only specified files that are already in the zip and are
+         newer than those in the zip, _AND_ the specified files that are
+         not in the zipfile will be added.
+ -Using a date line : only the files changed after the specified date will
+         be added.
+
+To use that in Gem, click on the 'Add Mode' box, and select what you want.
+To use that in a command line,
+   freshening is -f : stzip -f backup *.c
+   updating is -u   : stzip -u galery *.gif
+   date line is -t  : stzip -a -t011692 fip *.prg
+      Will add all *.prg files created or changed after Janury 16th 1992.
+      Note the US date format !
+
+- Minor changes
+  -------------
+
+  - Added 'Delete original files' in the Config box in the Gem interface. If
+    selected, the original files on disk will be deleted after compression.
+
+  - In Gem, new window for displaying information, so that it should be
+    possible to compress in background using MultiTOS.
+
+  - STZip checks for its configuration file in its home directory
+    using shell_find. I think that doesn't work on TOS < 1.4.
+
+  - STZip detects files packed with Ice and Atom and does not try to compress
+    them (infos supplied by David Ducassou). Also checks files packed with
+    compress, freeze and PfxPack as does older versions.
+
+  - Added 'Check Zipfile' in the Gem interface. That checks if the zip
+    file extracts correctly.
+
+  - If you're in the zip directory DIR while in Gem, the files you may compress
+    will be put in that directory. That's not new, the news is that you may do
+    the same using the command line interface, by using the -i option :
+    stzip -a burp -i dir *.*
+    will add all files in the directory dir OF the zip file.
+
+  - File attributes are handled : stzip will also adds hidden and system files,
+    and will extract those files with their original file attributes.
+
+  - Added an option to force the free disk space display on Tos < 1.4
+    (this is generally slow).
+
+  - More drive letters in Gem.
+
+  - Redirection >AUX: is now possible using the command line interface
+
+- Bug fixes
+  ---------
+
+  - Fixed bug when extracting 0 length files on TOS 2.x and 3.x, reported
+    by Gianfranco Marino and willy.
+  - Fixed bug when displaying files with lines separated by CR, reported
+    by Robert Eckardt.
+  - STZip wasn't adding the default .ZIP extension when the file name typed
+    in the file selector was just 8 characters long (Robert Eckardt).
+  - Fixed bug with vro_cpyfm, reported by Wilfried Behne
+  - In Gem, the zip size is now updated after a delete, reported by willy
+  - It is now possible to display a Stored file in the display window
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 1.1          14 Jan 92
+------------------------------
+Well... Some bugs in 1.0 needed to be unimplemented ! :-(
+- Fixed incompatibility bug with PKUNZIP happening sometimes
+- Corrected bug when changing the zipfile after having edited the
+  comments of the old one (was overwriting the new one)
+- You may now add a file in a subdir of a zipfile, it will be compressed
+  with the correct path (it was added in the root of the zip file before).
+- Corrected bug when compressing many files in .TTP
+- The path stored in the config file wasn't used in some functions (resulting
+  in disk selector containing directories of a path and files of another one !)
+  fixed (reported by willy)
+- Fixed bugs with MultiGEM reported by Peter Kocourek
+- Fixed bug when displaying files with lines ending with LF only (not CR LF)
+- Improved file display (horizontal slide etc)
+- Faster compression on highly redondant file (was very slow)
+- Only ESC stops compression or decompression (before any key was stopping)
+. Added confirmation when deleting a file on disk.
+. Fixed bug when PATH was empty
+. Fixed bug when zip file name was >45 chars
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 1.0           28 Dec 91
+-------------------------------
+- New implementation of the Imploding algorithm. It is now faster
+  (especially for text files) and uses less memory.
+- You may display files in a window, compressed or uncompressed !
+  Press HELP for help (search string, save file, clipboard, change fonts)
+- Added edition of comments in GEM.
+- Delete files in zip and overwrite file in zip is supported both in GEM
+  and TTP.
+- Included resource in the program and added color support.
+- Fixed problem with zipfile being sometimes corrupted when adding a file
+- Added handling of a config file. It is loaded automatically if found and
+  may be saved in the dialog box 'configuration'. It contains also the
+  directory where to find zipfiles (used in the file selector) and the 'DISK'
+  path.
+- Included english and german translations of the documentation made by
+  Peter Kocourek and Juergen Kiesheyer. Thanks to both !
+- With new features and inclusion of the resource in the program, stzip.prg
+  has largely grown in size. People not using GEM might be low in memory or
+  might want to reduce loading time, so I included ZIPJR.TTP, which is a
+  command line only version of STZIP, without GEM handling. Features are
+  exactly the same.
+- Added check archive (-c) and extract files to screen (-s) in command line.
+- Faster scroll in the window when compressing/extracting in GEM
+- On TOS < 1.4, doesn't display free disk space because it's slow
+- You may stop compression/decompression in GEM by pressing a key
+  (it will only take effect when displaying something)
+- Delete original files after compression (ie : -am) works as expected in TTP.
+- Disable FormDoIt on some buttons (file names etc) so that there's no
+  alt-key bindings on these buttons.
+- Fixed problem with files packed with PKZIP and authenticity verification
+- Fixed compatibility problem with some versions of UNZIP (<3.0)
+Bugs :
+- When LTMF 1.14 is active, pressing a key to stop compression in Gem
+  doesn't work.
+- Selection on multiple file (by keeping mouse button pressed) doesn't
+  work as expected when FormDoIt is active.
+- Display a file in GEM which was Stored is not yet possible.
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 0.9      19 Jun 91
+--------------------------
+This is a bug fix version.
+-Fixed problem (was terribly slow and bad ratio) with imploding highly
+ compressible files (such as data base etc).
+-Fixed problem computing CRC when imploding small files.
+-Fixed problem with AMCGDOS ('invalid handle').
+-Fixed problem with zip file of length 0.
+-Can select multiple files in one clic in Gem.
+-'@list' option in command line and redirection without shell are working now.
+-Handles errors in GEM and in Implode correctly.
+-Added ARGV support in command line.
+-Can set a zip file comment from a file using '<' redirection
+ (e.g. stzip -az file.zip dummyfile <bbs.txt)
+
+The following 'bugs' are known and will be corrected as soon as possible :
+- support of all screen resolutions
+- delete/update files in a zip
+- changing comments in gem
+- store file when the compressed data is larger than the original
+- the -m option should be considered as unimplemented. it only does a
+  Fdelete on the parameter, without handling directory change, wildcards,
+  ~ and @
+
+--=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=--
+
+Version 0.8       9 May 91
+--------------------------
+Fixed compatibility problem with PKUNZip/Implode, doesn't compress better
+than PKZip anymore :-(
+You can use the old incompatible compression algorithm with the -ej
+switch. It is strongly suggested not to use it unless you are sure
+nobody will extract the file on a PC.
+Hope to increase compression ratio in next release.
+
+Version 0.7      21 Apr 91
+--------------------------
+Big text files couldn't implode without bombing, fixed.
+
+Version 0.6       4 Apr 91
+--------------------------
+Imploding is now the default algorithm, and detects text files to use
+better parameters. Added drive buttons.
+
+Version 0.5       3 Apr 91
+--------------------------
+Added imploding, use the -ei switch to select it in command line, or go in
+the configuration box in gem.
+
+Version 0.4      29 Dec 90
+--------------------------
+Compiler change, stzip.prg is 22k smaller. Added disk format.
+
+[sleeping]
+
+Version 0.3      1 Jun 90
+-------------------------
+Bugs changed, Comments. -z (set zipcomment) and -t (set zipfile date)
+switchs added.
+
+Version 0.2   30 April 90
+-------------------------
+Shrinking is nearly 65% faster.
+Many bugs removed. No more limitation in the number of files added.
+Added a -e switch to select the compression method (currently, only -es
+(store only) is useful), and a -p switch to store paths when not
+recursing into subdirs.
+
+Version 0.1    5 April 90
+-------------------------
+First beta release.

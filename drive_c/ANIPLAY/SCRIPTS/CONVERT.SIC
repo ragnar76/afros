@@ -1,0 +1,55 @@
+if(address("aniplay"))
+{
+	choice=dialog.note("File conversion",
+	                   "[1] MPG in MOV",
+	                   "[2] MPG in AVI",
+	                   "[3] MP3 in WAV or WAV in MP3",
+	                   "-b3","-b2","-b1");
+	if(choice != "3")
+        {
+		title="MPG source file";
+		select="*.MPG";
+		if(choice == "1")
+			target="mov";
+		else
+			target="avi";
+	}
+	else
+	{
+		choice=dialog.note("Sound conversion",
+		                   "[1] MP3 in WAV",
+		                   "[2] WAV in MP3",
+		                   "-b2","-b1");
+		if(choice == "1")
+        	{		                   
+			title="MP3 source file";
+			select="*.MP3";
+			target="wav";
+		}
+		else
+        	{		                   
+			title="WAV source file";
+			select="*.WAV";
+			target="mp3";
+		}		
+	}
+	if(fsel(file, title, select))
+	{
+		if(!stricmp(suffix(file),suffix(select)))
+		{
+			space=0;
+			for(i=0;i<strlen(file);i++)
+			{
+			 	if(file[i] == ' ')
+			 		space=1;
+			}
+			if(space)
+				quote="\047";
+			else
+				quote="";
+			target = substr(file,0,strlen(file)-3) + target;
+			cmdline = "+o " + quote + target + quote + " " + quote + file + quote;
+			Open(cmdline);
+		}
+	}
+}

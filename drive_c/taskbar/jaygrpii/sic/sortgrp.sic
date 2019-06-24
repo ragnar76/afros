@@ -1,0 +1,43 @@
+// sortgrp.sic (c) 09.08.2000 by JAY Software
+//
+// This script sorts the group taken as a script argument or chosen
+// with FileSelector by title and sets the AutoSave flag off to let
+// you choose whether to save the result or not.
+
+
+uses "sort.lib";
+
+proc main(...)
+{
+	if ( address( "JAYGrpII" ) ) {
+		if ( argc < 1 ) {
+			if ( ! fsel( FileName, "Choose a .GRP file...", "*.grp" ) ) exit(1);
+		} else	FileName = argv[0];
+
+		if ( ! Load( FileName ) ) exit(1);
+
+		gi = GroupInfo();	// Switch the AutoSave off
+		gi[ 2 ] = 0;
+		GroupInfo( gi );
+
+		if ( First() ) do {	// Get all entries
+			SortArray[ i++ ] = Item();
+		} while ( Next() );
+	
+		cmpIdx = 1;		// Sort by Title
+		qsort_array(SortArray, CompareItems);
+	
+		Delete( "*" );		// Fill the .GRP again
+		while( i-- ) {
+			add( SortArray[ i ] );
+		}
+		Update();
+		Open();
+	}
+}
+
+
+proc CompareItems(i1, i2)
+{
+    return stricmp( i2[ cmpIdx ], i1[ cmpIdx ] );
+}

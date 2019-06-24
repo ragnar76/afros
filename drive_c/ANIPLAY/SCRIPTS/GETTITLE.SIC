@@ -1,0 +1,5 @@
+if(address("aniplay"))
+{
+	printf(GetTitle());
+	wait(200);
+}

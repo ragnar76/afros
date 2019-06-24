@@ -1,0 +1,90 @@
+if(address("aniplay"))
+{
+	choice=dialog.note("File conversions",
+	                   "[1] MPG in MOV",
+	                   "[2] MPG in AVI",
+	                   "[3] MP3 in WAV or WAV in MP3",
+	                   "-b3","-b2","-b1");
+	if(choice != "3")
+        {
+		title="Directory of MPG source file";
+		select="*.MPG";
+		if(choice == "1")
+			type_target="mov";
+		else
+			type_target="avi";
+	}
+	else
+	{
+		choice=dialog.note("Sound conversion",
+		                   "[1] MP3 in WAV",
+		                   "[2] WAV in MP3",
+		                   "-b2","-b1");
+		if(choice == "1")
+        	{		                   
+			title="Directory of MP3 source file";
+			select="*.MP3";
+			type_target="wav";
+		}
+		else
+        	{		                   
+			title="Directory of WAV source file";
+			select="*.WAV";
+			type_target="mp3";
+		}		
+	}
+	if(fsel(file, title, select))
+	{
+		path=path(file);
+		ret=filelist(array,path);
+		if(ret)
+		{
+			for(j=0 ; j<ret ; j++)
+			{
+				if(!stricmp(suffix(array[j,0]),suffix(select)))
+				{
+					fname="";
+					strcat(fname,path,array[j,0]);
+					space=0;
+					for(i=0;i<strlen(fname);i++)
+					{
+					 	if(fname[i] == ' ')
+					 		space=1;
+					}
+					if(space)
+						quote="\047";
+					else
+						quote="";
+					target = substr(fname,0,strlen(fname)-3) + type_target;
+					cmdline = "+o " + quote + target + quote + " " + quote + fname + quote;  
+					Open(cmdline);
+					printf("\033EConvert <%s>\n",array[j,0]);
+					wait(200);
+					do
+					{		
+						info=ControlPlay(0);
+						frequency_file=int(info[7]);
+						total_samples=int(info[9]);
+						count_seconds=int(info[12]);
+						play=int(info[14]);
+						percent=0;
+						if((total_samples/frequency_file)!=0)
+							percent=(count_seconds*100)/(total_samples/frequency_file);
+						printf("\r[");
+						for(i=0 ; i<50 ; i++)
+						{
+							if((i+i)<percent)
+								printf("+");
+							else
+								printf(" ");
+						}
+						printf("]");
+						wait(100);
+					}
+					while(play==1);
+				}				
+			}
+		}
+
+	}
+}

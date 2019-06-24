@@ -1,0 +1,20 @@
+// start.sic (c) 14.08.2000 by JAY Software
+//
+// This is the JAY Groups II start script
+//
+
+// Get a script path
+cwd(Path);
+ReaddMePath = Path + "readme";
+
+// Type readme >console
+if ( fopen( ReaddMePath ,"r" ) ) {
+	while ( getline( ReaddMePath, sLine ) )
+		print( sLine );
+	fclose( ReaddMePath );
+}
+
+// Type readme >console
+source( Path + "plgtst.sic" );
+
+pexec( Path + "..\\jaygrpii.app", "sic\\plgtst.grp" );

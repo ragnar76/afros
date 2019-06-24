@@ -1,0 +1,63 @@
+if(address("aniplay"))
+{
+	if(fsel(file, "Open file for Aniplayer", "*.*"))
+	{
+		Open(file);
+		do
+		{		
+			info=ControlPlay(0);
+			width=int(info[0]);
+			height=int(info[1]);
+			planes=int(info[2]);
+			frames_second=int(info[3]);
+			total_frames=int(info[4]);
+			id_picture_compression=int(info[5]);
+			quality=int(info[6]);
+			frequency_file=int(info[7]);
+			frequency_machine=int(info[8]);
+			total_samples=int(info[9]);
+			id_sound_compression=int(info[10]);
+			version_player=int(info[11]);
+			count_seconds=int(info[12]);
+			num_frame=int(info[13]);
+			play=int(info[14]);
+			printf("\033EPress <+> or <-> for seek +/- 10 seconds\n\n");
+			printf("width: %d \n",width);
+			printf("height: %d \n",height);
+			printf("planes: %d \n",planes);
+			printf("frames_second: %d \n",frames_second);
+			printf("total_frames: %d \n",total_frames);
+			printf("id_picture_compression: $%x \n",id_picture_compression);
+			printf("quality: %d \n",quality);
+			printf("frequency_file: %d \n",frequency_file);
+			printf("frequency_machine: %d \n",frequency_machine);
+			printf("total_samples: %d \n",itotal_samples);
+			printf("id_sound_compression: $%x \n",id_sound_compression);
+			printf("version_player: $%x \n",version_player);
+			printf("count_seconds: %d \n",count_seconds);
+			printf("num_frame: %d \n",num_frame);
+			printf("play: %d \n",play);
+			wait(100);
+			if(havekey())
+			{
+				key=inkey();
+				switch(int(key[0]))
+				{
+					case '+':
+						count_seconds+=10;
+						ControlPlay(1,count_seconds);
+//						            2 for num_frame
+					break;
+					case '-':
+	 					count_seconds-=10;
+						if(count_second < 0)
+							count_second=0;
+						ControlPlay(1,count_seconds); 
+//						            2 for num_frame
+ 					break;                      		
+                        	}
+			}
+		}
+		while(id_picture_compression!=0 || id_sound_compression!=0);
+	}
+}

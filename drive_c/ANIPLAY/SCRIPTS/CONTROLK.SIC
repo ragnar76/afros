@@ -1,0 +1,13 @@
+if(address("aniplay"))
+{
+	if(fsel(file, "Open file for Aniplayer", "*.*"))
+	{
+		Open(file);
+		while(1)
+		{
+			key=inkey();
+//			      code ASCII   scan-code
+			ControlKey(key[0] + (key[1] * "256"));
+		}
+	}
+}

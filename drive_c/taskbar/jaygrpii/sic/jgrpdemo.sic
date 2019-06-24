@@ -1,0 +1,71 @@
+// jgrpdemo.sic (c) 13.08.2000 by JAY Software
+//
+// This script demonstrates the GEMScript interface abilities
+// Just start it and see what happen.
+//
+// Changes:	14.08.2000  STan  The demo group is created in the
+//                            script dir now
+//
+// Note:    Try to execute this script more more than once
+//          simultaneously
+//              It happens that GSCG (see .HYP) references
+//              are updated, but the GSCGPos is set to NULL
+//              This follows that the group is changing colors
+//              and position by all script instances, but the
+//              Text is changed ONLY in the lastly executed
+//              one (the others have the GSCGPos == NULL and
+//              thus the Item( ai ) returs an error code)
+//
+
+proc main(...)
+{
+	StrTbl[0] = " What";
+	StrTbl[1] = "about";
+	StrTbl[2] = " to";
+	StrTbl[3] = "move;-)";
+
+	// Get a script path
+	cwd(Path);
+	GRPPath = Path + "jgrpdemo.grp";
+	
+	if ( address( "JAYGrpII" ) ) {
+		// Create a new group and set the defaults
+		New( GRPPath, "Demo" );
+		GroupDisplay( 1, 10, 0 );
+		GroupRect( 500, 5000, 1000, 1000 );
+		Add( ".", " " );
+		Add( ".", " " );
+
+		ai = Item();
+		gr = GroupRect();
+		gi = GroupDisplay();
+
+		h = 1;
+		v = 1;
+
+		Open();
+		forever {
+			for( i=0; i<=15; i++ ) {
+				// Text string change
+				Item( ai[0], StrTbl[ i % 4 ] );
+
+				// Background color change
+				GroupDisplay( gi[0], gi[1], gi[2], i );
+
+				// Window posistion change
+				gr[0] += h*500;
+				gr[1] += v*500;
+				GroupRect( gr[0], gr[1] );
+
+				wait( 70 );
+
+				// check movement borders
+				if ( gr[0] < 500 ) h = 1;
+				if ( gr[0] > 8500 ) h = -1;
+				if ( gr[1] < 500 ) v = 1;
+				if ( gr[1] > 8500 ) v = -1;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,10 @@
+if(address("aniplay"))
+{
+	cmds=GetAllCommands();
+	for(i=0;i<23;i++)
+	{
+		printf(cmds[i]);
+		printf("\n");
+		wait(100);			
+	}
+}

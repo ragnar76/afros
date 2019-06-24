@@ -1,0 +1,4 @@
+if(address("aniplay"))
+{
+	Rew(10);
+}

@@ -1,0 +1,661 @@
+
+
+
+  ____________________________
+                           _________  ***** ******    ******  *  *****
+__________________________           *        *         **   *  *    *
+                    _________________ **     *       ***    *  ******
+  ________________                     *   *      **      *  *
+                    _____________ *****   *      ******  *  *
+     ______________________
+
+
+
+
+                            STZip version 2.6
+                       (c) Vincent Pomey 1990-1994
+
+
+
+
+
+
+
+        **************
+        * 0 - Prolog *
+        **************
+
+    STZip is a program that allows you to compress and decompress
+files, i.e.  to reduce their lengths. You saves space on your disks and
+reduce the transmission time if you send the files by modem. It also
+allows you to group several files in one single file, whose extension
+in general is ZIP.
+
+    STZip uses files that are compatible with PKZip 2.04 on the IBM PC,
+and the Unix Info-Zip programs Zip 1.9/Unzip 5.0.
+
+    You may copy this program and put it for download on bulletin
+boards. Commercial use and distribution (that includes putting STZip or
+self extracting files made by STZip on anything that is sold for more
+than the cost of the disk and handling charges) is not authorized without
+agreement of the author. You use this program at your own risk, there
+is no warranty.
+    Please avoid to "repackage" STZip, I prefer than the users gets all
+the files originally in the distribution.
+
+    This is postcardware : if you use it, please register by sending a
+postcard to
+
+Vincent Pomey
+2 all‚e Val‚ry Larbaud
+92260 Fontenay aux roses - France
+
+    I inform registered users of new versions if they supply an E-mail
+address. Thanks to all users who were kind enough to register !
+
+    The program is written in Modula-2 and assembler. For information
+on the file format, see the APPNOTE.TXT file distributed with PKZip from
+PKWARE. It explains the directory structure of a ZIP file, and the
+decompression algorithm.
+
+    I can be reached via electronic mail :
+Fido  : Vincent Pomey (2:324/101.10)
+Email : vincent@stell.frmug.fr.net	(please do not send large mails)
+
+    As you will probably see if you read this doc, I'm not a good
+technical writer... Sorry for that !
+
+
+                              ----oooOooo---
+
+
+There are several ways to use STZip:
+
+        - double-clicking STZIP.PRG, using the GEM-interface
+
+        - installing it as an application in the desktop: click once on
+STZIP.PRG, choose from the Desktop's menus the entry "Install 
+Application," type ZIP and confirm. After this, you may save the
+desktop.  Now, to use ZIP you only have to double-click a file with the
+extension  .ZIP and you will find yourself in STZip, with GEM interface
+for using that file.
+
+        - renaming STZIP.PRG to STZIP.TTP and using it (or ZIPJR.TTP)
+with a command  line.
+
+        - from a command line interpreter or external program, also using 
+a command line.
+
+        - with some desktops, it is possible to drag and drop a file to
+the STZip icon. If this is a zipfile, it will be opened. If not, a
+zipfile with a similar name (e.g. FLAP.ZIP if you dropped FLAP.PRG)
+will be opened.
+
+The usage with the GEM interface is the easiest. Certain options are 
+available only in GEM (the comments for example), while others are only 
+present with command-line usage (e.g. excluding files from compression).
+
+ZIPJR.TTP is a stripped down version of STZIP : it does not have code
+for the GEM interface, but features are exactly the same if you're
+using the command line interface. The only advantage is that it is
+smaller.
+
+
+
+        *********************************
+        * I - Usage with a command line *
+        *********************************
+
+The usage of STZip with a command line is similar to that of ARC or LHArc 
+on the Atari, or PKZip on the PC.
+
+
+   1 -  A Table
+   ------------
+
+
+   +--------------------------------------------------------------------+
+   |       The syntax is of the form:                                   |
+   |                                                                    |
+   |    STZip command {options} [path] zipfile {file}                   |
+   |                                                                    |
+   |                                                                    |
+   |  There has to be one single command:                               |
+   |                                                                    |
+   |    -a      add files                                               |
+   |    -d      delete files                                            |
+   |    -f      freshen: update files in the zip-file                   |
+   |    -u      update: add new files and freshen the ones already      |
+   |            present in the zip-file                                 |
+   |    -x      extract files                                           |
+   |    -s      extract compressed files on the screen                  |
+   |    -c      check the zipfile                                       |
+   |    -v      list of the files with info                             |
+   |    -l      list of the files, just with their names                |
+   |    -?      a bit of help                                           |
+   |                                                                    |
+   |                                                                    |
+   |   You can also add a few options:                                  |
+   |                                                                    |
+   |    -o      overwrite a file without asking for confirmation        |
+   |            if the file already exists                              |
+   |    -r     `recursive compression: all the files in the             |
+   |            sub-directories you selected will also be compressed.   |
+   |           `recursive decompression: files compressed from sub-     |
+   |            directories will be decompressed in the corresponding   |
+   |            folders, which will be created if they don't exist.     |
+   |    -p      store pathname: the pathname of the file you have       |
+   |            specified in the command line is stored in the zip;     |
+   |            automatic with recursive compression                    |
+   |    -m      move file: files are deleted after compression          |
+   |    -t      the date of the .zip file will be that of the file      |
+   |            compressed with the most recent date.                   |
+   |    -z      modify the general comment for the zip file             |
+   |    -i dir  put the files to be compressed in the subdirectory      |
+   |            DIR in the zipfile                                      |
+   |    -b dir  use dir when writing tempo files						|
+   |    -g      extract the file FFF.ZIP in the directory FFF           |
+   |    -w pw   encrypt the files to be added using pw as password      |
+   |            or use pw to decrypt the files to be extracted          |
+   |    -nmmddyy add only the files newer than mm/dd/yy (US date format)|
+   |    -h      wait for keypress before terminating the program        |
+   |    -k      filenames are case insensitive when using MiNT          |
+   |    -q      quiet - suppress all output                             |
+   |    -e      specifies the compression method:                       |
+   |             -es    store, no compression                           |
+   |             -eh    shrink, quick compression                       |
+   |             -ei    implode, default                                |
+   |             -ed    deflate, better compression                     |
+   |                                                                    |
+   +--------------------------------------------------------------------+
+
+Note that you can use the -z option alone, without any command. STZip
+will only ask you for the new comment of the file.
+
+The -k option is only useful if you use MiNT. Filenames are
+case-insensitive if you don't use MiNT.
+
+
+   2 - The command line
+   --------------------
+
+   You can specify the folder that is to be used as a default for all 
+operations after the commands and the options: for example d:\texts\.
+Note the \ at the end.
+
+   Following that, the name of the zipfile, that will contain (or already 
+contains) compressed files, must be specified. The extension .ZIP is the
+default. You may use wildcards for the zipfile (but be sure that your
+shell doesn't expand them because it won't work) : all the matching
+zipfiles will be processed .
+e.g.  stzip -xg *.zip    this will extract all the zip files in their directory
+   or stzip -z *.zip <comment.txt  this will change the zip comments for all
+  the zipfiles. (note that -z may now be used alone, without any action
+  switch).
+
+   After all this, you put the list of files to be processed (i.e.: to be
+deleted, compressed or decompressed). It may be a directory name (without
+trailing \), all files inside that directory will be processed.
+
+
+   You may use the wildcards ? and * in the names of files:
+                ? represents any single character
+                * represents a string of characters
+
+   Not specifying any file names is the same as *.* (all files).
+
+
+   3 - External list
+   -----------------
+
+   If a name begins with a @, it means that that file contains a list
+of files to be treated. If you have a file list.txt containing for
+example:
+
+        *.mod
+        zip*.txt
+        file1.vdt
+
+   then stzip -a burp @list.txt         is equivalent to
+        stzip -a burp *.mod zip*.txt file1.vdt
+
+   stzip -a burp @   will read the names of the file from stdin
+(generally keyboard).
+
+
+   4 -  Excluding files
+   --------------------
+
+   If a name begins with a ~, it means that it is NOT to be added. It is 
+solely of interest when one uses wildcards; for example, to compress 
+all files except .BAK, you have to use something like this: stzip -a burp 
+*.* ~*.bak
+
+
+   5 - Odds & Ends
+   ---------------
+
+      An external list may contains another external list, but not ~
+file names. The ~ file names of the command line are valid for all
+files, including the ones read from external lists.
+
+      Matching wildcards goes MS-DOS style, not the Unix way: *.* matches 
+all files, and not only those that have a . in their name. Paths using '..' 
+are not supported.
+
+      The -p switch:
+If you run stzip -ap burp folder\alt.txt, the name of the file in the zip 
+will be folder\alt.txt, while without the -p switch, it would have been 
+alt.txt. The -p switch is automatically invoked during recursive 
+compression.
+
+      The -b switch:
+When updating a zipfile, STZip writes a temporary copy of that zipfile
+named __TMP__.ZIP, works on it and then renames it to the original
+zipfile. This tempo file is located on the same directory than the
+original zip. However, you may want to change that if you're working
+on a nearly full partition or on a floppy. Use the -b switch to
+change the directory for tempo files.
+Note however that seting tempo files to a partition different of the
+one of the zipfile introduce delay (file copy is slower than renaming).
+This is why environment variables likes TMP or TMPDIR are ignored.
+
+	You can set frequently used options in command lines in an
+environnement variable named STZIP_OPT. STZip will simply add that
+variable at the beginning of the command line.
+ e.g.    setenv STZIP_OPT -k
+ so that STZip will always be in case insensitive mode.
+
+	Using STZip with the command line interface, long filenames
+available with alternate filesystems (MiNT feature) are supported, as
+well as case sensitive names.
+
+	A little trick : suppose you're in directory C:\, want to
+create a zipfile C:\BURP.ZIP contained C:\FILES\DEMO\*.TXT, but stored
+as DEMO\*.TXT in the zipfile. Use the path feature : 
+	stzip -a burp.zip c:\files\ demo\*.txt
+
+
+
+    6 - Recursive compression
+    -------------------------
+
+        If you have entered the -r option for compression, an important 
+thing will happen: the files you specify will also be searched for in all 
+sub-directories below you.
+
+        The second attempt at explaining will be based on examples, the 
+first one being incomprehensible without several hours of meditation 
+topped off with a bunch of aspirins.
+
+	An important thing to note is that if STZip doesn't do want
+you want, either compression or extraction, that's probably because
+you have forgotten to add the -r switch.
+
+(In order to better understand the second attempt, remember that 
+folders do not actually exist within a zip-file. It's the path of the
+files (stored in the .zip) that contains the names of the folders)
+
+fld is a folder.
+...\ stands for any quantity of folders, or even none.
+
+* stzip -ar burp
+        All the files in the current folder will be compressed, including 
+sub-directories.
+
+* stzip -ar burp fld
+        The files fld\...\*.* will be compressed. The name fld\...\*.* is 
+stored in the zip file. To recap: all the files in fld are compressed, 
+including all the subdirectories found in fld.
+
+* stzip -ar burp fld\*.txt
+        The files fld\...\*.txt will be compressed. The names 
+fld\...\*.txt are stored in the zip file. To recap: all the files with the 
+extension txt in fld are compressed, including all those found in the 
+subdirectories found in fld.
+
+* stzip -ar burp fld\file.txt
+        The files fld\...\file.txt will be compressed. The names 
+fld\...\file.txt are stored in the zip file. To recap: all the files with 
+the name file.txt in fld are compressed, including all those found in the 
+subdirectories found in fld.
+
+* stzip -ar burp c:\fld
+        The files c:\fld\...\*.* will be compressed. The names \...\*.* 
+are stored in the zip file. This means that c:\fld\ will NOT be stored as 
+part of the file names of the compressed files, because it is a COMPLETE 
+path, different from fld\.
+        Also, by using the changing of the working directory (of the kind 
+stzip -ar burp c:\fld1\ fld2\*.txt) it is possible to perform all sorts of 
+complex manipulations with the names of the files to be compressed. In the 
+above example, the files with the extension txt in c:\fld1\fld2 will be 
+compressed, but their names in the zip-file will be fld2\*.txt.
+
+        No tests are performed EVER on the names of folders.
+stzip -ar burp *.txt will search in all directories, not only in those 
+with the extension txt!
+
+        Some Unix-style shells perform themselves the substitutions of the 
+wildcards. STZip does not respond similarly to 
+'stzip -ar burp fld\a.txt fld\b.txt' and
+'stzip -ar burp fld\*.txt' even though for the shell this may be the same. 
+In this case, it is therefore necessary to add quotation marks to 
+fld\*.txt so that the shell will not substitute the wildcards. Likewise, 
+the ~ character may pose problems.
+
+
+   7 - Recursive decompression
+   ---------------------------
+
+        If a zip file contains folders, there are two possibilities:
+ - ignore them and decompress to the current working directory (which is 
+   the default). This allows for the quick decompression of a specific 
+   file without creating lots of folders.
+ - or decompress the files to these folders and create the folders when 
+   necessary. For this, use option -r.
+
+You can always add paths and use wildcards in the filenames. If you 
+specify in the parameters a name with a path, for example infra\*.msg, 
+then all *.msg files in infra AND in its subdirectories will be extracted.
+
+
+    8 - Comments
+    ------------
+
+        The global comment for the entire zip file (changed with the -z 
+switch) is displayed every time the zipfile is accessed. In Gem, it is
+also possible to have a comment for each files in the zipfile, it is
+displayed when the file is extracted.
+
+
+
+      ********************************
+      * II - Using the GEM interface *
+      ********************************
+
+
+   1 - General
+   -----------
+
+If you started STZip normally from Gem (without parameters, droping or
+double-clicking on a zip file), STZip will show you a file selector,
+asking for a zipfile. You can select an existing one (for extraction or
+update) or a new one, STZip will create it. If you just type Return,
+STZip will open DEFAULT.ZIP (or create it if it doesn't exist).
+
+The general algorithm is to select files on the disk selector and then
+click on the "Compress" button if you want to compress files, and select
+files on the zipfile selector and then click on the "Extract" button if
+you want to extract files.
+If you click on the "Compress" or "Extract" button without having
+selected any files, STZip will suggest you to process all the files.
+
+You may unselect all the files by clicking on the "Select: 000" button (it
+shows the number of selected files).
+
+Some text shows you at the botton of the window the size of all
+selected files in the zip or disk selector. You can swap from zip
+selected size to disk selected size by clicking on that text.
+
+To change the zipfile, click on the close-box of the Zip file selector.
+
+The "Recurse Subdirs" button:
+      during compression, if it is selected, then all subdirectories will 
+also be compressed.
+      during decompression, if it is selected, then all files will be 
+extracted to their original directory : DIR\FILE.TXT will be extracted
+in directory DIR (created if it doesn't exist). If not selected,
+DIR\FILE.TXT will be extracted as FILE.TXT, in the current directory.
+
+
+   2 - Informations/Comments
+   -------------------------
+ 
+To get information about the entire zip file, you have to double-click
+on name of the zip file.
+
+Similarly, you may get information about a specific file in the zip or
+on the disk by double-clicking on its name.
+
+Information about the zipfile and the compression files contains some
+comments, and you may edit them. Zipfile comments are displayed
+whenever accessing the zipfile, while comments specific to a compressed
+file is displayed when extracting this file. The comments are saved on
+disk when you change the zipfile or when you quit STZip. This results in
+some disk access.
+
+While looking the information of a disk file, you may rename it.
+
+In the zipfile contents box, a point just before the file name means that
+there is a comment attached to that file.
+
+
+   3 - File display
+   ----------------
+
+While looking the information of a file (compressed or on disk), you
+will be able to Display it (by clicking on the Trash button, uhh no,
+the Display button). A new window will appear. Then, a few keys are
+available :
+
+	arrow keys :     Move the text
+	Clr-Home :	 Goto beginning of the file
+	Shift-Clr-Home : Goto end of the file
+	Ctrl-V :	 Copy the file to the clipboard
+	Ctrl-S :	 Save the file (will ask for filename)
+	Ctrl-C :	 Change the font or the font-size used
+	Ctrl-F :	 Search a string
+	Ctrl-G :	 Search same string
+	Ctrl-P :	 Print file
+	Ctrl-R :	 Print block
+	Ctrl-B :	 Save block (will ask for filename)
+	Ctrl-W :	 Copy the block to the clipboard
+	ESC :		 Quit the display mode
+
+It is also possible to get a menus with those options by pressing the
+HELP key or by double-clicking in the window.
+
+The block is selected by using the mouse : clicking on the first button
+sets the beginning of the block, clicking on the second button sets the
+end of the block. The block is displayed in bold fonts.
+
+
+Picture Display :
+STZip will call a picture viewer that support the image format is
+one is found.
+
+
+   4 - Configuration
+   -----------------
+
+	The Configuration dialog box lets you choose the compression
+method, the sort method for the Zip selector and the Disk selector,
+
+	The configuration file STZIP.CFG contains all those choice,
+plus the current disk path and list field (the mask for the compressed
+files to be listed), as well as the Font ID, Font Size and Tab Size
+used while displaying files. It is saved in the home directory of
+STZip.
+
+	On later call, STZip will go in the directory where you were
+when you saved the configuration. That way it will always start listing
+the files of the same directory. Since you may not like that, an option
+disable this and STZip stays in the current directory ("Go in current dir
+rather than saved dir").
+
+	Note that the configuration file is used _only_ when using the
+GEM interface. It is not read when STZip is called with a command line.
+
+	On TOS < 1.4, the configuration file will be loaded and saved
+in the current directory. This is not very clever but it is because the
+shel_find function doesn't work on old TOS.
+	On newer TOS, the configuration file -if it exists- will be
+loaded from the directory where STZIP.PRG is, and be written at the
+same place. But if there is no configuration file there when you start
+STZip, it will be saved in the current directory. That's why there is a
+dummy configuration file in the distribution archive : if you put it
+with STZIP.PRG, the configuration file will be always written in the
+directory where STZIP.PRG is.
+
+	The tempo directory is where STZip writes the backup of the zipfile
+he is currently updating. If none specified, it is the directory where
+the zipfile is. See detailed explanations in section I-5 "-b switch".
+
+
+   5 - Odds & Ends
+   ---------------
+
+    It is possible to create a subdir in the zipfile or on the disk.
+The program will ask you what you want when you click on "Create Subdir".
+Note that a subdir in a zipfile only exists if you put files in it. If
+you do not compress anything in it, the created subdir will not appear
+in the zipfile.
+
+
+        *****************************
+        * III - Third part of the doc
+        *****************************
+
+
+   1 - Compression method
+   ----------------------
+
+	  The best compression method is _deflating_. It is quite
+recent, but is now available in PKZIP 2.04 and upper on PC, and in
+Zip 1.9/Unzip 5.0 on Unix (and Amigas etc).
+
+	  The deflating method has three variants : one that compress
+faster but not so good, one medium, and one which compress best but
+slowly. There are buttons to select the one you want in Gem (Config
+dialog box). Using a command line, -edf gives you the fast one, -edb
+the best one, and -ed the medium.
+
+	The default compression method is the medium deflating.
+
+	_Shrinking_ is an very fast compression method, but not as good
+as deflating or imploding. _Storing_ simply stores the files without
+compression. You may use that if the files are uncompressible (already
+compressed files or compressed pictures such as GIF or JPEG files).
+
+	_Imploding_ is an old compression method, now considered as
+obsolete since deflating is better. You may still use it if you want that
+your files may be extracted using old versions of STZip.
+
+	STZip checks if the file to be compressed has been already
+compressed using ARC, LHARC, ZIP, ZOO, freeze, compress, PfxPack, Ice
+or Atom. That way, you won't loose time or space trying to compress
+files that would give bad or no compression at all (not speaking of
+growing in size, which is possible with the Implode method).
+
+
+   2 - Updating and freshening
+   ---------------------------
+
+	   These options allows to add a file you specified (in the command
+line) or selected (in Gem) only if it is needed :
+
+ -Freshening : only specified files that are already in the zip and are
+        newer than those in the zip will be added.
+ -Updating : only specified files that are already in the zip and are
+         newer than those in the zip, _AND_ the specified files that are
+         not in the zipfile will be added.
+
+ -Using a date line : only the files changed after the specified date will
+         be added.
+
+To use those features in Gem, click on the 'Add Mode' box, and select what you
+want.
+
+To use those features in a command line,
+   freshening is -f : stzip -f backup *.c
+   updating is -u   : stzip -u galery *.gif
+   date line is -t  : stzip -a -t011692 fip *.prg
+      Will add all *.prg files created or changed after Janury 16th 1992.
+      Note the US date format !
+
+
+   3 - Self extracting files
+   -------------------------
+
+  You may use ZIP2TOS.PRG to convert a zip file to a .TOS program which
+will contains the compressed files and will extract them when launched.
+
+  Without parameters, you will be prompted for the file to convert. You may
+also calls it with the zipfile names in parameters, from the desktop (drag
+a file) or a shell (zip2tos *.zip)
+
+  A self extracting file should contains _only_ deflating or stored files. It
+will be unable to explode or unshrink files. This is _not_ checked when
+ZIP2TOS does the conversion.
+
+  A self extracting file may be used as a normal zip file. Using STZip >1.3,
+you will be able to change the comments, list, extract, add or delete
+compressed files in the self extracting file.
+
+  When creating a self extracting file, you may choose if the self
+extracting file will overwrite files during extraction without asking.
+Answer Yes to the question in Gem, or use the -o switch in command line
+if you want that.
+
+
+   4 - Encryption
+   --------------
+
+  A compressed file inside a zip may be crypted. STZip use the same
+algorithm as PKZIP, and also support the slighly different method used
+in the Unix versions of Zip/Unzip.
+
+  You may specify a password using the -w switch when using the command
+line interface, or by clicking in the "Crypt box" in the Gem interface.
+The files to be compressed will be encrypted using that password.
+
+  That password will be also used when extracting files. If you forgot
+to specify it and STZip encounter a crypted file, it will prompt you.
+(i.e. : if you compress files using password BURP and extract them
+without leaving STZip, STZip won't prompt you for the password since it
+still has BURP in mind).
+
+  STZip is also able to tell you if the password supplied for extracting a
+file is wrong. Note that the password is not stored in the file (would be
+stupid!), STZip uses some techniques to see if the beginning of the file
+extracts correctly with the supplied password.
+
+
+   5 - Return codes from command line mode
+   ---------------------------------------
+
+  1 : not enough memory
+  2 : file not found
+  3 : illegal option
+  4 : two actions specified
+  5 : no zip file specified
+  6 : no command specified
+  7 : error reading
+  8 : this file is not a zip file
+  9 : error writing
+ 11 : warning during extraction (read/write error, CRC error ...)
+ 12 : warning during compression
+ 13 : error while copying tempo zip file to original zip
+	  (file __TMP__.ZIP may however be a correct zipfile)
+100 : Function not implemented
+
+
+    6 - Limitations
+    ---------------
+
+The number of files in a zip is maximum 65536.
+
+
+    7 - The End
+    -----------
+
+Thanks to H. Okumura for his help with the 'sliding dictionary' 
+compression and to Philippe Regnauld for the STZIP logo in GEM.
+
+Have fun using it !
+
+
+		Vincent Pomey, 28 April 1990, 13 April 1991.
+		Translation by Peter Kocourek, 25 July 1991.
+		Updated, 27 December 1992, 13 Febrary 1993, 30 April 1993,
+			 2 April 1994

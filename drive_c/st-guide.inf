@@ -1,0 +1,38 @@
+PATHS=c:\hyp
+HYPFOLD=c:\hyp\
+EXTVIEW=1STGUIDE.ACC
+HYPTOP=c:\hyp\teradesk.hyp
+#REF=c:\hyp\all.ref
+#REFCHECK-OPT=adgh
+#FONT=3,10
+#XFONT=185,10
+#  0=White        1=Black        2=Red           3=Green
+#  4=Blue         5=Cyan         6=Yellow        7=Magenta
+#  8=Grey         9=Dark grey   10=Dark red     11=Dark green
+# 12=Dark blue   13=Dark cyan   14=Dark yellow  15=Dark magenta
+TXTCOLOR=1
+REFCOLOR=2
+BCKCOLOR=0
+RIGHTBACK=1
+#REFONLY=
+#HCP=c:\st-guide\hcp.ttp
+#TABSIZE=4
+TXTOFFSET=6
+#ARROWPATCH=1
+WINSIZE=0,0,640,600
+DEFHYP=teradesk.hyp
+
+#HCP_OPT=+zz-s
+#HYPFIND=c:\st-guide\hypfind.ttp
+#PRINTER=C:\ILIST.ACC
+#REMARKER=!c:\st-guide\remarker.prg
+#MARKFILE=c:\hyp\MARKS.DAT
+#HYPTREE_OPT=
+#STOOL=c:\st-guide\stool.tos
+#REFLINK=c:\st-guide\reflink.ttp
+#REFCHECK-OPT=ads
+#KM_SHORT
+#KM_SMALL
+#HT_WINSIZE=40,40,560,320
+#HT_MACLIKE=0
+#HT_STOPSTG=-s0

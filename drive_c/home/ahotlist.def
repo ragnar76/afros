@@ -1,0 +1,9 @@
+SERVER ftp.funet.fi
+	STARTDIR /pub/atari
+	PASSIVE
+SERVER kurobox.serveftp.net
+	PORT 3021
+	PASSIVE
+SERVER ftp.pigwa.net
+	STARTDIR /
+	PASSIVE

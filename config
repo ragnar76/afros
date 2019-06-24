@@ -1,0 +1,177 @@
+[GLOBAL]
+FastRAM = 64
+Floppy = 
+TOS = 
+EmuTOS = system/etos512k.img
+Bootstrap = system/mint.prg
+BootstrapArgs = DEBUG_LEVEL=1 BOOT_DELAY=0 MEM_PROT=NO
+BootDrive = C
+AutoGrabMouse = Yes
+GMTime = No
+
+[HOTKEYS]
+Setup = 19:0
+Quit = 19:0x1
+Reboot = 19:0x40
+Ungrab = 0:0x141
+Debug = 19:0x100
+Screenshot = 316:0
+Fullscreen = 302:0
+
+[STARTUP]
+GrabMouse = Yes
+Debugger = No
+
+[JIT]
+JIT = Yes
+JITFPU = Yes
+JITCacheSize = 8192
+JITLazyFlush = 1
+JITBlackList = 
+JITInline = No
+
+[VIDEO]
+FullScreen = No
+BootColorDepth = -1
+VidelRefresh = 2
+VidelMonitor = -1
+
+[TOS]
+Cookie_MCH = 50000
+RedirConsole = No
+
+[IDE0]
+Present = No
+IsCDROM = No
+ByteSwap = No
+ReadOnly = No
+Path = 
+Cylinders = 0
+Heads = 0
+SectorsPerTrack = 0
+ModelName = Master
+
+[IDE1]
+Present = No
+IsCDROM = No
+ByteSwap = No
+ReadOnly = No
+Path = 
+Cylinders = 0
+Heads = 0
+SectorsPerTrack = 0
+ModelName = Slave
+
+[PARTITION0]
+Path = 
+Present = No
+PartID = BGM
+ByteSwap = No
+ReadOnly = No
+
+[HOSTFS]
+A = 
+B = 
+C = drive_c
+D = /
+E =
+F = 
+G = 
+H = 
+I = 
+J = 
+K = 
+L = 
+M = 
+N = 
+O = 
+P = 
+Q = 
+R = 
+S = 
+T = 
+U = 
+V = 
+W = 
+X = 
+Y = 
+Z = 
+
+[OPENGL]
+Enabled = No
+Filtered = No
+Library = 
+
+[ETH0]
+Type = bridge
+Tunnel = tap0
+HostIP = 192.168.251.1
+AtariIP = 192.168.251.2
+Netmask = 255.255.255.0
+MAC = 00:41:45:54:48:30
+
+[LILO]
+Kernel = linux.bin
+Args = root=/dev/ram video=atafb:vga16
+Ramdisk = root.bin
+
+[MIDI]
+Type = none
+File = 
+Sequencer = /dev/sequencer
+
+[CDROMS]
+A = -1
+B = -1
+C = -1
+D = -1
+E = -1
+F = -1
+G = -1
+H = -1
+I = -1
+J = -1
+K = -1
+L = -1
+M = -1
+N = -1
+O = -1
+P = -1
+Q = -1
+R = -1
+S = -1
+T = -1
+U = -1
+V = -1
+W = -1
+X = -1
+Y = -1
+Z = -1
+
+[AUTOZOOM]
+Enabled = No
+IntegerCoefs = No
+FixedSize = No
+Width = 640
+Height = 480
+
+[NFOSMESA]
+ChannelSize = 0
+LibGL = libGL.so
+LibOSMesa = libOSMesa.so
+
+[PARALLEL]
+Type = file
+File = stderr
+Parport = /dev/parport0
+
+[NATFEATS]
+CDROM = sdl
+Vdi = soft
+
+[NFVDI]
+UseHostMouseCursor = No
+
+[IKBD]
+WheelEiffel = Yes
+AltGr = Yes

@@ -1,0 +1,289 @@
+                           Manual for aFTP
+                           ===============
+                      v1.55beta from 04.12.1999
+
+Program aFTP is GEM FTP client, working with MiNT-NET or STiK and using AV
+protocol, which is implemented ie. in excellent desktops Thing or Jinnee.
+                                                                          
+   Warning !
+   ---------
+   Exist two versions of aFTP, one for MiNTnet and one for STiK.
+   Type is in 'about' dialog.
+   
+   What do you need?
+   -----------------
+   
+   * MiNT at least version 1.08 + MiNTnet or STiK/STiNG
+   * AES supporting popup- and sub-menus (AES at least version 3.30
+     or MagiC with XMEN_MGR.PRG)
+
+   We recomend
+   -----------
+   * MiNT 1.15.x with MiNTnet 1.04
+   * N.AES 1.2.0
+   * THING 1.27 as desktop and as AV-SERVER or application supporting 
+     some messages of AV protocol
+   
+   Connect to server
+   -----------------
+After selecting item 'Hotlist' in menu 'File' you can see dialog, where
+you can enter name of ftp server or in form number address (ie.  127.0.0.1)
+or hostname (ie. ftp.zcu.cz) and than select or anonymous login to server or
+after its check enter user name and password for this server. In this 
+dialog you can specify the directory within you want be after the login. 
+                                                                           
+There is possibility select directory in dialog, in which the client tries
+change immediately after connect to server. After press button 'Connect', the
+client tries connect to entered server and when he is successfull, it means
+he found it and connected it, he tries for login. If the login isn't right,
+the program tries it itself again (you can set number of tries).
+After login the list of directory, in which you are now (home directory on
+the far server), copies; than the window with files and directories opens.
+                                                                         
+Of course, you can use Hotlist for connect, there you can save up to 25
+most often visiting servers, including way of login and startup directory.
+Later you can use items saved in Hotlist for quicker connect by select item
+right in submenu after select item 'Connect to' in menu 'Server'.
+
+
+   Command line or VA_START
+   ------------------------
+If you start the program with parametr or you send by VA_START string
+in form 'ftp://ftp_server/dir/', the program connects to ftp server,
+logins as anonymous user, change to setting directory and the window with
+the list of files in opens, or if it is in form
+'ftp://ftp_server/dir/file_name', it connects to ftp server, login as
+anonymous user, gets file file_name to directory set in config dialog,
+disconnects from ftp_server and finishes.
+Template for starting parametr:
+ftp://[login_name:login_password]host_name[:port][/login_dir/[file_name]]
+You can easily use groups in the Thing/Taskbar as a hotlist!
+
+   File download
+   -------------
+Now you can by doubleclick move on the far computer and by doubleclick on
+files you can watch them on your computer - it's the same as you use
+doubleclick in desktop. (At view the file is get into the TEMP directory 
+to your local computer and then will have displayed). If you want the file
+get to you in any directory on your local disk, mark one or more files on
+the far server (by rubber or by click on items) and simply use drag&drop
+to icon of disk or directory. In case you select directories, all files
+and subdirectories get recursively too (it create the same directory 
+structure on your local disk).
+
+Files are moved if 'Control' key is pressed (only if you have set the 
+appropriate rights).
+
+   File delete
+   -----------
+Same as above, but you drag file(s) to trash or you can select item 
+Commands -> Delete in menu.
+
+   Send file to server
+   -------------------
+Take icon from desktop and drag it on aFTP's window with listing actual
+directory on server. You can send more files at once, of course. The 
+recursive sending of directories works too.
+   
+Drag&Droped files will be send into the directory which contents is 
+displayed in the main window!
+   
+(Files are moved if 'Control' key is pressed).
+   
+   Renaming files
+   --------------
+All selected files/dirs will be renamed by selecting menuitem Commands ->
+Rename to.
+   
+   Menu EDIT
+   ---------
+If you connect on server and open window with list of files, you can use
+function in menu edit. Or select or deselect all files in list - then you can
+use usually way for getting selected files or you can copy list to CLIPBOARD.
+If no file is selected, the list of all files copies. The list is an exact copy
+of list in window (sort; show lenght, date, ...). If you during click of mouse
+or hotkey to copy to clipboard hold shift key, the list is appended to actual
+clipboard, in any case is clipboard (SCRAP.TXT) overwriten.
+   
+   Setting environment
+   -------------------
+   
+   o Fonts
+     ~~~~~
+aFTP supports FONT protocol: you can use the nearest font selector on the
+window aFTP listing. The Thing is very successful, because its internal font
+selector works very good. We recommend use proportional fonts. If you select
+item in menu, the program finds env. variable FONTSELECT or xFSL and calls
+font selector. In both cases you can set type, size and color of font !
+
+   o Configuration files
+     ~~~~~~~~~~~~~~~~~~~
+Program saves setting (aftp.cfg, which contain all important program settings)
+and Hotlist (ahotlist.def) to $HOME directory or to aFTP's directory.
+If the HOME is not set, programs try read config files from start directory.
+
+  The hotlist-file format
+  -----------------------
+aFTP has new file format for file with frequently visited servers. This file
+is ASCII now so you can edit it easily with any ASCII editor. In case you cross
+>from older version (<1.4) you can convert your hotlis by hotconv.tos program.
+This program you can find within the aFTP pack or on our WWW homepage.
+  
+This file has one command on every line. Every item in hotlist MUST starts 
+with keyword SERVER, then follow the server's address. Next lines are not 
+compulsory, but these lines MUST starts with a space or tab!
+keywords (case independent):
+
+SERVER ftp_server_name
+STARTDIR start_directory
+   - if it is ommited, the aFTP stay in current directory
+NAME login_name
+   - if it is omitted, the aFTP logs as anonymous user 
+PLAIN password
+   - this is uncrypted password (it will crypt with save hotlist by aFTP)
+PASSWORD
+   - this is already crypted password (by aFTP) 
+PORT port_number
+   - if this is set the program connect to this port number
+PASSIVE
+   - use passive mode (PASV command) for data connections (useful with
+     IP masquerading)
+   
+Here is a short sample of hotlist:
+
+SERVER ftp.zcu.cz
+ STARTDIR /tmp
+SERVER ftp.eunet.cz
+ PORT 22
+
+
+   o Menu 'Settings'
+     ~~~~~~~~~~~~~~~
+   
+   Item 'Global ...'
+   -----------------
+Item Global open dialog with basic datas about connecting with the ftp 
+server. Here are number of attempts, time between two attempts, name and
+password for logging. 
+                      
+ [X] Convert filenames to lowercase
+     - aFTP can convert filenames to lowercase at uploading files to FTP.
+     It works only when you put files from filesystem, which don't support
+     lower/UPPER case in file names. So if you putting files from TOS FAT
+     partition all chars in filename will be lowercase. 
+     
+ [X] Auto-reget files
+     - if the transmision of file is not successful, the aFTP try get it 
+     again, until the file is complete or user break.
+     
+ [X] Keep file date   
+     - sets the date and time to value of file which is on the ftp server 
+     
+ [X] Keep file permitions   
+     - sets the access' rights (rwx) of local file to same value as the 
+     file has on ftp server after getting it from server (if the FTP server
+     running on UNIX (Windows FTP servers usually know nothing obout it.
+     Unfortunatelly some Windows FTP servers reports as UNIX and then this
+     function does not work corectly) and if your filesystem support this
+     permitions).
+     
+ [X] Auto-check links   
+     If in the directory on FTP server is some link aFTP checks where the 
+     link points, the lenght of the file and whether this is a directory.
+     
+ [X] Auto-refresh
+     - the names of files are printed directly into the list window. When 
+     the directory is complete all items are sort by yours setting.
+     
+ [X] Auto-reload
+     - a directory listing is updated automatically after any change you
+     made on a remote server (upload, delete, rename, make dir). This option
+     is accessible via menu (List->Auto Reload) too.
+
+ [X] PASV mode
+     - set PASV mode as default. PASV mode is useful for connections
+     through IP-Masquerading so you can use aFTP as CAB plugin again.
+
+ [X] DHST protocol
+     - this is protocol which use utility StartMeUp since v7.01. If you
+     check this, all servers you connect to are puting into popup menu
+     Documents in SMU! More information about DHST is in documentation
+     for SMU 7.01.
+     
+ [Popup] Action after closing main window
+     - aFTP connects to next server from Hotlist, when you close main window
+     (you can save your mouse if you are browsing yours popular servers ;)
+     - aFTP will be disconnected from current ftp server
+     - aFTP ends
+     
+   Item 'Paths ...'
+   ----------------
+ [X] Logfile
+     here is logging setting. You can switch logging and set the file where
+     aFTP will write all commands to FTP server and answer from FTP server.
+     
+ [X] Cache
+     - here you can switch the cache and set the path, where the cache will
+     be saved. aFTP use two files (for index and data). In case you use the 
+     cache browsing FTP archive is faster (If you enter into directory you 
+     have been already then contents of this directory is read from the file
+     not from the server) 
+
+     Remark: If you want get files recursively from FTP server, you MUST 
+     switch cache on and set an existing path !
+     
+ TEMP/Download path
+     - here you can set temporary path. (files are puting into this 
+     directory after doubleclick or selecting the items in menu)
+     Tip: If you have a KGMD instalation of MiNT set this path to /tmp
+     (this directory is cleaned during start of the system)
+     
+   Item 'Confirmations ...'
+   ------------------------
+Here you can set confirmations before destructive actions and if program
+should clear working directory by end of aFTP. 
+   
+   Item 'Font ...'
+   ---------------
+After selecting this menu item the program try call fontselector and you
+can choose type and colour of font for main aFTP window 
+   
+   o Environment variables
+     ~~~~~~~~~~~~~~~~~~~~~
+aFTP uses only one specific environment variable AFTP_LIST. It set maximal
+amount of items (files + links + directories) in directory at FTP server. 
+If this environment variable isn't set, the default value of 1000 items is
+used (in case this amount fit not into memory the program use 1/3 of
+available memory).
+    
+Program read and use all standard global environments as CLIPBRD, HOME,
+AVSERVER, FONTSELECT, ...
+   
+   Known bugs and limitations
+   --------------------------
+This is beta release and every program have some bugs, then we presents
+some of them here ;-)
+
+-------------------------------------------------------------
+   unsolved TIMEOUTs                          
+   you can't delete directories recursively
+-------------------------------------------------------------  
+
+   Contact
+   -------
+   
+   ATACK                         e-mail:  atack@szt.cdrail.cz
+   Jan & Tomas Krivankove        FIDO  :  2:423/33
+   Zizkova 26                    NeST  :  90:1200/7
+   320 16  Plzen                 PR    :  OK1XKN @ OK0PPL.#BOH.CZE.EU
+   Czech Republic
+
+Latest version is available on http://www.pwp.cz/atack/
+
+To this addresses send your comments, bug reports, experiences
+with aFTP, money, presents, ... :-)
+
+Many pleasures with InterNET and many interesting files geting by our
+program. Good luck!
+
+                              ATACK InterNET Division ! ;)

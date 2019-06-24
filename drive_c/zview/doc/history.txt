@@ -1,0 +1,223 @@
+25 December 2005: BETA7a
+========================
+
+- A version of zview compatible with MagiC OS is provided in the "MagiC"
+folder.
+
+
+24 December 2005: BETA7
+=======================
+
+News:
+-----
+- PDF:
+	* Huge quality improvement in the PDF font rendering (Atari specific).
+	* Zoom function added.
+	* Code upgraded to xpdf 3.01pl1( 2005-dec-01).
+- Complete EXIF 2.21 support for JPEG image( now, you can see various
+  usefull informations like when the picture was taken, if the flash of your
+  camera was fired or not, the model of your cam, etc...).
+- Now, zView can extract the thumbnails embedded inside JPEG images created
+  with a digital photo-cam.
+  That means than the thumbnail creation is 20 times faster if the JPEG was
+  created with a camera.
+- News options added:
+	* Skip drive( it's faster to skip the check of the CD-ROM drive for example).
+	* Smooth Thumbnail: now, you can smooth the thumbnails with various method.
+	  That is very slow and only available on true color or near true color
+	  display but the result are perfect( specialy with the lanczos computation). 
+	* PDF font antialiasing ON/OFF.
+	* Fit the PDF to the window.
+- Utilisation of an embedded font to have the same look on any computers.
+- Animated interlaced Gif and animated Gif with transparency now supported.
+- More zoom levels for the pictures( 25, 50, 100, 150 and 200%, previoulsy: 
+  50, 100, and 200%).
+- Some function's shortcuts added to the toolbars.
+
+
+Bugs fixes:
+-----------
+- Many fixes in the PDF code( PDF rotated, problems with some fonts, etc..).
+- Missing horizontal SLIDER computation in the PDF and image window.
+- Little memory leak corrected in the multi-timer function.
+- A memory block was not freed in the file_rename function.
+- Some redraw fixed ( PDF bookmark, etc...).
+- Others littles bugs fixed.
+
+
+Know bug:
+---------
+- On aranym, with the DSP cookie installed, some stranges problems append
+  when we write a JPG.
+
+  
+
+5 August 2005: BETA6
+====================
+
+News:
+-----
+- For compatibility with the PDF code, zview is now under GPL licence.
+- Animation support added.
+  The first format benefitting of that is the animated GIF( SPACE key for 
+  pause/resume).
+- PDF read support( You will need a lot of memory to read a PDF).
+- Reservoir Dogs Godpaint write and read support.
+- Zoom available with the window's toolbar or the '+' and '-' keys.
+- Documentation and desktop icon added by Sacha Uhlig, many thanks to him !
+- French translation by Cyril Lefebvre, thanks to him !
+- Now, we can save from an interlaced picture.
+- The scrolling in the picture's window and the redraw function are a 
+  little bit faster.
+- Custom font added for the Exif Panel to see more lines.
+- 'VDI-Enhancer' from the Behne Bros provided in the "goodies" folder.
+  Install it if you use the standard Atari VDI without NVDI/fVDI/etc..
+- Others littles changes like Control+U to close the window instead of 
+  Control+W ( standard), menubar desactivation when we load a picture, 
+  'out of memory' warning in full screen code, etc...
+
+
+Bugs fixes:
+-----------
+- Remove unecessary redraws of the menu bar when we scroll the window and
+  in the browser window when this one is opened.
+- Now, when you enter in a directory and you go back again, the old 
+  directory remains selected. the code was there but it was wrong.
+- Static MDFB struct. were freed in 'winimg' and full screen code !  
+- The 1 plane pictures and icon were not correctly drawn in fullscreen mode
+  and in the browser's toolbar.
+- The progress bar was one pixel too wide and high.
+- Problem with 1 bits degas picture corrected.
+- Now, the background in full screen mode is always black.
+- In the Gif codec, a crash occured if the picture's text data was greater 
+  that 255 lines.
+- Uncorrect translation in the GUI ( octets -> bytes, etc...).
+
+
+Know bug:
+---------
+- On aranym, with the DSP cookie installed, some stranges problems append
+  when we write a JPG.
+- Various animated GIF are badly rendered.
+- With some rare PDF, the fonts are outlined.
+- The decoding of PDF with big pictures inside is very slow ( not really a 
+  bug but this code must be rewrote).
+
+
+
+20 february 2005: BETA5
+=======================
+
+News:
+-----
+- 68000, 68020 without FPU and 68020-60 version of the codecs and binaries 
+  available.
+- Full screen mode with automatic picture resize if this one is bigger that
+  the screen. ( F10 shortcut)
+- Another cool feature: when a window is iconified, zview show a thumbnail 
+  of the picture inside.
+- With the last Aranym from CVS, the JPG pictures are decoded natively with 
+  the host CPU !! ( to use this feature, "nfjpeg.prg" in your 'auto' folder
+  before MiNT). Many thanks to Patrice Mandin for his work on Aranym !
+- The DSP and the main JPG codecs are now merged in only one codec.
+  If the brainstorm's cookie is detected and you haven't a 68060, the JPG is
+  decoded with the DSP, else the CPU routine is used. 
+- Support of DEGAS compressed added ( PC1,PC2,PC3).
+- Others littles changes like recompilation of all the codecs with the last 
+  GCC, the possibility to move the about box with Xaaes, informations about 
+  the licence, etc...
+
+
+Bugs fixes:
+-----------
+- Many problems on others OS that MiNT are corrected, for exemple, the 
+  plugins were not loaded if this ones were in the global folder 
+  ( aka "LDGPATH/codecs") under TOS and MagiC, etc etc...
+- Problems with some degas images fixed.
+- With the DSP, JPG pictures not multiple of 16 were badly decoded. 
+- In planes < 8 bits, the toolbar's icons was not shown.
+- VDI's EDDI check at the start.
+- Zview saves the browser's coordinates when we quit the application.
+  Now, this coordinates are not saved if this window is iconified ( for 
+  prevent bad browser coordinate on next relaunch). 
+- Others littles bugs fixes like with the menu bar handling, error messages
+  not correct, etc etc...
+
+
+
+23 december 2004: BETA4
+=======================
+
+News:
+-----
+- The plugins are now in "codecs" directory, this one must be installed in  
+  "c:/gemsys/ldg/codecs" because some applications will use it.
+- Read & Write codecs for TIFF added. ( almost all variants supported !!!)
+- Read codecs for FAX added.
+- Read codecs for Eureka RAW data added.
+- Degas codecs read also Degas Elite uncompressed image now 
+  ( Thanks for the documentation Adam!).
+- The encoder and decoder are now in the same plugin.
+- Navigator frame scrolling optimised.
+- Some internal change in picture to screen convertion.
+
+
+Bugs fixes:
+-----------
+- Extra check for reverse pixel byte added to support 15, 16, 24 and 32 bits 
+  mode of some weired Hades VDI driver ( for Falcon NOVA card also).
+- Picture with 4 characters extention ( like "*.jpeg" or "*.tiff") are now 
+  handled correctly.
+
+
+
+25 november 2004: BETA3
+=======================
+
+News:
+-----
+- zView goes to LGPL.
+- TGA read plugin added( 15, 16, 24, 32 bits normal and compressed).
+- BMP read plugin added( 1, 4, 8, 24 bits non compressed).
+- JPG read plugin with DSP added. ( move JPG.LDG from '/dsp'
+  to '/plugin/decoder' and install jpgd.prg in your auto folder).
+- Option panel for the jpg encoder added... with this one, you can 
+  set the image quality wanted, progressive and grayscale mode.
+- The image viewer provides now a Info bar with basic information like 
+  resolution, color bits and image type.
+- Add delete function in the menu bar.
+- MEM.LDG from dominique Bereziat is now used for memory allocation 
+  ( more safe for MagiC system).
+- The dithering routine is now better for 8 and 4 bits resolution.
+- Handle of multi-pages Image format; first step for the fax and PDF 
+  reading.
+- Menu "history" activated.
+- the "jpe" image are now decoded with the JPG plugin.
+
+
+Bugs fixes:
+-----------
+- Some XGEM picture from old french application with non standard data caused
+  a crash under MagiC.. Now the line buffer is greater to avoid overflow.
+- Bugs fixe in the alpha code in PNG plugin.
+- The numpad key was not usable for rename a file.
+- redraw issue when the slider was used and a part of the window was outside 
+  the screen area.
+- The information dialog returned 0 colors for 24 bits img picture. 
+- Little bug fixe in rename function.
+- When you renamed a folder, the change was not done in the tree browser.
+- The use of a specific MiNT function ( Fxattr) made that the neochrome and 
+  degas picture wasn't displayed under plain TOS.
+- Fixe a little problem of allignement of the text in catalog tree when we 
+  change the font.
+- Fixe a bug that occurs when we deleted a folder in a "very depth" folder...
+  It was not deleted in the tree catalog.
+- Fixe a bug in the infobox, the '/0' null character was not put when the 
+  picture comes from fileselector, shame on me.
+
+
+
+28 october 2004: BETA2
+======================
+
+- First public release.

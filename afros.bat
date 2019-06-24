@@ -1,0 +1,1 @@
+..\aranym.exe -c config

@@ -1,0 +1,5 @@
+if(address("aniplay"))
+{
+	printf(GetYear());
+	wait(200);
+}

@@ -1,0 +1,183 @@
+// hot2grp.sic (c) 09.08.2000 by JAY Software
+//
+// This script converts your HTML hotlist saved by CAB, LYNX or any
+// other .HTML file containing the <a href=...> </a> tags and extracts
+// them into the .GRP file.
+// Known limitations:
+//	The whole <a></a> tag must begin and end on the same line in
+//	the file
+//
+// The script creates its own .INF file where it stores the files
+//	selected by the Fileselector if none .INF is found.
+//	Remove the .INF file to change the configuration or
+//	edit it manually.
+//
+// Changes:	14.08.2000  STan  Default pathnames are in the script dir now
+//
+
+const	INFPath		= "hot2grp.inf";
+const	GRPTitle	= "WEB Hotlist";
+const	GRPSep		= "----- %s -----";
+
+/* .INF file load routine */
+proc LoadINF( PathName ) local sLine;
+{
+	if ( fopen( PathName ,"r" ) ) {
+		if ( getline( PathName, sLine ) )
+			HotListPathName = sLine;
+		if ( getline( PathName, sLine ) )
+			BrowserPathName = sLine;
+		if ( getline( PathName, sLine ) )
+			GRPPathName = sLine;
+
+		fclose( PathName );
+
+		return 1;
+	}
+
+	return 0;
+}
+
+
+/* .INF file load routine */
+proc SaveINF( PathName ) local sLine;
+{
+	if ( fopen( PathName ,"w" ) ) {
+		putline( PathName, HotListPathName );
+		putline( PathName, BrowserPathName );
+		putline( PathName, GRPPathName );
+		fclose( PathName );
+
+		return 1;
+	}
+
+	return 0;
+}
+
+
+/* strlwr capable only convert the HREF letters */
+proc SpecLwr( sLine ) local i, sResLine, Char, iChar;
+{
+	sResLine = "";
+	i = 0;
+
+	while ( Char = substr( sLine, i++, 1 ) ) {
+		switch (Char) {
+			case "E" :
+				Char = "e";
+				break;
+			case "F" :
+				Char = "f";
+				break;
+			case "H" :
+				Char = "h";
+				break;
+			case "R" :
+				Char = "r";
+				break;
+		}
+		sResLine += Char;		
+	}
+
+	return sResLine;
+}
+
+
+/* Go through the hotlist and extract all <a href ...> commands to the group */
+proc Hotlist2Grp( HotList, GRPFile, Browser ) local bCanOpen, Title, Argument, sLine, sLowLine, Pos;
+{
+	// Ensure the attributes to be preserved
+	if ( fopen( GRPFile ,"r" ) ) {
+		bCanOpen = 1;
+		fclose( GRPFile );
+	} else {
+		bCanOpen = 0;
+	}
+
+	if ( bCanOpen && Load( GRPFile ) ) {
+		// Delete all items
+		Delete( "*" );
+	} else {
+		// Create a new group
+		New( GRPFile, GRPTitle );
+	}
+
+	if ( fopen( HotList ,"r" ) ) {
+		while ( getline( HotList, sLine ) ) {
+			if ( imatch( sLine, "*href*>" ) ) {
+					sLowLine = SpecLwr( sLine );
+					Pos = index( sLowLine, "href" ) + 4;
+					sLine = substr( sLine, Pos );
+					Pos = index( sLine, "\"" ) + 1;
+					sLine = substr( sLine, Pos );
+					Pos = index( sLine, "\"" );
+					if ( Pos > -1 ) {
+						Argument = substr( sLine, 0, Pos );
+						if ( substr( Argument, 0, 1 ) != "#" ) {
+							sLine = substr( sLine, Pos );
+						Pos = index( sLine, ">" ) + 1;
+						sLine = substr( sLine, Pos );
+						Pos = index( sLine, "</" );
+						Title = substr( sLine, 0, Pos );
+						
+						printf( "." );
+						Add( Browser, Title, Argument );
+					}
+				}
+			} else if ( imatch( sLine, "<h3 id*" ) ) {
+				// CAB hotlist separators
+				Pos = index( sLine, "\"" ) + 1;
+				sLine = substr( sLine, Pos );
+				Pos = index( sLine, "\"" );
+				sprintf( Title, GRPSep, substr( sLine, 0, Pos ) );
+
+				printf( "." );
+				Add( Browser, Title );
+			}
+		}	// while ( getline ...
+
+		fclose( HotList );
+
+		Save();
+
+		return 1;
+	}	// if ( fopen ( ...
+
+	return 0;
+}
+
+
+proc main(...)
+{
+	// Get a script path
+	cwd(Path);
+
+	// Global variables
+	HotListPathName	= Path + "hotlist.htm";
+	BrowserPathName	= Path + "cab.app";
+	GRPPathName	= Path + "hotlist.grp";
+
+	print( "Loading hot2grp.inf file" );
+
+	if ( ! LoadINF( INFPath ) ) {
+		print( "No hot2grp.inf found... using default setting" );
+		fsel( HotListPathName, "Hotlist file...", "*.htm*" );
+		fsel( BrowserPathName, "Browser application...", "*.*" );
+		fsel( GRPPathName, "Destination .GRP file...", "*.grp" );
+
+		print( "Saving hot2grp.inf file" );
+		SaveINF( INFPath );
+	}
+
+	print( "Conversion in progress... " );
+
+	if ( address( "JAYGrpII" ) ) {
+//	if ( address( "PD_MINT" ) ) {
+		if ( Hotlist2Grp( HotListPathName, GRPPathName, BrowserPathName ) ) {
+			Open();
+			closewindow();
+		} else {
+			print( "Something have failed :-(" );
+		}
+	}
+}

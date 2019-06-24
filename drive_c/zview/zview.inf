@@ -1,0 +1,17 @@
+show_size=1
+show_hidden=0
+show_non_image=1
+browser_x=0
+browser_y=18
+browser_w=800
+browser_h=590
+sortingmode=0
+thumbnail_size=1
+browser_frame_width=200
+preview_frame_height=200
+show_read_progress_bar=1
+show_write_progress_bar=1
+skip_drive=ABU
+smooth_thumbnail=0
+pdf_fit_to_win=1
+pdf_aa=1

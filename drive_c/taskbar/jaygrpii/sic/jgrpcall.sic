@@ -1,0 +1,8 @@
+// jgrpcall.sic (c) 01.10.2000 by JAY Software
+//
+// This script passes its to the JAY Groups II
+
+proc main(...)
+{
+	JAYGrpII.Open( argv[0] );
+}
