@@ -14,3 +14,5 @@
   
   AFROS was created and is brought to you by Petr Stehlik
   Visit http://aranym.org/afros 
+
+This copy is maintained by ragnar <ragnar76@riseup.net>
