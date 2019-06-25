@@ -1,7 +1,9 @@
 
-                User's Manual for Tera Desktop V3.97
+   It's recommended to add the following line to xaaes.cnf:
 
-             Wout Klaren, Henk Robbers, Djordje Vukovic
+   app_options = taskbar, thinwork = false, winframe_size = 0, inhibit_hide = yes
 
-                             Augut 2008
+   This will minimize the window border, and also prevent Taskbar
+   from being hidden by XaAES.
+
 
