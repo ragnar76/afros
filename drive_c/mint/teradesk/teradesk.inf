@@ -272,7 +272,8 @@ deskicons=
 		labl=qed.app
 		type=5
 		path=C:\tools\editors\qed\qed.app
-		ypos=2
+		xpos=2
+		ypos=3
 	}
 	icon=
 	{
@@ -315,8 +316,7 @@ deskicons=
 		labl=highwire.app
 		type=5
 		path=C:\tools\net\highwire\highwire.app
-		xpos=2
-		ypos=3
+		ypos=4
 	}
 	icon=
 	{
@@ -324,7 +324,7 @@ deskicons=
 		labl=aftp.prg
 		type=5
 		path=C:\tools\net\atack\aftp\aftp.prg
-		xpos=1
+		xpos=2
 		ypos=4
 	}
 	icon=
@@ -333,16 +333,16 @@ deskicons=
 		labl=amail.prg
 		type=5
 		path=C:\tools\net\atack\amail\amail.prg
+		xpos=1
 		ypos=4
 	}
 	icon=
 	{
-		name=GEM@APP
-		labl=avnc.prg
+		name=PAINT
+		labl=photo_tt.prg
 		type=5
-		path=C:\tools\net\avnc\avnc.prg
-		xpos=2
-		ypos=4
+		path=C:\tools\gfx\photline.2_3\photo_tt.prg
+		ypos=2
 	}
 }
 
@@ -362,23 +362,24 @@ windows=
 		}
 		pos=
 		{
-			xpos=317
+			xpos=421
+			ypos=68
 			winw=52
 			winh=31
 		}
 		pos=
 		{
-			xpos=5
-			ypos=138
+			xpos=773
+			ypos=524
 			winw=36
 			winh=22
 		}
 		pos=
 		{
 			xpos=133
-			ypos=42
-			winw=42
-			winh=13
+			ypos=44
+			winw=44
+			winh=22
 		}
 		pos=
 		{

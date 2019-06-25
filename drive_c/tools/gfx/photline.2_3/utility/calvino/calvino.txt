@@ -1,0 +1,772 @@
+                      Anleitung zum Fontselektor
+
+                               Calvino
+
+                                V1.00
+                              21.07.1995
+
+                                 von
+
+                              Dirk Haun
+                             Europastr. 8
+                           D-64569 Nauheim
+
+                           Dirk Haun @ WI2
+
+
+
+Inhaltsverzeichnis
+==================
+
+ 1 Einleitung
+   1.1 Features
+   1.2 Einschr„nkungen und Probleme
+
+ 2 Die Installation
+   2.1 Mitgelieferte Dateien
+   2.2 Weitere Dateien
+
+ 3 Die Bedienung
+   3.1 Der Hauptdialog
+       3.1.1 Das Textbeispiel
+       3.1.2 Die ASCII-šbersicht
+       3.1.3 Die Listboxen
+       3.1.4 Das Font-Klemmbrett
+   3.2 Der Einstellungen-Dialog
+   3.3 Der Info-Dialog
+   3.4 Drag&Drop
+
+ 4 Das Programm FFE
+
+Anhang
+======
+
+ A Begriffe
+
+ B Fr Programmierer
+
+ C Danksagungen
+
+ D Italo Calvino
+
+ E Copyright / Rechtliches
+
+ F Kontaktadresse
+
+
+
+1 Einleitung
+============
+
+Calvino ist ein Fontselektor, d.h. ein Utility, das all jenen Pro-
+grammen, die eine Fontauswahl anbieten m”chten, einen Dialog zur Ver-
+fgung stellt, in dem der Anwender einen Font ausw„hlen kann. Somit
+kann diese Fontauswahl, analog zum Fileselektor, in allen Programmen
+in gleicher Art und Weise geschehen.
+
+Warum aber noch einen Fontselektor, wo es doch schon eine ganze Reihe
+derartiger Programme gibt? Ich habe selbst lange Zeit den UFSL von
+Michael Th„nitz (den ersten externen Fontselektor berhaupt) verwen-
+det. Nachdem dessen Entwicklung leider eingestellt worden war, und
+sich im Laufe der Zeit doch noch einige Wnsche angesammelt hatten,
+die auch von den anderen Fontselektoren nicht erfllt worden waren,
+wollte ich ursprnglich nur die Weiterentwicklung des UFSL ber-
+nehmen. Doch schon bald zeigte sich, da es wohl besser w„re, den
+Fontselektor von Grund auf neu zu schreiben.
+
+Das Ergebnis namens Calvino haben Sie nun vor sich. Calvino steht in
+der Tradition des UFSL und verzichtet daher auf einige machbare, aber
+m.E. weniger wichtige Features (z.B. Neigung und Kerning). Vielmehr
+soll Calvino - trotz einiger zus„tzlicher Features gegenber dem UFSL
+- immer noch einfach und (hoffentlich) intuitiv bedienbar sein.
+
+Da die neuen Features ber die alte, noch vom UFSL vorgegebene, Pro-
+grammierschnittstelle nicht erreichbar sind, mute eine neue Schnitt-
+stelle her. Diese, mit anderen Programmautoren abgestimmte, Schnitt-
+stelle namens 'xFSL' (steht fr extended Fontselektor) soll die UFSL-
+Schnittstelle abl”sen und Anwendungsprogrammen mehr Einflu auf den
+Fontselektor und die von ihm zur Auswahl angebotenen Fonts geben.
+
+
+1.1 Features
+------------
+
+Calvino zeichnet sich durch die folgenden Features aus:
+
+   ù Trennung von Fontfamilien und -schnitten
+     Calvino bietet die im System installierten Fonts getrennt nach
+     Familien und Schnitten an. Man w„hlt also zun„chst in der linken
+     Listbox eine Fontfamilie (z.B. "Swiss 721") und dann in der mitt-
+     leren Listbox einen Schnitt aus dieser Familie (z.B. "Bold
+     Italic").
+
+     Gerade Vektorfonts werden oft in mehreren Schnitten geliefert,
+     so da eine "traditionelle" Fontauswahl leicht zur Unbersicht-
+     lichkeit neigt.
+
+   ù Reentranz
+     Calvino ist bis zu achtfach reentrant, d.h. da bis zu acht Font-
+     selektoren gleichzeitig laufen k”nnen (wer's braucht ...).
+
+     Dies funktioniert natrlich nur, wenn Calvino als Fensterdialog
+     aufgerufen wird. Sobald Calvino einmal als modaler Dialog aufge-
+     rufen wird, kann nur noch dieser Dialog bearbeitet werden.
+
+   ù Overlay-Technik
+     Calvino verwendet ein Overlay (XFSL.OVL), das immer dann nachge-
+     laden wird, wenn Calvino aktiviert wird. Somit belegt Calvino im
+     "Ruhezustand" nur wenig Speicher (n„mlich nur den Speicher, den
+     der residente Teil belegt, z.Z. gerade 6 KByte).
+
+     Auerdem kann Calvino zur Laufzeit (d.h. ohne Reset) gegen einen
+     anderen Fontselektor ausgetauscht werden, der sich ebenfalls der
+     Overlay-Technik bedient. Dies ist z.Z. nur der Fontselektor
+     HuGo! von Stefan Rogel. Wenn Ihnen Calvino nicht gef„llt, soll-
+     ten Sie sich einmal HuGo! ansehen.
+
+   ù flexible Programmier-Schnittstelle
+     Die xFSL-Schnittstelle erlaubt dem Programm, das den Fontselek-
+     tor aufruft, einen vielf„ltigen Einflu auf das Verhalten des
+     Fontselektors und die zur Auswahl bereitgestellten Fonts.
+
+     Programmierer seien auf die beiliegende Dokumentation (XFSL.HYP)
+     verwiesen.
+
+   ù Drag&Drop-Untersttzung
+     Der in Calvino eingestellte Font kann auch per Drag&Drop an ande-
+     re Applikationen bergeben werden, wenn diese das Font-Protokoll
+     beherrschen.
+
+
+1.2 Einschr„nkungen und Probleme
+--------------------------------
+
+Einschr„nkungen
+
+Durch die Overlay-Technik ist Calvino im Diskettenbetrieb wohl nicht
+sinnvoll einsetzbar. Wer allerdings ein GDOS ohne Festplatte betreibt
+sollte sich aber ohnehin einmal auf eine masochistische Ader untersu-
+chen lassen ...
+
+Calvino bietet nicht alle M”glichkeiten an, die das VDI bzw. GDOS zur
+Manipulation von Fonts untersttzt. Kerning, Textrotation und Text-
+farbe k”nnen mit Calvino also nicht beeinflut werden. Wer dies unbe-
+dingt ben”tigt, ist mit dem Fontselektor HuGo! von Stefan Rogel m”g-
+licherweise besser bedient.
+
+
+Bekannte Probleme
+
+Es gibt ein bekanntes Problem mit der Version 5.0a von SpeedoGDOS:
+Diese Version strzt bei h„ufigem Aufruf einer bestimmten Funktion
+(vqt_fontheader) ab. Da Calvino auf diese Funktion aber angewiesen
+ist, empfiehlt sich ein Update auf eine neuere Speedo-Version.
+
+
+
+2 Die Installation
+==================
+
+Calvino besteht aus zwei Teilen: Dem residenten Teil CALVINO.PRG, im
+folgenden "Shell" genannt, und dem eigentlichen Fontselektor
+XFSL.OVL, der bei Bedarf nachgeladen und im folgenden als "Overlay"
+bezeichnet wird.
+
+Kopieren Sie CALVINO.PRG in den AUTO-Ordner. Das Overlay XFSL.OVL
+k”nnen Sie ins Wurzelverzeichnis Ihres Bootlaufwerks oder ebenfalls
+in den AUTO-Ordner kopieren, Calvino sucht an beiden Stellen danach.
+
+Die Position im AUTO-Ordner ist nahezu beliebig, nur unter MiNT bzw.
+MultiTOS sollte Calvino vor dem MINT.PRG stehen.
+
+Wenn Sie noch einen anderen Fontselektor im AUTO-Ordner aktiv haben,
+so kommt es auf die Reihenfolge an: Findet Calvino bereits einen xFSL-
+Cookie vor, so installiert er sich nicht. Findet er dagegen nur einen
+UFSL-Cookie vor, so installiert er nur seinen xFSL-Cookie (Sie k”nn-
+ten somit Calvino und einen UFSL-Fontselektor gleichzeitig betrei-
+ben).
+
+Starten Sie nun den Rechner neu (Reset). Calvino sollte sich w„hrend
+der Bootphase mit Angabe der Versionsnummer melden. Sie k”nnen auch
+eine der beiden Shift-Tasten gedrckt halten, Calvino h„lt dann nach
+der Meldung an, so da Sie diese in Ruhe lesen k”nnen. Wenn Sie die
+Shift-Taste wieder loslassen, wird der AUTO-Ordner weiter abgearbei-
+tet.
+
+Nach erfolgreicher Installation sollten Sie zwei Cookies 'xFSL' und
+'UFSL' vorfinden (dies l„t sich mit einem geeigneten Programm, z.B.
+SysInfo, berprfen). šber den Cookie 'UFSL' stellt Calvino einen
+Fontselektor zur Verfgung, der kompatibel zu dem Programm UFSL von
+Michael Th„nitz ist. šber den zweiten Cookie 'xFSL' wird zudem ein
+Fontselektor mit erweiterten M”glichkeiten angeboten.
+
+Wenn Sie ein Vektor-GDOS verwenden (z.B. SpeedoGDOS oder NVDI ab Ver-
+sion 3), dann legt Calvino einen sogenannten Font-Cache an, in dem er
+sich die Informationen ber die installierten Fonts merkt. Das Anle-
+gen dieser Datei kann u.U. einen Moment dauern, beschleunigt dafr
+aber die folgenden Aufrufe.
+
+
+2.1 Mitgelieferte Dateien
+-------------------------
+
+Zum Lieferumfang geh”ren die im folgenden aufgelisteten Dateien. Wenn
+Sie Calvino kopieren mssen Sie immer alle dieses Dateien in unver„n-
+dertem Zustand weitergeben!
+
+     calvino.prg    -- die Shell (residenter Teil)
+     xfsl.ovl       -- das Overlay (nachladbarer Teil)
+     calvino.txt    -- Anleitung im ASCII-Format
+     read_me        -- Kurzanleitung fr Ungeduldige
+     copying        -- rechtliche Hinweise
+    
+     hyp\
+        calvino.hyp -- Anleitung im ST-Guide-Format
+        calvino.ref -- REF-Datei dazu
+        xfsl.hyp    -- Beschreibung der xFSL-Schnittstelle
+        xfsl.ref    -- REF-Datei dazu
+
+
+2.2 Weitere Dateien
+-------------------
+
+Wenn Sie Calvino installiert haben, legt er noch zwei Dateien an:
+
+   ù CALVINO.FCH
+     Dies ist der sogenannte Font-Cache, der nur angelegt wird, wenn
+     Sie ein Vektor-GDOS (z.B. SpeedoGDOS oder NVDI ab Version 3) ver-
+     wenden. Hier merkt sich Calvino die Namen und den Typ der instal-
+     lierten Fonts.
+
+     Diese Datei wird immer dann neu angelegt, wenn Sie neue Fonts an-
+     melden oder vorhandene Fonts abmelden. Das bedeutet dann beim er-
+     sten Aufruf nach einer solchen nderung zwar eine gewisse Warte-
+     zeit, beschleunigt dafr aber den normalen Aufruf.
+
+   ù CALVINO.INF
+     In dieser Datei merkt sich Calvino die vorgenommenen Einstellung-
+     en aus dem Einstellungen-Dialog sowie die Fonts, die Sie auf dem
+     Font-Klemmbrett abgelegt haben.
+
+Wenn Sie ein HOME-Verzeichnis haben, dann werden diese beiden Dateien
+bevorzugt in $HOME/defaults oder, wenn dieses nicht vorhanden ist, di-
+rekt in $HOME abgelegt. Andernfalls werden die beiden Dateien immer
+dort angelegt, wo sich auch das Overlay befindet.
+
+
+
+3 Die Bedienung
+===============
+
+
+3.1 Der Hauptdialog
+-------------------
+
+Der Hauptdialog von Calvino zeigt folgendes:
+
+   ù Das Textbeispiel
+     Hier sehen Sie eine Schriftprobe des jeweils aktuellen Fonts.
+     Rechts oben steht zudem, um welche Art von Font es sich handelt
+     und welche ID er hat.
+
+     Durch einen Doppelklick auf das Textbeispiel erhalten Sie eine
+     ASCII-šbersicht.
+
+   ù Die Icons
+     Rechts neben dem Textbeispiel finden Sie zwei Icons, ber die
+     Sie den Einstellungen-Dialog (Hand) und den Info-Dialog (kleines
+     'i') aufrufen k”nnen.
+
+   ù Das Font-Klemmbrett
+     Auf dem Font-Klemmbrett k”nnen Sie bis zu 10 Fonts ablegen, die
+     Sie ”fters brauchen.
+
+   ù Die Listboxen
+     Calvino stellt Ihnen die Fonts in drei Listboxen zur Auswahl:
+
+     a) Fontfamilie
+        In der linken Listbox k”nnen Sie eine Fontfamilie ausw„hlen,
+        z.B. "Swiss 721".
+
+     b) Schnitt
+        In der mittleren Listbox k”nnen Sie einen Schnitt dieser Fa-
+        milie (sofern sie aus mehreren Schnitten besteht) ausw„hlen,
+        z.B. "Italic".
+
+     c) Gr”e
+        In der rechten Listbox schlielich k”nnen Sie eine Gr”e aus-
+        w„hlen. Die Gr”en sind in Punkt (pt) angegeben. Bei Bitmap-
+        fonts sind dies die einzigen Gr”en, die Ihnen zur Auswahl
+        stehen, bei Vektorfonts k”nnen Sie von Hand auch beliebige
+        andere Gr”en eingeben.
+
+   ù Die Gr”eneingabe
+     Unter der mittleren Listbox befindet sich noch ein Editfeld, in
+     dem Sie bei Vektorfonts die Gr”e auch frei eingeben k”nnen, so
+     da Sie nicht an die Vorgaben aus der rechten Listbox gebunden
+     sind. Wenn der aktuelle Font ein Bitmapfont ist, kann die Gr”en-
+     angabe hier nicht ge„ndert werden, sondern nur durch Auswahl ei-
+     ner Gr”e in der Listbox.
+
+
+3.1.1 Das Textbeispiel
+
+Das Textbeispiel zeigt eine Schriftprobe des jeweils aktuellen Fonts.
+Rechts oben steht zudem, um welche Art von Font es sich handelt (nur
+bei Vektor-GDOSsen) und welche ID der Font hat.
+
+Das Textbeispiel erscheint nicht immer in der tats„chlich eingestell-
+ten Fontgr”e! Wenn die Gr”e einen bestimmten Wert berschreitet,
+w„ren sonst nur noch Teile der Buchstaben zu sehen, die keinen Ein-
+druck der gew„hlten Schrift mehr liefern. Daher sorgt Calvino dafr,
+da der Font immer nur so gro angezeigt wird, da die Buchstaben m”g-
+lichst noch vollst„ndig sichtbar sind.
+
+Durch einen Doppelklick auf das Textbeispiel erhalten Sie eine šber-
+sicht ber alle Zeichen des Fonts (ASCII-šbersicht). Wenn Calvino als
+Fensterdialog erscheint, kann das Textbeispiel auch mit der Maus ge-
+griffen und damit der Font per Drag&Drop an andere Applikationen ber-
+geben werden.
+
+
+Bedienung per Tastatur
+
+Mit der Tastenkombination Alt-Tab k”nnen Sie zwischen den verschieden-
+en Beispieltexten (Name des Fonts, Text aus dem Einstellungen-Dialog,
+vom aufrufenden Programm bergebener Text) umschalten.
+
+
+3.1.2 Die ASCII-šbersicht
+
+Durch einen Doppelklick auf das Textbeispiel erhalten Sie eine šber-
+sicht ber den kompletten Zeichensatz (genauer gesagt, nur ber die
+Zeichen im Bereich 0-255, Vektorfonts k”nnen u.U. auch mehr mehr Zei-
+chen enthalten, die aber erst in den Bereich 0-255 eingeblendet wer-
+den mssen).
+
+Links oben finden Sie den Namen und die Gr”e des Fonts, rechts oben
+den ASCII-Code des Zeichens, ber dem sich der Mauszeiger gerade be-
+findet.
+
+Durch einen Mausklick oder Tastendruck kommen Sie zurck zum
+Hauptdialog.
+
+
+3.1.3 Die Listboxen
+
+Calvino hat im Hauptdialog drei sogenannte Listboxen. Dabei handelt
+es sich gewissermaen um "Fenster im Fenster", d.h. da jeweils nur
+ein Ausschnitt aus einer l„ngeren Liste angezeigt wird.
+
+Die Bedienung der drei Listboxen ist identisch: šber den Scrollbalken
+und die Buttons mit den Pfeilen k”nnen Sie in der Liste bl„ttern bzw.
+scrollen.
+
+Das R„hmchen um die jeweils zuletzt angew„hlte Listbox ist der soge-
+nannte Input-Fokus. Der einzige Sinn dieses R„hmchens besteht darin,
+anzuzeigen, welche Listbox gerade die aktive ist und daher per Tasta-
+tur bedient werden kann.
+
+
+Bedienung per Tastatur
+
+In der Listbox mit dem Input-Fokus kann mit den Cursortasten (auf/ab)
+gescrollt und mit Shift-Cursortaste gebl„ttert werden. Mit der Home-
+Taste gelangt man an den Anfang der Liste, mit Shift-Home ans Ende.
+
+Der Input-Fokus kann mit Tab (vorw„rts) bzw. Shift-Tab (rckw„rts) so-
+wie mit Control-Cursor links/rechts zwischen den drei Listboxen umge-
+schaltet werden.
+
+
+3.1.4 Das Font-Klemmbrett
+
+Das Font-Klemmbrett ist ein einfaches Popup, auf dem bis zu zehn
+Fonts abgelegt werden k”nnen. Sie haben somit schnellen Zugriff auf
+die Fonts, die Sie am h„ufigsten ben”tigen.
+
+Einen Eintrag im Font-Klemmbrett k”nnen Sie belegen, indem Sie einen
+der leeren Eintr„ge anklicken. Name und Gr”e des aktuell eingestell-
+ten Fonts werden dann auf diesen Eintrag bernommen. Wenn Sie einen
+schon belegten Eintrag berschreiben wollen, so halten Sie einfach
+noch zus„tzlich eine Shift-Taste gedrckt.
+
+Ein Font von einem belegten Eintrag wird durch einfaches Anklicken ab-
+gerufen, der Fontselektor zeigt dann diesen Font an. Natrlich sind
+nicht immer alle Eintr„ge auch anw„hlbar. Wenn der Fontselektor so
+aufgerufen wurde, da er nur monospaced Fonts anzeigen soll, dann
+sind alle proportionalen Fonts auf dem Font-Klemmbrett nicht anw„hl-
+bar.
+
+Die Belegung des Font-Klemmbretts l„t sich mit dem Button "Sichern"
+im Einstellungen-Dialog abspeichern.
+
+
+Bedienung per Tastatur
+
+Das Font-Klemmbrett l„t sich auf zwei Arten per Tastatur bedienen:
+Zum einen ber die Funktionstasten. Mit der Taste F1 rufen Sie den
+ersten Eintrag ab, mit F2 den zweiten, usw. Entsprechend lassen sich
+die Eintr„ge mit Shift-Funktionstaste belegen.
+
+Die andere M”glichkeit: Das Font-Klemmbrett l„t sich mit der Tasten-
+kombination Alt-C ”ffnen. Anschlieend kann mit den Cursor-Tasten
+(auf/ab) ein Eintrag selektiert und mit der Return-Taste abgerufen
+oder mit Shift-Return belegt werden. Schlieen ohne Auswahl geschieht
+ber die Undo-Taste.
+
+
+3.2 Der Einstellungen-Dialog
+----------------------------
+
+Nach einem Klick auf das Icon mit der Hand (rechts oben im Hauptdia-
+log) ”ffnet sich der Einstellungen-Dialog. Er bietet folgende M”glich-
+keiten:
+
+   ù Beispieltext ist ...
+     Hier k”nnen Sie bestimmen, wie bzw. welcher Beispieltext ange-
+     zeigt werden soll.
+
+      - Name des Zeichensatzes
+        Ist dieser Punkt angew„hlt, dann wird der Name des jeweils
+        aktuellen Zeichensatzes als Beispieltext verwendet.
+
+      - (Editfeld)
+        Hier k”nnen Sie selbst einen Beispieltext vorgeben, z.B. den
+        beliebten Satz "The quick brown fox jumps over the lazy dog".
+
+      - von der Applikation vorgegeben, so vorhanden
+        Wenn dieser Punkt angekreuzt ist, sieht Calvino zun„chst
+        nach, ob das aufrufende Programm einen Beispieltext bergeben
+        hat. Wenn ja, wird dieser verwendet, andernfalls der Name des
+        Zeichensatzes oder der von Ihnen eingegebene Text (je nach-
+        dem, was sie angew„hlt haben).
+
+        Ist dieser Punkt nicht angekreuzt, so wird entweder der Name
+        des Zeichensatzes oder der Text aus dem Editfeld verwendet -
+        wieder abh„ngig davon, welche der beiden M”glichkeiten ange-
+        w„hlt ist.
+
+   ù Fonts markieren
+     Hiermit haben Sie die M”glichkeit, proportionale oder monospaced
+     Fonts mit einem beliebigen ASCII-Zeichen markieren zu lassen.
+     Klicken Sie dazu zun„chst die Crossbox vor dem Text "Fonts mar-
+     kieren" an und dann - je nach Wunsch - "proportionale" oder
+     "monospaced". Schlielich k”nnen Sie noch die Nummer eines Zei-
+     chens eingeben, mit dem die Fonts markiert werden sollen. Vorein-
+     gestellt (aber beliebig „nderbar) ist das Zeichen 250, ein klei-
+     ner schwarzer Punkt.
+
+   ù Hauptdialog zentrieren
+     Normalerweise erscheint der Fontselektor an der Position, an der
+     Sie sich gerade mit der Maus befinden. Wollen Sie lieber, da
+     der Fontselektor immer in der Bildschirm-Mitte erscheint, so
+     kreuzen Sie diesen Punkt an.
+
+Alle diese Einstellungen k”nnen Sie mit dem Button "Sichern" in der
+linken unteren Ecke des Dialogs auch abspeichern lassen. Calvino legt
+dafr eine Datei CALVINO.INF an.
+
+
+Bedienung per Tastatur
+
+Mit den folgenden Tastenkombinationen l„t sich der Einstellungen-Dia-
+log auch komplett ber Tastatur bedienen:
+
+     Taste  Objekt
+    ---------------------------------------
+     Alt-A  Abbruch
+     Alt-F  Fonts markieren
+     Alt-H  Hauptdialog zentrieren
+     Alt-M  monospaced
+     Alt-N  Name des Zeichensatzes
+     Alt-O  OK
+     Alt-P  proportional
+     Alt-S  Sichern
+     Alt-T  Editfeld (Beispieltext)
+     Alt-V  von der Applikation vorgegeben
+     Return OK
+     Undo   Abbruch
+
+
+3.3 Der Info-Dialog
+-------------------
+
+Nach einem Klick auf das Icon mit dem kleinen 'i' im Hauptdialog ”ff-
+net sich der Info-Dialog. Hier findet sich neben der Versionsnummer
+und meiner Adresse auch eine Information ber das installierte GDOS
+(so vorhanden) und - wenn m”glich - auch ber das installierte VDI.
+Bei beiden wird die Versionsnummer angegeben.
+
+Calvino kann z.Z. nur das NVDI (von Behne&Behne) sowie das Nova-VDI
+der Nova-Graphikkarten identifizieren.
+
+Ist kein GDOS installiert, so wird dies durch drei Striche ('-') si-
+gnalisiert. Kann das GDOS nicht n„her identifiziert werden, so wird
+"vorh." angezeigt, andernfalls der Name oder das Krzel des GDOS so-
+wie seine Versionsnummer.
+
+
+3.4 Drag&Drop
+-------------
+
+Wenn Calvino als Fenster erscheint, dann kann das Textbeispiel auch
+gegriffen werden (mit der Maus anklicken, Maustaste gedrckt halten
+und die Maus verschieben) und auf ein anderes Fenster (auch das einer
+anderen Applikation) gezogen werden. Das Fenster bzw. dessen Eigen-
+tmer erh„lt dann eine Nachricht FONT_CHANGED, in der der Font und
+seine Gr”e bermittelt werden. Wenn der Empf„nger das Font-Protokoll
+untersttzt, so wird er daraufhin diesen Zeichensatz fr das Fenster
+verwenden.
+
+
+
+4 Das Programm FFE
+==================
+
+Das Programm FFE (steht fr "Fontselektor-FrontEnd") verwandelt einen
+beliebigen xFSL-Fontselektor in einen Drag&Drop-Fontselektor. Auer-
+dem versteht es auch die Nachricht FONT_SELECT und sorgt somit dafr,
+da der Fontselektor auer ber seine Cookie-Schnittstellen auch ber
+das Font-Protokoll aktiviert werden kann.
+
+FFE l„uft als Accessory (nicht unter SingleTOS), unter MagiC als Auto-
+start-Applikation sowie als normales Programm. Beim MagiC-Autostart
+legt es sich selbst als Icon ab und wartet dann darauf, aktiviert zu
+werden (durch einen Doppelklick auf das Iconfenster oder ber eine
+FONT_SELECT-Nachricht). Unter SingleTOS beendet sich FFE anschlieend
+wieder, unter einem Multitasking-System legt es sich als Icon ab und
+wartet dann auf den n„chsten Aufruf. Beenden l„t es sich dort durch
+einen Control-Klick (Mausklick bei gedrckter Control-Taste) in das
+Iconfenster oder durch Control-Q (wenn das Iconfenster das oberste
+Fenster ist).
+
+Wenn FFE "von Hand" aufgerufen wurde, pr„sentiert es den Fontselektor
+als Drag&Drop-Fontselektor, d.h. da der OK- und der Abbruch-Button
+nicht erscheinen und ein Font nur durch Ziehen des Beispieltextes auf
+ein Fenster einer anderen Applikation ausgew„hlt werden kann.
+
+Wurde FFE ber die Nachricht FONT_SELECT gestartet, so erscheint der
+Fontselektor wie gewohnt. Der - fr den Anwender nicht sichtbare -
+Unterschied besteht nur darin, da der ausgew„hlte Font nach Anwahl
+des OK-Buttons als Nachricht an den Aufrufer zurckgeliefert wurde.
+
+
+Installation
+
+Soll FFE als Accessory laufen, so mu es in FFE.ACC umbenannt und ins
+Wurzelverzeichnis des Bootlaufwerks kopiert werden. Nach dem n„chsten
+Neustart des Rechners (Reset) steht es dann zur Verfgung.
+
+Hinweis: Unter SingleTOS ist FFE als Accessory nicht sinnvoll einsetz-
+bar (dies hat technische Grnde, u.a. den, da Accessories unter
+SingleTOS keine vollwertigen Prozesse sind), daher verweigert es dort
+mit einem entsprechenden Hinweis die Arbeit.
+
+Unter MagiC empfiehlt sich die Installation als Autostart-Applikati-
+on. Dazu mu FFE.APP nur in den entsprechenden Ordner kopiert und der
+Rechner neu gestartet werden.
+
+
+Besonderheit
+
+FFE kann das Overlay des Fontselektors (XFSL.OVL) selbst nachladen.
+Wenn Sie wollen, k”nnen Sie also auf die Installation eines resi-
+denten Fontselektors verzichten und stattdessen nur FFE verwenden.
+FFE sucht nach dem Overlay an den gleichen Stellen wie Calvino: Im
+Wurzelverzeichnis des Bootlaufwerks und im AUTO-Ordner.
+
+
+
+
+A Begriffe
+==========
+
+Hier soll versucht werden, einige der in diesem Text verwendeten Be-
+griffe zu (er-)kl„ren.
+
+   ù Als Font wird hier die auf Computer zugeschnittene Repr„sentati-
+     on von Schrift und Zeichensatz bezeichnet. Ein Font enth„lt pri-
+     m„r Informationen ber das Aussehen von Zeichen, aber auch dar-
+     ber, welche Zeichen berhaupt zur Verfgung gestellt werden.
+
+   ù Eine Fontfamilie ist eine Sammlung mehrerer zusammengeh”render
+     Fonts, denen allen die gleiche Schrift und der gleiche Zeichen-
+     satz zugrunde liegen, die sich aber in ihrem Aussehen unter-
+     scheiden.
+
+   ù Ein Schnitt ist eine Variation des Aussehens einer Schrift (z.B.
+     durch Fettschrift oder Schr„gstellung).
+
+   ù Ein Zeichensatz ist der Vorrat an Zeichen, die in einer bestimm-
+     ten Umgebung zur Verfgung stehen. Ein Zeichensatz beschreibt
+     also nicht das Aussehen von Zeichen, sondern stellt nur Zeichen
+     (Buchstaben, Ziffern, diverse Sonderzeichen, ...) zur Verfgung.
+
+
+
+B Fr Programmierer
+===================
+
+Calvino stellt ber seinen beiden Cookies sowohl die UFSL-Schnittstel-
+le als auch die xFSL-Schnittstelle zur Verfgung. Eine genaue Be-
+schreibung dieser beiden Schnittstellen sollten Sie zusammen mit
+Calvino erhalten haben (XFSL.HYP).
+
+Zudem verschickt Calvino beim Drag&Drop die Nachricht FONT_CHANGED
+aus dem Font-Protokoll von Christian Grunenberg. Eine Beschreibung
+dieses Protokolls findet sich ebenfalls in XFSL.HYP.
+
+Mit dem Hilfsprogramm FFE kann zudem ein beliebiger xFSL-Fontselektor
+in einen Drag&Drop-Fontselektor verwandelt werden, der auerdem noch
+die Nachricht FONT_SELECT aus dem Font-Protokoll untersttzt.
+
+
+
+C Danksagungen
+==============
+
+Was w„re eine Anleitung ohne Danksagungen? Die folgenden Personen
+haben sich direkt oder indirekt einen Dank und eine namentliche Erw„h-
+nung verdient:
+
+   ù Michael Th„nitz, schlielich hatte er die Idee mit dem externen
+     Fontselektor. Sein UFSL war lange Zeit unbertroffen.
+
+   ù Stefan Rogel fr die konstruktive Zusammenarbeit
+
+   ù Reiner Rosin, ohne den in der WI2 sowieso nichts l„uft und der
+     unter einer Unmenge von obskuren Vorschl„gen auch den einen oder
+     anderen wirklich guten Tip auf Lager hatte ;-)
+
+   ù den fleiigen Betatestern und allen, die auf die eine oder ande-
+     re Weise direkt oder indirekt zu Calvino beigetragen haben (in
+     alphabetischer Reihenfolge):
+     Reinhard Bartel @ LU, Jens Bender @ HG, Thorsten Bergner @ B,
+     Andreas Gelbke @ OF2, Christian Grunenberg @ LB, Dirk Hagedorn @
+     MK2 (plus ein Extra-Danke fr UDO), Mathias Maul @ WI2, Thomas
+     Much @ KA2, Andreas Pietsch @ WI2, Andreas Schrell @ RS, Harald
+     Sommerfeldt @ W, Holger Weets @ OL, Christoph Zwerschke @ KA
+
+   ù Die Person, die ich garantiert vergessen habe ...
+     Fill in your name here: <________________________________>
+
+   ù ... und natrlich an Italo Calvino fr die sch”nen Geschichten.
+
+Ein Extra-Dank geht an die Cranes und Spiritualized fr die tolle
+Musik, die mir durch so manche Schaffenskrise geholfen hat.
+
+
+
+D Italo Calvino
+===============
+
+Entgegen anderslautenden Behauptungen (gelle, Reiner ;-)) war Italo
+Calvino, der Namensgeber dieses Fontselektors, kein Footballspieler
+sondern ein italienischer Schriftsteller.
+
+Einige biographische Daten, abgeschrieben von ein paar Klappentexten:
+
+   ù geboren am 15.10.1923, gestorben am 19.09.1985
+
+   ù Kindheit in Ligurien
+
+   ù Teilnahme am Partisanenkampf
+
+   ù Studium der Philosphie und Literatur
+
+   ù Verlagslektor, Mitarbeit an den Zeitschriften Il Politecnico und
+     Il Menabo
+
+šber sein Gesamtwerk habe ich selbst noch keinen vollst„ndigen šber-
+blick, deshalb hier nur ein paar pers”nliche Empfehlungen:
+
+   ù Unsere Vorfahren
+     Sammelband der drei Geschichten "Der geteilte Visconte", "Der
+     Baron auf den B„umen" und "Der Ritter, den es nicht gab"
+
+   ù Kybernetik und Gespenster
+     Eine Sammlung von Essays unter der šberschrift "šberlegungen zu
+     Literatur und Gesellschaft"
+
+Es ist mir nicht bekannt, ob sich Italo Calvino jemals mit Schrift-
+satz und Fonts besch„ftigt hat, aber die M”glichkeiten von Computern
+waren ihm durchaus bewut, wie der titelgebende Aufsatz aus "Kyberne-
+tik und Gespenster" sehr sch”n zeigt. Ich suchte einfach nach einem
+klingenden Namen ("Calvino" k”nnte ebensogut der Name einer Schrift
+sein). Die M”glichkeit, damit auch gleichzeitig meine Bewunderung fr
+sein Werk auszudrcken, war mir dabei natrlich willkommen.
+
+
+
+E Copyright / Rechtliches
+=========================
+
+Calvino ist Freeware, d.h. die Benutzug ist kostenlos, das Copyright
+an dem Programm verbleibt aber beim Autor.
+
+Auch wenn man es ihm vielleicht nicht ansieht, aber in Calvino steckt
+wirklich schon eine Menge Arbeit. Ich f„nde es deshalb nett, falls
+Sie, wenn Ihnen Calvino gef„llt, sich bei mir nicht nur mit Worten
+sondern vielleicht auch mit einer kleinen Spende auf das folgende
+Konto bedanken wrden:
+
+    Konto Nr. 8042947 bei der
+    Kreissparkasse Gro-Gerau
+    BLZ 50852553
+
+Die H”he bleibt vollkommen Ihnen berlassen (Was ist Ihnen Calvino
+wert?), ich freue mich ber jede Spende. Vielen Dank.
+
+
+Vertrieb
+
+Da Calvino kostenlos ist, wrde ich es natrlich begren, wenn auch
+niemand am Vertrieb des Programms etwas verdienen wrde. Die Ver-
+gangenheit hat leider gezeigt, da diese Auffassung nicht von allen
+geteilt wird, deshalb mu ich hier leider etwas deutlicher und aus-
+fhrlicher werden:
+
+Das Programm Calvino ist Freeware. Es darf beliebig kopiert und wei-
+tergegeben, aber nicht verkauft werden. Kommerzielle Nutzung oder Ver-
+trieb sind hiermit ausdrcklich untersagt. Das Programm darf ber
+Mailboxen oder „hnliche nichtkommerzielle Systeme (z.B. ftp) ver-
+breitet werden, solange dem Empf„nger dabei keine zus„tzlichen Kosten
+(auer den ohnehin anfallenden Gebhren) entstehen. Ein Vertrieb ber
+PD-Disketten ist gestattet, solange der Einzelpreis einer solchen
+Diskette 10 DM nicht bersteigt. Das Programm darf nicht ohne Rck-
+sprache auf Coverdisks (oder „hnliche, an Zeitschriften gebundene
+Disketten) oder CDs bernommen werden. Das Programm darf nicht zu-
+sammen mit kommerzieller Software (dazu z„hlt auch Shareware) ver-
+trieben werden. Ein Vertrieb zusammen mit anderer kostenloser Soft-
+ware ist gestattet, solange deutlich wird, da Calvino ein eigenst„n-
+diges Produkt und nicht Teil eines Pakets ist.
+
+Die obigen Regelungen k”nnen in Einzelf„llen aufgehoben werden, dazu
+ist aber unbedingt mein schriftliches Einverst„ndnis einzuholen.
+
+Wenn Sie als Anwender dieses Programms den begrndeten Verdacht ha-
+ben, da gegen eine oder mehrere der obigen Bedingungen verstoen
+wurde, so bitte ich um entsprechende Benachrichtigung. Vielen Dank.
+
+
+
+F Kontaktadresse
+================
+
+Wenn Sie Fragen, Anmerkungen oder Anregungen (oder vielleicht sogar
+eine kleine Spende?) zu Calvino haben, dann wenden Sie sich doch ein-
+fach an
+
+    Dirk Haun
+    Europastr. 8
+    D-64569 Nauheim
+
+    e-mail: Dirk Haun @ WI2 (MausNet)
+
+Da Calvino ein Freeware-Programm ist, bitte ich Sie, bei Anfragen per
+Post auf die Sie eine Antwort erwarten, doch eine Briefmarke (1 DM)
+oder eine Diskette und einen Rckumschlag beizulegen. Danke.
+
+
+

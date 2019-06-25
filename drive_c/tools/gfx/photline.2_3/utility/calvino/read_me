@@ -1,0 +1,33 @@
+Calvino Fontselektor V1.00  ---  Kurzanleitung fÅr Ungeduldige
+
+
+Wenn Sie auch zu den Menschen gehîren, die nicht gerne Anleitungen
+lesen, dann lesen Sie doch bitte wenigstens dieses:
+
+Calvino besteht aus zwei Teilen:
+
+- CALVINO.PRG gehîrt in den AUTO-Ordner und bleibt (nach dem Neustart
+  des Rechners) resident.
+
+- XFSL.OVL wird beim Aufruf des Fontselektors nachgeladen. Diese Datei
+  kann wahlweise im AUTO-Ordner oder im Wurzelverzeichnis des Boot-
+  laufwerks abgelegt werden.
+
+
+Wenn Sie den frisch installierten Fontselektor sehen wollen, dann
+starten Sie doch einfach das Programm FFE.APP. Dieses Programm hat
+auch noch einen anderen Zweck, aber das steht in der ausfÅhrlichen
+Anleitung ...
+
+
+Minimaler rechtlicher Hinweis: Calvino ist Freeware und darf beliebig
+kopiert und weitergegeben, aber nicht verkauft werden.
+
+
+Kontaktadresse:
+
+     Dirk Haun
+     Europastr. 8
+     D-64569 Nauheim
+
+     e-mail: Dirk Haun @ WI2 (MausNet)

@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>
+The Online Help file for COPS: For Programmers
+</title>
+<meta name="Author" content="Thomas Much, Sven &amp; Wilfried Behne">
+<meta name="Generator" content="UDO6 PL1 for TOS">
+</head>
+<body>
+<h1><a name="For Programmers">For Programmers</a></h1>
+<dl>
+<a name="Recognize COPS"></a>
+<p><dt><b>How do I recognize COPS?</b><dd>
+</p>
+<p>If you define <tt>cpx_init()</tt> as
+</p>
+<pre>
+ CPX_INFO * cdecl cpx_init(XCPB *xcpb, LONG magic, LONG version);
+</pre>
+</p>
+<p>you can determine whether the CPX is running under COPS or
+XCONTROL by way of the parameters <tt>&lt;magic&gt;</tt> und
+<tt>&lt;version&gt;</tt>:
+</p>
+<pre>
+WORD is_COPS( LONG magic, LONG version )
+{
+   if ((magic == 'COPS') &amp;&amp; (version &gt;= 0x10000L)) /* COPS? */
+      return( 1 );
+
+   return( 0 );                                 /* XCONTROL */
+}
+</pre>
+</p>
+<p>If COPS has been recognized, the CPX can draw a 512 * 384 pixel
+object tree and send it to <tt>Xform_do()</tt>.
+</p>
+<p>Also, you have the following extension for <tt>cpx_call()</tt>:
+</p>
+<pre>
+   WORD cdecl cpx_call( GRECT *work, DIALOG *dialog );
+</pre>
+</p>
+<p><tt>&lt;dialog&gt;</tt> is a pointer to the window dialog
+structure. The window dialog is opened by COPS after
+<tt>cpx_init()</tt> with <tt>wdlg_create()</tt> and <tt>wdlg_open()</tt>.
+The GRECT <tt>&lt;work&gt;</tt> and the object tree are outside the
+visible area of the screen until the first call to <tt>Xform_do()</tt>
+or until returning from <tt>cpx_call()</tt>.
+</p>
+</dl>
+<hr>
+<a href="cops.html"><img src="udo_up.gif" alt="Contents"></a>
+<a href="_a.html"><img src="udo_lf.gif" alt="Questions"></a>
+<a href="aboutudo.html"><img src="udo_rg.gif" alt="UDO6"></a>
+</body>
+</html>

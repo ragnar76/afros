@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>
+The Online Help file for COPS: Configuration Examples
+</title>
+<meta name="Author" content="Thomas Much, Sven &amp; Wilfried Behne">
+<meta name="Generator" content="UDO6 PL1 for TOS">
+</head>
+<body>
+<h1><a name="Configuration Examples">Configuration Examples</a></h1>
+<p>Here is a list of tips on how to configure COPS sensibly under
+different conditions:
+</p>
+<p><b>COPS under TOS with standard ATARI desktops:</b>
+</p>
+<ul>
+<p><li> Run COPS as an accessory (".ACC"). You will need to install
+the system extension <a href="_a.html#WDIALOG.PRG">WDIALOG.PRG</a>.
+</p>
+</ul>
+<p><b>COPS under TOS with desktops which are able to send the
+<a href="_a.html#VA_START message">VA_START message</a></b> (Gemini, Thing, ...):
+</p>
+<ul>
+<p><li> Run COPS as an accessory (".ACC"). As above, <a href="_a.html#WDIALOG.PRG">WDIALOG.PRG</a> must
+be installed. Register COPS for files with the extension "*.CPX". You
+can now start modules from the desktop by double clicking on them.
+</p>
+</ul>
+<p><b>COPS under MagiC / MagiCMac / MagiC-PC:</b>
+</p>
+<ul>
+<p><li> If your system is <i>short of memory</i> you should rename
+the file COPS.ACC as COPS.APP and copy it into the APPS or START
+directory. Start COPS, call the COPS popup and select the entry
+"Terminate after xx minutes" from the <a href="05.html#Settings">Settings</a> dialog. Quit COPS.
+</p>
+<p>Register COPS as application for "*.CPX" files and confirm that
+COPS recognizes the <a href="_a.html#VA_START message">VA_START message</a>. You can now assign an icon for
+each module in MAGXDESK.
+</p>
+<p>COPS will be loaded every time the system loads, CPX modules are
+started (which can carry out the required initialisation routines) and
+terminated according to your specifications. You can start any CPX
+files directly from the desktop by simply double clicking on the
+icons.
+</p>
+<p><li> If you want to run COPS as an accessory you should register
+it for "*.CPX" files in the desktop and also confirm that COPS can
+handle the <a href="_a.html#VA_START message">VA_START message</a>.
+</p>
+<p>Again, control panels can be assigned icons which allows you to
+start modules from the desktop.
+</p>
+</ul>
+<hr>
+<a href="cops.html"><img src="udo_up.gif" alt="Contents"></a>
+<a href="05.html"><img src="udo_lf.gif" alt="Operation"></a>
+<a href="07.html"><img src="udo_rg.gif" alt="Common problems"></a>
+</body>
+</html>

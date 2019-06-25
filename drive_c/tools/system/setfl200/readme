@@ -1,0 +1,44 @@
+Mit SETFLAGS lassen sich die Einstellungen im Programmheader konfigurieren.
+
+"Fast-Load" sorgt fÅr ein beschleunigtes Laden einer Anwendung, da vor dem
+Laden nicht der komplette Hauptspeicher gelîscht wird. Einige sehr alte
+Programme funktionieren mit dieser Einstellung mîglicherweise nicht.
+"Programm lÑuft im Alternate RAM" sorgt dafÅr, dass eine Anwendung beim
+Start wenn mîglich in das schnelle TT-RAM geladen wird.
+"Speicher aus Alternate RAM" sorgt dafÅr, dass eine Anwendung bei
+Speicher-Anforderungen wenn mîglich (und wenn in der Anwendung nicht
+explizit ST-RAM angefordert wird) Speicher aus dem TT-RAM zugewiesen bekommt.
+
+"Speicherschutz" ist nur in Verbindung mit MultiTOS bzw. MiNT von Bedeutung.
+
+Die zu konfigurierende Anwendung kann SETFLAGS als Parameter Åbergeben werden
+(z.B. per Drag & Drop) oder kann in der Dateiauswahlbox ausgewÑhlt werden.
+Die Sprache von SETFLAGS kann explizit per Parameter "-e/--english" oder
+"-g/--german" ausgewÑhlt werden. Mit der Alternate-Taste lÑsst sich beim
+Start zwischen diesen beiden Sprachen umschalten.
+
+
+     Uwe Seimet, 12. Oktober 2012
+
+-----
+
+With SETFLAGS the program header settings can be configured.
+
+"Fast Load" results in an application being loaded faster, because the
+complete main memory is not cleared before loading the application. Some very
+old programs might not work with this setting.
+"Program runs in Alternate RAM" results in an application being loaded into
+TT RAM on startup, if possible.
+"Memory from Alternate RAM" results in an application getting memory assigned
+from TT RAM if possible, and if the application does not explicity allocate
+ST RAM.
+
+"Memory Protection" is only relevant when running MultiTOS or MiNT.
+
+The program to be configured can be passed to SETFLAGS as a parameter (e.g.
+with Drag & Drop) or can be selected in the file selector.
+The language used by SETFLAGS can be selected with the "-e/--english" or
+"-g/--german" parameters. With the Alternate key the language can be toggled
+when starting SETFLAGS.
+
+     Uwe Seimet, October 12th, 2012

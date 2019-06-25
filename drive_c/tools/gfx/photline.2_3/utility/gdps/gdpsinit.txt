@@ -1,0 +1,15 @@
+GDPSINIT.PRG
+
+Dieses Programm behebt eine kleine "Umstand", den das
+GDPS-Treiberkonzept zwangsl„ufig mit sich bringt:
+ist ein GDPS-Treiber als Accessory angemeldet, MUSS der
+Rechner einen Kaltstart durchfhren. Warmstarts sind nicht
+in der Lage den GDPS-Treiber neu zu initialisieren und
+blockieren damit den Treiber. Insbesondere ein Umschalten
+der Bildschirmaufl”sung (z.B. von TT-mid auf TT-high)
+blockiert den GDPS-Treiber.
+
+Um eine korrekte Neuinitialisierung auch bei Warmstarts zu
+erreichen, kann das Programm GDPSINIT.PRG in den AUTO Ordner
+kopiert werden. Auch nachtr„glich kann das Programm gestartet
+werden.
