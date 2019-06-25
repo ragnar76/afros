@@ -19,7 +19,7 @@ Screenshot = 316:0
 Fullscreen = 302:0
 
 [STARTUP]
-GrabMouse = Yes
+GrabMouse = No
 Debugger = No
 
 [JIT]

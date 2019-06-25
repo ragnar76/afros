@@ -23,13 +23,13 @@ WINSIZE=0,0,640,600
 DEFHYP=teradesk.hyp
 
 #HCP_OPT=+zz-s
-#HYPFIND=c:\st-guide\hypfind.ttp
+HYPFIND=c:\tools\editors\st-guide\hypfind.ttp
 #PRINTER=C:\ILIST.ACC
 #REMARKER=!c:\st-guide\remarker.prg
 #MARKFILE=c:\hyp\MARKS.DAT
 #HYPTREE_OPT=
-#STOOL=c:\st-guide\stool.tos
-#REFLINK=c:\st-guide\reflink.ttp
+STOOL=c:\tools\editors\st-guide\stool.tos
+REFLINK=c:\tools\editors\st-guide\reflink.ttp
 #REFCHECK-OPT=ads
 #KM_SHORT
 #KM_SMALL
