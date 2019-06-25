@@ -6,6 +6,7 @@ Major changes:
 - replaced MiNT (Version 1.17) with a more current version from GIT (Version 1.19)
 - moved pre-installed binaries to a new folder called tools to clean up messy c:\
 - qed, kronos, zview and aniplayer updated
+- Added Photline, COPS, Setflg and Puzzle97
 
 Minor Changes
 - changed BootColorDepth
@@ -13,3 +14,4 @@ Minor Changes
 - changed mint.cnf and xaaes.cnf to match moved tools
 - recreated desktop links
 - added some more symbolic links to get a more proper lsb like filesystem
+- modified links in taskbar
