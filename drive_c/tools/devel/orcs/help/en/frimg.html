@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 2017/12/11 -->
+<html lang="en">
+<head>
+<title>
+The Documentation for ORCS: Edit Free Image
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="rtrees.html"><img src="udo_up.gif" alt="Resource Trees" title="Resource Trees" border="0" width="24" height="24">Resource Trees</a>
+<a name="UDO_nav_lf_HEAD" href="frstr.html"><img src="udo_lf.gif" alt="Edit Free String" title="Edit Free String" border="0" width="24" height="24">Edit Free String</a>
+<a name="UDO_nav_rg_HEAD" href="bgh.html"><img src="udo_rg.gif" alt="BubbleGEM Editor" title="BubbleGEM Editor" border="0" width="24" height="24">BubbleGEM Editor</a>
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">The Documentation for ORCS</a>
+<br><img src="udo_fs.gif" width="20" height="13" alt="" title="" border="0"><img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="rtrees.html">Resource Trees</a>
+<hr>
+
+<h1><a name="Edit_20Free_20Image">4.6 Edit Free Image</a></h1>
+<p>In a resource, in addition to object trees and free strings,
+also free images can be stored. These are single color images which
+are e.g. can be used etc. for mouse cursor shapes. They are rarely
+used, however. In the free image editor, only the image color is set.
+&quot;Edit&quot; is used to open the <a href="iconed.html">Image Editor</a>.
+</p>
+<p>In the program, the image can be used as follows:
+</p>
+<pre>   BITBLK **bitblk;
+   rsrc_gaddr(16, ImageIndex, &amp;bitblk);
+</pre>
+<p>It must be noted that the function rsrc_gaddr returns a pointer
+to a pointer that contains the image.
+</p>
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="rtrees.html"><img src="udo_up.gif" alt="Resource Trees" title="Resource Trees" border="0" width="24" height="24">Resource Trees</a>
+<a name="UDO_nav_lf_FOOT" href="frstr.html"><img src="udo_lf.gif" alt="Edit Free String" title="Edit Free String" border="0" width="24" height="24">Edit Free String</a>
+<a name="UDO_nav_rg_FOOT" href="bgh.html"><img src="udo_rg.gif" alt="BubbleGEM Editor" title="BubbleGEM Editor" border="0" width="24" height="24">BubbleGEM Editor</a>
+</body>
+</html>

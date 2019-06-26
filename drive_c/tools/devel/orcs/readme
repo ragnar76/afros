@@ -1,0 +1,69 @@
+           OOOO     RRRRR     CCCC    SSSS
+          O    O    R    R   C    C  S    S
+          O    O    R    R   C       S
+          O    O    RRRRR    C        SSSS
+          O    O    R   R    C            S
+          O    O    R    R   C    C  S    S
+           OOOO     R    R    CCCC    SSSS
+
+
+          Otto's Resource Construction Set
+	
+                   Version 2.16
+
+                    11.12.2017
+
+
+	   Copyright (c) by Th. Otto
+
+
+
+
+
+This program is freeware. Anyone may copy it privately and
+pass on to whomever he wants, as long as the archive is complete and
+remains unchanged and no fee is charged.
+
+This archive should contain at least:
+
+- ORCS.PRG
+  The program.
+- ORCS.RSC
+  The resource, english and german version.
+- ORCSCF.PRG
+  The program compiled by GNU-C, for a ColdFire V4e processor.
+  Completely untested.
+- ORCSEN.{HYP,REF}
+  HyperText help file, english version.
+- ORCSDE.{HYP,REF}
+  HyperText help file, german version.
+- EXTRA
+  A folder containing some example code.
+- MODULES
+  External modules that can be used by ORCS. 
+  These include modules to display extended object types,
+  as well as the export modules from ResourceMaster.
+  They are only included for completeness, almost all
+  of their functionality is also builtin into the program,
+  so if you are short on memory, or experience problems
+  using them, it is safe to rename or remove this folder.
+- TEMPLATE
+  Template files that are used to generate the several
+  output source files. 
+- README
+  this file
+
+
+Of course I can not assume any liability for any direct or
+indirect damage - including but not limited to
+material or financial - arising by the use of
+ORCS or the unsuitability of ORCS for a particular purpose.
+
+
+Criticism, suggestions, bug reports etc. can be send to
+
+	Thorsten Otto
+	Katharinenstr. 14
+	45131 Essen
+
+        admin@tho-otto.de

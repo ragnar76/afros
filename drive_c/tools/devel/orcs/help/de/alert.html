@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 11.12.2017 -->
+<html lang="de">
+<head>
+<title>
+Die Anleitung zu ORCS: Alarm-Box &auml;ndern
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="rtrees.html"><img src="udo_up.gif" alt="Resource B&auml;ume" title="Resource B&auml;ume" border="0" width="24" height="24">Resource B&auml;ume</a>
+<a name="UDO_nav_lf_HEAD" href="menued.html"><img src="udo_lf.gif" alt="Men&uuml;editor" title="Men&uuml;editor" border="0" width="24" height="24">Men&uuml;editor</a>
+<a name="UDO_nav_rg_HEAD" href="frstr.html"><img src="udo_rg.gif" alt="Freie Texte &auml;ndern" title="Freie Texte &auml;ndern" border="0" width="24" height="24">Freie Texte &auml;ndern</a>
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">Die Anleitung zu ORCS</a>
+<br><img src="udo_fs.gif" width="20" height="13" alt="" title="" border="0"><img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="rtrees.html">Resource B&auml;ume</a>
+<hr>
+
+<h1><a name="Alarm-Box_20_26auml_3Bndern">4.4 Alarm-Box &auml;ndern</a></h1>
+<p>Der Alert-Editor bietet Platz f&uuml;r 5 Zeilen zu je 40 Zeichen
+und f&uuml;r 3 Buttons zu je 10 Zeichen (dies sind die
+Einschr&auml;nkungen die das AES vorgibt; will man diese umgehen muss
+der String als Freier Text bearbeitet werden). Au&szlig;erdem kann man
+das Icon f&uuml;r die Alert-Box ausw&auml;hlen. Au&szlig;erdem steht
+eine Testfunktion f&uuml;r Alert-Boxen zur Verf&uuml;gung. Werden die
+Alert-Limits nicht erweitert, keine erweiterten Objekt-Typen verwendet
+und sind die AES-Alert-Limits nicht &uuml;berschritten, dann wird
+form_alert(...) f&uuml;r den Test verwendet. Ansonsten wird die eigene
+Alert-Routine verwendet.
+</p>
+<p>Im Programm kann der Text wie folgt verwendet werden:
+</p>
+<pre>   char** Text;
+   rsrc_gaddr(15, StringIndex, &amp;Text);
+</pre>
+<p>Zu beachten ist hierbei, da&szlig; die Funktion rsrc_gaddr einen
+Zeiger auf einen Zeiger, der dann auf den Text zeigt, liefert.
+</p>
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="rtrees.html"><img src="udo_up.gif" alt="Resource B&auml;ume" title="Resource B&auml;ume" border="0" width="24" height="24">Resource B&auml;ume</a>
+<a name="UDO_nav_lf_FOOT" href="menued.html"><img src="udo_lf.gif" alt="Men&uuml;editor" title="Men&uuml;editor" border="0" width="24" height="24">Men&uuml;editor</a>
+<a name="UDO_nav_rg_FOOT" href="frstr.html"><img src="udo_rg.gif" alt="Freie Texte &auml;ndern" title="Freie Texte &auml;ndern" border="0" width="24" height="24">Freie Texte &auml;ndern</a>
+</body>
+</html>

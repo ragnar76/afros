@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 11.12.2017 -->
+<html lang="de">
+<head>
+<title>
+Die Anleitung zu ORCS: CRC-String
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="miscext.html"><img src="udo_up.gif" alt="Sonstige Erweiterungen" title="Sonstige Erweiterungen" border="0" width="24" height="24">Sonstige Erweiterungen</a>
+<a name="UDO_nav_lf_HEAD" href="miscext.html"><img src="udo_lf.gif" alt="Sonstige Erweiterungen" title="Sonstige Erweiterungen" border="0" width="24" height="24">Sonstige Erweiterungen</a>
+<img src="udo_norg.gif" alt="" title="" border="0" width="24" height="24">
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">Die Anleitung zu ORCS</a>
+<br><img src="udo_fs.gif" width="20" height="13" alt="" title="" border="0"><img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="miscext.html">Sonstige Erweiterungen</a>
+<hr>
+
+<h1><a name="CRC-String">C.1 CRC-String</a></h1>
+<p>Damit ein Programm feststellen kann, ob es auch die richtige
+Version seiner Resource-<a href="file.html">Datei</a> geladen hat, kann ORCS eine
+Pr&uuml;fsumme &uuml;ber die Resource sowohl in der Resource selbst
+(als Freier String) als auch in der Header-<a href="file.html">Datei</a> schreiben.
+</p>
+<p>Ob ein CRC-String gespeichert wird, kann man &uuml;ber <a href="output.html">Datei/Ausgabedateien</a>
+mit der Option <b>CRC-String</b> einstellen.
+</p>
+<p>F&uuml;r den Export werden folgende Variablen verwendet:
+</p>
+<table class="UDO_env_xlist">
+<tr><td nowrap="nowrap" valign="top">_RSM_CRC_:</td>
+<td valign="top"> Index des FreeStrings mit dem Pr&uuml;fsummen-String
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">_RSM_CRC_STRING_:</td>
+<td valign="top"> Pr&uuml;fsummen-String (sollte mit dem aus der Resource
+&uuml;bereinstimmen)
+
+</td></tr>
+</table>
+
+<p>Anmerkung: Mit der Pr&uuml;fsumme kann festgestellt werden, ob
+die Resource in inkompatibler Weise ver&auml;ndert wurde. Zur
+Berechnung der Pr&uuml;fsumme werden Objekt-Typen, Objekt-Nummern und
+deren Verkettung herangezogen, nicht jedoch Texte und Positionierung.
+</p>
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="miscext.html"><img src="udo_up.gif" alt="Sonstige Erweiterungen" title="Sonstige Erweiterungen" border="0" width="24" height="24">Sonstige Erweiterungen</a>
+<a name="UDO_nav_lf_FOOT" href="miscext.html"><img src="udo_lf.gif" alt="Sonstige Erweiterungen" title="Sonstige Erweiterungen" border="0" width="24" height="24">Sonstige Erweiterungen</a>
+<img src="udo_norg.gif" alt="" title="" border="0" width="24" height="24">
+
+
+
+</body>
+</html>
+
+

@@ -18,6 +18,8 @@ OFIL "------------" DUMMY ""
 OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "Archivers" C:\mint\sysroot\home\sub\arc.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "Development" C:\mint\sysroot\home\sub\devel.grp ""
+OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "Diagnose" C:\mint\sysroot\home\sub\diag.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "Disktools" C:\mint\sysroot\home\sub\disk.grp ""

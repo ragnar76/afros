@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 11.12.2017 -->
+<html lang="de">
+<head>
+<title>
+Die Anleitung zu ORCS: Erweiterte Objekttypen
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="orcs.html#UDOTOC"><img src="udo_up.gif" alt="Inhaltsverzeichnis" title="Inhaltsverzeichnis" border="0" width="24" height="24"></a>
+<a name="UDO_nav_lf_HEAD" href="icoload.html"><img src="udo_lf.gif" alt="Load Windows ICO" title="Load Windows ICO" border="0" width="24" height="24">Load Windows ICO</a>
+<a name="UDO_nav_rg_HEAD" href="filetyp.html"><img src="udo_rg.gif" alt="Dateitypen" title="Dateitypen" border="0" width="24" height="24">Dateitypen</a>
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">Die Anleitung zu ORCS</a>
+<hr>
+
+<h1><a name="Erweiterte_20Objekttypen">A Erweiterte Objekttypen</a></h1>
+<p>In ORCS werden je nach Einstellung diverse erweiterte Typen
+dargestellt, die auch von vielen anderen Bibliotheken (Flydial, MyDial
+etc.) genutzt werden. Diese werden i.d.R. durch einen speziellen Wert
+unter 'Erweiterter Typ' sowie durch bestimmte Flags gekennzeichnet.
+Die unterst&uuml;tzten Typen sind:
+</p>
+<table class="UDO_env_xlist">
+<tr><td nowrap="nowrap" valign="top">FlyDial-Ecke</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: I-Box
+</li>
+<li> Erweiterter Typ: 17
+</li>
+<li> Flags: TOUCHEXIT, OUTLINED, CROSSED
+</li>
+</ul>
+
+<br>Das 'Eselsohr' in der rechten oberen Ecke von Dialogen zum
+Verschieben der Dialoge.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Radiobutton</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON oder STRING
+</li>
+<li> Erweiterter Typ: 18
+</li>
+<li> Flags: RBUTTON, ~EXIT
+</li>
+</ul>
+
+<br>Ein runder Button, neben dem der Text steht.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Checkbox</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON
+</li>
+<li> Erweiterter Typ: 18
+</li>
+<li> Flags: ~RBUTTON, ~EXIT
+</li>
+</ul>
+
+<br>Eine quadratische kleine Box, neben der der Text steht.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Exitbutton</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON oder STRING
+</li>
+<li> Erweiterter Typ: 18
+</li>
+<li> Flags: ~RBUTTON, EXIT
+</li>
+</ul>
+
+<br>Ein tastaturbedienbarer Button. Der Buchstabe hinter einem '['
+wird unterstrichen dargestellt, ausserdem ist der Button ein bisschen
+gr&ouml;sser als normal.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Undo-Button (1)</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON
+</li>
+<li> Erweiterter Typ: 18
+</li>
+<li> Flags: Flag 11
+</li>
+</ul>
+
+<br>Ein Button, der auf die UNDO-Taste reagieren soll.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Undo-Button (2)</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON
+</li>
+<li> Erweiterter Typ: 31
+</li>
+<li> Flags: ~DEFAULT
+</li>
+</ul>
+
+<br>Ein Button, der auf die UNDO-Taste reagieren soll.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Unterstrichener Text</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON oder STRING
+</li>
+<li> Erweiterter Typ: 19
+</li>
+<li> Flags: -
+</li>
+</ul>
+
+<br>Ein Text der in der Breite des Objektes unterstrichen
+dargestellt wird. Wird in vielen Programmen als &Uuml;berschrift
+f&uuml;r den Dialog verwendet.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Gruppenrahmen</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON
+</li>
+<li> Erweiterter Typ: 20
+</li>
+<li> Flags: -
+</li>
+</ul>
+
+<br>Ein grosser Rahmen, in dem der Text links oben als
+&Uuml;berschrift steht. Ist CHECKED zus&auml;tzlich gesetzt, wird der
+Text in Kleinschrift ausgegeben.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Help-Button</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BUTTON oder BOXTEXT
+</li>
+<li> Erweiterter Typ: 21
+</li>
+<li> Flags: EXIT
+</li>
+</ul>
+
+<br>Ein Button, der auf die HELP-Taste reagieren soll. Der Typ ist
+eigentlich egal, es ist jedoch &uuml;blich einen BOXTEXT mit den Flags
+EXIT, OUTLINED und SHADOWED daf&uuml;r zu nehmen. Der Text sollte in
+Kleinschrift und zentriert sein.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Circlebutton</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Typ: BOXCHAR
+</li>
+<li> Erweiterter Typ: 22
+</li>
+<li> Flags: -
+</li>
+</ul>
+
+<br>Ein Kreis der normalerweise neben einem Popupmen&uuml;
+auftaucht.
+<br>&nbsp;
+
+</td></tr>
+</table>
+
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="orcs.html#UDOTOC"><img src="udo_up.gif" alt="Inhaltsverzeichnis" title="Inhaltsverzeichnis" border="0" width="24" height="24"></a>
+<a name="UDO_nav_lf_FOOT" href="icoload.html"><img src="udo_lf.gif" alt="Load Windows ICO" title="Load Windows ICO" border="0" width="24" height="24">Load Windows ICO</a>
+<a name="UDO_nav_rg_FOOT" href="filetyp.html"><img src="udo_rg.gif" alt="Dateitypen" title="Dateitypen" border="0" width="24" height="24">Dateitypen</a>
+</body>
+</html>

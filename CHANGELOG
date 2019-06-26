@@ -7,6 +7,9 @@ Major changes:
 - moved pre-installed binaries to a new folder called tools to clean up messy c:\
 - qed, kronos, zview and aniplayer updated
 - Added Photline, COPS, Setflg and Puzzle97
+- added some cpx file from the Falcon Language Disk
+- added AHCC as development platform
+- added orcs for resource file editing
 
 Minor Changes
 - changed BootColorDepth
@@ -15,3 +18,4 @@ Minor Changes
 - recreated desktop links
 - added some more symbolic links to get a more proper lsb like filesystem
 - modified links in taskbar
+- rearranged the taskbar with submenus

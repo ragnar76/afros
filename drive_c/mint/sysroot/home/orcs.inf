@@ -1,0 +1,82 @@
+language  "en_US"
+extlang 0
+overlay  ""
+snapx 8
+snapy 16
+autosize 1
+editobjs 1
+extended 0
+safety 1
+toolbar 
+windowpos 101 0 0 11268 10771 9668 9831
+windowpos 100 1 -1 -68 0 32000 32000
+desktop 0 1 0 -563 0 0 0 0 0 0
+sort 3 1
+parts 1 1 1 1 1 1 1 1 1 1 1 1 0
+extension  1  "h"
+extension  2  "rsh"
+extension  3  "lst"
+extension  4  "s"
+extension  5  "i"
+extension  6  "mod"
+extension  7  "def"
+extension  8  "inc"
+extension  9  "for"
+extension 10  "dup"
+extension 11  "rsb"
+extension 12  "rsc"
+extension 13  "rso"
+extension 14  "rsd"
+extension 15  "def"
+extension 16  "dfn"
+extension 17  "$$$"
+extension 18  "icn"
+extension 19  "bh"
+extension 20  "usr"
+extension 21  "usr"
+extension 22  "inc"
+extension 23  "inc"
+extension 24  "rsi"
+extension 25  "rc"
+extension 26  "rh"
+extension 27  "rsx"
+extension 28  "rbx"
+extension 29  "rsm"
+extension 30  "sdl"
+extension 31  "xml"
+extension 32  "bgh"
+disk  "A:\\"  "Drive A" 182 0 0 0
+disk  "C:\\"  "Drive C" 2011 0 0 0
+disk  "D:\\"  "Drive D" 3840 0 0 0
+disk  "U:\\"  "Drive U" 5668 0 0 0
+trashcan  "RUBBISH" 7497 0 0 0
+flags 268959745
+flags2 0
+deskcol 7 3
+windcol 0 0
+backup 0 0 0
+tempfiles 0
+namerule 1  ""  "" 1 0 1 0
+namerule 2  "_"  "" 0 1 1 0
+namelen 32 1
+dialmode 0 2
+dclick 3
+idisplay 3 0 0
+menus 1 1 1 1 1 1 1 1 1 1 1 0 0
+asicons 1 1 1 1 1 1 1 1 1 1 1 0 0
+growbox 1
+hollow 1
+menumar 2 1 2 0
+dropdown 1
+overwrite 0
+dialwind 1
+selector 0
+askswapped 1
+autosave 1
+statusbar 1 1
+solid 0
+compare 0
+fkeys 1
+draw3d 3
+no_desktop 0
+crcstring 0

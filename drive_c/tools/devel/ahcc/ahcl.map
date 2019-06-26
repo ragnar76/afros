@@ -1,0 +1,450 @@
+* load map of D:\aaaa\shell\ahcl.ttp produced by AHCL (c) H. Robbers @ Amsterdam
+
+in d:\CC\lib\pcvstart.o
+       0      0[   372]  TEXT 
+       0      0          TEXT <Start>
+      14     14          TEXT <ACC>
+      16     16          TEXT <APP>
+     130    130          TEXT <ScanEnvLoop>
+     138    138          TEXT <Start1>
+     178    178          TEXT <xArgLoop>
+     196    196          TEXT <ScanEnvExit>
+     222    222          TEXT <Start2>
+     244    244          TEXT <Start3>
+     258    258          TEXT <Stx3>
+     264    264          TEXT <Start4>
+     268    268          TEXT <Stx4>
+     284    284          TEXT <Start5>
+     290    290          TEXT <Start6>
+     302    302          TEXT <Start7>
+     310    310          TEXT <Start8>
+     334    334          TEXT exit
+     360    360          TEXT <Exit1>
+            372
+in D:\aaaa\ahcc\cc_load.o
+     372      0[   246]  TEXT CC_load
+            246
+in D:\aaaa\ahcc\ld.o
+     618      0[    84]  TEXT <bfind_ref>
+     702     84[    78]  TEXT <find_ref>
+     780    162[   214]  TEXT <gbfind_ref>
+     994    376[    84]  TEXT <gfind_ref>
+    1078    460[   104]  TEXT <bfind_locref>
+    1182    564[    48]  TEXT find_locref
+    1230    612[    90]  TEXT <ins_bref>
+    1320    702[    42]  TEXT <new_bref>
+    1362    744[   304]  TEXT <remove_ref>
+    1666   1048[    92]  TEXT new_ref
+    1758   1140[    88]  TEXT new_locref
+    1846   1228[    62]  TEXT <copy_refs>
+    1908   1290[    90]  TEXT <ifile>
+    1998   1380[   102]  TEXT <read_obnames>
+    2100   1482[    38]  TEXT <after_is>
+    2138   1520[   688]  TEXT <doopt>
+    2826   2208[   236]  TEXT check_double
+    3062   2444[   490]  TEXT <write_symbols>
+    3552   2934[    62]  TEXT <match_local>
+    3614   2996[    82]  TEXT <match_ref>
+    3696   3078[   154]  TEXT <match_area>
+    3850   3232[   186]  TEXT <match_global>
+    4036   3418[   246]  TEXT <entries>
+    4282   3664[    76]  TEXT <firstreloc>
+    4358   3740[   108]  TEXT <addreloc>
+    4466   3848[   794]  TEXT <fix>
+    5260   4642[    32]  TEXT <anonymous>
+    5292   4674[   100]  TEXT <ar_name>
+    5392   4774[   416]  TEXT <pr_map>
+    5808   5190[   216]  TEXT <load_map>
+    6024   5406[   246]  TEXT <pr_sym>
+    6270   5652[   286]  TEXT <write_nm>
+    6556   5938[    60]  TEXT <remove_unreferenced>
+    6616   5998[  1258]  TEXT <write_program>
+    7874   7256[    54]  TEXT LD_ranout
+    7928   7310[   916]  TEXT main
+           8226
+in D:\aaaa\ahcc\ld_ob.o
+    8844      0[    30]  TEXT format_error
+    8874     30[   256]  TEXT <get_pc_names>
+    9130    286[    28]  TEXT <skip>
+    9158    314[   366]  TEXT <ins_fixup>
+    9524    680[    32]  TEXT <is_start>
+    9556    712[   248]  TEXT <get_fixups>
+    9804    960[    40]  TEXT <is_begin>
+    9844   1000[   256]  TEXT <get_area>
+   10100   1256[    86]  TEXT anon_ref
+   10186   1342[    70]  TEXT <analyse_a_refs>
+   10256   1412[   472]  TEXT <make_symbol_tree>
+   10728   1884[   238]  TEXT <load_pure>
+   10966   2122[   130]  TEXT <vglsym>
+   11096   2252[    60]  TEXT <put_name>
+   11156   2312[   538]  TEXT <get_dri_names>
+   11694   2850[    16]  TEXT <dri_ent2pc>
+   11710   2866[    26]  TEXT <dri_mod2pc>
+   11736   2892[   156]  TEXT <dri_segment>
+   11892   3048[   110]  TEXT <getname>
+   12002   3158[   152]  TEXT <in_symtab>
+   12154   3310[  1170]  TEXT <make_fixups>
+   13324   4480[   132]  TEXT <gfa_data>
+   13456   4612[   226]  TEXT <load_dri>
+   13682   4838[    60]  TEXT <gfa_name>
+   13742   4898[   146]  TEXT <load_drilib>
+   13888   5044[   268]  TEXT load_ob
+           5312
+in D:\aaaa\ahcc\list.o
+   14156      0[    68]  TEXT rem_list
+   14224     68[    66]  TEXT cut_list
+   14290    134[    60]  TEXT append_list
+   14350    194[    64]  TEXT move_list
+   14414    258[    48]  TEXT ins_last
+   14462    306[    84]  TEXT ins_before
+   14546    390[    78]  TEXT ins_after
+   14624    468[     8]  TEXT clr_listbase
+            476
+in D:\aaaa\ahcc\plib.o
+   14632      0[    32]  TEXT is_ref
+   14664     32[    32]  TEXT is_entry
+   14696     64[    20]  TEXT is_lc_entry
+   14716     84[    20]  TEXT is_gl_entry
+   14736    104[    72]  TEXT ldhash
+   14808    176[    20]  TEXT no_image
+   14828    196[    20]  TEXT is_module
+   14848    216[    36]  TEXT fixup_name
+   14884    252[    42]  TEXT disp_target
+   14926    294[   206]  TEXT list_refs
+   15132    500[    76]  TEXT clr_treebase
+   15208    576[    52]  TEXT <create_last>
+   15260    628[    58]  TEXT <create_after>
+   15318    686[    58]  TEXT <create_before>
+   15376    744[   212]  TEXT ins_flist
+   15588    956[    66]  TEXT ins_ref
+   15654   1022[   114]  TEXT new_fixup
+   15768   1136[   178]  TEXT new_area
+   15946   1314[    92]  TEXT add_areas
+   16038   1406[   636]  TEXT <handle_fixups>
+   16674   2042[    96]  TEXT <add_fixups>
+   16770   2138[   106]  TEXT <add_names>
+   16876   2244[   162]  TEXT write_areas
+   17038   2406[   104]  TEXT <wfixup>
+   17142   2510[   222]  TEXT <segment_fixup>
+   17364   2732[   110]  TEXT <write_fixups>
+   17474   2842[   220]  TEXT <write_names>
+   17694   3062[   910]  TEXT write_object
+           3972
+in D:\aaaa\common\qmem.o
+   18604      0[    98]  TEXT CC_qalloc
+   18702     98[    70]  TEXT init_membase
+   18772    168[    32]  TEXT free_membase
+            200
+in D:\aaaa\common\is_alpha.o
+   18804      0[    32]  TEXT is_alpha
+             32
+in D:\aaaa\common\amem.o
+   18836      0[    18]  TEXT CC_xmalloc
+   18854     18[    16]  TEXT CC_xfree_all
+   18870     34[    18]  TEXT CC_fmalloc
+   18888     52[    16]  TEXT CC_ffree_all
+             68
+in D:\aaaa\ahcc\ttp_io.o
+   18904      0[    94]  TEXT send_msg
+   18998     94[    18]  TEXT console
+            112
+in D:\aaaa\common\hierarch.o
+   19016      0[    22]  TEXT strmaxcpy
+   19038     22[    44]  TEXT DIRcpy
+   19082     66[    64]  TEXT DIRcat
+   19146    130[   144]  TEXT inq_xfs
+   19290    274[    40]  TEXT <hn_issep>
+   19330    314[    44]  TEXT <hn_strsep>
+   19374    358[    28]  TEXT <dotdot>
+   19402    386[   196]  TEXT <hn_new_part>
+   19598    582[    50]  TEXT <ins_part>
+   19648    632[    48]  TEXT <separators>
+   19696    680[   276]  TEXT hn_make
+   19972    956[    82]  TEXT hn_free
+   20054   1038[    36]  TEXT strslash
+   20090   1074[   108]  TEXT change_suffix
+           1182
+in D:\aaaa\common\ahcm.o
+   20198      0[   264]  TEXT <new_block>
+   20462    264[   102]  TEXT <XA_Mfree>
+   20564    366[    76]  TEXT <free_block>
+   20640    442[    64]  TEXT <extract>
+   20704    506[   106]  TEXT <find_free>
+   20810    612[   126]  TEXT <split>
+   20936    738[    38]  TEXT <insfirst>
+   20974    776[    60]  TEXT <insbefore>
+   21034    836[    44]  TEXT <inslast>
+   21078    880[    62]  TEXT <insafter>
+   21140    942[    56]  TEXT <amalgam>
+   21196    998[   160]  TEXT <sortins>
+   21356   1158[    34]  TEXT <combine>
+   21390   1192[    72]  TEXT <XA_round>
+   21462   1264[    62]  TEXT <in_list>
+   21524   1326[   118]  TEXT <find_unit>
+   21642   1444[   238]  TEXT XA_alloc
+   21880   1682[    72]  TEXT XA_calloc
+   21952   1754[   206]  TEXT <free_unit>
+   22158   1960[   682]  TEXT XA_realloc
+   22840   2642[   106]  TEXT XA_free
+   22946   2748[    34]  TEXT <XA_match>
+   22980   2782[   142]  TEXT XA_free_all
+   23122   2924[   138]  TEXT XA_set_base
+   23260   3062[    14]  TEXT malloc
+   23274   3076[    10]  TEXT free
+   23284   3086[    12]  TEXT _FreeAll
+   23296   3098[    12]  TEXT xmalloc
+   23308   3110[    14]  TEXT xcalloc
+   23322   3124[    16]  TEXT xrealloc
+   23338   3140[    10]  TEXT xfree
+           3150
+in d:\CC\lib\pcstdlib.lib
+   23348      0[    22]  TEXT setjmp
+   23358     10          TEXT longjmp
+   23370     22[    12]  TEXT 
+   23382     34[   318]  TEXT 
+   23700    352[    10]  TEXT qsort
+   23710    362[    24]  TEXT clock
+   23734    386[    58]  TEXT printf
+   23792    444[    62]  TEXT fprintf
+   23854    506[    50]  TEXT sprintf
+   23904    556[    54]  TEXT vprintf
+   23958    610[    62]  TEXT vfprintf
+   24020    672[   688]  TEXT _PrintF
+   24708   1360[   614]  TEXT _OutIntD
+   24790   1442          TEXT _OutCarD
+   24808   1460          TEXT _OutCarH
+   24872   1524          TEXT _OutCarO
+   25042   1694          TEXT _OutChr
+   25058   1710          TEXT _OutStr
+   25246   1898          TEXT OutZero
+   25256   1908          TEXT OutBlank
+   25322   1974[   102]  TEXT fscanf
+   25424   2076[    54]  TEXT sscanf
+   25478   2130[   992]  TEXT _ScanF
+   26470   3122[   832]  TEXT _ScnCarD
+   26582   3234          TEXT _ScnCarO
+   26686   3338          TEXT _ScnCarH
+   26840   3492          TEXT _ScnIntD
+   26980   3632          TEXT _ScnStrS
+   27118   3770          TEXT _ScnStrC
+   27182   3834          TEXT _ScnStrB
+   27302   3954[   202]  TEXT fwrite
+   27504   4156[    86]  TEXT getc
+   27504   4156          TEXT fgetc
+   27590   4242[    12]  TEXT fopen
+   27602   4254[   508]  TEXT freopen
+   28110   4762[    94]  TEXT fclose
+   28204   4856[    26]  TEXT ungetc
+   28230   4882[   116]  TEXT _FillBuf
+   28346   4998[   182]  TEXT _FlshBuf
+   28528   5180[   166]  TEXT open
+   28694   5346[    42]  TEXT close
+   28736   5388[    38]  TEXT remove
+   28736   5388          TEXT unlink
+   28774   5426[   366]  TEXT read
+   29140   5792[    52]  TEXT write
+   29192   5844[   160]  TEXT lseek
+   29352   6004[    76]  TEXT isatty
+   29428   6080[    48]  TEXT _RemoveT
+   29476   6128[    58]  TEXT _XltErr
+   29534   6186[    20]  TEXT strchr
+   29554   6206[    28]  TEXT strrchr
+   29582   6234[    82]  TEXT strcmp
+   29664   6316[    70]  TEXT strcpy
+   29734   6386[    42]  TEXT strlen
+   29776   6428[    30]  TEXT strncmp
+   29806   6458[    26]  TEXT strncpy
+   29832   6484[   210]  TEXT strtoul
+   30042   6694[    20]  TEXT strupr
+   30062   6714[   154]  TEXT ultoa
+   30216   6868[    56]  TEXT strcmpi
+   30216   6868          TEXT stricmp
+   30272   6924[    52]  TEXT strnicmp
+   30272   6924          TEXT strncmpi
+   30324   6976[   490]  TEXT memcpy
+   30324   6976          TEXT memmove
+   30814   7466[   192]  TEXT memset
+   31006   7658[    18]  TEXT isalpha
+   31024   7676[    14]  TEXT tolower
+   31038   7690[    14]  TEXT toupper
+   31052   7704[   256]  TEXT _UpcTab
+   31308   7960[   256]  TEXT _LocTab
+   31564   8216[   256]  TEXT _ChrCla1
+   31820   8472[   256]  TEXT _DigCnvT
+   32076   8728[    40]  TEXT _ulmul
+   32116   8768[    82]  TEXT _uldiv
+   32198   8850[    74]  TEXT _lmul
+           8924
+in d:\CC\lib\pcvstart.o
+   32272      0[   100]  DATA 
+   32352     80          DATA <EmpStr>
+   32354     82          DATA errno
+   32356     84          DATA _AtExitVec
+   32360     88          DATA _FilSysVec
+            100
+in D:\aaaa\ahcc\cc_load.o
+   32372      0[    24]  DATA 
+             24
+in D:\aaaa\ahcc\ld.o
+   32396      0[    26]  DATA 
+   32422     26[   600]  DATA 
+   33022    626[    22]  DATA 
+   33044    648[    26]  DATA 
+   33070    674[    64]  DATA 
+   33134    738[    46]  DATA 
+   33180    784[     6]  DATA 
+   33186    790[    94]  DATA 
+   33280    884[   118]  DATA 
+   33398   1002[    20]  DATA 
+   33418   1022[   134]  DATA 
+   33552   1156[   256]  DATA 
+   33808   1412[    48]  DATA 
+   33856   1460[   164]  DATA 
+   34020   1624[    32]  DATA 
+   34052   1656[     4]  DATA 
+   34052   1656          DATA <abort_msg>
+   34056   1660[  2160]  DATA 
+   34056   1660          DATA bugf
+   34060   1664          DATA stackname
+   34070   1674          DATA ld_lbl
+   34072   1676          DATA P
+           3820
+in D:\aaaa\ahcc\ld_ob.o
+   36216      0[    28]  DATA 
+   36244     28[     6]  DATA 
+   36250     34[     2]  DATA 
+   36252     36[    96]  DATA 
+   36348    132[    28]  DATA 
+   36376    160[     2]  DATA 
+   36378    162[     2]  DATA 
+   36380    164[    92]  DATA 
+   36472    256[    58]  DATA 
+   36472    256          DATA <stack_ob_init>
+   36530    314[     8]  DATA 
+   36538    322[     8]  DATA 
+   36538    322          DATA <topc>
+   36546    330[     8]  DATA 
+   36554    338[    16]  DATA 
+   36554    338          DATA vx
+            354
+in D:\aaaa\ahcc\plib.o
+   36570      0[   182]  DATA 
+   36752    182[     4]  DATA 
+   36756    186[     2]  DATA 
+   36758    188[    46]  DATA 
+   36804    234[    20]  DATA 
+   36824    254[    58]  DATA 
+   36882    312[    74]  DATA 
+   36956    386[    18]  DATA 
+   36974    404[    18]  DATA 
+   36992    422[    18]  DATA 
+   37010    440[   144]  DATA 
+   37154    584[   146]  DATA 
+   37154    584          DATA <result>
+   37156    586          DATA <target_txt>
+   37172    602          DATA <fixnames>
+            730
+in D:\aaaa\common\amem.o
+   37300      0[    54]  DATA 
+   37354     54[   120]  DATA 
+   37354     54          DATA XA_NS_base
+   37394     94          DATA XA_CC_base
+   37434    134          DATA XA_CC_fbase
+            174
+in D:\aaaa\ahcc\ttp_io.o
+   37474      0[     2]  DATA 
+              2
+in D:\aaaa\common\ahcm.o
+   37476      0[    42]  DATA 
+   37518     42[    54]  DATA 
+   37572     96[    30]  DATA 
+   37602    126[   164]  DATA 
+   37602    126          DATA XA_heap_base
+   37642    166          DATA XA_local_base
+   37682    206          DATA XA_file_base
+   37722    246          DATA XA_global_base
+   37762    286          DATA XA_total
+            290
+in d:\CC\lib\pcstdlib.lib
+   37766      0[   190]  DATA 
+   37766      0          DATA _StdInF
+   37868    102          DATA _StdOutF
+   37890    124          DATA _StdErrF
+   37912    146          DATA _StdAuxF
+   37934    168          DATA _StdPrnF
+   37956    190[     2]  DATA 
+   37958    192[     4]  DATA 
+   37958    192          DATA _TmpFile
+            196
+in d:\CC\lib\pcvstart.o
+   37962      0[    42]  BSS  
+   37962      0          BSS  _BasPag
+   37966      4          BSS  _base
+   37970      8          BSS  _app
+   37972     10          BSS  _StkLim
+   37976     14          BSS  _PgmSize
+   37980     18          BSS  _RedirTab
+             42
+in D:\aaaa\ahcc\ld.o
+   38004      0[ 12196]  BSS  
+   38004      0          BSS  <BaseA4>
+   38008      4          BSS  <lreloc>
+   38012      8          BSS  <sttext>
+   38016     12          BSS  <stdata>
+   38020     16          BSS  <stbss>
+   38024     20          BSS  <imgsize>
+   38028     24          BSS  <ex_row>
+   42064   4060          BSS  <gl_row>
+   46100   8096          BSS  <out_row>
+   50136  12132          BSS  <ex_base>
+   50160  12156          BSS  <out_base>
+   50184  12180          BSS  <oname>
+   50188  12184          BSS  <last>
+   50192  12188          BSS  <cmp>
+   50194  12190          BSS  <name_d>
+   50196  12192          BSS  <rname>
+   50200  12196[     8]  BSS  
+   50200  12196          BSS  <eq8>
+   50204  12200          BSS  <gname>
+   50208  12204[    12]  BSS  
+   50208  12204          BSS  <relprev>
+   50212  12208          BSS  <reloc>
+   50216  12212          BSS  <relp>
+   50220  12216[   256]  BSS  
+   50476  12472[    56]  BSS  
+   50476  12472          BSS  <ld_jump>
+   50532  12528[    56]  BSS  
+   50532  12528          BSS  stacksize
+   50536  12532          BSS  flags
+   50564  12560          BSS  gl_base
+   50588  12584[     4]  BSS  
+   50588  12584          BSS  curreloc
+          12588
+in D:\aaaa\ahcc\ld_ob.o
+   50592      0[    58]  BSS  
+   50592      0          BSS  <stack_ob>
+   50650     58[    16]  BSS  
+   50666     74[     2]  BSS  
+   50666     74          BSS  gfa
+             76
+in D:\aaaa\ahcc\plib.o
+   50668      0[     4]  BSS  
+   50668      0          BSS  <last_area>
+   50672      4[   168]  BSS  
+   50672      4          BSS  defmem
+   50728     60          BSS  refmem
+   50784    116          BSS  opndmem
+            172
+in D:\aaaa\common\hierarch.o
+   50840      0[     8]  BSS  
+   50840      0          BSS  <xfsc>
+   50844      4          BSS  <xfst>
+   50848      8[   128]  BSS  
+            136
+in d:\CC\lib\pcstdlib.lib
+   50976      0[   704]  BSS  
+   50976      0          BSS  _FilTab
+            704
+in StckSize
+       0      0[  8192]  OFFS _StkSize
+           8192

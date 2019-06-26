@@ -1,0 +1,17 @@
+                                                      Arensdorf 8.2.2000
+
+
+Die Doku zu BGH v1.4R2 hatte einen Fehler. Da stand, da die minimale 
+Version bei Slbopen 0x0101 sein mte. Die von mir ver”ffentlichte Library 
+hatte aber nur die Version 0x0002. Das hatte zur Folge, da die Library 
+nicht geladen wurde.
+
+Ich habe die Doku dahingehend abge„ndert, da als minimale Version 0x0002 
+gefordert werden soll. Auerdem habe ich die Library-Version auf nunmehr 
+0x0102 abge„ndert. Dadurch funktioniert die neue Library auch mit Programme, 
+die mindestens Version 0x0101 fordern.
+
+
+Auf bald
+
+  Armin

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 2017/12/11 -->
+<html lang="en">
+<head>
+<title>
+The Documentation for ORCS: CRC-String
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="miscext.html"><img src="udo_up.gif" alt="Other extensions" title="Other extensions" border="0" width="24" height="24">Other extensions</a>
+<a name="UDO_nav_lf_HEAD" href="miscext.html"><img src="udo_lf.gif" alt="Other extensions" title="Other extensions" border="0" width="24" height="24">Other extensions</a>
+<img src="udo_norg.gif" alt="" title="" border="0" width="24" height="24">
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">The Documentation for ORCS</a>
+<br><img src="udo_fs.gif" width="20" height="13" alt="" title="" border="0"><img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="miscext.html">Other extensions</a>
+<hr>
+
+<h1><a name="CRC-String">C.1 CRC-String</a></h1>
+<p>Selecting this option, a checksum is written both to the
+resource itself (as a free string) and the header file. This can be
+used by a program to determine whether the correct resource file has
+been loaded.
+</p>
+<p>Whether a CRC string is stored, can be specified in <a href="output.html">File/Output files</a> with
+the option <b>CRC-String</b>.
+</p>
+<p>The export uses following variables:
+</p>
+<table class="UDO_env_xlist">
+<tr><td nowrap="nowrap" valign="top">_RSM_CRC_:</td>
+<td valign="top"> Index of the free string containing the CRC-string
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">_RSM_CRC_STRING_:</td>
+<td valign="top"> CRC-String value (should match the string from the resource)
+
+</td></tr>
+</table>
+
+<p>Note: The CRC-string can be used to check wether a resource file
+has been changed in an incompatible way. For the calculation of the
+checksum, object types, object numbers and their links are used, but
+not texts and positioning.
+</p>
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="miscext.html"><img src="udo_up.gif" alt="Other extensions" title="Other extensions" border="0" width="24" height="24">Other extensions</a>
+<a name="UDO_nav_lf_FOOT" href="miscext.html"><img src="udo_lf.gif" alt="Other extensions" title="Other extensions" border="0" width="24" height="24">Other extensions</a>
+<img src="udo_norg.gif" alt="" title="" border="0" width="24" height="24">
+
+
+
+</body>
+</html>
+
+

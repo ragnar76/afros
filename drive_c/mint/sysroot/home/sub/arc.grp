@@ -12,5 +12,3 @@ OFIL "LZHShell" C:\tools\archiver\lzhshell\lzhshell.app ""
 OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "STZIP" C:\tools\archiver\stzip\stzip.prg ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "------------" DUMMY ""
-OOPT 0 0 0 0 0 0 0 0 0 0

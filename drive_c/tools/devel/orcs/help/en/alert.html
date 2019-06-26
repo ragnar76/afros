@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 2017/12/11 -->
+<html lang="en">
+<head>
+<title>
+The Documentation for ORCS: Edit Alert Box
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="rtrees.html"><img src="udo_up.gif" alt="Resource Trees" title="Resource Trees" border="0" width="24" height="24">Resource Trees</a>
+<a name="UDO_nav_lf_HEAD" href="menued.html"><img src="udo_lf.gif" alt="Menu-Editor" title="Menu-Editor" border="0" width="24" height="24">Menu-Editor</a>
+<a name="UDO_nav_rg_HEAD" href="frstr.html"><img src="udo_rg.gif" alt="Edit Free String" title="Edit Free String" border="0" width="24" height="24">Edit Free String</a>
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">The Documentation for ORCS</a>
+<br><img src="udo_fs.gif" width="20" height="13" alt="" title="" border="0"><img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="rtrees.html">Resource Trees</a>
+<hr>
+
+<h1><a name="Edit_20Alert_20Box">4.4 Edit Alert Box</a></h1>
+<p>The alert editor can accommodate 5 lines of 40 characters and 3
+buttons of 10 characters each (these are the restrictions which the
+AES pretends; if you want to bpyass these the string must be edited as
+free text). You can also select the icon for the alert box. There's
+also a test function for alert boxes. If the alert limits not
+expanded, no extended object types are used and the AES alert limits
+are not exceeded, then form_alert(...) will be used for the test.
+Otherwise, the builtin alert routine is used.
+</p>
+<p>In the program, the text can be used as follows:
+</p>
+<pre>   char** Text;
+   rsrc_gaddr(15, StringIndex, &amp;Text);
+</pre>
+<p>It must be noted that the function rsrc_gaddr returns a pointer
+to a pointer that contains the text.
+</p>
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="rtrees.html"><img src="udo_up.gif" alt="Resource Trees" title="Resource Trees" border="0" width="24" height="24">Resource Trees</a>
+<a name="UDO_nav_lf_FOOT" href="menued.html"><img src="udo_lf.gif" alt="Menu-Editor" title="Menu-Editor" border="0" width="24" height="24">Menu-Editor</a>
+<a name="UDO_nav_rg_FOOT" href="frstr.html"><img src="udo_rg.gif" alt="Edit Free String" title="Edit Free String" border="0" width="24" height="24">Edit Free String</a>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 2017/12/11 -->
+<html lang="en">
+<head>
+<title>
+The Documentation for ORCS: Extended Object Types
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="orcs.html#UDOTOC"><img src="udo_up.gif" alt="Contents" title="Contents" border="0" width="24" height="24"></a>
+<a name="UDO_nav_lf_HEAD" href="icoload.html"><img src="udo_lf.gif" alt="Load Windows ICO" title="Load Windows ICO" border="0" width="24" height="24">Load Windows ICO</a>
+<a name="UDO_nav_rg_HEAD" href="filetyp.html"><img src="udo_rg.gif" alt="File Types" title="File Types" border="0" width="24" height="24">File Types</a>
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">The Documentation for ORCS</a>
+<hr>
+
+<h1><a name="Extended_20Object_20Types">A Extended Object Types</a></h1>
+<p>In ORCS, depending on the settings, various extended object
+types are displayed, most of them also used by many other libraries
+(Flydial, MyDial etc.). These are usually defined by a specific value
+in the 'Extended type' as well as certain flags. The supported types
+are:
+</p>
+<table class="UDO_env_xlist">
+<tr><td nowrap="nowrap" valign="top">FlyDial Mover</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: I-Box
+</li>
+<li> Extended Type: 17
+</li>
+<li> Flags: TOUCHEXIT, OUTLINED, CROSSED
+</li>
+</ul>
+
+<br>The 'dog-ear' in the upper right corner of dialogs used to move
+the dialog.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Radiobutton</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON oder STRING
+</li>
+<li> Extended Type: 18
+</li>
+<li> Flags: RBUTTON, ~EXIT
+</li>
+</ul>
+
+<br>A round button, with text next to it.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Checkbox</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON
+</li>
+<li> Extended Type: 18
+</li>
+<li> Flags: ~RBUTTON, ~EXIT
+</li>
+</ul>
+
+<br>A small square box, with text next to it.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Exitbutton</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON oder STRING
+</li>
+<li> Extended Type: 18
+</li>
+<li> Flags: ~RBUTTON, EXIT
+</li>
+</ul>
+
+<br>A button with an optional keyboard shortcut. The character
+behind a '[' will be underlined, and the button is a bit larger than
+usual.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Undo-Button (1)</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON
+</li>
+<li> Extended Type: 18
+</li>
+<li> Flags: Flag 11
+</li>
+</ul>
+
+<br>A button that should react to the UNDO key.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Undo-Button (2)</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON
+</li>
+<li> Extended Type: 31
+</li>
+<li> Flags: ~DEFAULT
+</li>
+</ul>
+
+<br>A button that should react to the UNDO key.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Underlined Text</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON oder STRING
+</li>
+<li> Extended Type: 19
+</li>
+<li> Flags: -
+</li>
+</ul>
+
+<br>A text that is underlined in the width of the object. In many
+programs this is used as a heading for dialog.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Group frame</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON
+</li>
+<li> Extended Type: 20
+</li>
+<li> Flags: -
+</li>
+</ul>
+
+<br>A large frame in which the text is used as heading on the top
+left. Is CHECKED also set, the text will be displayed using the small
+font.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Help-Button</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BUTTON oder BOXTEXT
+</li>
+<li> Extended Type: 21
+</li>
+<li> Flags: EXIT
+</li>
+</ul>
+
+<br>A button that should react to the HELP key. The type actually
+should not matter, but it is common practice to use a BOXTEXT with
+flags EXIT, OUTLINED and SHADOWED, and with small and centered text.
+<br>&nbsp;
+</td></tr>
+
+<tr><td nowrap="nowrap" valign="top">Circlebutton</td>
+<td valign="top">
+<br>&nbsp;
+<ul>
+<li> Type: BOXCHAR
+</li>
+<li> Extended Type: 22
+</li>
+<li> Flags: -
+</li>
+</ul>
+
+<br>A circle that is commonly displayed beneath a popup menu.
+<br>&nbsp;
+
+</td></tr>
+</table>
+
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="orcs.html#UDOTOC"><img src="udo_up.gif" alt="Contents" title="Contents" border="0" width="24" height="24"></a>
+<a name="UDO_nav_lf_FOOT" href="icoload.html"><img src="udo_lf.gif" alt="Load Windows ICO" title="Load Windows ICO" border="0" width="24" height="24">Load Windows ICO</a>
+<a name="UDO_nav_rg_FOOT" href="filetyp.html"><img src="udo_rg.gif" alt="File Types" title="File Types" border="0" width="24" height="24">File Types</a>
+</body>
+</html>

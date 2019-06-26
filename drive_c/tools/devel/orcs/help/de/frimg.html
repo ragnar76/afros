@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<!-- last modified on 11.12.2017 -->
+<html lang="de">
+<head>
+<title>
+Die Anleitung zu ORCS: Freies Bild &auml;ndern
+</title>
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1252">
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="Generator" content="UDO Version 7.12 (1248) for Linux">
+<meta name="Author" content="Thorsten Otto">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="position: relative;">
+
+<a name="UDO_nav_hm_HEAD" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_HEAD" href="rtrees.html"><img src="udo_up.gif" alt="Resource B&auml;ume" title="Resource B&auml;ume" border="0" width="24" height="24">Resource B&auml;ume</a>
+<a name="UDO_nav_lf_HEAD" href="frstr.html"><img src="udo_lf.gif" alt="Freie Texte &auml;ndern" title="Freie Texte &auml;ndern" border="0" width="24" height="24">Freie Texte &auml;ndern</a>
+<a name="UDO_nav_rg_HEAD" href="bgh.html"><img src="udo_rg.gif" alt="BubbleGEM Editor" title="BubbleGEM Editor" border="0" width="24" height="24">BubbleGEM Editor</a>
+
+<hr>
+
+<img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="orcs.html">Die Anleitung zu ORCS</a>
+<br><img src="udo_fs.gif" width="20" height="13" alt="" title="" border="0"><img src="udo_fo.gif" width="16" height="13" alt="" title="" border="0">&nbsp;<a href="rtrees.html">Resource B&auml;ume</a>
+<hr>
+
+<h1><a name="Freies_20Bild_20_26auml_3Bndern">4.6 Freies Bild &auml;ndern</a></h1>
+<p>In einer Resource k&ouml;nnen neben Objektb&auml;umen und freien
+Strings auch freie Images abgelegt werden. Dabei handelt es sich um
+einfarbige Bildchen, die z.B. f&uuml;r Mauszeiger o.&auml;. verwendet
+werden k&ouml;nnen. Man trifft sie allerdings eher selten an. Im
+Free-Image-Editor wird lediglich die Bildfarbe eingestellt. Mit
+&quot;&Auml;ndern&quot; kommt man in den <a href="iconed.html">Bild-Editor</a>.
+</p>
+<p>Im Programm kann das Bild wie folgt verwendet werden:
+</p>
+<pre>   BITBLK **bitblk;
+   rsrc_gaddr(16, ImageIndex, &amp;bitblk);
+</pre>
+<p>Zu beachten ist hierbei, da&szlig; die Funktion rsrc_gaddr einen
+Zeiger auf einen Zeiger, der dann auf die Bildinformation zeigt,
+liefert.
+</p>
+<hr>
+
+<a name="UDO_nav_hm_FOOT" href="orcs.html"><img src="udo_hm.gif" alt="Home" title="Home" border="0" width="24" height="24"></a>
+<a name="UDO_nav_up_FOOT" href="rtrees.html"><img src="udo_up.gif" alt="Resource B&auml;ume" title="Resource B&auml;ume" border="0" width="24" height="24">Resource B&auml;ume</a>
+<a name="UDO_nav_lf_FOOT" href="frstr.html"><img src="udo_lf.gif" alt="Freie Texte &auml;ndern" title="Freie Texte &auml;ndern" border="0" width="24" height="24">Freie Texte &auml;ndern</a>
+<a name="UDO_nav_rg_FOOT" href="bgh.html"><img src="udo_rg.gif" alt="BubbleGEM Editor" title="BubbleGEM Editor" border="0" width="24" height="24">BubbleGEM Editor</a>
+</body>
+</html>

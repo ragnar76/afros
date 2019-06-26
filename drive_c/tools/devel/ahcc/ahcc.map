@@ -1,0 +1,4550 @@
+* load map of D:\aaaa\shell\ahcc.prg produced by AHCL (c) H. Robbers @ Amsterdam
+
+in d:\CC\lib\pcvstart.o
+       0      0[   372]  TEXT 
+       0      0          TEXT <Start>
+      14     14          TEXT <ACC>
+      16     16          TEXT <APP>
+     130    130          TEXT <ScanEnvLoop>
+     138    138          TEXT <Start1>
+     178    178          TEXT <xArgLoop>
+     196    196          TEXT <ScanEnvExit>
+     222    222          TEXT <Start2>
+     244    244          TEXT <Start3>
+     258    258          TEXT <Stx3>
+     264    264          TEXT <Start4>
+     268    268          TEXT <Stx4>
+     284    284          TEXT <Start5>
+     290    290          TEXT <Start6>
+     302    302          TEXT <Start7>
+     310    310          TEXT <Start8>
+     334    334          TEXT exit
+     360    360          TEXT <Exit1>
+            372
+in D:\aaaa\aaaa.o
+     372      0[    26]  TEXT frstr
+     398     26[    24]  TEXT half_h
+     422     50[   108]  TEXT alert_msg
+     530    158[    84]  TEXT mem_alert
+     614    242[    48]  TEXT mmalloc
+     662    290[   226]  TEXT start_help
+     888    516[    72]  TEXT <en_windows>
+     960    588[   192]  TEXT eruit
+    1152    780[     8]  TEXT <do_Title>
+    1160    788[   124]  TEXT <drop_winit>
+    1284    912[   232]  TEXT <drop_draw>
+    1516   1144[    84]  TEXT <drop_move>
+    1600   1228[    30]  TEXT <drop_delete>
+    1630   1258[   666]  TEXT <set_desk>
+    2296   1924[   572]  TEXT <init_subsystems>
+    2868   2496[    40]  TEXT <ddclose>
+    2908   2536[   762]  TEXT <do_drop>
+    3670   3298[   156]  TEXT w_top
+    3826   3454[   412]  TEXT <do_mesag>
+    4238   3866[   160]  TEXT do_menu
+    4398   4026[    84]  TEXT <is_mkey>
+    4482   4110[  1756]  TEXT main
+    6238   5866[    90]  TEXT get_second
+           5956
+in D:\aaaa\text\text.o
+    6328      0[    14]  TEXT totab
+    6342     14[   210]  TEXT de_tab
+    6552    224[   212]  TEXT <text_split>
+    6764    436[   160]  TEXT <s_txt>
+    6924    596[    34]  TEXT text_evm
+    6958    630[   270]  TEXT txt_margin
+    7228    900[   162]  TEXT <rev_txt>
+    7390   1062[   402]  TEXT disp_nosel
+    7792   1464[   694]  TEXT disp_line
+    8486   2158[    54]  TEXT find_line
+    8540   2212[    54]  TEXT find_current_line
+    8594   2266[   214]  TEXT text_lines
+    8808   2480[    24]  TEXT display
+    8832   2504[   280]  TEXT ins_text
+    9112   2784[   148]  TEXT printfile
+    9260   2932[   122]  TEXT <do_tFile>
+    9382   3054[   102]  TEXT do_tmenu
+    9484   3156[    66]  TEXT clearmal
+    9550   3222[   188]  TEXT close_textfile
+    9738   3410[    30]  TEXT <set_crlf>
+    9768   3440[   302]  TEXT editor_window
+   10070   3742[   490]  TEXT make_lines
+   10560   4232[   182]  TEXT text_full
+   10742   4414[   178]  TEXT txt_winit
+   10920   4592[    80]  TEXT src_type
+   11000   4672[   596]  TEXT open_text
+   11596   5268[    38]  TEXT close_text
+           5306
+in D:\aaaa\text\cursor.o
+   11634      0[    38]  TEXT txt_timer
+   11672     38[   134]  TEXT x_to_s_t
+   11806    172[   214]  TEXT t_to_s_x
+   12020    386[   138]  TEXT next_ch
+   12158    524[    30]  TEXT <forw_ch>
+   12188    554[    88]  TEXT prev_ch
+   12276    642[    28]  TEXT <back_ch>
+   12304    670[    78]  TEXT is_hook
+   12382    748[    84]  TEXT str_any
+   12466    832[   110]  TEXT str_surr
+   12576    942[   138]  TEXT cat_hash
+   12714   1080[   136]  TEXT <str_hash>
+   12850   1216[    92]  TEXT next_word
+   12942   1308[   174]  TEXT prev_word
+   13116   1482[    56]  TEXT do_key
+   13172   1538[    58]  TEXT do_keybd
+   13230   1596[    80]  TEXT compare
+   13310   1676[  1154]  TEXT Find
+   14464   2830[   302]  TEXT do_find
+   14766   3132[    24]  TEXT dial_find
+   14790   3156[    22]  TEXT invoke_cursor
+           3178
+in D:\aaaa\text\editor.o
+   14812      0[    60]  TEXT dis_paste_etc
+   14872     60[    42]  TEXT <deletecur>
+   14914    102[   212]  TEXT <copy_1>
+   15126    314[   110]  TEXT <buf_winit>
+   15236    424[    50]  TEXT <bufname>
+   15286    474[    80]  TEXT <delete_buf>
+   15366    554[    24]  TEXT <close_buf>
+   15390    578[   386]  TEXT invoke_editor
+   15776    964[    76]  TEXT <ficha>
+   15852   1040[   176]  TEXT <do_ficha>
+   16028   1216[     8]  TEXT <disforbuffer>
+   16036   1224[   224]  TEXT <is_changed>
+   16260   1448[   164]  TEXT <to_undo>
+   16424   1612[    38]  TEXT clear_undo
+   16462   1650[    88]  TEXT cursor_undo
+   16550   1738[   102]  TEXT empty_undo
+   16652   1840[   212]  TEXT <undo_cursor>
+   16864   2052[   132]  TEXT <un_nl>
+   16996   2184[   326]  TEXT <collect>
+   17322   2510[   196]  TEXT condense
+   17518   2706[   276]  TEXT savefile
+   17794   2982[   114]  TEXT savesfile
+   17908   3096[   212]  TEXT abandonfile
+   18120   3308[   120]  TEXT check_save
+   18240   3428[   108]  TEXT <copy_txt>
+   18348   3536[   258]  TEXT <split>
+   18606   3794[    70]  TEXT <check_l>
+   18676   3864[   420]  TEXT <catenate>
+   19096   4284[   100]  TEXT <del_ch>
+   19196   4384[    80]  TEXT <delete_tail>
+   19276   4464[    82]  TEXT <delete_front>
+   19358   4546[   262]  TEXT <del>
+   19620   4808[   374]  TEXT <delete>
+   19994   5182[   210]  TEXT <insert>
+   20204   5392[   702]  TEXT ed_key
+   20906   6094[   280]  TEXT replace
+   21186   6374[   144]  TEXT <tabulate>
+   21330   6518[   246]  TEXT <re_tab>
+   21576   6764[   114]  TEXT do_repl
+   21690   6878[   130]  TEXT insert_fkey
+   21820   7008[   396]  TEXT <copy>
+   22216   7404[   500]  TEXT cut
+   22716   7904[   176]  TEXT <buf_emp>
+   22892   8080[   632]  TEXT <paste>
+   23524   8712[   236]  TEXT <change_case>
+   23760   8948[   114]  TEXT <mnpaste>
+   23874   9062[   534]  TEXT do_Buffer
+   24408   9596[  1596]  TEXT do_Edit
+   26004  11192[    52]  TEXT <still_down>
+   26056  11244[   112]  TEXT <in_selection>
+   26168  11356[   124]  TEXT <write_poly>
+   26292  11480[   142]  TEXT <add_pair>
+   26434  11622[   616]  TEXT <make_poly>
+   27050  12238[    82]  TEXT <rat>
+   27132  12320[  1414]  TEXT drag_selection
+   28546  13734[   174]  TEXT open_buf
+          13908
+in D:\aaaa\text\text_cfg.o
+   28720      0[    26]  TEXT txt_local
+   28746     26[   382]  TEXT <tree_to_wincfg>
+   29128    408[   104]  TEXT <any_loc>
+   29232    512[   152]  TEXT init_txtcfg
+   29384    664[   760]  TEXT <wincfg_to_tree>
+   30144   1424[   188]  TEXT do_txtcfg
+   30332   1612[    60]  TEXT change_txtkit
+   30392   1672[    62]  TEXT txtkit_fresh
+   30454   1734[   314]  TEXT load_txtconfig
+   30768   2048[   178]  TEXT save_txtconfig
+   30946   2226[    60]  TEXT loc_cfg
+           2286
+in D:\aaaa\text\text_sel.o
+   31006      0[   644]  TEXT text_wselect
+   31650    644[    66]  TEXT text_select
+   31716    710[   108]  TEXT text_deselect
+   31824    818[    28]  TEXT cmp_space
+   31852    846[    28]  TEXT <cmp_quo>
+   31880    874[    28]  TEXT <cmp_apos>
+   31908    902[    28]  TEXT <cmp_L_C>
+   31936    930[    28]  TEXT <cmp_L_P>
+   31964    958[    28]  TEXT <cmp_L_I>
+   31992    986[    28]  TEXT <cmp_L_H>
+   32020   1014[    28]  TEXT <cmp_R_C>
+   32048   1042[    28]  TEXT <cmp_R_P>
+   32076   1070[    28]  TEXT <cmp_R_I>
+   32104   1098[    28]  TEXT <cmp_R_H>
+   32132   1126[    28]  TEXT cmp_nonw
+   32160   1154[    28]  TEXT cmp_word
+   32188   1182[    36]  TEXT <cmp_L_COM>
+   32224   1218[    36]  TEXT <cmp_R_COM>
+   32260   1254[    22]  TEXT <cmp_N_COM>
+   32282   1276[    70]  TEXT <cmp_other>
+   32352   1346[    62]  TEXT <cmp_hook>
+   32414   1408[   208]  TEXT <srch_whook>
+   32622   1616[    46]  TEXT <is_whook>
+   32668   1662[    60]  TEXT <cmp_whook>
+   32728   1722[    62]  TEXT <find_any>
+   32790   1784[    62]  TEXT <str_hook>
+   32852   1846[    80]  TEXT <str_whook>
+   32932   1926[   118]  TEXT <find_whook>
+   33050   2044[    44]  TEXT <str_ncom>
+   33094   2088[   154]  TEXT <str_quote>
+   33248   2242[    82]  TEXT <get_htmh>
+   33330   2324[   232]  TEXT <right_html>
+   33562   2556[   304]  TEXT <left_html>
+   33866   2860[  1236]  TEXT select_thing
+   35102   4096[    22]  TEXT <is_nest>
+   35124   4118[    22]  TEXT <is_l_nest>
+   35146   4140[    22]  TEXT <is_r_nest>
+   35168   4162[    22]  TEXT <is_w_nest>
+   35190   4184[    98]  TEXT select_line
+   35288   4282[   104]  TEXT set_line
+   35392   4386[  2870]  TEXT txtsel_cursor
+   38262   7256[    62]  TEXT txtsel_keybd
+   38324   7318[   160]  TEXT scroll
+   38484   7478[  1042]  TEXT txtsel_button
+   39526   8520[   176]  TEXT printselection
+   39702   8696[   144]  TEXT select_and_get_word
+           8840
+in D:\aaaa\common\cursor.o
+   39846      0[    36]  TEXT m_kader
+   39882     36[   266]  TEXT make_visible
+   40148    302[    28]  TEXT make_vis_cur
+   40176    330[    28]  TEXT make_vis_top
+   40204    358[    88]  TEXT write_curect
+   40292    446[    50]  TEXT xy_to_unit
+   40342    496[    52]  TEXT C_cmp
+   40394    548[   164]  TEXT write_cur
+   40558    712[    96]  TEXT std_cursor
+   40654    808[   858]  TEXT do_std_cursor
+           1666
+in D:\aaaa\common\files.o
+   41512      0[    20]  TEXT not_found
+   41532     20[   252]  TEXT write_out
+   41784    272[    76]  TEXT savemsgfile
+   41860    348[   100]  TEXT open_text_file
+   41960    448[   318]  TEXT <textfile>
+   42278    766[    86]  TEXT open_startfile
+   42364    852[   332]  TEXT file_cfg
+   42696   1184[    60]  TEXT <floc_cfg>
+   42756   1244[   410]  TEXT <load_fcfg>
+   43166   1654[   236]  TEXT init_files
+   43402   1890[    46]  TEXT do_Open
+           1936
+in D:\aaaa\common\kit.o
+   43448      0[   104]  TEXT <disp_2>
+   43552    104[    10]  TEXT <change_edcur>
+   43562    114[    90]  TEXT set_find
+   43652    204[   130]  TEXT reverse_rich
+   43782    334[   220]  TEXT change_font
+   44002    554[    72]  TEXT flip_lnrs
+   44074    626[    28]  TEXT get_fistr
+   44102    654[    10]  TEXT get_repstr
+   44112    664[    16]  TEXT get_repl
+   44128    680[    22]  TEXT is_all
+   44150    702[    44]  TEXT get_cpfstr
+   44194    746[    22]  TEXT is_fdeep
+   44216    768[    20]  TEXT get_mulstr
+   44236    788[    22]  TEXT is_mult
+   44258    810[    22]  TEXT is_talk
+   44280    832[    22]  TEXT is_deep
+   44302    854[    22]  TEXT is_once
+   44324    876[    22]  TEXT is_project
+   44346    898[   278]  TEXT <kit_init>
+   44624   1176[   164]  TEXT goto_line
+   44788   1340[    46]  TEXT <back_nl>
+   44834   1386[    50]  TEXT <forw_nl>
+   44884   1436[   120]  TEXT <show_scheme>
+   45004   1556[   110]  TEXT <opt_match>
+   45114   1666[   680]  TEXT scan_file
+   45794   2346[   132]  TEXT <fromfolder>
+   45926   2478[    62]  TEXT makefrfold
+   45988   2540[   360]  TEXT <find_in_dir>
+   46348   2900[   118]  TEXT <get_wild>
+   46466   3018[   406]  TEXT find_multiple
+   46872   3424[    86]  TEXT <ask_dir>
+   46958   3510[   270]  TEXT <comp_file>
+   47228   3780[   400]  TEXT <comp_in_dir>
+   47628   4180[   346]  TEXT comp_folder
+   47974   4526[   106]  TEXT <set_xstr>
+   48080   4632[   156]  TEXT <xask_dir>
+   48236   4788[   772]  TEXT <kit_do>
+   49008   5560[   112]  TEXT <Get_Teds>
+   49120   5672[   552]  TEXT invoke_kit
+   49672   6224[    20]  TEXT end_kit
+   49692   6244[   128]  TEXT find_type
+   49820   6372[   210]  TEXT kit_dial
+   50030   6582[   266]  TEXT <check_brace>
+   50296   6848[   114]  TEXT menu_help
+   50410   6962[    20]  TEXT <up_help>
+   50430   6982[    38]  TEXT <dn_help>
+   50468   7020[    24]  TEXT clear_help_stack
+   50492   7044[   100]  TEXT <to_help_stack>
+   50592   7144[   180]  TEXT restore_help_stack
+   50772   7324[    20]  TEXT <is_ws>
+   50792   7344[    78]  TEXT <handle_space>
+   50870   7422[    88]  TEXT <select_2>
+   50958   7510[   144]  TEXT line_compare
+   51102   7654[    82]  TEXT <line_eq>
+   51184   7736[   410]  TEXT <still_diff>
+   51594   8146[    10]  TEXT <scolor>
+   51604   8156[   122]  TEXT <lines_eq>
+   51726   8278[   104]  TEXT <lines_ne>
+   51830   8382[   134]  TEXT <prepare>
+   51964   8516[   306]  TEXT sync_lines
+   52270   8822[  1332]  TEXT do_Search
+   53602  10154[   102]  TEXT <preserve_filter>
+   53704  10256[   196]  TEXT kit_drop
+          10452
+in D:\aaaa\common\treeview.o
+   53900      0[   120]  TEXT trv_draw
+   54020    120[    18]  TEXT <trv_evm>
+   54038    138[    78]  TEXT <trv_movew>
+   54116    216[   200]  TEXT treeview_window
+   54316    416[    74]  TEXT trv_new_nest
+   54390    490[    62]  TEXT <greater>
+   54452    552[    48]  TEXT trv_spacer
+   54500    600[   106]  TEXT trv_add_nest
+   54606    706[    50]  TEXT trv_del_nest
+   54656    756[    82]  TEXT <find_xy>
+   54738    838[    78]  TEXT <find_y>
+   54816    916[    58]  TEXT trv_find_ln
+   54874    974[   162]  TEXT <trv_button>
+   55036   1136[    54]  TEXT <v_lin>
+   55090   1190[    90]  TEXT <e_lin>
+   55180   1280[    72]  TEXT <h_lin>
+   55252   1352[    80]  TEXT <vlines>
+   55332   1432[    92]  TEXT <hlines>
+   55424   1524[   432]  TEXT <trv_icon>
+   55856   1956[   102]  TEXT trv_linenrs
+   55958   2058[    40]  TEXT trv_deselect
+   55998   2098[   658]  TEXT <trv_line>
+   56656   2756[   454]  TEXT trv_adjust
+           3210
+in D:\aaaa\common\hierarch.o
+   57110      0[    22]  TEXT strmaxcpy
+   57132     22[    44]  TEXT DIRcpy
+   57176     66[    64]  TEXT DIRcat
+   57240    130[   144]  TEXT inq_xfs
+   57384    274[    40]  TEXT <hn_issep>
+   57424    314[    44]  TEXT <hn_strsep>
+   57468    358[    42]  TEXT <icat>
+   57510    400[    28]  TEXT <dotdot>
+   57538    428[   192]  TEXT <hn_new_part>
+   57730    620[    50]  TEXT <ins_part>
+   57780    670[    60]  TEXT <remove_part>
+   57840    730[    48]  TEXT <separators>
+   57888    778[   276]  TEXT hn_make
+   58164   1054[   102]  TEXT <count>
+   58266   1156[    62]  TEXT <do_dd>
+   58328   1218[   226]  TEXT hn_full
+   58554   1444[    46]  TEXT hn_dotdot
+   58600   1490[    82]  TEXT hn_free
+   58682   1572[   130]  TEXT dir_plus_name
+   58812   1702[    36]  TEXT strslash
+   58848   1738[    56]  TEXT strrslash
+   58904   1794[    42]  TEXT getsuf
+   58946   1836[    74]  TEXT findsuf
+   59020   1910[    50]  TEXT getfn
+   59070   1960[   108]  TEXT change_suffix
+   59178   2068[   224]  TEXT inspad
+   59402   2292[    90]  TEXT delpad
+   59492   2382[   230]  TEXT init_dir
+   59722   2612[    38]  TEXT <needslash>
+   59760   2650[    92]  TEXT Aopendir
+   59852   2742[   340]  TEXT Areaddir
+   60192   3082[    30]  TEXT Aclosedir
+           3112
+in D:\aaaa\common\options.o
+   60222      0[     2]  TEXT initoptions
+   60224      2[    64]  TEXT <bih>
+   60288     66[    54]  TEXT <trih>
+   60342    120[    44]  TEXT <biw>
+   60386    164[    54]  TEXT <triw>
+   60440    218[  3930]  TEXT do_Mode
+           4148
+in D:\aaaa\common\windows.o
+   64370      0[    20]  TEXT alertwindow
+   64390     20[    70]  TEXT wmenu_tnormal
+   64460     90[    22]  TEXT is_drop
+   64482    112[    24]  TEXT is_text
+   64506    136[    24]  TEXT is_sheet
+   64530    160[    38]  TEXT is_dial
+   64568    198[    38]  TEXT no_dial
+   64606    236[    30]  TEXT for_tile
+   64636    266[    14]  TEXT is_buf
+   64650    280[    14]  TEXT is_jrnl
+   64664    294[    24]  TEXT is_srce
+   64688    318[    24]  TEXT is_bin
+   64712    342[    40]  TEXT is_file
+   64752    382[    24]  TEXT is_trv
+   64776    406[    90]  TEXT get_it
+   64866    496[    62]  TEXT is_it
+   64928    558[    36]  TEXT to_top
+   64964    594[   142]  TEXT next_upper_left
+   65106    736[    52]  TEXT get_top_it
+   65158    788[    74]  TEXT get_fn_it
+   65232    862[    74]  TEXT wi_title
+   65306    936[    28]  TEXT set_X
+   65334    964[   108]  TEXT w_handles
+   65442   1072[    90]  TEXT renum
+   65532   1162[   120]  TEXT lower_right
+   65652   1282[   136]  TEXT snapwindow
+   65788   1418[     2]  TEXT <no_cur>
+   65790   1420[  1074]  TEXT create_IT
+   66864   2494[   148]  TEXT h_and_v
+   67012   2642[    56]  TEXT clear_margin
+   67068   2698[   336]  TEXT get_work
+   67404   3034[    84]  TEXT close_w
+   67488   3118[   250]  TEXT open_w
+   67738   3368[   164]  TEXT <h_slider>
+   67902   3532[   192]  TEXT v_slider
+   68094   3724[   426]  TEXT do_redraw
+   68520   4150[   262]  TEXT menu_redraw
+   68782   4412[    48]  TEXT bounce
+   68830   4460[    44]  TEXT is_beyond_scr
+   68874   4504[   912]  TEXT arrowwindow
+   69786   5416[   156]  TEXT sizewindow
+   69942   5572[    86]  TEXT movewindow
+   70028   5658[    96]  TEXT cyclewindows
+   70124   5754[   242]  TEXT rack_up
+   70366   5996[   252]  TEXT rack_dn
+   70618   6248[   256]  TEXT slidewindow
+   70874   6504[   176]  TEXT delete_windows
+   71050   6680[   144]  TEXT update_it
+           6824
+in D:\aaaa\common\wdial.o
+   71194      0[   260]  TEXT <wdial_blok>
+   71454    260[   150]  TEXT wdial_vis
+   71604    410[   102]  TEXT <wdial_write_cur>
+   71706    512[    92]  TEXT wdial_cur
+   71798    604[    34]  TEXT <wdial_timer>
+   71832    638[    72]  TEXT wdial_edob
+   71904    710[    84]  TEXT <wdial_place>
+   71988    794[    54]  TEXT <post_wdial>
+   72042    848[    48]  TEXT wdial_setcur
+   72090    896[     8]  TEXT wdial_evm
+   72098    904[   110]  TEXT wdial_itotmpl
+   72208   1014[    78]  TEXT wdial_xytoi
+   72286   1092[   136]  TEXT <w_bounce>
+   72422   1228[   216]  TEXT <wdial_makevis>
+   72638   1444[   322]  TEXT <wdial_watch>
+   72960   1766[   180]  TEXT <Radio_b>
+   73140   1946[   522]  TEXT wdial_button
+   73662   2468[   508]  TEXT <wdial_cursor>
+   74170   2976[     4]  TEXT <wdial_valid>
+   74174   2980[   410]  TEXT <wdial_edkey>
+   74584   3390[    76]  TEXT wdial_keybd
+   74660   3466[   210]  TEXT wdial_draw
+   74870   3676[   116]  TEXT wdial_change
+   74986   3792[   106]  TEXT <ck_act_on>
+   75092   3898[   100]  TEXT set_dialinfs
+   75192   3998[     8]  TEXT <wdial_close>
+   75200   4006[    22]  TEXT <wdial_delete>
+   75222   4028[   254]  TEXT wind_dial
+   75476   4282[   250]  TEXT <wdial_size>
+   75726   4532[   142]  TEXT <wdial_full>
+   75868   4674[   302]  TEXT <wdial_slide>
+   76170   4976[   408]  TEXT <wdial_arrowed>
+   76578   5384[   284]  TEXT create_dialw
+   76862   5668[    56]  TEXT <c_clip>
+   76918   5724[   336]  TEXT <check_button>
+   77254   6060[   314]  TEXT <radio_button>
+   77568   6374[   248]  TEXT <group>
+   77816   6622[   132]  TEXT <ob_title>
+   77948   6754[   646]  TEXT subst_objects
+   78594   7400[    48]  TEXT subst_free
+           7448
+in D:\aaaa\common\journal.o
+   78642      0[   150]  TEXT <timer_timer>
+   78792    150[   132]  TEXT do_init_text
+   78924    282[   190]  TEXT <open_jrnl>
+   79114    472[    72]  TEXT <clearjmal>
+   79186    544[    48]  TEXT <deletejrnl>
+   79234    592[    76]  TEXT <close_jrnl>
+   79310    668[   446]  TEXT <jrnl_winit>
+   79756   1114[   144]  TEXT <tcalc>
+   79900   1258[    10]  TEXT <calc_undo>
+   79910   1268[   216]  TEXT <jnl_out>
+   80126   1484[    40]  TEXT <jnl_outer>
+   80166   1524[    72]  TEXT jnl_tree
+   80238   1596[   334]  TEXT <do_jFile>
+   80572   1930[    24]  TEXT <jrnl_evm>
+   80596   1954[   226]  TEXT <do_Jmenu>
+   80822   2180[     2]  TEXT <no_cur>
+   80824   2182[   124]  TEXT con_end
+   80948   2306[   278]  TEXT <con_cursor>
+   81226   2584[   406]  TEXT <con_key>
+   81632   2990[    60]  TEXT <con_volatile>
+   81692   3050[   208]  TEXT <con_keybd>
+   81900   3258[    32]  TEXT <get_fname>
+   81932   3290[   142]  TEXT open_clicked_file
+   82074   3432[    72]  TEXT <close_files>
+   82146   3504[   904]  TEXT jrnl_button
+   83050   4408[   494]  TEXT init_jrnl
+   83544   4902[   950]  TEXT <ins_msg>
+   84494   5852[   252]  TEXT send_msg
+   84746   6104[   128]  TEXT alert_jrnl
+   84874   6232[   352]  TEXT con_input
+   85226   6584[   128]  TEXT console
+           6712
+in D:\aaaa\common\F_x.o
+   85354      0[    24]  TEXT <is_end>
+   85378     24[    22]  TEXT <is_ws>
+   85400     46[   130]  TEXT <parsenext>
+   85530    176[    74]  TEXT parsedef
+   85604    250[    52]  TEXT bad_tok
+   85656    302[    20]  TEXT <can_un>
+   85676    322[    26]  TEXT <sk>
+   85702    348[    32]  TEXT get_flo
+   85734    380[   106]  TEXT get_hex
+   85840    486[   374]  TEXT parselook
+   86214    860[   666]  TEXT <parse_unop>
+   86880   1526[    38]  TEXT <Primary>
+   86918   1564[   362]  TEXT <parse_binop>
+   87280   1926[   426]  TEXT <Unary>
+   87706   2352[   346]  TEXT <Binary>
+   88052   2698[   166]  TEXT F_x
+           2864
+in D:\aaaa\common\stm.o
+   88218      0[    46]  TEXT stmfreeall
+   88264     46[   204]  TEXT stminit
+   88468    250[   270]  TEXT <allocfr>
+   88738    520[     8]  TEXT stmfind
+   88746    528[    46]  TEXT stmdelcur
+   88792    574[    98]  TEXT stminsert
+   88890    672[    62]  TEXT stmmove
+   88952    734[    60]  TEXT stmclear
+   89012    794[    60]  TEXT stmrenum
+   89072    854[   178]  TEXT stmfinum
+   89250   1032[   178]  TEXT stmfi_un
+   89428   1210[    36]  TEXT stmfifirst
+   89464   1246[    36]  TEXT stmfilast
+   89500   1282[    56]  TEXT stmfinext
+   89556   1338[    56]  TEXT stmfiprior
+   89612   1394[   132]  TEXT <get>
+   89744   1526[   580]  TEXT <put>
+   90324   2106[    98]  TEXT <rem>
+   90422   2204[    22]  TEXT <next>
+           2226
+in D:\aaaa\common\config.o
+   90444      0[   148]  TEXT radio_c
+   90592    148[   168]  TEXT <setopt>
+   90760    316[   110]  TEXT <getopt>
+   90870    426[    70]  TEXT findopt
+   90940    496[    60]  TEXT <set_cfg>
+   91000    556[    74]  TEXT opt_to_cfg
+   91074    630[    98]  TEXT <radio_opt>
+   91172    728[    68]  TEXT radio_to_cfg
+   91240    796[   150]  TEXT options
+   91390    946[    58]  TEXT changeconfig
+   91448   1004[   112]  TEXT copyconfig
+   91560   1116[    50]  TEXT cfgname
+           1166
+in D:\aaaa\common\qpfiprep.o
+   91610      0[   154]  TEXT qpfind_prepare
+            154
+in D:\aaaa\common\qpfind.o
+   91764      0[   104]  TEXT qpfind
+   91802     38          TEXT <loop1>
+   91804     40          TEXT <loop2>
+   91822     58          TEXT <loop3>
+   91830     66          TEXT <loop4>
+   91854     90          TEXT <exit1>
+   91856     92          TEXT <exit2>
+   91868    104[   124]  TEXT qpfind_nc
+   91908    144          TEXT <loop1>
+   91910    146          TEXT <loop2>
+   91936    172          TEXT <loop3>
+   91948    184          TEXT <loop4>
+   91978    214          TEXT <exit1>
+   91980    216          TEXT <exit2>
+            228
+in D:\aaaa\common\parent.o
+   91992      0[    66]  TEXT get_parent
+   92008     16          TEXT <l1>
+   92018     26          TEXT <l2>
+   92042     50          TEXT <l3>
+   92052     60          TEXT <lx>
+             66
+in D:\aaaa\common\scr_inst.o
+   92058      0[    74]  TEXT copy_gform
+   92132     74[  1020]  TEXT instt_scr
+   93152   1094[   422]  TEXT get_aes_info
+   93574   1516[    40]  TEXT marrow
+           1556
+in D:\aaaa\common\nkcc_c.o
+   93614      0[    52]  TEXT nkc_init
+   93666     52[     4]  TEXT nkc_exit
+   93670     56[    78]  TEXT normkey
+            134
+in D:\aaaa\common\aaaankcc.o
+   93748      0[   380]  TEXT 
+   93748      0          TEXT nkc_tconv
+   93804     56          TEXT <ktab1>
+   93818     70          TEXT <ktab2>
+   93824     76          TEXT <ktab3>
+   93850    102          TEXT <scan1>
+   93856    108          TEXT <search_scan>
+   93872    124          TEXT <tabend>
+   93874    126          TEXT <scan2>
+   93890    142          TEXT <scan3>
+   93904    156          TEXT <scan4>
+   93914    166          TEXT <scan5>
+   93924    176          TEXT <scan6>
+   93948    200          TEXT <numeric>
+   93954    206          TEXT <scan7>
+   93980    232          TEXT <scan8>
+   94014    266          TEXT <scan9>
+   94036    288          TEXT <cat_codes>
+   94058    310          TEXT <scan10>
+   94072    324          TEXT <scan11>
+   94092    344          TEXT <scan12>
+   94098    350          TEXT <exit>
+   94110    362          TEXT <tos306>
+            380
+in D:\aaaa\common\win_menu.o
+   94128      0[    66]  TEXT <menu_type>
+   94194     66[   150]  TEXT menu_init
+   94344    216[    80]  TEXT ob_rect
+   94424    296[    30]  TEXT <find_title>
+   94454    326[    44]  TEXT <find_pull>
+   94498    370[   122]  TEXT <menu_ent>
+   94620    492[    42]  TEXT change_ob
+   94662    534[    24]  TEXT menu_avail
+   94686    558[    44]  TEXT menu_dis
+   94730    602[    96]  TEXT menu_title
+   94826    698[    64]  TEXT menu_clear
+   94890    762[   108]  TEXT <menu_pull>
+   94998    870[    48]  TEXT <menu_push>
+   95046    918[   368]  TEXT menu_mouse
+   95414   1286[    54]  TEXT menu_button
+   95468   1340[   222]  TEXT <menu_boxes>
+   95690   1562[    96]  TEXT menu_place
+   95786   1658[   104]  TEXT menu_evm
+   95890   1762[   144]  TEXT menu_draw
+   96034   1906[   274]  TEXT <menu_loop>
+   96308   2180[   116]  TEXT <find_key>
+   96424   2296[    26]  TEXT <to>
+   96450   2322[   568]  TEXT m_key
+   97018   2890[    78]  TEXT menu_keys
+           2968
+in D:\aaaa\common\aaaa_lib.o
+   97096      0[    84]  TEXT alert_text
+   97180     84[    32]  TEXT is_alpha
+   97212    116[    32]  TEXT is_alnum
+   97244    148[    68]  TEXT is_punct
+   97312    216[   198]  TEXT <snapbox>
+   97510    414[   108]  TEXT <snaprat>
+   97618    522[   368]  TEXT aform_move
+   97986    890[    30]  TEXT form_move
+   98016    920[    34]  TEXT draw_ob
+   98050    954[   252]  TEXT <form_set>
+   98302   1206[   230]  TEXT form_save
+   98532   1436[   156]  TEXT form_rest
+   98688   1592[   212]  TEXT form_align
+   98900   1804[    54]  TEXT first_edob
+   98954   1858[    54]  TEXT last_edob
+   99008   1912[    38]  TEXT prev_edob
+   99046   1950[    56]  TEXT next_edob
+   99102   2006[    56]  TEXT find_def
+   99158   2062[    38]  TEXT strsncpy
+   99196   2100[    92]  TEXT s_to_xstr
+   99288   2192[    50]  TEXT xstr_to_s
+   99338   2242[    44]  TEXT <aform_cursor>
+   99382   2286[   554]  TEXT aform_do
+   99936   2840[    30]  TEXT <cont_move>
+   99966   2870[   410]  TEXT movebox
+  100376   3280[    36]  TEXT mousek
+  100412   3316[    26]  TEXT xcpy
+  100438   3342[    30]  TEXT xcat
+  100468   3372[   112]  TEXT box
+  100580   3484[    40]  TEXT line
+  100620   3524[    38]  TEXT pbox
+  100658   3562[    46]  TEXT gpbox
+  100704   3608[    58]  TEXT gspbox
+  100762   3666[    58]  TEXT gsbox
+  100820   3724[    40]  TEXT clips
+  100860   3764[    58]  TEXT gsclip
+  100918   3822[     6]  TEXT <to_upper>
+  100924   3828[   278]  TEXT match_pattern
+  101202   4106[    78]  TEXT <brace>
+  101280   4184[   100]  TEXT delimited_copy
+  101380   4284[    42]  TEXT isfile
+  101422   4326[   168]  TEXT select_file
+  101590   4494[    54]  TEXT <uurmin>
+  101644   4548[   330]  TEXT ttijd
+  101974   4878[    98]  TEXT <get_exotics>
+  102072   4976[   184]  TEXT exotic
+  102256   5160[    92]  TEXT cbdu
+  102348   5252[   100]  TEXT cbdlu
+  102448   5352[    64]  TEXT cdbv
+  102512   5416[    68]  TEXT cldbv
+  102580   5484[   156]  TEXT fit_inside
+  102736   5640[    88]  TEXT get_cookie
+  102824   5728[    52]  TEXT m_inside
+  102876   5780[   162]  TEXT rc_intersect
+  103038   5942[    26]  TEXT pluralis
+  103064   5968[    78]  TEXT Fdump
+  103142   6046[   226]  TEXT Fload
+  103368   6272[    52]  TEXT crlf
+  103420   6324[   458]  TEXT saveconfig
+  103878   6782[    20]  TEXT <semicolon>
+  103898   6802[    26]  TEXT <nonwhite>
+  103924   6828[    20]  TEXT <findis>
+  103944   6848[    42]  TEXT <cfgcpy>
+  103986   6890[    40]  TEXT denotation_space
+  104026   6930[   516]  TEXT loadconfig
+           7446
+in D:\aaaa\common\dict.o
+  104542      0[    56]  TEXT dichash
+  104598     56[   140]  TEXT to_dictionary
+  104738    196[   126]  TEXT to_name_heap
+  104864    322[    64]  TEXT init_dictionary
+  104928    386[    34]  TEXT free_dictionary
+            420
+in D:\aaaa\common\ipff.o
+  104962      0[    40]  TEXT ipff_trail
+  105002     40[   104]  TEXT ipff_init
+  105106    144[    20]  TEXT ipff_in
+  105126    164[     8]  TEXT ipff_getp
+  105134    172[    52]  TEXT sk
+  105186    224[    22]  TEXT skc
+  105208    246[    26]  TEXT sk1
+  105234    272[    94]  TEXT str
+  105328    366[    46]  TEXT look
+  105374    412[    84]  TEXT fstr
+  105458    496[    78]  TEXT idec
+  105536    574[    82]  TEXT dec
+  105618    656[    34]  TEXT sknl
+            690
+in D:\aaaa\common\pdb.o
+  105652      0[    40]  TEXT <ftab>
+  105692     40[   192]  TEXT pdb_list
+  105884    232[    40]  TEXT <pdb_free_files>
+  105924    272[   152]  TEXT pdb_list_ides
+  106076    424[    52]  TEXT pdb_find
+  106128    476[   152]  TEXT pdb_fdepend
+  106280    628[   122]  TEXT pdb_depend
+  106402    750[   118]  TEXT pdb_new
+  106520    868[    56]  TEXT pdb_fileno
+  106576    924[    46]  TEXT pdb_file_by_number
+  106622    970[    86]  TEXT pdb_init
+  106708   1056[   108]  TEXT pdb_free_dep
+  106816   1164[   270]  TEXT pdb_write_dep
+  107086   1434[    52]  TEXT <match_prj>
+  107138   1486[   104]  TEXT <match_deps>
+  107242   1590[   214]  TEXT <pdb_read>
+  107456   1804[    88]  TEXT <bfind_ide>
+  107544   1892[    44]  TEXT pdb_find_ide
+  107588   1936[    92]  TEXT <ins_ide>
+  107680   2028[   208]  TEXT pdb_new_ide
+  107888   2236[   194]  TEXT <pdb_read_ides>
+  108082   2430[   556]  TEXT pdb_read_dep
+           2986
+in D:\aaaa\shell\gemshell.o
+  108638      0[    32]  TEXT do_Scopyright
+  108670     32[   108]  TEXT menu_prj
+  108778    140[   298]  TEXT find_project
+  109076    438[    88]  TEXT pdb_mark
+  109164    526[   178]  TEXT <dp_add>
+  109342    704[   266]  TEXT <dp_file>
+  109608    970[    58]  TEXT <dp_files>
+  109666   1028[   212]  TEXT <dp_init>
+  109878   1240[    78]  TEXT <dp_draw>
+  109956   1318[   116]  TEXT <dp_set_new>
+  110072   1434[   106]  TEXT <dp_select>
+  110178   1540[    38]  TEXT <dp_close>
+  110216   1578[   318]  TEXT <dp_keybd>
+  110534   1896[    64]  TEXT dp_end
+  110598   1960[   104]  TEXT <dp_tree>
+  110702   2064[  1594]  TEXT do_shell
+  112296   3658[    54]  TEXT init_shell
+           3712
+in D:\aaaa\shell\shell.o
+  112350      0[   124]  TEXT <findupsuf>
+  112474    124[    48]  TEXT inlist
+  112522    172[   110]  TEXT <putflist>
+  112632    282[   476]  TEXT <keepfile>
+  113108    758[   126]  TEXT defofile
+  113234    884[    52]  TEXT <clear_files>
+  113286    936[   114]  TEXT <clear_project>
+  113400   1050[    32]  TEXT remove_project
+  113432   1082[    52]  TEXT <older>
+  113484   1134[    38]  TEXT <getstamp>
+  113522   1172[   138]  TEXT <touch>
+  113660   1310[   266]  TEXT <makeok>
+  113926   1576[   836]  TEXT docomp
+  114762   2412[   138]  TEXT <look_CC>
+  114900   2550[   946]  TEXT dold
+  115846   3496[   392]  TEXT <make_prj>
+  116238   3888[   122]  TEXT domake
+  116360   4010[    76]  TEXT <clear_dates>
+  116436   4086[    36]  TEXT domakeall
+  116472   4122[    64]  TEXT <make_path>
+  116536   4186[   160]  TEXT <add_options>
+  116696   4346[  1162]  TEXT <load_prj>
+  117858   5508[   292]  TEXT loadmake
+  118150   5800[    46]  TEXT init_make
+  118196   5846[   106]  TEXT do_compile
+  118302   5952[   102]  TEXT <save_string>
+  118404   6054[    88]  TEXT end_shell
+  118492   6142[   322]  TEXT prj_params
+           6464
+in D:\aaaa\shell\shlcfg.o
+  118814      0[   236]  TEXT cfg_to_rsc
+  119050    236[   216]  TEXT rsc_to_cfg
+  119266    452[   100]  TEXT kit_for_shell
+  119366    552[    20]  TEXT get_definestr
+  119386    572[    20]  TEXT get_inclstr
+  119406    592[    10]  TEXT get_matchstr
+  119416    602[    10]  TEXT get_libstr
+  119426    612[    10]  TEXT get_rootname
+  119436    622[    16]  TEXT get_max_errors
+  119452    638[    16]  TEXT get_max_warnings
+  119468    654[    60]  TEXT shell_cfg
+  119528    714[     2]  TEXT end_shlcfg
+            716
+in D:\aaaa\shell\tos_call.o
+  119530      0[   140]  TEXT 
+  119530      0          TEXT tos_call
+  119548     18          TEXT <lo>
+  119552     22          TEXT <l0>
+  119568     38          TEXT <l1>
+  119574     44          TEXT <space>
+  119574     44          TEXT <l2>
+  119596     66          TEXT <apo>
+  119598     68          TEXT <l3>
+  119624     94          TEXT <lx>
+  119628     98          TEXT <lee>
+            140
+in D:\aaaa\shell\bip_io.o
+  119670      0[    82]  TEXT Cload
+  119752     82[    20]  TEXT <rom_evm>
+  119772    102[   212]  TEXT open_S
+  119984    314[    96]  TEXT close_S
+            410
+in D:\aaaa\ahcc\init_cc.o
+  120080      0[   208]  TEXT init_cc
+            208
+in D:\aaaa\ahcc\ahcc.o
+  120288      0[    64]  TEXT <toomanyerr>
+  120352     64[    64]  TEXT <toomanywarn>
+  120416    128[    74]  TEXT send_incname
+  120490    202[   170]  TEXT adddef
+  120660    372[    40]  TEXT freedefs
+  120700    412[    90]  TEXT <dodefs>
+  120790    502[    40]  TEXT <optnl>
+  120830    542[   108]  TEXT CC_ranout
+  120938    650[  1384]  TEXT <do_file>
+  122322   2034[    96]  TEXT subdef
+  122418   2130[    34]  TEXT <on_off>
+  122452   2164[   328]  TEXT <newopt>
+  122780   2492[   864]  TEXT <doopt>
+  123644   3356[    60]  TEXT cur_name
+  123704   3416[    58]  TEXT inc_stats
+  123762   3474[   150]  TEXT load_bin
+  123912   3624[   556]  TEXT load_source_file
+  124468   4180[   888]  TEXT compiler
+  125356   5068[    38]  TEXT <find_name>
+  125394   5106[   268]  TEXT errorn
+  125662   5374[   200]  TEXT error
+  125862   5574[   276]  TEXT warnn
+  126138   5850[   126]  TEXT warn
+  126264   5976[    20]  TEXT src_name
+  126284   5996[   336]  TEXT messagen
+  126620   6332[   218]  TEXT message
+  126838   6550[     2]  TEXT waitexit
+           6552
+in D:\aaaa\ahcc\cc_load.o
+  126840      0[   246]  TEXT CC_load
+            246
+in D:\aaaa\ahcc\c_lex.o
+  127086      0[    60]  TEXT split
+  127146     60[  1586]  TEXT C_lexical
+           1646
+in D:\aaaa\ahcc\tok.o
+  128732      0[    54]  TEXT <ctrans>
+  128786     54[    12]  TEXT is_escape
+  128798     66[    62]  TEXT ishexa
+  128860    128[    34]  TEXT <tok_dig>
+  128894    162[    70]  TEXT <tok_oct>
+  128964    232[    48]  TEXT <tok_hex>
+  129012    280[    40]  TEXT <is_exp>
+  129052    320[    38]  TEXT <is_L_or_F>
+  129090    358[    96]  TEXT <is_LF>
+  129186    454[   372]  TEXT <tok_real>
+  129558    826[   238]  TEXT <mo_init>
+  129796   1064[    98]  TEXT <kw_init>
+  129894   1162[   140]  TEXT <take>
+  130034   1302[   138]  TEXT <node_from_op>
+  130172   1440[    26]  TEXT <to_id>
+  130198   1466[    12]  TEXT <tok_BAD>
+  130210   1478[    68]  TEXT <tok_op>
+  130278   1546[    94]  TEXT <tok_op3>
+  130372   1640[   100]  TEXT <tok_op2>
+  130472   1740[    26]  TEXT tok_init
+  130498   1766[   120]  TEXT is_bold_word
+  130618   1886[   100]  TEXT <find_kw>
+  130718   1986[    94]  TEXT kw_tok
+  130812   2080[    30]  TEXT <tok_EOF>
+  130842   2110[    46]  TEXT <tok_NL>
+  130888   2156[   254]  TEXT <end_L0_file>
+  131142   2410[   146]  TEXT tok_to_nl
+  131288   2556[    96]  TEXT <find_hardnl>
+  131384   2652[   158]  TEXT tok_prep
+  131542   2810[    58]  TEXT <do_eof>
+  131600   2868[   102]  TEXT <do_bad>
+  131702   2970[    94]  TEXT <do_nl>
+  131796   3064[    90]  TEXT <do_ws>
+  131886   3154[   318]  TEXT <do_op>
+  132204   3472[    78]  TEXT <do_op2>
+  132282   3550[    78]  TEXT <do_op3>
+  132360   3628[   114]  TEXT <do_quo>
+  132474   3742[    88]  TEXT <do_apo>
+  132562   3830[   100]  TEXT <do_ide>
+  132662   3930[   622]  TEXT <do_dig>
+  133284   4552[    56]  TEXT <get_kw>
+  133340   4608[   112]  TEXT <make_id>
+  133452   4720[   336]  TEXT tok_next
+           5056
+in D:\aaaa\ahcc\cache.o
+  133788      0[    70]  TEXT free_cache_unit
+  133858     70[   120]  TEXT delete_from_cache
+  133978    190[    26]  TEXT free_cache
+  134004    216[    92]  TEXT cache_look
+  134096    308[    46]  TEXT new_cache
+            354
+in D:\aaaa\ahcc\pre.o
+  134142      0[    14]  TEXT <hold_back>
+  134156     14[    38]  TEXT <to_endof>
+  134194     52[   182]  TEXT <tok_cat>
+  134376    234[   106]  TEXT <cat_lex>
+  134482    340[   176]  TEXT <hi_node>
+  134658    516[    46]  TEXT <hi_tok>
+  134704    562[    28]  TEXT <slash_double>
+  134732    590[   374]  TEXT <builtin>
+  135106    964[   186]  TEXT <argsmod>
+  135292   1150[   180]  TEXT <l_cmp>
+  135472   1330[    64]  TEXT <same_list>
+  135536   1394[    40]  TEXT <samedef>
+  135576   1434[    48]  TEXT <mark_exp>
+  135624   1482[   264]  TEXT do_define
+  135888   1746[    26]  TEXT <pwarn>
+  135914   1772[   146]  TEXT def_arglist
+  136060   1918[   104]  TEXT <def_args>
+  136164   2022[    62]  TEXT <is_repeat>
+  136226   2084[    62]  TEXT <is_endrm>
+  136288   2146[   174]  TEXT <rpt_val>
+  136462   2320[   430]  TEXT def_val
+  136892   2750[   256]  TEXT optdef
+  137148   3006[   206]  TEXT <gath1>
+  137354   3212[   174]  TEXT <gath_args>
+  137528   3386[    46]  TEXT <gath_S_args>
+  137574   3432[   160]  TEXT <gath_C_args>
+  137734   3592[   192]  TEXT <spar_fix>
+  137926   3784[    70]  TEXT <copylist>
+  137996   3854[   146]  TEXT <fuse_name>
+  138142   4000[   216]  TEXT <arg_fix>
+  138358   4216[   184]  TEXT <expand>
+  138542   4400[   122]  TEXT <p_undef>
+  138664   4522[   254]  TEXT doincl
+  138918   4776[    46]  TEXT free_srchlist
+  138964   4822[   114]  TEXT freeincs
+  139078   4936[    66]  TEXT <reduce_path>
+  139144   5002[    36]  TEXT is_drive
+  139180   5038[   408]  TEXT <look_file>
+  139588   5446[   464]  TEXT <srch_open>
+  140052   5910[   140]  TEXT <newfile>
+  140192   6050[   260]  TEXT incl_name
+  140452   6310[    30]  TEXT <p_inc>
+  140482   6340[    94]  TEXT invoke_runtime
+  140576   6434[   132]  TEXT <p_defined>
+  140708   6566[   306]  TEXT <if_expr>
+  141014   6872[   288]  TEXT p_if
+  141302   7160[   146]  TEXT <p_swit>
+  141448   7306[    26]  TEXT <p_elif>
+  141474   7332[   212]  TEXT <p_def>
+  141686   7544[   318]  TEXT <p_macro>
+  142004   7862[   128]  TEXT <repeat>
+  142132   7990[    38]  TEXT <p_repeat>
+  142170   8028[   136]  TEXT <p_line>
+  142306   8164[    82]  TEXT <pr_msg>
+  142388   8246[    18]  TEXT <p_error>
+  142406   8264[    18]  TEXT <p_warn>
+  142424   8282[    18]  TEXT <p_message>
+  142442   8300[    30]  TEXT <p_W>
+  142472   8330[    38]  TEXT <p_fatal>
+  142510   8368[   128]  TEXT <p_ragma>
+  142638   8496[    70]  TEXT is_swit
+  142708   8566[    52]  TEXT is_pre_kw
+  142760   8618[    70]  TEXT S_pre
+  142830   8688[   140]  TEXT C_pre
+  142970   8828[    80]  TEXT <dopound>
+  143050   8908[   264]  TEXT <getnode>
+  143314   9172[   222]  TEXT <un_escape>
+  143536   9394[   174]  TEXT <fix_ascon>
+  143710   9568[   144]  TEXT <fix_scon>
+  143854   9712[   148]  TEXT <fix_scon1>
+  144002   9860[   306]  TEXT advnode
+  144308  10166[    32]  TEXT fadvnode
+  144340  10198[    80]  TEXT tpcur
+  144420  10278[   106]  TEXT npcur
+          10384
+in D:\aaaa\ahcc\body.o
+  144526      0[    86]  TEXT <open_case>
+  144612     86[   194]  TEXT <open_end>
+  144806    280[    64]  TEXT eat
+  144870    344[    54]  TEXT <syntax_error>
+  144924    398[   454]  TEXT <reg_arg>
+  145378    852[   104]  TEXT <new_unit>
+  145482    956[   116]  TEXT <new_in>
+  145598   1072[    86]  TEXT <new_out>
+  145684   1158[   286]  TEXT new_scope
+  145970   1444[   190]  TEXT label
+  146160   1634[    36]  TEXT <need_expr>
+  146196   1670[   528]  TEXT <bra_stmt>
+  146724   2198[   256]  TEXT end_scope
+  146980   2454[   106]  TEXT <do_block>
+  147086   2560[    72]  TEXT new_proc
+  147158   2632[  1262]  TEXT <body>
+  148420   3894[   704]  TEXT do_C
+  149124   4598[    86]  TEXT <sub_block>
+  149210   4684[   146]  TEXT <add_case>
+  149356   4830[   178]  TEXT <new_default>
+  149534   5008[   144]  TEXT <new_case>
+  149678   5152[   188]  TEXT <lbl_stmt>
+  149866   5340[  1276]  TEXT <blk_stmt>
+  151142   6616[   312]  TEXT <C_stmt>
+           6928
+in D:\aaaa\ahcc\decl.o
+  151454      0[    28]  TEXT <yields_code>
+  151482     28[   402]  TEXT <def2nd>
+  151884    430[   156]  TEXT loc_sym
+  152040    586[    36]  TEXT list_sym
+  152076    622[    26]  TEXT <pdb_scope>
+  152102    648[   208]  TEXT globl_sym
+  152310    856[   150]  TEXT <ok_tytok>
+  152460   1006[    82]  TEXT <ok_revx>
+  152542   1088[    86]  TEXT <rev_decl>
+  152628   1174[    70]  TEXT <ok_decl_C>
+  152698   1244[    58]  TEXT Declare
+  152756   1302[    42]  TEXT <storage_class>
+  152798   1344[    56]  TEXT <qualifier>
+  152854   1400[   108]  TEXT <modifier>
+  152962   1508[   352]  TEXT <su_decls>
+  153314   1860[   194]  TEXT <enum_decls>
+  153508   2054[    84]  TEXT <decl_enum>
+  153592   2138[    94]  TEXT <alltags>
+  153686   2232[   112]  TEXT all_syms
+  153798   2344[   434]  TEXT <decl_su>
+  154232   2778[   202]  TEXT <derived_type>
+  154434   2980[   390]  TEXT Declarer
+  154824   3370[   772]  TEXT loc_decls
+  155596   4142[    84]  TEXT is_ty_start
+  155680   4226[   236]  TEXT <C_args>
+  155916   4462[    40]  TEXT <opt_id>
+  155956   4502[    92]  TEXT <ty_args>
+  156048   4594[   164]  TEXT <ty_follow>
+  156212   4758[    82]  TEXT <ty_primary>
+  156294   4840[   340]  TEXT <decl_op>
+  156634   5180[   122]  TEXT <decl_cast>
+  156756   5302[   110]  TEXT <warn_func_modifier>
+  156866   5412[   160]  TEXT <check_syscall>
+  157026   5572[   600]  TEXT <declarator>
+           6172
+in D:\aaaa\ahcc\d2.o
+  157626      0[   116]  TEXT dummy_id
+  157742    116[   104]  TEXT su_size
+  157846    220[   224]  TEXT loc_size
+  158070    444[    68]  TEXT arg_size
+  158138    512[    36]  TEXT afterfld
+  158174    548[   142]  TEXT su_field
+  158316    690[   306]  TEXT <ok_ty>
+  158622    996[    70]  TEXT ok_prh
+  158692   1066[    48]  TEXT <varglist>
+  158740   1114[    90]  TEXT ok_gsh
+  158830   1204[    34]  TEXT ok_gx
+  158864   1238[    50]  TEXT ok_lsh
+  158914   1288[    82]  TEXT array_to_pointer
+  158996   1370[    62]  TEXT <func_to_pointer>
+  159058   1432[   122]  TEXT ok_prx
+  159180   1554[    58]  TEXT ok_lx
+  159238   1612[    34]  TEXT ok_sux
+  159272   1646[    22]  TEXT ok_enx
+  159294   1668[    46]  TEXT ok_cast
+  159340   1714[    24]  TEXT regvar_options
+  159364   1738[   190]  TEXT <a_fix>
+  159554   1928[    40]  TEXT <scon_size>
+  159594   1968[    66]  TEXT <inita>
+  159660   2034[   212]  TEXT <init1>
+  159872   2246[   208]  TEXT <inits>
+  160080   2454[   460]  TEXT <g_init>
+  160540   2914[    54]  TEXT std_area_start
+  160594   2968[    52]  TEXT <std_area_end>
+  160646   3020[    48]  TEXT new_class
+  160694   3068[   234]  TEXT permanent_var
+  160928   3302[    58]  TEXT warn_const
+  160986   3360[   130]  TEXT auto_init
+  161116   3490[   154]  TEXT static_init
+  161270   3644[    36]  TEXT add_tseg
+  161306   3680[   120]  TEXT a_init
+  161426   3800[    50]  TEXT opt_enval
+  161476   3850[    72]  TEXT <bad_fty>
+  161548   3922[   164]  TEXT opt_field
+  161712   4086[    12]  TEXT asm_type
+  161724   4098[    62]  TEXT default_type
+  161786   4160[   366]  TEXT similar_type
+  162152   4526[   142]  TEXT to_type
+  162294   4668[   538]  TEXT bas_type
+  162832   5206[    42]  TEXT double_size
+  162874   5248[    78]  TEXT CC_ty
+  162952   5326[    68]  TEXT CC_type
+  163020   5394[    56]  TEXT def_arg
+  163076   5450[    62]  TEXT <pu_ok>
+  163138   5512[    72]  TEXT can_pu
+  163210   5584[    90]  TEXT set_vreg
+  163300   5674[   276]  TEXT loc_advice
+  163576   5950[    66]  TEXT <t_to_gx>
+  163642   6016[   206]  TEXT e_temp_var
+           6222
+in D:\aaaa\ahcc\expr.o
+  163848      0[    26]  TEXT is_con
+  163874     26[    10]  TEXT clr_flgs
+  163884     36[    14]  TEXT take_flgs
+  163898     50[   152]  TEXT fuse_scon
+  164050    202[    44]  TEXT concatstr
+  164094    246[   552]  TEXT <opt_follow>
+  164646    798[   142]  TEXT <asm_indirect>
+  164788    940[    50]  TEXT <asm_memindirect>
+  164838    990[    46]  TEXT <see_asmvar>
+  164884   1036[   448]  TEXT <primary>
+  165332   1484[   120]  TEXT <make_cast>
+  165452   1604[  1032]  TEXT <unary>
+  166484   2636[   222]  TEXT <binary>
+  166706   2858[   218]  TEXT questx
+  166924   3076[   134]  TEXT assignx
+  167058   3210[   112]  TEXT get_expr
+  167170   3322[   176]  TEXT get_arglist
+           3498
+in D:\aaaa\ahcc\e2.o
+  167346      0[    38]  TEXT <gen_expr>
+  167384     38[    80]  TEXT <impl_deref>
+  167464    118[    78]  TEXT <new_func>
+  167542    196[   170]  TEXT <see_func>
+  167712    366[    68]  TEXT <deref_func>
+  167780    434[    78]  TEXT make_bin
+  167858    512[    42]  TEXT <callee_type>
+  167900    554[   100]  TEXT <function_type>
+  168000    654[    14]  TEXT <toomany>
+  168014    668[    14]  TEXT <toofew>
+  168028    682[   170]  TEXT <promote>
+  168198    852[    26]  TEXT <promote_args>
+  168224    878[   262]  TEXT <match_args>
+  168486   1140[    88]  TEXT <see_array>
+  168574   1228[   228]  TEXT <member_type>
+  168802   1456[    76]  TEXT confold_value
+  168878   1532[   192]  TEXT asm_expr
+  169070   1724[    72]  TEXT <newicon>
+  169142   1796[   116]  TEXT <makefcon>
+  169258   1912[    10]  TEXT newfcon
+  169268   1922[    10]  TEXT newrcon
+  169278   1932[   100]  TEXT <insptrto>
+  169378   2032[   194]  TEXT <asm_symbol>
+  169572   2226[   124]  TEXT <undef_ID>
+  169696   2350[    26]  TEXT <undef_symbol>
+  169722   2376[   438]  TEXT <see_id>
+  170160   2814[    74]  TEXT <xcon_ty>
+  170234   2888[   496]  TEXT <ucanon>
+  170730   3384[    82]  TEXT <swt_op>
+  170812   3466[   526]  TEXT <b2i>
+  171338   3992[   344]  TEXT <b2f>
+  171682   4336[    94]  TEXT <xcanon>
+  171776   4430[    46]  TEXT <collaps>
+  171822   4476[    48]  TEXT <pull_right>
+  171870   4524[    48]  TEXT <pull_left>
+  171918   4572[   232]  TEXT <ycanon>
+  172150   4804[   428]  TEXT <bcanon>
+  172578   5232[   116]  TEXT <right_assoc>
+  172694   5348[   112]  TEXT <left_assoc>
+  172806   5460[    74]  TEXT <is_useless>
+  172880   5534[   148]  TEXT <save_scon>
+  173028   5682[   506]  TEXT leaf_types
+  173534   6188[  1566]  TEXT <unary_types>
+  175100   7754[   130]  TEXT <must_soft>
+  175230   7884[    92]  TEXT cold_con
+  175322   7976[    78]  TEXT <can_shift>
+  175400   8054[   188]  TEXT <side_effects>
+  175588   8242[  2106]  TEXT binary_types
+  177694  10348[    76]  TEXT call_types
+  177770  10424[   156]  TEXT <asmsize_type>
+  177926  10580[   354]  TEXT form_types
+  178280  10934[    28]  TEXT <is_voidened>
+  178308  10962[   110]  TEXT do_expr
+  178418  11072[   134]  TEXT <str_expr>
+  178552  11206[    44]  TEXT <ret_context>
+  178596  11250[    80]  TEXT ret_expr
+          11330
+in D:\aaaa\ahcc\gen.o
+  178676      0[    40]  TEXT <force_ralloc>
+  178716     40[    92]  TEXT ret_df_reg
+  178808    132[   110]  TEXT <anycode>
+  178918    242[   228]  TEXT ralloc
+  179146    470[    56]  TEXT regm1
+  179202    526[    54]  TEXT freetmps
+  179256    580[    86]  TEXT is_temp
+  179342    666[   128]  TEXT <utemp>
+  179470    794[    98]  TEXT free1
+  179568    892[    78]  TEXT tempr
+  179646    970[   220]  TEXT <do_return>
+  179866   1190[   190]  TEXT <contextmon>
+  180056   1380[   334]  TEXT <save_Rcon>
+  180390   1714[   286]  TEXT <save_Icon>
+  180676   2000[   300]  TEXT <save_Fcon>
+  180976   2300[    70]  TEXT <take_address>
+  181046   2370[    36]  TEXT imm_oname
+  181082   2406[    92]  TEXT imm_oreg
+  181174   2498[   256]  TEXT cast_CC
+  181430   2754[    42]  TEXT <castable>
+  181472   2796[  1240]  TEXT <cast_gen>
+  182712   4036[    50]  TEXT <pull_arg>
+  182762   4086[    70]  TEXT <get_monop>
+  182832   4156[   128]  TEXT sys_call
+  182960   4284[  1814]  TEXT <u_sube>
+  184774   6098[   634]  TEXT <l_eval>
+  185408   6732[   204]  TEXT <u_eval>
+  185612   6936[   126]  TEXT eval
+  185738   7062[    76]  TEXT geni
+  185814   7138[   134]  TEXT genx
+           7272
+in D:\aaaa\ahcc\g2.o
+  185948      0[    42]  TEXT is_sw_dbl
+  185990     42[    74]  TEXT <inherit>
+  186064    116[    46]  TEXT linherit
+  186110    162[    22]  TEXT rinherit
+  186132    184[   198]  TEXT <class>
+  186330    382[    80]  TEXT <quickflag>
+  186410    462[  1028]  TEXT <cando>
+  187438   1490[   220]  TEXT <dotbl>
+  187658   1710[   112]  TEXT <fix_sub>
+  187770   1822[   104]  TEXT <fix2ops>
+  187874   1926[    48]  TEXT <fix_index>
+  187922   1974[    54]  TEXT <fix_asn>
+  187976   2028[   988]  TEXT onearg
+  188964   3016[    74]  TEXT <arg_sizes>
+  189038   3090[    92]  TEXT <free_argregs>
+  189130   3182[   276]  TEXT <rbin>
+  189406   3458[   120]  TEXT <bin>
+  189526   3578[   130]  TEXT <merge>
+  189656   3708[    54]  TEXT <pusher>
+  189710   3762[    44]  TEXT <need_r>
+  189754   3806[   122]  TEXT <need_left>
+  189876   3928[   108]  TEXT <need_1>
+  189984   4036[    36]  TEXT aggregate
+  190020   4072[  1498]  TEXT eval_order
+  191518   5570[   190]  TEXT <optadd>
+  191708   5760[   100]  TEXT <needmask>
+  191808   5860[    24]  TEXT to_inl_v
+  191832   5884[  2948]  TEXT <b_sube>
+  194780   8832[   578]  TEXT b_eval
+           9410
+in D:\aaaa\ahcc\gsub.o
+  195358      0[    90]  TEXT <br_split>
+  195448     90[    50]  TEXT <br_quest>
+  195498    140[   146]  TEXT branch_tree
+  195644    286[   346]  TEXT <br_sub>
+  195990    632[   102]  TEXT <cmp_zero_g>
+  196092    734[   116]  TEXT <gen_branches>
+  196208    850[    90]  TEXT gen_boolean
+  196298    940[   168]  TEXT <simple_sw>
+  196466   1108[   294]  TEXT <table_sw>
+  196760   1402[    68]  TEXT <find_gap>
+  196828   1470[   266]  TEXT <half_sw>
+  197094   1736[   248]  TEXT gen_switch
+  197342   1984[    54]  TEXT <is_tempa>
+  197396   2038[   832]  TEXT strasn
+  198228   2870[   152]  TEXT strret
+  198380   3022[   502]  TEXT strpush
+  198882   3524[   228]  TEXT fldtoint
+  199110   3752[   400]  TEXT specasn
+  199510   4152[   106]  TEXT <g_temp_var>
+  199616   4258[   266]  TEXT <ty_to_e>
+  199882   4524[   322]  TEXT <e_to_g>
+  200204   4846[    18]  TEXT untype
+  200222   4864[   136]  TEXT addcode
+  200358   5000[    58]  TEXT addcode_betw
+           5058
+in D:\aaaa\ahcc\md.o
+  200416      0[    14]  TEXT <maxt>
+  200430     14[    58]  TEXT <cat_qual>
+  200488     72[    96]  TEXT prdeclarer
+  200584    168[    62]  TEXT <cpmm>
+  200646    230[    90]  TEXT plain_type
+  200736    320[   240]  TEXT modify_type
+  200976    560[    26]  TEXT <islongv>
+  201002    586[    26]  TEXT <isintv>
+  201028    612[   114]  TEXT icon_ty
+  201142    726[    80]  TEXT <al_areg>
+  201222    806[    76]  TEXT <al_freg>
+  201298    882[    70]  TEXT <al_dreg>
+  201368    952[   284]  TEXT lc_reg
+  201652   1236[    56]  TEXT add_argbase
+  201708   1292[    66]  TEXT arg_align
+  201774   1358[    96]  TEXT mustlval
+  201870   1454[    92]  TEXT is_CC
+  201962   1546[    44]  TEXT <not_allowed>
+  202006   1590[   272]  TEXT mustty
+  202278   1862[    44]  TEXT must2ty
+  202322   1906[    36]  TEXT <mustzero>
+  202358   1942[    22]  TEXT <mayzero>
+  202380   1964[    54]  TEXT widen
+  202434   2018[    54]  TEXT lwiden
+  202488   2072[    58]  TEXT <to_unsigned>
+  202546   2130[    68]  TEXT functy
+  202614   2198[   126]  TEXT shiftty
+  202740   2324[   136]  TEXT normalty
+  202876   2460[   156]  TEXT bitsty
+  203032   2616[    84]  TEXT const_check
+  203116   2700[   280]  TEXT <sign_only>
+  203396   2980[    32]  TEXT <isinit>
+  203428   3012[   504]  TEXT asn_check
+  203932   3516[   310]  TEXT chkcmp
+  204242   3826[   332]  TEXT colonty
+  204574   4158[    42]  TEXT <pwiden>
+  204616   4200[    56]  TEXT <newpcon>
+  204672   4256[    40]  TEXT is2pow
+  204712   4296[    72]  TEXT make2pow
+  204784   4368[   174]  TEXT <ins_mul>
+  204958   4542[   158]  TEXT <ins_div>
+  205116   4700[    84]  TEXT <castindex>
+  205200   4784[    52]  TEXT castdefault
+  205252   4836[   844]  TEXT scalety
+  206096   5680[    82]  TEXT is_zero
+  206178   5762[    18]  TEXT <warn_sig>
+  206196   5780[   172]  TEXT <check_hi>
+  206368   5952[    68]  TEXT <ll_to_real>
+  206436   6020[   102]  TEXT <check_uhi>
+  206538   6122[   166]  TEXT <uns_to_real>
+  206704   6288[    78]  TEXT <real_to_int>
+  206782   6366[    88]  TEXT <real_to_real>
+  206870   6454[    18]  TEXT <cast_s_s>
+  206888   6472[     2]  TEXT <cast_s_u>
+  206890   6474[    18]  TEXT <cast_s_r>
+  206908   6492[    18]  TEXT <cast_u_s>
+  206926   6510[    18]  TEXT <cast_u_r>
+  206944   6528[    46]  TEXT <cast_p_r>
+  206990   6574[    18]  TEXT <cast_p_i>
+  207008   6592[    18]  TEXT <cast_p_u>
+  207026   6610[    18]  TEXT <cast_r_r>
+  207044   6628[     6]  TEXT <cast_r_u>
+  207050   6634[     6]  TEXT <cast_r_i>
+  207056   6640[   142]  TEXT cast_con
+  207198   6782[   234]  TEXT Cast
+  207432   7016[    28]  TEXT stronger
+  207460   7044[    34]  TEXT <xstronger>
+  207494   7078[    72]  TEXT cast_up
+  207566   7150[    72]  TEXT castasn
+  207638   7222[    70]  TEXT ins_zero
+  207708   7292[   112]  TEXT cmp_zero
+  207820   7404[   294]  TEXT cast_compare
+  208114   7698[    52]  TEXT castasop
+  208166   7750[    64]  TEXT castasmagic
+  208230   7814[    56]  TEXT <oplook>
+  208286   7870[    38]  TEXT <copy_id>
+  208324   7908[    28]  TEXT yields_ty
+  208352   7936[   166]  TEXT arg_check
+  208518   8102[   118]  TEXT <castscan>
+  208636   8220[    88]  TEXT <uopscan>
+  208724   8308[   122]  TEXT <bopscan>
+  208846   8430[   110]  TEXT <ins_call>
+  208956   8540[    72]  TEXT <ins_pull>
+  209028   8612[    46]  TEXT <func_unfold>
+  209074   8658[   108]  TEXT <callee_unfold>
+  209182   8766[   472]  TEXT arg_regs
+  209654   9238[   164]  TEXT external_cast
+  209818   9402[   170]  TEXT external_unary_op
+  209988   9572[   272]  TEXT external_binary_op
+  210260   9844[   118]  TEXT <newcon>
+  210378   9962[    60]  TEXT <must_unfold>
+  210438  10022[   120]  TEXT incdec
+  210558  10142[   214]  TEXT postincdec
+  210772  10356[    36]  TEXT fieldas
+  210808  10392[   132]  TEXT <isvhard>
+  210940  10524[    38]  TEXT <m_vhard>
+  210978  10562[    48]  TEXT comma_r
+  211026  10610[   104]  TEXT <etmp_var>
+  211130  10714[   332]  TEXT <hardassign>
+  211462  11046[    94]  TEXT hardasmagic
+  211556  11140[    96]  TEXT hardas
+          11236
+in D:\aaaa\ahcc\nodes.o
+  211652      0[    30]  TEXT <zerXnode>
+  211682     30[    50]  TEXT <zerEnode>
+  211732     80[    36]  TEXT <zerVnode>
+  211768    116[    38]  TEXT <zerTnode>
+  211806    154[    26]  TEXT <zerInode>
+  211832    180[    34]  TEXT <zerBnode>
+  211866    214[    28]  TEXT d_to_dt
+  211894    242[    42]  TEXT pick_qual
+  211936    284[    54]  TEXT hash
+  211990    338[    26]  TEXT <bas_or_free>
+  212016    364[    40]  TEXT free_name
+  212056    404[    24]  TEXT name_to_str
+  212080    428[    34]  TEXT <noderow>
+  212114    462[   152]  TEXT <new_space>
+  212266    614[    84]  TEXT allocXn
+  212350    698[    44]  TEXT freeXunit
+  212394    742[    36]  TEXT freeVunit
+  212430    778[    82]  TEXT freeXn
+  212512    860[    56]  TEXT <generic_copyone>
+  212568    916[    52]  TEXT copyVone
+  212620    968[    84]  TEXT copyXone
+  212704   1052[    90]  TEXT allocTn
+  212794   1142[    40]  TEXT freeTunit
+  212834   1182[    76]  TEXT freeTn
+  212910   1258[    58]  TEXT allocBn
+  212968   1316[    40]  TEXT freeBunit
+  213008   1356[    58]  TEXT allocIn
+  213066   1414[    44]  TEXT freeIunit
+  213110   1458[    30]  TEXT freeIn
+  213140   1488[    56]  TEXT freenodespace
+  213196   1544[    84]  TEXT allocnode
+  213280   1628[    80]  TEXT make_type
+  213360   1708[   176]  TEXT make_node
+  213536   1884[    14]  TEXT gx_node
+  213550   1898[    36]  TEXT freeunit
+  213586   1934[    54]  TEXT new_gp
+  213640   1988[    44]  TEXT next_gp
+  213684   2032[    96]  TEXT prev_gp
+  213780   2128[    58]  TEXT save_name
+  213838   2186[    60]  TEXT new_name
+  213898   2246[   100]  TEXT freeVn
+  213998   2346[   130]  TEXT freenode
+  214128   2476[    78]  TEXT allocVn
+  214206   2554[    62]  TEXT childname
+  214268   2616[    52]  TEXT send_name
+  214320   2668[    34]  TEXT putn_fifo
+  214354   2702[    36]  TEXT putt_fifo
+  214390   2738[    10]  TEXT putt_lifo
+  214400   2748[    10]  TEXT putn_lifo
+  214410   2758[    10]  TEXT putv_lifo
+  214420   2768[    10]  TEXT putx_lifo
+  214430   2778[    54]  TEXT init_symtab
+  214484   2832[    10]  TEXT put_hlist
+  214494   2842[    10]  TEXT put_xlist
+  214504   2852[    44]  TEXT tlook
+  214548   2896[    94]  TEXT un_q
+  214642   2990[    84]  TEXT qualify
+  214726   3074[   150]  TEXT qualify_type
+  214876   3224[   134]  TEXT copynode
+  215010   3358[    78]  TEXT e_copyone_t
+  215088   3436[    84]  TEXT t_copyone_e
+  215172   3520[   118]  TEXT t_copy_e
+  215290   3638[   124]  TEXT copyTnode
+  215414   3762[    74]  TEXT copyinto
+  215488   3836[    66]  TEXT copyone
+  215554   3902[    64]  TEXT copyTone
+  215618   3966[    88]  TEXT for_old_copyone
+  215706   4054[    34]  TEXT rthnode
+  215740   4088[    60]  TEXT new_rnode
+  215800   4148[    38]  TEXT getrcon
+           4186
+in D:\aaaa\ahcc\cmpl.o
+  215838      0[    30]  TEXT cmpl
+  215840      2          TEXT <l1>
+  215856     18          TEXT <l2>
+  215860     22          TEXT <l3>
+  215864     26          TEXT <l4>
+             30
+in D:\aaaa\ahcc\out.o
+  215868      0[   322]  TEXT combine_areas
+  216190    322[    30]  TEXT can_3q
+  216220    352[    24]  TEXT set_class
+  216244    376[    48]  TEXT out_gp
+  216292    424[   160]  TEXT <alloc_area>
+  216452    584[    44]  TEXT <free_area>
+  216496    628[   226]  TEXT create_areas
+  216722    854[    22]  TEXT new_areas
+  216744    876[    62]  TEXT destroy_areas
+  216806    938[   144]  TEXT <check_out>
+  216950   1082[    54]  TEXT <add_out>
+  217004   1136[    18]  TEXT <send_lab>
+  217022   1154[    78]  TEXT <add_name>
+  217100   1232[   688]  TEXT send_out
+  217788   1920[    40]  TEXT <willshow>
+  217828   1960[   206]  TEXT out_setup
+  218034   2166[    48]  TEXT end_C
+  218082   2214[   184]  TEXT write_literals
+  218266   2398[    58]  TEXT change_class
+  218324   2456[    50]  TEXT out_force_class
+  218374   2506[    82]  TEXT o_aln
+  218456   2588[    18]  TEXT regnm
+  218474   2606[   120]  TEXT <tlen>
+  218594   2726[    14]  TEXT new_lbl
+  218608   2740[   124]  TEXT out_fbegin
+  218732   2864[   150]  TEXT <out_rts>
+  218882   3014[   170]  TEXT out_fret
+  219052   3184[    46]  TEXT def_lbl
+  219098   3230[    48]  TEXT loop_lbl
+  219146   3278[    46]  TEXT add_br_1_2
+  219192   3324[    46]  TEXT add_br_1_3
+  219238   3370[    56]  TEXT out_br
+  219294   3426[    90]  TEXT out_branch
+  219384   3516[    46]  TEXT out_b
+  219430   3562[    24]  TEXT out_cmp
+  219454   3586[    96]  TEXT out_anx
+  219550   3682[    24]  TEXT out_sbx
+  219574   3706[    54]  TEXT out_tlbl
+  219628   3760[    20]  TEXT out_tsw
+  219648   3780[   122]  TEXT o_nz
+  219770   3902[    48]  TEXT <outcode_row>
+  219818   3950[    56]  TEXT <outcode_node>
+  219874   4006[   128]  TEXT out_expr
+  220002   4134[    40]  TEXT outcode_list
+  220042   4174[   166]  TEXT <seereg>
+  220208   4340[    46]  TEXT <add_vreg>
+  220254   4386[   802]  TEXT <out_A>
+  221056   5188[   938]  TEXT <out_let>
+  221994   6126[    16]  TEXT ones
+  222010   6142[  1118]  TEXT <out_shift>
+  223128   7260[    64]  TEXT <seelab>
+  223192   7324[   300]  TEXT <outsub>
+           7624
+in D:\aaaa\ahcc\d80tod64.o
+  223492      0[     6]  TEXT 
+  223492      0          TEXT d80tod64
+              6
+in D:\aaaa\ahcc\opt.o
+  223498      0[    22]  TEXT init_po
+  223520     22[    78]  TEXT <init_opt>
+  223598    100[    22]  TEXT is_areg
+  223620    122[    22]  TEXT is_dreg
+  223642    144[    14]  TEXT op_dreg
+  223656    158[     2]  TEXT <end_opt>
+  223658    160[    38]  TEXT <is_okarg>
+  223696    198[    32]  TEXT <is_ok>
+  223728    230[    26]  TEXT <is_okdc>
+  223754    256[    34]  TEXT <is_line>
+  223788    290[    70]  TEXT mksym
+  223858    360[    54]  TEXT getsym
+  223912    414[    68]  TEXT freesym
+  223980    482[   274]  TEXT <tokenize>
+  224254    756[   236]  TEXT <readline>
+  224490    992[   106]  TEXT is_lbl
+  224596   1098[    60]  TEXT <find_area>
+  224656   1158[   474]  TEXT <get_func>
+  225130   1632[    66]  TEXT <need_inst>
+  225196   1698[    86]  TEXT <rtn_only>
+  225282   1784[   332]  TEXT <put_func>
+  225614   2116[   282]  TEXT <do_func>
+  225896   2398[   252]  TEXT <assem>
+  226148   2650[   106]  TEXT <do_data>
+  226254   2756[    54]  TEXT ophash
+  226308   2810[   142]  TEXT <opc_setup>
+  226450   2952[    18]  TEXT opc_end
+  226468   2970[    64]  TEXT find_op
+  226532   3034[   194]  TEXT <std_po_names>
+  226726   3228[   262]  TEXT optimize
+           3490
+in D:\aaaa\ahcc\inst.o
+  226988      0[    42]  TEXT <isterm>
+  227030     42[    36]  TEXT <see>
+  227066     78[   102]  TEXT <isreg>
+  227168    180[    68]  TEXT <chkset>
+  227236    248[   234]  TEXT <chkref>
+  227470    482[   754]  TEXT <chkside>
+  228224   1236[   202]  TEXT reg_set
+  228426   1438[   132]  TEXT reg_ref
+  228558   1570[   136]  TEXT double_ref
+  228694   1706[    26]  TEXT <getreg>
+  228720   1732[   190]  TEXT <see_name>
+  228910   1922[    78]  TEXT atols
+  228988   2000[   108]  TEXT <xtol>
+  229096   2108[   848]  TEXT <getop>
+  229944   2956[    26]  TEXT uprefs
+  229970   2982[    80]  TEXT get_opcode
+  230050   3062[   630]  TEXT addinst
+  230680   3692[    66]  TEXT delinst
+  230746   3758[   112]  TEXT instbefore
+  230858   3870[    36]  TEXT regeq
+  230894   3906[    32]  TEXT <is_astr>
+  230926   3938[   180]  TEXT opeq
+           4118
+in D:\aaaa\ahcc\branch.o
+  231106      0[   250]  TEXT <bcomp>
+  231356    250[    22]  TEXT <is_branch>
+  231378    272[    52]  TEXT <cblock>
+  231430    324[    22]  TEXT upd_BC
+  231452    346[   288]  TEXT <bsplit>
+  231740    634[   362]  TEXT <bfix>
+  232102    996[    56]  TEXT <bclean>
+  232158   1052[   160]  TEXT <bwalk>
+  232318   1212[    60]  TEXT <bsort>
+  232378   1272[    80]  TEXT <bsetlab>
+  232458   1352[   148]  TEXT <bjoin>
+  232606   1500[    42]  TEXT bopt
+           1542
+in D:\aaaa\ahcc\reg.o
+  232648      0[    76]  TEXT <new_locvar>
+  232724     76[    86]  TEXT addvar
+  232810    162[    72]  TEXT <addarea>
+  232882    234[    70]  TEXT <adddisp>
+  232952    304[    20]  TEXT clrvar
+  232972    324[    40]  TEXT freevar
+  233012    364[    44]  TEXT <same_var>
+  233056    408[   120]  TEXT <overlaps>
+  233176    528[   316]  TEXT <ckref>
+  233492    844[   168]  TEXT <X_spec>
+  233660   1012[    54]  TEXT s_to_mask
+  233714   1066[   100]  TEXT get_locs
+  233814   1166[    80]  TEXT <lcheck>
+  233894   1246[    34]  TEXT <rem_loc_var>
+  233928   1280[    26]  TEXT <ins_loc_var>
+  233954   1306[    66]  TEXT <do_sort>
+  234020   1372[   152]  TEXT <lclean_up>
+  234172   1524[    90]  TEXT <sort_areadisp>
+  234262   1614[    58]  TEXT <set_more_regs>
+  234320   1672[   158]  TEXT <assignr>
+  234478   1830[    62]  TEXT <lassign>
+  234540   1892[    60]  TEXT str_alloc
+  234600   1952[    32]  TEXT <fixmove>
+  234632   1984[   356]  TEXT <addinits>
+  234988   2340[   218]  TEXT <fixref>
+  235206   2558[   474]  TEXT <lrewrite>
+  235680   3032[    50]  TEXT setreg
+           3082
+in D:\aaaa\ahcc\health.o
+  235730      0[    20]  TEXT <unmark>
+  235750     20[    58]  TEXT <fprep>
+  235808     78[    74]  TEXT <Scan>
+  235882    152[    82]  TEXT <scan_dc>
+  235964    234[    56]  TEXT <scan_ref>
+  236020    290[   120]  TEXT <bflow>
+  236140    410[    46]  TEXT Thealth
+  236186    456[   196]  TEXT <scan_refs>
+  236382    652[   126]  TEXT <scan_live>
+  236508    778[    44]  TEXT <Mhealth>
+  236552    822[    38]  TEXT rhealth
+            860
+in D:\aaaa\ahcc\peep0.o
+  236590      0[   956]  TEXT ipeep0
+            956
+in D:\aaaa\ahcc\peep1.o
+  237546      0[   200]  TEXT change_reg
+  237746    200[    76]  TEXT change_all_reg
+  237822    276[    20]  TEXT <used_reg>
+  237842    296[    74]  TEXT reg_used
+  237916    370[    92]  TEXT <changed_reg>
+  238008    462[    94]  TEXT reg_changed
+  238102    556[    62]  TEXT <regdown>
+  238164    618[    66]  TEXT not_cc
+  238230    684[    92]  TEXT is_number
+  238322    776[    58]  TEXT <any_number>
+  238380    834[   168]  TEXT coldfire_ok
+  238548   1002[   162]  TEXT <free_work>
+  238710   1164[   198]  TEXT <cf_split>
+  238908   1362[   860]  TEXT <ipeep1>
+  239768   2222[   216]  TEXT <reg_reduce>
+  239984   2438[    98]  TEXT <peep1>
+  240082   2536[    50]  TEXT peep
+           2586
+in D:\aaaa\ahcc\peep2.o
+  240132      0[    18]  TEXT <mvs_sz>
+  240150     18[    30]  TEXT p2_sets
+  240180     48[    30]  TEXT p2_refs
+  240210     78[    40]  TEXT p2_uses
+  240250    118[    32]  TEXT <same_REGorI>
+  240282    150[    80]  TEXT <same_ireg>
+  240362    230[   118]  TEXT <disp_ok>
+  240480    348[    76]  TEXT <p2_4ab>
+  240556    424[    68]  TEXT <do_p2_4>
+  240624    492[   236]  TEXT <scalable>
+  240860    728[    54]  TEXT <is_p2_8>
+  240914    782[    38]  TEXT <is_regi_or_d>
+  240952    820[  7242]  TEXT <ipeep2>
+  248194   8062[    64]  TEXT peep2
+           8126
+in D:\aaaa\ahcc\peep3.o
+  248258      0[   622]  TEXT <ipeep3>
+  248880    622[    84]  TEXT peep3
+            706
+in D:\aaaa\ahcc\as.o
+  248964      0[    28]  TEXT new_dotscope
+  248992     28[    66]  TEXT dot_sym
+  249058     94[   116]  TEXT <find_asmop>
+  249174    210[   206]  TEXT <asmc_setup>
+  249380    416[    18]  TEXT asmc_end
+  249398    434[    30]  TEXT <is_line>
+  249428    464[    44]  TEXT newop
+  249472    508[   258]  TEXT <p_cpu>
+  249730    766[    28]  TEXT cpuerr
+  249758    794[    86]  TEXT cpu_ok
+  249844    880[    28]  TEXT <is_set>
+  249872    908[    78]  TEXT <after_newline>
+  249950    986[   864]  TEXT <asm_loop>
+  250814   1850[   538]  TEXT do_S
+  251352   2388[    88]  TEXT <anon_area>
+  251440   2476[   232]  TEXT do_asm
+  251672   2708[    14]  TEXT end_S
+           2722
+in D:\aaaa\ahcc\as_parse.o
+  251686      0[    14]  TEXT m_no_absw
+  251700     14[   406]  TEXT <isize>
+  252106    420[    50]  TEXT <p_colon>
+  252156    470[    28]  TEXT <opt_colon>
+  252184    498[    50]  TEXT <p_comma>
+  252234    548[    28]  TEXT <opt_comma>
+  252262    576[    74]  TEXT <p_Dn>
+  252336    650[    76]  TEXT <p_An>
+  252412    726[    76]  TEXT <p_Fn>
+  252488    802[    60]  TEXT <p_Xn>
+  252548    862[   334]  TEXT <is_srccr>
+  252882   1196[   166]  TEXT <p_imm_ea>
+  253048   1362[   150]  TEXT <p_simmp_ea>
+  253198   1512[    64]  TEXT <p_ok_An>
+  253262   1576[    94]  TEXT <p_may_An>
+  253356   1670[    92]  TEXT <p_ea_DnA>
+  253448   1762[    76]  TEXT <p_ea_An>
+  253524   1838[    76]  TEXT <p_ea_Dn>
+  253600   1914[   154]  TEXT <p_comma_separated>
+  253754   2068[    90]  TEXT <label_scope>
+  253844   2158[   474]  TEXT p_label
+  254318   2632[   164]  TEXT p_local
+  254482   2796[   144]  TEXT <p_addsubq>
+  254626   2940[    90]  TEXT <equ_ok>
+  254716   3030[   398]  TEXT <p_equ>
+  255114   3428[    52]  TEXT free_equs
+  255166   3480[    92]  TEXT <p_area>
+  255258   3572[    54]  TEXT <p_close>
+  255312   3626[     8]  TEXT P_equ
+  255320   3634[     8]  TEXT P_set
+  255328   3642[    10]  TEXT P_globl
+  255338   3652[    10]  TEXT P_global
+  255348   3662[    10]  TEXT P_export
+  255358   3672[    10]  TEXT P_xdef
+  255368   3682[     8]  TEXT P_import
+  255376   3690[     8]  TEXT P_xref
+  255384   3698[     8]  TEXT P_extern
+  255392   3706[     6]  TEXT P_local
+  255398   3712[     6]  TEXT P_text
+  255404   3718[     6]  TEXT P_data
+  255410   3724[     6]  TEXT P_bss
+  255416   3730[     6]  TEXT P_offset
+  255422   3736[     6]  TEXT P_even
+  255428   3742[    62]  TEXT P_align
+  255490   3804[   156]  TEXT P_section
+  255646   3960[    38]  TEXT P_module
+  255684   3998[    38]  TEXT P_area
+  255722   4036[    32]  TEXT P_endmod
+  255754   4068[    14]  TEXT P_define
+  255768   4082[    14]  TEXT P_macro
+  255782   4096[    24]  TEXT P_rept
+  255806   4120[    24]  TEXT P_repeat
+  255830   4144[    14]  TEXT P_if
+  255844   4158[    14]  TEXT P_ifne
+  255858   4172[    14]  TEXT P_iff
+  255872   4186[    14]  TEXT P_ifeq
+  255886   4200[    14]  TEXT P_ifle
+  255900   4214[    14]  TEXT P_iflt
+  255914   4228[    14]  TEXT P_ifge
+  255928   4242[    14]  TEXT P_ifgt
+  255942   4256[    14]  TEXT P_ifd
+  255956   4270[    14]  TEXT P_ifnd
+  255970   4284[    14]  TEXT P_ifdef
+  255984   4298[    14]  TEXT P_ifndef
+  255998   4312[    14]  TEXT P_else
+  256012   4326[    14]  TEXT P_elif
+  256026   4340[    14]  TEXT P_fi
+  256040   4354[    14]  TEXT P_endif
+  256054   4368[    14]  TEXT P_endc
+  256068   4382[    14]  TEXT P_include
+  256082   4396[    70]  TEXT P_incbin
+  256152   4466[   310]  TEXT P_cpu
+  256462   4776[    10]  TEXT P_user
+  256472   4786[    10]  TEXT P_super
+  256482   4796[    18]  TEXT P_mc68000
+  256500   4814[    22]  TEXT P_mc68010
+  256522   4836[    22]  TEXT P_mc68020
+  256544   4858[    22]  TEXT P_mc68030
+  256566   4880[    22]  TEXT P_mc68040
+  256588   4902[    22]  TEXT P_mc68060
+  256610   4924[    22]  TEXT P_coldfire
+  256632   4946[    10]  TEXT P_mc68851
+  256642   4956[    10]  TEXT P_mc68881
+  256652   4966[     2]  TEXT P_page
+  256654   4968[     6]  TEXT P_end
+  256660   4974[    78]  TEXT P_org
+  256738   5052[    70]  TEXT P_ds
+  256808   5122[   146]  TEXT <well_formed>
+  256954   5268[   200]  TEXT <check_dc>
+  257154   5468[   138]  TEXT P_dc
+  257292   5606[   242]  TEXT P_dcb
+  257534   5848[    54]  TEXT scon_tree
+  257588   5902[   124]  TEXT P_ascii
+  257712   6026[    18]  TEXT P_asciil
+  257730   6044[    18]  TEXT P_asciiz
+  257748   6062[   176]  TEXT <p_XY>
+  257924   6238[    36]  TEXT P_nbcd
+  257960   6274[    38]  TEXT P_abcd
+  257998   6312[    38]  TEXT P_sbcd
+  258036   6350[    62]  TEXT P_addx
+  258098   6412[    62]  TEXT P_subx
+  258160   6474[    54]  TEXT P_negx
+  258214   6528[   106]  TEXT <p_pack>
+  258320   6634[    46]  TEXT P_pack
+  258366   6680[    46]  TEXT P_unpk
+  258412   6726[    62]  TEXT <inst_ea_An>
+  258474   6788[    18]  TEXT P_cmpa
+  258492   6806[    18]  TEXT P_adda
+  258510   6824[    18]  TEXT P_suba
+  258528   6842[    18]  TEXT P_addq
+  258546   6860[    18]  TEXT P_subq
+  258564   6878[   338]  TEXT <p_regular>
+  258902   7216[    28]  TEXT P_add
+  258930   7244[    28]  TEXT P_sub
+  258958   7272[    30]  TEXT P_and
+  258988   7302[    32]  TEXT P_or
+  259020   7334[    22]  TEXT P_addi
+  259042   7356[    22]  TEXT P_subi
+  259064   7378[    22]  TEXT P_cmpi
+  259086   7400[    22]  TEXT P_andi
+  259108   7422[    22]  TEXT P_ori
+  259130   7444[    22]  TEXT P_eori
+  259152   7466[    28]  TEXT P_callm
+  259180   7494[   112]  TEXT P_cmp
+  259292   7606[   130]  TEXT P_eor
+  259422   7736[   336]  TEXT <p_shift>
+  259758   8072[    18]  TEXT P_asl
+  259776   8090[    18]  TEXT P_asr
+  259794   8108[    18]  TEXT P_lsl
+  259812   8126[    18]  TEXT P_lsr
+  259830   8144[    18]  TEXT P_rol
+  259848   8162[    18]  TEXT P_ror
+  259866   8180[    18]  TEXT P_roxl
+  259884   8198[    18]  TEXT P_roxr
+  259902   8216[    62]  TEXT <p_ea_1>
+  259964   8278[    12]  TEXT P_tst
+  259976   8290[    12]  TEXT P_neg
+  259988   8302[    12]  TEXT P_not
+  260000   8314[   100]  TEXT P_clr
+  260100   8414[   128]  TEXT <p_bit>
+  260228   8542[    20]  TEXT P_btst
+  260248   8562[    20]  TEXT P_bchg
+  260268   8582[    20]  TEXT P_bclr
+  260288   8602[    20]  TEXT P_bset
+  260308   8622[   324]  TEXT <p_bfow>
+  260632   8946[   104]  TEXT <p_bf>
+  260736   9050[    14]  TEXT P_bftst
+  260750   9064[    14]  TEXT P_bfchg
+  260764   9078[    14]  TEXT P_bfclr
+  260778   9092[    14]  TEXT P_bfset
+  260792   9106[    22]  TEXT P_bfextu
+  260814   9128[    22]  TEXT P_bfexts
+  260836   9150[    22]  TEXT P_bfffo
+  260858   9172[    94]  TEXT P_bfins
+  260952   9266[   122]  TEXT P_exg
+  261074   9388[    50]  TEXT P_swap
+  261124   9438[    38]  TEXT P_sats
+  261162   9476[    74]  TEXT P_ext
+  261236   9550[    54]  TEXT P_extb
+  261290   9604[     6]  TEXT P_illegal
+  261296   9610[    12]  TEXT P_jsr
+  261308   9622[    12]  TEXT P_jmp
+  261320   9634[    42]  TEXT P_pea
+  261362   9676[    64]  TEXT P_lea
+  261426   9740[   154]  TEXT P_link
+  261580   9894[    38]  TEXT P_unlk
+  261618   9932[   398]  TEXT P_move
+  262016  10330[    34]  TEXT P_strldsr
+  262050  10364[    74]  TEXT P_wdebug
+  262124  10438[    54]  TEXT P_wddata
+  262178  10492[   100]  TEXT P_movea
+  262278  10592[   208]  TEXT P_move16
+  262486  10800[    48]  TEXT <mk_mask>
+  262534  10848[   432]  TEXT <X_spec>
+  262966  11280[   120]  TEXT <reg_list>
+  263086  11400[   196]  TEXT <F_spec>
+  263282  11596[   124]  TEXT <freg_list>
+  263406  11720[    44]  TEXT <flip>
+  263450  11764[   194]  TEXT P_movem
+  263644  11958[    64]  TEXT P_xsave
+  263708  12022[    48]  TEXT P_xrest
+  263756  12070[   408]  TEXT P_fmovem
+  264164  12478[   194]  TEXT P_movep
+  264358  12672[   122]  TEXT P_moveq
+  264480  12794[    62]  TEXT <p_mvsz>
+  264542  12856[    18]  TEXT P_mvs
+  264560  12874[    18]  TEXT P_mvz
+  264578  12892[    44]  TEXT <o_Dl>
+  264622  12936[     6]  TEXT P_bitrev
+  264628  12942[     6]  TEXT P_byterev
+  264634  12948[     6]  TEXT P_ff1
+  264640  12954[     2]  TEXT P_mov3q
+  264642  12956[   150]  TEXT <p_divmul>
+  264792  13106[    24]  TEXT P_muls
+  264816  13130[    24]  TEXT P_mulu
+  264840  13154[    24]  TEXT P_divs
+  264864  13178[    24]  TEXT P_divu
+  264888  13202[    24]  TEXT P_divsl
+  264912  13226[    24]  TEXT P_divul
+  264936  13250[    24]  TEXT P_rems
+  264960  13274[    24]  TEXT P_remu
+  264984  13298[    38]  TEXT P_rtm
+  265022  13336[     6]  TEXT P_reset
+  265028  13342[     6]  TEXT P_nop
+  265034  13348[     6]  TEXT P_halt
+  265040  13354[     6]  TEXT P_pulse
+  265046  13360[    34]  TEXT P_stop
+  265080  13394[     6]  TEXT P_rte
+  265086  13400[    34]  TEXT P_rtd
+  265120  13434[     6]  TEXT P_rts
+  265126  13440[     6]  TEXT P_trapv
+  265132  13446[     6]  TEXT P_rtr
+  265138  13452[    42]  TEXT P_tas
+  265180  13494[    78]  TEXT P_trap
+  265258  13572[    34]  TEXT P_aline
+  265292  13606[   140]  TEXT <p_cachereg>
+  265432  13746[   122]  TEXT <p_cinvpush>
+  265554  13868[     6]  TEXT P_cinvl
+  265560  13874[     6]  TEXT P_cinvp
+  265566  13880[     8]  TEXT P_cinva
+  265574  13888[     6]  TEXT P_cpushl
+  265580  13894[     6]  TEXT P_cpushp
+  265586  13900[     8]  TEXT P_cpusha
+  265594  13908[    66]  TEXT P_intouch
+  265660  13974[    46]  TEXT <is_crr>
+  265706  14020[   128]  TEXT <is_fpsr>
+  265834  14148[    80]  TEXT <is_mfpcr>
+  265914  14228[   152]  TEXT <p_crr>
+  266066  14380[   156]  TEXT P_movec
+  266222  14536[   160]  TEXT P_moves
+  266382  14696[   146]  TEXT <o_bra>
+  266528  14842[    68]  TEXT P_bra
+  266596  14910[    18]  TEXT P_bsr
+  266614  14928[    50]  TEXT P_st
+  266664  14978[    80]  TEXT P_dbra
+  266744  15058[    86]  TEXT P_trapt
+  266830  15144[   150]  TEXT P_cmpm
+  266980  15294[    94]  TEXT <p_cmpchk2>
+  267074  15388[    18]  TEXT P_cmp2
+  267092  15406[    18]  TEXT P_chk2
+  267110  15424[   132]  TEXT P_chk
+  267242  15556[   122]  TEXT P_cas
+  267364  15678[    62]  TEXT <cas_mode>
+  267426  15740[   296]  TEXT P_cas2
+  267722  16036[    72]  TEXT P_bkpt
+  267794  16108[     2]  TEXT P_fmovesr
+  267796  16110[   368]  TEXT P_fmove
+  268164  16478[   220]  TEXT <p_fp>
+  268384  16698[     8]  TEXT P_fint
+  268392  16706[     8]  TEXT P_fsinh
+  268400  16714[     8]  TEXT P_fintrz
+  268408  16722[     8]  TEXT P_fsqrt
+  268416  16730[     8]  TEXT P_flognp1
+  268424  16738[     8]  TEXT P_fetoxm1
+  268432  16746[     8]  TEXT P_ftanh
+  268440  16754[     8]  TEXT P_fatan
+  268448  16762[     8]  TEXT P_fasin
+  268456  16770[     8]  TEXT P_fatanh
+  268464  16778[     8]  TEXT P_fsin
+  268472  16786[     8]  TEXT P_ftan
+  268480  16794[     8]  TEXT P_fetox
+  268488  16802[     8]  TEXT P_ftwotox
+  268496  16810[     8]  TEXT P_ftentox
+  268504  16818[     8]  TEXT P_flogn
+  268512  16826[     8]  TEXT P_flog10
+  268520  16834[     8]  TEXT P_flog2
+  268528  16842[     8]  TEXT P_fabs
+  268536  16850[     8]  TEXT P_fcosh
+  268544  16858[     8]  TEXT P_fneg
+  268552  16866[     8]  TEXT P_facos
+  268560  16874[     8]  TEXT P_fcos
+  268568  16882[     8]  TEXT P_fgetexp
+  268576  16890[     8]  TEXT P_fgetman
+  268584  16898[     8]  TEXT P_fdiv
+  268592  16906[     8]  TEXT P_fmod
+  268600  16914[     8]  TEXT P_fadd
+  268608  16922[     8]  TEXT P_fmul
+  268616  16930[     8]  TEXT P_fsgldiv
+  268624  16938[     8]  TEXT P_frem
+  268632  16946[     8]  TEXT P_fscale
+  268640  16954[     8]  TEXT P_fsglmul
+  268648  16962[     8]  TEXT P_fsub
+  268656  16970[     8]  TEXT P_fcmp
+  268664  16978[     8]  TEXT P_fsabs
+  268672  16986[     8]  TEXT P_fsadd
+  268680  16994[     8]  TEXT P_fsdiv
+  268688  17002[     8]  TEXT P_fsmove
+  268696  17010[     8]  TEXT P_fsmul
+  268704  17018[     8]  TEXT P_fsneg
+  268712  17026[     8]  TEXT P_fssqrt
+  268720  17034[     8]  TEXT P_fssub
+  268728  17042[     8]  TEXT P_fdabs
+  268736  17050[     8]  TEXT P_fdadd
+  268744  17058[     8]  TEXT P_fddiv
+  268752  17066[     8]  TEXT P_fdmove
+  268760  17074[     8]  TEXT P_fdmul
+  268768  17082[     8]  TEXT P_fdneg
+  268776  17090[     8]  TEXT P_fdsqrt
+  268784  17098[     8]  TEXT P_fdsub
+  268792  17106[    74]  TEXT P_fmovecr
+  268866  17180[   114]  TEXT P_fsincos
+  268980  17294[     6]  TEXT P_fnop
+  268986  17300[   154]  TEXT P_ftst
+  269140  17454[    92]  TEXT <o_pfbra>
+  269232  17546[    68]  TEXT <o_pfdbf>
+  269300  17614[    82]  TEXT <o_pftrapf>
+  269382  17696[    50]  TEXT P_fbf
+  269432  17746[    36]  TEXT P_fsf
+  269468  17782[     6]  TEXT P_fdbf
+  269474  17788[     6]  TEXT P_ftrapf
+  269480  17794[    38]  TEXT P_fsave
+  269518  17832[    38]  TEXT P_frestore
+  269556  17870[    66]  TEXT <p_plpa>
+  269622  17936[     6]  TEXT P_plpar
+  269628  17942[     6]  TEXT P_plpaw
+  269634  17948[    54]  TEXT P_lpstop
+  269688  18002[    50]  TEXT P_pbbs
+  269738  18052[    36]  TEXT P_psbs
+  269774  18088[     6]  TEXT P_pdbbs
+  269780  18094[     6]  TEXT P_ptrapbs
+  269786  18100[    38]  TEXT P_psave
+  269824  18138[    38]  TEXT P_prestore
+  269862  18176[   144]  TEXT P_pvalid
+  270006  18320[     6]  TEXT P_pflusha
+  270012  18326[     6]  TEXT P_pflushan
+  270018  18332[    66]  TEXT <pflush_4>
+  270084  18398[     6]  TEXT P_pflushn
+  270090  18404[   236]  TEXT <p_fc>
+  270326  18640[    78]  TEXT <p_mask>
+  270404  18718[   134]  TEXT <p_flush>
+  270538  18852[    18]  TEXT P_pflush
+  270556  18870[    18]  TEXT P_pflushs
+  270574  18888[    36]  TEXT P_pflushr
+  270610  18924[    66]  TEXT <p_load>
+  270676  18990[    18]  TEXT P_ploadr
+  270694  19008[    18]  TEXT P_ploadw
+  270712  19026[   236]  TEXT <p_ptest>
+  270948  19262[    18]  TEXT P_ptestr
+  270966  19280[    18]  TEXT P_ptestw
+  270984  19298[    92]  TEXT <cpu5_ok>
+  271076  19390[   258]  TEXT p_pmove
+  271334  19648[    18]  TEXT P_pmove
+  271352  19666[    18]  TEXT P_pmovefd
+          19684
+in D:\aaaa\ahcc\as_plib.o
+  271370      0[    64]  TEXT opnd_err
+  271434     64[    54]  TEXT ea_error
+  271488    118[   130]  TEXT asm_offs
+  271618    248[   416]  TEXT check_ea
+  272034    664[   102]  TEXT check_imm
+  272136    766[    66]  TEXT chk_glob
+  272202    832[    82]  TEXT <asm_select>
+  272284    914[    32]  TEXT <name_size>
+  272316    946[   258]  TEXT <name_xpr>
+  272574   1204[   148]  TEXT immediate
+  272722   1352[    38]  TEXT p_dreg
+  272760   1390[    38]  TEXT p_areg
+  272798   1428[    38]  TEXT p_freg
+  272836   1466[    40]  TEXT p_adreg
+  272876   1506[    54]  TEXT p_allreg
+  272930   1560[    28]  TEXT p_isareg
+  272958   1588[    28]  TEXT p_isdreg
+  272986   1616[    36]  TEXT p_isfreg
+  273022   1652[   120]  TEXT <base_reg>
+  273142   1772[   180]  TEXT <mem_ind>
+  273322   1952[   148]  TEXT <opt_scale>
+  273470   2100[   318]  TEXT <make_opnd>
+  273788   2418[    36]  TEXT <can_REGINDISP>
+  273824   2454[    36]  TEXT <can_REGIDX>
+  273860   2490[    48]  TEXT <operr1018>
+  273908   2538[    50]  TEXT <yields_ID>
+  273958   2588[    40]  TEXT <to_name>
+  273998   2628[  1252]  TEXT <ea_to_a>
+  275250   3880[   162]  TEXT p_ea
+           4042
+in D:\aaaa\ahcc\po.o
+  275412      0[     8]  TEXT o_MOV
+  275420      8[    10]  TEXT o_LDX
+  275430     18[    78]  TEXT o_M3Q
+  275508     96[    96]  TEXT o_bf
+  275604    192[    10]  TEXT o_LDBS
+  275614    202[    10]  TEXT o_LDBU
+  275624    212[    10]  TEXT o_STB
+  275634    222[    62]  TEXT o_bit
+  275696    284[    10]  TEXT o_BSET
+  275706    294[    10]  TEXT o_BCLR
+  275716    304[    48]  TEXT <o_mvq>
+  275764    352[    66]  TEXT o_EXX
+  275830    418[    76]  TEXT <o_mvsz>
+  275906    494[   134]  TEXT o_MVZ
+  276040    628[   120]  TEXT o_WMVZ
+  276160    748[    70]  TEXT o_WMVS
+  276230    818[   152]  TEXT o_MVS
+  276382    970[    48]  TEXT change_disp
+  276430   1018[    94]  TEXT o_FASN
+  276524   1112[    92]  TEXT o_STO
+  276616   1204[    22]  TEXT o_ORS
+  276638   1226[    22]  TEXT o_SBX
+  276660   1248[    22]  TEXT o_SBS
+  276682   1270[    22]  TEXT o_ANS
+  276704   1292[    22]  TEXT o_ERS
+  276726   1314[    22]  TEXT o_ADX
+  276748   1336[    22]  TEXT o_ADS
+  276770   1358[     6]  TEXT o_ADJ
+  276776   1364[     6]  TEXT o_SDJ
+  276782   1370[    74]  TEXT <bitsand>
+  276856   1444[    34]  TEXT o_ORX
+  276890   1478[    34]  TEXT o_ANX
+  276924   1512[   128]  TEXT o_ERX
+  277052   1640[    66]  TEXT o_MPX
+  277118   1706[    66]  TEXT o_UMPX
+  277184   1772[    20]  TEXT o_SCX
+  277204   1792[    20]  TEXT o_USCX
+  277224   1812[    66]  TEXT o_DVX
+  277290   1878[    66]  TEXT o_UDVX
+  277356   1944[     6]  TEXT o_MDX
+  277362   1950[     6]  TEXT o_UMDX
+  277368   1956[    16]  TEXT o_RMX
+  277384   1972[    16]  TEXT o_URMX
+  277400   1988[    84]  TEXT o_CPX
+  277484   2072[    10]  TEXT o_ORI
+  277494   2082[    12]  TEXT o_ANI
+  277506   2094[    12]  TEXT o_ERI
+  277518   2106[    50]  TEXT o_CPI
+  277568   2156[    54]  TEXT o_SBI
+  277622   2210[    54]  TEXT o_ADI
+  277676   2264[    60]  TEXT o_LAX
+  277736   2324[     6]  TEXT o_LAA
+  277742   2330[    68]  TEXT o_LMX
+  277810   2398[    14]  TEXT o_NGX
+  277824   2412[    14]  TEXT o_NGS
+  277838   2426[    14]  TEXT o_NOX
+  277852   2440[    14]  TEXT o_NOS
+  277866   2454[    14]  TEXT o_TSX
+  277880   2468[    70]  TEXT o_TST
+  277950   2538[    46]  TEXT <o_CLA>
+  277996   2584[    38]  TEXT o_CLX
+  278034   2622[    82]  TEXT o_CLS
+  278116   2704[    52]  TEXT o_PEA
+  278168   2756[    44]  TEXT <is_0_psh>
+  278212   2800[   100]  TEXT <o_push>
+  278312   2900[    64]  TEXT o_PSH
+  278376   2964[   110]  TEXT o_FPSH
+  278486   3074[    86]  TEXT o_PLL
+  278572   3160[   112]  TEXT o_PLA
+  278684   3272[     6]  TEXT o_SVA
+  278690   3278[    26]  TEXT o_SWX
+  278716   3304[    28]  TEXT <bit_count>
+  278744   3332[    30]  TEXT <bit_to_reg>
+  278774   3362[    44]  TEXT <flip>
+  278818   3406[   434]  TEXT o_MMS
+  279252   3840[   446]  TEXT o_MMX
+  279698   4286[    72]  TEXT o_TSP
+  279770   4358[    48]  TEXT o_LKX
+  279818   4406[    26]  TEXT o_ULX
+  279844   4432[    12]  TEXT o_RTS
+  279856   4444[    24]  TEXT o_RTAD
+  279880   4468[     6]  TEXT o_RTA
+  279886   4474[     6]  TEXT o_RTF
+  279892   4480[     6]  TEXT o_RTV
+  279898   4486[    50]  TEXT o_BSR
+  279948   4536[    12]  TEXT o_JSL
+  279960   4548[   112]  TEXT o_call
+  280072   4660[    16]  TEXT o_INLV
+  280088   4676[    96]  TEXT o_JSR
+  280184   4772[    46]  TEXT o_TRAP
+  280230   4818[    12]  TEXT o_JMP
+  280242   4830[    12]  TEXT o_ASRX
+  280254   4842[    12]  TEXT o_ASRS
+  280266   4854[    12]  TEXT o_ASLX
+  280278   4866[    12]  TEXT o_ASLS
+  280290   4878[    12]  TEXT o_LSRX
+  280302   4890[    12]  TEXT o_LSRS
+  280314   4902[    12]  TEXT o_LSLX
+  280326   4914[    12]  TEXT o_LSLS
+  280338   4926[    12]  TEXT o_RORX
+  280350   4938[    12]  TEXT o_RORS
+  280362   4950[    12]  TEXT o_ROLX
+  280374   4962[    12]  TEXT o_ROLS
+  280386   4974[    64]  TEXT o_shiftcount
+  280450   5038[    18]  TEXT o_FLX
+  280468   5056[     6]  TEXT o_FLD
+  280474   5062[    18]  TEXT o_LFLX
+  280492   5080[     6]  TEXT o_LFLD
+  280498   5086[    18]  TEXT o_AFLD
+  280516   5104[    30]  TEXT <o_scc>
+  280546   5134[     8]  TEXT o_SHI
+  280554   5142[     8]  TEXT o_SLS
+  280562   5150[     8]  TEXT o_TSCC
+  280570   5158[     8]  TEXT o_SCS
+  280578   5166[     8]  TEXT o_SNE
+  280586   5174[     8]  TEXT o_SEQ
+  280594   5182[     8]  TEXT o_SGE
+  280602   5190[     8]  TEXT o_SLT
+  280610   5198[     8]  TEXT o_SGT
+  280618   5206[     8]  TEXT o_SLE
+  280626   5214[    34]  TEXT o_DBF
+  280660   5248[    38]  TEXT o_LDCT
+  280698   5286[    60]  TEXT o_BCT
+  280758   5346[    50]  TEXT <o_cpscc>
+  280808   5396[    10]  TEXT o_FSEQ
+  280818   5406[    10]  TEXT o_FSNE
+  280828   5416[    10]  TEXT o_FSGT
+  280838   5426[    10]  TEXT o_FSGE
+  280848   5436[    10]  TEXT o_FSLT
+  280858   5446[    10]  TEXT o_FSLE
+  280868   5456[    80]  TEXT o_SWT
+  280948   5536[    12]  TEXT o_NOP
+  280960   5548[     2]  TEXT o_DISCARD
+  280962   5550[    32]  TEXT o_STOP
+  280994   5582[    64]  TEXT o_statreg
+  281058   5646[    12]  TEXT o_LDSR
+  281070   5658[    12]  TEXT o_STSR
+  281082   5670[    12]  TEXT o_LDCR
+  281094   5682[    12]  TEXT o_STCR
+  281106   5694[    14]  TEXT o_LDFCR
+  281120   5708[    14]  TEXT o_STFCR
+  281134   5722[    14]  TEXT o_LDFSR
+  281148   5736[    14]  TEXT o_STFSR
+  281162   5750[    10]  TEXT o_OACOS
+  281172   5760[    10]  TEXT o_OASIN
+  281182   5770[    10]  TEXT o_OATAN
+  281192   5780[    10]  TEXT o_OATANH
+  281202   5790[    10]  TEXT o_OCOS
+  281212   5800[    10]  TEXT o_OCOSH
+  281222   5810[    10]  TEXT o_OETOX
+  281232   5820[    10]  TEXT o_OETOXM1
+  281242   5830[    10]  TEXT o_OABS
+  281252   5840[    10]  TEXT o_OINTRZ
+  281262   5850[    10]  TEXT o_OINT
+  281272   5860[    10]  TEXT o_OGEXP
+  281282   5870[    10]  TEXT o_OGMAN
+  281292   5880[    10]  TEXT o_OLOGNP1
+  281302   5890[    10]  TEXT o_OLOGN
+  281312   5900[    10]  TEXT o_OLOG10
+  281322   5910[    10]  TEXT o_OLOG2
+  281332   5920[    10]  TEXT o_OSIN
+  281342   5930[    10]  TEXT o_OSINH
+  281352   5940[    10]  TEXT o_OSQRT
+  281362   5950[    10]  TEXT o_OTAN
+  281372   5960[    10]  TEXT o_OTANH
+  281382   5970[    10]  TEXT o_OTENTOX
+  281392   5980[    10]  TEXT o_OTWOTOX
+  281402   5990[    10]  TEXT o_ONEG
+  281412   6000[    62]  TEXT o_DCS
+  281474   6062[     2]  TEXT o_GLOB
+  281476   6064[     8]  TEXT o_EVEN
+  281484   6072[   152]  TEXT <s_xtol>
+  281636   6224[   502]  TEXT o_DC
+  282138   6726[   182]  TEXT o_DS
+  282320   6908[     2]  TEXT o_SLINE
+  282322   6910[    18]  TEXT o_GPROC
+  282340   6928[    18]  TEXT o_SPROC
+  282358   6946[     8]  TEXT o_PEND
+  282366   6954[    10]  TEXT o_DATA
+  282376   6964[    10]  TEXT o_GDATA
+  282386   6974[    10]  TEXT o_BSS
+  282396   6984[    10]  TEXT o_GBSS
+  282406   6994[    10]  TEXT o_CONSTANTS
+  282416   7004[    10]  TEXT o_STRS
+  282426   7014[    10]  TEXT o_TEXT
+  282436   7024[     2]  TEXT o_VARD
+  282438   7026[     2]  TEXT o_VARA
+  282440   7028[     2]  TEXT o_VARF
+  282442   7030[     2]  TEXT o_VARX
+  282444   7032[     2]  TEXT o_BRA
+  282446   7034[     2]  TEXT o_BRB
+  282448   7036[     2]  TEXT o_BRF
+  282450   7038[     2]  TEXT o_BNE
+  282452   7040[     2]  TEXT o_BEQ
+  282454   7042[     2]  TEXT o_BGE
+  282456   7044[     2]  TEXT o_BLT
+  282458   7046[     2]  TEXT o_BGT
+  282460   7048[     2]  TEXT o_BLE
+  282462   7050[     2]  TEXT o_BHI
+  282464   7052[     2]  TEXT o_BLS
+  282466   7054[     2]  TEXT o_BCC
+  282468   7056[     2]  TEXT o_BCS
+  282470   7058[     2]  TEXT o_BVC
+  282472   7060[     2]  TEXT o_BVS
+  282474   7062[     2]  TEXT o_BPL
+  282476   7064[     2]  TEXT o_BMI
+  282478   7066[     2]  TEXT o_FBNE
+  282480   7068[     2]  TEXT o_FBEQ
+  282482   7070[     2]  TEXT o_FBGE
+  282484   7072[     2]  TEXT o_FBLT
+  282486   7074[     2]  TEXT o_FBGT
+  282488   7076[     2]  TEXT o_FBLE
+  282490   7078[     2]  TEXT o_BEGIN
+  282492   7080[     2]  TEXT o_LIV
+  282494   7082[     2]  TEXT o_END
+  282496   7084[     2]  TEXT o_LOOP
+  282498   7086[     2]  TEXT o_REGL
+  282500   7088[     2]  TEXT o_LOC
+  282502   7090[     2]  TEXT o_RGD
+  282504   7092[     2]  TEXT o_RGA
+  282506   7094[     2]  TEXT o_RGF
+           7096
+in D:\aaaa\ahcc\as_out.o
+  282508      0[     2]  TEXT W_end
+  282510      2[    28]  TEXT <find_code_area>
+  282538     30[    26]  TEXT W_text
+  282564     56[    26]  TEXT W_data
+  282590     82[    26]  TEXT W_bss
+  282616    108[    56]  TEXT W_offset
+  282672    164[    60]  TEXT W_org
+  282732    224[    58]  TEXT W_even
+  282790    282[    96]  TEXT W_align
+  282886    378[    92]  TEXT o_area
+  282978    470[     6]  TEXT W_module
+  282984    476[     6]  TEXT W_area
+  282990    482[    24]  TEXT W_endmod
+  283014    506[    46]  TEXT W_incbin
+  283060    552[    68]  TEXT <o_align>
+  283128    620[    20]  TEXT W_ds
+  283148    640[   134]  TEXT <check_minus>
+  283282    774[   450]  TEXT <write_dc>
+  283732   1224[    28]  TEXT W_dc
+  283760   1252[    74]  TEXT W_dcb
+  283834   1326[   122]  TEXT <write_scons>
+  283956   1448[    12]  TEXT W_ascii
+  283968   1460[    12]  TEXT W_asciil
+  283980   1472[    12]  TEXT W_asciiz
+  283992   1484[    86]  TEXT <xbcd>
+  284078   1570[    10]  TEXT W_abcd
+  284088   1580[    10]  TEXT W_sbcd
+  284098   1590[    50]  TEXT W_nbcd
+  284148   1640[    58]  TEXT W_pack
+  284206   1698[    58]  TEXT W_unpk
+  284264   1756[    74]  TEXT W_add
+  284338   1830[    22]  TEXT W_adda
+  284360   1852[    54]  TEXT W_addi
+  284414   1906[    56]  TEXT W_addq
+  284470   1962[    32]  TEXT W_addx
+  284502   1994[    74]  TEXT W_sub
+  284576   2068[    22]  TEXT W_suba
+  284598   2090[    54]  TEXT W_subi
+  284652   2144[    16]  TEXT W_subq
+  284668   2160[    32]  TEXT W_subx
+  284700   2192[    74]  TEXT W_and
+  284774   2266[    74]  TEXT W_or
+  284848   2340[    22]  TEXT W_eor
+  284870   2362[    48]  TEXT W_andi
+  284918   2410[    44]  TEXT W_ori
+  284962   2454[    48]  TEXT W_eori
+  285010   2502[    12]  TEXT W_callm
+  285022   2514[    84]  TEXT W_cmp
+  285106   2598[    54]  TEXT W_cmpa
+  285160   2652[   120]  TEXT W_cmpi
+  285280   2772[    12]  TEXT W_asl
+  285292   2784[    12]  TEXT W_asr
+  285304   2796[    12]  TEXT W_lsl
+  285316   2808[    12]  TEXT W_lsr
+  285328   2820[    12]  TEXT W_roxl
+  285340   2832[    12]  TEXT W_roxr
+  285352   2844[    12]  TEXT W_rol
+  285364   2856[    12]  TEXT W_ror
+  285376   2868[    14]  TEXT W_negx
+  285390   2882[    14]  TEXT W_clr
+  285404   2896[    14]  TEXT W_neg
+  285418   2910[    14]  TEXT W_not
+  285432   2924[    14]  TEXT W_tst
+  285446   2938[   106]  TEXT <o_bits>
+  285552   3044[     8]  TEXT W_btst
+  285560   3052[     8]  TEXT W_bchg
+  285568   3060[    10]  TEXT W_bclr
+  285578   3070[    10]  TEXT W_bset
+  285588   3080[    56]  TEXT <o_bfow>
+  285644   3136[    90]  TEXT <o_bf>
+  285734   3226[    16]  TEXT W_bftst
+  285750   3242[    16]  TEXT W_bfchg
+  285766   3258[    16]  TEXT W_bfclr
+  285782   3274[    16]  TEXT W_bfset
+  285798   3290[    20]  TEXT W_bfextu
+  285818   3310[    20]  TEXT W_bfexts
+  285838   3330[    20]  TEXT W_bfffo
+  285858   3350[    20]  TEXT W_bfins
+  285878   3370[    36]  TEXT W_bsr
+  285914   3406[    34]  TEXT <cas_size>
+  285948   3440[    88]  TEXT W_cas
+  286036   3528[   168]  TEXT W_cas2
+  286204   3696[    86]  TEXT W_chk
+  286290   3782[   100]  TEXT <cmpchk>
+  286390   3882[    10]  TEXT W_chk2
+  286400   3892[     8]  TEXT W_cmp2
+  286408   3900[    34]  TEXT W_bkpt
+  286442   3934[    70]  TEXT W_cmpm
+  286512   4004[   100]  TEXT W_exg
+  286612   4104[    64]  TEXT <ext>
+  286676   4168[     6]  TEXT W_ext
+  286682   4174[     6]  TEXT W_extb
+  286688   4180[    12]  TEXT W_illegal
+  286700   4192[    12]  TEXT W_jsr
+  286712   4204[    12]  TEXT W_jmp
+  286724   4216[    60]  TEXT W_lea
+  286784   4276[    52]  TEXT W_pea
+  286836   4328[    94]  TEXT W_link
+  286930   4422[    26]  TEXT W_unlk
+  286956   4448[   150]  TEXT <o_move_cond>
+  287106   4598[    70]  TEXT W_move
+  287176   4668[    34]  TEXT W_strldsr
+  287210   4702[    58]  TEXT W_wdebug
+  287268   4760[    64]  TEXT W_wddata
+  287332   4824[    10]  TEXT W_movea
+  287342   4834[   346]  TEXT W_move16
+  287688   5180[   158]  TEXT W_movem
+  287846   5338[    30]  TEXT <listcount>
+  287876   5368[    86]  TEXT W_xsave
+  287962   5454[    84]  TEXT W_xrest
+  288046   5538[   154]  TEXT W_movep
+  288200   5692[    44]  TEXT W_moveq
+  288244   5736[    72]  TEXT <o_mvsz>
+  288316   5808[    10]  TEXT W_mvs
+  288326   5818[    10]  TEXT W_mvz
+  288336   5828[    24]  TEXT <o_brv>
+  288360   5852[    10]  TEXT W_bitrev
+  288370   5862[    10]  TEXT W_byterev
+  288380   5872[    10]  TEXT W_ff1
+  288390   5882[     2]  TEXT W_mov3q
+  288392   5884[    54]  TEXT W_mulu
+  288446   5938[    54]  TEXT W_muls
+  288500   5992[    54]  TEXT W_divu
+  288554   6046[    54]  TEXT W_divs
+  288608   6100[    16]  TEXT W_divul
+  288624   6116[    16]  TEXT W_divsl
+  288640   6132[    16]  TEXT W_remu
+  288656   6148[    16]  TEXT W_rems
+  288672   6164[    44]  TEXT W_rtm
+  288716   6208[    12]  TEXT W_reset
+  288728   6220[    12]  TEXT W_nop
+  288740   6232[    12]  TEXT W_halt
+  288752   6244[    12]  TEXT W_pulse
+  288764   6256[    32]  TEXT W_stop
+  288796   6288[    12]  TEXT W_rte
+  288808   6300[    32]  TEXT W_rtd
+  288840   6332[    12]  TEXT W_rts
+  288852   6344[    12]  TEXT W_trapv
+  288864   6356[    12]  TEXT W_rtr
+  288876   6368[    26]  TEXT W_swap
+  288902   6394[    26]  TEXT W_sats
+  288928   6420[    50]  TEXT W_tas
+  288978   6470[    28]  TEXT W_trap
+  289006   6498[    22]  TEXT W_aline
+  289028   6520[    62]  TEXT <inv_push>
+  289090   6582[     8]  TEXT W_cinvl
+  289098   6590[     8]  TEXT W_cinvp
+  289106   6598[     8]  TEXT W_cinva
+  289114   6606[     8]  TEXT W_cpushl
+  289122   6614[     8]  TEXT W_cpushp
+  289130   6622[     8]  TEXT W_cpusha
+  289138   6630[    34]  TEXT W_intouch
+  289172   6664[    48]  TEXT <o_cpsaverestore>
+  289220   6712[    90]  TEXT W_movec
+  289310   6802[   122]  TEXT W_moves
+  289432   6924[    54]  TEXT <o_scc>
+  289486   6978[    54]  TEXT W_bra
+  289540   7032[    32]  TEXT W_st
+  289572   7064[   104]  TEXT W_dbra
+  289676   7168[   100]  TEXT W_trapt
+  289776   7268[    62]  TEXT W_fmovecr
+  289838   7330[   398]  TEXT W_fmovem
+  290236   7728[    20]  TEXT W_fnop
+  290256   7748[    10]  TEXT W_fsave
+  290266   7758[    10]  TEXT W_frestore
+  290276   7768[   112]  TEXT W_ftst
+  290388   7880[   102]  TEXT W_fmovesr
+  290490   7982[    10]  TEXT W_fmove
+  290500   7992[    10]  TEXT W_fint
+  290510   8002[    10]  TEXT W_fsinh
+  290520   8012[    10]  TEXT W_fintrz
+  290530   8022[    10]  TEXT W_fsqrt
+  290540   8032[    10]  TEXT W_flognp1
+  290550   8042[    10]  TEXT W_fetoxm1
+  290560   8052[    10]  TEXT W_ftanh
+  290570   8062[    10]  TEXT W_fatan
+  290580   8072[    10]  TEXT W_fasin
+  290590   8082[    10]  TEXT W_fatanh
+  290600   8092[    10]  TEXT W_fsin
+  290610   8102[    10]  TEXT W_ftan
+  290620   8112[    10]  TEXT W_fetox
+  290630   8122[    10]  TEXT W_ftwotox
+  290640   8132[    10]  TEXT W_ftentox
+  290650   8142[    10]  TEXT W_flogn
+  290660   8152[    10]  TEXT W_flog10
+  290670   8162[    10]  TEXT W_flog2
+  290680   8172[    10]  TEXT W_fabs
+  290690   8182[    10]  TEXT W_fcosh
+  290700   8192[    10]  TEXT W_fneg
+  290710   8202[    10]  TEXT W_facos
+  290720   8212[    10]  TEXT W_fcos
+  290730   8222[    10]  TEXT W_fgetexp
+  290740   8232[    10]  TEXT W_fgetman
+  290750   8242[    10]  TEXT W_fdiv
+  290760   8252[    10]  TEXT W_fmod
+  290770   8262[    10]  TEXT W_fadd
+  290780   8272[    10]  TEXT W_fmul
+  290790   8282[    10]  TEXT W_fsgldiv
+  290800   8292[    10]  TEXT W_frem
+  290810   8302[    10]  TEXT W_fscale
+  290820   8312[    10]  TEXT W_fsglmul
+  290830   8322[    10]  TEXT W_fsub
+  290840   8332[    36]  TEXT W_fsincos
+  290876   8368[    10]  TEXT W_fcmp
+  290886   8378[    10]  TEXT W_fsmove
+  290896   8388[    10]  TEXT W_fssqrt
+  290906   8398[    10]  TEXT W_fdmove
+  290916   8408[    10]  TEXT W_fdsqrt
+  290926   8418[    10]  TEXT W_fsabs
+  290936   8428[    10]  TEXT W_fsneg
+  290946   8438[    10]  TEXT W_fdabs
+  290956   8448[    10]  TEXT W_fdneg
+  290966   8458[    10]  TEXT W_fsdiv
+  290976   8468[    10]  TEXT W_fsadd
+  290986   8478[    10]  TEXT W_fsmul
+  290996   8488[    10]  TEXT W_fddiv
+  291006   8498[    10]  TEXT W_fdadd
+  291016   8508[    10]  TEXT W_fdmul
+  291026   8518[    10]  TEXT W_fssub
+  291036   8528[    10]  TEXT W_fdsub
+  291046   8538[    70]  TEXT <o_cpscc>
+  291116   8608[    58]  TEXT W_fbf
+  291174   8666[    34]  TEXT W_fsf
+  291208   8700[    36]  TEXT W_fdbf
+  291244   8736[    36]  TEXT W_ftrapf
+  291280   8772[   120]  TEXT <o_35flush>
+  291400   8892[    74]  TEXT W_pflush
+  291474   8966[    58]  TEXT W_pflusha
+  291532   9024[    34]  TEXT W_pflushn
+  291566   9058[    12]  TEXT W_pflushan
+  291578   9070[    28]  TEXT W_pflushs
+  291606   9098[    60]  TEXT W_pflushr
+  291666   9158[    82]  TEXT <o_pload>
+  291748   9240[     8]  TEXT W_ploadr
+  291756   9248[     8]  TEXT W_ploadw
+  291764   9256[   288]  TEXT <o_pmove>
+  292052   9544[     8]  TEXT W_pmove
+  292060   9552[     8]  TEXT W_pmovefd
+  292068   9560[   198]  TEXT <o_ptest>
+  292266   9758[     8]  TEXT W_ptestr
+  292274   9766[     8]  TEXT W_ptestw
+  292282   9774[    84]  TEXT W_pvalid
+  292366   9858[    10]  TEXT W_psave
+  292376   9868[    10]  TEXT W_prestore
+  292386   9878[    58]  TEXT W_pbbs
+  292444   9936[    34]  TEXT W_psbs
+  292478   9970[    36]  TEXT W_pdbbs
+  292514  10006[    36]  TEXT W_ptrapbs
+  292550  10042[    36]  TEXT <o_plpa>
+  292586  10078[     8]  TEXT W_plpar
+  292594  10086[     8]  TEXT W_plpaw
+  292602  10094[    34]  TEXT W_lpstop
+          10128
+in D:\aaaa\ahcc\as_lib.o
+  292636      0[   386]  TEXT new_po_name
+  293022    386[   288]  TEXT o_setup
+  293310    674[   122]  TEXT advance_b
+  293432    796[   122]  TEXT advance
+  293554    918[   122]  TEXT advance_l
+  293676   1040[   142]  TEXT advance_m
+  293818   1182[    72]  TEXT get_label
+  293890   1254[   148]  TEXT o_fixup
+  294038   1402[    44]  TEXT o_func
+  294082   1446[   180]  TEXT branch_aheads
+  294262   1626[   116]  TEXT try_bsr
+  294378   1742[   106]  TEXT o_block
+  294484   1848[    52]  TEXT o_lab
+  294536   1900[   512]  TEXT o_brdisp
+  295048   2412[    22]  TEXT o_branch
+  295070   2434[   114]  TEXT o_cpbranch
+  295184   2548[     4]  TEXT <no_refs>
+  295188   2552[   664]  TEXT o_endproc
+  295852   3216[    22]  TEXT o_inst
+  295874   3238[   202]  TEXT <remove_dummy_areas>
+  296076   3440[   136]  TEXT setup_end
+  296212   3576[    58]  TEXT o_end
+  296270   3634[    34]  TEXT ISAA
+  296304   3668[    34]  TEXT ISDD
+  296338   3702[    30]  TEXT o_size
+  296368   3732[   104]  TEXT o_fsize
+  296472   3836[    30]  TEXT o_move
+  296502   3866[   402]  TEXT o_ea
+  296904   4268[   428]  TEXT o_dst_ea
+  297332   4696[   108]  TEXT is_f
+  297440   4804[    46]  TEXT o_x
+  297486   4850[    10]  TEXT o_X
+  297496   4860[    14]  TEXT o_argX
+  297510   4874[    40]  TEXT o_dst_X
+  297550   4914[    32]  TEXT o_src_X
+  297582   4946[    80]  TEXT <fixup_type>
+  297662   5026[   164]  TEXT operand_fixup
+  297826   5190[    62]  TEXT <o_ireg>
+  297888   5252[   306]  TEXT <o_ea_exx>
+  298194   5558[   340]  TEXT o_ext
+  298534   5898[    52]  TEXT o_even
+  298586   5950[     6]  TEXT o_area_end
+  298592   5956[   166]  TEXT o_area_setup
+  298758   6122[    68]  TEXT o_AREA
+  298826   6190[    48]  TEXT can_quick
+  298874   6238[    46]  TEXT o_cond
+  298920   6284[    70]  TEXT o_imm
+  298990   6354[    70]  TEXT o_imma
+  299060   6424[    76]  TEXT o_Iquick
+  299136   6500[    42]  TEXT o_Qimm
+  299178   6542[   368]  TEXT o_cpgenx
+  299546   6910[   222]  TEXT o_cpgens
+  299768   7132[   140]  TEXT o_Lmd
+  299908   7272[   112]  TEXT o_arith
+  300020   7384[    74]  TEXT o_Aquick
+  300094   7458[   150]  TEXT o_Qarith
+  300244   7608[   164]  TEXT o_shiftx
+  300408   7772[    56]  TEXT o_shifts
+  300464   7828[    60]  TEXT o_genx
+  300524   7888[    76]  TEXT o_gens
+  300600   7964[    44]  TEXT o_jump
+  300644   8008[   142]  TEXT <canmoveq>
+  300786   8150[   270]  TEXT o_move_eaea
+  301056   8420[    62]  TEXT o_move_eadn
+  301118   8482[    74]  TEXT o_cpdbcc
+  301192   8556[    92]  TEXT o_cptrapcc
+           8648
+in D:\aaaa\ahcc\plib.o
+  301284      0[    14]  TEXT <newl>
+  301298     14[    14]  TEXT <barrier>
+  301312     28[    48]  TEXT <l9>
+  301360     76[    56]  TEXT <sp>
+  301416    132[    82]  TEXT <byli>
+  301498    214[    56]  TEXT <adl>
+  301554    270[   134]  TEXT <pl>
+  301688    404[    32]  TEXT init_stats
+  301720    436[   422]  TEXT pr_stats
+  302142    858[    32]  TEXT is_ref
+  302174    890[    32]  TEXT is_entry
+  302206    922[    20]  TEXT is_lc_entry
+  302226    942[    20]  TEXT is_gl_entry
+  302246    962[    72]  TEXT ldhash
+  302318   1034[    20]  TEXT no_image
+  302338   1054[    20]  TEXT is_module
+  302358   1074[    34]  TEXT fixup_name
+  302392   1108[    40]  TEXT disp_target
+  302432   1148[   206]  TEXT list_refs
+  302638   1354[    74]  TEXT clr_treebase
+  302712   1428[    52]  TEXT <create_last>
+  302764   1480[    58]  TEXT <create_after>
+  302822   1538[    58]  TEXT <create_before>
+  302880   1596[   212]  TEXT ins_flist
+  303092   1808[     8]  TEXT new_flist
+  303100   1816[    66]  TEXT ins_ref
+  303166   1882[   114]  TEXT new_fixup
+  303280   1996[   178]  TEXT new_area
+  303458   2174[    92]  TEXT add_areas
+  303550   2266[   636]  TEXT <handle_fixups>
+  304186   2902[    92]  TEXT <add_fixups>
+  304278   2994[   106]  TEXT <add_names>
+  304384   3100[   162]  TEXT write_areas
+  304546   3262[   104]  TEXT <wfixup>
+  304650   3366[   222]  TEXT <segment_fixup>
+  304872   3588[   110]  TEXT <write_fixups>
+  304982   3698[   220]  TEXT <write_names>
+  305202   3918[   910]  TEXT write_object
+           4828
+in D:\aaaa\ahcc\ld.o
+  306112      0[    84]  TEXT <bfind_ref>
+  306196     84[    76]  TEXT <find_ref>
+  306272    160[   214]  TEXT <gbfind_ref>
+  306486    374[    82]  TEXT <gfind_ref>
+  306568    456[   104]  TEXT <bfind_locref>
+  306672    560[    48]  TEXT find_locref
+  306720    608[    90]  TEXT <ins_bref>
+  306810    698[    42]  TEXT <new_bref>
+  306852    740[   304]  TEXT <remove_ref>
+  307156   1044[    92]  TEXT new_ref
+  307248   1136[    88]  TEXT new_locref
+  307336   1224[    62]  TEXT <copy_refs>
+  307398   1286[    88]  TEXT <ifile>
+  307486   1374[    38]  TEXT <un_eol>
+  307524   1412[   116]  TEXT <read_obnames>
+  307640   1528[    38]  TEXT <after_is>
+  307678   1566[   380]  TEXT <doopt>
+  308058   1946[   236]  TEXT check_double
+  308294   2182[   486]  TEXT <write_symbols>
+  308780   2668[    62]  TEXT <match_local>
+  308842   2730[    82]  TEXT <match_ref>
+  308924   2812[   154]  TEXT <match_area>
+  309078   2966[   186]  TEXT <match_global>
+  309264   3152[   246]  TEXT <entries>
+  309510   3398[    76]  TEXT <firstreloc>
+  309586   3474[   108]  TEXT <addreloc>
+  309694   3582[   794]  TEXT <fix>
+  310488   4376[    32]  TEXT <anonymous>
+  310520   4408[   100]  TEXT <ar_name>
+  310620   4508[   416]  TEXT <pr_map>
+  311036   4924[   218]  TEXT <load_map>
+  311254   5142[   246]  TEXT <pr_sym>
+  311500   5388[   288]  TEXT <write_nm>
+  311788   5676[    60]  TEXT <remove_unreferenced>
+  311848   5736[  1286]  TEXT <write_program>
+  313134   7022[   114]  TEXT LD_ranout
+  313248   7136[   872]  TEXT linker
+           8008
+in D:\aaaa\ahcc\ld_ob.o
+  314120      0[    30]  TEXT format_error
+  314150     30[   252]  TEXT <get_pc_names>
+  314402    282[    28]  TEXT <skip>
+  314430    310[   366]  TEXT <ins_fixup>
+  314796    676[    32]  TEXT <is_start>
+  314828    708[   248]  TEXT <get_fixups>
+  315076    956[    40]  TEXT <is_begin>
+  315116    996[   256]  TEXT <get_area>
+  315372   1252[    86]  TEXT anon_ref
+  315458   1338[    70]  TEXT <analyse_a_refs>
+  315528   1408[   472]  TEXT <make_symbol_tree>
+  316000   1880[   238]  TEXT <load_pure>
+  316238   2118[   126]  TEXT <vglsym>
+  316364   2244[    60]  TEXT <put_name>
+  316424   2304[   532]  TEXT <get_dri_names>
+  316956   2836[    16]  TEXT <dri_ent2pc>
+  316972   2852[    26]  TEXT <dri_mod2pc>
+  316998   2878[   156]  TEXT <dri_segment>
+  317154   3034[   102]  TEXT <getname>
+  317256   3136[   150]  TEXT <in_symtab>
+  317406   3286[  1164]  TEXT <make_fixups>
+  318570   4450[   132]  TEXT <gfa_data>
+  318702   4582[   226]  TEXT <load_dri>
+  318928   4808[    60]  TEXT <gfa_name>
+  318988   4868[   146]  TEXT <load_drilib>
+  319134   5014[   268]  TEXT load_ob
+           5282
+in D:\aaaa\ahcc\ctype.o
+  319402      0[    30]  TEXT toupper
+  319432     30[    30]  TEXT tolower
+             60
+in D:\aaaa\ahcc\list.o
+  319462      0[    68]  TEXT rem_list
+  319530     68[    66]  TEXT cut_list
+  319596    134[    60]  TEXT append_list
+  319656    194[    64]  TEXT move_list
+  319720    258[    48]  TEXT ins_last
+  319768    306[    84]  TEXT ins_before
+  319852    390[    78]  TEXT ins_after
+  319930    468[     8]  TEXT clr_listbase
+            476
+in d:\CC\lib\pc881lib.lib
+  319938      0[   744]  TEXT _PrintF
+  320682    744[  1520]  TEXT _OutFlt
+  321074   1136          TEXT _OutFix
+  321656   1718          TEXT _OutFixF
+  322202   2264[   214]  TEXT ecvt
+  322206   2268          TEXT fcvt
+  322230   2292          TEXT ftoa
+  322416   2478[   356]  TEXT atof
+  322418   2480          TEXT strtod
+  322772   2834[    26]  TEXT 
+  322798   2860[   102]  TEXT pow
+  322900   2962[    42]  TEXT acosh
+  322942   3004[    42]  TEXT asinh
+  322984   3046[    26]  TEXT floor
+  323010   3072[    34]  TEXT setjmp
+  323026   3088          TEXT longjmp
+           3106
+in D:\aaaa\common\qmem.o
+  323044      0[   104]  TEXT qalloc
+  323148    104[    98]  TEXT CC_qalloc
+  323246    202[    70]  TEXT init_membase
+  323316    272[    32]  TEXT free_membase
+            304
+in D:\aaaa\common\amem.o
+  323348      0[    18]  TEXT NS_xmalloc
+  323366     18[    16]  TEXT NS_xfree
+  323382     34[    16]  TEXT NS_xfree_all
+  323398     50[    18]  TEXT CC_xmalloc
+  323416     68[    20]  TEXT CC_xcalloc
+  323436     88[    16]  TEXT CC_xfree
+  323452    104[    16]  TEXT CC_xfree_all
+  323468    120[    18]  TEXT CC_fmalloc
+  323486    138[    20]  TEXT CC_fcalloc
+  323506    158[    22]  TEXT CC_frealloc
+  323528    180[    16]  TEXT CC_ffree
+  323544    196[    16]  TEXT CC_ffree_all
+            212
+in D:\aaaa\common\ahcm.o
+  323560      0[   264]  TEXT <new_block>
+  323824    264[   102]  TEXT <XA_Mfree>
+  323926    366[    76]  TEXT <free_block>
+  324002    442[    64]  TEXT <extract>
+  324066    506[   106]  TEXT <find_free>
+  324172    612[   126]  TEXT <split>
+  324298    738[    38]  TEXT <insfirst>
+  324336    776[    60]  TEXT <insbefore>
+  324396    836[    44]  TEXT <inslast>
+  324440    880[    62]  TEXT <insafter>
+  324502    942[    56]  TEXT <amalgam>
+  324558    998[   160]  TEXT <sortins>
+  324718   1158[    34]  TEXT <combine>
+  324752   1192[    72]  TEXT <XA_round>
+  324824   1264[    62]  TEXT <in_list>
+  324886   1326[   118]  TEXT <find_unit>
+  325004   1444[   238]  TEXT XA_alloc
+  325242   1682[    74]  TEXT XA_calloc
+  325316   1756[   206]  TEXT <free_unit>
+  325522   1962[   682]  TEXT XA_realloc
+  326204   2644[   106]  TEXT XA_free
+  326310   2750[    34]  TEXT <XA_match>
+  326344   2784[   142]  TEXT XA_free_all
+  326486   2926[   138]  TEXT XA_set_base
+  326624   3064[    14]  TEXT malloc
+  326638   3078[    16]  TEXT calloc
+  326654   3094[    10]  TEXT free
+  326664   3104[    12]  TEXT _FreeAll
+  326676   3116[    12]  TEXT xmalloc
+  326688   3128[    14]  TEXT xcalloc
+  326702   3142[    16]  TEXT xrealloc
+  326718   3158[    10]  TEXT xfree
+  326728   3168[    16]  TEXT fmalloc
+  326744   3184[    18]  TEXT fcalloc
+  326762   3202[    14]  TEXT ffree
+           3216
+in d:\CC\lib\pcstdlib.lib
+  326776      0[    12]  TEXT 
+  326788     12[   318]  TEXT 
+  327106    330[    10]  TEXT qsort
+  327116    340[    24]  TEXT clock
+  327140    364[    58]  TEXT printf
+  327198    422[    62]  TEXT fprintf
+  327260    484[    50]  TEXT sprintf
+  327310    534[    62]  TEXT vfprintf
+  327372    596[    50]  TEXT vsprintf
+  327422    646[   614]  TEXT _OutIntD
+  327504    728          TEXT _OutCarD
+  327522    746          TEXT _OutCarH
+  327586    810          TEXT _OutCarO
+  327756    980          TEXT _OutChr
+  327772    996          TEXT _OutStr
+  327960   1184          TEXT OutZero
+  327970   1194          TEXT OutBlank
+  328036   1260[   158]  TEXT fgets
+  328194   1418[   144]  TEXT fputs
+  328338   1562[   202]  TEXT fwrite
+  328540   1764[    12]  TEXT fopen
+  328552   1776[   508]  TEXT freopen
+  329060   2284[    94]  TEXT fclose
+  329154   2378[   128]  TEXT setvbuf
+  329282   2506[   116]  TEXT _FillBuf
+  329398   2622[   182]  TEXT _FlshBuf
+  329580   2804[   166]  TEXT open
+  329746   2970[    42]  TEXT close
+  329788   3012[    38]  TEXT remove
+  329788   3012          TEXT unlink
+  329826   3050[   366]  TEXT read
+  330192   3416[    52]  TEXT write
+  330244   3468[   160]  TEXT lseek
+  330404   3628[    76]  TEXT isatty
+  330480   3704[    48]  TEXT _RemoveT
+  330528   3752[    58]  TEXT _XltErr
+  330586   3810[   100]  TEXT atoi
+  330686   3910[   100]  TEXT atol
+  330786   4010[   130]  TEXT itoa
+  330916   4140[    72]  TEXT strcat
+  330988   4212[    20]  TEXT strchr
+  331008   4232[    28]  TEXT strrchr
+  331036   4260[    82]  TEXT strcmp
+  331118   4342[    70]  TEXT strcpy
+  331188   4412[    42]  TEXT strlen
+  331230   4454[    20]  TEXT strlwr
+  331250   4474[    30]  TEXT strncmp
+  331280   4504[    26]  TEXT strncpy
+  331306   4530[    52]  TEXT strstr
+  331358   4582[   210]  TEXT strtoul
+  331568   4792[    20]  TEXT strupr
+  331588   4812[   154]  TEXT ultoa
+  331742   4966[    56]  TEXT strcmpi
+  331742   4966          TEXT stricmp
+  331798   5022[    52]  TEXT strnicmp
+  331798   5022          TEXT strncmpi
+  331850   5074[    22]  TEXT memcmp
+  331872   5096[   490]  TEXT memcpy
+  331872   5096          TEXT memmove
+  332362   5586[   192]  TEXT memset
+  332554   5778[    18]  TEXT isalnum
+  332572   5796[    18]  TEXT isalpha
+  332590   5814[    14]  TEXT isdigit
+  332604   5828[    26]  TEXT isprint
+  332630   5854[    18]  TEXT isspace
+  332648   5872[   256]  TEXT _UpcTab
+  332904   6128[   256]  TEXT _LocTab
+  333160   6384[   256]  TEXT _ChrCla1
+  333416   6640[   256]  TEXT _ChrCla2
+  333672   6896[   256]  TEXT _DigCnvT
+  333928   7152[    10]  TEXT abs
+  333938   7162[    40]  TEXT _ulmul
+  333978   7202[    82]  TEXT _uldiv
+           7284
+in d:\CC\lib\pcgemlib.lib
+  334060      0[    44]  TEXT _aes
+  334066      6          TEXT _aesP
+  334104     44[    10]  TEXT appl_exit
+  334114     54[    10]  TEXT appl_init
+  334124     64[    26]  TEXT appl_write
+  334150     90[    42]  TEXT appl_getinfo
+  334192    132[    90]  TEXT evnt_multi
+  334282    222[    32]  TEXT form_button
+  334314    254[    42]  TEXT form_center
+  334356    296[    34]  TEXT form_dial
+  334390    330[    40]  TEXT form_keybd
+  334430    370[    36]  TEXT graf_handle
+  334466    406[    36]  TEXT graf_mkstate
+  334502    442[    22]  TEXT graf_mouse
+  334524    464[    22]  TEXT menu_bar
+  334546    486[    24]  TEXT menu_icheck
+  334570    510[    24]  TEXT menu_ienable
+  334594    534[    24]  TEXT menu_tnormal
+  334618    558[    38]  TEXT objc_change
+  334656    596[    34]  TEXT objc_draw
+  334690    630[    38]  TEXT objc_edit
+  334728    668[    30]  TEXT objc_find
+  334758    698[    36]  TEXT objc_offset
+  334794    734[    10]  TEXT rsrc_free
+  334804    744[    28]  TEXT rsrc_gaddr
+  334832    772[    22]  TEXT rsrc_obfix
+  334854    794[    56]  TEXT wind_calc
+  334910    850[    16]  TEXT wind_close
+  334926    866[    26]  TEXT wind_create
+  334952    892[    16]  TEXT wind_delete
+  334968    908[    18]  TEXT wind_find
+  334986    926[    26]  TEXT wind_open
+  335012    952[    16]  TEXT wind_update
+  335028    968[    16]  TEXT appl_find
+  335044    984[    22]  TEXT form_alert
+  335066   1006[    34]  TEXT fsel_exinput
+  335100   1040[    16]  TEXT rsrc_load
+  335116   1056[    16]  TEXT shel_find
+  335132   1072[    26]  TEXT shel_write
+  335158   1098[    72]  TEXT wind_get
+  335230   1170[    30]  TEXT wind_set
+  335260   1200[    44]  TEXT _vdi
+  335304   1244[    28]  TEXT v_rfbox
+  335332   1272[    28]  TEXT v_rbox
+  335360   1300[    30]  TEXT v_pline
+  335390   1330[    70]  TEXT v_opnvwk
+  335460   1400[     8]  TEXT v_clsvwk
+  335468   1408[    28]  TEXT v_bar
+  335496   1436[    28]  TEXT vs_clip
+  335524   1464[    14]  TEXT vswr_mode
+  335538   1478[    52]  TEXT vst_height
+  335590   1530[    14]  TEXT vst_font
+  335604   1544[    14]  TEXT vst_effects
+  335618   1558[    14]  TEXT vst_color
+  335632   1572[    30]  TEXT vst_alignment
+  335662   1602[    14]  TEXT vsl_udsty
+  335676   1616[    14]  TEXT vsl_type
+  335690   1630[    14]  TEXT vsl_color
+  335704   1644[    14]  TEXT vsf_style
+  335718   1658[    14]  TEXT vsf_perimeter
+  335732   1672[    14]  TEXT vsf_interior
+  335746   1686[    14]  TEXT vsf_color
+  335760   1700[    22]  TEXT vr_recfl
+  335782   1722[    46]  TEXT vro_cpyfm
+  335828   1768[    52]  TEXT vq_extnd
+  335880   1820[    64]  TEXT vqt_fontinfo
+  335944   1884[    48]  TEXT vqt_attributes
+  335992   1932[    36]  TEXT v_gtext
+  336028   1968[    44]  TEXT vqt_extent
+           2012
+in d:\CC\lib\pcextlib.lib
+  336072      0[    76]  TEXT findfirs
+  336148     76[    68]  TEXT findnext
+  336216    144[   100]  TEXT getcwd
+            244
+in d:\CC\lib\pcvstart.o
+  336316      0[   100]  DATA 
+  336396     80          DATA <EmpStr>
+  336398     82          DATA errno
+  336400     84          DATA _AtExitVec
+  336404     88          DATA _FilSysVec
+            100
+in D:\aaaa\aaaa.o
+  336416      0[    16]  DATA 
+  336432     16[    12]  DATA 
+  336444     28[    12]  DATA 
+  336456     40[     6]  DATA 
+  336462     46[    22]  DATA 
+  336484     68[    38]  DATA 
+  336522    106[     4]  DATA 
+  336526    110[     4]  DATA 
+  336526    110          DATA <winfreebase>
+  336530    114[     2]  DATA 
+  336532    116[    26]  DATA 
+  336532    116          DATA <args>
+  336537    121          DATA <pipename>
+  336558    142[     2]  DATA 
+  336560    144[    12]  DATA 
+  336572    156[    78]  DATA 
+  336572    156          DATA txtfreebase
+  336576    160          DATA aaaa_id
+  336578    162          DATA aes_flags
+  336580    164          DATA aes_font
+  336582    166          DATA aes_font_height
+  336584    168          DATA global_message
+  336588    172          DATA init_open_jrnl
+  336590    174          DATA mainmenu
+  336644    228          DATA showchange
+  336646    230          DATA Title
+  336650    234[     4]  DATA 
+  336650    234          DATA alert_cur
+  336654    238[     2]  DATA 
+  336654    238          DATA m_alerted
+  336656    240[     6]  DATA 
+  336656    240          DATA prg_name
+  336662    246[    44]  DATA 
+  336662    246          DATA def_loc
+            290
+in D:\aaaa\text\text.o
+  336706      0[    30]  DATA 
+  336736     30[    10]  DATA 
+  336746     40[   144]  DATA 
+  336890    184[    52]  DATA 
+  336942    236[    54]  DATA 
+  336942    236          DATA tmen
+  336996    290[     2]  DATA 
+  336996    290          DATA abandon_ins
+            292
+in D:\aaaa\text\cursor.o
+  336998      0[   512]  DATA 
+  336998      0          DATA chcl
+            512
+in D:\aaaa\text\editor.o
+  337510      0[     2]  DATA 
+  337512      2[     6]  DATA 
+  337518      8[    42]  DATA 
+  337560     50[    12]  DATA 
+  337572     62[    24]  DATA 
+  337596     86[    16]  DATA 
+  337612    102[    22]  DATA 
+  337634    124[     4]  DATA 
+  337638    128[    24]  DATA 
+  337662    152[    16]  DATA 
+  337678    168[    12]  DATA 
+  337690    180[    12]  DATA 
+  337690    180          DATA <shuntmap>
+  337694    184          DATA <ign>
+  337702    192[    14]  DATA 
+  337702    192          DATA <cop1>
+  337716    206[     2]  DATA 
+  337716    206          DATA <crich>
+  337718    208[   148]  DATA 
+  337718    208          DATA <ARROW_4>
+  337792    282          DATA <FORBID>
+  337866    356[  1600]  DATA 
+  337866    356          DATA fkeystr
+           1956
+in D:\aaaa\text\text_cfg.o
+  339466      0[     2]  DATA 
+  339468      2[     2]  DATA 
+  339470      4[   552]  DATA 
+  339470      4          DATA loctab
+            556
+in D:\aaaa\text\text_sel.o
+  340022      0[    10]  DATA 
+             10
+in D:\aaaa\common\cursor.o
+  340032      0[   148]  DATA 
+  340032      0          DATA <kader16>
+  340106     74          DATA <kader8>
+            148
+in D:\aaaa\common\files.o
+  340180      0[     2]  DATA 
+  340182      2[    22]  DATA 
+  340204     24[    24]  DATA 
+  340228     48[     6]  DATA 
+  340234     54[    20]  DATA 
+  340254     74[    28]  DATA 
+  340282    102[   296]  DATA 
+  340282    102          DATA <fcfg_base>
+  340286    106          DATA <floctab>
+  340290    110          DATA <filtab>
+            398
+in D:\aaaa\common\kit.o
+  340578      0[    26]  DATA 
+  340604     26[    38]  DATA 
+  340642     64[    16]  DATA 
+  340658     80[    80]  DATA 
+  340738    160[     4]  DATA 
+  340742    164[    22]  DATA 
+  340764    186[    52]  DATA 
+  340816    238[   124]  DATA 
+  340940    362[    16]  DATA 
+  340956    378[    28]  DATA 
+  340984    406[    46]  DATA 
+  341030    452[   166]  DATA 
+  341196    618[     6]  DATA 
+  341202    624[     4]  DATA 
+  341206    628[     4]  DATA 
+  341210    632[    10]  DATA 
+  341220    642[    10]  DATA 
+  341230    652[    42]  DATA 
+  341272    694[    82]  DATA 
+  341272    694          DATA <eds>
+  341292    714          DATA <bts>
+  341312    734          DATA <edcyc>
+  341314    736          DATA <hkswl>
+  341334    756          DATA <hkswr>
+  341354    776[     4]  DATA 
+  341354    776          DATA <slash>
+  341356    778          DATA <slash2>
+  341358    780[   684]  DATA 
+  342042   1464[   684]  DATA 
+  342726   2148[   684]  DATA 
+  343410   2832[  1418]  DATA 
+  343410   2832          DATA butcur
+  343412   2834          DATA settab
+  344828   4250[   148]  DATA 
+  344828   4250          DATA Mismatch
+  344832   4254          DATA Diffing
+  344836   4258          DATA Lone
+  344840   4262          DATA Found
+  344844   4266          DATA Scanning
+  344848   4270          DATA fdum
+  344976   4398[     4]  DATA 
+  344976   4398          DATA ubdbs
+  344980   4402[     4]  DATA 
+  344980   4402          DATA help_stack
+           4406
+in D:\aaaa\common\treeview.o
+  344984      0[     2]  DATA 
+  344986      2[     6]  DATA 
+  344992      8[     2]  DATA 
+  344994     10[     4]  DATA 
+  344994     10          DATA <vspa>
+  344998     14[     8]  DATA 
+  344998     14          DATA norect
+             22
+in D:\aaaa\common\hierarch.o
+  345006      0[     2]  DATA 
+  345008      2[     4]  DATA 
+  345012      6[     6]  DATA 
+  345018     12[    16]  DATA 
+  345034     28[     4]  DATA 
+  345038     32[   256]  DATA 
+  345038     32          DATA idir
+  345166    160          DATA fsel
+            288
+in D:\aaaa\common\options.o
+  345294      0[    88]  DATA 
+  345382     88[    10]  DATA 
+  345382     88          DATA diagnostics
+  345384     90          DATA nkcc_opt
+  345388     94          DATA align_mode
+  345390     96          DATA low_exp
+             98
+in D:\aaaa\common\windows.o
+  345392      0[    46]  DATA 
+  345438     46[    40]  DATA 
+  345478     86[    40]  DATA 
+  345518    126[    40]  DATA 
+  345558    166[    12]  DATA 
+  345558    166          DATA cnil
+            178
+in D:\aaaa\common\wdial.o
+  345570      0[    10]  DATA 
+  345580     10[     6]  DATA 
+  345586     16[     2]  DATA 
+  345586     16          DATA <vdi_handle>
+  345588     18[     2]  DATA 
+  345590     20[     2]  DATA 
+  345590     20          DATA edcur
+             22
+in D:\aaaa\common\journal.o
+  345592      0[    24]  DATA 
+  345616     24[    34]  DATA 
+  345650     58[    12]  DATA 
+  345662     70[    20]  DATA 
+  345682     90[    14]  DATA 
+  345696    104[   124]  DATA 
+  345820    228[   122]  DATA 
+  345942    350[    20]  DATA 
+  345962    370[    10]  DATA 
+  345972    380[    56]  DATA 
+  346028    436[    18]  DATA 
+  346046    454[     4]  DATA 
+  346046    454          DATA <journal_created>
+  346050    458[     2]  DATA 
+  346052    460[   102]  DATA 
+  346052    460          DATA jmen
+  346106    514          DATA XA_jnl_base
+  346146    554          DATA Journal
+  346150    558          DATA jrnlmap
+  346154    562[     8]  DATA 
+  346154    562          DATA jrect
+  346162    570[     2]  DATA 
+  346162    570          DATA msg_tab
+            572
+in D:\aaaa\common\F_x.o
+  346164      0[    24]  DATA 
+  346188     24[    24]  DATA 
+  346212     48[    18]  DATA 
+  346230     66[   150]  DATA 
+  346380    216[    32]  DATA 
+  346412    248[    34]  DATA 
+  346446    282[    24]  DATA 
+  346470    306[    16]  DATA 
+  346486    322[    72]  DATA 
+  346486    322          DATA parsepar
+  346518    354          DATA eoln
+  346538    374          DATA BADTOK
+  346558    394[   820]  DATA 
+  346558    394          DATA parsetab
+           1214
+in D:\aaaa\common\msgbuf.o
+  347378      0[     2]  DATA 
+  347378      0          DATA msg_l
+              2
+in D:\aaaa\common\stm.o
+  347380      0[    64]  DATA 
+  347380      0          DATA <frees>
+             64
+in D:\aaaa\common\config.o
+  347444      0[    46]  DATA 
+  347490     46[    26]  DATA 
+  347516     72[     6]  DATA 
+  347522     78[    76]  DATA 
+  347522     78          DATA cfg
+            154
+in D:\aaaa\common\scr_inst.o
+  347598      0[    88]  DATA 
+  347686     88[     6]  DATA 
+  347692     94[    62]  DATA 
+  347692     94          DATA scr_intract
+  347694     96          DATA magic
+  347698    100          DATA scr_grect
+  347706    108          DATA scr_vrect
+  347714    116          DATA MFDBnull
+  347734    136          DATA instmfdb
+  347754    156[    74]  DATA 
+  347754    156          DATA lowpijl
+            230
+in D:\aaaa\common\nkcc_c.o
+  347828      0[    24]  DATA 
+  347828      0          DATA xscantab
+             24
+in D:\aaaa\common\win_menu.o
+  347852      0[    42]  DATA 
+  347894     42[     4]  DATA 
+  347894     42          DATA <mbox_types>
+  347898     46[     6]  DATA 
+  347898     46          DATA <mkey_types>
+             52
+in D:\aaaa\common\aaaa_lib.o
+  347904      0[    16]  DATA 
+  347920     16[    56]  DATA 
+  347976     72[   384]  DATA 
+  348360    456[     2]  DATA 
+  348362    458[     4]  DATA 
+  348366    462[    38]  DATA 
+  348404    500[   124]  DATA 
+  348528    624[     2]  DATA 
+  348528    624          DATA <form_hndl>
+  348530    626[     4]  DATA 
+  348530    626          DATA <sch_alert>
+  348534    630[    74]  DATA 
+  348534    630          DATA <flathand>
+  348608    704[     4]  DATA 
+  348608    704          DATA <bracer>
+  348610    706          DATA <lvl>
+  348612    708[   140]  DATA 
+  348612    708          DATA <uren>
+  348660    756          DATA <minuten>
+  348708    804          DATA <gew>
+  348716    812          DATA <prec>
+  348724    820          DATA <pmam>
+  348736    832          DATA <hetis>
+  348740    836          DATA <bijna>
+  348744    840          DATA <uur>
+  348748    844          DATA <tekst>
+  348752    848[   684]  DATA 
+  348752    848          DATA <emp>
+  348753    849          DATA <s1>
+  348773    869          DATA <s2>
+  348838    934          DATA <s3>
+  348903    999          DATA <s4>
+  348968   1064          DATA <s5>
+  349033   1129          DATA <s6>
+  349098   1194          DATA <t>
+  349266   1362          DATA <exotics>
+  349436   1532[     2]  DATA 
+  349436   1532          DATA move_mode
+  349438   1534[     2]  DATA 
+  349438   1534          DATA semi_colon
+           1536
+in D:\aaaa\common\dict.o
+  349440      0[     4]  DATA 
+  349444      4[    10]  DATA 
+  349454     14[    18]  DATA 
+  349472     32[    10]  DATA 
+  349472     32          DATA numhash
+  349474     34          DATA dictionary_names
+  349478     38          DATA heap_names
+             42
+in D:\aaaa\common\ipff.o
+  349482      0[     2]  DATA 
+  349484      2[   272]  DATA 
+  349484      2          DATA <stpa>
+  349740    258          DATA <ln>
+  349744    262          DATA <xln>
+  349748    266          DATA <stp>
+  349752    270          DATA <vul>
+  349754    272          DATA <snl>
+            274
+in D:\aaaa\common\pdb.o
+  349756      0[     2]  DATA 
+  349758      2[    22]  DATA 
+  349780     24[    36]  DATA 
+  349816     60[    40]  DATA 
+  349856    100[     4]  DATA 
+  349860    104[    16]  DATA 
+  349876    120[   132]  DATA 
+  350008    252[    36]  DATA 
+  350044    288[   144]  DATA 
+  350188    432[    38]  DATA 
+  350188    432          DATA auto_dependencies
+  350192    436          DATA prj_dependencies
+  350196    440          DATA fun_dependencies
+  350200    444          DATA identifiers
+  350212    456          DATA filenames
+  350224    468          DATA dep_changed
+            470
+in D:\aaaa\shell\gemshell.o
+  350226      0[   196]  DATA 
+  350422    196[     8]  DATA 
+  350430    204[   130]  DATA 
+  350560    334[   314]  DATA 
+  350874    648[   128]  DATA 
+  350874    648          DATA <mksel>
+  351002    776[   128]  DATA 
+  351130    904[    24]  DATA 
+  351130    904          DATA shell_msg
+  351154    928[    54]  DATA 
+  351154    928          DATA dmen
+            982
+in D:\aaaa\shell\shell.o
+  351208      0[    44]  DATA 
+  351252     44[    70]  DATA 
+  351322    114[     6]  DATA 
+  351328    120[    24]  DATA 
+  351352    144[    52]  DATA 
+  351404    196[    34]  DATA 
+  351438    230[   254]  DATA 
+  351692    484[     4]  DATA 
+  351696    488[    80]  DATA 
+  351776    568[    10]  DATA 
+  351786    578[    62]  DATA 
+  351848    640[    56]  DATA 
+  351904    696[    44]  DATA 
+  351948    740[    26]  DATA 
+  351974    766[    14]  DATA 
+  351988    780[    12]  DATA 
+  351988    780          DATA <LTMP>
+  352000    792[     4]  DATA 
+  352004    796[    36]  DATA 
+  352004    796          DATA <ranout>
+  352040    832[  2418]  DATA 
+  352040    832          DATA mkpad
+  352168    960          DATA mkfn
+  352296   1088          DATA depfn
+  352424   1216          DATA sufs
+  352502   1294          DATA SHL_cfg
+           3250
+in D:\aaaa\shell\shlcfg.o
+  354458      0[     6]  DATA 
+  354464      6[  1848]  DATA 
+  354464      6          DATA shel_tab
+           1854
+in D:\aaaa\shell\tos_call.o
+  356312      0[    14]  DATA 
+  356312      0          DATA <_module>
+  356316      4          DATA <_stackp>
+  356320      8          DATA <EmpStr>
+  356322     10          DATA <_savea2>
+             14
+in D:\aaaa\shell\bip_io.o
+  356326      0[     2]  DATA 
+  356328      2[    12]  DATA 
+             14
+in D:\aaaa\ahcc\init_cc.o
+  356340      0[   108]  DATA 
+            108
+in D:\aaaa\ahcc\ahcc.o
+  356448      0[    28]  DATA 
+  356476     28[    24]  DATA 
+  356500     52[     8]  DATA 
+  356508     60[    18]  DATA 
+  356526     78[    18]  DATA 
+  356544     96[     2]  DATA 
+  356546     98[   100]  DATA 
+  356646    198[   408]  DATA 
+  357054    606[     4]  DATA 
+  357058    610[    14]  DATA 
+  357072    624[    18]  DATA 
+  357090    642[   240]  DATA 
+  357330    882[    88]  DATA 
+  357418    970[    50]  DATA 
+  357468   1020[    36]  DATA 
+  357504   1056[    26]  DATA 
+  357530   1082[    58]  DATA 
+  357588   1140[    52]  DATA 
+  357640   1192[    68]  DATA 
+  357640   1192          DATA <Version>
+  357708   1260[     4]  DATA 
+  357708   1260          DATA <abort_msg>
+  357712   1264[     2]  DATA 
+  357714   1266[    56]  DATA 
+  357714   1266          DATA stats
+  357762   1314          DATA bugf
+  357766   1318          DATA ahcc_version
+  357770   1322[    24]  DATA 
+  357770   1322          DATA Error
+  357774   1326          DATA Warning
+  357778   1330          DATA Message
+  357782   1334          DATA Comment
+  357786   1338          DATA W
+  357790   1342          DATA Fatal
+           1346
+in D:\aaaa\ahcc\cc_load.o
+  357794      0[    24]  DATA 
+             24
+in D:\aaaa\ahcc\c_lex.o
+  357818      0[    70]  DATA 
+  357888     70[   256]  DATA 
+  357888     70          DATA <C_simple>
+  358144    326[   512]  DATA 
+  358144    326          DATA C_hex
+  358400    582          DATA C_oct
+            838
+in D:\aaaa\ahcc\tok.o
+  358656      0[    28]  DATA 
+  358684     28[  1050]  DATA 
+  359734   1078[    28]  DATA 
+  359762   1106[    12]  DATA 
+  359774   1118[     2]  DATA 
+  359776   1120[    22]  DATA 
+  359798   1142[    30]  DATA 
+  359828   1172[    16]  DATA 
+  359844   1188[    24]  DATA 
+  359868   1212[   216]  DATA 
+  359868   1212          DATA <cattbl>
+  360012   1356          DATA <trigraphs>
+  360052   1396          DATA <escapes>
+  360084   1428[     2]  DATA 
+  360086   1430[     2]  DATA 
+  360086   1430          DATA <have_ws>
+  360088   1432[     6]  DATA 
+  360094   1438[     4]  DATA 
+  360098   1442[  4964]  DATA 
+  360098   1442          DATA C_lex
+  361922   3266          DATA tok_tab
+  365058   6402          DATA graphemp
+           6406
+in D:\aaaa\ahcc\cache.o
+  365062      0[     4]  DATA 
+  365062      0          DATA cache
+              4
+in D:\aaaa\ahcc\pre.o
+  365066      0[    12]  DATA 
+  365078     12[    92]  DATA 
+  365170    104[    28]  DATA 
+  365198    132[    52]  DATA 
+  365250    184[    20]  DATA 
+  365270    204[    26]  DATA 
+  365296    230[    12]  DATA 
+  365308    242[    10]  DATA 
+  365318    252[    68]  DATA 
+  365386    320[     4]  DATA 
+  365390    324[    72]  DATA 
+  365462    396[     8]  DATA 
+  365470    404[     4]  DATA 
+  365474    408[    16]  DATA 
+  365490    424[    20]  DATA 
+  365510    444[    28]  DATA 
+  365538    472[    34]  DATA 
+  365572    506[    14]  DATA 
+  365586    520[    44]  DATA 
+  365630    564[    36]  DATA 
+  365666    600[    10]  DATA 
+  365676    610[    40]  DATA 
+  365716    650[    12]  DATA 
+  365728    662[    40]  DATA 
+  365768    702[    48]  DATA 
+  365816    750[    26]  DATA 
+  365842    776[    12]  DATA 
+  365854    788[    26]  DATA 
+  365880    814[    24]  DATA 
+  365904    838[   164]  DATA 
+  366068   1002[    30]  DATA 
+  366098   1032[    14]  DATA 
+  366112   1046[     8]  DATA 
+  366120   1054[    78]  DATA 
+  366198   1132[    34]  DATA 
+  366232   1166[    28]  DATA 
+  366260   1194[    42]  DATA 
+  366302   1236[    22]  DATA 
+  366302   1236          DATA <expects>
+  366324   1258[     4]  DATA 
+  366324   1258          DATA <tokseq>
+  366328   1262[   128]  DATA 
+  366456   1390[   360]  DATA 
+  366456   1390          DATA <pcmds>
+           1750
+in D:\aaaa\ahcc\body.o
+  366816      0[    22]  DATA 
+  366838     22[    22]  DATA 
+  366860     44[    38]  DATA 
+  366898     82[    28]  DATA 
+  366926    110[    16]  DATA 
+  366942    126[    90]  DATA 
+  367032    216[    12]  DATA 
+  367044    228[   106]  DATA 
+  367150    334[    78]  DATA 
+  367228    412[     6]  DATA 
+  367234    418[    36]  DATA 
+  367270    454[    34]  DATA 
+  367304    488[    14]  DATA 
+  367318    502[   112]  DATA 
+  367430    614[    28]  DATA 
+  367458    642[     8]  DATA 
+            650
+in D:\aaaa\ahcc\decl.o
+  367466      0[    58]  DATA 
+  367524     58[    70]  DATA 
+  367594    128[    32]  DATA 
+  367626    160[    36]  DATA 
+  367662    196[     8]  DATA 
+  367670    204[    28]  DATA 
+  367698    232[    54]  DATA 
+  367752    286[    18]  DATA 
+  367770    304[   134]  DATA 
+  367904    438[    30]  DATA 
+  367934    468[    36]  DATA 
+  367970    504[    12]  DATA 
+            516
+in D:\aaaa\ahcc\d2.o
+  367982      0[    22]  DATA 
+  368004     22[    42]  DATA 
+  368046     64[    94]  DATA 
+  368140    158[    18]  DATA 
+  368158    176[    34]  DATA 
+  368192    210[    22]  DATA 
+  368214    232[    14]  DATA 
+  368228    246[    12]  DATA 
+  368240    258[    30]  DATA 
+  368270    288[    10]  DATA 
+  368280    298[    10]  DATA 
+  368290    308[     2]  DATA 
+  368292    310[    52]  DATA 
+  368344    362[    28]  DATA 
+  368372    390[    26]  DATA 
+  368398    416[     6]  DATA 
+  368404    422[     6]  DATA 
+  368410    428[    52]  DATA 
+  368462    480[   124]  DATA 
+  368586    604[    26]  DATA 
+  368612    630[    28]  DATA 
+  368640    658[    82]  DATA 
+  368722    740[     6]  DATA 
+  368728    746[   120]  DATA 
+  368728    746          DATA btbl
+            866
+in D:\aaaa\ahcc\expr.o
+  368848      0[    84]  DATA 
+  368932     84[   156]  DATA 
+  369088    240[    12]  DATA 
+  369100    252[    22]  DATA 
+  369122    274[    12]  DATA 
+  369134    286[    12]  DATA 
+  369146    298[    20]  DATA 
+  369166    318[    18]  DATA 
+  369166    318          DATA exprs
+            336
+in D:\aaaa\ahcc\e2.o
+  369184      0[    12]  DATA 
+  369196     12[    18]  DATA 
+  369214     30[    18]  DATA 
+  369232     48[    20]  DATA 
+  369252     68[    20]  DATA 
+  369272     88[    26]  DATA 
+  369298    114[    22]  DATA 
+  369320    136[    18]  DATA 
+  369338    154[    36]  DATA 
+  369374    190[    26]  DATA 
+  369400    216[    10]  DATA 
+  369410    226[     4]  DATA 
+  369414    230[     4]  DATA 
+  369418    234[    22]  DATA 
+  369440    256[    14]  DATA 
+  369454    270[    26]  DATA 
+  369480    296[    30]  DATA 
+  369510    326[    60]  DATA 
+  369570    386[     8]  DATA 
+  369578    394[   162]  DATA 
+  369740    556[    56]  DATA 
+  369796    612[    38]  DATA 
+  369834    650[    22]  DATA 
+  369856    672[    26]  DATA 
+  369882    698[    20]  DATA 
+  369902    718[    14]  DATA 
+  369916    732[    10]  DATA 
+            742
+in D:\aaaa\ahcc\gen.o
+  369926      0[     4]  DATA 
+  369930      4[    40]  DATA 
+  369970     44[    32]  DATA 
+  370002     76[    60]  DATA 
+  370062    136[    32]  DATA 
+  370094    168[    14]  DATA 
+  370108    182[    14]  DATA 
+  370122    196[    14]  DATA 
+  370136    210[    14]  DATA 
+  370150    224[    12]  DATA 
+  370162    236[   122]  DATA 
+  370284    358[   472]  DATA 
+  370756    830[    10]  DATA 
+  370766    840[    74]  DATA 
+  370840    914[   614]  DATA 
+  371454   1528[    94]  DATA 
+  371548   1622[     4]  DATA 
+  371548   1622          DATA <max_afd>
+  371552   1626[    40]  DATA 
+  371552   1626          DATA context_flags
+  371592   1666[    52]  DATA 
+  371592   1666          DATA tstnm
+           1718
+in D:\aaaa\ahcc\g2.o
+  371644      0[  2240]  DATA 
+  373884   2240[    38]  DATA 
+  373922   2278[   320]  DATA 
+  374242   2598[     8]  DATA 
+  374250   2606[    24]  DATA 
+  374274   2630[   712]  DATA 
+  374986   3342[  1578]  DATA 
+  374986   3342          DATA <tblf2>
+  375168   3524          DATA <tblasn>
+  375280   3636          DATA <tbllmul>
+  375378   3734          DATA <tbllscale>
+  375476   3832          DATA <tblldiv>
+  375546   3902          DATA <tbllmod>
+  375616   3972          DATA <tblasop>
+  375728   4084          DATA <tblcf>
+  375798   4154          DATA <tbl2>
+  375910   4266          DATA <tblindex>
+  375952   4308          DATA <tblmul>
+  376008   4364          DATA <tblscale>
+  376064   4420          DATA <tbldiv>
+  376106   4462          DATA <tblmod>
+  376148   4504          DATA <tbludiv>
+  376176   4532          DATA <tblumod>
+  376204   4560          DATA <tblc>
+  376260   4616          DATA <tblamul>
+  376316   4672          DATA <tbladiv>
+  376358   4714          DATA <tbluadiv>
+  376386   4742          DATA <tblamod>
+  376428   4784          DATA <tbluamod>
+  376456   4812          DATA <bop_cmpcf>
+  376462   4818          DATA <bop_cmp>
+  376468   4824          DATA <bop_eor>
+  376474   4830          DATA <bop_fcp>
+  376480   4836          DATA <bop_mul>
+  376486   4842          DATA <bop_div>
+  376492   4848          DATA <bop_mod>
+  376498   4854          DATA <bop_and>
+  376504   4860          DATA <bop_or>
+  376510   4866          DATA <bop_add>
+  376516   4872          DATA <bop_sub>
+  376522   4878          DATA <bop_asl>
+  376528   4884          DATA <bop_asr>
+  376534   4890          DATA <bop_rol>
+  376540   4896          DATA <bop_ror>
+  376546   4902          DATA <bop_fadd>
+  376552   4908          DATA <bop_fsub>
+  376558   4914          DATA <bop_assign>
+  376564   4920[    18]  DATA 
+  376564   4920          DATA <cansh>
+           4938
+in D:\aaaa\ahcc\gsub.o
+  376582      0[    10]  DATA 
+  376592     10[    16]  DATA 
+  376608     26[   282]  DATA 
+  376890    308[    34]  DATA 
+  376924    342[   178]  DATA 
+  377102    520[   100]  DATA 
+  377202    620[    92]  DATA 
+  377294    712[    12]  DATA 
+  377306    724[    14]  DATA 
+            738
+in D:\aaaa\ahcc\md.o
+  377320      0[    16]  DATA 
+  377336     16[    18]  DATA 
+  377354     34[     6]  DATA 
+  377360     40[    24]  DATA 
+  377384     64[    12]  DATA 
+  377396     76[    18]  DATA 
+  377414     94[    32]  DATA 
+  377446    126[    32]  DATA 
+  377478    158[   190]  DATA 
+  377668    348[   128]  DATA 
+  377796    476[    76]  DATA 
+  377872    552[     6]  DATA 
+  377878    558[     4]  DATA 
+  377882    562[     4]  DATA 
+  377886    566[    14]  DATA 
+  377900    580[    12]  DATA 
+  377912    592[    78]  DATA 
+  377990    670[    26]  DATA 
+  378016    696[    28]  DATA 
+  378044    724[    30]  DATA 
+  378074    754[     6]  DATA 
+  378080    760[     8]  DATA 
+  378088    768[     6]  DATA 
+  378094    774[    36]  DATA 
+  378130    810[     8]  DATA 
+  378138    818[     8]  DATA 
+  378146    826[    38]  DATA 
+  378184    864[     6]  DATA 
+  378190    870[    16]  DATA 
+  378206    886[    16]  DATA 
+  378222    902[    10]  DATA 
+  378232    912[     8]  DATA 
+  378240    920[    16]  DATA 
+  378256    936[     8]  DATA 
+  378264    944[     8]  DATA 
+  378272    952[     8]  DATA 
+  378280    960[    18]  DATA 
+  378298    978[    32]  DATA 
+  378298    978          DATA <adjtab>
+  378330   1010[   100]  DATA 
+  378330   1010          DATA <cast_tab>
+           1110
+in D:\aaaa\ahcc\nodes.o
+  378430      0[    12]  DATA 
+  378442     12[    78]  DATA 
+  378520     90[    10]  DATA 
+  378530    100[     4]  DATA 
+  378534    104[     8]  DATA 
+  378542    112[    18]  DATA 
+  378560    130[   228]  DATA 
+  378560    130          DATA initspace
+            358
+in D:\aaaa\ahcc\out.o
+  378788      0[    58]  DATA 
+  378846     58[    30]  DATA 
+  378876     88[    32]  DATA 
+  378908    120[    36]  DATA 
+  378944    156[     6]  DATA 
+  378950    162[    28]  DATA 
+  378978    190[    56]  DATA 
+  379034    246[    10]  DATA 
+  379044    256[    72]  DATA 
+  379116    328[    22]  DATA 
+  379138    350[    28]  DATA 
+  379166    378[    50]  DATA 
+  379216    428[    38]  DATA 
+  379254    466[     6]  DATA 
+  379260    472[    12]  DATA 
+  379272    484[    16]  DATA 
+  379288    500[    16]  DATA 
+  379304    516[    12]  DATA 
+  379316    528[    18]  DATA 
+  379334    546[     6]  DATA 
+  379340    552[    14]  DATA 
+  379354    566[    54]  DATA 
+  379408    620[    14]  DATA 
+  379422    634[    12]  DATA 
+  379434    646[    16]  DATA 
+  379450    662[    18]  DATA 
+  379468    680[    20]  DATA 
+  379488    700[    10]  DATA 
+  379498    710[   108]  DATA 
+  379606    818[    92]  DATA 
+  379698    910[   168]  DATA 
+  379866   1078[     4]  DATA 
+  379870   1082[    96]  DATA 
+  379870   1082          DATA <rnms>
+  379966   1178[    18]  DATA 
+  379966   1178          DATA <fbptxt>
+  379975   1187          DATA <bptxt>
+  379984   1196[    16]  DATA 
+  379984   1196          DATA in_class
+  379986   1198          DATA area_id
+  379988   1200          DATA std_areas
+  379992   1204          DATA start_areas
+  379996   1208          DATA end_areas
+  380000   1212[    40]  DATA 
+  380000   1212          DATA class_names
+           1252
+in D:\aaaa\ahcc\opt.o
+  380040      0[   940]  DATA 
+  380980    940[     2]  DATA 
+  380982    942[    24]  DATA 
+  381006    966[    32]  DATA 
+  381038    998[     2]  DATA 
+  381040   1000[    62]  DATA 
+  381102   1062[   272]  DATA 
+  381374   1334[     2]  DATA 
+  381374   1334          DATA <saw_eof>
+  381376   1336[    44]  DATA 
+  381420   1380[     4]  DATA 
+  381420   1380          DATA <IXC_tab>
+  381424   1384[  4100]  DATA 
+  381424   1384          DATA idata
+  385524   5484[     8]  DATA 
+  385524   5484          DATA sfirst
+  385528   5488          DATA slast
+           5492
+in D:\aaaa\ahcc\inst.o
+  385532      0[    34]  DATA 
+  385566     34[    24]  DATA 
+  385590     58[    58]  DATA 
+            116
+in D:\aaaa\ahcc\branch.o
+  385648      0[    34]  DATA 
+  385682     34[    34]  DATA 
+  385716     68[    84]  DATA 
+  385800    152[    22]  DATA 
+  385822    174[    36]  DATA 
+            210
+in D:\aaaa\ahcc\reg.o
+  385858      0[    16]  DATA 
+  385874     16[    16]  DATA 
+  385890     32[    28]  DATA 
+             60
+in D:\aaaa\ahcc\health.o
+  385918      0[    10]  DATA 
+  385928     10[     6]  DATA 
+             16
+in D:\aaaa\ahcc\peep0.o
+  385934      0[    44]  DATA 
+  385934      0          DATA <nullopnd>
+             44
+in D:\aaaa\ahcc\peep2.o
+  385978      0[    44]  DATA 
+  385978      0          DATA <nullopnd>
+             44
+in D:\aaaa\ahcc\as.o
+  386022      0[  3048]  DATA 
+  389070   3048[    98]  DATA 
+  389168   3146[    52]  DATA 
+  389220   3198[    32]  DATA 
+  389252   3230[    66]  DATA 
+  389318   3296[   106]  DATA 
+  389424   3402[    16]  DATA 
+  389440   3418[    64]  DATA 
+  389504   3482[     4]  DATA 
+  389504   3482          DATA <asm_tab>
+  389508   3486[   216]  DATA 
+  389724   3702[ 10420]  DATA 
+  389724   3702          DATA asdata
+  400144  14122[     4]  DATA 
+  400144  14122          DATA last_label
+          14126
+in D:\aaaa\ahcc\as_parse.o
+  400148      0[    36]  DATA 
+  400184     36[    12]  DATA 
+  400196     48[     8]  DATA 
+  400204     56[    20]  DATA 
+  400224     76[    24]  DATA 
+  400248    100[    30]  DATA 
+  400278    130[    24]  DATA 
+  400302    154[   128]  DATA 
+  400430    282[    22]  DATA 
+  400452    304[    22]  DATA 
+  400474    326[    24]  DATA 
+  400498    350[    18]  DATA 
+  400516    368[    56]  DATA 
+  400572    424[    28]  DATA 
+  400600    452[    22]  DATA 
+  400622    474[    54]  DATA 
+  400676    528[     8]  DATA 
+  400684    536[     6]  DATA 
+  400690    542[     8]  DATA 
+  400698    550[     8]  DATA 
+  400706    558[     4]  DATA 
+  400710    562[     6]  DATA 
+  400716    568[     4]  DATA 
+  400720    572[     6]  DATA 
+  400726    578[     6]  DATA 
+  400732    584[     6]  DATA 
+  400738    590[     6]  DATA 
+  400744    596[     6]  DATA 
+  400750    602[     6]  DATA 
+  400756    608[     8]  DATA 
+  400764    616[     6]  DATA 
+  400770    622[     8]  DATA 
+  400778    630[     6]  DATA 
+  400784    636[     6]  DATA 
+  400790    642[     4]  DATA 
+  400794    646[     4]  DATA 
+  400798    650[     4]  DATA 
+  400802    654[     8]  DATA 
+  400810    662[    42]  DATA 
+  400852    704[    16]  DATA 
+  400868    720[    28]  DATA 
+  400896    748[    80]  DATA 
+  400976    828[    36]  DATA 
+  401012    864[    46]  DATA 
+  401058    910[    32]  DATA 
+  401090    942[    34]  DATA 
+  401124    976[    70]  DATA 
+  401194   1046[    58]  DATA 
+  401252   1104[    24]  DATA 
+  401276   1128[    20]  DATA 
+  401296   1148[    40]  DATA 
+  401336   1188[    60]  DATA 
+  401396   1248[    30]  DATA 
+  401426   1278[    20]  DATA 
+  401446   1298[    36]  DATA 
+  401482   1334[    14]  DATA 
+  401496   1348[    12]  DATA 
+  401508   1360[    64]  DATA 
+  401572   1424[    14]  DATA 
+  401586   1438[    16]  DATA 
+  401602   1454[   100]  DATA 
+  401702   1554[    58]  DATA 
+  401760   1612[    26]  DATA 
+  401786   1638[    28]  DATA 
+  401814   1666[    26]  DATA 
+  401840   1692[    38]  DATA 
+  401878   1730[    36]  DATA 
+  401914   1766[    26]  DATA 
+  401940   1792[    24]  DATA 
+  401964   1816[    30]  DATA 
+  401994   1846[    24]  DATA 
+  402018   1870[    32]  DATA 
+  402050   1902[    14]  DATA 
+  402064   1916[    28]  DATA 
+  402092   1944[    14]  DATA 
+  402106   1958[    46]  DATA 
+  402152   2004[    28]  DATA 
+  402180   2032[    30]  DATA 
+  402210   2062[    54]  DATA 
+  402264   2116[    82]  DATA 
+  402264   2116          DATA <bwl>
+  402273   2125          DATA <bwls>
+  402282   2134          DATA <bw>
+  402291   2143          DATA <fC>
+  402300   2152          DATA <b>
+  402309   2161          DATA <bl>
+  402318   2170          DATA <dsdc>
+  402327   2179          DATA <wl>
+  402336   2188          DATA <ll>
+  402346   2198[    18]  DATA 
+  402346   2198          DATA fpx
+  402355   2207          DATA forfp
+  402364   2216[   912]  DATA 
+  402364   2216          DATA control_regs
+  402916   2768          DATA mmu_regs
+           3128
+in D:\aaaa\ahcc\as_plib.o
+  403276      0[    94]  DATA 
+  403370     94[   168]  DATA 
+  403538    262[    26]  DATA 
+  403564    288[    34]  DATA 
+  403598    322[    58]  DATA 
+  403656    380[    74]  DATA 
+  403730    454[    50]  DATA 
+  403780    504[    68]  DATA 
+  403848    572[    28]  DATA 
+  403876    600[    36]  DATA 
+  403876    600          DATA <modes>
+  403912    636[     8]  DATA 
+  403912    636          DATA <zero_info>
+  403920    644[    18]  DATA 
+  403920    644          DATA <not_id>
+  403938    662[    44]  DATA 
+  403938    662          DATA ordinal
+  403982    706[     4]  DATA 
+  403982    706          DATA cpu_n_avail
+            710
+in D:\aaaa\ahcc\po.o
+  403986      0[    48]  DATA 
+             48
+in D:\aaaa\ahcc\as_out.o
+  404034      0[    18]  DATA 
+  404052     18[    22]  DATA 
+  404074     40[    30]  DATA 
+  404104     70[    34]  DATA 
+            104
+in D:\aaaa\ahcc\as_lib.o
+  404138      0[    24]  DATA 
+  404162     24[    42]  DATA 
+  404204     66[    80]  DATA 
+  404284    146[   116]  DATA 
+  404400    262[    32]  DATA 
+  404432    294[    36]  DATA 
+  404468    330[    22]  DATA 
+  404490    352[    44]  DATA 
+  404534    396[    30]  DATA 
+  404564    426[    38]  DATA 
+  404602    464[    12]  DATA 
+  404614    476[    12]  DATA 
+  404626    488[    20]  DATA 
+  404626    488          DATA std_area_to_fix
+            508
+in D:\aaaa\ahcc\plib.o
+  404646      0[   182]  DATA 
+  404828    182[    34]  DATA 
+  404862    216[    12]  DATA 
+  404874    228[    34]  DATA 
+  404908    262[     8]  DATA 
+  404916    270[    12]  DATA 
+  404928    282[   234]  DATA 
+  405162    516[     4]  DATA 
+  405166    520[     2]  DATA 
+  405168    522[    46]  DATA 
+  405214    568[    20]  DATA 
+  405234    588[    58]  DATA 
+  405292    646[    74]  DATA 
+  405366    720[    18]  DATA 
+  405384    738[    18]  DATA 
+  405402    756[    18]  DATA 
+  405420    774[   144]  DATA 
+  405564    918[   146]  DATA 
+  405564    918          DATA <result>
+  405566    920          DATA <target_txt>
+  405582    936          DATA <fixnames>
+           1064
+in D:\aaaa\ahcc\ld.o
+  405710      0[    20]  DATA 
+  405730     20[    22]  DATA 
+  405752     42[    26]  DATA 
+  405778     68[    64]  DATA 
+  405842    132[    46]  DATA 
+  405888    178[     6]  DATA 
+  405894    184[    94]  DATA 
+  405988    278[   118]  DATA 
+  406106    396[    20]  DATA 
+  406126    416[   134]  DATA 
+  406260    550[   256]  DATA 
+  406516    806[    98]  DATA 
+  406614    904[   160]  DATA 
+  406774   1064[    32]  DATA 
+  406806   1096[     4]  DATA 
+  406806   1096          DATA <abort_msg>
+  406810   1100[    12]  DATA 
+  406810   1100          DATA stackname
+  406820   1110          DATA ld_lbl
+           1112
+in D:\aaaa\ahcc\ld_ob.o
+  406822      0[    28]  DATA 
+  406850     28[     6]  DATA 
+  406856     34[     2]  DATA 
+  406858     36[    96]  DATA 
+  406954    132[    28]  DATA 
+  406982    160[     2]  DATA 
+  406984    162[     2]  DATA 
+  406986    164[    92]  DATA 
+  407078    256[    58]  DATA 
+  407078    256          DATA <stack_ob_init>
+  407136    314[     8]  DATA 
+  407144    322[     8]  DATA 
+  407144    322          DATA <topc>
+  407152    330[     8]  DATA 
+  407160    338[    16]  DATA 
+  407160    338          DATA vx
+            354
+in D:\aaaa\ahcc\ctype.o
+  407176      0[   256]  DATA 
+  407176      0          DATA <_ctype>
+            256
+in D:\aaaa\common\amem.o
+  407432      0[    54]  DATA 
+  407486     54[   120]  DATA 
+  407486     54          DATA XA_NS_base
+  407526     94          DATA XA_CC_base
+  407566    134          DATA XA_CC_fbase
+            174
+in D:\aaaa\common\ahcm.o
+  407606      0[    42]  DATA 
+  407648     42[    54]  DATA 
+  407702     96[    30]  DATA 
+  407732    126[   164]  DATA 
+  407732    126          DATA XA_heap_base
+  407772    166          DATA XA_local_base
+  407812    206          DATA XA_file_base
+  407852    246          DATA XA_global_base
+  407892    286          DATA XA_total
+            290
+in d:\CC\lib\pcstdlib.lib
+  407896      0[   190]  DATA 
+  407896      0          DATA _StdInF
+  407998    102          DATA _StdOutF
+  408020    124          DATA _StdErrF
+  408042    146          DATA _StdAuxF
+  408064    168          DATA _StdPrnF
+  408086    190[     2]  DATA 
+  408088    192[     4]  DATA 
+  408088    192          DATA _TmpFile
+            196
+in d:\CC\lib\pcgemlib.lib
+  408092      0[    24]  DATA AES_pb
+  408116     24[    20]  DATA VDI_pb
+  408136     44[    20]  DATA 
+             64
+in d:\CC\lib\pcextlib.lib
+  408156      0[   128]  DATA 
+            128
+in d:\CC\lib\pcvstart.o
+  408284      0[    42]  BSS  
+  408284      0          BSS  _BasPag
+  408288      4          BSS  _base
+  408292      8          BSS  _app
+  408294     10          BSS  _StkLim
+  408298     14          BSS  _PgmSize
+  408302     18          BSS  _RedirTab
+             42
+in D:\aaaa\aaaa.o
+  408326      0[    16]  BSS  
+  408342     16[   128]  BSS  
+  408470    144[   168]  BSS  
+  408470    144          BSS  <noexts>
+  408504    178          BSS  <buf>
+  408634    308          BSS  <oldpipesig>
+  408638    312[  1442]  BSS  
+  408638    312          BSS  winbase
+  408678    352          BSS  points
+  408680    354          BSS  hpoints
+  408682    356          BSS  wchar
+  408684    358          BSS  hchar
+  408686    360          BSS  menu_prj_l
+  408688    362          BSS  deskw
+  410076   1750          BSS  Menu
+  410080   1754[    14]  BSS  
+  410080   1754          BSS  drop_name
+  410094   1768[     4]  BSS  
+  410094   1768          BSS  my_top
+           1772
+in D:\aaaa\text\text.o
+  410098      0[   250]  BSS  
+            250
+in D:\aaaa\text\cursor.o
+  410348      0[     4]  BSS  
+  410348      0          BSS  hook
+  410350      2          BSS  hooklevel
+              4
+in D:\aaaa\text\editor.o
+  410352      0[    80]  BSS  
+  410352      0          BSS  <shunt>
+  410392     40          BSS  <oldshunt>
+  410432     80[   128]  BSS  
+  410560    208[    64]  BSS  
+  410560    208          BSS  <pxy>
+  410624    272[     4]  BSS  
+  410628    276[     4]  BSS  
+  410628    276          BSS  edmenu
+  410632    280[     2]  BSS  
+  410632    280          BSS  nxy
+            282
+in D:\aaaa\text\text_sel.o
+  410634      0[     8]  BSS  
+  410642      8[   440]  BSS  
+  410642      8          BSS  hooks
+            448
+in D:\aaaa\common\files.o
+  411082      0[   210]  BSS  
+  411082      0          BSS  <fcfg>
+  411292    210[     4]  BSS  
+  411292    210          BSS  argmake
+  411296    214[     2]  BSS  
+  411296    214          BSS  startfiles
+            216
+in D:\aaaa\common\kit.o
+  411298      0[    44]  BSS  
+  411298      0          BSS  <dsfind>
+  411338     40          BSS  <dsrep>
+  411342     44[    12]  BSS  
+  411342     44          BSS  <brace_cinf>
+  411354     56[  1384]  BSS  
+  411354     56          BSS  pkit
+  411858    560          BSS  findstr
+  412658   1360          BSS  repstr
+  412738   1440[   312]  BSS  
+  412738   1440          BSS  fkey
+  412780   1482          BSS  skl
+  412782   1484          BSS  fls
+  412784   1486          BSS  fds
+  412786   1488          BSS  dirs
+  412788   1490          BSS  tfls
+  412790   1492          BSS  aaaalower
+  413046   1748          BSS  jrnlwin
+           1752
+in D:\aaaa\common\hierarch.o
+  413050      0[     8]  BSS  
+  413050      0          BSS  <xfsc>
+  413054      4          BSS  <xfst>
+  413058      8[   128]  BSS  
+  413186    136[   128]  BSS  
+  413314    264[   128]  BSS  
+  413442    392[   514]  BSS  
+  413442    392          BSS  drive
+  413444    394          BSS  ipath
+  413572    522          BSS  setfn
+  413700    650          BSS  buffn
+  413828    778          BSS  CC_path
+            906
+in D:\aaaa\common\windows.o
+  413956      0[   512]  BSS  
+  413956      0          BSS  whs
+            512
+in D:\aaaa\common\journal.o
+  414468      0[   100]  BSS  
+  414468      0          BSS  <otxt>
+  414518     50          BSS  <txt>
+  414568    100[    40]  BSS  
+  414568    100          BSS  jrnl
+            140
+in D:\aaaa\common\F_x.o
+  414608      0[    48]  BSS  
+  414608      0          BSS  Pos
+  414612      4          BSS  Cur
+  414632     24          BSS  varx
+  414644     36          BSS  vary
+             48
+in D:\aaaa\common\msgbuf.o
+  414656      0[  1024]  BSS  
+  414656      0          BSS  msg_buf
+           1024
+in D:\aaaa\common\stm.o
+  415680      0[   416]  BSS  
+  415680      0          BSS  <fbases>
+            416
+in D:\aaaa\common\config.o
+  416096      0[    72]  BSS  
+  416168     72[   128]  BSS  
+            200
+in D:\aaaa\common\qpfiprep.o
+  416296      0[   520]  BSS  
+  416296      0          BSS  zkey
+  416300      4          BSS  nxk
+  416556    260          BSS  td1
+  416812    516          BSS  qpkl
+            520
+in D:\aaaa\common\scr_inst.o
+  416816      0[  1856]  BSS  
+  416816      0          BSS  v_hl
+  416818      2          BSS  phys_handle
+  416820      4          BSS  virt_handle
+  416822      6          BSS  scr
+  417086    270          BSS  desk
+  418622   1806          BSS  _frd
+  418624   1808          BSS  _fp
+  418626   1810          BSS  _fhc
+  418628   1812          BSS  _fwc
+  418630   1814          BSS  _fh
+  418632   1816          BSS  _fw
+  418634   1818          BSS  _fww
+  418636   1820          BSS  _nova
+  418638   1822          BSS  _t2w
+  418640   1824          BSS  MagX_version
+  418642   1826          BSS  radio_bgcol
+  418644   1828          BSS  MagX
+  418646   1830          BSS  MiNT
+  418648   1832          BSS  MACH
+  418652   1836          BSS  _f_logbase
+  418656   1840          BSS  instdrb
+           1856
+in D:\aaaa\common\nkcc_c.o
+  418672      0[    12]  BSS  
+  418672      0          BSS  keytab
+             12
+in D:\aaaa\common\win_menu.o
+  418684      0[     4]  BSS  
+  418684      0          BSS  <pull>
+  418686      2          BSS  <title>
+  418688      4[    16]  BSS  
+  418688      4          BSS  <mmt>
+  418690      6          BSS  <mmn>
+  418692      8          BSS  <spec>
+  418704     20[    12]  BSS  
+             32
+in D:\aaaa\common\aaaa_lib.o
+  418716      0[    44]  BSS  
+  418716      0          BSS  <p_rat>
+  418740     24          BSS  <ps>
+  418748     32          BSS  <vr>
+  418756     40          BSS  <sn>
+  418758     42          BSS  <form_outl>
+  418760     44[   128]  BSS  
+  418888    172[     8]  BSS  
+  418888    172          BSS  <tijd>
+  418892    176          BSS  <mins>
+  418894    178          BSS  <hrs>
+  418896    180[    32]  BSS  
+  418928    212[    32]  BSS  
+  418960    244[     8]  BSS  
+  418960    244          BSS  <stackcorr>
+  418964    248          BSS  <sstack>
+            252
+in D:\aaaa\common\dict.o
+  418968      0[  4092]  BSS  
+  418968      0          BSS  dictionary_mem
+  419024     56          BSS  dictionary
+           4092
+in D:\aaaa\common\ipff.o
+  423060      0[     2]  BSS  
+  423060      0          BSS  <mc>
+              2
+in D:\aaaa\common\pdb.o
+  423062      0[    10]  BSS  
+  423062      0          BSS  <cmp>
+  423064      2          BSS  <r>
+  423068      6          BSS  <last>
+  423072     10[    56]  BSS  
+  423072     10          BSS  pdb_mem
+             66
+in D:\aaaa\shell\shell.o
+  423128      0[   512]  BSS  
+  423640    512[   572]  BSS  
+  423640    512          BSS  pdrive
+  423642    514          BSS  root_project
+           1084
+in D:\aaaa\shell\bip_io.o
+  424212      0[    12]  BSS  
+  424212      0          BSS  out_goes
+  424216      4          BSS  out_l
+  424220      8          BSS  out_buf
+             12
+in D:\aaaa\ahcc\ahcc.o
+  424224      0[     8]  BSS  
+  424224      0          BSS  <input>
+  424228      4          BSS  <succ>
+  424230      6          BSS  <breakin>
+  424232      8[   118]  BSS  
+  424232      8          BSS  <cc_jump>
+  424348    124          BSS  <xjmp>
+  424350    126[    60]  BSS  
+  424350    126          BSS  <start_inc>
+  424410    186[   256]  BSS  
+  424410    186          BSS  <errbuf>
+  424666    442[  2014]  BSS  
+  424666    442          BSS  line_no
+  424670    446          BSS  n_line_no
+  424674    450          BSS  G
+  425654   1430          BSS  phase
+  425656   1432          BSS  defines
+  426680   2456[    34]  BSS  
+  426680   2456          BSS  trtime
+  426690   2466          BSS  trdate
+  426714   2490[   260]  BSS  
+  426714   2490          BSS  filecount
+  426716   2492          BSS  high_prj
+  426718   2494          BSS  in_name
+           2750
+in D:\aaaa\ahcc\tok.o
+  426974      0[     4]  BSS  
+  426974      0          BSS  <curdbl>
+  426978      4[  2048]  BSS  
+  426978      4          BSS  <op_lex>
+  428002   1028          BSS  <kw_lex>
+  429026   2052[     4]  BSS  
+  429026   2052          BSS  cur_LEX
+  429030   2056[  4096]  BSS  
+  429030   2056          BSS  graphic
+  431078   4104          BSS  C_tok
+           6152
+in D:\aaaa\ahcc\pre.o
+  433126      0[     2]  BSS  
+  433126      0          BSS  <defnargs>
+  433128      2[    64]  BSS  
+  433128      2          BSS  <srchlist>
+  433192     66[    12]  BSS  
+  433192     66          BSS  cur
+  433196     70          BSS  curtok
+  433200     74          BSS  deflist
+             78
+in D:\aaaa\ahcc\body.o
+  433204      0[     2]  BSS  
+  433204      0          BSS  <flno>
+  433206      2[    12]  BSS  
+  433206      2          BSS  gp
+  433210      6          BSS  gpbase
+  433214     10          BSS  symtab
+             14
+in D:\aaaa\ahcc\d2.o
+  433218      0[  1344]  BSS  
+  433218      0          BSS  <basics>
+  434178    960          BSS  <scon_ptr>
+  434242   1024          BSS  <nil_ptr>
+  434306   1088          BSS  <func_int>
+  434370   1152          BSS  <compl_s>
+  434434   1216          BSS  <repart>
+  434498   1280          BSS  <impart>
+           1344
+in D:\aaaa\ahcc\gen.o
+  434562      0[    12]  BSS  
+  434574     12[    12]  BSS  
+  434574     12          BSS  reserve
+  434578     16          BSS  inhibit
+  434582     20          BSS  argused
+             24
+in D:\aaaa\ahcc\g2.o
+  434586      0[     2]  BSS  
+  434586      0          BSS  <canswap>
+              2
+in D:\aaaa\ahcc\md.o
+  434588      0[   256]  BSS  
+  434844    256[   256]  BSS  
+  434844    256          BSS  ml
+  434972    384          BSS  mr
+            512
+in D:\aaaa\ahcc\nodes.o
+  435100      0[   228]  BSS  
+  435100      0          BSS  xspace
+            228
+in D:\aaaa\ahcc\out.o
+  435328      0[   128]  BSS  
+  435328      0          BSS  o_name
+            128
+in D:\aaaa\ahcc\opt.o
+  435456      0[    24]  BSS  
+  435456      0          BSS  <t_line>
+  435460      4          BSS  <t_lab>
+  435464      8          BSS  <t_op>
+  435468     12          BSS  <t_reg>
+  435472     16          BSS  <t_arg>
+  435476     20          BSS  <t_dst>
+  435480     24[     2]  BSS  
+  435480     24          BSS  <noregs>
+  435482     26[  2148]  BSS  
+  435482     26          BSS  P
+  437626   2170          BSS  cur_proc
+  437628   2172          BSS  class_now
+  437630   2174[    48]  BSS  
+  437630   2174          BSS  inst_nr
+  437634   2178          BSS  tnum
+  437636   2180          BSS  BC
+  437638   2182          BSS  s_bdel
+  437640   2184          BSS  s_badd
+  437642   2186          BSS  s_brev
+  437644   2188          BSS  s_peep1
+  437646   2190          BSS  s_peep2
+  437648   2192          BSS  s_peep3
+  437650   2194          BSS  s_idel
+  437652   2196          BSS  s_reg
+  437654   2198          BSS  s_movem
+  437656   2200          BSS  s_lnk
+  437658   2202          BSS  s_regref
+  437660   2204          BSS  s_memref
+  437662   2206          BSS  flows
+  437664   2208          BSS  peep_loops
+  437666   2210          BSS  fhead
+  437670   2214          BSS  mifp
+  437674   2218          BSS  ifp
+  437678   2222[     2]  BSS  
+  437678   2222          BSS  new_peep
+  437680   2224[     8]  BSS  
+  437680   2224          BSS  regi
+  437684   2228          BSS  loci
+           2232
+in D:\aaaa\ahcc\inst.o
+  437688      0[     4]  BSS  
+  437688      0          BSS  loclist
+              4
+in D:\aaaa\ahcc\branch.o
+  437692      0[     4]  BSS  
+  437692      0          BSS  <lp>
+              4
+in D:\aaaa\ahcc\reg.o
+  437696      0[    12]  BSS  
+  437696      0          BSS  <paddr>
+  437698      2          BSS  <rcnt>
+  437700      4          BSS  <omask>
+  437704      8          BSS  <nmask>
+  437708     12[     4]  BSS  
+  437708     12          BSS  locals
+             16
+in D:\aaaa\ahcc\health.o
+  437712      0[     8]  BSS  
+  437712      0          BSS  anywhere_used
+  437716      4          BSS  anywhere_set
+              8
+in D:\aaaa\ahcc\as.o
+  437720      0[   218]  BSS  
+  437720      0          BSS  <oplist>
+  437936    216          BSS  <opndcnt>
+  437938    218[   128]  BSS  
+            346
+in D:\aaaa\ahcc\plib.o
+  438066      0[     4]  BSS  
+  438066      0          BSS  <last_area>
+  438070      4[   168]  BSS  
+  438070      4          BSS  defmem
+  438126     60          BSS  refmem
+  438182    116          BSS  opndmem
+            172
+in D:\aaaa\ahcc\ld.o
+  438238      0[ 12196]  BSS  
+  438238      0          BSS  <BaseA4>
+  438242      4          BSS  <lreloc>
+  438246      8          BSS  <sttext>
+  438250     12          BSS  <stdata>
+  438254     16          BSS  <stbss>
+  438258     20          BSS  <imgsize>
+  438262     24          BSS  <ex_row>
+  442298   4060          BSS  <gl_row>
+  446334   8096          BSS  <out_row>
+  450370  12132          BSS  <ex_base>
+  450394  12156          BSS  <out_base>
+  450418  12180          BSS  <oname>
+  450422  12184          BSS  <last>
+  450426  12188          BSS  <cmp>
+  450428  12190          BSS  <name_d>
+  450430  12192          BSS  <rname>
+  450434  12196[     8]  BSS  
+  450434  12196          BSS  <eq8>
+  450438  12200          BSS  <gname>
+  450442  12204[    12]  BSS  
+  450442  12204          BSS  <relprev>
+  450446  12208          BSS  <reloc>
+  450450  12212          BSS  <relp>
+  450454  12216[   256]  BSS  
+  450710  12472[   116]  BSS  
+  450710  12472          BSS  <ld_jump>
+  450826  12588[    56]  BSS  
+  450826  12588          BSS  stacksize
+  450830  12592          BSS  flags
+  450858  12620          BSS  gl_base
+  450882  12644[     4]  BSS  
+  450882  12644          BSS  curreloc
+          12648
+in D:\aaaa\ahcc\ld_ob.o
+  450886      0[    58]  BSS  
+  450886      0          BSS  <stack_ob>
+  450944     58[    16]  BSS  
+  450960     74[     2]  BSS  
+  450960     74          BSS  gfa
+             76
+in d:\CC\lib\pc881lib.lib
+  450962      0[    22]  BSS  
+  450962      0          BSS  cnv_stri
+  450984     22[    34]  BSS  
+             56
+in d:\CC\lib\pcstdlib.lib
+  451018      0[   704]  BSS  
+  451018      0          BSS  _FilTab
+            704
+in d:\CC\lib\pcgemlib.lib
+  451722      0[   732]  BSS  Gem_pb
+  451722      0          BSS  _GemParBlk
+  452454    732[  1154]  BSS  VDI_blk
+  452454    732          BSS  _VDIParBlk
+           1886
+in StckSize
+       0      0[ 32768]  OFFS _StkSize
+          32768

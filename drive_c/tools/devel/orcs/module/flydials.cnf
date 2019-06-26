@@ -1,0 +1,11 @@
+UniLay.cnf fÅr Fly Dials
+
+#[FlyD]
+#02 ff00 1100 0000 0000 0000 0000	Eselsohr
+#03 ff00 1200 0004 0004 0000 0000	Exit-Button
+#05 ff00 1200 0010 0010 0000 0000	Radio-Button
+#04 ff00 1200 0000 0000 0000 0000	Check-Button
+#06 ff00 1300 0000 0000 0000 0000	unterstrichener Text (öberschrift)
+#07 ff00 1400 0000 0000 0000 0000	Gruppen-Rahmen
+
+
