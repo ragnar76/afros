@@ -1,0 +1,16 @@
+# Thing object group saved by JAY Groups II
+# C:\mint\sysroot\home\sub\arc.grp
+# (Oct 19 2000)
+#
+INFO "Atari/ARAnyM FRee Operating System" 2500 2504 5000 5000 1 0
+IGTA 0
+IACL 0
+FONT 1 10 1 0
+FCOL 1 0
+BPAT 7 7
+OFIL "LZHShell" C:\tools\archiver\lzhshell\lzhshell.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "STZIP" C:\tools\archiver\stzip\stzip.prg ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "------------" DUMMY ""
+OOPT 0 0 0 0 0 0 0 0 0 0

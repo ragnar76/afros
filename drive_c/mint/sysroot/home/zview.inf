@@ -1,6 +1,7 @@
 show_size=1
 show_hidden=0
-show_non_image=1
+show_only_images=0
+show_unsupported=1
 browser_x=0
 browser_y=18
 browser_w=800

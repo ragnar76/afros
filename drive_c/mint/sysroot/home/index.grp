@@ -1,36 +1,38 @@
 # Thing object group saved by JAY Groups II
-# C:\tools\system\taskbar\jaygrpii\index.grp
+# c:\mint\sysroot\home\index.grp
 # (Oct 19 2000)
 #
-INFO "Taskbar start-menu" 0 0 10000 10000 1 1
+INFO "Taskbar start-menu" 685 3228 5500 6144 1 1
 IGTA 0
 IACL 0
 FONT 1 10 1 0
 FCOL 1 0
 BPAT 7 7
-OFIL "Aniplayer" C:\tools\gfx\aniplay\aniplay.prg ""
+OFIL "  @14@15 Atari & ARAnym FRee OS @14@15  " DUMMY ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "zView" C:\tools\gfx\zview\zview.app ""
+OFIL "------------" DUMMY ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "LZHShell" C:\tools\archiver\lzhshell\lzhshell.app ""
+OFIL "About the System" C:\mint\sysroot\home\sub\title.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "STZIP" C:\tools\archiver\stzip\stzip.prg ""
+OFIL "------------" DUMMY ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "aMail" C:\tools\net\atack\amail\amail.prg ""
+OFIL "Archivers" C:\mint\sysroot\home\sub\arc.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "aFTP" C:\tools\net\atack\aftp\aftp.prg ""
+OFIL "Diagnose" C:\mint\sysroot\home\sub\diag.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "aVNC" C:\tools\net\avnc\avnc.prg ""
+OFIL "Disktools" C:\mint\sysroot\home\sub\disk.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "SetClock" C:\tools\system\clocky\setclock.app ""
+OFIL "Games" C:\mint\sysroot\home\sub\games.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "HighWire" C:\tools\net\highwire\highwire.app ""
+OFIL "Graphics" C:\mint\sysroot\home\sub\gfx.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "Kronos" C:\tools\diag\kronos\kronos.app ""
+OFIL "Internet" C:\mint\sysroot\home\sub\net.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "Qed" C:\tools\editors\qed\qed.app ""
+OFIL "Multimedia" C:\mint\sysroot\home\sub\media.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "SysInfo" C:\tools\diag\sysinfo\sysinfo.app ""
+OFIL "Systemtools" C:\mint\sysroot\home\sub\sys.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0
-OFIL "KK-Commander" C:\tools\disk\kkcmd\kkcmd.prg ""
+OFIL "Texteditors" C:\mint\sysroot\home\sub\diag.grp ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "Viewer" C:\mint\sysroot\home\sub\view.grp ""
 OOPT 0 0 0 0 0 0 0 0 0 0

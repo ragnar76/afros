@@ -1,0 +1,18 @@
+# Thing object group saved by JAY Groups II
+# C:\mint\sysroot\home\net.grp
+# (Oct 19 2000)
+#
+INFO "Internet" 2500 2504 5000 5000 1 0
+IGTA 0
+IACL 0
+FONT 1 10 1 0
+FCOL 1 0
+BPAT 7 7
+OFIL "Highwire" C:\tools\net\highwire\highwire.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "aMail" C:\tools\net\atack\amail\amail.prg ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "aFTP" C:\tools\net\atack\aftp\aftp.prg ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "aVNC" C:\tools\net\avnc\avnc.prg ""
+OOPT 0 0 0 0 0 0 0 0 0 0

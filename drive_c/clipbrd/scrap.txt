@@ -1,9 +1,1 @@
-
-   It's recommended to add the following line to xaaes.cnf:
-
-   app_options = taskbar, thinwork = false, winframe_size = 0, inhibit_hide = yes
-
-   This will minimize the window border, and also prevent Taskbar
-   from being hidden by XaAES.
-
-
+

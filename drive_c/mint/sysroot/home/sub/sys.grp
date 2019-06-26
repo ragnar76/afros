@@ -1,0 +1,14 @@
+# Thing object group saved by JAY Groups II
+# C:\mint\sysroot\home\sub\sys.grp
+# (Oct 19 2000)
+#
+INFO "Systemtools" 2500 2504 5000 5000 1 0
+IGTA 0
+IACL 0
+FONT 1 10 1 0
+FCOL 1 0
+BPAT 7 7
+OFIL "SetClock" C:\tools\system\clocky\setclock.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "Set Program Flags" C:\tools\system\setfl200\setflags.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0
