@@ -224,7 +224,7 @@ deskicons=
 		labl=readme.txt
 		type=6
 		path=C:\readme.txt
-		ypos=6
+		ypos=9
 	}
 	icon=
 	{
@@ -239,7 +239,7 @@ deskicons=
 		name=TRASH
 		labl=TRASH
 		type=2
-		ypos=8
+		ypos=11
 	}
 	icon=
 	{
@@ -248,7 +248,7 @@ deskicons=
 		type=6
 		path=C:\tools\net\highwire\bookmark.htm
 		xpos=1
-		ypos=6
+		ypos=9
 	}
 	icon=
 	{
@@ -256,7 +256,7 @@ deskicons=
 		labl=HostFS
 		type=1
 		driv=3
-		xpos=2
+		ypos=1
 	}
 	icon=
 	{
@@ -264,7 +264,8 @@ deskicons=
 		labl=MiNT@root
 		type=1
 		driv=20
-		xpos=3
+		xpos=1
+		ypos=1
 	}
 	icon=
 	{
@@ -272,8 +273,8 @@ deskicons=
 		labl=qed.app
 		type=5
 		path=C:\tools\editors\qed\qed.app
-		xpos=2
-		ypos=3
+		xpos=1
+		ypos=4
 	}
 	icon=
 	{
@@ -281,8 +282,7 @@ deskicons=
 		labl=zview.app
 		type=5
 		path=C:\tools\gfx\zview\zview.app
-		xpos=1
-		ypos=2
+		ypos=3
 	}
 	icon=
 	{
@@ -290,8 +290,8 @@ deskicons=
 		labl=aniplay.prg
 		type=5
 		path=C:\tools\gfx\aniplay\aniplay.prg
-		xpos=2
-		ypos=2
+		xpos=1
+		ypos=3
 	}
 	icon=
 	{
@@ -299,7 +299,7 @@ deskicons=
 		labl=kronos.app
 		type=5
 		path=C:\tools\diag\kronos\kronos.app
-		ypos=3
+		ypos=5
 	}
 	icon=
 	{
@@ -308,7 +308,7 @@ deskicons=
 		type=5
 		path=C:\tools\diag\sysinfo\sysinfo.app
 		xpos=1
-		ypos=3
+		ypos=5
 	}
 	icon=
 	{
@@ -316,7 +316,7 @@ deskicons=
 		labl=highwire.app
 		type=5
 		path=C:\tools\net\highwire\highwire.app
-		ypos=4
+		ypos=7
 	}
 	icon=
 	{
@@ -324,8 +324,8 @@ deskicons=
 		labl=aftp.prg
 		type=5
 		path=C:\tools\net\atack\aftp\aftp.prg
-		xpos=2
-		ypos=4
+		xpos=1
+		ypos=6
 	}
 	icon=
 	{
@@ -333,8 +333,7 @@ deskicons=
 		labl=amail.prg
 		type=5
 		path=C:\tools\net\atack\amail\amail.prg
-		xpos=1
-		ypos=4
+		ypos=6
 	}
 	icon=
 	{
@@ -342,7 +341,7 @@ deskicons=
 		labl=photo_tt.prg
 		type=5
 		path=C:\tools\gfx\photline.2_3\photo_tt.prg
-		ypos=2
+		ypos=4
 	}
 }
 
@@ -484,12 +483,6 @@ windows=
 	}
 	open=
 	{
-		dir=
-		{
-			indx=2
-			path=C:\
-			mask=*
-		}
 	}
 }
 
