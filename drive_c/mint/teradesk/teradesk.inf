@@ -361,22 +361,22 @@ windows=
 		}
 		pos=
 		{
-			xpos=421
-			ypos=68
-			winw=52
-			winh=31
+			xpos=181
+			ypos=20
+			winw=41
+			winh=29
 		}
 		pos=
 		{
-			xpos=773
+			xpos=768
 			ypos=524
 			winw=36
 			winh=22
 		}
 		pos=
 		{
-			xpos=253
-			ypos=68
+			xpos=53
+			ypos=60
 			winw=44
 			winh=22
 		}
@@ -483,6 +483,12 @@ windows=
 	}
 	open=
 	{
+		dir=
+		{
+			indx=1
+			path=C:\
+			mask=*
+		}
 	}
 }
 

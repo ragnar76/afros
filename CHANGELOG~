@@ -10,7 +10,6 @@ Major changes:
 - added some cpx file from the Falcon Language Disk
 - added AHCC as development platform
 - added orcs for resource file editing
-- added Bootconf from Uwe Seimet to edit NVRAM settings
 
 Minor Changes
 - changed BootColorDepth

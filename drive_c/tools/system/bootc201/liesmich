@@ -1,0 +1,21 @@
+BOOTCONF erm”glicht das Konfigurieren der Bootparameter von TT, Falcon und
+Milan, die im nicht flchtigen RAM (NVRAM) abgelegt sind. Diese Einstellungen
+werden nach einem Reset aktiviert.
+Die Videoparameter werden beim Laden der NEWDESK.INF-Datei allerdings wieder
+berschrieben. Wird die Bootverz”gerung auf weniger als 8 Sekunden
+eingestellt, fhrt der Falcon keinen Speichertest durch, sondern bootet
+automatisch, sobald die interne IDE-Festplatte bereit ist.
+Beim TT sind nur die Angaben fr die Bootpr„ferenz und die SCSI-ID von
+Bedeutung. Die SCSI Initiator-ID wird nur von Festplattentreibern ausgewertet,
+die Initiator-Identifizierung untersttzt. Dies ist bei CBHD, HuSHI und
+HDDRIVER der Fall. (Eine Demoversion von HDDRIVER ist verfgbar unter
+http://www.seimet.de/atari/de/index.html.)
+Eine falsche Bootpr„ferenz kann dazu fhren, dass nicht von Platte gebootet
+wird.
+BOOTCONF ist zweisprachig, wobei die Standard-Sprache von TOS abh„ngt. Mit
+den Parametern "-g"/"--german" bzw. "-e"/"--english" kann beim Programmstart
+die Sprache eingestellt werden. Durch Drcken der Alternate-Taste beim
+Programmstart kann zwischen Deutsch und Englisch umgeschaltet werden.
+
+
+  Uwe Seimet (Uwe.Seimet@seimet.de)

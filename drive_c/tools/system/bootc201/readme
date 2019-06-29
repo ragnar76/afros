@@ -1,0 +1,19 @@
+With BOOTCONF the Falcon, TT and Milan boot parameters, which are saved in the
+non volatile RAM (NVRAM), can be configured. These settings are activated
+after a reset.
+Note that the video parameters are only active until the file NEWDESK.INF is
+read. If the boot delay is less than 8 seconds, the Falcon won't start its
+memory test but will boot as soon as the internal IDE drive is ready.
+On a TT only the boot preference and the SCSI ID settings have a meaning.
+The SCSI initiator ID is only relevant with hard disk drivers that support
+initiator identification, like CBHD, HuSHI or HDDRIVER. (A demo version of
+HDDRIVER can be downloaded from http://www.seimet.de/atari/en/index.html.)
+Note that bad boot preference settings can result in the Atari not booting
+from hard disk.
+BOOTCONF is bilingual. The default language depends on TOS. With the
+parameters "-e/--english" or "-g/--german" the language can be selected when
+starting BOOTCONF. By pressing the Alternate key when starting BOOTCONF the
+language can be toggled between English and German.
+
+
+  Uwe Seimet (Uwe.Seimet@seimet.de)
