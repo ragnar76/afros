@@ -11,6 +11,7 @@ Major changes:
 - added AHCC as development platform
 - added orcs for resource file editing
 - added Bootconf from Uwe Seimet to edit NVRAM settings
+- added Netsurf as second Webbrowser
 
 Minor Changes
 - changed BootColorDepth
@@ -20,3 +21,4 @@ Minor Changes
 - added some more symbolic links to get a more proper lsb like filesystem
 - modified links in taskbar
 - rearranged the taskbar with submenus
+- start merging README and install.txt into one README

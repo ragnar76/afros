@@ -10,6 +10,8 @@ FCOL 1 0
 BPAT 7 7
 OFIL "Highwire" C:\tools\net\highwire\highwire.app ""
 OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "Netsurf" C:\tools\net\netsurf\ns020.prg ""
+OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "aMail" C:\tools\net\atack\amail\amail.prg ""
 OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "aFTP" C:\tools\net\atack\aftp\aftp.prg ""
