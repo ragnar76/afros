@@ -121,7 +121,7 @@ If you don't use disk image anymore you can simply copy the updated driver files
 
   Source: http://acp.atari.org/ (search for Photoline)
 
-##News in this release
+## News in this release
 
 ### 2019/06/30  (Summer in the City)
 - updated emutos to 0.9.11
