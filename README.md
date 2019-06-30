@@ -111,6 +111,16 @@ If you update MINT.PRG you must update also the MINT folder contents - you might
 
 If you don't use disk image anymore you can simply copy the updated driver files in your host operating system since this AFROS release no longer uses disk image thus all files are easily accessible. Check the "drive_c" folder to see all the files there.
 
+## Notes about Software that used to be Closed Source or Shareware
+
+* Finder by Holger Weets, is a handy tool to search for files on your Harddisk. It was once shareware but after he abandoned his software and lost the Keygenerator for his programs later on, he is okay with it to share personal keys.
+
+  Source: https://forum.atari-home.de/index.php?topic=9865.0
+
+* Photoline is a professional tool for editing photos and images. Back in 2012 it released as, kind of, Freeware by Computerinsel.
+
+  Source: http://acp.atari.org/ (search for Photoline)
+
 ##News in this release
 ### 2008/12/17 = AFROS 8.12 (Ubuntu-like versioning)
 - config: 64 MB FastRAM, [ETH0] reconfigured to 192.168.251.1<->2
@@ -136,6 +146,28 @@ If you don't use disk image anymore you can simply copy the updated driver files
 * ST-Zip, LZHShell - necessary tools for unpacking Atari archives
 
 All the software is as preconfigured as possible. Lots of time went into testing and finetuning the package. Hope you'll enjoy it!
+
+### 2019/06/30  (Summer in the City)
+- updated emutos to 0.9.11
+- updated TeraDesk to 4.0.7
+- updated MiNT to 1.19
+- moved pre-installed binaries to a new folder called tools to clean up messy c:\
+- Q.E.D, Kronos, Zview and Aniplayer updated
+- Added 
+ * Photline, COPS, Setflg and Puzzle97
+ * Some cpx file from the Falcon Language Disk
+ * AHCC and ORCS as development platform
+ * Bootconf from Uwe Seimet to edit NVRAM settings
+ * Netsurf as second Webbrowser
+ * Atari IRC
+ * some unix sys-root tools from freemint
+- changed BootColorDepth
+- changed mint.cnf and xaaes.cnf to match moved tools
+- recreated desktop links
+- added some more symbolic links to get a more proper lsb like filesystem
+- modified links in taskbar
+- rearranged the taskbar with submenus
+- start merging README and install.txt into one README
 
 ### 2008/02/02:
 * new EmuTOS (fresh CVS build)
