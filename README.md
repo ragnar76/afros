@@ -28,6 +28,7 @@ This wouldn't be possible without great work of the following projects that rele
 - XaAES - a free multitasking AES (http://xaaes.atariforge.net/)
 - TeraDesk - a free desktop replacement (http://solair.eunet.yu/~vdjole/)
 - HighWire - a free Html/Web browser (http://highwire.atari-users.net/)
+- Liberation font family - Compatible fonts to Arial, Times New Roman, and Courier New (https://github.com/liberationfonts/liberation-1.7-fonts)
 
 and of course ARAnyM, the virtual machine for TOS/GEM 16/32-bit applications.
 
@@ -137,6 +138,7 @@ If you don't use disk image anymore you can simply copy the updated driver files
  * Netsurf as second Webbrowser
  * Atari IRC
  * some unix sys-root tools from freemint
+ * added the Liberation family
 - changed BootColorDepth
 - changed mint.cnf and xaaes.cnf to match moved tools
 - recreated desktop links
