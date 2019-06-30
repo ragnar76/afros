@@ -1,7 +1,7 @@
-Notes about Software thatr used to be Closed SOurce or Shareware
+Notes about Software that used to be Closed Source or Shareware
 
 * Finder
-	Finder is a handy tool to search for files on your Harddisk. It was once
+	Finder, by Holger Weets, is a handy tool to search for files on your Harddisk. It was once
 	shareware but after he abandoned his software and lost the Keygenerator
 	for his programs later on, he is okay with it to share personal keys.
 
