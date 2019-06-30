@@ -18,3 +18,5 @@ OFIL "aFTP" C:\tools\net\atack\aftp\aftp.prg ""
 OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "aVNC" C:\tools\net\avnc\avnc.prg ""
 OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "AIRC" C:\tools\net\airc\atarirc.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0

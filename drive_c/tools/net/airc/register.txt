@@ -1,0 +1,44 @@
+This program is ShareWare.  This program requires a software key
+to fully unlock it.  Without the key you have 15 minutes of online time
+to test the program.  Other than the time limit it is fully functional and
+there are no disabled features.  When the time limit is reached the program
+will let you know and then exit.  You can restart it as often as you like.
+
+The shareware fee is a mere $5.  If you wish to send more, that's up to you
+and I won't refuse it.  ;o)  Those that sent me a donation when aIRC was
+not shareware should contact me for a free key.
+
+I will accept PayPal or money orders in USD funds only.  You can send
+cash if you wish, but should it get lost in the mail I cannot be held
+responsible.
+
+When you register, I need your full name and a valid e-mail address so
+that I can deliver the key.
+
+Contact info:
+  Lonny Pursell
+  PO Box 32
+  Pandora  OH  45877
+  USA
+
+  E-Mail: Please visit my website to obtain my e-mail address.
+  WWW: http://www.bright.net/~gfabasic/
+  IRC: lp @ #AtariScne @ IRCnet
+
+To register aIRC, you need to do the following:
+  Send me $5 USD somehow.
+  Start the new version of aIRC.
+  Open the credit box, click 'AtarIRC Info' in the drop down menu.
+  Enter the key code I have mailed you.
+  Click the 'Register' button.
+  That's it!
+
+  I will not issue a key with a fake name or an alias.
+  Your real name will not be used on the irc network, it is only contained
+  in the key along with a unique serial number.
+
+  You may move the key to any number of machines in your own home.
+  Do not give out your key!  The key does contain your full name.
+
+When reporting bugs please include the version number and a
+detailed description of your system setup.

@@ -1,6 +1,6 @@
-Changelog for AFROS
+# Changelog for AFROS
 
-Major changes:
+##Major changes:
 - replaced emutos
 - replaced TeraDesk
 - replaced MiNT (Version 1.17) with a more current version from GIT (Version 1.19)
@@ -12,8 +12,9 @@ Major changes:
 - added orcs for resource file editing
 - added Bootconf from Uwe Seimet to edit NVRAM settings
 - added Netsurf as second Webbrowser
+- added Atari IRC
 
-Minor Changes
+##Minor Changes
 - changed BootColorDepth
 - added some unix sys-root tools from freemint
 - changed mint.cnf and xaaes.cnf to match moved tools

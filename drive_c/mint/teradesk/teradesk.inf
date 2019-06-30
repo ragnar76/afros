@@ -368,8 +368,8 @@ windows=
 		}
 		pos=
 		{
-			xpos=768
-			ypos=524
+			xpos=221
+			ypos=36
 			winw=36
 			winh=22
 		}
@@ -485,7 +485,6 @@ windows=
 	{
 		dir=
 		{
-			indx=1
 			path=C:\
 			mask=*
 		}

@@ -1,4 +1,1 @@
-aults:
-  Memory: 102400 bytes
- Disk: (disabled)
-
+B73EA3E6ACD08E0B83E91D9CCE570E3F
