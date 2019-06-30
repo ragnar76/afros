@@ -1,8 +1,0 @@
-BODY   { background-color: white; }
-DL DL  { border-width: 0px 1px 1px; border-color: A0A0A0; border-style: solid;
-         margin-bottom: 1px; margin-left: 1em; padding: 0px 3px; }
-DT.GRP { white-space:nowrap; background-color: E0E0E0; padding: 0px 3px 1px 3px;
-         border-width: 1px; border-style: solid; }
-DT.LNK { text-indent: -2em }
-A      { text-decoration: none; }
-

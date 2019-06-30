@@ -131,11 +131,11 @@ If you don't use disk image anymore you can simply copy the updated driver files
 - moved pre-installed binaries to a new folder called tools to clean up messy c:\
 - Q.E.D, Kronos, Zview and Aniplayer updated
 - Added 
+ * dropped Highwire in favor of Netsurf (incl. ca-bundle and ca-cert)
  * Photline, COPS, Setflg and Puzzle97
  * Some cpx file from the Falcon Language Disk
  * AHCC and ORCS as development platform
  * Bootconf from Uwe Seimet to edit NVRAM settings
- * Netsurf as second Webbrowser
  * Atari IRC
  * some unix sys-root tools from freemint
  * added the Liberation family

@@ -312,10 +312,10 @@ deskicons=
 	}
 	icon=
 	{
-		name=WWW
-		labl=highwire.app
+		name=APP
+		labl=ns020.app
 		type=5
-		path=C:\tools\net\highwire\highwire.app
+		path=C:\tools\net\netsurf\ns020.app
 		ypos=7
 	}
 	icon=

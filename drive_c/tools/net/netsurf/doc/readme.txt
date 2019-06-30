@@ -9,7 +9,7 @@
                   Version 2.9 (Release Version)
 
 Ported by:     m0n0
-Release date:  03.04.2012
+Release date:  xx.xx.xx
 Contact:       ole@monochrom.net
 WWW:           http://netsurf-browser.org
 
