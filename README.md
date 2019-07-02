@@ -129,6 +129,10 @@ If you don't use disk image anymore you can simply copy the updated driver files
 - made some Taskbar tweaks
 - moved st-guide to tools\viewer instead of tools\editors
 
+### 2019/07/01
+- removed set_mmu.prg . Not needed by newer emutos versions
+- removed Highwire in favor of Netsurf
+
 ### 2019/06/30  (Summer in the City)
 - updated emutos to 0.9.11
 - updated TeraDesk to 4.0.7
