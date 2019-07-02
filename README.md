@@ -124,6 +124,11 @@ If you don't use disk image anymore you can simply copy the updated driver files
 
 ## News in this release
 
+### 2019/07/02
+- Added GFA Basic Editor
+- made some Taskbar tweaks
+- moved st-guide to tools\viewer instead of tools\editors
+
 ### 2019/06/30  (Summer in the City)
 - updated emutos to 0.9.11
 - updated TeraDesk to 4.0.7

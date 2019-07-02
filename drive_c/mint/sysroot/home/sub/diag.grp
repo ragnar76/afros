@@ -8,5 +8,7 @@ IACL 0
 FONT 1 10 1 0
 FCOL 1 0
 BPAT 7 7
-OFIL "QED" C:\tools\editors\qed\qed.app ""
+OFIL "Kronos Benchmark" C:\tools\diag\kronos\kronos.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "System Informations" C:\tools\diag\sysinfo\sysinfo.app ""
 OOPT 0 0 0 0 0 0 0 0 0 0

@@ -12,3 +12,5 @@ OFIL "SetClock" C:\tools\system\clocky\setclock.app ""
 OOPT 0 0 0 0 0 0 0 0 0 0
 OFIL "Set Program Flags" C:\tools\system\setfl200\setflags.app ""
 OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "Fsetter" C:\mint\sysroot\opt\fsetter\fsetter.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0

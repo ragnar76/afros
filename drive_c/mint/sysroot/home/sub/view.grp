@@ -1,5 +1,5 @@
 # Thing object group saved by JAY Groups II
-# C:\mint\sysroot\home\view.grp
+# C:\mint\sysroot\home\sub\view.grp
 # (Oct 19 2000)
 #
 INFO "Viewer" 2500 2504 5000 5000 1 0
@@ -9,4 +9,6 @@ FONT 1 10 1 0
 FCOL 1 0
 BPAT 7 7
 OFIL "zView" C:\tools\gfx\zview\zview.app ""
+OOPT 0 0 0 0 0 0 0 0 0 0
+OFIL "Hypertext Viewer" C:\mint\sysroot\opt\hyp_view\hyp_view.app ""
 OOPT 0 0 0 0 0 0 0 0 0 0
