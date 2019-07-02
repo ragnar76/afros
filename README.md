@@ -29,6 +29,7 @@ This wouldn't be possible without great work of the following projects that rele
 - TeraDesk - a free desktop replacement (http://solair.eunet.yu/~vdjole/)
 - HighWire - a free Html/Web browser (http://highwire.atari-users.net/)
 - Liberation font family - Compatible fonts to Arial, Times New Roman, and Courier New (https://github.com/liberationfonts/liberation-1.7-fonts)
+- ComicNeue font family - similar to ComicSans. Just for fun :) (https://github.com/crozynski/comicneue)
 
 and of course ARAnyM, the virtual machine for TOS/GEM 16/32-bit applications.
 
@@ -128,6 +129,7 @@ If you don't use disk image anymore you can simply copy the updated driver files
 - Added GFA Basic Editor
 - made some Taskbar tweaks
 - moved st-guide to tools\viewer instead of tools\editors
+- Added Font ComicNeue
 
 ### 2019/07/01
 - removed set_mmu.prg . Not needed by newer emutos versions
