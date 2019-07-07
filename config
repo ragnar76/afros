@@ -1,30 +1,25 @@
 [GLOBAL]
 FastRAM = 64
-Floppy = system/dummy.st
+Floppy = 
 TOS = 
 EmuTOS = system/emutos-aranym.img
 Bootstrap = system/mintara.prg
 BootstrapArgs = DEBUG_LEVEL=1 BOOT_DELAY=0 MEM_PROT=NO
 BootDrive = C
+AutoGrabMouse = Yes
 GMTime = No
-FixedMemoryOffset = 51000000
-EpsEnabled = No
-EpsMax = 20
-SnapshotDir = snapshots
 
 [HOTKEYS]
-Setup = Pause
-Quit = LS+Pause
-Reboot = LC+Pause
-Ungrab = LS+LC+LA+Application
-Debug = LA+Pause
-Screenshot = PrintScreen
-Fullscreen = ScrollLock
-ColdReboot = LS+LC+Pause
-Sound = RA+s
+Setup = 19:0
+Quit = 19:0x1
+Reboot = 19:0x40
+Ungrab = 0:0x141
+Debug = 19:0x100
+Screenshot = 316:0
+Fullscreen = 302:0
 
 [STARTUP]
-GrabMouse = No
+GrabMouse = Yes
 Debugger = No
 
 [JIT]
@@ -34,16 +29,12 @@ JITCacheSize = 8192
 JITLazyFlush = 1
 JITBlackList = 
 JITInline = No
-JITDebug = No
 
 [VIDEO]
 FullScreen = No
 BootColorDepth = 4
 VidelRefresh = 2
 VidelMonitor = -1
-SingleBlitComposing = No
-SingleBlitRefresh = No
-WindowPos = 
 
 [TOS]
 Cookie_MCH = 50000
@@ -81,9 +72,9 @@ ReadOnly = No
 [HOSTFS]
 A = 
 B = 
-C = drive_c/
+C = drive_c
 D = /
-E = 
+E =
 F = 
 G = 
 H = 
@@ -105,13 +96,6 @@ W =
 X = 
 Y = 
 Z = 
-symlinks = posix
-0 = 
-1 = 
-2 = 
-3 = 
-4 = 
-5 = 
 
 [OPENGL]
 Enabled = No
@@ -130,13 +114,11 @@ MAC = 00:41:45:54:48:30
 Kernel = linux.bin
 Args = root=/dev/ram video=atafb:vga16
 Ramdisk = root.bin
-LoadToFastRam = No
 
 [MIDI]
 Type = none
 File = 
 Sequencer = /dev/sequencer
-Enabled = No
 
 [CDROMS]
 A = -1
@@ -165,12 +147,6 @@ W = -1
 X = -1
 Y = -1
 Z = -1
-0 = -1
-1 = -1
-2 = -1
-3 = -1
-4 = -1
-5 = -1
 
 [AUTOZOOM]
 Enabled = No
@@ -188,14 +164,10 @@ LibOSMesa = libOSMesa.so
 Type = file
 File = stderr
 Parport = /dev/parport0
-Program = lpr -T "ARAnyM output"
-Enabled = Yes
-Timeout = 10
 
 [NATFEATS]
 CDROM = sdl
 Vdi = soft
-HOSTEXEC = No
 
 [NFVDI]
 UseHostMouseCursor = No
@@ -203,22 +175,3 @@ UseHostMouseCursor = No
 [IKBD]
 WheelEiffel = Yes
 AltGr = Yes
-
-[SERIAL]
-Serport = /dev/ttyS0
-Enabled = No
-
-[AUDIO]
-Frequency = 22050
-Channels = 2
-Bits = 16
-Samples = 1024
-Enabled = Yes
-
-[JOYSTICKS]
-Ikbd0 = -1
-Ikbd1 = 0
-JoypadA = -1
-JoypadAButtons = 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
-JoypadB = -1
-JoypadBButtons = 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
