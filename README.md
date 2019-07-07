@@ -49,11 +49,11 @@ This wouldn't be possible without great work of the following projects that
 release their software under the GPL or other Free licenses:
 
 - EmuTOS - a free TOS replacement (http://emutos.sf.net/)
-- FreeMiNT - a free multitasking others (http://www.freemint.de/)
-- fVDI - a free/fast VDI (http://www.klockars.net/)
-- XaAES - a free multitasking AES (http://xaaes.atariforge.net/)
-- TeraDesk - a free desktop replacement (http://solair.eunet.yu/~vdjole/)
-- HighWire - a free Html/Web browser (http://highwire.atari-users.net/)
+- FreeMiNT - a free multitasking others (https://github.com/freemint/freemint)
+- fVDI - a free/fast VDI (https://sourceforge.net/p/fvdi/code/HEAD/tree/trunk/fvdi/)
+- XaAES - a free multitasking AES (https://github.com/freemint/freemint/tree/master/xaaes)
+- TeraDesk - a free desktop replacement (http://solair.eunet.rs/~vdjole/teradesk.htm)
+- Netsurf - a free Html/Web browser (https://www.netsurf-browser.org/)
 - Liberation font family - Compatible fonts to Arial, Times New Roman, and Courier New (https://github.com/liberationfonts/liberation-1.7-fonts)
 - ComicNeue font family - similar to ComicSans. Just for fun :) (https://github.com/crozynski/comicneue)
 
@@ -69,7 +69,7 @@ removed other languages support. Feel free to download the full archives and
 configure them to language of your choice.
 
 AFROS was created and is brought to you by Petr Stehlik
-Visit http://aranym.org/afros 
+Visit https://aranym.github.io/afros.html or https://github.com/ragnar76/afros
 
 This copy is maintained by ragnar <ragnar76@riseup.net>
 
@@ -143,7 +143,7 @@ the user's login name that will be starting the ARAnyM (i.e. yours)
 
 ### Other ARAnyM host operating systems:
 Instructions for setting up networking on Mac OS X and MS Windows ARAnyM hosts
-can be found/edited at http://wiki.aranym.org/
+can be found/edited at https://github.com/aranym/aranym/wiki
 
 ### FreeMiNT DNS setup:
 AFROS needs to know the correct IP address of your DNS server. In most
@@ -261,7 +261,7 @@ and finetuning the package. Hope you'll enjoy it!
 * Teradesk 3.91, HighWire 0.3.2
 
 ## Contact:
-For more information please visit http://aranym.org/afros
+For more information please visit https://aranym.github.io/afros.html or https://github.com/ragnar76/afros
 
 EnJoy!
 Petr Stehlik
