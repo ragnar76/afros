@@ -4,26 +4,26 @@
                         / ___ \|  _| |  _ <| |_| |___) |
                        /_/   \_\_|   |_| \_\\___/|____/ 
                       Atari/ARAnyM FRee Operating System
-
-
+---
     Attention! Attention!
     Using AFROS from this repository may be the easiest way to get an aranym
     setup working and you always get all the latest changes, but running from
     the master branch always introduces risks as it can break at any time. 
 
     You have been warned
+---
 
 # What is AFROS?
 AFROS is a self-explanatory acronym: Atari FRee Operating System. It used to be
 distributed in the form of a harddisk image but now it's just a plain set of
-files creating preinstalled TOS compatible EmuTOS/FreeMiNT/fVDI/XaAES based
-operating system. The most exciting feature is its completely Free nature - all
-key components (EmuTOS, FreeMiNT, fVDI, XaAES and Teradesk) are completely free
-"as in Freedom" and can be redistributed under the GNU General Public License.
-This is the first time for Atari users to have a TOS/GEM compatible, complete,
-free and powerful operating system - from power-on all the way through to the
-multitasking GEM desktop with robust FreeMiNT kernel in the background and fast
-fVDI graphics on the screen.
+files creating preinstalled TOS compatible EmuTOS/FreeMiNT/fVDI/XaAES based  
+operating system. The most exciting feature is its completely Free nature  
+- all key components (EmuTOS, FreeMiNT, fVDI, XaAES and Teradesk) are completely
+free "as in Freedom" and can be redistributed under the GNU General Public
+License. This is the first time for Atari users to have a TOS/GEM compatible,
+complete, free and powerful operating system - from power-on all the way through
+to the multitasking GEM desktop with robust FreeMiNT kernel in the background
+and fast fVDI graphics on the screen.
 
 Although AFROS contains software generally available for all Atari/TOS
 compatible platforms it's been optimized to be powered by the ARAnyM. Thus AFROS
